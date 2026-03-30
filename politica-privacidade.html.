@@ -242,15 +242,15 @@ footer a { color: #60A5FA; text-decoration: none; }
 
   <div class="section">
     <h2><span class="num">2</span> Dados Recolhidos</h2>
-    <p>Recolhemos apenas os dados estritamente necessários para a prestação dos nossos serviços:</p>
+    <p>O presente website não recolhe dados pessoais através de formulários. O contacto é estabelecido por iniciativa do titular, através de email ou telefone, sendo os dados fornecidos voluntariamente para efeitos de resposta e prestação do serviço.</p>
+    <p>Os dados que podem ser tratados no âmbito desse contacto incluem:</p>
     <ul>
       <li>Nome e apelido</li>
       <li>Endereço de email</li>
       <li>Número de telefone (opcional)</li>
-      <li>Nome e tipo do alojamento</li>
-      <li>Mensagem ou descrição da situação</li>
+      <li>Informações sobre a empresa e a sua situação face ao RGPD</li>
     </ul>
-    <p>Não recolhemos dados sensíveis, dados de menores, nem dados de pagamento diretamente neste website.</p>
+    <p>Não recolhemos dados sensíveis, dados de menores, nem dados de pagamento.</p>
   </div>
 
   <div class="section">
@@ -316,12 +316,4 @@ footer a { color: #60A5FA; text-decoration: none; }
     <h2><span class="num">9</span> Reclamações</h2>
     <p>Caso considere que o tratamento dos seus dados viola o RGPD, tem o direito de apresentar reclamação junto da autoridade de controlo competente em Portugal:</p>
     <div class="highlight-box">
-      <p><strong style="color:var(--navy);">CNPD — Comissão Nacional de Proteção de Dados</strong><br>
-      www.cnpd.pt · Rua de São Bento, 148-3.º, 1200-821 Lisboa</p>
-    </div>
-  </div>
-
-  <div class="contact-block">
-    <div>
-      <strong>Questões sobre privacidade?</strong>
-      <p>Estamos disponíveis 
+      <p><strong style="color:var(--navy);">CNPD — Comissão Nacional de Proteção de Dados
