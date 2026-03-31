@@ -4,272 +4,306 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privus Kuzola — Consultoria RGPD</title>
+<title>Privus Kuzola — Política de Privacidade</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;color:#1B2E4B;background:#ffffff;overflow-x:hidden;line-height:1.6;}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;height:68px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #E2E8F0;}
-.nav-logo{text-decoration:none;display:flex;align-items:center;gap:8px;}
-.nav-logo .p1{font-family:Georgia,'Times New Roman',serif;font-size:17px;color:#2563EB;font-weight:400;}
-.nav-logo .p2{font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-size:14px;font-weight:900;color:#1B2E4B;}
-.nav-links{display:flex;align-items:center;gap:28px;list-style:none;}
-.nav-links a{font-size:14px;font-weight:500;color:#64748B;text-decoration:none;transition:color 0.2s;}
-.nav-links a:hover{color:#2563EB;}
-.nav-cta{background:#1B2E4B;color:#ffffff!important;padding:10px 22px;border-radius:6px;font-weight:600!important;}
-.nav-cta:hover{background:#2563EB!important;}
-.hero{min-height:100vh;display:flex;align-items:center;padding:120px 5% 80px;background:#0F1C2E;position:relative;overflow:hidden;}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 60% 50% at 70% 50%,rgba(37,99,235,0.15) 0%,transparent 60%);}
-.hero-grid{position:absolute;inset:0;background-image:linear-gradient(rgba(37,99,235,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(37,99,235,0.04) 1px,transparent 1px);background-size:60px 60px;}
-.hero-content{position:relative;max-width:680px;}
-.hero-tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#93C5FD;border:1px solid rgba(37,99,235,0.3);padding:6px 14px;border-radius:4px;margin-bottom:32px;}
-.hero h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(34px,5vw,58px);line-height:1.15;color:#ffffff;margin-bottom:20px;font-weight:400;}
-.hero h1 em{font-style:italic;color:#93C5FD;}
-.hero-sub{font-size:16px;color:rgba(255,255,255,0.55);margin-bottom:40px;max-width:500px;line-height:1.7;}
-.hero-actions{display:flex;gap:14px;flex-wrap:wrap;}
-.btn-primary{background:#2563EB;color:#ffffff;padding:14px 28px;border-radius:6px;font-size:15px;font-weight:600;text-decoration:none;transition:all 0.2s;display:inline-block;}
-.btn-primary:hover{background:#1D4ED8;}
-.btn-secondary{background:transparent;color:rgba(255,255,255,0.7);padding:14px 28px;border-radius:6px;font-size:15px;font-weight:500;text-decoration:none;border:1px solid rgba(255,255,255,0.2);transition:all 0.2s;display:inline-block;}
-.btn-secondary:hover{border-color:rgba(255,255,255,0.5);color:#ffffff;}
-.hero-stats{margin-top:64px;display:flex;gap:48px;padding-top:48px;border-top:1px solid rgba(255,255,255,0.1);flex-wrap:wrap;}
-.stat-num{font-family:Georgia,serif;font-size:28px;color:#ffffff;line-height:1;}
-.stat-label{font-size:13px;color:rgba(255,255,255,0.4);margin-top:4px;}
-.section{padding:96px 5%;}
-.section-alt{background:#F8FAFC;}
-.section-dark{background:#1B2E4B;}
-.section-tag{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#2563EB;margin-bottom:14px;}
-.section-tag-light{color:#93C5FD;}
-.section-title{font-family:Georgia,'Times New Roman',serif;font-size:clamp(24px,3vw,36px);line-height:1.2;color:#1B2E4B;margin-bottom:14px;font-weight:400;}
-.section-title-light{color:#ffffff;}
-.section-sub{font-size:16px;color:#64748B;line-height:1.7;max-width:540px;margin-bottom:56px;}
-.divider{width:48px;height:2px;background:#2563EB;margin-bottom:40px;}
-.problem-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-.problem-card{background:#ffffff;border:1px solid #E2E8F0;border-radius:8px;padding:28px;border-top:3px solid #2563EB;}
-.problem-card h3{font-size:15px;font-weight:600;color:#1B2E4B;margin-bottom:10px;}
-.problem-card p{font-size:14px;color:#64748B;line-height:1.6;}
-.steps{display:flex;flex-direction:column;gap:0;}
-.step{display:flex;gap:28px;align-items:flex-start;padding:28px 0;border-bottom:1px solid #E2E8F0;}
-.step:last-child{border-bottom:none;}
-.step-num{width:40px;height:40px;background:#EFF6FF;color:#2563EB;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;flex-shrink:0;font-family:Georgia,serif;}
-.step-content h3{font-size:16px;font-weight:600;color:#1B2E4B;margin-bottom:6px;}
-.step-content p{font-size:14px;color:#64748B;line-height:1.6;}
-.services-layout{display:grid;grid-template-columns:1fr 1.5fr;gap:64px;align-items:start;}
-.services-intro{position:sticky;top:100px;}
-.price-block{background:#1B2E4B;border-radius:8px;padding:24px;margin-top:28px;display:inline-block;}
-.price-from{font-size:12px;color:rgba(255,255,255,0.5);margin-bottom:4px;letter-spacing:1px;text-transform:uppercase;}
-.price-amount{font-family:Georgia,serif;font-size:42px;color:#ffffff;line-height:1;}
-.price-amount span{font-size:20px;vertical-align:top;margin-top:6px;display:inline-block;}
-.price-note{font-size:12px;color:#60A5FA;margin-top:6px;}
-.services-list{display:flex;flex-direction:column;gap:12px;}
-.service-item{display:flex;gap:16px;padding:20px;border:1px solid #E2E8F0;border-radius:8px;transition:border-color 0.2s;}
-.service-item:hover{border-color:#2563EB;}
-.service-num{width:32px;height:32px;background:#EFF6FF;color:#2563EB;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:13px;flex-shrink:0;}
-.service-info h3{font-size:14px;font-weight:600;color:#1B2E4B;margin-bottom:4px;}
-.service-info p{font-size:13px;color:#64748B;line-height:1.5;}
-.why-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px;}
-.why-card{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;padding:28px;}
-.why-card h3{font-size:15px;font-weight:600;color:#ffffff;margin-bottom:10px;}
-.why-card p{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.6;}
-.faq-wrap{max-width:720px;margin:0 auto;}
-.faq-list{display:flex;flex-direction:column;gap:10px;}
-.faq-item{border:1px solid #E2E8F0;border-radius:8px;overflow:hidden;}
-.faq-q{width:100%;text-align:left;padding:18px 22px;font-size:15px;font-weight:600;color:#1B2E4B;background:none;border:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:-apple-system,sans-serif;transition:color 0.2s;}
-.faq-q:hover{color:#2563EB;}
-.faq-icon{width:26px;height:26px;background:#EFF6FF;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#2563EB;font-size:18px;flex-shrink:0;transition:transform 0.3s,background 0.2s;}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:#2563EB;color:#ffffff;}
-.faq-a{max-height:0;overflow:hidden;transition:max-height 0.35s ease,padding 0.35s ease;padding:0 22px;font-size:14px;color:#64748B;line-height:1.7;}
-.faq-item.open .faq-a{max-height:300px;padding:0 22px 18px;}
-.contact-layout{display:grid;grid-template-columns:1fr 1.2fr;gap:64px;align-items:start;}
-.contact-details{display:flex;flex-direction:column;gap:14px;margin-top:24px;}
-.contact-detail{display:flex;align-items:center;gap:12px;font-size:14px;color:#1B2E4B;}
-.contact-detail-icon{width:36px;height:36px;background:#EFF6FF;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:#2563EB;flex-shrink:0;}
-.contact-box{background:#F8FAFC;border-radius:8px;padding:40px 32px;border:1px solid #E2E8F0;text-align:center;}
-.contact-box h3{font-family:Georgia,serif;font-size:20px;color:#1B2E4B;margin-bottom:12px;font-weight:400;}
-.contact-box p{font-size:14px;color:#64748B;margin-bottom:28px;line-height:1.7;}
-.contact-email{font-size:13px;color:#94A3B8;margin-top:14px;}
-.cta-banner{background:#0F1C2E;padding:72px 5%;text-align:center;}
-.cta-banner h2{font-family:Georgia,serif;font-size:clamp(22px,3vw,34px);color:#ffffff;margin-bottom:14px;font-weight:400;}
-.cta-banner p{font-size:16px;color:rgba(255,255,255,0.55);margin-bottom:32px;max-width:520px;margin-left:auto;margin-right:auto;}
-footer{background:#0F1C2E;padding:36px 5%;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;border-top:1px solid rgba(255,255,255,0.08);}
-.footer-logo{display:flex;align-items:center;gap:8px;}
-.footer-logo .p1{font-family:Georgia,serif;font-size:16px;color:#60A5FA;}
-.footer-logo .p2{font-family:'Arial Black',Arial,sans-serif;font-size:13px;font-weight:900;color:#ffffff;}
-.footer-text{font-size:13px;color:rgba(255,255,255,0.3);}
-footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
-.quote-box{background:#EFF6FF;border-left:3px solid #2563EB;padding:16px 20px;border-radius:0 6px 6px 0;font-size:15px;color:#1E40AF;font-style:italic;margin-bottom:48px;}
-@media(max-width:768px){.nav-links{display:none;}.services-layout,.contact-layout{grid-template-columns:1fr;gap:40px;}.services-intro{position:static;}.hero-stats{gap:28px;}}
+
+- { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+font-family: -apple-system, BlinkMacSystemFont, ‘Segoe UI’, sans-serif, -apple-system, BlinkMacSystemFont, ‘Segoe UI’, sans-serif;
+color: #1B2E4B;
+background: #F8FAFC;
+line-height: 1.7;
+}
+
+nav {
+background: #0F1C2E;
+padding: 0 5%;
+height: 64px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+}
+
+.nav-logo {
+font-family: Georgia, ‘Times New Roman’, serif;
+font-size: 18px;
+color: white;
+text-decoration: none;
+}
+
+.nav-logo span { color: #60A5FA; }
+
+.nav-back {
+font-size: 13px;
+color: rgba(255,255,255,0.5);
+text-decoration: none;
+display: flex;
+align-items: center;
+gap: 6px;
+transition: color 0.2s;
+}
+
+.nav-back:hover { color: white; }
+
+.hero {
+background: #0F1C2E;
+padding: 48px 5% 56px;
+position: relative;
+overflow: hidden;
+}
+
+.hero::after {
+content: ‘’;
+position: absolute;
+bottom: 0; left: 0; right: 0;
+height: 1px;
+background: linear-gradient(90deg, transparent, rgba(37,99,235,0.4), transparent);
+}
+
+.hero-tag {
+font-size: 11px;
+font-weight: 600;
+letter-spacing: 3px;
+text-transform: uppercase;
+color: #60A5FA;
+margin-bottom: 12px;
+}
+
+.hero h1 {
+font-family: Georgia, ‘Times New Roman’, serif;
+font-size: clamp(28px, 4vw, 42px);
+color: white;
+margin-bottom: 12px;
+}
+
+.hero-meta {
+font-size: 14px;
+color: rgba(255,255,255,0.4);
+}
+
+.content-wrap {
+max-width: 760px;
+margin: 0 auto;
+padding: 56px 5% 80px;
+}
+
+.section {
+background: white;
+border: 1px solid #E2E8F0;
+border-radius: 12px;
+padding: 32px;
+margin-bottom: 20px;
+}
+
+.section h2 {
+font-family: Georgia, ‘Times New Roman’, serif;
+font-size: 20px;
+color: #1B2E4B;
+margin-bottom: 16px;
+padding-bottom: 12px;
+border-bottom: 1px solid #E2E8F0;
+display: flex;
+align-items: center;
+gap: 10px;
+}
+
+.section h2 .num {
+width: 28px; height: 28px;
+background: #EFF6FF;
+color: #2563EB;
+border-radius: 6px;
+display: inline-flex;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+font-weight: 700;
+flex-shrink: 0;
+font-family: -apple-system, BlinkMacSystemFont, ‘Segoe UI’, sans-serif;
+}
+
+.section p {
+font-size: 15px;
+color: #64748B;
+margin-bottom: 12px;
+}
+
+.section p:last-child { margin-bottom: 0; }
+
+.section ul {
+list-style: none;
+margin: 12px 0;
+}
+
+.section ul li {
+font-size: 15px;
+color: #64748B;
+padding: 6px 0 6px 22px;
+position: relative;
+}
+
+.section ul li::before {
+content: ‘→’;
+position: absolute;
+left: 0;
+color: #2563EB;
+font-size: 13px;
+}
+
+.highlight-box {
+background: #EFF6FF;
+border: 1px solid #BFDBFE;
+border-radius: 8px;
+padding: 16px 20px;
+margin-top: 12px;
+}
+
+.highlight-box p {
+font-size: 14px;
+color: #1B2E4B;
+margin: 0;
+}
+
+.contact-block {
+background: #1B2E4B;
+border-radius: 12px;
+padding: 28px 32px;
+margin-top: 24px;
+display: flex;
+align-items: center;
+justify-content: space-between;
+flex-wrap: wrap;
+gap: 16px;
+}
+
+.contact-block p { color: rgba(255,255,255,0.7); font-size: 14px; margin: 0; }
+.contact-block strong { color: white; display: block; font-size: 16px; margin-bottom: 4px; }
+
+.contact-block a {
+background: #2563EB;
+color: white;
+padding: 12px 24px;
+border-radius: 8px;
+text-decoration: none;
+font-size: 14px;
+font-weight: 600;
+white-space: nowrap;
+transition: background 0.2s;
+}
+
+.contact-block a:hover { background: #1D4ED8; }
+
+footer {
+background: #0F1C2E;
+padding: 28px 5%;
+text-align: center;
+font-size: 13px;
+color: rgba(255,255,255,0.3);
+}
+
+footer a { color: #60A5FA; text-decoration: none; }
 </style>
+
 </head>
 <body>
+
 <nav>
-  <a href="#" class="nav-logo">
-    <svg width="28" height="34" viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
-      <rect x="40" y="10" width="280" height="450" rx="10" fill="#2563EB" opacity="0.15"/>
-      <rect x="56" y="26" width="248" height="418" rx="7" fill="#2563EB" opacity="0.8"/>
-      <rect x="72" y="46" width="216" height="130" rx="5" fill="white" opacity="0.15"/>
-      <rect x="72" y="192" width="216" height="170" rx="5" fill="white" opacity="0.15"/>
-      <circle cx="270" cy="290" r="14" fill="white" opacity="0.9"/>
-      <rect x="20" y="458" width="320" height="10" rx="5" fill="#2563EB" opacity="0.5"/>
-    </svg>
-    <span class="p1">PRIVUS&nbsp;</span><span class="p2">KUZOLA</span>
-  </a>
-  <ul class="nav-links">
-    <li><a href="#como-funciona">Como funciona</a></li>
-    <li><a href="#servicos">Servicos</a></li>
-    <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contacto" class="nav-cta">Contactar</a></li>
-  </ul>
+  <a href="index.html" class="nav-logo" style="text-decoration:none;display:flex;align-items:baseline;gap:2px;"><span style='font-family:Georgia,serif;font-size:18px;color:#2563EB;'>PRIVUS&nbsp;</span><span style='font-family:Arial Black,sans-serif;font-size:15px;font-weight:900;color:#1B2E4B;'>KUZOLA</span></a>
+  <a href="index.html" class="nav-back">← Voltar ao site</a>
 </nav>
 
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-grid"></div>
-  <div class="hero-content">
-    <div class="hero-tag">Consultoria RGPD · Portugal</div>
-    <h1>Protegemos os seus dados.<br><em>E o seu negocio.</em></h1>
-    <p class="hero-sub">Consultoria especializada em Protecao de Dados (RGPD) para empresas em Portugal.</p>
-    <div class="hero-actions">
-      <a href="mailto:contacto@privuskuzola.pt?subject=Avaliacao%20RGPD%20gratuita" class="btn-primary">Avaliacao RGPD gratuita (30 minutos)</a>
-      <a href="#servicos" class="btn-secondary">Ver servicos</a>
-    </div>
-    <div class="hero-stats">
-      <div><div class="stat-num">250€</div><div class="stat-label">A partir de</div></div>
-      <div><div class="stat-num">5 dias</div><div class="stat-label">Prazo medio</div></div>
-      <div><div class="stat-num">20M€</div><div class="stat-label">Coima maxima RGPD</div></div>
-    </div>
-  </div>
-</section>
+<div class="hero">
+  <div class="hero-tag">Documento Legal</div>
+  <h1>Política de Privacidade</h1>
+  <div class="hero-meta">Última atualização: março de 2025 · Em conformidade com o RGPD (UE) 2016/679</div>
+</div>
 
-<section class="section section-alt">
-  <div class="section-tag">O problema</div>
-  <h2 class="section-title">A sua empresa trata dados pessoais todos os dias.<br>Esta em conformidade?</h2>
-  <div class="quote-box">A conformidade com o RGPD nao depende da dimensao do negocio, mas da forma como os dados sao tratados.</div>
-  <div class="problem-grid">
-    <div class="problem-card"><h3>Sem politica de privacidade</h3><p>O website nao informa sobre o tratamento de dados — uma obrigacao legal desde 2018.</p></div>
-    <div class="problem-card"><h3>Cookies sem consentimento</h3><p>A utilizacao de cookies de rastreamento sem consentimento pode constituir uma infracao facilmente detetavel.</p></div>
-    <div class="problem-card"><h3>Sem registo de atividades</h3><p>A CNPD pode solicitar o Registo de Atividades de Tratamento em qualquer momento — artigo 30 do RGPD.</p></div>
-    <div class="problem-card"><h3>Contratos sem protecao</h3><p>Fornecedores que acedem a dados pessoais devem assinar clausulas especificas — artigo 28 do RGPD.</p></div>
-  </div>
-</section>
+<div class="content-wrap">
 
-<section class="section" id="como-funciona">
-  <div class="section-tag">Processo</div>
-  <h2 class="section-title">Como funciona</h2>
-  <div class="divider"></div>
-  <div class="steps">
-    <div class="step"><div class="step-num">1</div><div class="step-content"><h3>Reuniao inicial gratuita</h3><p>Sessao de 30 minutos para compreender a atividade da empresa, os dados que trata e o nivel de conformidade atual.</p></div></div>
-    <div class="step"><div class="step-num">2</div><div class="step-content"><h3>Analise do negocio</h3><p>Identificacao das lacunas de conformidade e das obrigacoes aplicaveis ao abrigo do RGPD.</p></div></div>
-    <div class="step"><div class="step-num">3</div><div class="step-content"><h3>Elaboracao da documentacao</h3><p>Preparacao de toda a documentacao legal personalizada — nao sao templates genericos.</p></div></div>
-    <div class="step"><div class="step-num">4</div><div class="step-content"><h3>Entrega e explicacao</h3><p>Entrega da documentacao com explicacao clara do que foi feito e como agir em caso de incidente.</p></div></div>
-    <div class="step"><div class="step-num">5</div><div class="step-content"><h3>Suporte pos-entrega</h3><p>Periodo de suporte incluido para esclarecimento de duvidas e ajustes apos a entrega.</p></div></div>
+  <div class="section">
+    <h2><span class="num">1</span> Responsável pelo Tratamento</h2>
+    <p>A Privus Kuzola, com sede em Portugal, atua como responsável pelo tratamento dos dados pessoais, nos termos do Regulamento (UE) 2016/679 (RGPD).</p>
+    <ul>
+      <li>Email: contacto@privuskuzola.pt</li>
+      <li>Website: privuskuzola.pt</li>
+      <li>País: Portugal (União Europeia)</li>
+    </ul>
   </div>
-</section>
 
-<section class="section section-alt" id="servicos">
-  <div class="services-layout">
-    <div class="services-intro">
-      <div class="section-tag">Servicos</div>
-      <h2 class="section-title">Documentacao completa, adaptada ao seu negocio.</h2>
-      <p style="font-size:15px;color:#64748B;line-height:1.7;margin-bottom:0;">Cada empresa tem uma realidade diferente. A documentacao que elaboramos reflete essa especificidade.</p>
-      <div class="price-block">
-        <div class="price-from">A partir de</div>
-        <div class="price-amount"><span>€</span>250</div>
-        <div class="price-note">Consoante dimensao e complexidade</div>
-      </div>
-    </div>
-    <div class="services-list">
-      <div class="service-item"><div class="service-num">1</div><div class="service-info"><h3>Auditoria RGPD</h3><p>Avaliacao do nivel de conformidade atual da empresa com o Regulamento.</p></div></div>
-      <div class="service-item"><div class="service-num">2</div><div class="service-info"><h3>Politica de Privacidade</h3><p>Documento personalizado que informa os titulares sobre o tratamento dos seus dados.</p></div></div>
-      <div class="service-item"><div class="service-num">3</div><div class="service-info"><h3>Cookies e consentimento</h3><p>Gestao de cookies e mecanismos de consentimento conformes com as diretrizes da CNPD.</p></div></div>
-      <div class="service-item"><div class="service-num">4</div><div class="service-info"><h3>Registo de Atividades de Tratamento</h3><p>Documento interno obrigatorio nos termos do artigo 30 do RGPD.</p></div></div>
-      <div class="service-item"><div class="service-num">5</div><div class="service-info"><h3>Clausulas com subcontratantes</h3><p>Adendas contratuais de protecao de dados para fornecedores — artigo 28 do RGPD.</p></div></div>
-      <div class="service-item"><div class="service-num">6</div><div class="service-info"><h3>Avaliacao de Impacto (DPIA)</h3><p>Analise de risco para tratamentos de dados que possam implicar riscos elevados.</p></div></div>
-      <div class="service-item"><div class="service-num">7</div><div class="service-info"><h3>Acompanhamento</h3><p>Suporte continuo para manter a conformidade a medida que o negocio evolui.</p></div></div>
-    </div>
+  <div class="section">
+    <h2><span class="num">2</span> Dados Recolhidos</h2>
+    <p>O presente website não recolhe dados pessoais através de formulários. O contacto é estabelecido por iniciativa do titular, através de email ou telefone, sendo os dados fornecidos voluntariamente para efeitos de resposta e prestação do serviço.</p>
+    <p>Os dados que podem ser tratados no âmbito desse contacto incluem:</p>
+    <ul>
+      <li>Nome e apelido</li>
+      <li>Endereço de email</li>
+      <li>Número de telefone (opcional)</li>
+      <li>Informações sobre a empresa e a sua situação face ao RGPD</li>
+    </ul>
+    <p>Não recolhemos dados sensíveis, dados de menores, nem dados de pagamento.</p>
   </div>
-</section>
 
-<section class="section section-dark">
-  <div class="section-tag section-tag-light">Porque a Privus Kuzola</div>
-  <h2 class="section-title section-title-light">Uma abordagem juridica, clara e adaptada a sua empresa.</h2>
-  <div class="divider"></div>
-  <div class="why-grid">
-    <div class="why-card"><h3>Abordagem juridica</h3><p>Toda a documentacao e elaborada com base no RGPD e na orientacao da CNPD, sem atalhos nem solucoes genericas.</p></div>
-    <div class="why-card"><h3>Documentacao personalizada</h3><p>Nao utilizamos templates. Cada documento e construido a partir da realidade concreta do seu negocio.</p></div>
-    <div class="why-card"><h3>Foco em PME</h3><p>Trabalhamos exclusivamente com pequenas e medias empresas, com processos ajustados as suas necessidades.</p></div>
-    <div class="why-card"><h3>Processo simples e direto</h3><p>Sem burocracia desnecessaria. Da reuniao inicial a entrega final, o processo e claro e eficiente.</p></div>
-    <div class="why-card"><h3>Formacao especializada</h3><p>Formacao avancada em Protecao de Dados, Ciberseguranca e Privacidade na Uniao Europeia.</p></div>
+  <div class="section">
+    <h2><span class="num">3</span> Finalidades e Base Legal</h2>
+    <p>Os dados pessoais são tratados com base nos seguintes fundamentos jurídicos:</p>
+    <ul>
+      <li><strong style="color:#1B2E4B;">Execução de contrato ou diligências pré-contratuais</strong> — nomeadamente resposta a pedidos de contacto e prestação de serviços de consultoria (Art. 6.º, n.º 1, al. b) do RGPD)</li>
+      <li><strong style="color:#1B2E4B;">Cumprimento de obrigações legais</strong> — nomeadamente obrigações de natureza fiscal e contabilística (Art. 6.º, n.º 1, al. c) do RGPD)</li>
+    </ul>
   </div>
-</section>
 
-<section class="section" id="faq">
-  <div class="faq-wrap">
-    <div style="text-align:center;margin-bottom:48px;">
-      <div class="section-tag" style="display:inline-block;">FAQ</div>
-      <h2 class="section-title" style="margin-top:8px;">Perguntas frequentes</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">O RGPD aplica-se a minha empresa?<span class="faq-icon">+</span></button><div class="faq-a">O RGPD aplica-se a todas as entidades que tratam dados pessoais de pessoas localizadas na Uniao Europeia, independentemente da sua nacionalidade. Se a sua empresa recolhe nomes, emails, documentos ou qualquer outro dado pessoal, esta abrangida pelo Regulamento.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Ja tenho uma politica de privacidade. Nao chega?<span class="faq-icon">+</span></button><div class="faq-a">Na maioria dos casos, nao. A CNPD exige que a documentacao reflita especificamente as atividades de tratamento da sua empresa. Uma politica generica copiada da internet nao cumpre este requisito e pode mesmo agravar a situacao em caso de fiscalizacao.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Quanto tempo demora o processo?<span class="faq-icon">+</span></button><div class="faq-a">A documentacao e entregue em media em 5 dias uteis apos a reuniao inicial. A reuniao inicial e gratuita, tem a duracao de 30 minutos e serve para compreender a realidade do seu negocio.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Qual o custo do servico?<span class="faq-icon">+</span></button><div class="faq-a">Os valores comecam a partir de 250€ e sao definidos em funcao da dimensao e complexidade do negocio. O valor final e apresentado apos a reuniao inicial gratuita, sem qualquer compromisso da sua parte.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">O que acontece se a CNPD me fiscalizar?<span class="faq-icon">+</span></button><div class="faq-a">O incumprimento do RGPD pode resultar em coimas ate 20.000.000€ ou 4% do volume de negocios anual global, nos termos do artigo 83 do Regulamento. A conformidade previa e sempre mais vantajosa do que a reacao posterior.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">O atendimento e presencial ou online?<span class="faq-icon">+</span></button><div class="faq-a">Disponibilizamos atendimento presencial e online, conforme a preferencia do cliente. O nome Kuzola significa visita em Kimbundo — deslocamo-nos ao seu negocio sempre que necessario.</div></div>
+  <div class="section">
+    <h2><span class="num">4</span> Conservação dos Dados</h2>
+    <p>Os dados pessoais são conservados apenas pelo período estritamente necessário às finalidades para que foram recolhidos, sem prejuízo dos prazos legais aplicáveis.</p>
+    <p>A título indicativo, aplicam-se os seguintes prazos:</p>
+    <ul>
+      <li>Pedidos de contacto sem conversão em cliente: <strong style="color:#1B2E4B;">6 meses</strong></li>
+      <li>Dados de clientes (durante e após prestação de serviços): <strong style="color:#1B2E4B;">5 anos</strong>, nos termos da legislação fiscal portuguesa</li>
+    </ul>
+    <p>Findo este prazo, os dados são eliminados de forma segura.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">5</span> Partilha com Terceiros</h2>
+    <p>A Privus Kuzola não vende, aluga nem partilha os seus dados pessoais com terceiros para fins comerciais.</p>
+    <p>Os dados pessoais podem ser partilhados com prestadores de serviços que atuem como subcontratantes, nos termos do artigo 28.º do RGPD, nomeadamente serviços de alojamento web e gestão de comunicações, apenas na medida do necessário e mediante garantias contratuais adequadas.</p>
+    <p>Os dados podem ainda ser comunicados a autoridades competentes quando tal seja legalmente exigido.</p>
+  </div>
+
+  <div class="section">
+    <h2><span class="num">6</span> Cookies</h2>
+    <p>Este website utiliza apenas cookies técnicos essenciais ao seu funcionamento. Não são utilizados cookies que impliquem tratamento de dados pessoais para fins de marketing ou análise comportamental, nomeadamente cookies de rastreamento, publicidade ou analítica de terceiros.</p>
+    <div class="highlight-box">
+      <p>✓ Sem Google Analytics · Sem Facebook Pixel · Sem cookies de publicidade</p>
     </div>
   </div>
-</section>
 
-<section class="cta-banner">
-  <h2>Solicitar proposta</h2>
-  <p>Agende uma reuniao inicial gratuita para analisar a conformidade do seu negocio com o RGPD.</p>
-  <a href="mailto:contacto@privuskuzola.pt?subject=Avaliacao%20RGPD%20gratuita" class="btn-primary">Agendar reuniao gratuita</a>
-</section>
-
-<section class="section" id="contacto">
-  <div class="contact-layout">
-    <div>
-      <div class="section-tag">Contacto</div>
-      <h2 class="section-title">Fale connosco.</h2>
-      <p style="font-size:16px;color:#64748B;line-height:1.7;">Resposta em menos de 24 horas. A reuniao inicial e gratuita e sem compromisso.</p>
-      <div class="contact-details">
-        <div class="contact-detail"><div class="contact-detail-icon">@</div><div>contacto@privuskuzola.pt</div></div>
-        <div class="contact-detail"><div class="contact-detail-icon">T</div><div>+351 912 535 265</div></div>
-        <div class="contact-detail"><div class="contact-detail-icon">PT</div><div>Portugal · Presencial e online</div></div>
-      </div>
-    </div>
-    <div>
-      <div class="contact-box">
-        <h3>Envie-nos um email</h3>
-        <p>Clique no botao abaixo para nos contactar directamente. Respondemos em menos de 24 horas.</p>
-        <a href="mailto:contacto@privuskuzola.pt?subject=Avaliacao%20RGPD%20gratuita" class="btn-primary">Enviar email</a>
-        <p class="contact-email">contacto@privuskuzola.pt</p>
-      </div>
-    </div>
+  <div class="section">
+    <h2><span class="num">7</span> Os Seus Direitos</h2>
+    <p>Nos termos dos artigos 15.º a 22.º do Regulamento (UE) 2016/679 (RGPD), o titular dos dados tem os seguintes direitos:</p>
+    <ul>
+      <li><strong style="color:#1B2E4B;">Acesso</strong> — saber que dados temos sobre si</li>
+      <li><strong style="color:#1B2E4B;">Retificação</strong> — corrigir dados inexatos ou incompletos</li>
+      <li><strong style="color:#1B2E4B;">Apagamento</strong> — solicitar a eliminação dos seus dados ("direito a ser esquecido")</li>
+      <li><strong style="color:#1B2E4B;">Limitação</strong> — restringir o tratamento em determinadas circunstâncias</li>
+      <li><strong style="color:#1B2E4B;">Portabilidade</strong> — receber os seus dados em formato estruturado</li>
+      <li><strong style="color:#1B2E4B;">Oposição</strong> — opor-se ao tratamento em determinadas circunstâncias</li>
+    </ul>
+    <p>Para exercer qualquer destes direitos, contacte-nos através de contacto@privuskuzola.pt. Respondemos em 30 dias.</p>
   </div>
-</section>
 
-<footer>
-  <div class="footer-logo">
-    <svg width="24" height="30" viewBox="0 0 360 480" xmlns="http://www.w3.org/2000/svg">
-      <rect x="56" y="26" width="248" height="418" rx="7" fill="#60A5FA" opacity="0.7"/>
-      <rect x="72" y="46" width="216" height="130" rx="5" fill="white" opacity="0.15"/>
-      <rect x="72" y="192" width="216" height="170" rx="5" fill="white" opacity="0.15"/>
-      <circle cx="270" cy="290" r="14" fill="white" opacity="0.9"/>
-    </svg>
-    <span class="p1">PRIVUS&nbsp;</span><span class="p2">KUZOLA</span>
+  <div class="section">
+    <h2><span class="num">8</span> Transferências Internacionais</h2>
+    <p>Caso recorramos a prestadores de serviços que impliquem transferências internacionais de dados pessoais para fora do Espaço Económico Europeu, asseguramos que as mesmas são realizadas com base em mecanismos legais adequados, incluindo, quando aplicável, cláusulas contratuais-tipo aprovadas pela Comissão Europeia, nos termos dos artigos 44.º e seguintes do RGPD.</p>
   </div>
-  <div class="footer-text">© 2025 Privus Kuzola · Consultoria RGPD · Portugal</div>
-  <a href="politica-privacidade.html">Politica de Privacidade</a>
-</footer>
 
-<script>
-function toggleFaq(btn){
-  var item=btn.closest('.faq-item');
-  var isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
-  if(!isOpen)item.classList.add('open');
-}
-</script>
+  <div class="section">
+    <h2><span class="num">8a</span> Medidas de Segurança</h2>
+    <p>Nos termos do artigo 32.º do RGPD, adotamos medidas técnicas e organizativas adequadas para proteger os dados pessoais contra perda, acesso não autorizado, alteração ou divulgação não autorizada, incluindo medidas como controlo de acessos, encriptação e backups seguros, tendo em conta o estado da técnica, os custos de aplicação e a natureza dos dados tratados.</p>
+  </div>
 
-</body>
-</html>
+  <div class="section">
+    <h2><span class="num">9</span> Reclamações</h2>
+    <p>Caso considere que o tratamento dos seus dados viola o RGPD, tem o direito de apresentar reclamação junto da autoridade de controlo competente em Portugal:</p>
+    <div class="highlight-box">
+      <p><strong style="color:#1B2E4B;">CNPD — Comissão Nacional de Proteção de Dados
