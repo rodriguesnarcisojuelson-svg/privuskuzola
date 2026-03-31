@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="pt">
+<html lang="pt" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -132,6 +132,14 @@ footer{background:#0F1C2E;padding:36px 5%;display:flex;align-items:center;justif
 .footer-logo .p2{font-family:‘Arial Black’,Arial,sans-serif;font-size:13px;font-weight:900;color:#ffffff;}
 .footer-text{font-size:13px;color:rgba(255,255,255,0.3);}
 footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
+.lang-toggle{display:flex;align-items:center;gap:4px;background:#F1F5F9;border-radius:6px;padding:4px;margin-left:8px;}
+.lang-btn{padding:5px 12px;border-radius:4px;font-size:13px;font-weight:600;cursor:pointer;border:none;background:transparent;color:#64748B;font-family:-apple-system,sans-serif;transition:all 0.2s;}
+.lang-btn.active{background:#ffffff;color:#1B2E4B;box-shadow:0 1px 3px rgba(0,0,0,0.1);}
+[lang=“en”] .pt-content{display:none;}
+[lang=“en”] .en-content{display:block;}
+[lang=“pt”] .en-content{display:none;}
+[lang=“pt”] .pt-content{display:block;}
+.en-content{display:none;}
 
 /* QUOTE BOX */
 .quote-box{background:#EFF6FF;border-left:3px solid #2563EB;padding:16px 20px;border-radius:0 6px 6px 0;font-size:15px;color:#1E40AF;font-style:italic;margin-bottom:48px;}
@@ -164,8 +172,9 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
     <li><a href="#como-funciona">Como funciona</a></li>
     <li><a href="#servicos">Serviços</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#contacto" class="nav-cta">Contactar</a></li>
+    <li><a href="#contacto" class="nav-cta pt-content">Contactar</a><a href="#contacto" class="nav-cta en-content">Contact</a></li>
   </ul>
+  <div class="lang-toggle"><button class="lang-btn active" onclick="setLang('pt')">PT</button><button class="lang-btn" onclick="setLang('en')">EN</button></div>
 </nav>
 
 <!-- HERO -->
@@ -174,12 +183,12 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
   <div class="hero-bg"></div>
   <div class="hero-grid"></div>
   <div class="hero-content">
-    <div class="hero-tag">Consultoria RGPD · Portugal</div>
-    <h1>Protegemos os seus dados.<br><em>E o seu negócio.</em></h1>
-    <p class="hero-sub">Consultoria especializada em Proteção de Dados (RGPD) para empresas em Portugal.</p>
+    <div class="hero-tag pt-content">Consultoria RGPD · Portugal</div><div class="hero-tag en-content">GDPR Consultancy · Portugal</div>
+    <h1 class="pt-content">Protegemos os seus dados.<br><em>E o seu negócio.</em></h1><h1 class="en-content">We protect your data.<br><em>And your business.</em></h1>
+    <p class="hero-sub pt-content">Consultoria especializada em Proteção de Dados (RGPD) para empresas em Portugal.</p><p class="hero-sub en-content">Specialised GDPR and Data Protection consultancy for businesses operating in Portugal.</p>
     <div class="hero-actions">
       <a href="/cdn-cgi/l/email-protection#44272b2a302527302b0434362d3231372f313e2b28256a34307b3731262e212730791421202d202b6176742021617674253225282d256107776105736107776105772b6176741603140061767423362530312d3025" class="btn-primary">Avaliação RGPD gratuita (30 minutos)</a>
-      <a href="#servicos" class="btn-secondary">Ver serviços</a>
+      <a href="#servicos" class="btn-secondary pt-content">Ver serviços</a><a href="#servicos" class="btn-secondary en-content">View services</a>
     </div>
     <div class="hero-stats">
       <div><div class="stat-num">250€</div><div class="stat-label">A partir de</div></div>
@@ -192,8 +201,8 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
 <!-- PROBLEM -->
 
 <section class="section section-alt">
-  <div class="section-tag">O problema</div>
-  <h2 class="section-title">A sua empresa trata dados pessoais todos os dias.<br>Está em conformidade?</h2>
+  <div class="section-tag pt-content">O problema</div><div class="section-tag en-content">The problem</div>
+  <h2 class="section-title pt-content">A sua empresa trata dados pessoais todos os dias.<br>Está em conformidade?</h2><h2 class="section-title en-content">Your business processes personal data every day.<br>Are you compliant?</h2>
   <div class="quote-box">A conformidade com o RGPD não depende da dimensão do negócio, mas da forma como os dados são tratados.</div>
   <div class="problem-grid">
     <div class="problem-card"><h3>Sem política de privacidade</h3><p>O website não informa sobre o tratamento de dados — uma obrigação legal desde 2018.</p></div>
@@ -206,8 +215,8 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
 <!-- HOW IT WORKS -->
 
 <section class="section" id="como-funciona">
-  <div class="section-tag">Processo</div>
-  <h2 class="section-title">Como funciona</h2>
+  <div class="section-tag pt-content">Processo</div><div class="section-tag en-content">Process</div>
+  <h2 class="section-title pt-content">Como funciona</h2><h2 class="section-title en-content">How it works</h2>
   <div class="divider"></div>
   <div class="steps">
     <div class="step">
@@ -238,8 +247,8 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
 <section class="section section-alt" id="servicos">
   <div class="services-layout">
     <div class="services-intro">
-      <div class="section-tag">Serviços</div>
-      <h2 class="section-title">Documentação completa, adaptada ao seu negócio.</h2>
+      <div class="section-tag pt-content">Serviços</div><div class="section-tag en-content">Services</div>
+      <h2 class="section-title pt-content">Documentação completa, adaptada ao seu negócio.</h2><h2 class="section-title en-content">Complete documentation, tailored to your business.</h2>
       <p style="font-size:15px;color:#64748B;line-height:1.7;margin-bottom:0;">Cada empresa tem uma realidade diferente. A documentação que elaboramos reflete essa especificidade.</p>
       <div class="price-block">
         <div class="price-from">A partir de</div>
@@ -262,8 +271,8 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
 <!-- WHY US -->
 
 <section class="section section-dark">
-  <div class="section-tag section-tag-light">Porquê a Privus Kuzola</div>
-  <h2 class="section-title section-title-light">Uma abordagem jurídica, clara e adaptada à sua empresa.</h2>
+  <div class="section-tag section-tag-light pt-content">Porquê a Privus Kuzola</div><div class="section-tag section-tag-light en-content">Why Privus Kuzola</div>
+  <h2 class="section-title section-title-light pt-content">Uma abordagem jurídica, clara e adaptada à sua empresa.</h2><h2 class="section-title section-title-light en-content">A legal, clear and tailored approach to your business.</h2>
   <div class="divider"></div>
   <div class="why-grid">
     <div class="why-card"><h3>Abordagem jurídica</h3><p>Toda a documentação é elaborada com base no RGPD e na orientação da CNPD, sem atalhos nem soluções genéricas.</p></div>
@@ -306,11 +315,11 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
 <section class="section" id="contacto">
   <div class="contact-layout">
     <div>
-      <div class="section-tag">Contacto</div>
-      <h2 class="section-title">Fale connosco.</h2>
-      <p class="contact-info p">Resposta em menos de 24 horas. A reunião inicial é gratuita e sem compromisso.</p>
+      <div class="section-tag pt-content">Contacto</div><div class="section-tag en-content">Contact</div>
+      <h2 class="section-title pt-content">Fale connosco.</h2><h2 class="section-title en-content">Get in touch.</h2>
+      <p class="contact-info p pt-content">Resposta em menos de 24 horas. A reunião inicial é gratuita e sem compromisso.</p><p class="contact-info p en-content">Response within 24 hours. The initial meeting is free and without commitment.</p>
       <div class="contact-details">
-        <div class="contact-detail"><div class="contact-detail-icon">@</div><div>contacto@privuskuzola.pt</div></div>
+        <div class="contact-detail"><div class="contact-detail-icon">@</div><div><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="d2b1bdbca6b3b1a6bd92a2a0bba4a7a1b9a7a8bdbeb3fca2a6">[email&#160;protected]</a></div></div>
         <div class="contact-detail"><div class="contact-detail-icon">T</div><div>+351 912 535 265</div></div>
         <div class="contact-detail"><div class="contact-detail-icon">PT</div><div>Portugal · Presencial e online</div></div>
       </div>
@@ -318,10 +327,10 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
     <div>
       <div class="contact-form" style="text-align:center;padding:48px 32px;">
         <div style="font-size:48px;margin-bottom:20px;color:#2563EB;">&#9993;</div>
-        <h3 style="font-family:Georgia,serif;font-size:20px;color:#1B2E4B;margin-bottom:12px;font-weight:400;">Envie-nos um email</h3>
-        <p style="font-size:14px;color:#64748B;margin-bottom:28px;line-height:1.7;">Clique no botão abaixo para nos contactar directamente. Respondemos em menos de 24 horas.</p>
-        <a href="mailto:contacto@privuskuzola.pt?subject=Pedido%20de%20avalia%C3%A7%C3%A3o%20RGPD%20gratuita" class="btn-primary" style="display:inline-block;margin-bottom:20px;">Enviar email</a>
-        <p style="font-size:13px;color:#94A3B8;">contacto@privuskuzola.pt</p>
+        <h3 class="pt-content" style="font-family:Georgia,serif;font-size:20px;color:#1B2E4B;margin-bottom:12px;font-weight:400;">Envie-nos um email</h3><h3 class="en-content" style="font-family:Georgia,serif;font-size:20px;color:#1B2E4B;margin-bottom:12px;font-weight:400;">Send us an email</h3>
+        <p class="pt-content" style="font-size:14px;color:#64748B;margin-bottom:28px;line-height:1.7;">Clique no botão abaixo para nos contactar directamente. Respondemos em menos de 24 horas.</p><p class="en-content" style="font-size:14px;color:#64748B;margin-bottom:28px;line-height:1.7;">Click the button below to contact us directly. We respond within 24 hours.</p>
+        <a href="/cdn-cgi/l/email-protection#6c0f0302180d0f18032c1c1e051a191f07191603000d421c18531f190e06090f18513c0908050803495e5c0809495e5c0d1a0d00050d492f5f492d5b492f5f492d5f03495e5c3e2b3c28495e5c0b1e0d181905180d" class="btn-primary" style="display:inline-block;margin-bottom:20px;">Enviar email</a>
+        <p style="font-size:13px;color:#94A3B8;"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="97f4f8f9e3f6f4e3f8d7e7e5fee1e2e4fce2edf8fbf6b9e7e3">[email&#160;protected]</a></p>
       </div>
     </div>
   </div>
@@ -338,17 +347,4 @@ footer a{color:#60A5FA;text-decoration:none;font-size:13px;}
     <span class="p1">PRIVUS&nbsp;</span><span class="p2">KUZOLA</span>
   </div>
     <div class="footer-text">© 2025 Privus Kuzola · Consultoria RGPD · Portugal</div>
-  <a href="./politica-privacidade.html" style="color:#60A5FA;text-decoration:none;font-size:13px;">Política de Privacidade</a>
-</footer>
-
-<script>
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item');
-  const isOpen=item.classList.contains('open');
-  document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
-  if(!isOpen)item.classList.add('open');
-}
-</script>
-
-</body>
-</html>
+  <a href="./politica-privacidade.html" style="c
