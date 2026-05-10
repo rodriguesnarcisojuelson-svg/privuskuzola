@@ -3,30 +3,48 @@
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Página não encontrada — Privus Kuzola</title>
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Página não encontrada — Privus Kuzola</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
+:root{--ink:#0A1628;--ink-mid:#0F1E35;--sand:#C8A96E;--sand-lt:#E8D5A8;--white:#FFFFFF;--stone:#8896A8;--stone-lt:#B0BDCC;--line:rgba(255,255,255,0.06);--line-sand:rgba(200,169,110,0.2)}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Outfit',sans-serif;background:#0D1B2A;color:#fff;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:2rem;-webkit-font-smoothing:antialiased}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:#fff;text-decoration:none;margin-bottom:4rem;display:block}
-.logo span{color:#C8A96E}
-.code{font-family:'Cormorant Garamond',serif;font-size:6rem;font-weight:600;color:rgba(200,169,110,.15);line-height:1;margin-bottom:1.5rem}
-h1{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;margin-bottom:1rem}
-p{font-size:.9rem;font-weight:300;color:#94A3B8;margin-bottom:2.5rem;line-height:1.7;max-width:400px}
-a.btn{background:#C8A96E;color:#0D1B2A;padding:.85rem 2rem;border-radius:2px;font-weight:600;font-size:.875rem;text-decoration:none;transition:background .2s}
-a.btn:hover{background:#E8D5A8}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;-webkit-font-smoothing:antialiased;text-align:center}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.12em;color:var(--white);text-decoration:none;margin-bottom:4rem;display:block}
+.logo span{color:var(--sand)}
+.code{
+  font-family:'Bebas Neue',sans-serif;
+  font-size:8rem;letter-spacing:.06em;line-height:1;
+  color:rgba(200,169,110,.12);margin-bottom:1.5rem;
+}
+.eyebrow{
+  font-family:'DM Mono',monospace;font-size:.62rem;
+  letter-spacing:.18em;text-transform:uppercase;
+  color:var(--sand);margin-bottom:.75rem;
+}
+h1{font-family:'Bebas Neue',sans-serif;font-size:2rem;letter-spacing:.06em;margin-bottom:1rem}
+p{font-size:.875rem;font-weight:300;color:var(--stone-lt);line-height:1.7;max-width:380px;margin:0 auto 2.5rem}
+.btn{
+  display:inline-block;background:var(--sand);color:var(--ink);
+  padding:.875rem 2.5rem;font-family:'DM Sans',sans-serif;
+  font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+  text-decoration:none;transition:background .2s;
+}
+.btn:hover{background:var(--sand-lt)}
+.btn:focus{outline:2px solid var(--sand-lt);outline-offset:2px}
 </style>
 </head>
 <body>
-  <a href="/" class="logo">Privus <span>Kuzola</span></a>
-  <div class="code">404</div>
-  <h1>Página não encontrada</h1>
-  <p>A página que procura não existe ou foi movida. Volte à página principal para continuar.</p>
-  <a href="/" class="btn">Voltar ao início</a>
+  <a href="index.html" class="logo" aria-label="Privus Kuzola — página inicial">PRIVUS <span>KUZOLA</span></a>
+  <div class="code" aria-hidden="true">404</div>
+  <div class="eyebrow">// Página não encontrada</div>
+  <h1>ESTA PÁGINA NÃO EXISTE</h1>
+  <p>A página que procura foi removida, mudou de endereço ou nunca existiu. Volte ao início para continuar.</p>
+  <a href="index.html" class="btn">VOLTAR AO INÍCIO</a>
 </body>
 </html>
