@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Score de Maturidade Regulatória — Privus Kuzola</title>
+<meta name="description" content="Calcule gratuitamente o Score de Maturidade Regulatória da sua empresa. 18 perguntas, 5 minutos, resultado imediato.">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1628'/><text y='26' x='3' font-size='26' font-family='serif' fill='%23C8A96E'>P</text></svg>">
+<style>
+:root{
+  --ink:#0A1628;--ink-mid:#0F1E35;--ink-soft:#162540;
+  --sand:#C8A96E;--sand-lt:#E8D5A8;--sand-dk:#A8893E;
+  --white:#FFFFFF;--stone:#8896A8;--stone-lt:#B0BDCC;
+  --line:rgba(255,255,255,0.06);--line-sand:rgba(200,169,110,0.2);
+  --red:#C0392B;--amber:#D97706;--green:#16A34A;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);min-height:100vh;-webkit-font-smoothing:antialiased}
+
+/* NAV */
+.nav{background:rgba(10,22,40,0.96);backdrop-filter:blur(16px);border-bottom:1px solid var(–line);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+.nav-logo{font-family:‘Bebas Neue’,sans-serif;font-size:1.3rem;letter-spacing:.12em;color:var(–white);text-decoration:none}
+.nav-logo span{color:var(–sand)}
+.nav-back{font-family:‘DM Mono’,monospace;font-size:.62rem;letter-spacing:.1em;color:var(–stone);text-decoration:none;transition:color .2s}
+.nav-back:hover{color:var(–white)}
+
+/* CONTAINER */
+.wrap{max-width:680px;margin:0 auto;padding:3rem 2rem 5rem}
+
+/* INTRO */
+.intro{text-align:center;margin-bottom:3rem}
+.intro-tag{
+display:inline-block;font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;
+color:var(–sand);padding:.3rem .8rem;
+border:1px solid var(–line-sand);margin-bottom:1.5rem;
+}
+.intro h1{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:clamp(2.5rem,6vw,4rem);
+letter-spacing:.06em;line-height:.95;
+margin-bottom:1.25rem;
+}
+.intro h1 span{color:var(–sand)}
+.intro p{
+font-size:.9rem;font-weight:300;color:var(–stone-lt);
+line-height:1.75;max-width:480px;margin:0 auto 1.5rem;
+}
+.intro-stats{display:flex;gap:2rem;justify-content:center;flex-wrap:wrap}
+.stat-item{
+font-family:‘DM Mono’,monospace;font-size:.62rem;
+letter-spacing:.1em;color:var(–stone);
+display:flex;align-items:center;gap:.4rem;
+}
+.stat-item::before{content:’//’;color:var(–sand-dk)}
+
+/* PROGRESS */
+.progress-wrap{margin-bottom:2.5rem}
+.progress-info{
+display:flex;justify-content:space-between;
+font-family:‘DM Mono’,monospace;font-size:.62rem;
+letter-spacing:.08em;color:var(–stone);margin-bottom:.5rem;
+}
+.progress-track{height:2px;background:rgba(255,255,255,.06)}
+.progress-fill{height:100%;background:var(–sand);transition:width .4s ease;width:0%}
+
+/* DIMENSION */
+.dim-header{
+padding-bottom:1.25rem;margin-bottom:2rem;
+border-bottom:1px solid var(–line);
+}
+.dim-meta{
+font-family:‘DM Mono’,monospace;font-size:.6rem;
+letter-spacing:.15em;text-transform:uppercase;
+color:var(–sand-dk);margin-bottom:.5rem;
+}
+.dim-title{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.8rem;letter-spacing:.06em;
+}
+
+/* QUESTION */
+.question{margin-bottom:1.5rem}
+.question-text{
+font-size:.9rem;font-weight:400;color:var(–stone-lt);
+line-height:1.65;margin-bottom:.35rem;
+}
+.question-note{
+font-family:‘DM Mono’,monospace;font-size:.6rem;
+letter-spacing:.06em;color:var(–stone);
+margin-bottom:1rem;
+}
+.options{display:grid;grid-template-columns:1fr 1fr;gap:.4rem}
+.opt{
+padding:.65rem .875rem;
+background:rgba(255,255,255,.02);
+border:1px solid rgba(255,255,255,.07);
+color:var(–stone);font-family:‘DM Sans’,sans-serif;
+font-size:.8rem;font-weight:300;cursor:pointer;
+text-align:left;transition:all .2s;line-height:1.4;
+}
+.opt:hover{border-color:var(–line-sand);color:var(–stone-lt)}
+.opt.selected{background:rgba(200,169,110,.08);border-color:var(–sand);color:var(–white)}
+.opt:focus{outline:2px solid var(–sand);outline-offset:2px}
+
+/* NAV BUTTONS */
+.nav-btns{display:flex;justify-content:space-between;align-items:center;margin-top:2rem}
+.btn-prev{
+background:transparent;color:var(–stone);
+border:1px solid var(–line);padding:.7rem 1.5rem;
+font-family:‘DM Mono’,monospace;font-size:.65rem;
+letter-spacing:.1em;cursor:pointer;transition:all .2s;
+}
+.btn-prev:hover{color:var(–white);border-color:rgba(255,255,255,.2)}
+.btn-next{
+background:var(–sand);color:var(–ink);border:none;
+padding:.7rem 2rem;font-family:‘DM Sans’,sans-serif;
+font-size:.8rem;font-weight:600;letter-spacing:.06em;
+cursor:pointer;transition:background .2s;
+}
+.btn-next:hover{background:var(–sand-lt)}
+.btn-next:disabled{background:rgba(200,169,110,.2);color:rgba(10,22,40,.4);cursor:not-allowed}
+.btn-next:focus,.btn-prev:focus{outline:2px solid var(–sand);outline-offset:2px}
+
+/* EMAIL GATE */
+.email-gate{text-align:center;padding:2rem 0}
+.email-gate h2{font-family:‘Bebas Neue’,sans-serif;font-size:2.2rem;letter-spacing:.06em;margin-bottom:.75rem}
+.email-gate p{font-size:.875rem;font-weight:300;color:var(–stone-lt);margin-bottom:2rem;line-height:1.65}
+.email-form-wrap{max-width:420px;margin:0 auto}
+.field{margin-bottom:.875rem;text-align:left}
+.field label{
+display:block;font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+color:var(–stone);margin-bottom:.35rem;
+}
+.field input{
+width:100%;background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);color:var(–white);
+padding:.7rem .875rem;font-family:‘DM Sans’,sans-serif;
+font-size:.875rem;outline:none;transition:border-color .2s;
+}
+.field input:focus{border-color:var(–sand);box-shadow:0 0 0 3px rgba(200,169,110,.1)}
+.btn-reveal{
+width:100%;padding:.875rem;background:var(–sand);color:var(–ink);
+border:none;font-family:‘DM Sans’,sans-serif;
+font-size:.85rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;
+cursor:pointer;transition:background .2s;margin-top:.5rem;
+}
+.btn-reveal:hover{background:var(–sand-lt)}
+.btn-reveal:focus{outline:2px solid var(–sand-lt);outline-offset:2px}
+
+/* RESULT */
+.result{display:none}
+.result.show{display:block}
+
+.score-panel{
+background:var(–ink-mid);border:1px solid var(–line);
+padding:2.5rem;text-align:center;margin-bottom:2rem;
+}
+.score-eyebrow{
+font-family:‘DM Mono’,monospace;font-size:.6rem;
+letter-spacing:.18em;text-transform:uppercase;
+color:var(–stone);margin-bottom:1rem;
+}
+.score-number{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:7rem;letter-spacing:.04em;line-height:1;
+color:var(–white);margin-bottom:.25rem;
+}
+.score-number span{font-size:2.5rem;color:var(–stone)}
+.score-class{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.4rem;letter-spacing:.1em;margin-bottom:.5rem;
+}
+.score-desc{
+font-size:.82rem;font-weight:300;color:var(–stone);
+line-height:1.6;max-width:400px;margin:0 auto;
+}
+
+/* DIM SCORES */
+.dim-results{margin-bottom:2rem}
+.dim-results h3{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.2rem;letter-spacing:.08em;
+margin-bottom:1rem;padding-bottom:.75rem;
+border-bottom:1px solid var(–line);
+}
+.dim-row{
+display:flex;align-items:center;gap:1rem;
+padding:.6rem 0;border-bottom:1px solid rgba(255,255,255,.04);
+}
+.dim-row-name{font-size:.8rem;font-weight:300;color:var(–stone);flex:1;min-width:0}
+.dim-row-bar{width:100px;height:3px;background:rgba(255,255,255,.06);flex-shrink:0}
+.dim-row-fill{height:100%;transition:width 1s ease}
+.dim-row-val{
+font-family:‘DM Mono’,monospace;font-size:.7rem;
+letter-spacing:.06em;width:32px;text-align:right;flex-shrink:0;
+}
+
+/* RISKS */
+.risks-panel{margin-bottom:2rem}
+.risks-panel h3{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.2rem;letter-spacing:.08em;
+margin-bottom:1rem;padding-bottom:.75rem;
+border-bottom:1px solid var(–line);
+}
+.risk-item{
+padding:1rem 1.25rem;
+background:rgba(192,57,43,.06);
+border:1px solid rgba(192,57,43,.15);
+margin-bottom:.6rem;
+}
+.risk-name{
+font-family:‘DM Mono’,monospace;font-size:.6rem;
+letter-spacing:.1em;text-transform:uppercase;
+color:#E57373;margin-bottom:.35rem;
+}
+.risk-desc{font-size:.8rem;font-weight:300;color:var(–stone);line-height:1.55}
+
+/* SECTOR */
+.sector-wrap{margin-bottom:2rem}
+.sector-wrap h3{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.2rem;letter-spacing:.08em;
+margin-bottom:.5rem;
+}
+.sector-wrap p{font-size:.82rem;font-weight:300;color:var(–stone);margin-bottom:1.25rem}
+.sector-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:.5rem}
+.sector-btn{
+padding:1.25rem 1rem;text-align:center;
+background:var(–ink-mid);border:1px solid var(–line);
+cursor:pointer;transition:all .2s;font-family:‘DM Sans’,sans-serif;
+}
+.sector-btn:hover{border-color:var(–line-sand)}
+.sector-btn.selected{background:rgba(200,169,110,.08);border-color:var(–sand)}
+.sector-btn:focus{outline:2px solid var(–sand);outline-offset:2px}
+.sector-name{font-size:.82rem;font-weight:600;margin-bottom:.3rem}
+.sector-price{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.5rem;letter-spacing:.04em;color:var(–sand);
+}
+
+/* CTA */
+.result-cta{
+background:var(–ink-mid);border:1px solid var(–line-sand);
+padding:2rem;text-align:center;display:none;
+}
+.result-cta.show{display:block}
+.result-cta h3{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.4rem;letter-spacing:.06em;margin-bottom:.75rem;
+}
+.result-cta p{
+font-size:.82rem;font-weight:300;color:var(–stone);
+margin-bottom:1.5rem;line-height:1.65;
+}
+.btn-cta{
+display:inline-block;background:var(–sand);color:var(–ink);
+padding:.875rem 2.5rem;font-family:‘DM Sans’,sans-serif;
+font-size:.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+text-decoration:none;transition:background .2s;
+}
+.btn-cta:hover{background:var(–sand-lt)}
+.btn-cta:focus{outline:2px solid var(–sand-lt);outline-offset:2px}
+.cta-note{
+font-family:‘DM Mono’,monospace;font-size:.6rem;
+letter-spacing:.06em;color:var(–stone);margin-top:.75rem;
+}
+
+/* STEPS */
+.step{display:none}
+.step.active{display:block}
+
+@media(max-width:600px){
+.options{grid-template-columns:1fr}
+.sector-grid{grid-template-columns:1fr}
+.score-number{font-size:5rem}
+.intro-stats{gap:1.25rem}
+}
+</style>
+
+</head>
+<body>
+
+<nav class="nav">
+  <a href="index.html" class="nav-logo">PRIVUS <span>KUZOLA</span></a>
+  <a href="index.html" class="nav-back">← Voltar ao site</a>
+</nav>
+
+<div class="wrap">
+
+  <!-- INTRO -->
+
+  <div class="intro">
+    <div class="intro-tag">Diagnóstico Gratuito</div>
+    <h1>SCORE DE<br>MATURIDADE<br><span>REGULATÓRIA</span></h1>
+    <p>18 perguntas. 5 minutos. Descubra onde está exposto antes que a CNPD o descubra primeiro.</p>
+    <div class="intro-stats">
+      <div class="stat-item">18 perguntas</div>
+      <div class="stat-item">9 dimensões</div>
+      <div class="stat-item">Resultado imediato</div>
+    </div>
+  </div>
+
+  <!-- FORM -->
+
+  <div id="calcForm">
+    <div class="progress-wrap">
+      <div class="progress-info">
+        <span id="progressText">Dimensão 1 de 9</span>
+        <span id="progressPct">0%</span>
+      </div>
+      <div class="progress-track"><div class="progress-fill" id="progressFill"></div></div>
+    </div>
+    <div id="stepsContainer"></div>
+
+```
+<!-- EMAIL GATE -->
+<div class="step" id="stepEmail">
+  <div class="email-gate">
+    <h2>O SEU SCORE ESTÁ PRONTO.</h2>
+    <p>Introduza o seu email para ver o resultado completo.<br>Enviamos também uma cópia com as recomendações prioritárias.</p>
+    <div class="email-form-wrap">
+      <div class="field">
+        <label for="inputNome">Nome *</label>
+        <input type="text" id="inputNome" placeholder="João Silva" autocomplete="name" required>
+      </div>
+      <div class="field">
+        <label for="inputEmail">Email *</label>
+        <input type="email" id="inputEmail" placeholder="joao@empresa.pt" autocomplete="email" required>
+      </div>
+      <div class="field">
+        <label for="inputEmpresa">Empresa</label>
+        <input type="text" id="inputEmpresa" placeholder="Empresa Lda" autocomplete="organization">
+      </div>
+      <button class="btn-reveal" onclick="showResult()">VER O MEU SCORE →</button>
+    </div>
+  </div>
+</div>
+
+<div class="nav-btns" id="navBtns">
+  <button class="btn-prev" id="btnPrev" onclick="prevStep()" style="visibility:hidden">← ANTERIOR</button>
+  <button class="btn-next" id="btnNext" onclick="nextStep()" disabled>SEGUINTE →</button>
+</div>
+```
+
+  </div>
+
+  <!-- RESULT -->
+
+  <div class="result" id="resultSection">
+
+```
+<div class="score-panel">
+  <div class="score-eyebrow">Score de Maturidade Regulatória</div>
+  <div class="score-number" id="scoreDisplay">0<span>/100</span></div>
+  <div class="score-class" id="scoreClass"></div>
+  <div class="score-desc" id="scoreDesc"></div>
+</div>
+
+<div class="dim-results">
+  <h3>RESULTADO POR DIMENSÃO</h3>
+  <div id="dimContainer"></div>
+</div>
+
+<div class="risks-panel">
+  <h3>ÁREAS CRÍTICAS IDENTIFICADAS</h3>
+  <div id="risksContainer"></div>
+</div>
+
+<div class="sector-wrap">
+  <h3>SELECCIONE O SEU PERFIL</h3>
+  <p>Para ver o plano de acção e o investimento necessário.</p>
+  <div class="sector-grid">
+    <button class="sector-btn" onclick="selectSector('pme',this)">
+      <div class="sector-name">PME Geral</div>
+      <div class="sector-price">€297</div>
+    </button>
+    <button class="sector-btn" onclick="selectSector('clinica',this)">
+      <div class="sector-name">Clínica / Saúde</div>
+      <div class="sector-price">€397</div>
+    </button>
+    <button class="sector-btn" onclick="selectSector('startup',this)">
+      <div class="sector-name">Startup / Tech</div>
+      <div class="sector-price">€497</div>
+    </button>
+  </div>
+</div>
+
+<div class="result-cta" id="resultCta">
+  <h3 id="ctaTitle">PRIVUS AUDIT</h3>
+  <p id="ctaText"></p>
+  <a href="#" class="btn-cta" id="ctaBtn">INICIAR AUDIT →</a>
+  <div class="cta-note">// Diagnóstico completo · O valor é deduzido no Compliance em 90 dias</div>
+</div>
+```
+
+  </div>
+</div>
+
+<script>
+const dimensions=[
+  {id:1,name:'Cifra e proteção de dados',weight:.15,questions:[
+    {text:'Os dispositivos e sistemas que contêm dados pessoais utilizam cifra de disco (ex: BitLocker, FileVault) ou equivalente?',note:null},
+    {text:'As comunicações que contêm dados pessoais (email, transferências de ficheiros) são transmitidas de forma segura (HTTPS/TLS)?',note:null}
+  ]},
+  {id:2,name:'Controlo de acessos',weight:.15,questions:[
+    {text:'O acesso a dados pessoais está definido por perfis ou funções — e não todos os colaboradores têm acesso a tudo?',note:null},
+    {text:'A sua empresa tem um processo para revogar acessos quando um colaborador sai ou muda de função?',note:null}
+  ]},
+  {id:3,name:'Gestão de dispositivos',weight:.10,questions:[
+    {text:'Os dispositivos utilizados para aceder a dados pessoais (portáteis, telemóveis) têm password e bloqueio automático activados?',note:null},
+    {text:'A sua empresa tem um procedimento definido em caso de perda ou roubo de um dispositivo com dados pessoais?',note:null}
+  ]},
+  {id:4,name:'Comunicações seguras',weight:.08,questions:[
+    {text:'O domínio de email foi configurado para evitar que terceiros enviem emails em seu nome (SPF, DKIM, DMARC)?',note:'Pode verificar com o seu técnico de IT'},
+    {text:'Existe uma política sobre o que pode e não pode ser partilhado por email ou aplicações de mensagens?',note:null}
+  ]},
+  {id:5,name:'Gestão de incidentes',weight:.12,questions:[
+    {text:'Existe um procedimento escrito e conhecido pela equipa para responder a uma violação de dados nas primeiras 72 horas?',note:null},
+    {text:'Existe um registo documentado dos incidentes de segurança ocorridos na sua organização?',note:null}
+  ]},
+  {id:6,name:'Fornecedores e subcontratantes',weight:.08,questions:[
+    {text:'Os contratos com fornecedores que acedem a dados dos seus clientes incluem cláusulas de proteção de dados (DPA)?',note:null},
+    {text:'A sua empresa tem uma lista actualizada de todos os fornecedores que tratam dados pessoais em seu nome?',note:null}
+  ]},
+  {id:7,name:'Governação e documentação legal',weight:.15,questions:[
+    {text:'A sua empresa tem um documento que lista que dados pessoais recolhe, para que finalidade, durante quanto tempo os guarda e com quem os partilha?',note:null},
+    {text:'A sua Política de Privacidade reflecte a realidade actual do seu negócio e está acessível aos seus clientes?',note:null}
+  ]},
+  {id:8,name:'Formação e cultura de segurança',weight:.10,questions:[
+    {text:'Os seus colaboradores receberam formação sobre proteção de dados e como identificar tentativas de phishing?',note:null},
+    {text:'Existe alguém formalmente designado como responsável pela proteção de dados — com funções definidas e documentadas?',note:null}
+  ]},
+  {id:9,name:'Continuidade de negócio e recuperação',weight:.07,questions:[
+    {text:'A sua empresa faz cópias de segurança regulares dos dados e testou a sua recuperação?',note:null},
+    {text:'Existe um plano documentado para continuar a operar em caso de falha grave de sistemas ou perda de dados?',note:null}
+  ]}
+];
+
+const options=[
+  {label:'Não existe',value:0},
+  {label:'Existe mas não está formalizado',value:1},
+  {label:'Implementado parcialmente',value:2},
+  {label:'Implementado e documentado',value:3}
+];
+
+const riskDesc={
+  1:'Dados pessoais não cifrados podem ser acedidos por terceiros em caso de roubo ou perda de dispositivo — exposição directa ao Art. 32.º RGPD.',
+  2:'Sem controlo de acessos definido, qualquer colaborador pode aceder a dados que não são da sua responsabilidade — violação do princípio da minimização.',
+  3:'Sem procedimento de resposta a dispositivos perdidos, uma violação de dados pode não ser detectada nem reportada dentro das 72 horas legais.',
+  4:'Email sem SPF/DKIM/DMARC permite falsificação do domínio — risco de phishing e responsabilidade por comunicações fraudulentas.',
+  5:'Sem procedimento de resposta a incidentes documentado, a sua empresa não consegue notificar a CNPD no prazo legal de 72 horas.',
+  6:'Fornecedores sem DPA tornam a sua empresa co-responsável por qualquer incumprimento desses fornecedores — Art. 28.º RGPD.',
+  7:'Sem ROPA e Política de Privacidade adequados, a sua empresa não tem base documental para demonstrar conformidade numa inspecção.',
+  8:'O vector humano representa mais de 80% das violações de dados. Sem formação, qualquer colaborador é um risco potencial.',
+  9:'Sem backups testados e plano de recuperação, uma falha de sistema pode resultar em perda permanente de dados pessoais — Art. 32.º RGPD.'
+};
+
+const stripeLinks={
+  pme:'https://buy.stripe.com/eVq5kC4Ho9di7l8doMd7q0b',
+  clinica:'https://buy.stripe.com/7sY28q8XE0GM8pc0C0d7q0a',
+  startup:'https://buy.stripe.com/aFa5kCgq6fBGeNA98wd7q09'
+};
+
+let answers={};
+let currentStep=0;
+const totalSteps=9;
+
+function buildSteps(){
+  const container=document.getElementById('stepsContainer');
+  dimensions.forEach((dim,di)=>{
+    const div=document.createElement('div');
+    div.className='step'+(di===0?' active':'');
+    div.id='step'+di;
+    let html=`<div class="dim-header">
+      <div class="dim-meta">Dimensão ${dim.id} de 9 — ${Math.round(dim.weight*100)}% do score</div>
+      <div class="dim-title">${dim.name.toUpperCase()}</div>
+    </div>`;
+    dim.questions.forEach((q,qi)=>{
+      const key=`d${di}q${qi}`;
+      html+=`<div class="question">
+        <div class="question-text">${q.text}</div>
+        ${q.note?`<div class="question-note">// ${q.note}</div>`:''}
+        <div class="options">`;
+      options.forEach(opt=>{
+        html+=`<button class="opt" onclick="selectAnswer('${key}',${opt.value},this)">${opt.label}</button>`;
+      });
+      html+=`</div></div>`;
+    });
+    div.innerHTML=html;
+    container.appendChild(div);
+  });
+}
+
+function selectAnswer(key,value,btn){
+  answers[key]=value;
+  btn.closest('.question').querySelectorAll('.opt').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  checkComplete();
+}
+
+function checkComplete(){
+  const dim=dimensions[currentStep];
+  let ok=true;
+  for(let qi=0;qi<dim.questions.length;qi++){
+    if(answers[`d${currentStep}q${qi}`]===undefined){ok=false;break;}
+  }
+  document.getElementById('btnNext').disabled=!ok;
+}
+
+function nextStep(){
+  if(currentStep<totalSteps-1){
+    document.getElementById('step'+currentStep).classList.remove('active');
+    currentStep++;
+    document.getElementById('step'+currentStep).classList.add('active');
+    document.getElementById('btnPrev').style.visibility='visible';
+    checkComplete();
+    updateProgress();
+    window.scrollTo(0,0);
+  } else {
+    document.getElementById('step'+currentStep).classList.remove('active');
+    document.getElementById('stepEmail').classList.add('active');
+    document.getElementById('navBtns').style.display='none';
+    updateProgress();
+    window.scrollTo(0,0);
+  }
+}
+
+function prevStep(){
+  const emailStep=document.getElementById('stepEmail');
+  if(emailStep.classList.contains('active')){
+    emailStep.classList.remove('active');
+    document.getElementById('navBtns').style.display='flex';
+    document.getElementById('step'+currentStep).classList.add('active');
+  } else if(currentStep>0){
+    document.getElementById('step'+currentStep).classList.remove('active');
+    currentStep--;
+    document.getElementById('step'+currentStep).classList.add('active');
+  }
+  document.getElementById('btnNext').disabled=false;
+  document.getElementById('btnPrev').style.visibility=currentStep===0?'hidden':'visible';
+  updateProgress();
+  window.scrollTo(0,0);
+}
+
+function updateProgress(){
+  const pct=Math.round((currentStep/totalSteps)*100);
+  document.getElementById('progressFill').style.width=pct+'%';
+  document.getElementById('progressPct').textContent=pct+'%';
+  document.getElementById('progressText').textContent=currentStep<totalSteps?`Dimensão ${currentStep+1} de 9`:'Quase pronto';
+}
+
+function calcScore(){
+  let total=0;
+  const dims=[];
+  dimensions.forEach((dim,di)=>{
+    let sum=0;
+    for(let qi=0;qi<dim.questions.length;qi++) sum+=(answers[`d${di}q${qi}`]||0);
+    const pct=(sum/(dim.questions.length*3))*100;
+    total+=pct*dim.weight;
+    dims.push({name:dim.name,score:Math.round(pct),id:di+1});
+  });
+  return{total:Math.round(total),dims};
+}
+
+function getClass(score){
+  if(score<=30)return{label:'CRÍTICO',color:'#E57373',desc:'Exposição imediata. A sua organização apresenta lacunas graves que requerem acção urgente.'};
+  if(score<=60)return{label:'INSUFICIENTE',color:'#FFA726',desc:'Lacunas significativas. A conformidade existe parcialmente mas não é defensável numa inspecção.'};
+  if(score<=80)return{label:'ADEQUADO',color:'#C8A96E',desc:'Conformidade funcional. Melhorias pontuais necessárias para atingir robustez regulatória.'};
+  return{label:'ROBUSTO',color:'#66BB6A',desc:'Referência de mercado. A sua organização demonstra maturidade regulatória consistente.'};
+}
+
+function getBarColor(score){
+  if(score<=30)return'#E57373';
+  if(score<=60)return'#FFA726';
+  if(score<=80)return'#C8A96E';
+  return'#66BB6A';
+}
+
+async function showResult(){
+  const nome=document.getElementById('inputNome').value.trim();
+  const email=document.getElementById('inputEmail').value.trim();
+  const empresa=document.getElementById('inputEmpresa').value.trim();
+  if(!nome||!email){alert('Por favor introduza o seu nome e email.');return;}
+
+  const{total,dims}=calcScore();
+  const cls=getClass(total);
+
+  const fd=new FormData();
+  fd.append('nome',nome);fd.append('email',email);fd.append('empresa',empresa);
+  fd.append('score_total',total+'/100');fd.append('classificacao',cls.label);
+  fd.append('_subject',`Score Privus Kuzola — ${nome} — ${total}/100`);
+  dims.forEach(d=>fd.append('score_'+d.name,d.score+'%'));
+  fetch('https://formspree.io/f/xvzdqlwz',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(()=>{});
+
+  document.getElementById('calcForm').style.display='none';
+  const result=document.getElementById('resultSection');
+  result.classList.add('show');
+
+  let cur=0;
+  const el=document.getElementById('scoreDisplay');
+  const interval=setInterval(()=>{
+    cur+=2;if(cur>=total){cur=total;clearInterval(interval);}
+    el.innerHTML=cur+'<span>/100</span>';
+  },20);
+
+  document.getElementById('scoreClass').textContent=cls.label;
+  document.getElementById('scoreClass').style.color=cls.color;
+  document.getElementById('scoreDesc').textContent=cls.desc;
+
+  const dimContainer=document.getElementById('dimContainer');
+  dims.forEach(d=>{
+    const color=getBarColor(d.score);
+    dimContainer.innerHTML+=`<div class="dim-row">
+      <div class="dim-row-name">${d.name}</div>
+      <div class="dim-row-bar"><div class="dim-row-fill" style="width:${d.score}%;background:${color}"></div></div>
+      <div class="dim-row-val" style="color:${color}">${d.score}%</div>
+    </div>`;
+  });
+
+  const sorted=[...dims].sort((a,b)=>a.score-b.score).slice(0,3);
+  const risksContainer=document.getElementById('risksContainer');
+  sorted.forEach(d=>{
+    risksContainer.innerHTML+=`<div class="risk-item">
+      <div class="risk-name">// ${d.name} — ${d.score}%</div>
+      <div class="risk-desc">${riskDesc[d.id]}</div>
+    </div>`;
+  });
+  window.scrollTo(0,0);
+}
+
+function selectSector(sector,btn){
+  document.querySelectorAll('.sector-btn').forEach(b=>b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const{total}=calcScore();
+  const cls=getClass(total);
+  const names={pme:'PME Geral',clinica:'Clínica / Saúde',startup:'Startup / Tech'};
+  const prices={pme:'€297',clinica:'€397',startup:'€497'};
+  const prazos={pme:'5 dias úteis',clinica:'7 dias úteis',startup:'7 dias úteis'};
+  const cta=document.getElementById('resultCta');
+  document.getElementById('ctaTitle').textContent=`PRIVUS AUDIT — ${names[sector]}`;
+  document.getElementById('ctaText').textContent=`O seu score de ${total}/100 (${cls.label}) indica exposição regulatória. O Privus Audit entrega um diagnóstico completo em ${prazos[sector]} — com o valor deduzido no Compliance se avançar em 90 dias.`;
+  document.getElementById('ctaBtn').textContent=`INICIAR AUDIT ${prices[sector]} →`;
+  document.getElementById('ctaBtn').href=stripeLinks[sector];
+  cta.classList.add('show');
+  cta.scrollIntoView({behavior:'smooth'});
+}
+
+buildSteps();
+</script>
+
+</body>
+</html>
