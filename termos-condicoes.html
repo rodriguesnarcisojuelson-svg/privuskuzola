@@ -9,22 +9,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Termos e Condições — Privus Kuzola</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{--ink:#0D1B2A;--ink-mid:#162437;--sand:#C8A96E;--sand-lt:#E8D5A8;--white:#FFFFFF;--stone:#94A3B8;--azure-lt:#3B82F6;}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7}
 header{background:var(--ink-mid);border-bottom:1px solid rgba(255,255,255,.07);padding:1.25rem 2rem;position:sticky;top:0;z-index:10}
 .header-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--white);text-decoration:none}
+.logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--white);text-decoration:none}
 .logo span{color:var(--sand)}
 .back{font-size:.8rem;color:var(--stone);text-decoration:none;transition:color .2s}
 .back:hover{color:var(--white)}
 main{max-width:780px;margin:0 auto;padding:3.5rem 2rem 5rem}
 .doc-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
 .doc-label::before{content:'';width:24px;height:1px;background:var(--sand)}
-h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-height:1.1;margin-bottom:.75rem}
+h1{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;line-height:1.1;margin-bottom:.75rem}
 .doc-meta{font-size:.8rem;color:var(--stone);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.07)}
 .toc{background:var(--ink-mid);border:1px solid rgba(255,255,255,.07);padding:1.5rem 2rem;margin-bottom:3rem}
 .toc-title{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-bottom:1rem}
@@ -32,7 +33,7 @@ h1{font-family:'Cormorant Garamond',serif;font-size:2.5rem;font-weight:600;line-
 .toc li{margin-bottom:.4rem}
 .toc a{font-size:.85rem;color:var(--stone);text-decoration:none;transition:color .2s}
 .toc a:hover{color:var(--sand)}
-h2{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:600;color:var(--white);margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06)}
+h2{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;color:var(--white);margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06)}
 h3{font-size:1rem;font-weight:600;color:var(--sand-lt);margin:1.75rem 0 .6rem}
 p{font-size:.9rem;font-weight:300;color:var(--stone);margin-bottom:1rem;line-height:1.8}
 p strong{color:var(--white);font-weight:500}
@@ -63,7 +64,7 @@ footer a{color:var(--sand);text-decoration:none}
 <main>
   <p class="doc-label">Documento legal</p>
   <h1>Termos e Condições</h1>
-  <p class="doc-meta">Versão 1.0 · Entrada em vigor: 2025 · Última actualização: 2025<br>
+  <p class="doc-meta">Versão 1.0 · Entrada em vigor: 10/05/2026 · Última actualização: 10/05/2026<br>
   Ao utilizar o website privuskuzola.pt ou contratar os serviços da Privus Kuzola, o Cliente aceita os presentes Termos e Condições na sua totalidade.</p>
 
   <div class="toc">
@@ -111,34 +112,70 @@ footer a{color:var(--sand);text-decoration:none}
   <h2 id="t3">3. Descrição dos serviços</h2>
   <p>A Privus Kuzola presta serviços de consultoria em proteção de dados pessoais, nomeadamente:</p>
 
-  <h3>3.1 Privus Audit — €197</h3>
-  <p>Diagnóstico de conformidade RGPD da organização do Cliente. O serviço inclui:</p>
+  <h3>3.1 Privus Audit</h3>
+  <p>Diagnóstico de conformidade regulatória da organização do Cliente. O preço varia consoante o perfil da organização:</p>
   <ul>
-    <li>Análise da situação actual da organização face aos requisitos do RGPD e da Lei n.º 58/2019</li>
-    <li>Identificação de lacunas, riscos e prioridades de acção</li>
-    <li>Relatório escrito de conformidade com plano de acção prioritário</li>
-    <li>Entrega no prazo máximo de 5 dias úteis após conclusão do briefing pelo Cliente</li>
-    <li>Crédito de €197 aplicável na contratação do Privus Compliance</li>
+    <li><strong>PME Geral</strong> — €297 · entrega em 5 dias úteis</li>
+    <li><strong>Clínica / Saúde</strong> — €397 · entrega em 7 dias úteis</li>
+    <li><strong>Startup / Tech</strong> — €497 · entrega em 7 dias úteis</li>
   </ul>
-  <p>O prazo de entrega de 5 dias úteis conta a partir da data de recepção do briefing completo preenchido pelo Cliente — não da data de pagamento.</p>
+  <p>O serviço inclui:</p>
+  <ul>
+    <li>Score de Maturidade Regulatória (0–100) em 9 dimensões</li>
+    <li>Mapa de risco priorizado e plano de acção faseado</li>
+    <li>Identificação dos frameworks regulatórios aplicáveis (RGPD, AI Act, NIS2, ISO 27001)</li>
+    <li>Crédito integral do valor do Audit aplicável na contratação do Privus Compliance, válido por 90 dias</li>
+  </ul>
+  <p>O prazo de entrega conta a partir da data de recepção do briefing completo preenchido pelo Cliente — não da data de pagamento. O Privus Audit é a porta de entrada obrigatória para todos os serviços da Privus Kuzola.</p>
 
-  <h3>3.2 Privus Compliance — €1.200</h3>
-  <p>Implementação RGPD completa para organizações com até 250 colaboradores. O serviço inclui:</p>
+  <h3>3.2 Privus Compliance</h3>
+  <p>Implementação regulatória completa para organizações com até 250 colaboradores. O preço varia consoante o perfil da organização:</p>
+  <ul>
+    <li><strong>PME Geral</strong> — €1.500 · entrega em 20 dias úteis</li>
+    <li><strong>Clínica / Saúde</strong> — €2.200 · entrega em 35 dias úteis</li>
+    <li><strong>Startup / Tech</strong> — €2.800 · entrega em 25 dias úteis</li>
+  </ul>
+  <p>O serviço inclui:</p>
   <ul>
     <li>Elaboração da documentação legal completa (ROPA, DPA, Política de Privacidade, Política de Retenção, Aviso de Privacidade para Colaboradores, Procedimento de Resposta a Titulares, Procedimento de Gestão de Violações, Política de Cookies, Sinalização CCTV, Registo de Consentimentos)</li>
-    <li>Adaptação sectorial para PME, Saúde ou Alojamento Local</li>
+    <li>Prescrição técnica dos 6 blocos de segurança</li>
+    <li>Adaptação sectorial — PME, Saúde, Startup/Tech — com frameworks adicionais por sector</li>
     <li>Três sessões de acompanhamento (kickoff, revisão intermédia, entrega final)</li>
     <li>Formação da equipa sobre os procedimentos implementados</li>
-    <li>Entrega no prazo máximo de 20 dias úteis após kickoff</li>
+    <li>Score projectado pós-implementação</li>
   </ul>
-  <p>O Cliente que tenha previamente contratado o Privus Audit beneficia de um crédito de €197, pagando €1.003 pelo Privus Compliance.</p>
+  <p>O prazo de entrega conta a partir do kickoff. O Cliente que tenha previamente contratado o Privus Audit beneficia de um crédito equivalente ao valor do Audit pago, deduzido no Compliance se contratado no prazo de 90 dias após a conclusão do Audit.</p>
 
-  <h3>3.3 Privus Control — €149/mês</h3>
-  <p>Serviço de manutenção e suporte contínuo em conformidade RGPD, com subscrição mensal. O serviço inclui:</p>
+  <h3>3.3 Privus Protect</h3>
+  <p>Verificação técnica e certificação de conformidade. Pressupõe a conclusão prévia do Privus Compliance. O preço varia consoante o perfil da organização:</p>
+  <ul>
+    <li><strong>PME Geral</strong> — €450 · entrega em 15 dias úteis</li>
+    <li><strong>Clínica / Saúde</strong> — €650 · entrega em 25 dias úteis</li>
+    <li><strong>Startup / Tech</strong> — €650 · entrega em 20 dias úteis</li>
+  </ul>
+  <p>O serviço inclui:</p>
+  <ul>
+    <li>Verificação técnica dos 6 blocos de segurança implementados</li>
+    <li>Coordenação com parceiro técnico de IT para validação da implementação</li>
+    <li>Simulação de violação de dados e teste do procedimento de resposta</li>
+    <li>Relatório de certificação assinado pela Privus Kuzola</li>
+    <li>Badge digital "Verificado Privus Kuzola — [ano]", renovável anualmente com Privus Control activo</li>
+    <li>Score verificado pós-SHIELD</li>
+  </ul>
+  <p>O prazo de entrega conta a partir do início da verificação técnica e está dependente da disponibilidade do parceiro IT para executar as verificações necessárias. A Privus Kuzola não é responsável por atrasos imputáveis ao parceiro técnico.</p>
+
+  <h3>3.4 Privus Control</h3>
+  <p>Serviço de manutenção e suporte contínuo em conformidade regulatória, com subscrição mensal. O preço varia consoante o perfil da organização:</p>
+  <ul>
+    <li><strong>PME Geral</strong> — €149/mês</li>
+    <li><strong>Clínica / Saúde</strong> — €299/mês</li>
+    <li><strong>Startup / Tech</strong> — €299/mês</li>
+  </ul>
+  <p>O serviço inclui:</p>
   <ul>
     <li>Revisão anual de toda a documentação elaborada</li>
     <li>Alertas e actualização face a alterações legislativas relevantes</li>
-    <li>Suporte em incidentes de segurança e violações de dados (prazo de resposta: 4 horas em dias úteis)</li>
+    <li>Suporte em incidentes de segurança e violações de dados (prazo de resposta inicial: 72 horas)</li>
     <li>Apoio na resposta a pedidos de exercício de direitos por titulares de dados</li>
     <li>Disponibilização como Encarregado de Proteção de Dados (DPO) externo, quando aplicável</li>
     <li>Até 2 horas de consultoria dedicada por mês</li>
@@ -192,7 +229,7 @@ footer a{color:var(--sand);text-decoration:none}
 
   <h2 id="t7">7. Propriedade intelectual</h2>
   <p>Todos os conteúdos do website privuskuzola.pt — incluindo textos, imagens, design, código e estrutura — são propriedade da Privus Kuzola e estão protegidos pela legislação de direitos de autor aplicável (Código do Direito de Autor e dos Direitos Conexos, aprovado pelo DL n.º 63/85).</p>
-  <p>A documentação elaborada no âmbito dos serviços Privus Compliance e Privus Control é entregue ao Cliente com licença de utilização não exclusiva para uso interno da sua organização. O Cliente não pode:</p>
+  <p>A documentação elaborada no âmbito dos serviços Privus Compliance, Privus Protect e Privus Control é entregue ao Cliente com licença de utilização não exclusiva para uso interno da sua organização. O Cliente não pode:</p>
   <ul>
     <li>Revender, ceder ou licenciar a documentação a terceiros</li>
     <li>Utilizar a documentação como base para prestação de serviços de consultoria a terceiros</li>
@@ -228,13 +265,13 @@ footer a{color:var(--sand);text-decoration:none}
 
   <h2 id="t11">11. Cancelamento e rescisão</h2>
 
-  <h3>11.1 Privus Audit e Privus Compliance</h3>
+  <h3>11.1 Privus Audit, Privus Compliance e Privus Protect</h3>
   <p>Estes são serviços de prestação única. Após a confirmação do pagamento e início da prestação do serviço, não é possível cancelamento com reembolso, salvo nos casos previstos na secção 12 (direito de arrependimento) ou em caso de incumprimento grave pelo Prestador.</p>
 
   <h3>11.2 Privus Control — subscrição mensal</h3>
   <p>O Cliente pode cancelar a subscrição do Privus Control a qualquer momento, com aviso prévio mínimo de <strong>30 dias corridos</strong> antes da próxima data de renovação, através de:</p>
   <ul>
-    <li>Email para <strong>contacto@privuskuzola.pt</strong> com assunto "Cancelamento Privus Control — Privus Kuzola"</li>
+    <li>Email para <strong>contacto@privuskuzola.pt</strong> com assunto "Cancelamento Privus Control — [Nome da empresa]"</li>
   </ul>
   <p>O cancelamento produz efeitos na data de renovação seguinte após o cumprimento do aviso prévio. O período já pago não é reembolsado. Após o cancelamento, o Cliente mantém acesso à documentação já entregue mas deixa de receber actualizações e suporte.</p>
 
