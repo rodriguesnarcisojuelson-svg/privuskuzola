@@ -4,696 +4,1362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Privus Kuzola — Consultoria RGPD</title>
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://www.google-analytics.com https://analytics.google.com; frame-ancestors 'none'; form-action 'self' https://formspree.io;">
+<title>Privus Kuzola — Consultoria Regulatória Digital</title>
+<meta name="description" content="Conformidade regulatória para empresas portuguesas. RGPD, AI Act, NIS2, ISO 27001. Diagnóstico, implementação e manutenção contínua.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://fonts.googleapis.com https://fonts.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://fonts.gstatic.com; font-src https://fonts.gstatic.com; img-src 'self' data: https:; connect-src 'self' https://formspree.io https://www.google-analytics.com https://analytics.google.com; frame-ancestors 'none'; form-action 'self' https://formspree.io;">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=()">
-<meta name="description" content="Conformidade RGPD para empresas portuguesas. Diagnóstico, implementação e manutenção.">
-<meta property="og:title" content="Privus Kuzola — Consultoria RGPD">
-<meta property="og:description" content="Conformidade RGPD para empresas portuguesas. Diagnóstico, implementação e manutenção contínua.">
+<meta property="og:title" content="Privus Kuzola — Consultoria Regulatória Digital">
+<meta property="og:description" content="Antes da CNPD. Antes do incidente. Antes de ser tarde.">
 <meta property="og:url" content="https://privuskuzola.pt">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_PT">
-<meta property="og:image" content="https://privuskuzola.pt/og-image.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Privus Kuzola — Consultoria RGPD">
-<meta name="twitter:description" content="Conformidade RGPD para empresas portuguesas. Diagnóstico, implementação e manutenção contínua.">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230D1B2A'/><text y='24' x='4' font-size='22' font-family='serif'>P</text><line x1='6' y1='28' x2='26' y2='28' stroke='%23C8A96E' stroke-width='2'/></svg>">
-<!-- Google Analytics 4 — Consent Mode v2 -->
 <script>
-window.dataLayer = window.dataLayer || [];
+window.dataLayer=window.dataLayer||[];
 function gtag(){dataLayer.push(arguments);}
-// Default consent — denied until user accepts
-gtag('consent','default',{
-  'analytics_storage':'denied',
-  'ad_storage':'denied',
-  'ad_user_data':'denied',
-  'ad_personalization':'denied',
-  'wait_for_update': 500
-});
+gtag('consent','default',{'analytics_storage':'denied','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','wait_for_update':500});
 </script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-36GJVCQL9Y"></script>
-<script>
-gtag('js', new Date());
-gtag('config', 'G-36GJVCQL9Y', {'anonymize_ip': true});
-</script>
+<script>gtag('js',new Date());gtag('config','G-36GJVCQL9Y',{'anonymize_ip':true});</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230A1628'/><text y='26' x='3' font-size='26' font-family='serif' fill='%23C8A96E'>P</text></svg>">
 <style>
-:root{--ink:#0D1B2A;--ink-mid:#162437;--ink-soft:#1E3045;--azure:#2563EB;--azure-lt:#3B82F6;--azure-pale:#DBEAFE;--sand:#C8A96E;--sand-lt:#E8D5A8;--white:#FFFFFF;--fog:#F0F4F8;--stone:#94A3B8;--charcoal:#334155}
+:root{
+  --ink:#0A1628;
+  --ink-mid:#0F1E35;
+  --ink-soft:#162540;
+  --sand:#C8A96E;
+  --sand-lt:#E8D5A8;
+  --sand-dk:#A8893E;
+  --white:#FFFFFF;
+  --stone:#8896A8;
+  --stone-lt:#B0BDCC;
+  --line:rgba(255,255,255,0.06);
+  --line-sand:rgba(200,169,110,0.2);
+  --red:#C0392B;
+  --amber:#D97706;
+  --green:#16A34A;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;font-size:16px}
-body{font-family:'Outfit',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
-.lang-bar{position:fixed;top:0;left:0;right:0;z-index:200;background:var(--ink);border-bottom:1px solid rgba(255,255,255,0.06)}
-nav{max-width:1100px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 2rem}
-.nav-logo{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:600;color:var(--white);text-decoration:none;letter-spacing:.04em}
-.nav-logo span{color:var(--sand)}
-.nav-right{display:flex;align-items:center;gap:2rem}
-.nav-links{display:flex;gap:2rem}
-.nav-links a{color:var(--stone);text-decoration:none;font-size:.85rem;font-weight:400;letter-spacing:.04em;transition:color .2s}
-.nav-links a:hover{color:var(--white)}
-.lang-toggle{display:flex;border:1px solid rgba(255,255,255,.12);border-radius:2px;overflow:hidden}
-.lang-btn{background:transparent;border:none;color:var(--stone);font-family:'Outfit',sans-serif;font-size:.75rem;font-weight:600;letter-spacing:.1em;padding:.35rem .7rem;cursor:pointer;transition:all .2s}
-.lang-btn.active{background:var(--sand);color:var(--ink)}
-.nav-cta{background:var(--sand);color:var(--ink);padding:.55rem 1.4rem;border-radius:2px;font-size:.82rem;font-weight:600;text-decoration:none;letter-spacing:.04em;transition:background .2s;white-space:nowrap}
-.nav-cta:hover{background:var(--sand-lt)}
-.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2rem 5rem;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 60% 30%,rgba(37,99,235,.08) 0%,transparent 65%),radial-gradient(ellipse 60% 50% at 10% 90%,rgba(200,169,110,.05) 0%,transparent 60%)}
-.hero-inner{max-width:1100px;margin:0 auto;width:100%;display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:1}
-.hero-eyebrow{display:flex;align-items:center;gap:.75rem;margin-bottom:2rem;opacity:0;animation:up .7s .1s ease forwards}
-.eyebrow-line{width:32px;height:1px;background:var(--sand)}
-.eyebrow-text{font-size:.7rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--sand)}
-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,5vw,4.2rem);font-weight:600;line-height:1.08;margin-bottom:1.75rem;opacity:0;animation:up .7s .2s ease forwards}
-h1 em{font-style:italic;color:var(--sand)}
-.hero-body{font-size:1rem;font-weight:300;color:var(--stone);line-height:1.8;margin-bottom:2.5rem;max-width:440px;opacity:0;animation:up .7s .3s ease forwards}
-.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:up .7s .4s ease forwards}
-.btn-main{background:var(--sand);color:var(--ink);padding:.9rem 2rem;border-radius:2px;font-weight:600;font-size:.875rem;letter-spacing:.04em;text-decoration:none;display:inline-block;transition:background .2s}
-.btn-main:hover{background:var(--sand-lt)}
-.btn-line{background:transparent;color:var(--stone);padding:.9rem 2rem;border-radius:2px;font-weight:400;font-size:.875rem;letter-spacing:.04em;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.1);transition:all .2s}
-.btn-line:hover{color:var(--white);border-color:rgba(255,255,255,.3)}
-.hero-right{opacity:0;animation:up .7s .35s ease forwards}
-.risk-panel{background:var(--ink-mid);border:1px solid rgba(255,255,255,.07);padding:2.5rem}
-.risk-panel-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:1.5rem;display:flex;align-items:center;gap:.5rem}
-.risk-panel-label::after{content:'';flex:1;height:1px;background:rgba(255,255,255,.06)}
-.risk-item{display:flex;align-items:flex-start;gap:1rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.risk-item:last-child{border-bottom:none;padding-bottom:0}
-.risk-icon{width:36px;height:36px;flex-shrink:0;background:rgba(37,99,235,.1);border:1px solid rgba(37,99,235,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem}
-.risk-icon.warn{background:rgba(200,169,110,.08);border-color:rgba(200,169,110,.2)}
-.risk-title{font-size:.875rem;font-weight:500;margin-bottom:.2rem}
-.risk-desc{font-size:.78rem;color:var(--stone);line-height:1.5}
-.risk-amount{margin-top:1.5rem;padding:1rem;background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.15);text-align:center}
-.risk-amount-label{font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--stone)}
-.risk-amount-value{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;color:var(--sand);display:block;margin-top:.2rem}
-.process{padding:6rem 2rem;background:var(--ink-mid)}
-.section-inner{max-width:1100px;margin:0 auto}
-.section-header{margin-bottom:4rem}
-.section-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
-.section-eyebrow::before{content:'';width:24px;height:1px;background:var(--sand)}
-h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.12;margin-bottom:1rem}
-.section-sub{font-size:.95rem;font-weight:300;color:var(--stone);line-height:1.8;max-width:480px}
-.process-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;position:relative}
-.process-steps::before{content:'';position:absolute;top:2.2rem;left:16.6%;right:16.6%;height:1px;background:rgba(255,255,255,.08);z-index:0}
-.process-step{padding:0 2rem 0 0;position:relative;z-index:1}
-.process-step:last-child{padding-right:0}
-.step-counter{width:44px;height:44px;border:1px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:600;color:var(--sand);margin-bottom:1.75rem;background:var(--ink-mid)}
-.step-name{font-size:1.05rem;font-weight:600;margin-bottom:.75rem;color:var(--white)}
-.step-body{font-size:.875rem;font-weight:300;color:var(--stone);line-height:1.7}
-.step-detail{margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid rgba(255,255,255,.06);font-size:.78rem;color:var(--stone)}
-.step-detail strong{color:var(--sand-lt);font-weight:500}
-.products{padding:6rem 2rem;background:var(--ink)}
-.products-grid{display:grid;grid-template-columns:repeat(3,1fr);border:1px solid rgba(255,255,255,.07)}
-.product{padding:2.5rem;border-right:1px solid rgba(255,255,255,.07);position:relative;transition:background .3s}
-.product:last-child{border-right:none}
-.product:hover{background:rgba(37,99,235,.04)}
-.product.featured{background:var(--ink-soft);border-top:2px solid var(--sand)}
-.product.featured:hover{background:var(--ink-soft)}
-.product-mark{position:absolute;top:-1px;left:2.5rem;background:var(--sand);color:var(--ink);font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:.25rem .6rem}
-.product-phase{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--azure-lt);margin-bottom:1.25rem}
-.product-title{font-family:'Cormorant Garamond',serif;font-size:1.75rem;font-weight:600;margin-bottom:.5rem;line-height:1.1}
-.product-line{font-size:.875rem;font-weight:300;color:var(--stone);margin-bottom:2rem;line-height:1.5}
-.product-pricing{margin-bottom:2rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.06)}
-.product-price{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:600;color:var(--white);line-height:1}
-.product-price sup{font-size:1.4rem;vertical-align:super}
-.product-freq{font-size:.78rem;color:var(--stone);margin-top:.4rem;font-weight:300}
-.product-items{list-style:none;margin-bottom:2.5rem}
-.product-items li{font-size:.85rem;font-weight:300;color:var(--stone);padding:.5rem 0;border-bottom:1px solid rgba(255,255,255,.04);display:flex;gap:.75rem;align-items:flex-start}
-.product-items li::before{content:'—';color:var(--sand);flex-shrink:0;font-size:.7rem;margin-top:.15rem}
-.btn-product{display:block;width:100%;padding:.85rem;text-align:center;font-size:.82rem;font-weight:600;letter-spacing:.05em;text-decoration:none;border-radius:2px;transition:all .2s;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
-.btn-p-gold{background:var(--sand);color:var(--ink)}
-.btn-p-gold:hover{background:var(--sand-lt)}
-.btn-p-outline{background:transparent;color:var(--stone);border:1px solid rgba(255,255,255,.12)}.btn-p-sand-outline{background:transparent;color:var(--sand);border:1px solid rgba(200,169,110,.4)}.btn-p-sand-outline:hover{background:rgba(200,169,110,.08);border-color:var(--sand);color:var(--sand-lt)}
-.btn-p-outline:hover{color:var(--white);border-color:rgba(255,255,255,.3)}
-.audit-section{padding:6rem 2rem;background:var(--ink-mid);border-top:1px solid rgba(255,255,255,.06)}
-.audit-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:5rem;align-items:start}
-.audit-step{display:flex;gap:1.25rem;margin-bottom:1.75rem;align-items:flex-start}
-.audit-step-num{width:28px;height:28px;flex-shrink:0;border:1px solid rgba(200,169,110,.3);display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:600;color:var(--sand)}
-.audit-step-title{font-size:.875rem;font-weight:500;margin-bottom:.2rem}
-.audit-step-desc{font-size:.8rem;color:var(--stone);line-height:1.5}
-.form-card{background:var(--ink);border:1px solid rgba(255,255,255,.08);padding:2.5rem}
-.form-title{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:600;margin-bottom:.4rem}
-.form-subtitle{font-size:.825rem;color:var(--stone);margin-bottom:2rem;line-height:1.5}
-.field{margin-bottom:1.1rem}
-.field label{display:block;font-size:.7rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--stone);margin-bottom:.4rem}
-.field input,.field select,.field textarea{width:100%;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:.75rem 1rem;font-family:'Outfit',sans-serif;font-size:.875rem;border-radius:2px;outline:none;transition:border-color .2s;-webkit-appearance:none}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--azure-lt)}
-.field select option{background:var(--ink)}
-.field textarea{height:80px;resize:none}
-.field-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.form-terms{font-size:.75rem;color:var(--stone);line-height:1.5;margin:1.25rem 0}
-.form-terms a{color:var(--sand);text-decoration:none}
-.btn-submit{width:100%;padding:1rem;background:var(--sand);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.05em;border:none;cursor:pointer;border-radius:2px;transition:background .2s}
-.btn-submit:hover{background:var(--sand-lt)}
-.form-success{display:none;text-align:center;padding:2.5rem 1rem}
-.form-success.show{display:block}
-.success-icon{width:52px;height:52px;margin:0 auto 1.25rem;border:1px solid rgba(200,169,110,.4);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:var(--sand)}
-.form-success h3{font-family:'Cormorant Garamond',serif;font-size:1.5rem;margin-bottom:.5rem}
-.form-success p{font-size:.85rem;color:var(--stone)}
-.about{padding:6rem 2rem;background:var(--ink)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.about-body{font-size:.95rem;font-weight:300;color:var(--stone);line-height:1.9;margin-bottom:1rem}
-.about-body strong{color:var(--white);font-weight:500}
-.values{margin-top:3rem}
-.value{display:flex;gap:1.5rem;align-items:flex-start;padding:1.5rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.value:first-child{border-top:1px solid rgba(255,255,255,.05)}
-.value-mark{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--sand);flex-shrink:0;line-height:1;margin-top:.1rem}
-.value-title{font-size:.9rem;font-weight:500;margin-bottom:.3rem}
-.value-desc{font-size:.825rem;color:var(--stone);line-height:1.6;font-weight:300}
-.compliance-panel{background:var(--ink-mid);border:1px solid rgba(255,255,255,.07);padding:2.5rem}
-.compliance-label{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:1.5rem}
-.compliance-item{padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.05)}
-.compliance-item:last-child{border-bottom:none}
-.compliance-ref{font-size:.7rem;font-weight:600;letter-spacing:.08em;color:var(--azure-lt);margin-bottom:.2rem}
-.compliance-title{font-size:.875rem;font-weight:500;margin-bottom:.2rem}
-.compliance-desc{font-size:.78rem;color:var(--stone);line-height:1.5}
-footer{background:var(--ink-mid);border-top:1px solid rgba(255,255,255,.06);padding:4rem 2rem 2rem}
-.footer-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:4rem;margin-bottom:3rem}
-.footer-brand-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;color:var(--white);margin-bottom:.75rem}
-.footer-brand-name span{color:var(--sand)}
-.footer-tagline{font-size:.825rem;font-weight:300;color:var(--stone);line-height:1.7}
-.footer-col-title{font-size:.65rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--stone);margin-bottom:1.25rem}
-.footer-col a{display:block;color:var(--stone);text-decoration:none;font-size:.825rem;font-weight:300;margin-bottom:.6rem;transition:color .2s}
-.footer-col a:hover{color:var(--white)}
-.footer-bottom{max-width:1100px;margin:0 auto;padding-top:2rem;border-top:1px solid rgba(255,255,255,.05);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
-.footer-bottom p{font-size:.75rem;color:var(--stone);font-weight:300}
-.footer-bottom a{color:var(--stone);text-decoration:none;transition:color .2s}
-.footer-bottom a:hover{color:var(--white)}
-.audit-process{margin-top:2.5rem}
-@keyframes up{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.reveal{opacity:0;transform:translateY(20px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:none}
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr;gap:3rem}
-  .hero-right{display:none}
-  .process-steps{grid-template-columns:1fr;gap:2.5rem}
-  .process-steps::before{display:none}
-  .process-step{padding:0}
-  .products-grid{grid-template-columns:1fr;border:none;gap:1px;background:rgba(255,255,255,.07)}
-  .product{border-right:none;border-bottom:1px solid rgba(255,255,255,.07)}
-  .audit-grid{grid-template-columns:1fr;gap:3rem}
-  .about-grid{grid-template-columns:1fr;gap:3rem}
-  .compliance-panel{display:none}
-  .footer-inner{grid-template-columns:1fr;gap:2rem}
-  .nav-links{display:none}
-  .field-row{grid-template-columns:1fr}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+
+/* ─── SKIP LINK (accessibility) ─── */
+.skip-link{
+position:absolute;top:-40px;left:0;background:var(–sand);color:var(–ink);
+padding:.5rem 1rem;font-weight:600;font-size:.875rem;z-index:9999;
+transition:top .2s;
+}
+.skip-link:focus{top:0}
+
+/* ─── NAV ─── */
+.nav{
+position:fixed;top:0;left:0;right:0;z-index:200;
+background:rgba(10,22,40,0.96);backdrop-filter:blur(16px);
+border-bottom:1px solid var(–line);
+}
+.nav-inner{
+max-width:1140px;margin:0 auto;
+display:flex;align-items:center;justify-content:space-between;
+padding:1rem 2rem;
+}
+.nav-logo{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.4rem;letter-spacing:.12em;
+color:var(–white);text-decoration:none;
+}
+.nav-logo span{color:var(–sand)}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{
+color:var(–stone);text-decoration:none;
+font-size:.8rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;
+transition:color .2s;
+}
+.nav-links a:hover,.nav-links a:focus{color:var(–white);outline:2px solid var(–sand);outline-offset:4px}
+.nav-right{display:flex;align-items:center;gap:1rem}
+.lang-toggle{display:flex;border:1px solid var(–line);overflow:hidden}
+.lang-btn{
+background:transparent;border:none;color:var(–stone);
+font-family:‘DM Sans’,sans-serif;font-size:.7rem;font-weight:600;
+letter-spacing:.1em;padding:.3rem .6rem;cursor:pointer;transition:all .2s;
+}
+.lang-btn.active{background:var(–sand);color:var(–ink)}
+.lang-btn:focus{outline:2px solid var(–sand);outline-offset:-2px}
+.nav-cta{
+background:var(–sand);color:var(–ink);
+padding:.5rem 1.2rem;
+font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+text-decoration:none;transition:background .2s;white-space:nowrap;
+}
+.nav-cta:hover,.nav-cta:focus{background:var(–sand-lt);outline:2px solid var(–sand-lt);outline-offset:2px}
+
+/* hamburger */
+.hamburger{
+display:none;background:transparent;border:1px solid var(–line);
+color:var(–stone);padding:.4rem .6rem;cursor:pointer;
+font-size:1.1rem;line-height:1;
+}
+.mobile-menu{
+display:none;position:fixed;top:56px;left:0;right:0;
+background:var(–ink-mid);border-bottom:1px solid var(–line);
+padding:1.5rem 2rem;z-index:199;
+flex-direction:column;gap:1rem;
+}
+.mobile-menu.open{display:flex}
+.mobile-menu a{
+color:var(–stone-lt);text-decoration:none;
+font-size:.875rem;font-weight:400;letter-spacing:.04em;
+padding:.5rem 0;border-bottom:1px solid var(–line);
 }
 
-/* ── COOKIE BANNER ── */
+/* ─── HERO ─── */
+.hero{
+min-height:100vh;display:flex;align-items:center;
+padding:8rem 2rem 5rem;position:relative;overflow:hidden;
+}
+.hero::before{
+content:’’;position:absolute;inset:0;
+background:
+radial-gradient(ellipse 100% 80% at 70% 20%,rgba(37,99,235,.06) 0%,transparent 60%),
+radial-gradient(ellipse 70% 60% at 5% 90%,rgba(200,169,110,.04) 0%,transparent 55%);
+}
+.hero-noise{
+position:absolute;inset:0;opacity:.018;
+background-image:url(“data:image/svg+xml,%3Csvg viewBox=‘0 0 512 512’ xmlns=‘http://www.w3.org/2000/svg’%3E%3Cfilter id=‘n’%3E%3CfeTurbulence type=‘fractalNoise’ baseFrequency=‘0.75’ numOctaves=‘4’ stitchTiles=‘stitch’/%3E%3C/filter%3E%3Crect width=‘100%25’ height=‘100%25’ filter=‘url(%23n)’/%3E%3C/svg%3E”);
+pointer-events:none;
+}
+.hero-inner{max-width:1140px;margin:0 auto;width:100%;position:relative;z-index:1}
+.hero-grid-layout{display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center}
+.hero-eyebrow{
+display:flex;align-items:center;gap:.75rem;margin-bottom:1.75rem;
+opacity:0;animation:fadeUp .8s .1s ease forwards;
+}
+.eyebrow-pill{
+font-size:.62rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;
+color:var(–sand);padding:.3rem .8rem;
+border:1px solid var(–line-sand);
+}
+h1{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:clamp(3.5rem,7vw,6.5rem);
+line-height:.95;letter-spacing:.04em;
+margin-bottom:2rem;
+opacity:0;animation:fadeUp .8s .2s ease forwards;
+}
+h1 .accent{color:var(–sand)}
+h1 .dim{color:var(–stone);font-size:clamp(2.8rem,5.5vw,5rem)}
+.hero-body{
+font-size:1rem;font-weight:300;color:var(–stone-lt);line-height:1.8;
+max-width:480px;margin-bottom:2.5rem;
+opacity:0;animation:fadeUp .8s .3s ease forwards;
+}
+.hero-actions{
+display:flex;gap:.875rem;flex-wrap:wrap;
+opacity:0;animation:fadeUp .8s .4s ease forwards;
+margin-bottom:3rem;
+}
+.btn-primary{
+background:var(–sand);color:var(–ink);
+padding:.875rem 2rem;
+font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+text-decoration:none;display:inline-block;transition:background .2s;
+}
+.btn-primary:hover,.btn-primary:focus{background:var(–sand-lt);outline:2px solid var(–sand-lt);outline-offset:2px}
+.btn-ghost{
+background:transparent;color:var(–stone-lt);
+padding:.875rem 2rem;
+font-size:.8rem;font-weight:400;letter-spacing:.06em;text-transform:uppercase;
+text-decoration:none;display:inline-block;
+border:1px solid rgba(255,255,255,.1);transition:all .2s;
+}
+.btn-ghost:hover,.btn-ghost:focus{color:var(–white);border-color:rgba(255,255,255,.25);outline:2px solid rgba(255,255,255,.25);outline-offset:2px}
+.hero-frameworks{
+display:flex;gap:.75rem;flex-wrap:wrap;
+padding-top:2rem;border-top:1px solid var(–line);
+opacity:0;animation:fadeUp .8s .5s ease forwards;
+}
+.fw-chip{
+font-family:‘DM Mono’,monospace;
+font-size:.62rem;letter-spacing:.1em;color:var(–stone);
+padding:.25rem .65rem;border:1px solid var(–line);
+}
+
+/* HERO RIGHT — exposure panel */
+.exposure-panel{
+background:var(–ink-mid);border:1px solid var(–line);
+opacity:0;animation:fadeUp .8s .35s ease forwards;
+}
+.exposure-header{
+padding:1.25rem 1.5rem;border-bottom:1px solid var(–line);
+display:flex;align-items:center;justify-content:space-between;
+}
+.exposure-label{
+font-size:.62rem;font-weight:600;letter-spacing:.18em;
+text-transform:uppercase;color:var(–stone);
+}
+.exposure-live{
+font-family:‘DM Mono’,monospace;
+font-size:.62rem;color:var(–sand);
+display:flex;align-items:center;gap:.4rem;
+}
+.live-dot{
+width:6px;height:6px;background:var(–sand);
+border-radius:50%;animation:pulse 2s infinite;
+}
+.exposure-body{padding:1.5rem}
+.exposure-metric{
+padding:1rem 0;border-bottom:1px solid var(–line);
+}
+.exposure-metric:last-child{border-bottom:none;padding-bottom:0}
+.metric-label{
+font-size:.68rem;font-weight:500;letter-spacing:.08em;
+text-transform:uppercase;color:var(–stone);margin-bottom:.35rem;
+}
+.metric-value{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:2.2rem;letter-spacing:.06em;color:var(–white);line-height:1;
+}
+.metric-value.danger{color:#E57373}
+.metric-value.warn{color:#FFA726}
+.metric-value.unknown{color:var(–stone)}
+.metric-sub{
+font-size:.72rem;font-weight:300;color:var(–stone);margin-top:.2rem;
+}
+.exposure-cta{
+margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(–line);
+}
+.btn-exposure{
+display:block;width:100%;padding:.75rem;text-align:center;
+background:var(–sand);color:var(–ink);
+font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+text-decoration:none;transition:background .2s;
+}
+.btn-exposure:hover{background:var(–sand-lt)}
+
+/* ─── SECTIONS ─── */
+section{padding:5rem 2rem}
+.section-inner{max-width:1140px;margin:0 auto}
+.section-eyebrow{
+font-family:‘DM Mono’,monospace;
+font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;
+color:var(–sand);margin-bottom:.875rem;
+display:flex;align-items:center;gap:.75rem;
+}
+.section-eyebrow::before{content:’//’;color:var(–sand-dk)}
+h2{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:clamp(2.2rem,5vw,3.8rem);
+letter-spacing:.06em;line-height:.95;margin-bottom:1rem;
+}
+.section-sub{
+font-size:.9rem;font-weight:300;color:var(–stone-lt);
+line-height:1.8;max-width:520px;margin-bottom:3rem;
+}
+
+/* ─── METHODOLOGY ─── */
+.method-section{background:var(–ink-mid)}
+.method-flow{
+display:grid;grid-template-columns:repeat(4,1fr);
+position:relative;
+}
+.method-flow::before{
+content:’’;position:absolute;top:2rem;left:12.5%;right:12.5%;
+height:1px;background:linear-gradient(to right,transparent,var(–sand-dk),var(–sand-dk),var(–sand-dk),transparent);
+opacity:.3;z-index:0;
+}
+.method-card{
+padding:2.5rem 2rem;border-right:1px solid var(–line);
+position:relative;z-index:1;transition:background .3s;
+}
+.method-card:last-child{border-right:none}
+.method-card:hover{background:rgba(200,169,110,.03)}
+.method-num{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:.875rem;letter-spacing:.2em;color:var(–sand);
+margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;
+}
+.method-num::before{
+content:’’;width:28px;height:28px;
+background:rgba(200,169,110,.1);border:1px solid var(–line-sand);
+display:flex;align-items:center;justify-content:center;
+font-size:.7rem;
+}
+.method-phase{
+font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.18em;color:var(–stone);
+margin-bottom:.5rem;
+}
+.method-name{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.6rem;letter-spacing:.06em;margin-bottom:.75rem;
+}
+.method-desc{font-size:.82rem;font-weight:300;color:var(–stone);line-height:1.65}
+.method-prazo{
+margin-top:1rem;padding-top:1rem;border-top:1px solid var(–line);
+font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.1em;color:var(–sand-dk);
+}
+
+/* ─── PRODUCTS ─── */
+.products-section{background:var(–ink)}
+.profile-tabs{
+display:flex;border-bottom:1px solid var(–line);
+margin-bottom:2.5rem;gap:0;
+}
+.profile-tab{
+background:transparent;border:none;border-bottom:2px solid transparent;
+color:var(–stone);font-family:‘DM Sans’,sans-serif;
+font-size:.8rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;
+padding:.875rem 1.75rem;cursor:pointer;transition:all .2s;
+margin-bottom:-1px;
+}
+.profile-tab:hover{color:var(–white)}
+.profile-tab.active{color:var(–sand);border-bottom-color:var(–sand)}
+.profile-tab:focus{outline:2px solid var(–sand);outline-offset:2px}
+.products-grid{
+display:grid;grid-template-columns:repeat(4,1fr);
+border:1px solid var(–line);
+}
+.product-card{
+padding:2rem 1.75rem;border-right:1px solid var(–line);
+position:relative;transition:background .3s;
+}
+.product-card:last-child{border-right:none}
+.product-card:hover{background:rgba(200,169,110,.02)}
+.product-card.featured{
+background:linear-gradient(180deg,rgba(200,169,110,.05) 0%,transparent 100%);
+border-top:2px solid var(–sand);
+}
+.product-badge{
+position:absolute;top:-1px;left:1.75rem;
+background:var(–sand);color:var(–ink);
+font-family:‘DM Mono’,monospace;
+font-size:.58rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;
+padding:.2rem .6rem;
+}
+.product-phase{
+font-family:‘DM Mono’,monospace;
+font-size:.58rem;letter-spacing:.15em;text-transform:uppercase;
+color:var(–stone);margin-bottom:.875rem;
+}
+.product-name{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.6rem;letter-spacing:.06em;margin-bottom:.4rem;
+}
+.product-line{
+font-size:.8rem;font-weight:300;color:var(–stone);
+line-height:1.5;margin-bottom:1.5rem;
+}
+.product-pricing{
+margin-bottom:1.5rem;padding-bottom:1.5rem;
+border-bottom:1px solid var(–line);
+}
+.product-price{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:2.8rem;letter-spacing:.04em;color:var(–white);line-height:1;
+}
+.product-price sup{font-size:1.3rem;vertical-align:.6rem}
+.product-freq{
+font-family:‘DM Mono’,monospace;
+font-size:.62rem;color:var(–stone);margin-top:.3rem;letter-spacing:.06em;
+}
+.product-prazo{
+font-family:‘DM Mono’,monospace;
+font-size:.6rem;color:var(–sand-dk);margin-top:.3rem;letter-spacing:.06em;
+}
+.product-items{list-style:none;margin-bottom:1.75rem}
+.product-items li{
+font-size:.8rem;font-weight:300;color:var(–stone);
+padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.03);
+display:flex;gap:.6rem;align-items:flex-start;line-height:1.45;
+}
+.product-items li::before{
+content:’—’;color:var(–sand-dk);flex-shrink:0;
+font-family:‘DM Mono’,monospace;font-size:.7rem;margin-top:.05rem;
+}
+.btn-product{
+display:block;width:100%;padding:.75rem;text-align:center;
+font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+text-decoration:none;transition:all .2s;border:none;cursor:pointer;
+font-family:‘DM Sans’,sans-serif;
+}
+.btn-product:focus{outline:2px solid var(–sand);outline-offset:2px}
+.btn-gold{background:var(–sand);color:var(–ink)}
+.btn-gold:hover{background:var(–sand-lt)}
+.btn-outline{background:transparent;color:var(–sand);border:1px solid var(–line-sand)}
+.btn-outline:hover{background:rgba(200,169,110,.06);border-color:var(–sand)}
+.credit-note{
+margin-top:1.5rem;padding:1rem 1.5rem;
+background:rgba(200,169,110,.05);border:1px solid var(–line-sand);
+font-size:.78rem;font-weight:300;color:var(–stone);line-height:1.5;
+display:flex;align-items:flex-start;gap:.75rem;
+}
+.credit-note::before{content:‘→’;color:var(–sand);flex-shrink:0;font-family:‘DM Mono’,monospace}
+
+/* ─── SCORE ─── */
+.score-section{
+background:var(–ink-mid);
+border-top:1px solid var(–line);border-bottom:1px solid var(–line);
+}
+.score-grid{
+display:grid;grid-template-columns:1fr 1fr;
+gap:5rem;align-items:center;
+}
+.score-left h2{margin-bottom:1rem}
+.score-left p{
+font-size:.9rem;font-weight:300;color:var(–stone-lt);
+line-height:1.8;margin-bottom:2rem;
+}
+.score-dims-grid{
+display:grid;grid-template-columns:1fr 1fr;gap:.4rem;margin-bottom:2rem;
+}
+.score-dim-item{
+font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.06em;color:var(–stone);
+padding:.35rem 0;display:flex;align-items:center;gap:.4rem;
+}
+.score-dim-item::before{content:’·’;color:var(–sand);font-size:.875rem}
+.score-right{
+background:var(–ink);border:1px solid var(–line);padding:2.5rem;
+}
+.score-split{display:grid;grid-template-columns:1fr 1fr;gap:0}
+.score-half{
+padding:2rem;
+}
+.score-half:first-child{border-right:1px solid var(–line)}
+.score-half-label{
+font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;
+color:var(–stone);margin-bottom:.75rem;
+}
+.score-exposure{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:2.8rem;letter-spacing:.04em;color:#E57373;line-height:1;
+}
+.score-exposure-sub{
+font-size:.72rem;font-weight:300;color:var(–stone);margin-top:.3rem;
+}
+.score-unknown{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:2.8rem;letter-spacing:.04em;color:var(–stone);line-height:1;
+}
+.score-scale{margin-top:.75rem}
+.scale-bar{
+display:flex;height:4px;overflow:hidden;margin-bottom:.4rem;
+}
+.scale-seg{flex:1}
+.seg-red{background:#C0392B}
+.seg-amber{background:#D97706}
+.seg-sand{background:var(–sand)}
+.seg-green{background:#16A34A}
+.scale-labels{
+display:flex;justify-content:space-between;
+font-family:‘DM Mono’,monospace;font-size:.55rem;color:var(–stone);letter-spacing:.06em;
+}
+.score-cta-box{
+margin-top:1.5rem;padding-top:1.5rem;
+border-top:1px solid var(–line);
+}
+.btn-score{
+display:block;width:100%;padding:.8rem;text-align:center;
+background:var(–sand);color:var(–ink);
+font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+text-decoration:none;transition:background .2s;
+}
+.btn-score:hover{background:var(–sand-lt)}
+.btn-score:focus{outline:2px solid var(–sand-lt);outline-offset:2px}
+
+/* ─── CASES ─── */
+.cases-section{background:var(–ink)}
+.cases-grid{
+display:grid;grid-template-columns:repeat(3,1fr);
+border:1px solid var(–line);
+}
+.case-card{
+padding:2.5rem 2rem;border-right:1px solid var(–line);
+transition:background .3s;
+}
+.case-card:last-child{border-right:none}
+.case-card:hover{background:var(–ink-mid)}
+.case-sector{
+font-family:‘DM Mono’,monospace;
+font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+color:var(–sand-dk);margin-bottom:1.25rem;
+display:flex;align-items:center;gap:.5rem;
+}
+.case-sector::before{content:’//’;opacity:.5}
+.case-problem{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.25rem;letter-spacing:.04em;
+color:var(–white);line-height:1.1;margin-bottom:1.25rem;
+}
+.case-divider{
+width:32px;height:2px;background:var(–sand-dk);
+margin-bottom:1.25rem;
+}
+.case-action{
+font-size:.8rem;font-weight:300;color:var(–stone);
+line-height:1.65;margin-bottom:1rem;
+padding-bottom:1rem;border-bottom:1px solid var(–line);
+}
+.case-result{font-size:.8rem;font-weight:300;color:var(–stone-lt);line-height:1.65}
+.case-result strong{color:var(–sand-lt);font-weight:500}
+.case-ref{
+margin-top:1.25rem;
+font-family:‘DM Mono’,monospace;
+font-size:.58rem;letter-spacing:.08em;color:rgba(200,169,110,.35);
+}
+
+/* ─── ABOUT ─── */
+.about-section{background:var(–ink-mid)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.about-body{
+font-size:.875rem;font-weight:300;color:var(–stone-lt);
+line-height:1.85;margin-bottom:1rem;
+}
+.about-body strong{color:var(–white);font-weight:500}
+.fw-list{margin-top:2rem;border-top:1px solid var(–line)}
+.fw-row{
+display:flex;gap:1.5rem;align-items:flex-start;
+padding:1rem 0;border-bottom:1px solid var(–line);
+}
+.fw-code{
+font-family:‘DM Mono’,monospace;
+font-size:.65rem;letter-spacing:.08em;color:var(–sand);
+min-width:72px;flex-shrink:0;padding-top:.1rem;
+}
+.fw-name{font-size:.875rem;font-weight:500;margin-bottom:.2rem}
+.fw-scope{font-size:.75rem;color:var(–stone);font-weight:300}
+.legal-panel{
+background:var(–ink);border:1px solid var(–line);
+}
+.legal-panel-header{
+padding:1.25rem 1.5rem;border-bottom:1px solid var(–line);
+}
+.legal-panel-title{
+font-family:‘DM Mono’,monospace;
+font-size:.62rem;letter-spacing:.18em;text-transform:uppercase;color:var(–stone);
+}
+.legal-item{padding:1.1rem 1.5rem;border-bottom:1px solid rgba(255,255,255,.04)}
+.legal-item:last-child{border-bottom:none}
+.legal-norm{
+font-family:‘DM Mono’,monospace;
+font-size:.62rem;letter-spacing:.08em;color:var(–sand);margin-bottom:.3rem;
+}
+.legal-title{font-size:.875rem;font-weight:500;margin-bottom:.25rem}
+.legal-desc{font-size:.775rem;font-weight:300;color:var(–stone);line-height:1.55}
+
+/* ─── BUDGET ─── */
+.budget-section{background:var(–ink)}
+.budget-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:5rem;align-items:start}
+.budget-left p{font-size:.875rem;font-weight:300;color:var(–stone-lt);line-height:1.8;margin-bottom:1.5rem}
+.budget-list{border-top:1px solid var(–line)}
+.budget-item{
+padding:.75rem 0;border-bottom:1px solid var(–line);
+font-size:.82rem;font-weight:300;color:var(–stone);
+display:flex;gap:.75rem;align-items:flex-start;
+}
+.budget-item::before{
+content:‘→’;color:var(–sand-dk);flex-shrink:0;
+font-family:‘DM Mono’,monospace;font-size:.72rem;
+}
+.budget-form-wrap{
+background:var(–ink-mid);border:1px solid var(–line);padding:2rem;
+}
+.form-title{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.4rem;letter-spacing:.06em;margin-bottom:1.5rem;
+}
+.field{margin-bottom:.875rem}
+.field label{
+display:block;font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;
+color:var(–stone);margin-bottom:.35rem;
+}
+.field input,.field select,.field textarea{
+width:100%;background:rgba(255,255,255,.03);
+border:1px solid rgba(255,255,255,.08);color:var(–white);
+padding:.7rem .875rem;font-family:‘DM Sans’,sans-serif;
+font-size:.875rem;border-radius:0;outline:none;
+transition:border-color .2s;-webkit-appearance:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus{
+border-color:var(–sand);
+box-shadow:0 0 0 3px rgba(200,169,110,.15);
+}
+.field select option{background:var(–ink)}
+.field textarea{height:90px;resize:none}
+.field-row{display:grid;grid-template-columns:1fr 1fr;gap:.875rem}
+.form-consent{
+display:flex;align-items:flex-start;gap:.75rem;margin-bottom:1rem;
+}
+.form-consent input[type=checkbox]{
+width:16px;height:16px;flex-shrink:0;margin-top:.15rem;
+accent-color:var(–sand);cursor:pointer;
+}
+.form-consent label{
+font-size:.75rem;font-weight:300;color:var(–stone);line-height:1.5;cursor:pointer;
+}
+.form-consent a{color:var(–sand);text-decoration:none}
+.btn-submit{
+width:100%;padding:.85rem;
+background:var(–sand);color:var(–ink);
+font-family:‘DM Sans’,sans-serif;font-weight:600;
+font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;
+border:none;cursor:pointer;transition:background .2s;
+}
+.btn-submit:hover{background:var(–sand-lt)}
+.btn-submit:focus{outline:2px solid var(–sand-lt);outline-offset:2px}
+.form-success{display:none;text-align:center;padding:2rem}
+.form-success.show{display:block}
+.form-success p{font-size:.875rem;color:var(–stone-lt)}
+
+/* ─── LOGOS ─── */
+.logos-section{
+background:var(–ink-mid);
+border-top:1px solid var(–line);padding:2.5rem 2rem;
+}
+.logos-inner{max-width:1140px;margin:0 auto}
+.logos-label{
+font-family:‘DM Mono’,monospace;
+font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;
+color:var(–stone);text-align:center;margin-bottom:1.75rem;
+}
+.logos-row{
+display:flex;flex-wrap:wrap;gap:1rem;
+justify-content:center;align-items:center;
+}
+.logo-badge{
+font-family:‘DM Mono’,monospace;
+font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;
+color:rgba(255,255,255,.2);padding:.4rem .9rem;
+border:1px solid rgba(255,255,255,.06);
+}
+
+/* ─── FOOTER ─── */
+footer{
+background:var(–ink-mid);
+border-top:1px solid var(–line);
+padding:3.5rem 2rem 2rem;
+}
+.footer-grid{
+max-width:1140px;margin:0 auto;
+display:grid;grid-template-columns:1.6fr 1fr 1fr;
+gap:3rem;margin-bottom:3rem;
+}
+.footer-logo{
+font-family:‘Bebas Neue’,sans-serif;
+font-size:1.2rem;letter-spacing:.12em;
+color:var(–white);margin-bottom:.75rem;display:block;
+}
+.footer-logo span{color:var(–sand)}
+.footer-tag{
+font-size:.8rem;font-weight:300;color:var(–stone);
+line-height:1.65;margin-bottom:1.25rem;
+}
+.footer-socials{display:flex;gap:.5rem}
+.social-btn{
+width:32px;height:32px;border:1px solid var(–line);
+display:flex;align-items:center;justify-content:center;
+color:var(–stone);text-decoration:none;font-size:.72rem;
+transition:all .2s;font-family:‘DM Mono’,monospace;
+}
+.social-btn:hover,.social-btn:focus{border-color:var(–sand);color:var(–sand);outline:2px solid var(–sand);outline-offset:2px}
+.footer-col-title{
+font-family:‘DM Mono’,monospace;
+font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;
+color:var(–stone);margin-bottom:1rem;
+}
+.footer-col a{
+display:block;color:var(–stone);text-decoration:none;
+font-size:.8rem;font-weight:300;margin-bottom:.45rem;transition:color .2s;
+}
+.footer-col a:hover,.footer-col a:focus{color:var(–white);outline:1px solid rgba(255,255,255,.2);outline-offset:2px}
+.footer-bottom{
+max-width:1140px;margin:0 auto;
+padding-top:1.5rem;border-top:1px solid rgba(255,255,255,.04);
+display:flex;justify-content:space-between;align-items:center;
+flex-wrap:wrap;gap:.75rem;
+}
+.footer-bottom p{
+font-family:‘DM Mono’,monospace;
+font-size:.6rem;letter-spacing:.06em;color:var(–stone);
+}
+.footer-bottom a{color:var(–stone);text-decoration:none;transition:color .2s}
+.footer-bottom a:hover{color:var(–white)}
+
+/* ─── WHATSAPP ─── */
+.wa-btn{
+position:fixed;bottom:2rem;right:2rem;z-index:999;
+width:52px;height:52px;border-radius:50%;
+background:#25D366;display:flex;align-items:center;justify-content:center;
+box-shadow:0 4px 20px rgba(37,211,102,.3);
+text-decoration:none;transition:transform .2s,box-shadow .2s;
+animation:popIn .5s 2s ease both;
+}
+.wa-btn:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.45)}
+.wa-btn:focus{outline:2px solid #25D366;outline-offset:3px}
+.wa-btn svg{width:24px;height:24px;fill:#fff}
+.wa-tooltip{
+position:absolute;right:58px;
+background:var(–ink-mid);color:var(–white);
+font-size:.7rem;font-weight:500;padding:.3rem .7rem;
+white-space:nowrap;border:1px solid var(–line);
+opacity:0;pointer-events:none;transition:opacity .2s;
+font-family:‘DM Mono’,monospace;letter-spacing:.04em;
+}
+.wa-btn:hover .wa-tooltip{opacity:1}
+
+/* ─── COOKIE ─── */
 #cookie-banner{
 position:fixed;bottom:0;left:0;right:0;z-index:9999;
-background:var(–ink-mid);
-border-top:1px solid rgba(200,169,110,.25);
-padding:1.25rem 2rem;
+background:var(–ink-soft);border-top:1px solid var(–line-sand);
+padding:1rem 2rem;
 display:flex;align-items:center;justify-content:space-between;
 gap:1.5rem;flex-wrap:wrap;
-transform:translateY(100%);
-transition:transform .4s ease;
+transform:translateY(100%);transition:transform .4s ease;
 }
 #cookie-banner.show{transform:translateY(0)}
-.cookie-text{font-size:.8rem;color:var(–stone);line-height:1.5;flex:1;min-width:200px}
-.cookie-text strong{color:var(–white);font-weight:500}
-.cookie-text a{color:var(–sand);text-decoration:none}
-.cookie-actions{display:flex;gap:.75rem;flex-shrink:0}
-.btn-cookie-accept{background:var(–sand);color:var(–ink);border:none;padding:.55rem 1.25rem;font-family:‘Outfit’,sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;border-radius:2px;transition:background .2s}
-.btn-cookie-accept:hover{background:var(–sand-lt)}
-.btn-cookie-reject{background:transparent;color:var(–stone);border:1px solid rgba(255,255,255,.12);padding:.55rem 1.25rem;font-family:‘Outfit’,sans-serif;font-size:.8rem;font-weight:400;cursor:pointer;border-radius:2px;transition:all .2s}
-.btn-cookie-reject:hover{color:var(–white);border-color:rgba(255,255,255,.3)}
+.cookie-txt{font-size:.75rem;color:var(–stone);line-height:1.5;flex:1;min-width:200px}
+.cookie-txt strong{color:var(–white);font-weight:500}
+.cookie-txt a{color:var(–sand);text-decoration:none}
+.cookie-btns{display:flex;gap:.5rem;flex-shrink:0}
+.btn-cookie-a{
+background:var(–sand);color:var(–ink);border:none;
+padding:.45rem 1rem;font-family:‘DM Sans’,sans-serif;
+font-size:.75rem;font-weight:600;cursor:pointer;
+letter-spacing:.06em;text-transform:uppercase;
+}
+.btn-cookie-r{
+background:transparent;color:var(–stone);
+border:1px solid var(–line);
+padding:.45rem 1rem;font-family:‘DM Sans’,sans-serif;
+font-size:.75rem;cursor:pointer;
+}
 
-/* ── WHATSAPP BUTTON ── */
-.wa-float{
-position:fixed;bottom:2rem;right:2rem;z-index:999;
-width:56px;height:56px;border-radius:50%;
-background:#25D366;
-display:flex;align-items:center;justify-content:center;
-box-shadow:0 4px 20px rgba(37,211,102,.4);
-text-decoration:none;
-transition:transform .2s,box-shadow .2s;
-animation:waIn .5s 2s ease both;
-}
-.wa-float:hover{
-transform:scale(1.08);
-box-shadow:0 6px 28px rgba(37,211,102,.5);
-}
-.wa-float svg{width:28px;height:28px;fill:#fff}
-.wa-tooltip{
-position:absolute;right:68px;
-background:var(–ink-mid);color:var(–white);
-font-size:.75rem;font-weight:500;
-padding:.4rem .8rem;border-radius:2px;
-white-space:nowrap;
-border:1px solid rgba(255,255,255,.1);
-opacity:0;pointer-events:none;
-transition:opacity .2s;
-}
-.wa-float:hover .wa-tooltip{opacity:1}
-@keyframes waIn{from{opacity:0;transform:scale(.5)}to{opacity:1;transform:scale(1)}}
+/* ─── ANIMATIONS ─── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+@keyframes popIn{from{opacity:0;transform:scale(.4)}to{opacity:1;transform:scale(1)}}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
 
-/* Honeypot — hidden from humans, visible to bots */
-.hp-field{position:absolute;left:-9999px;top:-9999px;opacity:0;pointer-events:none;tab-index:-1}
+/* ─── RESPONSIVE ─── */
+@media(max-width:960px){
+.nav-links{display:none}
+.hamburger{display:block}
+.hero-grid-layout{grid-template-columns:1fr}
+.exposure-panel{display:none}
+.method-flow{grid-template-columns:1fr 1fr}
+.method-card{border-bottom:1px solid var(–line)}
+.products-grid{grid-template-columns:1fr 1fr}
+.product-card{border-bottom:1px solid var(–line)}
+.cases-grid{grid-template-columns:1fr}
+.case-card{border-right:none;border-bottom:1px solid var(–line)}
+.about-grid{grid-template-columns:1fr}
+.budget-grid{grid-template-columns:1fr}
+.score-grid{grid-template-columns:1fr}
+.footer-grid{grid-template-columns:1fr;gap:2rem}
+.field-row{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+.method-flow{grid-template-columns:1fr}
+.products-grid{grid-template-columns:1fr}
+.score-dims-grid{grid-template-columns:1fr}
+.score-split{grid-template-columns:1fr}
+.score-half:first-child{border-right:none;border-bottom:1px solid var(–line)}
+}
 </style>
 
 </head>
 <body>
 
-<div class="lang-bar">
-  <nav>
-    <a href="#" class="nav-logo">Privus <span>Kuzola</span></a>
-    <div class="nav-right">
-      <div class="nav-links">
-        <a href="#processo" data-pt="Processo" data-en="Process">Processo</a>
-        <a href="#servicos" data-pt="Serviços" data-en="Services">Serviços</a>
-        <a href="#sobre" data-pt="Sobre" data-en="About">Sobre</a>
-      </div>
-      <div class="lang-toggle">
-        <button class="lang-btn active" onclick="setLang('pt')">PT</button>
-        <button class="lang-btn" onclick="setLang('en')">EN</button>
-      </div>
-      <a href="#audit" class="nav-cta" data-pt="Iniciar diagnóstico" data-en="Start assessment">Iniciar diagnóstico</a>
+<a href="#main" class="skip-link">Saltar para conteúdo principal</a>
+
+<!-- NAV -->
+
+<nav class="nav" role="navigation" aria-label="Navegação principal">
+  <div class="nav-inner">
+    <a href="#" class="nav-logo" aria-label="Privus Kuzola — página inicial">PRIVUS <span>KUZOLA</span></a>
+    <div class="nav-links" role="menubar">
+      <a href="#metodologia" role="menuitem" data-pt="Metodologia" data-en="Methodology">Metodologia</a>
+      <a href="#servicos" role="menuitem" data-pt="Serviços" data-en="Services">Serviços</a>
+      <a href="#casos" role="menuitem" data-pt="Casos" data-en="Cases">Casos</a>
+      <a href="#orcamento" role="menuitem" data-pt="Orçamento" data-en="Quote">Orçamento</a>
     </div>
-  </nav>
+    <div class="nav-right">
+      <div class="lang-toggle" role="group" aria-label="Seleccionar idioma">
+        <button class="lang-btn active" onclick="setLang('pt')" aria-pressed="true">PT</button>
+        <button class="lang-btn" onclick="setLang('en')" aria-pressed="false">EN</button>
+      </div>
+      <a href="calculadora.html" class="nav-cta" data-pt="Score Gratuito" data-en="Free Score">Score Gratuito</a>
+      <button class="hamburger" onclick="toggleMenu()" aria-label="Menu" aria-expanded="false" id="hamburgerBtn">☰</button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu" role="menu">
+  <a href="#metodologia" onclick="toggleMenu()" data-pt="Metodologia" data-en="Methodology">Metodologia</a>
+  <a href="#servicos" onclick="toggleMenu()" data-pt="Serviços" data-en="Services">Serviços</a>
+  <a href="#casos" onclick="toggleMenu()" data-pt="Casos" data-en="Cases">Casos</a>
+  <a href="#orcamento" onclick="toggleMenu()" data-pt="Orçamento" data-en="Quote">Orçamento</a>
+  <a href="calculadora.html" data-pt="Score Gratuito" data-en="Free Score">Score Gratuito</a>
 </div>
 
-<section class="hero">
-  <div class="hero-bg"></div>
+<!-- HERO -->
+
+<main id="main">
+<section class="hero" aria-labelledby="hero-heading">
+  <div class="hero-noise" aria-hidden="true"></div>
   <div class="hero-inner">
-    <div class="hero-left">
-      <div class="hero-eyebrow">
-        <div class="eyebrow-line"></div>
-        <span class="eyebrow-text" data-pt="Consultoria RGPD · Portugal" data-en="GDPR Consulting · Portugal">Consultoria RGPD · Portugal</span>
+    <div class="hero-grid-layout">
+      <div>
+        <div class="hero-eyebrow">
+          <div class="eyebrow-pill" data-pt="Consultoria Regulatória Digital · Portugal" data-en="Digital Regulatory Consulting · Portugal">Consultoria Regulatória Digital · Portugal</div>
+        </div>
+        <h1 id="hero-heading">
+          <span data-pt="ANTES DA CNPD." data-en="BEFORE THE AUTHORITY.">ANTES DA CNPD.</span><br>
+          <span data-pt="ANTES DO INCIDENTE." data-en="BEFORE THE INCIDENT.">ANTES DO INCIDENTE.</span><br>
+          <span class="accent" data-pt="ANTES DE SER TARDE." data-en="BEFORE IT'S TOO LATE.">ANTES DE SER TARDE.</span>
+        </h1>
+        <p class="hero-body" data-pt="A exposição regulatória não avisa. A CNPD não anuncia inspecções. Os incidentes não escolhem o momento. Diagnóstico, implementação e manutenção contínua para empresas que agem antes de precisar." data-en="Regulatory exposure gives no warning. Supervisory authorities don't announce inspections. Incidents don't choose their moment. Assessment, implementation and ongoing maintenance for companies that act before they need to.">A exposição regulatória não avisa. A CNPD não anuncia inspecções. Os incidentes não escolhem o momento. Diagnóstico, implementação e manutenção contínua para empresas que agem antes de precisar.</p>
+        <div class="hero-actions">
+          <a href="calculadora.html" class="btn-primary" data-pt="Calcular exposição →" data-en="Calculate exposure →">Calcular exposição →</a>
+          <a href="#metodologia" class="btn-ghost" data-pt="Ver metodologia" data-en="View methodology">Ver metodologia</a>
+        </div>
+        <div class="hero-frameworks" aria-label="Frameworks cobertos">
+          <div class="fw-chip">RGPD</div>
+          <div class="fw-chip">AI ACT</div>
+          <div class="fw-chip">NIS2</div>
+          <div class="fw-chip">ISO 27001</div>
+          <div class="fw-chip">LEI 58/2019</div>
+        </div>
       </div>
-      <h1 data-pt="A sua empresa.<br>Protegida.<br><em>Sem excepções.</em>" data-en="Your company.<br>Protected.<br><em>No exceptions.</em>">A sua empresa.<br>Protegida.<br><em>Sem excepções.</em></h1>
-      <p class="hero-body" data-pt="O RGPD não é burocracia — é a estrutura que protege os dados dos seus clientes, a reputação da sua empresa e a sua exposição legal. Tratamos de tudo, do diagnóstico à manutenção contínua." data-en="GDPR isn't bureaucracy — it's the structure that protects your clients' data, your company's reputation, and your legal exposure. We handle everything, from the initial assessment to ongoing maintenance.">O RGPD não é burocracia — é a estrutura que protege os dados dos seus clientes, a reputação da sua empresa e a sua exposição legal. Tratamos de tudo, do diagnóstico à manutenção contínua.</p>
-      <div class="hero-actions">
-        <a href="#audit" class="btn-main" data-pt="Iniciar diagnóstico →" data-en="Start assessment →">Iniciar diagnóstico →</a>
-        <a href="#servicos" class="btn-line" data-pt="Ver serviços" data-en="View services">Ver serviços</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="risk-panel">
-        <div class="risk-panel-label" data-pt="Exposição sem conformidade" data-en="Exposure without compliance">Exposição sem conformidade</div>
-        <div class="risk-item">
-          <div class="risk-icon warn">⚠</div>
-          <div>
-            <div class="risk-title" data-pt="Violação de dados não reportada" data-en="Unreported data breach">Violação de dados não reportada</div>
-            <div class="risk-desc" data-pt="72 horas para notificar a CNPD. Sem processo documentado, o prazo não é cumprido." data-en="72 hours to notify the CNPD. Without a documented process, deadlines are missed.">72 horas para notificar a CNPD. Sem processo documentado, o prazo não é cumprido.</div>
-          </div>
+      <div class="exposure-panel" aria-label="Painel de exposição regulatória">
+        <div class="exposure-header">
+          <span class="exposure-label" data-pt="Exposição regulatória" data-en="Regulatory exposure">Exposição regulatória</span>
+          <span class="exposure-live"><span class="live-dot" aria-hidden="true"></span><span data-pt="Art. 83.º RGPD" data-en="Art. 83 GDPR">Art. 83.º RGPD</span></span>
         </div>
-        <div class="risk-item">
-          <div class="risk-icon">📋</div>
-          <div>
-            <div class="risk-title" data-pt="Documentação em falta" data-en="Missing documentation">Documentação em falta</div>
-            <div class="risk-desc" data-pt="ROPA, DPA, Política de Privacidade — sem estes documentos não há conformidade demonstrável." data-en="ROPA, DPA, Privacy Policy — without these documents there is no demonstrable compliance.">ROPA, DPA, Política de Privacidade — sem estes documentos não há conformidade demonstrável.</div>
+        <div class="exposure-body">
+          <div class="exposure-metric">
+            <div class="metric-label" data-pt="Coima máxima possível" data-en="Maximum possible fine">Coima máxima possível</div>
+            <div class="metric-value danger">€20.000.000</div>
+            <div class="metric-sub" data-pt="ou 4% do volume de negócios global" data-en="or 4% of global annual turnover">ou 4% do volume de negócios global</div>
           </div>
-        </div>
-        <div class="risk-item">
-          <div class="risk-icon warn">🔍</div>
-          <div>
-            <div class="risk-title" data-pt="Inspecção da CNPD" data-en="CNPD inspection">Inspecção da CNPD</div>
-            <div class="risk-desc" data-pt="A CNPD pode iniciar inspecções a qualquer momento. As coimas são calculadas sobre o volume global de negócios." data-en="The CNPD can initiate inspections at any time. Fines are calculated on global business volume.">A CNPD pode iniciar inspecções a qualquer momento. As coimas são calculadas sobre o volume global de negócios.</div>
+          <div class="exposure-metric">
+            <div class="metric-label" data-pt="Prazo de notificação — violação" data-en="Breach notification deadline">Prazo de notificação — violação</div>
+            <div class="metric-value warn">72 HORAS</div>
+            <div class="metric-sub" data-pt="Art. 33.º RGPD — sem excepções" data-en="Art. 33 GDPR — no exceptions">Art. 33.º RGPD — sem excepções</div>
           </div>
-        </div>
-        <div class="risk-amount">
-          <div class="risk-amount-label" data-pt="Coima máxima — Art. 83.º RGPD" data-en="Maximum fine — Art. 83 GDPR">Coima máxima — Art. 83.º RGPD</div>
-          <span class="risk-amount-value">€20.000.000</span>
+          <div class="exposure-metric">
+            <div class="metric-label" data-pt="Score de maturidade da sua empresa" data-en="Your company's maturity score">Score de maturidade da sua empresa</div>
+            <div class="metric-value unknown">?/100</div>
+            <div class="metric-sub" data-pt="Não calculado — clique abaixo" data-en="Not calculated — click below">Não calculado — clique abaixo</div>
+          </div>
+          <div class="exposure-cta">
+            <a href="calculadora.html" class="btn-exposure" data-pt="Calcular o meu Score gratuitamente" data-en="Calculate my Score for free">Calcular o meu Score gratuitamente</a>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="process" id="processo">
+<!-- METHODOLOGY -->
+
+<section class="method-section" id="metodologia" aria-labelledby="method-heading">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-eyebrow" data-pt="Processo" data-en="Process">Processo</p>
-      <h2 data-pt="Do diagnóstico<br>à conformidade permanente." data-en="From assessment<br>to permanent compliance.">Do diagnóstico<br>à conformidade permanente.</h2>
-      <p class="section-sub" data-pt="Três fases estruturadas que transformam a exposição legal da sua empresa em segurança documentada." data-en="Three structured phases that transform your company's legal exposure into documented security.">Três fases estruturadas que transformam a exposição legal da sua empresa em segurança documentada.</p>
+      <p class="section-eyebrow" data-pt="Metodologia" data-en="Methodology">Metodologia</p>
+      <h2 id="method-heading">PRIVUS REGULATORY<br>FRAMEWORK</h2>
+      <p class="section-sub" data-pt="Quatro fases. Cada uma pressupõe a anterior. Não implementamos o que não diagnosticámos. Não mantemos o que não construímos." data-en="Four phases. Each builds on the previous. We don't implement what we haven't assessed. We don't maintain what we haven't built.">Quatro fases. Cada uma pressupõe a anterior. Não implementamos o que não diagnosticámos. Não mantemos o que não construímos.</p>
     </div>
-    <div class="process-steps reveal">
-      <div class="process-step">
-        <div class="step-counter">I</div>
-        <div class="step-name" data-pt="Diagnóstico" data-en="Assessment">Diagnóstico</div>
-        <div class="step-body" data-pt="Auditoria completa à situação actual da sua empresa. Mapeamos os dados que trata, as lacunas existentes e os riscos concretos para o seu sector." data-en="Complete audit of your company's current situation. We map the data you process, existing gaps, and concrete risks for your sector.">Auditoria completa à situação actual da sua empresa. Mapeamos os dados que trata, as lacunas existentes e os riscos concretos para o seu sector.</div>
-        <div class="step-detail"><strong data-pt="Entrega em 5 dias úteis" data-en="Delivered in 5 business days">Entrega em 5 dias úteis</strong></div>
+    <div class="method-flow reveal">
+      <div class="method-card">
+        <div class="method-num">I — ASSESS</div>
+        <div class="method-phase" data-pt="Fase de diagnóstico" data-en="Assessment phase">Fase de diagnóstico</div>
+        <div class="method-name">PRIVUS AUDIT</div>
+        <div class="method-desc" data-pt="Score de Maturidade Regulatória em 9 dimensões. Mapa de risco priorizado. Plano de acção faseado. Identificação dos frameworks aplicáveis. Porta de entrada obrigatória para todos os serviços." data-en="Regulatory Maturity Score across 9 dimensions. Prioritised risk map. Phased action plan. Applicable framework identification. Mandatory entry point for all services.">Score de Maturidade Regulatória em 9 dimensões. Mapa de risco priorizado. Plano de acção faseado. Identificação dos frameworks aplicáveis. Porta de entrada obrigatória para todos os serviços.</div>
+        <div class="method-prazo" data-pt="5–7 dias úteis" data-en="5–7 business days">5–7 dias úteis</div>
       </div>
-      <div class="process-step">
-        <div class="step-counter">II</div>
-        <div class="step-name" data-pt="Implementação" data-en="Implementation">Implementação</div>
-        <div class="step-body" data-pt="Construímos toda a documentação legal, os processos internos e a formação necessária. Cada documento é elaborado para a realidade específica da sua empresa e sector." data-en="We build all legal documentation, internal processes, and necessary training. Each document is tailored to your company's specific reality and sector.">Construímos toda a documentação legal, os processos internos e a formação necessária. Cada documento é elaborado para a realidade específica da sua empresa e sector.</div>
-        <div class="step-detail"><strong data-pt="Entrega em 20 dias úteis" data-en="Delivered in 20 business days">Entrega em 20 dias úteis</strong></div>
+      <div class="method-card">
+        <div class="method-num">II — BUILD</div>
+        <div class="method-phase" data-pt="Fase de implementação" data-en="Implementation phase">Fase de implementação</div>
+        <div class="method-name">PRIVUS COMPLIANCE</div>
+        <div class="method-desc" data-pt="Arquitectura regulatória completa. Documentação RGPD, prescrição técnica dos 6 blocos de segurança, formação da equipa e frameworks adicionais por sector." data-en="Complete regulatory architecture. GDPR documentation, technical prescription of 6 security blocks, team training and additional frameworks by sector.">Arquitectura regulatória completa. Documentação RGPD, prescrição técnica dos 6 blocos de segurança, formação da equipa e frameworks adicionais por sector.</div>
+        <div class="method-prazo" data-pt="20–35 dias úteis" data-en="20–35 business days">20–35 dias úteis</div>
       </div>
-      <div class="process-step">
-        <div class="step-counter">III</div>
-        <div class="step-name" data-pt="Manutenção" data-en="Maintenance">Manutenção</div>
-        <div class="step-body" data-pt="A legislação evolui. A sua empresa cresce. Mantemos a conformidade actualizada, apoiamos em incidentes e garantimos que a sua documentação reflecte sempre a realidade actual." data-en="Legislation evolves. Your company grows. We keep compliance current, support you in incidents, and ensure your documentation always reflects current reality.">A legislação evolui. A sua empresa cresce. Mantemos a conformidade actualizada, apoiamos em incidentes e garantimos que a sua documentação reflecte sempre a realidade actual.</div>
-        <div class="step-detail"><strong data-pt="Suporte mensal contínuo" data-en="Ongoing monthly support">Suporte mensal contínuo</strong></div>
+      <div class="method-card">
+        <div class="method-num">III — SHIELD</div>
+        <div class="method-phase" data-pt="Fase de verificação" data-en="Verification phase">Fase de verificação</div>
+        <div class="method-name">PRIVUS PROTECT</div>
+        <div class="method-desc" data-pt="Verificação técnica dos 6 blocos implementados. Coordenação com parceiro IT. Simulação de violação de dados. Badge Privus e relatório de certificação assinado." data-en="Technical verification of 6 implemented blocks. IT partner coordination. Data breach simulation. Privus Badge and signed certification report.">Verificação técnica dos 6 blocos implementados. Coordenação com parceiro IT. Simulação de violação de dados. Badge Privus e relatório de certificação assinado.</div>
+        <div class="method-prazo" data-pt="15–25 dias úteis" data-en="15–25 business days">15–25 dias úteis</div>
+      </div>
+      <div class="method-card">
+        <div class="method-num">IV — MAINTAIN</div>
+        <div class="method-phase" data-pt="Fase de manutenção" data-en="Maintenance phase">Fase de manutenção</div>
+        <div class="method-name">PRIVUS CONTROL</div>
+        <div class="method-desc" data-pt="Monitorização legislativa contínua. Revisão anual. Verificação técnica semestral. Suporte a incidentes em 72h. DPO externo dedicado. Score actualizado semestralmente." data-en="Continuous legislative monitoring. Annual review. Biannual technical check. 72h incident support. Dedicated external DPO. Score updated biannually.">Monitorização legislativa contínua. Revisão anual. Verificação técnica semestral. Suporte a incidentes em 72h. DPO externo dedicado. Score actualizado semestralmente.</div>
+        <div class="method-prazo" data-pt="Contínuo" data-en="Ongoing">Contínuo</div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="products" id="servicos">
+<!-- PRODUCTS -->
+
+<section class="products-section" id="servicos" aria-labelledby="products-heading">
   <div class="section-inner">
     <div class="section-header reveal">
-      <p class="section-eyebrow" data-pt="Serviços" data-en="Services">Serviços</p>
-      <h2 data-pt="Escolha o ponto<br>de entrada certo." data-en="Choose the right<br>entry point.">Escolha o ponto<br>de entrada certo.</h2>
-      <p class="section-sub" data-pt="Cada fase tem o seu produto. Preços transparentes, sem surpresas." data-en="Each phase has its product. Transparent pricing, no surprises.">Cada fase tem o seu produto. Preços transparentes, sem surpresas.</p>
+      <p class="section-eyebrow" data-pt="Serviços e Preços" data-en="Services & Pricing">Serviços e Preços</p>
+      <h2 id="products-heading" data-pt="PREÇOS TRANSPARENTES.<br>SEM SURPRESAS." data-en="TRANSPARENT PRICING.<br>NO SURPRISES.">PREÇOS TRANSPARENTES.<br>SEM SURPRESAS.</h2>
+      <p class="section-sub" data-pt="Seleccione o seu perfil. Os preços, prazos e entregáveis adaptam-se à complexidade real de cada sector." data-en="Select your profile. Pricing, timelines and deliverables adapt to the real complexity of each sector.">Seleccione o seu perfil. Os preços, prazos e entregáveis adaptam-se à complexidade real de cada sector.</p>
     </div>
-    <div class="products-grid reveal">
-      <div class="product">
-        <p class="product-phase" data-pt="Fase I" data-en="Phase I">Fase I</p>
-        <h3 class="product-title">Privus Audit</h3>
-        <p class="product-line" data-pt="Saiba exactamente onde está e o que precisa de fazer." data-en="Know exactly where you stand and what needs to be done.">Saiba exactamente onde está e o que precisa de fazer.</p>
-        <div class="product-pricing">
-          <div class="product-price"><sup>€</sup>197</div>
-          <div class="product-freq" data-pt="Pagamento único · 5 dias úteis" data-en="One-time payment · 5 business days">Pagamento único · 5 dias úteis</div>
-        </div>
-        <ul class="product-items">
-          <li data-pt="Análise da situação actual" data-en="Current situation analysis">Análise da situação actual</li>
-          <li data-pt="Identificação de lacunas e riscos" data-en="Gap and risk identification">Identificação de lacunas e riscos</li>
-          <li data-pt="Relatório de conformidade detalhado" data-en="Detailed compliance report">Relatório de conformidade detalhado</li>
-          <li data-pt="Plano de acção prioritário" data-en="Priority action plan">Plano de acção prioritário</li>
-          <li data-pt="Crédito aplicável no Compliance" data-en="Credit applicable to Compliance">Crédito aplicável no Compliance</li>
-        </ul>
-        <a href="#audit" class="btn-product btn-p-sand-outline" data-pt="Iniciar diagnóstico" data-en="Start assessment">Iniciar diagnóstico</a>
+    <div class="profile-tabs reveal" role="tablist" aria-label="Perfis de cliente">
+      <button class="profile-tab active" role="tab" aria-selected="true" onclick="setProfile('pme',this)" data-pt="PME Geral" data-en="General SME">PME Geral</button>
+      <button class="profile-tab" role="tab" aria-selected="false" onclick="setProfile('clinica',this)" data-pt="Clínica / Saúde" data-en="Healthcare">Clínica / Saúde</button>
+      <button class="profile-tab" role="tab" aria-selected="false" onclick="setProfile('startup',this)" data-pt="Startup / Tech" data-en="Startup / Tech">Startup / Tech</button>
+    </div>
+    <div class="products-grid reveal" id="productsGrid" role="tabpanel"></div>
+    <div class="credit-note reveal" data-pt="<strong>Crédito Audit:</strong> O valor do Audit é deduzido integralmente no Compliance se contratado no prazo de 90 dias." data-en="<strong>Audit Credit:</strong> The full Audit value is deducted from Compliance if contracted within 90 days."><strong>Crédito Audit:</strong> O valor do Audit é deduzido integralmente no Compliance se contratado no prazo de 90 dias.</div>
+  </div>
+</section>
+
+<!-- SCORE -->
+
+<section class="score-section" id="score" aria-labelledby="score-heading">
+  <div class="section-inner score-grid">
+    <div class="score-left reveal">
+      <p class="section-eyebrow" data-pt="Diagnóstico Gratuito" data-en="Free Assessment">Diagnóstico Gratuito</p>
+      <h2 id="score-heading" data-pt="QUAL É O SEU SCORE<br>DE MATURIDADE?" data-en="WHAT IS YOUR<br>MATURITY SCORE?">QUAL É O SEU SCORE<br>DE MATURIDADE?</h2>
+      <p data-pt="18 perguntas. 5 minutos. Descubra onde está exposto antes que a CNPD o descubra primeiro. Resultado imediato com as 3 dimensões críticas identificadas." data-en="18 questions. 5 minutes. Find out where you're exposed before the supervisory authority does. Immediate result with the 3 critical dimensions identified.">18 perguntas. 5 minutos. Descubra onde está exposto antes que a CNPD o descubra primeiro. Resultado imediato com as 3 dimensões críticas identificadas.</p>
+      <div class="score-dims-grid" aria-label="Dimensões avaliadas">
+        <div class="score-dim-item" data-pt="Cifra e proteção de dados" data-en="Encryption & data protection">Cifra e proteção de dados</div>
+        <div class="score-dim-item" data-pt="Controlo de acessos" data-en="Access control">Controlo de acessos</div>
+        <div class="score-dim-item" data-pt="Gestão de dispositivos" data-en="Device management">Gestão de dispositivos</div>
+        <div class="score-dim-item" data-pt="Comunicações seguras" data-en="Secure communications">Comunicações seguras</div>
+        <div class="score-dim-item" data-pt="Gestão de incidentes" data-en="Incident management">Gestão de incidentes</div>
+        <div class="score-dim-item" data-pt="Fornecedores e subcontratantes" data-en="Vendors & subcontractors">Fornecedores e subcontratantes</div>
+        <div class="score-dim-item" data-pt="Governação e documentação" data-en="Governance & documentation">Governação e documentação</div>
+        <div class="score-dim-item" data-pt="Formação e cultura" data-en="Training & culture">Formação e cultura</div>
+        <div class="score-dim-item" data-pt="Continuidade de negócio" data-en="Business continuity">Continuidade de negócio</div>
       </div>
-      <div class="product featured">
-        <div class="product-mark" data-pt="Recomendado" data-en="Recommended">Recomendado</div>
-        <p class="product-phase" data-pt="Fase II" data-en="Phase II">Fase II</p>
-        <h3 class="product-title">Privus Compliance</h3>
-        <p class="product-line" data-pt="Conformidade completa, documentada e pronta a demonstrar." data-en="Full compliance, documented and ready to demonstrate.">Conformidade completa, documentada e pronta a demonstrar.</p>
-        <div class="product-pricing">
-          <div class="product-price"><sup>€</sup>1.200</div>
-          <div class="product-freq" data-pt="Pagamento único · até 250 colaboradores" data-en="One-time payment · up to 250 employees">Pagamento único · até 250 colaboradores</div>
+      <a href="calculadora.html" class="btn-primary" data-pt="Iniciar diagnóstico gratuito →" data-en="Start free assessment →">Iniciar diagnóstico gratuito →</a>
+    </div>
+    <div class="score-right reveal">
+      <div class="score-split">
+        <div class="score-half">
+          <div class="score-half-label" data-pt="Exposição máxima" data-en="Maximum exposure">Exposição máxima</div>
+          <div class="score-exposure" aria-label="Exposição máxima: 20 milhões de euros">€20M</div>
+          <div class="score-exposure-sub" data-pt="Art. 83.º RGPD" data-en="Art. 83 GDPR">Art. 83.º RGPD</div>
         </div>
-        <ul class="product-items">
-          <li data-pt="Documentação legal completa" data-en="Complete legal documentation">Documentação legal completa</li>
-          <li data-pt="ROPA, DPA, Políticas e Procedimentos" data-en="ROPA, DPA, Policies and Procedures">ROPA, DPA, Políticas e Procedimentos</li>
-          <li data-pt="3 sessões de acompanhamento" data-en="3 follow-up sessions">3 sessões de acompanhamento</li>
-          <li data-pt="Formação da equipa incluída" data-en="Team training included">Formação da equipa incluída</li>
-          <li data-pt="PME, Saúde e Alojamento Local" data-en="SME, Healthcare and Local Accommodation">PME, Saúde e Alojamento Local</li>
-        </ul>
-        <a href="https://buy.stripe.com/5kQ00ia1Iblq20O2K8d7q01" class="btn-product btn-p-gold" target="_blank" data-pt="Iniciar Compliance" data-en="Start Compliance">Iniciar Compliance</a>
+        <div class="score-half">
+          <div class="score-half-label" data-pt="O seu score actual" data-en="Your current score">O seu score actual</div>
+          <div class="score-unknown" aria-label="Score desconhecido">?/100</div>
+          <div class="score-scale">
+            <div class="scale-bar" aria-hidden="true">
+              <div class="scale-seg seg-red"></div>
+              <div class="scale-seg seg-amber"></div>
+              <div class="scale-seg seg-sand"></div>
+              <div class="scale-seg seg-green"></div>
+            </div>
+            <div class="scale-labels" aria-hidden="true">
+              <span data-pt="Crítico" data-en="Critical">Crítico</span>
+              <span data-pt="Insuf." data-en="Insuf.">Insuf.</span>
+              <span data-pt="Adequado" data-en="Adequate">Adequado</span>
+              <span data-pt="Robusto" data-en="Robust">Robusto</span>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="product">
-        <p class="product-phase" data-pt="Fase III" data-en="Phase III">Fase III</p>
-        <h3 class="product-title">Privus Control</h3>
-        <p class="product-line" data-pt="A conformidade que se mantém actualizada, todos os meses." data-en="Compliance that stays current, every month.">A conformidade que se mantém actualizada, todos os meses.</p>
-        <div class="product-pricing">
-          <div class="product-price"><sup>€</sup>149</div>
-          <div class="product-freq" data-pt="por mês · subscrição mensal" data-en="per month · monthly subscription">por mês · subscrição mensal</div>
-        </div>
-        <ul class="product-items">
-          <li data-pt="Revisão anual da documentação" data-en="Annual documentation review">Revisão anual da documentação</li>
-          <li data-pt="Alertas de alterações legislativas" data-en="Legislative change alerts">Alertas de alterações legislativas</li>
-          <li data-pt="Suporte em incidentes e violações" data-en="Incident and breach support">Suporte em incidentes e violações</li>
-          <li data-pt="Resposta a pedidos de titulares" data-en="Data subject request handling">Resposta a pedidos de titulares</li>
-          <li data-pt="DPO externo dedicado" data-en="Dedicated external DPO">DPO externo dedicado</li>
-        </ul>
-        <a href="https://buy.stripe.com/8x2bJ06PwfBG7l80C0d7q02" class="btn-product btn-p-sand-outline" target="_blank" data-pt="Subscrever Control" data-en="Subscribe to Control">Subscrever Control</a>
+      <div class="score-cta-box">
+        <a href="calculadora.html" class="btn-score" data-pt="Calcular gratuitamente — 5 minutos →" data-en="Calculate for free — 5 minutes →">Calcular gratuitamente — 5 minutos →</a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="audit-section" id="audit">
+<!-- CASES -->
+
+<section class="cases-section" id="casos" aria-labelledby="cases-heading">
   <div class="section-inner">
-    <div class="audit-grid">
-      <div class="audit-left reveal">
-        <p class="section-eyebrow" data-pt="Privus Audit" data-en="Privus Audit">Privus Audit</p>
-        <h2 data-pt="Comece por<br>saber onde está." data-en="Start by knowing<br>where you stand.">Comece por<br>saber onde está.</h2>
-        <p class="section-sub" data-pt="O diagnóstico é o primeiro passo. Sem ele, qualquer acção é especulação." data-en="The assessment is the first step. Without it, any action is speculation.">O diagnóstico é o primeiro passo. Sem ele, qualquer acção é especulação.</p>
-        <div class="audit-process">
-          <div class="audit-step">
-            <div class="audit-step-num">1</div>
-            <div><div class="audit-step-title" data-pt="Preenche o formulário" data-en="Fill in the form">Preenche o formulário</div><div class="audit-step-desc" data-pt="Dados básicos da empresa e sector de actividade." data-en="Basic company details and sector of activity.">Dados básicos da empresa e sector de actividade.</div></div>
+    <div class="section-header reveal">
+      <p class="section-eyebrow" data-pt="Casos de Uso" data-en="Use Cases">Casos de Uso</p>
+      <h2 id="cases-heading" data-pt="SITUAÇÕES REAIS.<br>RESULTADOS DOCUMENTADOS." data-en="REAL SITUATIONS.<br>DOCUMENTED RESULTS.">SITUAÇÕES REAIS.<br>RESULTADOS DOCUMENTADOS.</h2>
+      <p class="section-sub" data-pt="Casos reais com identificação omitida por confidencialidade." data-en="Real cases with identification omitted for confidentiality.">Casos reais com identificação omitida por confidencialidade.</p>
+    </div>
+    <div class="cases-grid reveal">
+      <article class="case-card">
+        <div class="case-sector" data-pt="Comércio Online · PME" data-en="E-commerce · SME">Comércio Online · PME</div>
+        <div class="case-problem" data-pt="SEM ROPA. SEM POLÍTICA DE PRIVACIDADE. 12 FLUXOS DE DADOS ACTIVOS." data-en="NO ROPA. NO PRIVACY POLICY. 12 ACTIVE DATA FLOWS.">SEM ROPA. SEM POLÍTICA DE PRIVACIDADE. 12 FLUXOS DE DADOS ACTIVOS.</div>
+        <div class="case-divider" aria-hidden="true"></div>
+        <div class="case-action" data-pt="Diagnóstico em 5 dias. Mapeamento completo de fluxos. Documentação elaborada e implementada. Transferência internacional sem mecanismo legal identificada e corrigida." data-en="5-day assessment. Complete flow mapping. Documentation drafted and implemented. International transfer without legal mechanism identified and corrected.">Diagnóstico em 5 dias. Mapeamento completo de fluxos. Documentação elaborada e implementada. Transferência internacional sem mecanismo legal identificada e corrigida.</div>
+        <div class="case-result" data-pt="<strong>Em 3 semanas:</strong> conformidade funcional. 4 riscos eliminados. Zero exposição residual não documentada." data-en="<strong>In 3 weeks:</strong> functional compliance. 4 risks eliminated. Zero undocumented residual exposure."><strong>Em 3 semanas:</strong> conformidade funcional. 4 riscos eliminados. Zero exposição residual não documentada.</div>
+        <div class="case-ref">Art. 30.º · Art. 46.º · RGPD</div>
+      </article>
+      <article class="case-card">
+        <div class="case-sector" data-pt="Saúde · Clínica Dentária" data-en="Healthcare · Dental Clinic">Saúde · Clínica Dentária</div>
+        <div class="case-problem" data-pt="DADOS DE SAÚDE EM EXCEL. SEM CONTROLO DE ACESSOS. ART. 9.º RGPD IGNORADO." data-en="HEALTH DATA IN EXCEL. NO ACCESS CONTROL. ART. 9 GDPR IGNORED.">DADOS DE SAÚDE EM EXCEL. SEM CONTROLO DE ACESSOS. ART. 9.º RGPD IGNORADO.</div>
+        <div class="case-divider" aria-hidden="true"></div>
+        <div class="case-action" data-pt="Mapeamento de dados de saúde. Implementação de acessos por perfil. Plano de resposta a incidentes. Formação da equipa clínica. Documentação Art. 9.º RGPD." data-en="Health data mapping. Role-based access implementation. Incident response plan. Clinical team training. Art. 9 GDPR documentation.">Mapeamento de dados de saúde. Implementação de acessos por perfil. Plano de resposta a incidentes. Formação da equipa clínica. Documentação Art. 9.º RGPD.</div>
+        <div class="case-result" data-pt="<strong>Resultado:</strong> exposição regulatória significativamente reduzida. Equipa preparada para incidentes. Plano de resposta testado." data-en="<strong>Result:</strong> regulatory exposure significantly reduced. Team prepared for incidents. Response plan tested."><strong>Resultado:</strong> exposição regulatória significativamente reduzida. Equipa preparada para incidentes. Plano de resposta testado.</div>
+        <div class="case-ref">Art. 9.º · Art. 32.º · Art. 33.º · NIS2</div>
+      </article>
+      <article class="case-card">
+        <div class="case-sector" data-pt="Serviços · Contabilidade" data-en="Services · Accounting">Serviços · Contabilidade</div>
+        <div class="case-problem" data-pt="15 CLIENTES. ZERO DPAS. RESPONSABILIDADE SOLIDÁRIA SEM PROTECÇÃO CONTRATUAL." data-en="15 CLIENTS. ZERO DPAS. JOINT LIABILITY WITHOUT CONTRACTUAL PROTECTION.">15 CLIENTES. ZERO DPAS. RESPONSABILIDADE SOLIDÁRIA SEM PROTECÇÃO CONTRATUAL.</div>
+        <div class="case-divider" aria-hidden="true"></div>
+        <div class="case-action" data-pt="Revisão de todos os contratos. DPAs Art. 28.º RGPD elaborados. Checklist de conformidade. Simulação de pedido de acesso de titular." data-en="Full contract review. Art. 28 GDPR DPAs drafted. Compliance checklist. Data subject access request simulation.">Revisão de todos os contratos. DPAs Art. 28.º RGPD elaborados. Checklist de conformidade. Simulação de pedido de acesso de titular.</div>
+        <div class="case-result" data-pt="<strong>Em 10 dias:</strong> 7 contratos actualizados. Responsabilidade contratualmente delimitada. Equipa preparada para gerir direitos de titulares." data-en="<strong>In 10 days:</strong> 7 contracts updated. Liability contractually delimited. Team prepared to manage data subject rights."><strong>Em 10 dias:</strong> 7 contratos actualizados. Responsabilidade contratualmente delimitada. Equipa preparada para gerir direitos de titulares.</div>
+        <div class="case-ref">Art. 28.º · Art. 82.º · RGPD</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+
+<section class="about-section" id="sobre" aria-labelledby="about-heading">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="reveal">
+        <p class="section-eyebrow" data-pt="Sobre" data-en="About">Sobre</p>
+        <h2 id="about-heading" data-pt="CONFORMIDADE<br>CONSTRUÍDA PARA DURAR." data-en="COMPLIANCE<br>BUILT TO LAST.">CONFORMIDADE<br>CONSTRUÍDA PARA DURAR.</h2>
+        <p class="about-body" data-pt="A Privus Kuzola trabalha com empresas que entendem que a proteção de dados é uma responsabilidade — não uma caixa para marcar." data-en="Privus Kuzola works with companies that understand data protection is a responsibility — not a box to tick.">A Privus Kuzola trabalha com empresas que entendem que a proteção de dados é uma responsabilidade — não uma caixa para marcar.</p>
+        <p class="about-body" data-pt="<strong>Especializamo-nos em PMEs, infraestruturas de saúde e startups</strong> — sectores com obrigações específicas que exigem mais do que documentação genérica." data-en="<strong>We specialise in SMEs, healthcare infrastructures and startups</strong> — sectors with specific obligations that require more than generic documentation."><strong>Especializamo-nos em PMEs, infraestruturas de saúde e startups</strong> — sectores com obrigações específicas que exigem mais do que documentação genérica.</p>
+        <div class="fw-list" aria-label="Frameworks regulatórios cobertos">
+          <div class="fw-row">
+            <div class="fw-code">RGPD</div>
+            <div><div class="fw-name" data-pt="Regulamento Geral de Proteção de Dados" data-en="General Data Protection Regulation">Regulamento Geral de Proteção de Dados</div><div class="fw-scope" data-pt="Núcleo — todos os sectores · Reg. (UE) 2016/679" data-en="Core — all sectors · Reg. (EU) 2016/679">Núcleo — todos os sectores · Reg. (UE) 2016/679</div></div>
           </div>
-          <div class="audit-step">
-            <div class="audit-step-num">2</div>
-            <div><div class="audit-step-title" data-pt="Pagamento seguro" data-en="Secure payment">Pagamento seguro</div><div class="audit-step-desc" data-pt="Redireccionado para Stripe. €197, pagamento único." data-en="Redirected to Stripe. €197, one-time payment.">Redireccionado para Stripe. €197, pagamento único.</div></div>
+          <div class="fw-row">
+            <div class="fw-code">AI ACT</div>
+            <div><div class="fw-name" data-pt="Regulamento da Inteligência Artificial" data-en="Artificial Intelligence Act">Regulamento da Inteligência Artificial</div><div class="fw-scope" data-pt="Startups e empresas tech · Reg. (UE) 2024/1689" data-en="Startups and tech companies · Reg. (EU) 2024/1689">Startups e empresas tech · Reg. (UE) 2024/1689</div></div>
           </div>
-          <div class="audit-step">
-            <div class="audit-step-num">3</div>
-            <div><div class="audit-step-title" data-pt="Briefing detalhado" data-en="Detailed briefing">Briefing detalhado</div><div class="audit-step-desc" data-pt="Recebe o questionário completo por email em 24 horas." data-en="Receive the full questionnaire by email within 24 hours.">Recebe o questionário completo por email em 24 horas.</div></div>
+          <div class="fw-row">
+            <div class="fw-code">NIS2</div>
+            <div><div class="fw-name" data-pt="Directiva Segurança Redes e Sistemas" data-en="Network and Information Security Directive">Directiva Segurança Redes e Sistemas</div><div class="fw-scope" data-pt="Infraestruturas e saúde · Dir. (UE) 2022/2555" data-en="Infrastructures and healthcare · Dir. (EU) 2022/2555">Infraestruturas e saúde · Dir. (UE) 2022/2555</div></div>
           </div>
-          <div class="audit-step">
-            <div class="audit-step-num">4</div>
-            <div><div class="audit-step-title" data-pt="Relatório em 5 dias" data-en="Report in 5 days">Relatório em 5 dias</div><div class="audit-step-desc" data-pt="Diagnóstico completo com plano de acção prioritário." data-en="Complete diagnosis with priority action plan.">Diagnóstico completo com plano de acção prioritário.</div></div>
+          <div class="fw-row">
+            <div class="fw-code">ISO 27001</div>
+            <div><div class="fw-name" data-pt="Gestão de Segurança da Informação" data-en="Information Security Management">Gestão de Segurança da Informação</div><div class="fw-scope" data-pt="PMEs com maturidade · ISO/IEC 27001:2022" data-en="Mature SMEs · ISO/IEC 27001:2022">PMEs com maturidade · ISO/IEC 27001:2022</div></div>
           </div>
         </div>
       </div>
       <div class="reveal">
-        <div class="form-card">
-          <div class="form-success" id="formSuccess">
-            <div class="success-icon">✓</div>
-            <h3 data-pt="Pedido recebido" data-en="Request received">Pedido recebido</h3>
-            <p data-pt="A redireccioná-lo para o pagamento seguro." data-en="Redirecting you to secure payment.">A redireccioná-lo para o pagamento seguro.</p>
+        <div class="legal-panel" aria-label="Referências normativas">
+          <div class="legal-panel-header">
+            <div class="legal-panel-title" data-pt="// Referências normativas aplicadas" data-en="// Applied normative references">// Referências normativas aplicadas</div>
           </div>
-          <form id="auditForm">
-            <h3 class="form-title" data-pt="Iniciar diagnóstico" data-en="Start assessment">Iniciar diagnóstico</h3>
-            <p class="form-subtitle" data-pt="Preencha os dados abaixo. Após o pagamento receberá o briefing completo por email." data-en="Fill in the details below. After payment you will receive the full briefing by email.">Preencha os dados abaixo. Após o pagamento receberá o briefing completo por email.</p>
+          <div class="legal-item">
+            <div class="legal-norm">Art. 5.º RGPD</div>
+            <div class="legal-title" data-pt="Princípios do tratamento" data-en="Principles of processing">Princípios do tratamento</div>
+            <div class="legal-desc" data-pt="Licitude, lealdade, transparência, limitação das finalidades, minimização dos dados, exactidão, limitação da conservação, integridade e confidencialidade." data-en="Lawfulness, fairness, transparency, purpose limitation, data minimisation, accuracy, storage limitation, integrity and confidentiality.">Licitude, lealdade, transparência, limitação das finalidades, minimização dos dados, exactidão, limitação da conservação, integridade e confidencialidade.</div>
+          </div>
+          <div class="legal-item">
+            <div class="legal-norm">Art. 32.º RGPD</div>
+            <div class="legal-title" data-pt="Segurança do tratamento" data-en="Security of processing">Segurança do tratamento</div>
+            <div class="legal-desc" data-pt="Medidas técnicas e organizativas adequadas ao risco, incluindo cifra, pseudonimização, resiliência e capacidade de recuperação atempada." data-en="Technical and organisational measures appropriate to the risk, including encryption, pseudonymisation, resilience and timely recovery capability.">Medidas técnicas e organizativas adequadas ao risco, incluindo cifra, pseudonimização, resiliência e capacidade de recuperação atempada.</div>
+          </div>
+          <div class="legal-item">
+            <div class="legal-norm">Art. 83.º RGPD</div>
+            <div class="legal-title" data-pt="Condições gerais para coimas" data-en="General conditions for fines">Condições gerais para coimas</div>
+            <div class="legal-desc" data-pt="Até €20.000.000 ou 4% do volume de negócios anual global, consoante o valor mais elevado." data-en="Up to €20,000,000 or 4% of total annual worldwide turnover, whichever is higher.">Até €20.000.000 ou 4% do volume de negócios anual global, consoante o valor mais elevado.</div>
+          </div>
+          <div class="legal-item">
+            <div class="legal-norm">Lei n.º 58/2019</div>
+            <div class="legal-title" data-pt="Execução do RGPD em Portugal" data-en="GDPR implementation in Portugal">Execução do RGPD em Portugal</div>
+            <div class="legal-desc" data-pt="Condições específicas para o tratamento de dados pessoais em território nacional, de 8 de agosto de 2019." data-en="Specific conditions for personal data processing in Portugal, of 8 August 2019.">Condições específicas para o tratamento de dados pessoais em território nacional, de 8 de agosto de 2019.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+
+<section class="budget-section" id="orcamento" aria-labelledby="budget-heading">
+  <div class="section-inner">
+    <div class="budget-grid">
+      <div class="reveal">
+        <p class="section-eyebrow" data-pt="Projectos Específicos" data-en="Specific Projects">Projectos Específicos</p>
+        <h2 id="budget-heading" data-pt="NECESSIDADES FORA<br>DOS PERFIS STANDARD?" data-en="NEEDS OUTSIDE<br>STANDARD PROFILES?">NECESSIDADES FORA<br>DOS PERFIS STANDARD?</h2>
+        <p data-pt="Trabalhamos com organizações com requisitos que vão além dos pacotes definidos. Contacte-nos para uma proposta personalizada." data-en="We work with organisations with requirements beyond defined packages. Contact us for a personalised proposal.">Trabalhamos com organizações com requisitos que vão além dos pacotes definidos. Contacte-nos para uma proposta personalizada.</p>
+        <div class="budget-list">
+          <div class="budget-item" data-pt="Associações e entidades sem fins lucrativos" data-en="Associations and non-profit entities">Associações e entidades sem fins lucrativos</div>
+          <div class="budget-item" data-pt="Organismos públicos e autarquias" data-en="Public bodies and local authorities">Organismos públicos e autarquias</div>
+          <div class="budget-item" data-pt="Empresas com mais de 250 colaboradores" data-en="Companies with more than 250 employees">Empresas com mais de 250 colaboradores</div>
+          <div class="budget-item" data-pt="Projectos multi-jurisdição ou internacionais" data-en="Multi-jurisdiction or international projects">Projectos multi-jurisdição ou internacionais</div>
+          <div class="budget-item" data-pt="Implementação ISO 27001 completa" data-en="Full ISO 27001 implementation">Implementação ISO 27001 completa</div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="budget-form-wrap">
+          <div class="form-title" data-pt="SOLICITAR PROPOSTA" data-en="REQUEST PROPOSAL">SOLICITAR PROPOSTA</div>
+          <div class="form-success" id="budgetSuccess">
+            <p data-pt="Pedido recebido. Respondemos em 48 horas úteis." data-en="Request received. We'll respond within 48 business hours.">Pedido recebido. Respondemos em 48 horas úteis.</p>
+          </div>
+          <form id="budgetForm" novalidate>
+            <input type="hidden" name="_subject" value="Pedido de orçamento — Privus Kuzola">
+            <div style="position:absolute;left:-9999px"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"></div>
             <div class="field-row">
-              <div class="field"><label data-pt="Nome *" data-en="Name *">Nome *</label><input type="text" name="nome" required placeholder="João Silva"></div>
-              <div class="field"><label data-pt="Email *" data-en="Email *">Email *</label><input type="email" name="email" required placeholder="joao@empresa.pt"></div>
-            </div>
-            <div class="field-row">
-              <div class="field"><label data-pt="Empresa *" data-en="Company *">Empresa *</label><input type="text" name="empresa" required placeholder="Empresa Lda"></div>
               <div class="field">
-                <label data-pt="Sector *" data-en="Sector *">Sector *</label>
-                <select name="sector" required>
-                  <option value="" disabled selected>Seleccionar</option>
-                  <option value="PME" data-pt="PME / Comércio / Serviços" data-en="SME / Commerce / Services">PME / Comércio / Serviços</option>
-                  <option value="Saude" data-pt="Saúde / Clínica" data-en="Healthcare / Clinic">Saúde / Clínica</option>
-                  <option value="AL" data-pt="Alojamento Local" data-en="Local Accommodation">Alojamento Local</option>
-                  <option value="Outro" data-pt="Outro" data-en="Other">Outro</option>
-                </select>
+                <label for="b-nome" data-pt="Nome *" data-en="Name *">Nome *</label>
+                <input type="text" id="b-nome" name="nome" required placeholder="João Silva" autocomplete="name">
+              </div>
+              <div class="field">
+                <label for="b-email" data-pt="Email *" data-en="Email *">Email *</label>
+                <input type="email" id="b-email" name="email" required placeholder="joao@empresa.pt" autocomplete="email">
               </div>
             </div>
-            <div class="field"><label data-pt="Situação actual (opcional)" data-en="Current situation (optional)">Situação actual (opcional)</label><textarea name="situacao" placeholder="Descreva brevemente..."></textarea></div>
-            <p class="form-terms" data-pt="Ao submeter, aceita a nossa <a href='politica-privacidade.html'>Política de Privacidade</a>. Os seus dados são utilizados exclusivamente para processar o diagnóstico." data-en="By submitting, you accept our <a href='politica-privacidade.html'>Privacy Policy</a>. Your data is used solely to process the assessment.">Ao submeter, aceita a nossa <a href="politica-privacidade.html">Política de Privacidade</a>. Os seus dados são utilizados exclusivamente para processar o diagnóstico.</p>
-            <div class="hp-field" aria-hidden="true"><input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></div>
-            <button type="submit" class="btn-submit" data-pt="Continuar para pagamento →" data-en="Continue to payment →">Continuar para pagamento →</button>
+            <div class="field">
+              <label for="b-empresa" data-pt="Empresa" data-en="Company">Empresa</label>
+              <input type="text" id="b-empresa" name="empresa" placeholder="Empresa Lda" autocomplete="organization">
+            </div>
+            <div class="field">
+              <label for="b-desc" data-pt="Descrição do projecto *" data-en="Project description *">Descrição do projecto *</label>
+              <textarea id="b-desc" name="descricao" required placeholder="Descreva brevemente as suas necessidades..."></textarea>
+            </div>
+            <div class="form-consent">
+              <input type="checkbox" id="b-consent" name="consentimento" required>
+              <label for="b-consent" data-pt="Aceito que os meus dados sejam utilizados para responder a este pedido, conforme a <a href='politica-privacidade.html'>Política de Privacidade</a>." data-en="I accept that my data will be used to respond to this request, as per the <a href='politica-privacidade.html'>Privacy Policy</a>.">Aceito que os meus dados sejam utilizados para responder a este pedido, conforme a <a href="politica-privacidade.html">Política de Privacidade</a>.</label>
+            </div>
+            <button type="submit" class="btn-submit" data-pt="ENVIAR PEDIDO →" data-en="SEND REQUEST →">ENVIAR PEDIDO →</button>
           </form>
         </div>
       </div>
     </div>
   </div>
 </section>
+</main>
 
-<section class="about" id="sobre">
-  <div class="section-inner">
-    <div class="about-grid">
-      <div class="reveal">
-        <p class="section-eyebrow" data-pt="Sobre" data-en="About">Sobre</p>
-        <h2 data-pt="Conformidade RGPD<br>construída para durar." data-en="GDPR compliance<br>built to last.">Conformidade RGPD<br>construída para durar.</h2>
-        <p class="about-body" data-pt="A Privus Kuzola trabalha com empresas portuguesas que entendem que a proteção de dados é uma responsabilidade — não uma caixa para marcar." data-en="Privus Kuzola works with Portuguese companies that understand data protection is a responsibility — not a box to tick.">A Privus Kuzola trabalha com empresas portuguesas que entendem que a proteção de dados é uma responsabilidade — não uma caixa para marcar.</p>
-        <p class="about-body" data-pt="<strong>Especializamo-nos em PMEs, infraestruturas de saúde e alojamento local</strong> — sectores com obrigações específicas que exigem documentação adaptada à sua realidade." data-en="<strong>We specialise in SMEs, healthcare infrastructures, and local accommodation</strong> — sectors with specific obligations that require documentation adapted to their reality."><strong>Especializamo-nos em PMEs, infraestruturas de saúde e alojamento local</strong> — sectores com obrigações específicas que exigem documentação adaptada à sua realidade.</p>
-        <div class="values">
-          <div class="value">
-            <div class="value-mark">I</div>
-            <div>
-              <div class="value-title" data-pt="Rigor sem compromisso" data-en="Rigour without compromise">Rigor sem compromisso</div>
-              <div class="value-desc" data-pt="Cada documento referencia os artigos exactos do RGPD e da Lei n.º 58/2019. Nada é genérico." data-en="Each document references the exact articles of the GDPR and Law 58/2019. Nothing is generic.">Cada documento referencia os artigos exactos do RGPD e da Lei n.º 58/2019. Nada é genérico.</div>
-            </div>
-          </div>
-          <div class="value">
-            <div class="value-mark">II</div>
-            <div>
-              <div class="value-title" data-pt="Adaptado ao seu sector" data-en="Adapted to your sector">Adaptado ao seu sector</div>
-              <div class="value-desc" data-pt="Uma clínica, uma loja e um alojamento local têm obrigações diferentes. Tratamos cada caso pela sua especificidade." data-en="A clinic, a shop, and a local accommodation have different obligations. We treat each case by its specificity.">Uma clínica, uma loja e um alojamento local têm obrigações diferentes. Tratamos cada caso pela sua especificidade.</div>
-            </div>
-          </div>
-          <div class="value">
-            <div class="value-mark">III</div>
-            <div>
-              <div class="value-title" data-pt="Preços transparentes" data-en="Transparent pricing">Preços transparentes</div>
-              <div class="value-desc" data-pt="Sem 'preço sob consulta'. O que vê no site é o que paga." data-en="No 'price on request'. What you see on the site is what you pay.">Sem 'preço sob consulta'. O que vê no site é o que paga.</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="compliance-panel reveal">
-        <div class="compliance-label" data-pt="Quadro legal aplicável" data-en="Applicable legal framework">Quadro legal aplicável</div>
-        <div class="compliance-item">
-          <div class="compliance-ref">Regulamento (UE) 2016/679</div>
-          <div class="compliance-title" data-pt="RGPD — Regulamento Geral de Proteção de Dados" data-en="GDPR — General Data Protection Regulation">RGPD — Regulamento Geral de Proteção de Dados</div>
-          <div class="compliance-desc" data-pt="Base legal principal. Aplicável a todas as empresas que tratam dados de cidadãos europeus." data-en="Primary legal basis. Applicable to all companies that process data of European citizens.">Base legal principal. Aplicável a todas as empresas que tratam dados de cidadãos europeus.</div>
-        </div>
-        <div class="compliance-item">
-          <div class="compliance-ref">Lei n.º 58/2019, de 8 de agosto</div>
-          <div class="compliance-title" data-pt="Lei de execução do RGPD em Portugal" data-en="GDPR implementing law in Portugal">Lei de execução do RGPD em Portugal</div>
-          <div class="compliance-desc" data-pt="Estabelece condições específicas para o tratamento de dados em território nacional." data-en="Establishes specific conditions for data processing in national territory.">Estabelece condições específicas para o tratamento de dados em território nacional.</div>
-        </div>
-        <div class="compliance-item">
-          <div class="compliance-ref">Art. 83.º RGPD</div>
-          <div class="compliance-title" data-pt="Coimas administrativas" data-en="Administrative fines">Coimas administrativas</div>
-          <div class="compliance-desc" data-pt="Até €20.000.000 ou 4% do volume de negócios anual global, consoante o valor mais elevado." data-en="Up to €20,000,000 or 4% of total annual worldwide turnover, whichever is higher.">Até €20.000.000 ou 4% do volume de negócios anual global, consoante o valor mais elevado.</div>
-        </div>
-        <div class="compliance-item">
-          <div class="compliance-ref">Art. 37.º RGPD</div>
-          <div class="compliance-title" data-pt="Encarregado de Proteção de Dados" data-en="Data Protection Officer">Encarregado de Proteção de Dados</div>
-          <div class="compliance-desc" data-pt="Obrigatório para certas organizações. Disponível como serviço externo no Privus Control." data-en="Mandatory for certain organisations. Available as external service in Privus Control.">Obrigatório para certas organizações. Disponível como serviço externo no Privus Control.</div>
-        </div>
-      </div>
+<!-- LOGOS -->
+
+<div class="logos-section" aria-label="Referências aplicadas">
+  <div class="logos-inner">
+    <div class="logos-label" data-pt="// Referências e orientações aplicadas" data-en="// Applied references and guidelines">// Referências e orientações aplicadas</div>
+    <div class="logos-row">
+      <div class="logo-badge">CNPD</div>
+      <div class="logo-badge">EDPB</div>
+      <div class="logo-badge">ENISA</div>
+      <div class="logo-badge">EUROPA.EU</div>
+      <div class="logo-badge">ISO</div>
+      <div class="logo-badge">LEGISMAP</div>
     </div>
   </div>
-</section>
+</div>
 
-<footer>
-  <div class="footer-inner">
+<!-- FOOTER -->
+
+<footer role="contentinfo">
+  <div class="footer-grid">
     <div>
-      <div class="footer-brand-name">Privus <span>Kuzola</span></div>
-      <p class="footer-tagline" data-pt="Consultoria RGPD para empresas portuguesas.<br>Diagnóstico, implementação e manutenção." data-en="GDPR consulting for Portuguese companies.<br>Assessment, implementation and maintenance.">Consultoria RGPD para empresas portuguesas.<br>Diagnóstico, implementação e manutenção.</p>
+      <a href="#" class="footer-logo" aria-label="Privus Kuzola — página inicial">PRIVUS <span>KUZOLA</span></a>
+      <p class="footer-tag" data-pt="Consultoria regulatória digital para empresas portuguesas.<br>RGPD · AI Act · NIS2 · ISO 27001." data-en="Digital regulatory consulting for Portuguese companies.<br>GDPR · AI Act · NIS2 · ISO 27001.">Consultoria regulatória digital para empresas portuguesas.<br>RGPD · AI Act · NIS2 · ISO 27001.</p>
+      <div class="footer-socials" aria-label="Redes sociais">
+        <a href="https://www.linkedin.com/company/privus-kuzola/" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="LinkedIn da Privus Kuzola">in</a>
+        <a href="https://www.instagram.com/privusku" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Instagram da Privus Kuzola">ig</a>
+        <a href="https://wa.me/351936246971" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="WhatsApp da Privus Kuzola">wa</a>
+      </div>
     </div>
     <div class="footer-col">
       <div class="footer-col-title" data-pt="Serviços" data-en="Services">Serviços</div>
-      <a href="#audit" data-pt="Privus Audit — €197" data-en="Privus Audit — €197">Privus Audit — €197</a>
-      <a href="https://buy.stripe.com/5kQ00ia1Iblq20O2K8d7q01" target="_blank" data-pt="Privus Compliance — €1.200" data-en="Privus Compliance — €1,200">Privus Compliance — €1.200</a>
-      <a href="https://buy.stripe.com/8x2bJ06PwfBG7l80C0d7q02" target="_blank" data-pt="Privus Control — €149/mês" data-en="Privus Control — €149/month">Privus Control — €149/mês</a>
+      <a href="calculadora.html" data-pt="Score Gratuito" data-en="Free Score">Score Gratuito</a>
+      <a href="#servicos" data-pt="Privus Audit" data-en="Privus Audit">Privus Audit</a>
+      <a href="#servicos" data-pt="Privus Compliance" data-en="Privus Compliance">Privus Compliance</a>
+      <a href="#servicos" data-pt="Privus Protect" data-en="Privus Protect">Privus Protect</a>
+      <a href="#servicos" data-pt="Privus Control" data-en="Privus Control">Privus Control</a>
+      <a href="#orcamento" data-pt="Orçamento específico" data-en="Custom quote">Orçamento específico</a>
     </div>
     <div class="footer-col">
       <div class="footer-col-title" data-pt="Legal" data-en="Legal">Legal</div>
       <a href="politica-privacidade.html" data-pt="Política de Privacidade" data-en="Privacy Policy">Política de Privacidade</a>
       <a href="politica-cookies.html" data-pt="Política de Cookies" data-en="Cookie Policy">Política de Cookies</a>
       <a href="termos-condicoes.html" data-pt="Termos e Condições" data-en="Terms and Conditions">Termos e Condições</a>
+      <div class="footer-col-title" style="margin-top:1.5rem" data-pt="Contacto" data-en="Contact">Contacto</div>
+      <a href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a>
+      <a href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a>
     </div>
   </div>
   <div class="footer-bottom">
-    <p>© 2025 Privus Kuzola · <span data-pt="Todos os direitos reservados" data-en="All rights reserved">Todos os direitos reservados</span></p>
-    <p>privuskuzola.pt · <a href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a> · <a href="https://www.linkedin.com/company/privus-kuzola/" target="_blank" rel="noopener">LinkedIn</a></p>
+    <p>© 2025 PRIVUS KUZOLA · <span data-pt="TODOS OS DIREITOS RESERVADOS" data-en="ALL RIGHTS RESERVED">TODOS OS DIREITOS RESERVADOS</span></p>
+    <p>PRIVUSKUZOLA.PT · <a href="mailto:contacto@privuskuzola.pt">CONTACTO@PRIVUSKUZOLA.PT</a></p>
   </div>
 </footer>
 
-<script>
+<!-- WHATSAPP -->
 
-// GA4 — track form submission as conversion
-function trackConversion(){
-  gtag('event','generate_lead',{
-    'event_category':'Formulario',
-    'event_label':'Privus Audit',
-    'value': 197,
-    'currency': 'EUR'
-  });
-}
-let lang='pt';
-function setLang(l){
-  lang=l;
-  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active',b.textContent===l.toUpperCase()));
-  document.querySelectorAll('[data-pt]').forEach(el=>{
-    const t=el.getAttribute('data-'+l);
-    if(!t)return;
-    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')el.placeholder=t;
-    else if(el.tagName==='OPTION')el.textContent=t;
-    else el.innerHTML=t;
-  });
-  document.documentElement.lang=l;
-}
-const obs=new IntersectionObserver((entries)=>{
-  entries.forEach((e,i)=>{
-    if(e.isIntersecting){setTimeout(()=>e.target.classList.add('visible'),i*100);obs.unobserve(e.target);}
-  });
-},{threshold:.08});
-document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
-
-
-// Bot protection — track form load time
-const _formLoadTime = Date.now();
-
-// Enhanced form submit with rate limiting + honeypot check + speed check
-const form=document.getElementById('auditForm');
-const succ=document.getElementById('formSuccess');
-form.addEventListener('submit',async function(e){
-  e.preventDefault();
-  // Honeypot check
-  const hp = form.querySelector('input[name="_gotcha"]');
-  if(hp && hp.value !== '') return; // bot detected — silent fail
-
-  // Speed check — humans take > 3 seconds to fill a form
-  if(Date.now() - _formLoadTime < 3000) return; // too fast — bot
-
-  const btn=form.querySelector('button[type=submit]');
-  btn.textContent=lang==='pt'?'A enviar...':'Sending...';
-  btn.disabled=true;
-  const data=new FormData(form);
-  try{
-    const res=await fetch('https://formspree.io/f/xvzdqlwz',{method:'POST',body:data,headers:{'Accept':'application/json'}});
-    if(res.ok){trackConversion();form.style.display='none';succ.classList.add('show');setTimeout(()=>{window.location.href='https://buy.stripe.com/3cIcN47TAdtyeNA70od7q00';},1800);}
-    else throw new Error();
-  }catch{
-    window.location.href='https://buy.stripe.com/3cIcN47TAdtyeNA70od7q00';
-  } finally {
-    // Re-enable after 10s as fallback
-    setTimeout(()=>{ btn.disabled=false; btn.textContent=lang==='pt'?'Continuar para pagamento →':'Continue to payment →'; }, 10000);
-  }
-});
-</script>
-
-<!-- WhatsApp Float -->
-
-<a class="wa-float" href="https://wa.me/351936246971?text=Ol%C3%A1%2C%20tenho%20uma%20quest%C3%A3o%20sobre%20os%20servi%C3%A7os%20da%20Privus%20Kuzola." target="_blank" rel="noopener" aria-label="Contactar via WhatsApp">
-  <span class="wa-tooltip" id="wa-tip">Fale connosco</span>
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
+<a class="wa-btn" href="https://wa.me/351936246971?text=Ol%C3%A1%2C%20tenho%20uma%20quest%C3%A3o%20sobre%20os%20servi%C3%A7os%20da%20Privus%20Kuzola." target="_blank" rel="noopener noreferrer" aria-label="Contactar via WhatsApp">
+  <span class="wa-tooltip" id="wa-tip" aria-hidden="true">Fale connosco</span>
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
-<!-- Cookie Banner -->
+
+<!-- COOKIE BANNER -->
+
 <div id="cookie-banner" role="dialog" aria-label="Preferências de cookies">
-  <p class="cookie-text" id="cookie-text">
-    <strong>Cookies analíticos</strong> — Utilizamos o Google Analytics para compreender como os visitantes utilizam este site. Os dados são anonimizados e não permitem identificação pessoal.
-    <a href="politica-privacidade.html"> Saber mais</a>
-  </p>
-  <div class="cookie-actions">
-    <button class="btn-cookie-reject" id="cookieReject" onclick="setCookieConsent(false)">Recusar</button>
-    <button class="btn-cookie-accept" id="cookieAccept" onclick="setCookieConsent(true)">Aceitar</button>
+  <p class="cookie-txt" id="cookie-text"><strong>Cookies analíticos</strong> — Utilizamos o Google Analytics para compreender como os visitantes utilizam este site. Os dados são anonimizados. <a href="politica-cookies.html">Saber mais</a></p>
+  <div class="cookie-btns">
+    <button class="btn-cookie-r" onclick="setCookieConsent(false)" data-pt="Recusar" data-en="Reject">Recusar</button>
+    <button class="btn-cookie-a" onclick="setCookieConsent(true)" data-pt="Aceitar" data-en="Accept">Aceitar</button>
   </div>
 </div>
+
 <script>
+// ── PRODUCTS DATA ──
+const products={
+  pme:[
+    {phase:'I — ASSESS',name:'PRIVUS AUDIT',line:'Saiba exactamente onde está e o que precisa de fazer.',lineEn:'Know exactly where you stand and what you need to do.',price:'297',freq:'Pagamento único',freqEn:'One-time payment',prazo:'5 dias úteis',prazoEn:'5 business days',featured:false,items:['Score de Maturidade Regulatória (0–100)','Mapa de risco priorizado','Plano de acção faseado','Frameworks aplicáveis identificados','Crédito integral no Compliance (90 dias)'],itemsEn:['Regulatory Maturity Score (0–100)','Prioritised risk map','Phased action plan','Applicable frameworks identified','Full credit towards Compliance (90 days)'],btn:'btn-outline',btnTxt:'INICIAR AUDIT',btnTxtEn:'START AUDIT',link:'https://buy.stripe.com/eVq5kC4Ho9di7l8doMd7q0b'},
+    {phase:'II — BUILD',name:'PRIVUS COMPLIANCE',line:'Arquitectura regulatória completa, documentada e pronta a demonstrar.',lineEn:'Complete regulatory architecture, documented and ready to demonstrate.',price:'1.500',freq:'Pagamento único',freqEn:'One-time payment',prazo:'20 dias úteis',prazoEn:'20 business days',featured:true,badge:'Recomendado',badgeEn:'Recommended',items:['Documentação RGPD completa — ROPA, DPA, Políticas','Prescrição técnica dos 6 blocos de segurança','3 sessões de acompanhamento','Formação da equipa incluída','Score projectado pós-implementação'],itemsEn:['Full GDPR documentation — ROPA, DPA, Policies','Technical prescription of 6 security blocks','3 follow-up sessions','Team training included','Projected post-implementation score'],btn:'btn-gold',btnTxt:'INICIAR COMPLIANCE',btnTxtEn:'START COMPLIANCE',link:'https://buy.stripe.com/fZueVc1vc9di0WKdoMd7q08'},
+    {phase:'III — SHIELD',name:'PRIVUS PROTECT',line:'Verificação técnica e certificação de conformidade.',lineEn:'Technical verification and compliance certification.',price:'450',freq:'Pagamento único',freqEn:'One-time payment',prazo:'15 dias úteis',prazoEn:'15 business days',featured:false,items:['Verificação técnica dos 6 blocos','Coordenação com parceiro IT','Simulação de violação de dados','Badge Privus — verificado [ano]','Relatório de certificação assinado'],itemsEn:['Technical verification of 6 blocks','IT partner coordination','Data breach simulation','Privus Badge — verified [year]','Signed certification report'],btn:'btn-outline',btnTxt:'INICIAR PROTECT',btnTxtEn:'START PROTECT',link:'https://buy.stripe.com/28E5kCgq66168pc2K8d7q05'},
+    {phase:'IV — MAINTAIN',name:'PRIVUS CONTROL',line:'A conformidade que se mantém actualizada, todos os meses.',lineEn:'Compliance that stays current, every month.',price:'149',freq:'por mês · mensal',freqEn:'per month · monthly',prazo:'Suporte contínuo',prazoEn:'Ongoing support',featured:false,items:['Monitorização legislativa contínua','Revisão anual da documentação','Verificação técnica semestral','Suporte a incidentes — 72h','DPO externo dedicado'],itemsEn:['Continuous legislative monitoring','Annual documentation review','Biannual technical check','Incident support — 72h','Dedicated external DPO'],btn:'btn-outline',btnTxt:'SUBSCREVER CONTROL',btnTxtEn:'SUBSCRIBE CONTROL',link:'https://buy.stripe.com/8x2bJ06PwfBG7l80C0d7q02'}
+  ],
+  clinica:[
+    {phase:'I — ASSESS',name:'PRIVUS AUDIT',line:'Diagnóstico especializado para infraestruturas de saúde.',lineEn:'Specialist assessment for healthcare infrastructures.',price:'397',freq:'Pagamento único',freqEn:'One-time payment',prazo:'7 dias úteis',prazoEn:'7 business days',featured:false,items:['Score de Maturidade + análise Art. 9.º RGPD','Avaliação NIS2 para saúde','Mapa de risco de dados de saúde','Necessidade de AIPD identificada','Crédito integral no Compliance (90 dias)'],itemsEn:['Maturity Score + Art. 9 GDPR analysis','NIS2 healthcare assessment','Health data risk map','DPIA requirement identified','Full credit towards Compliance (90 days)'],btn:'btn-outline',btnTxt:'INICIAR AUDIT',btnTxtEn:'START AUDIT',link:'https://buy.stripe.com/7sY28q8XE0GM8pc0C0d7q0a'},
+    {phase:'II — BUILD',name:'PRIVUS COMPLIANCE',line:'Implementação RGPD completa para dados de saúde.',lineEn:'Full GDPR implementation for health data.',price:'2.200',freq:'Pagamento único',freqEn:'One-time payment',prazo:'35 dias úteis',prazoEn:'35 business days',featured:true,badge:'Recomendado',badgeEn:'Recommended',items:['Documentação RGPD Art. 9.º — dados de saúde','AIPD obrigatória elaborada','NIS2 — conformidade para saúde','Formação clínica especializada','Score projectado pós-implementação'],itemsEn:['GDPR Art. 9 documentation — health data','Mandatory DPIA drafted','NIS2 — healthcare compliance','Specialist clinical training','Projected post-implementation score'],btn:'btn-gold',btnTxt:'INICIAR COMPLIANCE',btnTxtEn:'START COMPLIANCE',link:'https://buy.stripe.com/dRm6oGa1IfBGcFs2K8d7q07'},
+    {phase:'III — SHIELD',name:'PRIVUS PROTECT',line:'Verificação técnica avançada para infraestruturas clínicas.',lineEn:'Advanced technical verification for clinical infrastructures.',price:'650',freq:'Pagamento único',freqEn:'One-time payment',prazo:'25 dias úteis',prazoEn:'25 business days',featured:false,items:['Verificação técnica dos 6 blocos','Sistemas clínicos auditados','Simulação de violação — dados de saúde','Badge Privus — verificado [ano]','Relatório de certificação assinado'],itemsEn:['Technical verification of 6 blocks','Clinical systems audited','Breach simulation — health data','Privus Badge — verified [year]','Signed certification report'],btn:'btn-outline',btnTxt:'INICIAR PROTECT',btnTxtEn:'START PROTECT',link:'https://buy.stripe.com/8x200ib5M3SYcFsckId7q04'},
+    {phase:'IV — MAINTAIN',name:'PRIVUS CONTROL',line:'Manutenção especializada para dados de saúde.',lineEn:'Specialist maintenance for health data.',price:'299',freq:'por mês · mensal',freqEn:'per month · monthly',prazo:'Suporte contínuo',prazoEn:'Ongoing support',featured:false,items:['Monitorização RGPD + NIS2 contínua','Revisão anual especializada','Verificação técnica semestral','Suporte a incidentes — 72h','DPO externo dedicado'],itemsEn:['Continuous GDPR + NIS2 monitoring','Specialist annual review','Biannual technical check','Incident support — 72h','Dedicated external DPO'],btn:'btn-outline',btnTxt:'SUBSCREVER CONTROL',btnTxtEn:'SUBSCRIBE CONTROL',link:'https://buy.stripe.com/bJedR86Pwblqaxk4Sgd7q03'}
+  ],
+  startup:[
+    {phase:'I — ASSESS',name:'PRIVUS AUDIT',line:'Diagnóstico multi-framework para startups e empresas tech.',lineEn:'Multi-framework assessment for startups and tech companies.',price:'497',freq:'Pagamento único',freqEn:'One-time payment',prazo:'7 dias úteis',prazoEn:'7 business days',featured:false,items:['Score de Maturidade + avaliação AI Act','Arquitectura de dados mapeada','Mapa de risco multi-framework','Requisitos de investidores identificados','Crédito integral no Compliance (90 dias)'],itemsEn:['Maturity Score + AI Act assessment','Data architecture mapped','Multi-framework risk map','Investor requirements identified','Full credit towards Compliance (90 days)'],btn:'btn-outline',btnTxt:'INICIAR AUDIT',btnTxtEn:'START AUDIT',link:'https://buy.stripe.com/aFa5kCgq6fBGeNA98wd7q09'},
+    {phase:'II — BUILD',name:'PRIVUS COMPLIANCE',line:'Conformidade completa para startups com ambições europeias.',lineEn:'Full compliance for startups with European ambitions.',price:'2.800',freq:'Pagamento único',freqEn:'One-time payment',prazo:'25 dias úteis',prazoEn:'25 business days',featured:true,badge:'Recomendado',badgeEn:'Recommended',items:['RGPD + AI Act implementados','Arquitectura de dados compliant','Documentação para due diligence','Formação da equipa técnica','Score projectado pós-implementação'],itemsEn:['GDPR + AI Act implemented','Compliant data architecture','Due diligence documentation','Technical team training','Projected post-implementation score'],btn:'btn-gold',btnTxt:'INICIAR COMPLIANCE',btnTxtEn:'START COMPLIANCE',link:'https://buy.stripe.com/dRmeVca1Icpu5d0acAd7q06'},
+    {phase:'III — SHIELD',name:'PRIVUS PROTECT',line:'Verificação técnica para stacks complexos.',lineEn:'Technical verification for complex stacks.',price:'650',freq:'Pagamento único',freqEn:'One-time payment',prazo:'20 dias úteis',prazoEn:'20 business days',featured:false,items:['Verificação técnica dos 6 blocos','Stack cloud auditado','Simulação de violação de dados','Badge Privus — verificado [ano]','Relatório para investidores e parceiros'],itemsEn:['Technical verification of 6 blocks','Cloud stack audited','Data breach simulation','Privus Badge — verified [year]','Report for investors and partners'],btn:'btn-outline',btnTxt:'INICIAR PROTECT',btnTxtEn:'START PROTECT',link:'https://buy.stripe.com/8x200ib5M3SYcFsckId7q04'},
+    {phase:'IV — MAINTAIN',name:'PRIVUS CONTROL',line:'Manutenção que acompanha o crescimento da startup.',lineEn:'Maintenance that grows with your startup.',price:'299',freq:'por mês · mensal',freqEn:'per month · monthly',prazo:'Suporte contínuo',prazoEn:'Ongoing support',featured:false,items:['Monitorização RGPD + AI Act contínua','Revisão anual multi-framework','Verificação técnica semestral','Suporte a incidentes — 72h','DPO externo dedicado'],itemsEn:['Continuous GDPR + AI Act monitoring','Multi-framework annual review','Biannual technical check','Incident support — 72h','Dedicated external DPO'],btn:'btn-outline',btnTxt:'SUBSCREVER CONTROL',btnTxtEn:'SUBSCRIBE CONTROL',link:'https://buy.stripe.com/bJedR86Pwblqaxk4Sgd7q03'}
+  ]
+};
+
+let currentProfile='pme';
+let currentLang='pt';
+
+function renderProducts(profile){
+  const grid=document.getElementById('productsGrid');
+  grid.innerHTML='';
+  products[profile].forEach(p=>{
+    const card=document.createElement('div');
+    card.className='product-card'+(p.featured?' featured':'');
+    const badge=p.featured?`<div class="product-badge">${currentLang==='pt'?p.badge:p.badgeEn}</div>`:'';
+    const line=currentLang==='pt'?p.line:p.lineEn;
+    const freq=currentLang==='pt'?p.freq:p.freqEn;
+    const prazo=currentLang==='pt'?p.prazo:p.prazoEn;
+    const items=currentLang==='pt'?p.items:p.itemsEn;
+    const btnTxt=currentLang==='pt'?p.btnTxt:p.btnTxtEn;
+    card.innerHTML=`${badge}
+      <div class="product-phase">${p.phase}</div>
+      <div class="product-name">${p.name}</div>
+      <div class="product-line">${line}</div>
+      <div class="product-pricing">
+        <div class="product-price"><sup>€</sup>${p.price}</div>
+        <div class="product-freq">${freq}</div>
+        <div class="product-prazo">${prazo}</div>
+      </div>
+      <ul class="product-items">${items.map(i=>`<li>${i}</li>`).join('')}</ul>
+      <a href="${p.link}" class="btn-product ${p.btn}" target="_blank" rel="noopener">${btnTxt}</a>`;
+    grid.appendChild(card);
+  });
+}
+
+function setProfile(profile,btn){
+  currentProfile=profile;
+  document.querySelectorAll('.profile-tab').forEach(b=>{
+    b.classList.remove('active');
+    b.setAttribute('aria-selected','false');
+  });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
+  renderProducts(profile);
+}
+
+// ── LANG ──
+function setLang(l){
+  currentLang=l;
+  document.querySelectorAll('.lang-btn').forEach(b=>{
+    b.classList.toggle('active',b.textContent===l.toUpperCase());
+    b.setAttribute('aria-pressed',b.textContent===l.toUpperCase()?'true':'false');
+  });
+  document.querySelectorAll('[data-pt]').forEach(el=>{
+    const txt=el.getAttribute('data-'+l);
+    if(!txt)return;
+    if(el.tagName==='INPUT'||el.tagName==='TEXTAREA')el.placeholder=txt;
+    else if(el.tagName==='OPTION')el.textContent=txt;
+    else el.innerHTML=txt;
+  });
+  document.documentElement.lang=l;
+  const waTip=document.getElementById('wa-tip');
+  if(waTip)waTip.textContent=l==='en'?'Talk to us':'Fale connosco';
+  renderProducts(currentProfile);
+}
+
+// ── MOBILE MENU ──
+function toggleMenu(){
+  const menu=document.getElementById('mobileMenu');
+  const btn=document.getElementById('hamburgerBtn');
+  const isOpen=menu.classList.toggle('open');
+  btn.setAttribute('aria-expanded',isOpen?'true':'false');
+  btn.textContent=isOpen?'✕':'☰';
+}
+
+// ── SCROLL REVEAL ──
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*80);
+      revealObs.unobserve(e.target);
+    }
+  });
+},{threshold:.06});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+// ── BUDGET FORM ──
+const _fLoad=Date.now();
+document.getElementById('budgetForm').addEventListener('submit',async function(e){
+  e.preventDefault();
+  const hp=this.querySelector('input[name="_gotcha"]');
+  if(hp&&hp.value)return;
+  if(Date.now()-_fLoad<3000)return;
+  if(!this.querySelector('#b-consent').checked){
+    this.querySelector('#b-consent').focus();
+    return;
+  }
+  const btn=this.querySelector('button[type=submit]');
+  const origTxt=btn.textContent;
+  btn.disabled=true;
+  btn.textContent=currentLang==='pt'?'A ENVIAR...':'SENDING...';
+  try{
+    const res=await fetch('https://formspree.io/f/xvzdqlwz',{
+      method:'POST',body:new FormData(this),
+      headers:{'Accept':'application/json'}
+    });
+    if(res.ok){
+      this.style.display='none';
+      document.getElementById('budgetSuccess').classList.add('show');
+      gtag('event','generate_lead',{'event_category':'Orcamento','value':0});
+    } else {btn.disabled=false;btn.textContent=origTxt;}
+  }catch{btn.disabled=false;btn.textContent=origTxt;}
+  setTimeout(()=>{btn.disabled=false;btn.textContent=origTxt;},10000);
+});
+
 // ── COOKIES ──
 function setCookieConsent(accepted){
-  localStorage.setItem('pk_cookie_consent', accepted ? 'accepted' : 'rejected');
-  localStorage.setItem('pk_cookie_date', new Date().toISOString());
+  localStorage.setItem('pk_cookie_consent',accepted?'accepted':'rejected');
+  localStorage.setItem('pk_cookie_date',new Date().toISOString());
   document.getElementById('cookie-banner').classList.remove('show');
-  if(accepted){
-    gtag('consent','update',{
-      'analytics_storage':'granted'
-    });
-    gtag('event','page_view');
-  }
+  if(accepted)gtag('consent','update',{'analytics_storage':'granted'});
 }
-function checkCookieConsent(){
-  const consent = localStorage.getItem('pk_cookie_consent');
-  const date = localStorage.getItem('pk_cookie_date');
-  // Re-ask after 13 months
-  if(date){
-    const months = (new Date() - new Date(date)) / (1000*60*60*24*30);
-    if(months > 13){ localStorage.removeItem('pk_cookie_consent'); }
-  }
-  if(!consent){
-    setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'), 1200);
-  } else if(consent === 'accepted'){
-    gtag('consent','update',{'analytics_storage':'granted'});
-  }
-}
-// Lang toggle for cookie banner
-const origSetLang = setLang;
-// Update cookie banner text on lang change
-function updateCookieLang(l){
-  const waTip = document.getElementById('wa-tip');
-  if(waTip) waTip.textContent = l==='en' ? 'Talk to us' : 'Fale connosco';
-  const el = document.getElementById('cookie-text');
-  if(l==='en'){
-    el.innerHTML = '<strong>Analytics cookies</strong> — We use Google Analytics to understand how visitors use this site. Data is anonymised and does not allow personal identification. <a href="politica-privacidade.html"> Learn more</a>';
-  } else {
-    el.innerHTML = '<strong>Cookies analíticos</strong> — Utilizamos o Google Analytics para compreender como os visitantes utilizam este site. Os dados são anonimizados e não permitem identificação pessoal. <a href="politica-privacidade.html"> Saber mais</a>';
-  }
-  const ra = document.getElementById('cookieReject');
-  const aa = document.getElementById('cookieAccept');
-  if(l==='en'){ ra.textContent='Reject'; aa.textContent='Accept'; }
-  else { ra.textContent='Recusar'; aa.textContent='Aceitar'; }
-}
-const _setLang = setLang;
-setLang = function(l){ _setLang(l); updateCookieLang(l); };
-checkCookieConsent();
+(function checkConsent(){
+  const consent=localStorage.getItem('pk_cookie_consent');
+  const date=localStorage.getItem('pk_cookie_date');
+  if(date&&(new Date()-new Date(date))/(1000*60*60*24*30)>13)localStorage.removeItem('pk_cookie_consent');
+  if(!consent)setTimeout(()=>document.getElementById('cookie-banner').classList.add('show'),1200);
+  else if(consent==='accepted')gtag('consent','update',{'analytics_storage':'granted'});
+})();
+
+// ── INIT ──
+renderProducts('pme');
 </script>
+
 </body>
 </html>
