@@ -601,7 +601,7 @@ async function showResult(){
   fd.append('score_total',total+'/100');fd.append('classificacao',cls.label);
   fd.append('_subject',`Score Privus Kuzola — ${nome} — ${total}/100`);
   dims.forEach(d=>fd.append('score_'+d.name,d.score+'%'));
-  fetch('https://formspree.io/f/xvzdqlwz',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(()=>{});
+  fetch('https://formspree.io/f/xkoykrgr',{method:'POST',body:fd,headers:{'Accept':'application/json'}}).catch(()=>{});
 
   document.getElementById('calcForm').style.display='none';
   const result=document.getElementById('resultSection');
