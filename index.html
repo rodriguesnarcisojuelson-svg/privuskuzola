@@ -121,7 +121,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80&auto=format&fit=crop');
+    background-image: url('https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?w=1800&q=80&auto=format&fit=crop');
     background-size: cover;
     background-position: center 30%;
     filter: brightness(0.4);
@@ -1160,16 +1160,20 @@
     .hero-content { padding: 8rem 2rem 6rem; }
     .hero-stats { right: 2rem; gap: 2rem; }
     .hero-scroll { left: 2rem; }
-    .exposicao { padding: 5rem 2rem; }
+    .exposicao { padding: 5rem 2rem; overflow: hidden; }
     .exposicao-inner { grid-template-columns: 1fr; gap: 3rem; }
     .exposicao-cards { grid-template-columns: 1fr; }
-    .exp-card-coima { grid-column: span 1; }
+    .exp-card-coima { grid-column: span 1; flex-direction: column; gap: 1.5rem; }
+    .coima-num { font-size: 2.2rem; }
     .metodologia { padding: 5rem 2rem; }
-    .section-header { grid-template-columns: 1fr; gap: 1.5rem; }
-    .fases { grid-template-columns: 1fr 1fr; }
+    .section-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .fases { grid-template-columns: 1fr; }
+    .fase { border-right: none; border-bottom: 1px solid var(--cream-d); }
+    .fase:last-child { border-bottom: none; }
+    .fase-num { font-size: 2.5rem; margin-bottom: 0.5rem; }
     .precos { padding: 5rem 2rem; }
     .precos-header { grid-template-columns: 1fr; gap: 1.5rem; }
-    .precos-grid { grid-template-columns: 1fr 1fr; }
+    .precos-grid { grid-template-columns: 1fr; }
     .calculadora { padding: 5rem 2rem; }
     .calc-inner { grid-template-columns: 1fr; gap: 3rem; }
     .casos { padding: 5rem 2rem; }
@@ -1178,7 +1182,11 @@
     .caso { border-right: none; border-bottom: 1px solid rgba(13,27,42,0.1); }
     .parallax-section { background-attachment: scroll; }
     .sobre { padding: 5rem 2rem; }
-    .sobre-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .sobre-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .sobre-img { display: none; }
+    .quadro-legal { margin-top: 2rem; }
+    .quadro-legal h4 { font-size: 0.58rem; letter-spacing: 0.1em; }
+    .quadro-items { grid-template-columns: 1fr; gap: 1.2rem; }
     .contacto { padding: 5rem 2rem; }
     .contacto-inner { grid-template-columns: 1fr; gap: 3rem; }
     footer { padding: 3rem 2rem; }
@@ -1186,13 +1194,18 @@
     .footer-bottom { flex-direction: column; gap: 1rem; text-align: center; }
   }
   @media (max-width: 640px) {
+    .hero-tag span { font-size: 0.6rem; letter-spacing: 0.08em; }
     .fases { grid-template-columns: 1fr; }
     .precos-grid { grid-template-columns: 1fr; }
     .calc-dims { grid-template-columns: 1fr; }
     .form-row { grid-template-columns: 1fr; }
     .footer-inner { grid-template-columns: 1fr; }
     .hero-stats { display: none; }
+    .hero-scroll { display: none; }
     .quadro-items { grid-template-columns: 1fr; }
+    .exp-card-coima { padding: 1.5rem; }
+    .coima-num { font-size: 1.8rem; }
+    .footer-refs { flex-wrap: wrap; justify-content: center; }
   }
 </style>
 </head>
