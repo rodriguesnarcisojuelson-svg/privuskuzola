@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-PT">
+<html lang="pt" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1153,6 +1153,36 @@
   }
   .footer-ref:hover { color: var(--gold); }
 
+
+  /* ── SELETOR DE LÍNGUA ──────────────────────────── */
+  .lang-selector {
+    display: flex;
+    gap: 0;
+    align-items: center;
+    margin-left: 1.5rem;
+  }
+  .lang-btn {
+    font-size: 0.65rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.3rem 0.5rem;
+    font-family: 'Outfit', sans-serif;
+    transition: color 0.2s;
+    position: relative;
+  }
+  .lang-btn:not(:last-child)::after {
+    content: '|';
+    position: absolute;
+    right: -1px;
+    color: rgba(255,255,255,0.15);
+  }
+  .lang-btn.active { color: var(--gold); }
+  .lang-btn:hover { color: rgba(255,255,255,0.8); }
+
   /* ── RESPONSIVO ─────────────────────────────────── */
   @media (max-width: 1024px) {
     nav { padding: 1.2rem 2rem; }
@@ -1215,13 +1245,18 @@
 <nav id="nav">
   <a href="#" class="nav-logo">Privus Kuzola</a>
   <ul class="nav-links">
-    <li><a href="#metodologia">Metodologia</a></li>
-    <li><a href="#servicos">Serviços</a></li>
-    <li><a href="#casos">Casos</a></li>
-    <li><a href="#sobre">Sobre</a></li>
-    <li><a href="#contacto">Contacto</a></li>
-    <li><a href="calculadora.html" class="nav-cta">Score Gratuito</a></li>
+    <li><a id="t-nav-met" href="#metodologia">Metodologia</a></li>
+    <li><a id="t-nav-srv" href="#servicos">Serviços</a></li>
+    <li><a id="t-nav-cas" href="#casos">Casos</a></li>
+    <li><a id="t-nav-sob" href="#sobre">Sobre</a></li>
+    <li><a id="t-nav-cnt" href="#contacto">Contacto</a></li>
+    <li><a href="calculadora.html" class="nav-cta" id="t-nav-cta">Score Gratuito</a></li>
   </ul>
+  <div class="lang-selector">
+    <button class="lang-btn active" onclick="setLang('pt')">PT</button>
+    <button class="lang-btn" onclick="setLang('en')">EN</button>
+    <button class="lang-btn" onclick="setLang('es')">ES</button>
+  </div>
 </nav>
 
 <!-- HERO -->
@@ -1230,33 +1265,33 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-tag">
-      <span>Consultoria Regulatória Digital · Portugal</span>
+      <span id="t-hero-tag">Consultoria Regulatória Digital · Portugal</span>
     </div>
     <h1 class="display">
-      Antes da CNPD.<br>
-      Antes do incidente.<br>
+      <span>Antes da CNPD.</span><br>
+      <span>Antes do incidente.</span><br>
       <em>Antes de ser tarde.</em>
     </h1>
-    <p class="hero-sub">
+    <p class="hero-sub" id="t-hero-sub">
       A exposição regulatória não avisa. Diagnóstico, implementação e manutenção contínua para empresas que agem antes de precisar.
     </p>
     <div class="hero-actions">
-      <a href="calculadora.html" class="btn-primary">Calcular exposição →</a>
-      <a href="#servicos" class="btn-ghost">Ver serviços</a>
+      <a href="calculadora.html" class="btn-primary" id="t-hero-cta1">Calcular exposição →</a>
+      <a href="#servicos" class="btn-ghost" id="t-hero-cta2">Ver serviços</a>
     </div>
   </div>
   <div class="hero-stats">
     <div class="hero-stat">
       <div class="hero-stat-num">€20M</div>
-      <div class="hero-stat-label">Coima máxima RGPD</div>
+      <div class="hero-stat-label" id="t-stat1">Coima máxima RGPD</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-num">72h</div>
-      <div class="hero-stat-label">Para notificar a CNPD</div>
+      <div class="hero-stat-label" id="t-stat2">Para notificar a CNPD</div>
     </div>
     <div class="hero-stat">
       <div class="hero-stat-num">4</div>
-      <div class="hero-stat-label">Frameworks regulatórios</div>
+      <div class="hero-stat-label" id="t-stat3">Frameworks regulatórios</div>
     </div>
   </div>
   <div class="hero-scroll">
@@ -1269,35 +1304,35 @@
 <section class="exposicao" id="exposicao">
   <div class="exposicao-inner">
     <div class="exposicao-title">
-      <span class="eyebrow">Exposição regulatória</span>
-      <h2 class="display" style="color:var(--white)">O risco que não vê.</h2>
-      <p>A maioria das empresas portuguesas opera com exposição regulatória significativa sem o saber. A CNPD não anuncia inspecções. Os incidentes não escolhem o momento.</p>
+      <span class="eyebrow" id="t-exp-ey">Exposição regulatória</span>
+      <h2 class="display" id="t-exp-h2" style="color:var(--white)">O risco que não vê.</h2>
+      <p id="t-exp-p">A maioria das empresas portuguesas opera com exposição regulatória significativa sem o saber. A CNPD não anuncia inspecções. Os incidentes não escolhem o momento.</p>
     </div>
     <div class="exposicao-cards">
       <div class="exp-card">
         <div class="exp-icon">⚠</div>
-        <h3>Violação não reportada</h3>
-        <p>72 horas para notificar a CNPD. Sem processo documentado, o prazo não é cumprido — e a coima agrava-se.</p>
+        <h3 id="t-exp-c1h">Violação não reportada</h3>
+        <p id="t-exp-c1p">72 horas para notificar a CNPD. Sem processo documentado, o prazo não é cumprido — e a coima agrava-se.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">📋</div>
-        <h3>Documentação inexistente</h3>
-        <p>RAT, DPA, Política de Privacidade — sem estes documentos não há conformidade demonstrável perante qualquer autoridade.</p>
+        <h3 id="t-exp-c2h">Documentação inexistente</h3>
+        <p id="t-exp-c2p">RAT, DPA, Política de Privacidade — sem estes documentos não há conformidade demonstrável perante qualquer autoridade.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">🔍</div>
-        <h3>Inspecção da CNPD</h3>
-        <p>A CNPD pode iniciar inspecções a qualquer momento, a qualquer empresa, de qualquer dimensão.</p>
+        <h3 id="t-exp-c3h">Inspecção da CNPD</h3>
+        <p id="t-exp-c3p">A CNPD pode iniciar inspecções a qualquer momento, a qualquer empresa, de qualquer dimensão.</p>
       </div>
       <div class="exp-card">
         <div class="exp-icon">⚖</div>
-        <h3>Responsabilidade solidária</h3>
-        <p>Sem DPAs com subcontratantes, o responsável pelo tratamento responde pelos erros de terceiros.</p>
+        <h3 id="t-exp-c4h">Responsabilidade solidária</h3>
+        <p id="t-exp-c4p">Sem DPAs com subcontratantes, o responsável pelo tratamento responde pelos erros de terceiros.</p>
       </div>
       <div class="exp-card-coima">
         <div class="coima-num">€20.000.000</div>
         <div>
-          <div class="coima-desc">Coima máxima aplicável a infrações graves do RGPD — ou 4% do volume de negócios anual global, consoante o valor mais elevado. Calculada sobre a realidade financeira da empresa, não sobre o erro isolado.</div>
+          <div class="coima-desc" id="t-coima-desc">Coima máxima aplicável a infrações graves do RGPD — ou 4% do volume de negócios anual global, consoante o valor mais elevado. Calculada sobre a realidade financeira da empresa, não sobre o erro isolado.</div>
           <div class="coima-ref">Art. 83.º RGPD</div>
         </div>
       </div>
@@ -1310,17 +1345,17 @@
   <div class="metodologia-inner">
     <div class="section-header">
       <div>
-        <span class="eyebrow">Metodologia</span>
+        <span class="eyebrow" id="t-met-ey">Metodologia</span>
         <h2 class="display">Privus Regulatory Framework</h2>
       </div>
-      <p>Quatro fases estruturadas. Cada uma pressupõe a anterior. O Audit é a porta de entrada obrigatória — o único ponto onde a maturidade real da organização é avaliada com rigor.</p>
+      <p id="t-met-p">Quatro fases estruturadas. Cada uma pressupõe a anterior. O Audit é a porta de entrada obrigatória — o único ponto onde a maturidade real da organização é avaliada com rigor.</p>
     </div>
     <div class="fases">
       <div class="fase">
         <div class="fase-num">I</div>
         <div class="fase-tag">ASSESS</div>
-        <h3>Diagnóstico</h3>
-        <p>Score de Maturidade Regulatória em 9 dimensões. Mapa de risco priorizado. Plano de acção faseado. Frameworks aplicáveis identificados.</p>
+        <h3 id="t-f1h">Diagnóstico</h3>
+        <p id="t-f1p">Score de Maturidade Regulatória em 9 dimensões. Mapa de risco priorizado. Plano de acção faseado. Frameworks aplicáveis identificados.</p>
         <div class="fase-servico">
           <strong>Privus Audit</strong>
           <span>5–7 dias úteis</span>
@@ -1329,8 +1364,8 @@
       <div class="fase">
         <div class="fase-num">II</div>
         <div class="fase-tag">BUILD</div>
-        <h3>Implementação</h3>
-        <p>Arquitectura regulatória completa. Documentação RGPD, prescrição técnica dos blocos de segurança e formação da equipa.</p>
+        <h3 id="t-f2h">Implementação</h3>
+        <p id="t-f2p">Arquitectura regulatória completa. Documentação RGPD, prescrição técnica dos blocos de segurança e formação da equipa.</p>
         <div class="fase-servico">
           <strong>Privus Compliance</strong>
           <span>20–35 dias úteis</span>
@@ -1339,8 +1374,8 @@
       <div class="fase">
         <div class="fase-num">III</div>
         <div class="fase-tag">SHIELD</div>
-        <h3>Verificação</h3>
-        <p>Verificação técnica dos blocos de segurança. Simulação de violação. Badge Privus e relatório de certificação assinado.</p>
+        <h3 id="t-f3h">Verificação</h3>
+        <p id="t-f3p">Verificação técnica dos blocos de segurança. Simulação de violação. Badge Privus e relatório de certificação assinado.</p>
         <div class="fase-servico">
           <strong>Privus Protect</strong>
           <span>15–25 dias úteis</span>
@@ -1349,8 +1384,8 @@
       <div class="fase">
         <div class="fase-num">IV</div>
         <div class="fase-tag">MAINTAIN</div>
-        <h3>Manutenção</h3>
-        <p>Monitorização legislativa contínua. DPO externo dedicado. Suporte a incidentes em 72h. Score actualizado semestralmente.</p>
+        <h3 id="t-f4h">Manutenção</h3>
+        <p id="t-f4p">Monitorização legislativa contínua. DPO externo dedicado. Suporte a incidentes em 72h. Score actualizado semestralmente.</p>
         <div class="fase-servico">
           <strong>Privus Control</strong>
           <span>Contínuo</span>
@@ -1365,10 +1400,10 @@
   <div class="precos-inner">
     <div class="precos-header">
       <div>
-        <span class="eyebrow">Serviços e Preços</span>
+        <span class="eyebrow" id="t-pre-ey">Serviços e Preços</span>
         <h2 class="display" style="color:var(--white)">Preços transparentes.<br>Sem surpresas.</h2>
       </div>
-      <p>Seleccione o seu perfil. Os preços, prazos e entregáveis exactos para cada produto.</p>
+      <p id="t-pre-p">Seleccione o seu perfil. Os preços, prazos e entregáveis exactos para cada produto.</p>
     </div>
     <div class="perfil-tabs">
       <button class="perfil-tab active" onclick="setPerfil('pme', this)">PME Geral</button>
@@ -1473,7 +1508,7 @@
     </div>
 
     <div class="credito-nota">
-      <p><strong>Crédito Audit:</strong> o valor pago pelo Privus Audit é deduzido integralmente no Privus Compliance, desde que contratado no prazo de 90 dias após a entrega do relatório. O Audit não é um custo — é um investimento na fase seguinte.</p>
+      <p id="t-cred-p"><strong id="t-cred-strong">Crédito Audit:</strong> o valor pago pelo Privus Audit é deduzido integralmente no Privus Compliance, desde que contratado no prazo de 90 dias após a entrega do relatório. O Audit não é um custo — é um investimento na fase seguinte.</p>
     </div>
   </div>
 </section>
@@ -1482,9 +1517,9 @@
 <section class="calculadora" id="calculadora">
   <div class="calc-inner">
     <div class="calc-text">
-      <span class="eyebrow">Diagnóstico gratuito</span>
-      <h2 class="display">Qual é o seu Score de Maturidade?</h2>
-      <p>18 perguntas. 5 minutos. Resultado imediato — vê o score primeiro, sem obrigações. O email é opcional, para receber o relatório completo com recomendações prioritárias.</p>
+      <span class="eyebrow" id="t-cal-ey">Diagnóstico gratuito</span>
+      <h2 class="display" id="t-cal-h2">Qual é o seu Score de Maturidade?</h2>
+      <p id="t-cal-p">18 perguntas. 5 minutos. Resultado imediato — vê o score primeiro, sem obrigações. O email é opcional, para receber o relatório completo com recomendações prioritárias.</p>
       <div class="calc-stats">
         <div>
           <div class="calc-stat-num">18</div>
@@ -1499,7 +1534,7 @@
           <div class="calc-stat-label">Duração</div>
         </div>
       </div>
-      <a href="calculadora.html" class="btn-primary" style="background:var(--navy);color:var(--gold);border:1px solid var(--navy)">Iniciar diagnóstico gratuito →</a>
+      <a href="calculadora.html" class="btn-primary" id="t-cal-cta" style="background:var(--navy);color:var(--gold);border:1px solid var(--navy)">Iniciar diagnóstico gratuito →</a>
     </div>
     <div class="calc-visual">
       <div class="calc-score-preview">
@@ -1544,7 +1579,7 @@
           <div class="calc-dim-bar"><div class="calc-dim-fill" style="width:0%"></div></div>
         </div>
       </div>
-      <p class="calc-cta-nota">Resultado imediato. <strong>Email opcional</strong> para relatório completo.</p>
+      <p class="calc-cta-nota" id="t-cal-nota">Resultado imediato. <strong>Email opcional</strong> para relatório completo.</p>
     </div>
   </div>
 </section>
@@ -1554,10 +1589,10 @@
   <div class="casos-inner">
     <div class="casos-header">
       <div>
-        <span class="eyebrow">Casos de uso</span>
+        <span class="eyebrow" id="t-cas-ey">Casos de uso</span>
         <h2 class="display">Situações reais.<br>Resultados documentados.</h2>
       </div>
-      <p>Casos reais com identificação omitida por razões de confidencialidade. Os artigos do RGPD aplicados em cada intervenção estão identificados.</p>
+      <p id="t-cas-p">Casos reais com identificação omitida por razões de confidencialidade. Os artigos do RGPD aplicados em cada intervenção estão identificados.</p>
     </div>
     <div class="casos-grid">
       <div class="caso">
@@ -1616,34 +1651,34 @@
       </div>
     </div>
     <div class="sobre-text">
-      <span class="eyebrow">Sobre</span>
-      <h2 class="display">Conformidade regulatória construída para durar.</h2>
-      <p>A Privus Kuzola é composta por consultores com formação avançada em Proteção de Dados, Privacidade e Cibersegurança (EU). Especializamo-nos em PMEs, infraestruturas de saúde e startups — sectores com obrigações específicas que exigem mais do que documentação genérica.</p>
+      <span class="eyebrow" id="t-sob-ey">Sobre</span>
+      <h2 class="display" id="t-sob-h2">Conformidade regulatória construída para durar.</h2>
+      <p id="t-sob-p">A Privus Kuzola é composta por consultores com formação avançada em Proteção de Dados, Privacidade e Cibersegurança (EU). Especializamo-nos em PMEs, infraestruturas de saúde e startups — sectores com obrigações específicas que exigem mais do que documentação genérica.</p>
       <div class="sobre-pilares">
         <div class="pilar">
           <span class="pilar-num">I</span>
           <div>
-            <h4>Rigor sem compromisso</h4>
-            <p>Cada documento referencia os artigos exactos do RGPD e da Lei n.º 58/2019. Nada é genérico.</p>
+            <h4 id="t-p1h">Rigor sem compromisso</h4>
+            <p id="t-p1p">Cada documento referencia os artigos exactos do RGPD e da Lei n.º 58/2019. Nada é genérico.</p>
           </div>
         </div>
         <div class="pilar">
           <span class="pilar-num">II</span>
           <div>
-            <h4>Adaptado ao seu sector</h4>
-            <p>PME, clínica ou startup — obrigações diferentes. Tratamos cada caso pela sua especificidade regulatória.</p>
+            <h4 id="t-p2h">Adaptado ao seu sector</h4>
+            <p id="t-p2p">PME, clínica ou startup — obrigações diferentes. Tratamos cada caso pela sua especificidade regulatória.</p>
           </div>
         </div>
         <div class="pilar">
           <span class="pilar-num">III</span>
           <div>
-            <h4>Preços transparentes</h4>
-            <p>Sem "preço sob consulta". O que vê no site é o que paga. Sem surpresas na factura.</p>
+            <h4 id="t-p3h">Preços transparentes</h4>
+            <p id="t-p3p">Sem "preço sob consulta". O que vê no site é o que paga. Sem surpresas na factura.</p>
           </div>
         </div>
       </div>
       <div class="quadro-legal">
-        <h4>Quadro legal e normativo aplicável</h4>
+        <h4 id="t-qua-h">Quadro legal e normativo aplicável</h4>
         <div class="quadro-items">
           <div class="quadro-item">
             <strong>RGPD · Reg. (UE) 2016/679</strong>
@@ -1671,9 +1706,9 @@
 <section class="contacto" id="contacto">
   <div class="contacto-inner">
     <div class="contacto-text">
-      <span class="eyebrow">Contacto</span>
-      <h2 class="display">Necessidades fora dos perfis standard?</h2>
-      <p>Trabalhamos com organizações com requisitos específicos. Descreva o seu projecto — respondemos em 48 horas úteis.</p>
+      <span class="eyebrow" id="t-cnt-ey">Contacto</span>
+      <h2 class="display" id="t-cnt-h2">Necessidades fora dos perfis standard?</h2>
+      <p id="t-cnt-p">Trabalhamos com organizações com requisitos específicos. Descreva o seu projecto — respondemos em 48 horas úteis.</p>
       <div class="contacto-info">
         <div class="contacto-item">
           <div class="contacto-item-icon">✉</div>
@@ -1702,20 +1737,20 @@
       <form action="https://formspree.io/f/xkoykrgr" method="POST">
         <div class="form-row">
           <div class="form-group">
-            <label for="nome">Nome *</label>
+            <label for="nome" id="t-f-nome">Nome *</label>
             <input type="text" id="nome" name="nome" placeholder="João Silva" required>
           </div>
           <div class="form-group">
-            <label for="email">Email *</label>
+            <label for="email" id="t-f-email">Email *</label>
             <input type="email" id="email" name="email" placeholder="joao@empresa.pt" required>
           </div>
         </div>
         <div class="form-group">
-          <label for="empresa">Empresa</label>
+          <label for="empresa" id="t-f-emp">Empresa</label>
           <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa">
         </div>
         <div class="form-group">
-          <label for="perfil">Perfil da organização</label>
+          <label for="perfil" id="t-f-perf">Perfil da organização</label>
           <select id="perfil" name="perfil">
             <option value="">Seleccionar perfil</option>
             <option value="pme">PME Geral</option>
@@ -1725,14 +1760,14 @@
           </select>
         </div>
         <div class="form-group">
-          <label for="descricao">Descrição do projecto</label>
+          <label for="descricao" id="t-f-desc">Descrição do projecto</label>
           <textarea id="descricao" name="descricao" placeholder="Descreva a sua situação ou necessidade (opcional)"></textarea>
         </div>
         <div class="form-check">
           <input type="checkbox" id="privacidade" name="privacidade" required>
           <label for="privacidade">Aceito que os meus dados sejam utilizados para responder a este pedido, conforme a <a href="politica-privacidade.html">Política de Privacidade</a>.</label>
         </div>
-        <button type="submit" class="form-submit">Enviar pedido →</button>
+        <button type="submit" class="form-submit" id="t-f-sub">Enviar pedido →</button>
       </form>
     </div>
   </div>
@@ -1743,7 +1778,7 @@
   <div class="footer-inner">
     <div class="footer-brand">
       <span class="nav-logo">Privus Kuzola</span>
-      <p>Consultoria regulatória digital para empresas portuguesas. RGPD · AI Act · NIS2 · ISO 27001.</p>
+      <p id="t-ft-p">Consultoria regulatória digital para empresas portuguesas. RGPD · AI Act · NIS2 · ISO 27001.</p>
       <div class="footer-socials">
         <a href="https://www.linkedin.com/company/privus-kuzola/" class="footer-social" target="_blank" rel="noopener">in</a>
         <a href="https://www.instagram.com/privuskuzola" class="footer-social" target="_blank" rel="noopener">ig</a>
@@ -1751,7 +1786,7 @@
       </div>
     </div>
     <div class="footer-col">
-      <h5>Serviços</h5>
+      <h5 id="t-ft-srv">Serviços</h5>
       <ul>
         <li><a href="calculadora.html">Score Gratuito</a></li>
         <li><a href="#servicos">Privus Audit</a></li>
@@ -1762,7 +1797,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Legal</h5>
+      <h5 id="t-ft-leg">Legal</h5>
       <ul>
         <li><a href="politica-privacidade.html">Política de Privacidade</a></li>
         <li><a href="politica-cookies.html">Política de Cookies</a></li>
@@ -1770,7 +1805,7 @@
       </ul>
     </div>
     <div class="footer-col">
-      <h5>Referências</h5>
+      <h5 id="t-ft-ref">Referências</h5>
       <ul>
         <li><a href="https://www.cnpd.pt" target="_blank" rel="noopener">CNPD</a></li>
         <li><a href="https://edpb.europa.eu" target="_blank" rel="noopener">EDPB</a></li>
@@ -1838,5 +1873,207 @@
     });
   });
 </script>
+
+
+
+
+
+<script>
+// ── I18N COMPLETO ─────────────────────────────────────────
+const T = {
+  pt: {
+    // NAV
+    'nav-met': 'Metodologia', 'nav-srv': 'Serviços', 'nav-cas': 'Casos',
+    'nav-sob': 'Sobre', 'nav-cnt': 'Contacto', 'nav-cta': 'Score Gratuito',
+    // HERO
+    'hero-tag': 'Consultoria Regulatória Digital · Portugal',
+    'h1-1': 'Antes da CNPD.', 'h1-2': 'Antes do incidente.', 'h1-3': 'Antes de ser tarde.',
+    'hero-sub': 'A exposição regulatória não avisa. Diagnóstico, implementação e manutenção contínua para empresas que agem antes de precisar.',
+    'hero-cta1': 'Calcular exposição →', 'hero-cta2': 'Ver serviços',
+    'stat1': 'Coima máxima RGPD', 'stat2': 'Para notificar a CNPD', 'stat3': 'Frameworks regulatórios',
+    // EXPOSIÇÃO
+    'exp-ey': 'Exposição regulatória', 'exp-h2': 'O risco que não vê.',
+    'exp-p': 'A maioria das empresas portuguesas opera com exposição regulatória significativa sem o saber. A CNPD não anuncia inspecções. Os incidentes não escolhem o momento.',
+    'exp-c1h': 'Violação não reportada', 'exp-c1p': '72 horas para notificar a CNPD. Sem processo documentado, o prazo não é cumprido — e a coima agrava-se.',
+    'exp-c2h': 'Documentação inexistente', 'exp-c2p': 'RAT, DPA, Política de Privacidade — sem estes documentos não há conformidade demonstrável perante qualquer autoridade.',
+    'exp-c3h': 'Inspecção da CNPD', 'exp-c3p': 'A CNPD pode iniciar inspecções a qualquer momento, a qualquer empresa, de qualquer dimensão.',
+    'exp-c4h': 'Responsabilidade solidária', 'exp-c4p': 'Sem DPAs com subcontratantes, o responsável pelo tratamento responde pelos erros de terceiros.',
+    'coima-desc': 'Coima máxima aplicável a infrações graves do RGPD — ou 4% do volume de negócios anual global, consoante o valor mais elevado. Calculada sobre a realidade financeira da empresa, não sobre o erro isolado.',
+    // METODOLOGIA
+    'met-ey': 'Metodologia',
+    'met-p': 'Quatro fases estruturadas. Cada uma pressupõe a anterior. O Audit é a porta de entrada obrigatória — o único ponto onde a maturidade real da organização é avaliada com rigor.',
+    'f1h': 'Diagnóstico', 'f1p': 'Score de Maturidade Regulatória em 9 dimensões. Mapa de risco priorizado. Plano de acção faseado. Frameworks aplicáveis identificados.',
+    'f2h': 'Implementação', 'f2p': 'Arquitectura regulatória completa. Documentação RGPD, prescrição técnica dos blocos de segurança e formação da equipa.',
+    'f3h': 'Verificação', 'f3p': 'Verificação técnica dos blocos de segurança. Simulação de violação. Badge Privus e relatório de certificação assinado.',
+    'f4h': 'Manutenção', 'f4p': 'Monitorização legislativa contínua. DPO externo dedicado. Suporte a incidentes em 72h. Score actualizado semestralmente.',
+    // PREÇOS
+    'pre-ey': 'Serviços e Preços', 'pre-p': 'Seleccione o seu perfil. Os preços, prazos e entregáveis exactos para cada produto.',
+    // CALCULADORA
+    'cal-ey': 'Diagnóstico gratuito', 'cal-h2': 'Qual é o seu Score de Maturidade?',
+    'cal-p': '18 perguntas. 5 minutos. Resultado imediato — vê o score primeiro, sem obrigações. O email é opcional, para receber o relatório completo com recomendações prioritárias.',
+    'cal-cta': 'Iniciar diagnóstico gratuito →', 'cal-nota': 'Resultado imediato. Email opcional para relatório completo.',
+    // CASOS
+    'cas-ey': 'Casos de uso', 'cas-p': 'Casos reais com identificação omitida por razões de confidencialidade. Os artigos do RGPD aplicados em cada intervenção estão identificados.',
+    // PARALLAX
+    'par-q': '"A conformidade regulatória não é um custo operacional. É a arquitectura que permite crescer sem risco."',
+    // SOBRE
+    'sob-ey': 'Sobre', 'sob-h2': 'Conformidade regulatória construída para durar.',
+    'sob-p': 'A Privus Kuzola é composta por consultores com formação avançada em Proteção de Dados, Privacidade e Cibersegurança (EU). Especializamo-nos em PMEs, infraestruturas de saúde e startups — sectores com obrigações específicas que exigem mais do que documentação genérica.',
+    'p1h': 'Rigor sem compromisso', 'p1p': 'Cada documento referencia os artigos exactos do RGPD e da Lei n.º 58/2019. Nada é genérico.',
+    'p2h': 'Adaptado ao seu sector', 'p2p': 'PME, clínica ou startup — obrigações diferentes. Tratamos cada caso pela sua especificidade regulatória.',
+    'p3h': 'Preços transparentes', 'p3p': 'Sem "preço sob consulta". O que vê no site é o que paga. Sem surpresas na factura.',
+    'qua-h': 'Quadro legal e normativo aplicável',
+    // CONTACTO
+    'cnt-ey': 'Contacto', 'cnt-h2': 'Necessidades fora dos perfis standard?',
+    'cnt-p': 'Trabalhamos com organizações com requisitos específicos. Descreva o seu projecto — respondemos em 48 horas úteis.',
+    // FORM
+    'f-nome': 'Nome *', 'f-email': 'Email *', 'f-emp': 'Empresa',
+    'f-perf': 'Perfil da organização', 'f-desc': 'Descrição do projecto', 'f-sub': 'Enviar pedido →',
+    // FOOTER
+    'ft-srv': 'Serviços', 'ft-leg': 'Legal', 'ft-ref': 'Referências',
+    'ft-p': 'Consultoria regulatória digital para empresas portuguesas. RGPD · AI Act · NIS2 · ISO 27001.',
+    'ft-copy': '© 2026 Privus Kuzola · Todos os direitos reservados · privuskuzola.pt · contacto@privuskuzola.pt',
+    'cred-strong': 'Crédito Audit:', 'cred-p': 'o valor pago pelo Privus Audit é deduzido integralmente no Privus Compliance, desde que contratado no prazo de 90 dias após a entrega do relatório. O Audit não é um custo — é um investimento na fase seguinte.',
+  },
+  en: {
+    'nav-met': 'Methodology', 'nav-srv': 'Services', 'nav-cas': 'Cases',
+    'nav-sob': 'About', 'nav-cnt': 'Contact', 'nav-cta': 'Free Score',
+    'hero-tag': 'Digital Regulatory Consulting · Portugal',
+    'h1-1': 'Before the regulator.', 'h1-2': 'Before the incident.', 'h1-3': 'Before it\'s too late.',
+    'hero-sub': 'Regulatory exposure doesn\'t warn you. Diagnosis, implementation and continuous maintenance for companies that act before they need to.',
+    'hero-cta1': 'Calculate exposure →', 'hero-cta2': 'View services',
+    'stat1': 'Maximum GDPR fine', 'stat2': 'To notify the regulator', 'stat3': 'Regulatory frameworks',
+    'exp-ey': 'Regulatory exposure', 'exp-h2': 'The risk you don\'t see.',
+    'exp-p': 'Most Portuguese companies operate with significant regulatory exposure without knowing it. The CNPD doesn\'t announce inspections. Incidents don\'t choose their moment.',
+    'exp-c1h': 'Unreported data breach', 'exp-c1p': '72 hours to notify the regulator. Without a documented process, the deadline is missed — and the fine increases.',
+    'exp-c2h': 'Missing documentation', 'exp-c2p': 'ROPA, DPA, Privacy Policy — without these documents there is no demonstrable compliance before any authority.',
+    'exp-c3h': 'Regulatory inspection', 'exp-c3p': 'The CNPD can launch inspections at any time, at any company, of any size.',
+    'exp-c4h': 'Joint liability', 'exp-c4p': 'Without DPAs with processors, the controller is liable for third-party errors.',
+    'coima-desc': 'Maximum fine applicable to serious GDPR infringements — or 4% of total annual worldwide turnover, whichever is higher. Calculated on the company\'s actual financial reality, not on the isolated error.',
+    'met-ey': 'Methodology',
+    'met-p': 'Four structured phases. Each one presupposes the previous. The Audit is the mandatory entry point — the only point where the organisation\'s real maturity is assessed with rigour.',
+    'f1h': 'Diagnosis', 'f1p': 'Regulatory Maturity Score across 9 dimensions. Prioritised risk map. Phased action plan. Applicable frameworks identified.',
+    'f2h': 'Implementation', 'f2p': 'Complete regulatory architecture. GDPR documentation, technical prescription of security blocks and team training.',
+    'f3h': 'Verification', 'f3p': 'Technical verification of security blocks. Breach simulation. Privus Badge and signed certification report.',
+    'f4h': 'Maintenance', 'f4p': 'Continuous legislative monitoring. Dedicated external DPO. Incident support within 72h. Score updated every six months.',
+    'pre-ey': 'Services & Pricing', 'pre-p': 'Select your profile. Exact prices, timelines and deliverables for each product.',
+    'cal-ey': 'Free diagnosis', 'cal-h2': 'What is your Maturity Score?',
+    'cal-p': '18 questions. 5 minutes. Immediate result — see your score first, no obligations. Email is optional, to receive the full report with priority recommendations.',
+    'cal-cta': 'Start free diagnosis →', 'cal-nota': 'Immediate result. Optional email for full report.',
+    'cas-ey': 'Use cases', 'cas-p': 'Real cases with identification omitted for confidentiality reasons. The GDPR articles applied in each intervention are identified.',
+    'par-q': '"Regulatory compliance is not an operational cost. It is the architecture that allows you to grow without risk."',
+    'sob-ey': 'About', 'sob-h2': 'Regulatory compliance built to last.',
+    'sob-p': 'Privus Kuzola is composed of consultants with advanced training in Data Protection, Privacy and Cybersecurity (EU). We specialise in SMEs, healthcare infrastructures and startups — sectors with specific obligations that require more than generic documentation.',
+    'p1h': 'Rigour without compromise', 'p1p': 'Every document references the exact articles of the GDPR and Law No. 58/2019. Nothing is generic.',
+    'p2h': 'Tailored to your sector', 'p2p': 'SME, clinic or startup — different obligations. We treat each case by its specific regulatory requirements.',
+    'p3h': 'Transparent pricing', 'p3p': 'No "price on request". What you see on the site is what you pay. No surprises on the invoice.',
+    'qua-h': 'Applicable legal and regulatory framework',
+    'cnt-ey': 'Contact', 'cnt-h2': 'Requirements outside standard profiles?',
+    'cnt-p': 'We work with organisations with specific requirements. Describe your project — we respond within 48 business hours.',
+    'f-nome': 'Name *', 'f-email': 'Email *', 'f-emp': 'Company',
+    'f-perf': 'Organisation profile', 'f-desc': 'Project description', 'f-sub': 'Send request →',
+    'ft-srv': 'Services', 'ft-leg': 'Legal', 'ft-ref': 'References',
+    'ft-p': 'Digital regulatory consulting for Portuguese companies. GDPR · AI Act · NIS2 · ISO 27001.',
+    'ft-copy': '© 2026 Privus Kuzola · All rights reserved · privuskuzola.pt · contacto@privuskuzola.pt',
+    'cred-strong': 'Audit Credit:', 'cred-p': 'the amount paid for the Privus Audit is fully deducted from the Privus Compliance price, provided it is contracted within 90 days after delivery of the audit report. The Audit is not a cost — it is an investment in the next phase.',
+  },
+  es: {
+    'nav-met': 'Metodología', 'nav-srv': 'Servicios', 'nav-cas': 'Casos',
+    'nav-sob': 'Sobre nosotros', 'nav-cnt': 'Contacto', 'nav-cta': 'Score Gratuito',
+    'hero-tag': 'Consultoría Regulatoria Digital · Portugal',
+    'h1-1': 'Antes del regulador.', 'h1-2': 'Antes del incidente.', 'h1-3': 'Antes de que sea tarde.',
+    'hero-sub': 'La exposición regulatoria no avisa. Diagnóstico, implementación y mantenimiento continuo para empresas que actúan antes de necesitarlo.',
+    'hero-cta1': 'Calcular exposición →', 'hero-cta2': 'Ver servicios',
+    'stat1': 'Multa máxima RGPD', 'stat2': 'Para notificar al regulador', 'stat3': 'Marcos regulatorios',
+    'exp-ey': 'Exposición regulatoria', 'exp-h2': 'El riesgo que no ve.',
+    'exp-p': 'La mayoría de las empresas portuguesas opera con exposición regulatoria significativa sin saberlo. La autoridad reguladora no anuncia inspecciones. Los incidentes no eligen el momento.',
+    'exp-c1h': 'Violación no reportada', 'exp-c1p': '72 horas para notificar a la CNPD. Sin proceso documentado, el plazo no se cumple — y la sanción se agrava.',
+    'exp-c2h': 'Documentación inexistente', 'exp-c2p': 'RAT, DPA, Política de Privacidad — sin estos documentos no hay cumplimiento demostrable ante ninguna autoridad.',
+    'exp-c3h': 'Inspección del regulador', 'exp-c3p': 'La autoridad reguladora portuguesa (CNPD) puede iniciar inspecciones en cualquier momento, a cualquier empresa, de cualquier tamaño.',
+    'exp-c4h': 'Responsabilidad solidaria', 'exp-c4p': 'Sin DPAs con subcontratistas, el responsable del tratamiento responde por los errores de terceros.',
+    'coima-desc': 'Multa máxima aplicable a infracciones graves del RGPD — o el 4% del volumen de negocio anual global, según el valor más elevado. Calculada sobre la realidad financiera de la empresa, no sobre el error aislado.',
+    'met-ey': 'Metodología',
+    'met-p': 'Cuatro fases estructuradas. Cada una presupone la anterior. La Auditoría es el punto de entrada obligatorio — el único punto donde la madurez real de la organización se evalúa con rigor.',
+    'f1h': 'Diagnóstico', 'f1p': 'Score de Madurez Regulatoria en 9 dimensiones. Mapa de riesgo priorizado. Plan de acción por fases. Marcos aplicables identificados.',
+    'f2h': 'Implementación', 'f2p': 'Arquitectura regulatoria completa. Documentación RGPD, prescripción técnica de los bloques de seguridad y formación del equipo.',
+    'f3h': 'Verificación', 'f3p': 'Verificación técnica de los bloques de seguridad. Simulación de violación. Badge Privus e informe de certificación firmado.',
+    'f4h': 'Mantenimiento', 'f4p': 'Monitorización legislativa continua. DPO externo dedicado. Soporte a incidentes en 72h. Score actualizado semestralmente.',
+    'pre-ey': 'Servicios y Precios', 'pre-p': 'Seleccione su perfil. Precios, plazos y entregables exactos para cada producto.',
+    'cal-ey': 'Diagnóstico gratuito', 'cal-h2': '¿Cuál es su Score de Madurez?',
+    'cal-p': '18 preguntas. 5 minutos. Resultado inmediato — vea el score primero, sin compromisos. El email es opcional, para recibir el informe completo con recomendaciones prioritarias.',
+    'cal-cta': 'Iniciar diagnóstico gratuito →', 'cal-nota': 'Resultado inmediato. Email opcional para informe completo.',
+    'cas-ey': 'Casos de uso', 'cas-p': 'Casos reales con identificación omitida por razones de confidencialidad. Los artículos del RGPD aplicados en cada intervención están identificados.',
+    'par-q': '"El cumplimiento normativo no es un coste operativo. Es la arquitectura que permite crecer sin riesgo."',
+    'sob-ey': 'Sobre nosotros', 'sob-h2': 'Cumplimiento normativo construido para durar.',
+    'sob-p': 'Privus Kuzola está compuesta por consultores con formación avanzada en Protección de Datos, Privacidad y Ciberseguridad (UE). Nos especializamos en PYMEs, infraestructuras sanitarias y startups — sectores con obligaciones específicas que requieren más que documentación genérica.',
+    'p1h': 'Rigor sin compromiso', 'p1p': 'Cada documento hace referencia a los artículos exactos del RGPD y de la Ley n.º 58/2019. Nada es genérico.',
+    'p2h': 'Adaptado a su sector', 'p2p': 'PYME, clínica o startup — obligaciones diferentes. Tratamos cada caso por su especificidad regulatoria.',
+    'p3h': 'Precios transparentes', 'p3p': 'Sin "precio bajo consulta". Lo que ve en el sitio es lo que paga. Sin sorpresas en la factura.',
+    'qua-h': 'Marco legal y normativo aplicable',
+    'cnt-ey': 'Contacto', 'cnt-h2': '¿Necesidades fuera de los perfiles estándar?',
+    'cnt-p': 'Trabajamos con organizaciones con requisitos específicos. Describa su proyecto — respondemos en 48 horas hábiles.',
+    'f-nome': 'Nombre *', 'f-email': 'Email *', 'f-emp': 'Empresa',
+    'f-perf': 'Perfil de la organización', 'f-desc': 'Descripción del proyecto', 'f-sub': 'Enviar solicitud →',
+    'ft-srv': 'Servicios', 'ft-leg': 'Legal', 'ft-ref': 'Referencias',
+    'ft-p': 'Consultoría regulatoria digital para empresas portuguesas. RGPD · AI Act · NIS2 · ISO 27001.',
+    'ft-copy': '© 2026 Privus Kuzola · Todos los derechos reservados · privuskuzola.pt · contacto@privuskuzola.pt',
+    'cred-strong': 'Crédito Audit:', 'cred-p': 'el importe pagado por el Privus Audit se descuenta íntegramente del precio de Privus Compliance, siempre que se contrate en los 90 días siguientes a la entrega del informe de auditoría. La Auditoría no es un coste — es una inversión en la siguiente fase.',
+  }
+};
+
+// Tabs de perfil por língua
+const TABS = {
+  pt: ['PME Geral', 'Clínica / Saúde', 'Startup / Tech'],
+  en: ['General SME', 'Clinic / Health', 'Startup / Tech'],
+  es: ['PYME General', 'Clínica / Salud', 'Startup / Tech']
+};
+
+let currentLang = 'pt';
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('htmlRoot').setAttribute('lang', lang);
+
+  // Botões de língua
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.textContent.trim() === lang.toUpperCase());
+  });
+
+  // Traduzir todos os elementos por ID
+  const data = T[lang];
+  for (const [key, val] of Object.entries(data)) {
+    const el = document.getElementById('t-' + key);
+    if (el) el.textContent = val;
+  }
+
+  // Tabs de perfil
+  const tabs = document.querySelectorAll('.perfil-tab');
+  TABS[lang].forEach((label, i) => {
+    if (tabs[i]) tabs[i].textContent = label;
+  });
+
+  // Crédito Audit — parágrafo composto (strong + texto)
+  const credP = document.getElementById('t-cred-p');
+  const credS = document.getElementById('t-cred-strong');
+  if (credP && credS) {
+    credS.textContent = data['cred-strong'];
+    credP.innerHTML = '';
+    credP.appendChild(credS);
+    credP.appendChild(document.createTextNode(' ' + data['cred-p']));
+  }
+
+  // Nota calculadora — preservar <strong>
+  const calNota = document.getElementById('t-cal-nota');
+  if (calNota) {
+    const notaTexts = {
+      pt: ['Resultado imediato. ', 'Email opcional', ' para relatório completo.'],
+      en: ['Immediate result. ', 'Optional email', ' for full report.'],
+      es: ['Resultado inmediato. ', 'Email opcional', ' para informe completo.']
+    };
+    calNota.innerHTML = notaTexts[lang][0] + '<strong>' + notaTexts[lang][1] + '</strong>' + notaTexts[lang][2];
+  }
+}
+</script>
+
 </body>
 </html>
