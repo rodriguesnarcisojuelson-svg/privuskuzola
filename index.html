@@ -121,7 +121,7 @@
   .hero-bg {
     position: absolute;
     inset: 0;
-    background-image: url('https://images.unsplash.com/photo-1551836022-d5d88e9218df?w=1800&q=80&auto=format&fit=crop');
+    background-image: url('IMG_9212.png');
     background-size: cover;
     background-position: center 30%;
     filter: brightness(0.4);
@@ -132,7 +132,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, var(--navy-95) 0%, rgba(13,27,42,0.6) 60%, rgba(13,27,42,0.3) 100%);
+    background: linear-gradient(135deg, rgba(13,27,42,0.85) 0%, rgba(13,27,42,0.5) 60%, rgba(13,27,42,0.2) 100%);
   }
   .hero-content {
     position: relative;
@@ -181,6 +181,18 @@
     line-height: 1.8;
     margin-bottom: 3.5rem;
   }
+  .hero-editorial {
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 2.5rem;
+    border-left: 2px solid var(--gold);
+    padding-left: 1rem;
+    line-height: 1.6;
+  }
+
   .hero-actions {
     display: flex;
     gap: 1.2rem;
@@ -1312,6 +1324,7 @@
     <p class="hero-sub" id="t-hero-sub">
       Protegemos empresas contra riscos regulatórios antes que se transformem em multas, incidentes ou danos reputacionais.
     </p>
+    <p class="hero-editorial" id="t-hero-editorial">Transformamos obrigações regulatórias em vantagem competitiva.</p>
     <div class="hero-actions">
       <a href="calculadora.html" class="btn-primary" id="t-hero-cta1">Calcular exposição →</a>
       <a href="#servicos" class="btn-ghost" id="t-hero-cta2">Ver serviços</a>
@@ -1927,6 +1940,7 @@ const T = {
     'hero-tag': 'Consultoria Regulatória Digital · Portugal',
     'h1-1': 'Antes da CNPD.', 'h1-2': 'Antes do incidente.', 'h1-3': 'Antes de ser tarde.',
     'hero-sub': 'Protegemos empresas contra riscos regulatórios antes que se transformem em multas, incidentes ou danos reputacionais.',
+    'hero-editorial': 'Transformamos obrigações regulatórias em vantagem competitiva.',
     'hero-cta1': 'Calcular exposição →', 'hero-cta2': 'Ver serviços',
     'stat1': 'Coima máxima RGPD', 'stat2': 'Para notificar a CNPD', 'stat3': 'Frameworks regulatórios',
     // EXPOSIÇÃO
@@ -1979,6 +1993,7 @@ const T = {
     'hero-tag': 'Digital Regulatory Consulting · Portugal',
     'h1-1': 'Before the regulator.', 'h1-2': 'Before the incident.', 'h1-3': 'Before it\'s too late.',
     'hero-sub': 'We protect companies against regulatory risks before they become fines, incidents or reputational damage.',
+    'hero-editorial': 'We transform regulatory obligations into competitive advantage.',
     'hero-cta1': 'Calculate exposure →', 'hero-cta2': 'View services',
     'stat1': 'Maximum GDPR fine', 'stat2': 'To notify the regulator', 'stat3': 'Regulatory frameworks',
     'exp-ey': 'Regulatory exposure', 'exp-h2': 'The risk you don\'t see.',
@@ -2021,6 +2036,7 @@ const T = {
     'hero-tag': 'Consultoría Regulatoria Digital · Portugal',
     'h1-1': 'Antes del regulador.', 'h1-2': 'Antes del incidente.', 'h1-3': 'Antes de que sea tarde.',
     'hero-sub': 'Protegemos empresas contra riesgos regulatorios antes de que se conviertan en sanciones, incidentes o daños reputacionales.',
+    'hero-editorial': 'Transformamos las obligaciones regulatorias en ventaja competitiva.',
     'hero-cta1': 'Calcular exposición →', 'hero-cta2': 'Ver servicios',
     'stat1': 'Multa máxima RGPD', 'stat2': 'Para notificar al regulador', 'stat3': 'Marcos regulatorios',
     'exp-ey': 'Exposición regulatoria', 'exp-h2': 'El riesgo que no ve.',
