@@ -1179,6 +1179,148 @@
   .footer-ref:hover { color: var(--gold); }
 
 
+
+  /* ── INSIGHTS ───────────────────────────────────── */
+  .insights {
+    padding: 8rem 4rem;
+    background: var(--cream);
+  }
+  .insights-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .insights-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+  .insights-header p {
+    font-size: 0.9rem;
+    color: var(--grey);
+    line-height: 1.8;
+  }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .insight-card {
+    background: var(--navy);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .insight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(13,27,42,0.18);
+  }
+  .insight-edition {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .insight-theme {
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.5rem;
+  }
+  .insight-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .insight-card > p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+  .insight-cta {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 0.85rem 1.6rem;
+    text-align: center;
+    display: inline-block;
+    align-self: flex-start;
+    transition: background 0.2s;
+  }
+  .insight-cta:hover { background: var(--gold-l); }
+  .insight-card.upcoming {
+    background: transparent;
+    border: 1px dashed rgba(13,27,42,0.22);
+  }
+  .insight-card.upcoming .insight-edition { color: var(--grey); }
+  .insight-card.upcoming .insight-theme { color: rgba(13,27,42,0.35); }
+  .insight-card.upcoming h3 { color: var(--navy); opacity: 0.45; font-size: 1.4rem; }
+  .insight-card.upcoming > p { color: var(--grey); }
+  .insight-card.upcoming:hover { transform: none; box-shadow: none; }
+
+  /* ── PODCAST STRIP ──────────────────────────────── */
+  .podcast-strip {
+    background: var(--navy);
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .podcast-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .podcast-icon {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .podcast-icon svg { width: 26px; height: 26px; fill: var(--gold); }
+  .podcast-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+  .podcast-text p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+  .podcast-soon {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(200,169,110,0.35);
+    padding: 0.7rem 1.4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
   /* ── SELETOR DE LÍNGUA ──────────────────────────── */
   .lang-selector {
     display: flex;
@@ -1263,6 +1405,12 @@
     .casos-grid { grid-template-columns: 1fr; }
     .caso { border-right: none; border-bottom: 1px solid rgba(13,27,42,0.1); }
     .parallax-section { background-attachment: scroll; }
+    .insights { padding: 5rem 2rem; }
+    .insights-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
+    .insights-grid { grid-template-columns: 1fr; }
+    .podcast-strip { flex-direction: column; text-align: center; padding: 2rem; gap: 1.5rem; }
+    .podcast-info { flex-direction: column; }
+
     .sobre { padding: 5rem 2rem; }
     .sobre-inner { grid-template-columns: 1fr; gap: 2rem; }
     .sobre-img { display: none; }
@@ -1300,6 +1448,7 @@
     <li><a id="t-nav-met" href="#metodologia">Metodologia</a></li>
     <li><a id="t-nav-srv" href="#servicos">Serviços</a></li>
     <li><a id="t-nav-cas" href="#casos">Casos</a></li>
+    <li><a id="t-nav-ins" href="#insights">Insights</a></li>
     <li><a id="t-nav-sob" href="#sobre">Sobre</a></li>
     <li><a id="t-nav-cnt" href="#contacto">Contacto</a></li>
     <li><a href="calculadora.html" class="nav-cta" id="t-nav-cta">Score Gratuito</a></li>
@@ -1682,6 +1831,55 @@
   </div>
 </section>
 
+
+<!-- INSIGHTS -->
+<section class="insights" id="insights">
+  <div class="insights-inner">
+    <div class="insights-header">
+      <div>
+        <span class="eyebrow" id="t-ins-ey">Privus Month Insights</span>
+        <h2 class="display" id="t-ins-h2">Análise regulatória mensal.<br>Dados primários. Sem ruído.</h2>
+      </div>
+      <p id="t-ins-p">Todos os meses, uma análise técnica de um tema regulatório — com dados das autoridades, fontes verificadas e implicações práticas. O que os relatórios oficiais dizem, e o que realmente significam.</p>
+    </div>
+
+    <div class="insights-grid">
+      <!-- EDIÇÃO Nº 1 — JULHO 2026 -->
+      <div class="insight-card">
+        <div class="insight-edition" id="t-ins-e1-ed">Nº 1 · Julho 2026</div>
+        <div class="insight-theme">RGPD · Enforcement · Portugal</div>
+        <h3 id="t-ins-e1-h">O colapso silencioso da fiscalização CNPD</h3>
+        <p id="t-ins-e1-p">2 coimas em 2025 contra 90 em 2023. 3.201 processos abertos — o número mais alto de sempre. A própria CNPD admite porquê, e o que a fila de espera significa para a sua empresa.</p>
+        <a href="insights/privus-month-insights-julho-2026.pdf" class="insight-cta" target="_blank" rel="noopener" id="t-ins-e1-cta">Descarregar PDF →</a>
+      </div>
+
+      <!-- PRÓXIMA EDIÇÃO -->
+      <div class="insight-card upcoming">
+        <div class="insight-edition" id="t-ins-e2-ed">Nº 2 · Agosto 2026</div>
+        <div class="insight-theme">AI Act · Obrigações · EU</div>
+        <h3 id="t-ins-e2-h">Em preparação</h3>
+        <p id="t-ins-e2-p">A próxima edição analisa o AI Act e as obrigações já em vigor para empresas portuguesas.</p>
+      </div>
+    </div>
+
+    <!-- PODCAST -->
+    <div class="podcast-strip">
+      <div class="podcast-info">
+        <div class="podcast-icon">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/>
+          </svg>
+        </div>
+        <div class="podcast-text">
+          <h4>Privus Podcast</h4>
+          <p id="t-pod-p">Cada tema mensal, desdobrado em episódios semanais. Análise directa, sem floreado — 12 a 15 minutos por episódio.</p>
+        </div>
+      </div>
+      <div class="podcast-soon" id="t-pod-soon">Brevemente · Spotify e YouTube</div>
+    </div>
+  </div>
+</section>
+
 <!-- PARALLAX -->
 <div class="parallax-section">
   <div class="parallax-bg"></div>
@@ -1847,6 +2045,7 @@
         <li><a href="#servicos">Privus Compliance</a></li>
         <li><a href="#servicos">Privus Protect</a></li>
         <li><a href="#servicos">Privus Control</a></li>
+        <li><a href="#insights">Month Insights</a></li>
         <li><a href="#contacto">Proposta específica</a></li>
       </ul>
     </div>
@@ -1981,6 +2180,19 @@ const T = {
     // CONTACTO
     'cnt-ey': 'Contacto', 'cnt-h2': 'Necessidades fora dos perfis standard?',
     'cnt-p': 'Trabalhamos com organizações com requisitos específicos. Descreva o seu projecto — respondemos em 48 horas úteis.',
+    // INSIGHTS
+    'nav-ins': 'Insights',
+    'ins-ey': 'Privus Month Insights',
+    'ins-p': 'Todos os meses, uma análise técnica de um tema regulatório — com dados das autoridades, fontes verificadas e implicações práticas. O que os relatórios oficiais dizem, e o que realmente significam.',
+    'ins-e1-ed': 'Nº 1 · Julho 2026',
+    'ins-e1-h': 'O colapso silencioso da fiscalização CNPD',
+    'ins-e1-p': '2 coimas em 2025 contra 90 em 2023. 3.201 processos abertos — o número mais alto de sempre. A própria CNPD admite porquê, e o que a fila de espera significa para a sua empresa.',
+    'ins-e1-cta': 'Descarregar PDF →',
+    'ins-e2-ed': 'Nº 2 · Agosto 2026',
+    'ins-e2-h': 'Em preparação',
+    'ins-e2-p': 'A próxima edição analisa o AI Act e as obrigações já em vigor para empresas portuguesas.',
+    'pod-p': 'Cada tema mensal, desdobrado em episódios semanais. Análise directa, sem floreado — 12 a 15 minutos por episódio.',
+    'pod-soon': 'Brevemente · Spotify e YouTube',
     // FORM
     'f-nome': 'Nome *', 'f-email': 'Email *', 'f-emp': 'Empresa',
     'f-perf': 'Perfil da organização', 'f-desc': 'Descrição do projecto', 'f-sub': 'Enviar pedido →',
@@ -2026,6 +2238,19 @@ const T = {
     'qua-h': 'Applicable legal and regulatory framework',
     'cnt-ey': 'Contact', 'cnt-h2': 'Requirements outside standard profiles?',
     'cnt-p': 'We work with organisations with specific requirements. Describe your project — we respond within 48 business hours.',
+    // INSIGHTS
+    'nav-ins': 'Insights',
+    'ins-ey': 'Privus Month Insights',
+    'ins-p': 'Every month, a technical analysis of one regulatory topic — with authority data, verified sources and practical implications. What the official reports say, and what they actually mean.',
+    'ins-e1-ed': 'No. 1 · July 2026',
+    'ins-e1-h': 'The silent collapse of CNPD enforcement',
+    'ins-e1-p': '2 fines in 2025 versus 90 in 2023. 3,201 cases opened — the highest number ever. The CNPD itself admits why, and what the waiting line means for your company.',
+    'ins-e1-cta': 'Download PDF →',
+    'ins-e2-ed': 'No. 2 · August 2026',
+    'ins-e2-h': 'In preparation',
+    'ins-e2-p': 'The next edition analyses the AI Act and the obligations already in force for Portuguese companies.',
+    'pod-p': 'Each monthly theme, unpacked in weekly episodes. Direct analysis, no fluff — 12 to 15 minutes per episode.',
+    'pod-soon': 'Coming soon · Spotify and YouTube',
     'f-nome': 'Name *', 'f-email': 'Email *', 'f-emp': 'Company',
     'f-perf': 'Organisation profile', 'f-desc': 'Project description', 'f-sub': 'Send request →',
     'ft-srv': 'Services', 'ft-leg': 'Legal', 'ft-ref': 'References',
@@ -2069,6 +2294,19 @@ const T = {
     'qua-h': 'Marco legal y normativo aplicable',
     'cnt-ey': 'Contacto', 'cnt-h2': '¿Necesidades fuera de los perfiles estándar?',
     'cnt-p': 'Trabajamos con organizaciones con requisitos específicos. Describa su proyecto — respondemos en 48 horas hábiles.',
+    // INSIGHTS
+    'nav-ins': 'Insights',
+    'ins-ey': 'Privus Month Insights',
+    'ins-p': 'Cada mes, un análisis técnico de un tema regulatorio — con datos de las autoridades, fuentes verificadas e implicaciones prácticas. Lo que dicen los informes oficiales, y lo que realmente significan.',
+    'ins-e1-ed': 'Nº 1 · Julio 2026',
+    'ins-e1-h': 'El colapso silencioso de la fiscalización de la CNPD',
+    'ins-e1-p': '2 multas en 2025 frente a 90 en 2023. 3.201 procesos abiertos — el número más alto de la historia. La propia CNPD admite por qué, y lo que la lista de espera significa para su empresa.',
+    'ins-e1-cta': 'Descargar PDF →',
+    'ins-e2-ed': 'Nº 2 · Agosto 2026',
+    'ins-e2-h': 'En preparación',
+    'ins-e2-p': 'La próxima edición analiza el AI Act y las obligaciones ya en vigor para las empresas portuguesas.',
+    'pod-p': 'Cada tema mensual, desglosado en episodios semanales. Análisis directo, sin adornos — de 12 a 15 minutos por episodio.',
+    'pod-soon': 'Próximamente · Spotify y YouTube',
     'f-nome': 'Nombre *', 'f-email': 'Email *', 'f-emp': 'Empresa',
     'f-perf': 'Perfil de la organización', 'f-desc': 'Descripción del proyecto', 'f-sub': 'Enviar solicitud →',
     'ft-srv': 'Servicios', 'ft-leg': 'Legal', 'ft-ref': 'Referencias',
