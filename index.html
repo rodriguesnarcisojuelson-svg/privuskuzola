@@ -358,6 +358,45 @@
     margin-top: 0.4rem;
   }
 
+  /* ── BENEFÍCIOS ─────────────────────────────────── */
+  .beneficios {
+    padding: 8rem 4rem;
+    background: var(--cream);
+  }
+  .beneficios-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .beneficios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem 4rem;
+  }
+  .beneficio {
+    display: grid;
+    grid-template-columns: 2.5rem 1fr;
+    gap: 1.2rem;
+    align-items: start;
+  }
+  .ben-icon {
+    font-size: 1.3rem;
+    color: var(--gold);
+    font-weight: 300;
+    line-height: 1.2;
+  }
+  .beneficio h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.6rem;
+  }
+  .beneficio p {
+    font-size: 0.85rem;
+    color: var(--grey);
+    line-height: 1.75;
+  }
+
   /* ── METODOLOGIA ────────────────────────────────── */
   .metodologia {
     padding: 8rem 4rem;
@@ -443,6 +482,65 @@
     color: var(--grey);
     font-weight: 300;
     font-size: 0.68rem;
+  }
+
+  /* ── ENTREGÁVEIS ────────────────────────────────── */
+  .entregaveis {
+    padding: 8rem 4rem;
+    background: var(--cream-d);
+  }
+  .entregaveis-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .entregaveis-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: rgba(13,27,42,0.1);
+    border: 1px solid rgba(13,27,42,0.1);
+    margin-bottom: 3rem;
+  }
+  .entregavel {
+    background: var(--white);
+    padding: 2.5rem 2rem;
+    transition: background 0.3s;
+  }
+  .entregavel:hover { background: var(--cream); }
+  .ent-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  .entregavel h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--navy);
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+  }
+  .entregavel p {
+    font-size: 0.8rem;
+    color: var(--grey);
+    line-height: 1.7;
+  }
+  .entregaveis-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 2.5rem;
+    background: var(--navy);
+  }
+  .entregaveis-cta p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6);
+    line-height: 1.6;
+    margin: 0;
   }
 
   /* ── PREÇOS ─────────────────────────────────────── */
@@ -781,6 +879,147 @@
     background: var(--cream);
     padding: 0.25rem 0.6rem;
     border: 1px solid var(--cream-d);
+  }
+
+  /* ── INSIGHTS ───────────────────────────────────── */
+  .insights {
+    padding: 8rem 4rem;
+    background: var(--cream);
+  }
+  .insights-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .insights-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    margin-bottom: 4rem;
+  }
+  .insights-header p {
+    font-size: 0.9rem;
+    color: var(--grey);
+    line-height: 1.8;
+  }
+  .insights-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .insight-card {
+    background: var(--navy);
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .insight-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(13,27,42,0.18);
+  }
+  .insight-edition {
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.6rem;
+  }
+  .insight-theme {
+    font-size: 0.62rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.35);
+    margin-bottom: 1.5rem;
+  }
+  .insight-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.9rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+  .insight-card > p {
+    font-size: 0.85rem;
+    color: rgba(255,255,255,0.5);
+    line-height: 1.75;
+    margin-bottom: 2rem;
+    flex: 1;
+  }
+  .insight-cta {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--navy);
+    background: var(--gold);
+    padding: 0.85rem 1.6rem;
+    text-align: center;
+    display: inline-block;
+    align-self: flex-start;
+    transition: background 0.2s;
+  }
+  .insight-cta:hover { background: var(--gold-l); }
+  .insight-card.upcoming {
+    background: transparent;
+    border: 1px dashed rgba(13,27,42,0.22);
+  }
+  .insight-card.upcoming .insight-edition { color: var(--grey); }
+  .insight-card.upcoming .insight-theme { color: rgba(13,27,42,0.35); }
+  .insight-card.upcoming h3 { color: var(--navy); opacity: 0.45; font-size: 1.4rem; }
+  .insight-card.upcoming > p { color: var(--grey); }
+  .insight-card.upcoming:hover { transform: none; box-shadow: none; }
+
+  /* ── PODCAST STRIP ──────────────────────────────── */
+  .podcast-strip {
+    background: var(--navy);
+    padding: 2.5rem 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .podcast-info {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+  .podcast-icon {
+    width: 56px;
+    height: 56px;
+    border: 1px solid var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .podcast-icon svg { width: 26px; height: 26px; fill: var(--gold); }
+  .podcast-text h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.3rem;
+  }
+  .podcast-text p {
+    font-size: 0.78rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.5;
+  }
+  .podcast-soon {
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border: 1px solid rgba(200,169,110,0.35);
+    padding: 0.7rem 1.4rem;
+    white-space: nowrap;
+    flex-shrink: 0;
   }
 
   /* ── IMAGEM PARALLAX ────────────────────────────── */
@@ -1178,149 +1417,6 @@
   }
   .footer-ref:hover { color: var(--gold); }
 
-
-
-  /* ── INSIGHTS ───────────────────────────────────── */
-  .insights {
-    padding: 8rem 4rem;
-    background: var(--cream);
-  }
-  .insights-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-  }
-  .insights-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    margin-bottom: 4rem;
-  }
-  .insights-header p {
-    font-size: 0.9rem;
-    color: var(--grey);
-    line-height: 1.8;
-  }
-  .insights-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
-    margin-bottom: 2rem;
-  }
-  .insight-card {
-    background: var(--navy);
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    transition: transform 0.3s, box-shadow 0.3s;
-  }
-  .insight-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 32px rgba(13,27,42,0.18);
-  }
-  .insight-edition {
-    font-size: 0.62rem;
-    font-weight: 600;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.6rem;
-  }
-  .insight-theme {
-    font-size: 0.62rem;
-    font-weight: 400;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.35);
-    margin-bottom: 1.5rem;
-  }
-  .insight-card h3 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.9rem;
-    font-weight: 400;
-    color: var(--white);
-    line-height: 1.2;
-    margin-bottom: 1rem;
-  }
-  .insight-card > p {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.5);
-    line-height: 1.75;
-    margin-bottom: 2rem;
-    flex: 1;
-  }
-  .insight-cta {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--navy);
-    background: var(--gold);
-    padding: 0.85rem 1.6rem;
-    text-align: center;
-    display: inline-block;
-    align-self: flex-start;
-    transition: background 0.2s;
-  }
-  .insight-cta:hover { background: var(--gold-l); }
-  .insight-card.upcoming {
-    background: transparent;
-    border: 1px dashed rgba(13,27,42,0.22);
-  }
-  .insight-card.upcoming .insight-edition { color: var(--grey); }
-  .insight-card.upcoming .insight-theme { color: rgba(13,27,42,0.35); }
-  .insight-card.upcoming h3 { color: var(--navy); opacity: 0.45; font-size: 1.4rem; }
-  .insight-card.upcoming > p { color: var(--grey); }
-  .insight-card.upcoming:hover { transform: none; box-shadow: none; }
-
-  /* ── PODCAST STRIP ──────────────────────────────── */
-  .podcast-strip {
-    background: var(--navy);
-    padding: 2.5rem 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 3rem;
-  }
-  .podcast-info {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-  }
-  .podcast-icon {
-    width: 56px;
-    height: 56px;
-    border: 1px solid var(--gold);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-  }
-  .podcast-icon svg { width: 26px; height: 26px; fill: var(--gold); }
-  .podcast-text h4 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--white);
-    margin-bottom: 0.3rem;
-  }
-  .podcast-text p {
-    font-size: 0.78rem;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.5;
-  }
-  .podcast-soon {
-    font-size: 0.65rem;
-    font-weight: 600;
-    letter-spacing: 0.16em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(200,169,110,0.35);
-    padding: 0.7rem 1.4rem;
-    white-space: nowrap;
-    flex-shrink: 0;
-  }
-
   /* ── SELETOR DE LÍNGUA ──────────────────────────── */
   .lang-selector {
     display: flex;
@@ -1349,7 +1445,6 @@
   }
   .lang-btn.active { color: var(--gold); }
   .lang-btn:hover { color: rgba(255,255,255,0.8); }
-
 
   /* ── WHATSAPP FLUTUANTE ─────────────────────────── */
   .whatsapp-btn {
@@ -1395,6 +1490,11 @@
     .fase { border-right: none; border-bottom: 1px solid var(--cream-d); }
     .fase:last-child { border-bottom: none; }
     .fase-num { font-size: 2.5rem; margin-bottom: 0.5rem; }
+    .beneficios { padding: 5rem 2rem; }
+    .beneficios-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .entregaveis { padding: 5rem 2rem; }
+    .entregaveis-grid { grid-template-columns: 1fr; }
+    .entregaveis-cta { flex-direction: column; text-align: center; padding: 2rem 1.5rem; }
     .precos { padding: 5rem 2rem; }
     .precos-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .precos-grid { grid-template-columns: 1fr; }
@@ -1404,13 +1504,12 @@
     .casos-header { grid-template-columns: 1fr; gap: 1.5rem; }
     .casos-grid { grid-template-columns: 1fr; }
     .caso { border-right: none; border-bottom: 1px solid rgba(13,27,42,0.1); }
-    .parallax-section { background-attachment: scroll; }
     .insights { padding: 5rem 2rem; }
     .insights-header { grid-template-columns: 1fr; gap: 1.5rem; margin-bottom: 2.5rem; }
     .insights-grid { grid-template-columns: 1fr; }
     .podcast-strip { flex-direction: column; text-align: center; padding: 2rem; gap: 1.5rem; }
     .podcast-info { flex-direction: column; }
-
+    .parallax-section { background-attachment: scroll; }
     .sobre { padding: 5rem 2rem; }
     .sobre-inner { grid-template-columns: 1fr; gap: 2rem; }
     .sobre-img { display: none; }
@@ -1474,7 +1573,7 @@
       <em>Antes de ser tarde.</em>
     </h1>
     <p class="hero-sub" id="t-hero-sub">
-      Protegemos empresas contra riscos regulatórios antes que se transformem em multas, incidentes ou danos reputacionais.
+      Protegemos PMEs, clínicas e startups contra riscos regulatórios antes que se transformem em multas, incidentes ou danos reputacionais.
     </p>
     <p class="hero-editorial" id="t-hero-editorial">Transformamos obrigações regulatórias em vantagem competitiva.</p>
     <div class="hero-actions">
@@ -1542,6 +1641,41 @@
   </div>
 </section>
 
+<!-- BENEFÍCIOS -->
+<section class="beneficios" id="beneficios">
+  <div class="beneficios-inner">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow" id="t-ben-ey">O outro lado da conformidade</span>
+        <h2 class="display" id="t-ben-h2">A conformidade também vende.</h2>
+      </div>
+      <p id="t-ben-p">Evitar coimas é o mínimo. Empresas em conformidade fecham mais negócios, respondem a due diligence sem hesitar e transformam confiança em receita.</p>
+    </div>
+    <div class="beneficios-grid">
+      <div class="beneficio">
+        <div class="ben-icon">→</div>
+        <h3 id="t-b1h">Fechar contratos B2B</h3>
+        <p id="t-b1p">Cada vez mais clientes empresariais exigem prova de conformidade RGPD antes de assinar. Quem a tem, fecha. Quem não tem, perde o negócio para quem tem.</p>
+      </div>
+      <div class="beneficio">
+        <div class="ben-icon">→</div>
+        <h3 id="t-b2h">Passar em due diligence</h3>
+        <p id="t-b2p">Investidores, parceiros e compradores auditam a conformidade antes de qualquer transacção. Documentação em ordem acelera negociações e valoriza a empresa.</p>
+      </div>
+      <div class="beneficio">
+        <div class="ben-icon">→</div>
+        <h3 id="t-b3h">Proteger a reputação</h3>
+        <p id="t-b3p">Um incidente mal gerido destrói em dias a confiança construída em anos. Um processo de resposta documentado transforma a crise em prova de competência.</p>
+      </div>
+      <div class="beneficio">
+        <div class="ben-icon">→</div>
+        <h3 id="t-b4h">Vender com confiança</h3>
+        <p id="t-b4p">O Badge Privus e o relatório de certificação são argumentos comerciais. Conformidade visível diferencia — sobretudo em saúde e tecnologia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- METODOLOGIA -->
 <section class="metodologia" id="metodologia">
   <div class="metodologia-inner">
@@ -1593,6 +1727,45 @@
           <span>Contínuo</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENTREGÁVEIS AUDIT -->
+<section class="entregaveis" id="entregaveis">
+  <div class="entregaveis-inner">
+    <div class="section-header">
+      <div>
+        <span class="eyebrow" id="t-ent-ey">O que recebe</span>
+        <h2 class="display" id="t-ent-h2">O Privus Audit, em concreto.</h2>
+      </div>
+      <p id="t-ent-p">Sem promessas vagas. Estes são os entregáveis exactos que recebe no final do diagnóstico — em 5 a 7 dias úteis.</p>
+    </div>
+    <div class="entregaveis-grid">
+      <div class="entregavel">
+        <div class="ent-num">01</div>
+        <h3 id="t-e1h">Score de Maturidade Regulatória</h3>
+        <p id="t-e1p">Avaliação quantificada em 9 dimensões — de governação a segurança técnica. Sabe exactamente onde está e onde devia estar.</p>
+      </div>
+      <div class="entregavel">
+        <div class="ent-num">02</div>
+        <h3 id="t-e2h">Mapa de Risco Priorizado</h3>
+        <p id="t-e2p">Cada lacuna identificada, classificada por gravidade e urgência, com o artigo legal correspondente. Sem alarmismo — factos.</p>
+      </div>
+      <div class="entregavel">
+        <div class="ent-num">03</div>
+        <h3 id="t-e3h">Plano de Acção Faseado</h3>
+        <p id="t-e3p">Roteiro concreto: o que corrigir primeiro, o que pode esperar, e o custo estimado de cada correcção. Decide com dados.</p>
+      </div>
+      <div class="entregavel">
+        <div class="ent-num">04</div>
+        <h3 id="t-e4h">Relatório Executivo Assinado</h3>
+        <p id="t-e4p">Documento formal, pronto para apresentar à gestão, a investidores ou em due diligence. Prova de diligência regulatória.</p>
+      </div>
+    </div>
+    <div class="entregaveis-cta">
+      <p id="t-ent-nota">Investimento a partir de 297 EUR — integralmente deduzido se avançar para a fase de implementação.</p>
+      <a href="calculadora.html" class="btn-primary" id="t-ent-cta">Ver o meu risco →</a>
     </div>
   </div>
 </section>
@@ -1831,7 +2004,6 @@
   </div>
 </section>
 
-
 <!-- INSIGHTS -->
 <section class="insights" id="insights">
   <div class="insights-inner">
@@ -1844,7 +2016,6 @@
     </div>
 
     <div class="insights-grid">
-      <!-- EDIÇÃO Nº 1 — JULHO 2026 -->
       <div class="insight-card">
         <div class="insight-edition" id="t-ins-e1-ed">Nº 1 · Julho 2026</div>
         <div class="insight-theme">RGPD · Enforcement · Portugal</div>
@@ -1853,7 +2024,6 @@
         <a href="privus-month-insights-julho-2026.pdf" class="insight-cta" target="_blank" rel="noopener" id="t-ins-e1-cta">Descarregar PDF →</a>
       </div>
 
-      <!-- PRÓXIMA EDIÇÃO -->
       <div class="insight-card upcoming">
         <div class="insight-edition" id="t-ins-e2-ed">Nº 2 · Agosto 2026</div>
         <div class="insight-theme">AI Act · Obrigações · EU</div>
@@ -1862,7 +2032,6 @@
       </div>
     </div>
 
-    <!-- PODCAST -->
     <div class="podcast-strip">
       <div class="podcast-info">
         <div class="podcast-icon">
@@ -2019,7 +2188,7 @@
           <input type="checkbox" id="privacidade" name="privacidade" required>
           <label for="privacidade">Aceito que os meus dados sejam utilizados para responder a este pedido, conforme a <a href="politica-privacidade.html">Política de Privacidade</a>.</label>
         </div>
-        <button type="submit" class="form-submit" id="t-f-sub">Enviar pedido →</button>
+        <button type="submit" class="form-submit" id="t-f-sub">Marcar análise inicial →</button>
       </form>
     </div>
   </div>
@@ -2127,21 +2296,17 @@
   });
 </script>
 
-
-
-
-
 <script>
 // ── I18N COMPLETO ─────────────────────────────────────────
 const T = {
   pt: {
     // NAV
     'nav-met': 'Metodologia', 'nav-srv': 'Serviços', 'nav-cas': 'Casos',
-    'nav-sob': 'Sobre', 'nav-cnt': 'Contacto', 'nav-cta': 'Score Gratuito',
+    'nav-ins': 'Insights', 'nav-sob': 'Sobre', 'nav-cnt': 'Contacto', 'nav-cta': 'Score Gratuito',
     // HERO
     'hero-tag': 'Consultoria Regulatória Digital · Portugal',
     'h1-1': 'Antes da CNPD.', 'h1-2': 'Antes do incidente.', 'h1-3': 'Antes de ser tarde.',
-    'hero-sub': 'Protegemos empresas contra riscos regulatórios antes que se transformem em multas, incidentes ou danos reputacionais.',
+    'hero-sub': 'Protegemos PMEs, clínicas e startups contra riscos regulatórios antes que se transformem em multas, incidentes ou danos reputacionais.',
     'hero-editorial': 'Transformamos obrigações regulatórias em vantagem competitiva.',
     'hero-cta1': 'Calcular exposição →', 'hero-cta2': 'Ver serviços',
     'stat1': 'Coima máxima RGPD', 'stat2': 'Para notificar a CNPD', 'stat3': 'Frameworks regulatórios',
@@ -2168,6 +2333,19 @@ const T = {
     'cal-cta': 'Iniciar diagnóstico gratuito →', 'cal-nota': 'Resultado imediato. Email opcional para relatório completo.',
     // CASOS
     'cas-ey': 'Casos de uso', 'cas-p': 'Casos reais com identificação omitida por razões de confidencialidade. Os artigos do RGPD aplicados em cada intervenção estão identificados.',
+    // INSIGHTS
+    'ins-ey': 'Privus Month Insights',
+    'ins-h2': 'Análise regulatória mensal.\nDados primários. Sem ruído.',
+    'ins-p': 'Todos os meses, uma análise técnica de um tema regulatório — com dados das autoridades, fontes verificadas e implicações práticas. O que os relatórios oficiais dizem, e o que realmente significam.',
+    'ins-e1-ed': 'Nº 1 · Julho 2026',
+    'ins-e1-h': 'O colapso silencioso da fiscalização CNPD',
+    'ins-e1-p': '2 coimas em 2025 contra 90 em 2023. 3.201 processos abertos — o número mais alto de sempre. A própria CNPD admite porquê, e o que a fila de espera significa para a sua empresa.',
+    'ins-e1-cta': 'Descarregar PDF →',
+    'ins-e2-ed': 'Nº 2 · Agosto 2026',
+    'ins-e2-h': 'Em preparação',
+    'ins-e2-p': 'A próxima edição analisa o AI Act e as obrigações já em vigor para empresas portuguesas.',
+    'pod-p': 'Cada tema mensal, desdobrado em episódios semanais. Análise directa, sem floreado — 12 a 15 minutos por episódio.',
+    'pod-soon': 'Brevemente · Spotify e YouTube',
     // PARALLAX
     'par-q': 'Empresas resilientes antecipam riscos. Nós ajudamos a fazê-lo.',
     // SOBRE
@@ -2180,34 +2358,37 @@ const T = {
     // CONTACTO
     'cnt-ey': 'Contacto', 'cnt-h2': 'Necessidades fora dos perfis standard?',
     'cnt-p': 'Trabalhamos com organizações com requisitos específicos. Descreva o seu projecto — respondemos em 48 horas úteis.',
-    // INSIGHTS
-    'nav-ins': 'Insights',
-    'ins-ey': 'Privus Month Insights',
-    'ins-p': 'Todos os meses, uma análise técnica de um tema regulatório — com dados das autoridades, fontes verificadas e implicações práticas. O que os relatórios oficiais dizem, e o que realmente significam.',
-    'ins-e1-ed': 'Nº 1 · Julho 2026',
-    'ins-e1-h': 'O colapso silencioso da fiscalização CNPD',
-    'ins-e1-p': '2 coimas em 2025 contra 90 em 2023. 3.201 processos abertos — o número mais alto de sempre. A própria CNPD admite porquê, e o que a fila de espera significa para a sua empresa.',
-    'ins-e1-cta': 'Descarregar PDF →',
-    'ins-e2-ed': 'Nº 2 · Agosto 2026',
-    'ins-e2-h': 'Em preparação',
-    'ins-e2-p': 'A próxima edição analisa o AI Act e as obrigações já em vigor para empresas portuguesas.',
-    'pod-p': 'Cada tema mensal, desdobrado em episódios semanais. Análise directa, sem floreado — 12 a 15 minutos por episódio.',
-    'pod-soon': 'Brevemente · Spotify e YouTube',
     // FORM
     'f-nome': 'Nome *', 'f-email': 'Email *', 'f-emp': 'Empresa',
-    'f-perf': 'Perfil da organização', 'f-desc': 'Descrição do projecto', 'f-sub': 'Enviar pedido →',
+    'f-perf': 'Perfil da organização', 'f-desc': 'Descrição do projecto', 'f-sub': 'Marcar análise inicial →',
     // FOOTER
     'ft-srv': 'Serviços', 'ft-leg': 'Legal', 'ft-ref': 'Referências',
     'ft-p': 'Consultoria regulatória digital para empresas portuguesas. RGPD · AI Act · NIS2 · ISO 27001.',
     'ft-copy': '© 2026 Privus Kuzola · Todos os direitos reservados · privuskuzola.pt · contacto@privuskuzola.pt',
     'cred-strong': 'Crédito Audit:', 'cred-p': 'o valor pago pelo Privus Audit é deduzido integralmente no Privus Compliance, desde que contratado no prazo de 90 dias após a entrega do relatório. O Audit não é um custo — é um investimento na fase seguinte.',
+    // BENEFÍCIOS
+    'ben-ey': 'O outro lado da conformidade', 'ben-h2': 'A conformidade também vende.',
+    'ben-p': 'Evitar coimas é o mínimo. Empresas em conformidade fecham mais negócios, respondem a due diligence sem hesitar e transformam confiança em receita.',
+    'b1h': 'Fechar contratos B2B', 'b1p': 'Cada vez mais clientes empresariais exigem prova de conformidade RGPD antes de assinar. Quem a tem, fecha. Quem não tem, perde o negócio para quem tem.',
+    'b2h': 'Passar em due diligence', 'b2p': 'Investidores, parceiros e compradores auditam a conformidade antes de qualquer transacção. Documentação em ordem acelera negociações e valoriza a empresa.',
+    'b3h': 'Proteger a reputação', 'b3p': 'Um incidente mal gerido destrói em dias a confiança construída em anos. Um processo de resposta documentado transforma a crise em prova de competência.',
+    'b4h': 'Vender com confiança', 'b4p': 'O Badge Privus e o relatório de certificação são argumentos comerciais. Conformidade visível diferencia — sobretudo em saúde e tecnologia.',
+    // ENTREGÁVEIS
+    'ent-ey': 'O que recebe', 'ent-h2': 'O Privus Audit, em concreto.',
+    'ent-p': 'Sem promessas vagas. Estes são os entregáveis exactos que recebe no final do diagnóstico — em 5 a 7 dias úteis.',
+    'e1h': 'Score de Maturidade Regulatória', 'e1p': 'Avaliação quantificada em 9 dimensões — de governação a segurança técnica. Sabe exactamente onde está e onde devia estar.',
+    'e2h': 'Mapa de Risco Priorizado', 'e2p': 'Cada lacuna identificada, classificada por gravidade e urgência, com o artigo legal correspondente. Sem alarmismo — factos.',
+    'e3h': 'Plano de Acção Faseado', 'e3p': 'Roteiro concreto: o que corrigir primeiro, o que pode esperar, e o custo estimado de cada correcção. Decide com dados.',
+    'e4h': 'Relatório Executivo Assinado', 'e4p': 'Documento formal, pronto para apresentar à gestão, a investidores ou em due diligence. Prova de diligência regulatória.',
+    'ent-nota': 'Investimento a partir de 297 EUR — integralmente deduzido se avançar para a fase de implementação.',
+    'ent-cta': 'Ver o meu risco →',
   },
   en: {
     'nav-met': 'Methodology', 'nav-srv': 'Services', 'nav-cas': 'Cases',
-    'nav-sob': 'About', 'nav-cnt': 'Contact', 'nav-cta': 'Free Score',
+    'nav-ins': 'Insights', 'nav-sob': 'About', 'nav-cnt': 'Contact', 'nav-cta': 'Free Score',
     'hero-tag': 'Digital Regulatory Consulting · Portugal',
     'h1-1': 'Before the regulator.', 'h1-2': 'Before the incident.', 'h1-3': 'Before it\'s too late.',
-    'hero-sub': 'We protect companies against regulatory risks before they become fines, incidents or reputational damage.',
+    'hero-sub': 'We protect SMEs, clinics and startups against regulatory risks before they become fines, incidents or reputational damage.',
     'hero-editorial': 'We transform regulatory obligations into competitive advantage.',
     'hero-cta1': 'Calculate exposure →', 'hero-cta2': 'View services',
     'stat1': 'Maximum GDPR fine', 'stat2': 'To notify the regulator', 'stat3': 'Regulatory frameworks',
@@ -2229,18 +2410,9 @@ const T = {
     'cal-p': '18 questions. 5 minutes. Immediate result — see your score first, no obligations. Email is optional, to receive the full report with priority recommendations.',
     'cal-cta': 'Start free diagnosis →', 'cal-nota': 'Immediate result. Optional email for full report.',
     'cas-ey': 'Use cases', 'cas-p': 'Real cases with identification omitted for confidentiality reasons. The GDPR articles applied in each intervention are identified.',
-    'par-q': 'Resilient companies anticipate risks. We help them do it.',
-    'sob-ey': 'About', 'sob-h2': 'Regulatory compliance built to last.',
-    'sob-p': 'Privus Kuzola is composed of consultants with advanced training in Data Protection, Privacy and Cybersecurity (EU). We specialise in SMEs, healthcare infrastructures and startups — sectors with specific obligations that require more than generic documentation.',
-    'p1h': 'Rigour without compromise', 'p1p': 'Every document references the exact articles of the GDPR and Law No. 58/2019. Nothing is generic.',
-    'p2h': 'Tailored to your sector', 'p2p': 'SME, clinic or startup — different obligations. We treat each case by its specific regulatory requirements.',
-    'p3h': 'Transparent pricing', 'p3p': 'No "price on request". What you see on the site is what you pay. No surprises on the invoice.',
-    'qua-h': 'Applicable legal and regulatory framework',
-    'cnt-ey': 'Contact', 'cnt-h2': 'Requirements outside standard profiles?',
-    'cnt-p': 'We work with organisations with specific requirements. Describe your project — we respond within 48 business hours.',
     // INSIGHTS
-    'nav-ins': 'Insights',
     'ins-ey': 'Privus Month Insights',
+    'ins-h2': 'Monthly regulatory analysis.\nPrimary data. No noise.',
     'ins-p': 'Every month, a technical analysis of one regulatory topic — with authority data, verified sources and practical implications. What the official reports say, and what they actually mean.',
     'ins-e1-ed': 'No. 1 · July 2026',
     'ins-e1-h': 'The silent collapse of CNPD enforcement',
@@ -2251,19 +2423,44 @@ const T = {
     'ins-e2-p': 'The next edition analyses the AI Act and the obligations already in force for Portuguese companies.',
     'pod-p': 'Each monthly theme, unpacked in weekly episodes. Direct analysis, no fluff — 12 to 15 minutes per episode.',
     'pod-soon': 'Coming soon · Spotify and YouTube',
+    'par-q': 'Resilient companies anticipate risks. We help them do it.',
+    'sob-ey': 'About', 'sob-h2': 'Regulatory compliance built to last.',
+    'sob-p': 'Privus Kuzola is composed of consultants with advanced training in Data Protection, Privacy and Cybersecurity (EU). We specialise in SMEs, healthcare infrastructures and startups — sectors with specific obligations that require more than generic documentation.',
+    'p1h': 'Rigour without compromise', 'p1p': 'Every document references the exact articles of the GDPR and Law No. 58/2019. Nothing is generic.',
+    'p2h': 'Tailored to your sector', 'p2p': 'SME, clinic or startup — different obligations. We treat each case by its specific regulatory requirements.',
+    'p3h': 'Transparent pricing', 'p3p': 'No "price on request". What you see on the site is what you pay. No surprises on the invoice.',
+    'qua-h': 'Applicable legal and regulatory framework',
+    'cnt-ey': 'Contact', 'cnt-h2': 'Requirements outside standard profiles?',
+    'cnt-p': 'We work with organisations with specific requirements. Describe your project — we respond within 48 business hours.',
     'f-nome': 'Name *', 'f-email': 'Email *', 'f-emp': 'Company',
-    'f-perf': 'Organisation profile', 'f-desc': 'Project description', 'f-sub': 'Send request →',
+    'f-perf': 'Organisation profile', 'f-desc': 'Project description', 'f-sub': 'Book initial analysis →',
     'ft-srv': 'Services', 'ft-leg': 'Legal', 'ft-ref': 'References',
     'ft-p': 'Digital regulatory consulting for Portuguese companies. GDPR · AI Act · NIS2 · ISO 27001.',
     'ft-copy': '© 2026 Privus Kuzola · All rights reserved · privuskuzola.pt · contacto@privuskuzola.pt',
     'cred-strong': 'Audit Credit:', 'cred-p': 'the amount paid for the Privus Audit is fully deducted from the Privus Compliance price, provided it is contracted within 90 days after delivery of the audit report. The Audit is not a cost — it is an investment in the next phase.',
+    // BENEFITS
+    'ben-ey': 'The other side of compliance', 'ben-h2': 'Compliance also sells.',
+    'ben-p': 'Avoiding fines is the bare minimum. Compliant companies close more deals, pass due diligence without hesitation, and turn trust into revenue.',
+    'b1h': 'Close B2B contracts', 'b1p': 'More and more corporate clients require proof of GDPR compliance before signing. Those who have it, close. Those who don\'t, lose the deal to those who do.',
+    'b2h': 'Pass due diligence', 'b2p': 'Investors, partners and buyers audit compliance before any transaction. Documentation in order accelerates negotiations and increases company value.',
+    'b3h': 'Protect your reputation', 'b3p': 'A poorly managed incident destroys in days the trust built over years. A documented response process turns crisis into proof of competence.',
+    'b4h': 'Sell with confidence', 'b4p': 'The Privus Badge and certification report are commercial arguments. Visible compliance differentiates — especially in health and technology.',
+    // DELIVERABLES
+    'ent-ey': 'What you receive', 'ent-h2': 'The Privus Audit, in concrete terms.',
+    'ent-p': 'No vague promises. These are the exact deliverables you receive at the end of the diagnosis — within 5 to 7 business days.',
+    'e1h': 'Regulatory Maturity Score', 'e1p': 'Quantified assessment across 9 dimensions — from governance to technical security. Know exactly where you stand and where you should be.',
+    'e2h': 'Prioritised Risk Map', 'e2p': 'Every gap identified, classified by severity and urgency, with the corresponding legal article. No alarmism — facts.',
+    'e3h': 'Phased Action Plan', 'e3p': 'Concrete roadmap: what to fix first, what can wait, and the estimated cost of each correction. Decide with data.',
+    'e4h': 'Signed Executive Report', 'e4p': 'Formal document, ready to present to management, investors or in due diligence. Proof of regulatory diligence.',
+    'ent-nota': 'Investment from 297 EUR — fully deducted if you proceed to the implementation phase.',
+    'ent-cta': 'See my risk →',
   },
   es: {
     'nav-met': 'Metodología', 'nav-srv': 'Servicios', 'nav-cas': 'Casos',
-    'nav-sob': 'Sobre nosotros', 'nav-cnt': 'Contacto', 'nav-cta': 'Score Gratuito',
+    'nav-ins': 'Insights', 'nav-sob': 'Sobre nosotros', 'nav-cnt': 'Contacto', 'nav-cta': 'Score Gratuito',
     'hero-tag': 'Consultoría Regulatoria Digital · Portugal',
     'h1-1': 'Antes del regulador.', 'h1-2': 'Antes del incidente.', 'h1-3': 'Antes de que sea tarde.',
-    'hero-sub': 'Protegemos empresas contra riesgos regulatorios antes de que se conviertan en sanciones, incidentes o daños reputacionales.',
+    'hero-sub': 'Protegemos PYMEs, clínicas y startups contra riesgos regulatorios antes de que se conviertan en sanciones, incidentes o daños reputacionales.',
     'hero-editorial': 'Transformamos las obligaciones regulatorias en ventaja competitiva.',
     'hero-cta1': 'Calcular exposición →', 'hero-cta2': 'Ver servicios',
     'stat1': 'Multa máxima RGPD', 'stat2': 'Para notificar al regulador', 'stat3': 'Marcos regulatorios',
@@ -2285,18 +2482,9 @@ const T = {
     'cal-p': '18 preguntas. 5 minutos. Resultado inmediato — vea el score primero, sin compromisos. El email es opcional, para recibir el informe completo con recomendaciones prioritarias.',
     'cal-cta': 'Iniciar diagnóstico gratuito →', 'cal-nota': 'Resultado inmediato. Email opcional para informe completo.',
     'cas-ey': 'Casos de uso', 'cas-p': 'Casos reales con identificación omitida por razones de confidencialidad. Los artículos del RGPD aplicados en cada intervención están identificados.',
-    'par-q': 'Las empresas resilientes anticipan riesgos. Nosotros les ayudamos a hacerlo.',
-    'sob-ey': 'Sobre nosotros', 'sob-h2': 'Cumplimiento normativo construido para durar.',
-    'sob-p': 'Privus Kuzola está compuesta por consultores con formación avanzada en Protección de Datos, Privacidad y Ciberseguridad (UE). Nos especializamos en PYMEs, infraestructuras sanitarias y startups — sectores con obligaciones específicas que requieren más que documentación genérica.',
-    'p1h': 'Rigor sin compromiso', 'p1p': 'Cada documento hace referencia a los artículos exactos del RGPD y de la Ley n.º 58/2019. Nada es genérico.',
-    'p2h': 'Adaptado a su sector', 'p2p': 'PYME, clínica o startup — obligaciones diferentes. Tratamos cada caso por su especificidad regulatoria.',
-    'p3h': 'Precios transparentes', 'p3p': 'Sin "precio bajo consulta". Lo que ve en el sitio es lo que paga. Sin sorpresas en la factura.',
-    'qua-h': 'Marco legal y normativo aplicable',
-    'cnt-ey': 'Contacto', 'cnt-h2': '¿Necesidades fuera de los perfiles estándar?',
-    'cnt-p': 'Trabajamos con organizaciones con requisitos específicos. Describa su proyecto — respondemos en 48 horas hábiles.',
     // INSIGHTS
-    'nav-ins': 'Insights',
     'ins-ey': 'Privus Month Insights',
+    'ins-h2': 'Análisis regulatorio mensual.\nDatos primarios. Sin ruido.',
     'ins-p': 'Cada mes, un análisis técnico de un tema regulatorio — con datos de las autoridades, fuentes verificadas e implicaciones prácticas. Lo que dicen los informes oficiales, y lo que realmente significan.',
     'ins-e1-ed': 'Nº 1 · Julio 2026',
     'ins-e1-h': 'El colapso silencioso de la fiscalización de la CNPD',
@@ -2307,12 +2495,37 @@ const T = {
     'ins-e2-p': 'La próxima edición analiza el AI Act y las obligaciones ya en vigor para las empresas portuguesas.',
     'pod-p': 'Cada tema mensual, desglosado en episodios semanales. Análisis directo, sin adornos — de 12 a 15 minutos por episodio.',
     'pod-soon': 'Próximamente · Spotify y YouTube',
+    'par-q': 'Las empresas resilientes anticipan riesgos. Nosotros les ayudamos a hacerlo.',
+    'sob-ey': 'Sobre nosotros', 'sob-h2': 'Cumplimiento normativo construido para durar.',
+    'sob-p': 'Privus Kuzola está compuesta por consultores con formación avanzada en Protección de Datos, Privacidad y Ciberseguridad (UE). Nos especializamos en PYMEs, infraestructuras sanitarias y startups — sectores con obligaciones específicas que requieren más que documentación genérica.',
+    'p1h': 'Rigor sin compromiso', 'p1p': 'Cada documento hace referencia a los artículos exactos del RGPD y de la Ley n.º 58/2019. Nada es genérico.',
+    'p2h': 'Adaptado a su sector', 'p2p': 'PYME, clínica o startup — obligaciones diferentes. Tratamos cada caso por su especificidad regulatoria.',
+    'p3h': 'Precios transparentes', 'p3p': 'Sin "precio bajo consulta". Lo que ve en el sitio es lo que paga. Sin sorpresas en la factura.',
+    'qua-h': 'Marco legal y normativo aplicable',
+    'cnt-ey': 'Contacto', 'cnt-h2': '¿Necesidades fuera de los perfiles estándar?',
+    'cnt-p': 'Trabajamos con organizaciones con requisitos específicos. Describa su proyecto — respondemos en 48 horas hábiles.',
     'f-nome': 'Nombre *', 'f-email': 'Email *', 'f-emp': 'Empresa',
-    'f-perf': 'Perfil de la organización', 'f-desc': 'Descripción del proyecto', 'f-sub': 'Enviar solicitud →',
+    'f-perf': 'Perfil de la organización', 'f-desc': 'Descripción del proyecto', 'f-sub': 'Reservar análisis inicial →',
     'ft-srv': 'Servicios', 'ft-leg': 'Legal', 'ft-ref': 'Referencias',
     'ft-p': 'Consultoría regulatoria digital para empresas portuguesas. RGPD · AI Act · NIS2 · ISO 27001.',
     'ft-copy': '© 2026 Privus Kuzola · Todos los derechos reservados · privuskuzola.pt · contacto@privuskuzola.pt',
     'cred-strong': 'Crédito Audit:', 'cred-p': 'el importe pagado por el Privus Audit se descuenta íntegramente del precio de Privus Compliance, siempre que se contrate en los 90 días siguientes a la entrega del informe de auditoría. La Auditoría no es un coste — es una inversión en la siguiente fase.',
+    // BENEFICIOS
+    'ben-ey': 'El otro lado del cumplimiento', 'ben-h2': 'El cumplimiento también vende.',
+    'ben-p': 'Evitar sanciones es lo mínimo. Las empresas en cumplimiento cierran más negocios, superan due diligence sin dudar y transforman confianza en ingresos.',
+    'b1h': 'Cerrar contratos B2B', 'b1p': 'Cada vez más clientes empresariales exigen prueba de cumplimiento RGPD antes de firmar. Quien la tiene, cierra. Quien no, pierde el negocio frente a quien sí.',
+    'b2h': 'Superar due diligence', 'b2p': 'Inversores, socios y compradores auditan el cumplimiento antes de cualquier transacción. La documentación en orden acelera negociaciones y valoriza la empresa.',
+    'b3h': 'Proteger la reputación', 'b3p': 'Un incidente mal gestionado destruye en días la confianza construida en años. Un proceso de respuesta documentado convierte la crisis en prueba de competencia.',
+    'b4h': 'Vender con confianza', 'b4p': 'El Badge Privus y el informe de certificación son argumentos comerciales. El cumplimiento visible diferencia — sobre todo en salud y tecnología.',
+    // ENTREGABLES
+    'ent-ey': 'Lo que recibe', 'ent-h2': 'El Privus Audit, en concreto.',
+    'ent-p': 'Sin promesas vagas. Estos son los entregables exactos que recibe al final del diagnóstico — en 5 a 7 días hábiles.',
+    'e1h': 'Score de Madurez Regulatoria', 'e1p': 'Evaluación cuantificada en 9 dimensiones — de gobernanza a seguridad técnica. Sepa exactamente dónde está y dónde debería estar.',
+    'e2h': 'Mapa de Riesgo Priorizado', 'e2p': 'Cada laguna identificada, clasificada por gravedad y urgencia, con el artículo legal correspondiente. Sin alarmismo — hechos.',
+    'e3h': 'Plan de Acción por Fases', 'e3p': 'Hoja de ruta concreta: qué corregir primero, qué puede esperar, y el coste estimado de cada corrección. Decida con datos.',
+    'e4h': 'Informe Ejecutivo Firmado', 'e4p': 'Documento formal, listo para presentar a la dirección, a inversores o en due diligence. Prueba de diligencia regulatoria.',
+    'ent-nota': 'Inversión desde 297 EUR — íntegramente deducida si avanza a la fase de implementación.',
+    'ent-cta': 'Ver mi riesgo →',
   }
 };
 
@@ -2338,7 +2551,13 @@ function setLang(lang) {
   const data = T[lang];
   for (const [key, val] of Object.entries(data)) {
     const el = document.getElementById('t-' + key);
-    if (el) el.textContent = val;
+    if (el) {
+      if (key === 'ins-h2') {
+        el.innerHTML = val.replace(/\n/g, '<br>');
+      } else {
+        el.textContent = val;
+      }
+    }
   }
 
   // Tabs de perfil
@@ -2377,7 +2596,6 @@ function setLang(lang) {
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
   </svg>
 </a>
-
 
 </body>
 </html>
