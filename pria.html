@@ -74,11 +74,13 @@
   table.score-tabela{width:100%;border-collapse:collapse;margin-top:28px;font-family:Arial,Helvetica,sans-serif;font-size:.85rem;}
   table.score-tabela th{text-align:left;padding:10px 6px;border-bottom:2px solid var(--gold);font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--texto-fraco);}
   table.score-tabela td{padding:12px 6px;border-bottom:1px solid rgba(200,169,110,.2);color:var(--texto);}
-  .tag-prioridade{display:inline-block;padding:3px 9px;font-size:.72rem;border-radius:2px;}
-  .tag-alto{background:rgba(224,122,95,.18);color:var(--vermelho);}
-  .tag-medio{background:rgba(217,178,92,.18);color:var(--amarelo);}
-  .tag-baixo{background:rgba(127,184,138,.18);color:var(--verde);}
-  .tag-na{background:rgba(169,178,188,.18);color:var(--texto-fraco);}
+  .tag-prioridade{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;font-family:Arial,Helvetica,sans-serif;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;border:1px solid;}
+  .tag-prioridade::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+  .tag-alto{color:var(--vermelho);border-color:var(--vermelho);background:rgba(224,122,95,.08);}
+  .tag-medio{color:var(--amarelo);border-color:var(--amarelo);background:rgba(217,178,92,.08);}
+  .tag-baixo{color:var(--verde);border-color:var(--verde);background:rgba(127,184,138,.08);}
+  .tag-na{color:var(--texto-fraco);border-color:var(--texto-fraco);background:rgba(169,178,188,.08);}
+  .tag-na::before{display:none;}
   .aviso-confirmar{margin-top:20px;padding:14px;background:rgba(217,178,92,.12);border-left:3px solid var(--amarelo);font-family:Arial,Helvetica,sans-serif;font-size:.85rem;color:var(--texto);}
   .proximo-passo{margin-top:32px;padding:22px;background:var(--navy-claro);border-left:3px solid var(--gold);}
   .proximo-passo h3{font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;margin-bottom:8px;color:var(--texto);}
@@ -466,9 +468,9 @@
   }
 
   function prioridadeTag(risco){
-    if(risco > 60) return {texto:"🔴 Imediato", classe:"tag-alto"};
-    if(risco > 30) return {texto:"🟡 30 dias", classe:"tag-medio"};
-    return {texto:"🟢 Monitorizar", classe:"tag-baixo"};
+    if(risco > 60) return {texto:"Imediato", classe:"tag-alto"};
+    if(risco > 30) return {texto:"30 dias", classe:"tag-medio"};
+    return {texto:"Monitorizar", classe:"tag-baixo"};
   }
 
   document.getElementById("btn-calcular").addEventListener("click", function(){
