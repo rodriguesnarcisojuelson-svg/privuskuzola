@@ -48,10 +48,11 @@
   table.exemplo-tabela{width:100%;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:.85rem;}
   table.exemplo-tabela th{text-align:left;padding:8px 4px;border-bottom:2px solid var(--gold);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-fraco);}
   table.exemplo-tabela td{padding:10px 4px;border-bottom:1px solid rgba(200,169,110,.2);}
-  .tag{display:inline-block;padding:3px 9px;font-size:.72rem;border-radius:2px;}
-  .tag-alto{background:rgba(224,122,95,.18);color:#E07A5F;}
-  .tag-medio{background:rgba(217,178,92,.18);color:#D9B25C;}
-  .tag-baixo{background:rgba(127,184,138,.18);color:#7FB88A;}
+  .tag{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;font-family:Arial,Helvetica,sans-serif;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;border:1px solid;}
+  .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
+  .tag-alto{color:#E07A5F;border-color:#E07A5F;background:rgba(224,122,95,.08);}
+  .tag-medio{color:#D9B25C;border-color:#D9B25C;background:rgba(217,178,92,.08);}
+  .tag-baixo{color:#7FB88A;border-color:#7FB88A;background:rgba(127,184,138,.08);}
 
   .passos{margin-top:24px;}
   .passo{display:flex;gap:16px;margin-top:20px;}
@@ -60,8 +61,8 @@
   .passo .txt p{margin-top:4px;font-size:.92rem;color:var(--texto-fraco);}
 
   .lista-check{margin-top:20px;list-style:none;}
-  .lista-check li{position:relative;padding-left:26px;margin-top:12px;font-size:.95rem;color:var(--texto-fraco);}
-  .lista-check li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700;}
+  .lista-check li{position:relative;padding-left:26px;margin-top:14px;font-size:.95rem;color:var(--texto-fraco);}
+  .lista-check li::before{content:"";position:absolute;left:0;top:.6em;width:14px;height:1px;background:var(--gold);}
 
   .disclaimer{margin-top:40px;padding:16px;background:var(--navy-claro);border-left:3px solid var(--gold);font-family:Arial,Helvetica,sans-serif;font-size:.78rem;color:var(--texto-fraco);}
 
@@ -85,13 +86,13 @@
   <div class="preco-num"><span>€</span>127</div>
   <p class="preco-meta">Pagamento único · Resultado imediato · Relatório completo em até 72h</p>
   <a href="https://buy.stripe.com/7sYbJ0b5M2OU20O84sd7q0c" class="cta">Iniciar diagnóstico PRIA</a>
-  <p class="cta-nota">Pagamento seguro via Stripe. Acesso ao questionário enviado após confirmação.</p>
+  <p class="cta-nota">Pagamento seguro via Stripe. Acesso imediato ao questionário após confirmação do pagamento.</p>
 </div>
 
 <section class="bloco">
   <div class="bloco-titulo">Como funciona</div>
   <div class="passos">
-    <div class="passo"><div class="n">1</div><div class="txt"><h4>Pagas e recebes o acesso</h4><p>Após o pagamento, recebes o link privado do questionário.</p></div></div>
+    <div class="passo"><div class="n">1</div><div class="txt"><h4>Pagas e entras diretamente</h4><p>Após o pagamento, és encaminhado diretamente para o questionário privado.</p></div></div>
     <div class="passo"><div class="n">2</div><div class="txt"><h4>Respondes ao que fazes de facto</h4><p>Sem perguntas genéricas por sector — só o que é relevante à tua atividade real.</p></div></div>
     <div class="passo"><div class="n">3</div><div class="txt"><h4>Vês o teu Índice de Preparação</h4><p>No ecrã, assim que terminas — score por área e prioridade de ação.</p></div></div>
     <div class="passo"><div class="n">4</div><div class="txt"><h4>Recebes o relatório completo</h4><p>Em até 72h, por email: o impacto de cada lacuna para o teu negócio e um plano de ação por prioridade.</p></div></div>
@@ -135,11 +136,11 @@
     <table class="exemplo-tabela">
       <thead><tr><th>Pilar</th><th>Risco</th><th>Prioridade</th></tr></thead>
       <tbody>
-        <tr><td>Dados (RGPD)</td><td>54%</td><td><span class="tag tag-medio">🟡 30 dias</span></td></tr>
-        <tr><td>Inteligência Artificial</td><td>71%</td><td><span class="tag tag-alto">🔴 Imediato</span></td></tr>
-        <tr><td>Segurança</td><td>22%</td><td><span class="tag tag-baixo">🟢 Monitorizar</span></td></tr>
+        <tr><td>Dados (RGPD)</td><td>54%</td><td><span class="tag tag-medio">30 dias</span></td></tr>
+        <tr><td>Inteligência Artificial</td><td>71%</td><td><span class="tag tag-alto">Imediato</span></td></tr>
+        <tr><td>Segurança</td><td>22%</td><td><span class="tag tag-baixo">Monitorizar</span></td></tr>
         <tr><td>AML</td><td>—</td><td><span class="tag tag-baixo">Não aplicável</span></td></tr>
-        <tr><td>Governação</td><td>38%</td><td><span class="tag tag-medio">🟡 30 dias</span></td></tr>
+        <tr><td>Governação</td><td>38%</td><td><span class="tag tag-medio">30 dias</span></td></tr>
       </tbody>
     </table>
   </div>
