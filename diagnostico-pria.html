@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex,nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<title>PRIA — Diagnóstico de Risco Regulatório | Privus Kuzola</title>
+<meta name="description" content="Descobre em 20 minutos onde a tua empresa está exposta a nível de RGPD, AI Act, NIS2, DORA e AML. €127, resultado imediato, relatório completo em 72h.">
+<style>
+  :root{
+    --navy:#0D1B2A; --navy-claro:#16273A; --gold:#C8A96E; --texto:#EDEAE3; --texto-fraco:#A9B2BC;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{background:var(--navy);color:var(--texto);font-family:Georgia,'Times New Roman',serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  .wrap{max-width:720px;margin:0 auto;padding:24px 20px 80px;}
+  header{padding:28px 0 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--gold);}
+  .marca{font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;font-family:'Playfair Display',Georgia,serif;font-weight:700;}
+  .marca strong{color:var(--gold);}
+  .lang{font-family:Arial,Helvetica,sans-serif;font-size:.8rem;color:var(--texto-fraco);letter-spacing:.05em;}
+
+  .eyebrow{margin-top:44px;font-family:Arial,Helvetica,sans-serif;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:700;}
+  h1{font-family:'Playfair Display',Georgia,serif;font-size:2.3rem;font-weight:400;margin-top:14px;line-height:1.2;}
+  h1 strong{font-weight:900;}
+  .lead{margin-top:18px;font-size:1.05rem;color:var(--texto-fraco);}
+
+  .preco-box{margin-top:36px;padding:28px 24px;background:var(--navy-claro);border:1px solid var(--gold);text-align:center;}
+  .preco-num{font-family:'Playfair Display',Georgia,serif;font-size:2.6rem;font-weight:700;}
+  .preco-num span{font-size:1.2rem;vertical-align:top;}
+  .preco-meta{margin-top:6px;font-family:Arial,Helvetica,sans-serif;font-size:.8rem;color:var(--texto-fraco);letter-spacing:.05em;}
+
+  .cta{display:block;width:100%;margin-top:20px;padding:18px;background:var(--gold);color:var(--navy);border:none;border-radius:2px;text-decoration:none;text-align:center;cursor:pointer;font-family:Arial,Helvetica,sans-serif;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;transition:opacity .15s;}
+  .cta:hover{opacity:.88;}
+  .cta-nota{margin-top:10px;font-family:Arial,Helvetica,sans-serif;font-size:.75rem;text-align:center;color:var(--texto-fraco);}
+
+  section.bloco{margin-top:52px;}
+  .bloco-titulo{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;padding-bottom:12px;border-bottom:1px solid var(--gold);}
+
+  .pilar-item{margin-top:24px;padding-left:16px;border-left:2px solid var(--gold);}
+  .pilar-item .num{font-family:Arial,Helvetica,sans-serif;font-size:.7rem;letter-spacing:.2em;color:var(--gold);font-weight:700;}
+  .pilar-item h3{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;margin-top:6px;}
+  .pilar-item p{margin-top:6px;font-size:.95rem;color:var(--texto-fraco);}
+
+  .exemplo-box{margin-top:24px;padding:22px;background:var(--navy-claro);border:1px solid var(--gold);}
+  .exemplo-titulo{font-family:Arial,Helvetica,sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
+  table.exemplo-tabela{width:100%;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:.85rem;}
+  table.exemplo-tabela th{text-align:left;padding:8px 4px;border-bottom:2px solid var(--gold);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-fraco);}
+  table.exemplo-tabela td{padding:10px 4px;border-bottom:1px solid rgba(200,169,110,.2);}
+  .tag{display:inline-block;padding:3px 9px;font-size:.72rem;border-radius:2px;}
+  .tag-alto{background:rgba(224,122,95,.18);color:#E07A5F;}
+  .tag-medio{background:rgba(217,178,92,.18);color:#D9B25C;}
+  .tag-baixo{background:rgba(127,184,138,.18);color:#7FB88A;}
+
+  .passos{margin-top:24px;}
+  .passo{display:flex;gap:16px;margin-top:20px;}
+  .passo .n{font-family:Georgia,serif;font-size:1.6rem;color:var(--gold);font-weight:700;min-width:32px;}
+  .passo .txt h4{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;}
+  .passo .txt p{margin-top:4px;font-size:.92rem;color:var(--texto-fraco);}
+
+  .lista-check{margin-top:20px;list-style:none;}
+  .lista-check li{position:relative;padding-left:26px;margin-top:12px;font-size:.95rem;color:var(--texto-fraco);}
+  .lista-check li::before{content:"✓";position:absolute;left:0;color:var(--gold);font-weight:700;}
+
+  .disclaimer{margin-top:40px;padding:16px;background:var(--navy-claro);border-left:3px solid var(--gold);font-family:Arial,Helvetica,sans-serif;font-size:.78rem;color:var(--texto-fraco);}
+
+  footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--gold);display:flex;justify-content:space-between;font-family:Arial,Helvetica,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--texto-fraco);}
+  footer .site{color:var(--gold);}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="marca">PRIVUS <strong>KUZOLA</strong></div>
+  <div class="lang">PT</div>
+</header>
+
+<p class="eyebrow">Diagnóstico regulatório</p>
+<h1>Onde é que a tua empresa está <strong>exposta</strong> — e o que fazer primeiro.</h1>
+<p class="lead">RGPD, AI Act, NIS2, DORA e AML. Responde a um questionário de 15–25 minutos, feito às tuas respostas reais — não ao teu sector. Vês o resultado no ecrã assim que terminas.</p>
+
+<div class="preco-box">
+  <div class="preco-num"><span>€</span>127</div>
+  <p class="preco-meta">Pagamento único · Resultado imediato · Relatório completo em até 72h</p>
+  <a href="https://buy.stripe.com/7sYbJ0b5M2OU20O84sd7q0c" class="cta">Iniciar diagnóstico PRIA</a>
+  <p class="cta-nota">Pagamento seguro via Stripe. Acesso ao questionário enviado após confirmação.</p>
+</div>
+
+<section class="bloco">
+  <div class="bloco-titulo">Como funciona</div>
+  <div class="passos">
+    <div class="passo"><div class="n">1</div><div class="txt"><h4>Pagas e recebes o acesso</h4><p>Após o pagamento, recebes o link privado do questionário.</p></div></div>
+    <div class="passo"><div class="n">2</div><div class="txt"><h4>Respondes ao que fazes de facto</h4><p>Sem perguntas genéricas por sector — só o que é relevante à tua atividade real.</p></div></div>
+    <div class="passo"><div class="n">3</div><div class="txt"><h4>Vês o teu Índice de Preparação</h4><p>No ecrã, assim que terminas — score por área e prioridade de ação.</p></div></div>
+    <div class="passo"><div class="n">4</div><div class="txt"><h4>Recebes o relatório completo</h4><p>Em até 72h, por email: o impacto de cada lacuna para o teu negócio e um plano de ação por prioridade.</p></div></div>
+  </div>
+</section>
+
+<section class="bloco">
+  <div class="bloco-titulo">O que é avaliado</div>
+
+  <div class="pilar-item">
+    <div class="num">01 · DADOS</div>
+    <h3>RGPD, ePrivacy, EHDS</h3>
+    <p>Categorias especiais, transferências internacionais, perfilização, videovigilância, cookies, registos de saúde partilhados.</p>
+  </div>
+  <div class="pilar-item">
+    <div class="num">02 · INTELIGÊNCIA ARTIFICIAL</div>
+    <h3>AI Act</h3>
+    <p>Só se aplicável — se usas ou planeias usar IA, avalia decisões automatizadas, transparência e enquadramento regulatório.</p>
+  </div>
+  <div class="pilar-item">
+    <div class="num">03 · SEGURANÇA</div>
+    <h3>NIS2, ISO 27001, DORA</h3>
+    <p>Ativos críticos, resposta a incidentes, e — se fores entidade financeira ou fornecedor TIC — requisitos de resiliência digital.</p>
+  </div>
+  <div class="pilar-item">
+    <div class="num">04 · BRANQUEAMENTO DE CAPITAIS</div>
+    <h3>Lei 83/2017 (AML)</h3>
+    <p>Só se a tua atividade estiver sujeita ao regime — identificação de clientes, monitorização, sanções, supervisão.</p>
+  </div>
+  <div class="pilar-item">
+    <div class="num">05 · GOVERNAÇÃO</div>
+    <h3>Maturidade organizacional</h3>
+    <p>Quem decide, quem controla, o que está documentado — a estrutura por trás da conformidade.</p>
+  </div>
+</section>
+
+<section class="bloco">
+  <div class="bloco-titulo">O que recebes</div>
+  <div class="exemplo-box">
+    <div class="exemplo-titulo">Exemplo de resultado</div>
+    <table class="exemplo-tabela">
+      <thead><tr><th>Pilar</th><th>Risco</th><th>Prioridade</th></tr></thead>
+      <tbody>
+        <tr><td>Dados (RGPD)</td><td>54%</td><td><span class="tag tag-medio">🟡 30 dias</span></td></tr>
+        <tr><td>Inteligência Artificial</td><td>71%</td><td><span class="tag tag-alto">🔴 Imediato</span></td></tr>
+        <tr><td>Segurança</td><td>22%</td><td><span class="tag tag-baixo">🟢 Monitorizar</span></td></tr>
+        <tr><td>AML</td><td>—</td><td><span class="tag tag-baixo">Não aplicável</span></td></tr>
+        <tr><td>Governação</td><td>38%</td><td><span class="tag tag-medio">🟡 30 dias</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ul class="lista-check">
+    <li>Índice de Preparação Regulatória, calculado às tuas respostas — não a uma média genérica de sector</li>
+    <li>Prioridade clara por área: o que resolver já, o que agendar, o que só monitorizar</li>
+    <li>No relatório completo: o impacto de cada lacuna para o teu negócio, em linguagem direta — não artigos de lei</li>
+    <li>Roadmap ordenado por impacto vs. esforço, com os "quick wins" identificados</li>
+    <li>Recomendação do Audit certo para o teu perfil, caso queiras avançar para conformidade formal</li>
+  </ul>
+</section>
+
+<a href="https://buy.stripe.com/7sYbJ0b5M2OU20O84sd7q0c" class="cta">Iniciar diagnóstico PRIA — €127</a>
+
+<div class="disclaimer">
+  O PRIA é um diagnóstico indicativo, baseado nas respostas submetidas. Não constitui certificação, auditoria ou parecer jurídico. Para conformidade formal com validação documental, o próximo passo é o Audit.
+</div>
+
+<footer><span>PRIVUS KUZOLA</span><span class="site">privuskuzola.pt</span></footer>
+<p style="margin-top:14px;font-family:Arial,Helvetica,sans-serif;font-size:.72rem;text-align:center;color:var(--texto-fraco);">
+  <a href="https://privuskuzola.pt/politica-privacidade" style="color:var(--texto-fraco);text-decoration:underline;">Política de Privacidade</a>
+</p>
+</div>
+</body>
+</html>
