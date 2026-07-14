@@ -6,49 +6,49 @@
 <meta name="robots" content="noindex,nofollow">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <title>PRIA — Diagnóstico de Risco Regulatório | Privus Kuzola</title>
 <meta name="description" content="Descobre em 20 minutos onde a tua empresa está exposta a nível de RGPD, AI Act, NIS2, DORA e AML. €127, resultado imediato, relatório completo em 72h.">
 <style>
   :root{
-    --navy:#0D1B2A; --navy-claro:#16273A; --gold:#C8A96E; --texto:#EDEAE3; --texto-fraco:#A9B2BC;
+    --navy:#0D1B2A; --gold:#C8A96E; --gold-l:#D9BE90; --cream:#F0EBE0; --cream-d:#E5DDD0; --white:#FFFFFF; --grey:#6B7280;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  body{background:var(--navy);color:var(--texto);font-family:Georgia,'Times New Roman',serif;line-height:1.6;-webkit-font-smoothing:antialiased;}
+  body{background:var(--navy);color:var(--white);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased;}
   .wrap{max-width:720px;margin:0 auto;padding:24px 20px 80px;}
-  header{padding:28px 0 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--gold);}
-  .marca{font-size:.95rem;letter-spacing:.15em;text-transform:uppercase;font-family:'Playfair Display',Georgia,serif;font-weight:700;}
-  .marca strong{color:var(--gold);}
-  .lang{font-family:Arial,Helvetica,sans-serif;font-size:.8rem;color:var(--texto-fraco);letter-spacing:.05em;}
+  header{padding:28px 0 20px;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(200,169,110,.25);}
+  .marca{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;letter-spacing:.05em;color:var(--white);}
+  .marca strong{color:var(--gold);font-weight:500;}
+  .lang{font-family:'Outfit',sans-serif;font-size:.72rem;font-weight:500;color:rgba(255,255,255,.4);letter-spacing:.1em;}
 
-  .eyebrow{margin-top:44px;font-family:Arial,Helvetica,sans-serif;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);font-weight:700;}
-  h1{font-family:'Playfair Display',Georgia,serif;font-size:2.3rem;font-weight:400;margin-top:14px;line-height:1.2;}
-  h1 strong{font-weight:900;}
-  .lead{margin-top:18px;font-size:1.05rem;color:var(--texto-fraco);}
+  .eyebrow{margin-top:44px;font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
+  h1{font-family:'Cormorant Garamond',serif;font-size:2.7rem;font-weight:300;margin-top:14px;line-height:1.1;}
+  h1 strong{font-style:italic;color:var(--gold);font-weight:400;}
+  .lead{margin-top:18px;font-size:.92rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.8;}
 
-  .preco-box{margin-top:36px;padding:28px 24px;background:var(--navy-claro);border:1px solid var(--gold);text-align:center;}
-  .preco-num{font-family:'Playfair Display',Georgia,serif;font-size:2.6rem;font-weight:700;}
-  .preco-num span{font-size:1.2rem;vertical-align:top;}
-  .preco-meta{margin-top:6px;font-family:Arial,Helvetica,sans-serif;font-size:.8rem;color:var(--texto-fraco);letter-spacing:.05em;}
+  .preco-box{margin-top:36px;padding:28px 24px;background:rgba(255,255,255,.03);border:1px solid rgba(200,169,110,.25);text-align:center;}
+  .preco-num{font-family:'Cormorant Garamond',serif;font-size:3.4rem;font-weight:300;color:var(--white);line-height:1;}
+  .preco-num span{font-size:1.4rem;vertical-align:super;}
+  .preco-meta{margin-top:10px;font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:400;color:rgba(255,255,255,.4);letter-spacing:.05em;}
 
-  .cta{display:block;width:100%;margin-top:20px;padding:18px;background:var(--gold);color:var(--navy);border:none;border-radius:2px;text-decoration:none;text-align:center;cursor:pointer;font-family:Arial,Helvetica,sans-serif;font-size:.9rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;transition:opacity .15s;}
-  .cta:hover{opacity:.88;}
-  .cta-nota{margin-top:10px;font-family:Arial,Helvetica,sans-serif;font-size:.75rem;text-align:center;color:var(--texto-fraco);}
+  .cta{display:block;width:100%;margin-top:20px;padding:16px;background:var(--gold);color:var(--navy);border:none;text-decoration:none;text-align:center;cursor:pointer;font-family:'Outfit',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;transition:background .2s;}
+  .cta:hover{background:var(--gold-l);}
+  .cta-nota{margin-top:10px;font-family:'Outfit',sans-serif;font-size:.7rem;font-weight:300;text-align:center;color:rgba(255,255,255,.35);}
 
   section.bloco{margin-top:52px;}
-  .bloco-titulo{font-family:'Playfair Display',Georgia,serif;font-size:1.4rem;font-weight:700;padding-bottom:12px;border-bottom:1px solid var(--gold);}
+  .bloco-titulo{font-family:'Cormorant Garamond',serif;font-size:1.9rem;font-weight:300;padding-bottom:12px;border-bottom:1px solid rgba(200,169,110,.25);}
 
   .pilar-item{margin-top:24px;padding-left:16px;border-left:2px solid var(--gold);}
-  .pilar-item .num{font-family:Arial,Helvetica,sans-serif;font-size:.7rem;letter-spacing:.2em;color:var(--gold);font-weight:700;}
-  .pilar-item h3{font-family:'Playfair Display',Georgia,serif;font-size:1.1rem;font-weight:700;margin-top:6px;}
-  .pilar-item p{margin-top:6px;font-size:.95rem;color:var(--texto-fraco);}
+  .pilar-item .num{font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);}
+  .pilar-item h3{font-family:'Cormorant Garamond',serif;font-size:1.35rem;font-weight:400;margin-top:6px;}
+  .pilar-item p{margin-top:6px;font-size:.88rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.75;}
 
-  .exemplo-box{margin-top:24px;padding:22px;background:var(--navy-claro);border:1px solid var(--gold);}
-  .exemplo-titulo{font-family:Arial,Helvetica,sans-serif;font-size:.72rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:14px;}
-  table.exemplo-tabela{width:100%;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:.85rem;}
-  table.exemplo-tabela th{text-align:left;padding:8px 4px;border-bottom:2px solid var(--gold);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--texto-fraco);}
-  table.exemplo-tabela td{padding:10px 4px;border-bottom:1px solid rgba(200,169,110,.2);}
-  .tag{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;font-family:Arial,Helvetica,sans-serif;font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;border:1px solid;}
+  .exemplo-box{margin-top:24px;padding:22px;background:rgba(255,255,255,.03);border:1px solid rgba(200,169,110,.25);}
+  .exemplo-titulo{font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:14px;}
+  table.exemplo-tabela{width:100%;border-collapse:collapse;font-family:'Outfit',sans-serif;font-size:.85rem;font-weight:300;}
+  table.exemplo-tabela th{text-align:left;padding:8px 4px;border-bottom:2px solid var(--gold);font-size:.64rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.4);}
+  table.exemplo-tabela td{padding:10px 4px;border-bottom:1px solid rgba(255,255,255,.06);}
+  .tag{display:inline-flex;align-items:center;gap:7px;padding:4px 11px;font-family:'Outfit',sans-serif;font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;font-weight:600;border:1px solid;}
   .tag::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor;flex-shrink:0;}
   .tag-alto{color:#E07A5F;border-color:#E07A5F;background:rgba(224,122,95,.08);}
   .tag-medio{color:#D9B25C;border-color:#D9B25C;background:rgba(217,178,92,.08);}
@@ -56,17 +56,17 @@
 
   .passos{margin-top:24px;}
   .passo{display:flex;gap:16px;margin-top:20px;}
-  .passo .n{font-family:Georgia,serif;font-size:1.6rem;color:var(--gold);font-weight:700;min-width:32px;}
-  .passo .txt h4{font-family:'Playfair Display',Georgia,serif;font-size:1rem;font-weight:700;}
-  .passo .txt p{margin-top:4px;font-size:.92rem;color:var(--texto-fraco);}
+  .passo .n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;color:var(--gold);min-width:32px;line-height:1.1;}
+  .passo .txt h4{font-family:'Outfit',sans-serif;font-size:.92rem;font-weight:500;}
+  .passo .txt p{margin-top:4px;font-size:.86rem;font-weight:300;color:rgba(255,255,255,.5);line-height:1.7;}
 
   .lista-check{margin-top:20px;list-style:none;}
-  .lista-check li{position:relative;padding-left:26px;margin-top:14px;font-size:.95rem;color:var(--texto-fraco);}
-  .lista-check li::before{content:"";position:absolute;left:0;top:.6em;width:14px;height:1px;background:var(--gold);}
+  .lista-check li{position:relative;padding-left:26px;margin-top:14px;font-size:.88rem;font-weight:300;color:rgba(255,255,255,.55);line-height:1.75;}
+  .lista-check li::before{content:"";position:absolute;left:0;top:.65em;width:14px;height:1px;background:var(--gold);}
 
-  .disclaimer{margin-top:40px;padding:16px;background:var(--navy-claro);border-left:3px solid var(--gold);font-family:Arial,Helvetica,sans-serif;font-size:.78rem;color:var(--texto-fraco);}
+  .disclaimer{margin-top:40px;padding:16px;background:rgba(255,255,255,.03);border-left:2px solid var(--gold);font-family:'Outfit',sans-serif;font-size:.74rem;font-weight:300;color:rgba(255,255,255,.4);line-height:1.7;}
 
-  footer{margin-top:64px;padding-top:18px;border-top:1px solid var(--gold);display:flex;justify-content:space-between;font-family:Arial,Helvetica,sans-serif;font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--texto-fraco);}
+  footer{margin-top:64px;padding-top:18px;border-top:1px solid rgba(200,169,110,.25);display:flex;justify-content:space-between;font-family:'Outfit',sans-serif;font-size:.65rem;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.35);}
   footer .site{color:var(--gold);}
 </style>
 </head>
