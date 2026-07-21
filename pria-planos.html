@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PRIA — Diagnóstico de Maturidade Regulatória | Privus Kuzola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,500&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2A; --gold:#C8A96E; --gold-l:#D9BE90; --cream:#F0EBE0;
+    --muted:#5A5346; --card:#FFFFFF;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    background:var(--cream); color:var(--navy); font-family:'Outfit',sans-serif;
+    font-weight:300; line-height:1.5;
+  }
+  .wrap{max-width:720px; margin:0 auto; padding:0 20px;}
+
+  header{padding:36px 0 28px; text-align:center;}
+  .kicker{font-size:11px; letter-spacing:2.5px; color:var(--gold); font-weight:500;}
+  h1{
+    font-family:'Cormorant Garamond',serif; font-weight:600; font-size:32px;
+    margin:10px 0 6px; line-height:1.15;
+  }
+  .subtitle{
+    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--muted);
+    font-size:15px; max-width:480px; margin:0 auto;
+  }
+  .gold-rule{width:56px; height:1.5px; background:var(--gold); margin:18px auto 0;}
+
+  .plans{
+    display:flex; gap:18px; flex-wrap:wrap; margin:34px 0 0; align-items:stretch;
+  }
+  .plan{
+    flex:1 1 280px; background:var(--card); border:1px solid #E5DFD1; border-radius:6px;
+    padding:28px 26px 26px; display:flex; flex-direction:column;
+  }
+  .plan-guided{border-color:var(--gold); box-shadow:0 0 0 1px var(--gold);}
+  .plan-kicker{font-size:10.5px; letter-spacing:1.5px; color:var(--gold); font-weight:500;}
+  .plan-name{
+    font-family:'Cormorant Garamond',serif; font-weight:600; font-size:23px;
+    margin:6px 0 14px; color:var(--navy);
+  }
+  .plan-price{
+    font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500;
+    font-size:44px; color:var(--gold); line-height:1;
+  }
+  .plan-price sup{font-size:18px; font-style:normal; font-weight:400; color:var(--muted);}
+  .plan-mode{font-size:12.5px; color:var(--muted); margin:10px 0 20px; font-style:italic;}
+
+  .plan-features{list-style:none; flex:1;}
+  .plan-features li{
+    font-size:13.5px; color:var(--navy); padding:10px 0; border-top:1px solid #EFE9DC;
+    display:flex; gap:8px; align-items:baseline;
+  }
+  .plan-features li:first-child{border-top:none;}
+  .plan-features li::before{content:'—'; color:var(--gold); flex-shrink:0;}
+
+  .plan-btn{
+    display:block; text-align:center; text-decoration:none; margin-top:22px;
+    font-family:'Outfit',sans-serif; font-weight:600; font-size:13.5px;
+    padding:14px; border-radius:3px; letter-spacing:0.3px;
+  }
+  .plan-essencial .plan-btn{background:var(--navy); color:var(--cream);}
+  .plan-guided .plan-btn{background:var(--gold); color:var(--navy);}
+
+  .upgrade-note{
+    font-size:11.5px; color:var(--muted); font-style:italic; margin-top:12px; line-height:1.5;
+  }
+
+  .or-divider{
+    text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
+    color:var(--gold); font-size:14px; margin:6px 0; flex-basis:100%; display:none;
+  }
+
+  .credit-banner{
+    margin:30px 0 40px; background:var(--navy); color:var(--cream);
+    border-radius:6px; padding:22px 24px;
+  }
+  .credit-kicker{font-size:10.5px; letter-spacing:1.5px; color:var(--gold-l); font-weight:500; margin-bottom:8px;}
+  .credit-text{font-size:13px; line-height:1.7; color:#EDE8DD;}
+
+  footer{
+    text-align:center; padding:20px 0 40px; font-size:11px; color:var(--muted);
+  }
+
+  @media (max-width: 640px){
+    .plans{flex-direction:column;}
+    .or-divider{display:block;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">PRIVUS KUZOLA</div>
+  <h1>PRIA — Diagnóstico de<br>Maturidade Regulatória</h1>
+  <p class="subtitle">Duas formas de fazer o mesmo diagnóstico. Nunca pagas duas vezes pelo mesmo resultado.</p>
+  <div class="gold-rule"></div>
+</header>
+
+<div class="wrap">
+  <div class="plans">
+
+    <div class="plan plan-essencial">
+      <div class="plan-kicker">AUTÓNOMO</div>
+      <div class="plan-name">PRIA Assessment</div>
+      <div class="plan-price">250<sup>€</sup></div>
+      <div class="plan-mode">Realizado autonomamente</div>
+      <ul class="plan-features">
+        <li>Diagnóstico completo, ao teu ritmo</li>
+        <li>Relatório executivo</li>
+        <li>Roadmap automático</li>
+      </ul>
+      <a href="https://buy.stripe.com/8x28wO7TA6167l898wd7q0e" target="_blank" class="plan-btn">Iniciar PRIA</a>
+      <p class="upgrade-note">Podes fazer upgrade para a versão acompanhada nos 30 dias seguintes, pagando apenas a diferença de 100 €. Depois de pagares o upgrade, marca aqui: <a href="https://outlook.office.com/bookwithme/user/365cf441b11d439290dd29e1bc9b7536@Privuskuzola.pt/meetingtype/4Hi0Kun4L0KA-VZET9wv7g2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" style="color:var(--gold);">marcar sessão →</a></p>
+    </div>
+
+    <div class="or-divider">ou</div>
+
+    <div class="plan plan-guided">
+      <div class="plan-kicker">ACOMPANHADO</div>
+      <div class="plan-name">PRIA Guided Assessment</div>
+      <div class="plan-price">350<sup>€</sup></div>
+      <div class="plan-mode">Conduzido por um consultor Privus</div>
+      <ul class="plan-features">
+        <li>Sessão de 90 minutos, ao vivo</li>
+        <li>Relatório executivo</li>
+        <li>Roadmap validado e explicado</li>
+      </ul>
+      <a href="https://buy.stripe.com/4gMcN44HodtydJwesQd7q0g" target="_blank" class="plan-btn">Agendar PRIA Guided</a>
+      <p class="upgrade-note">Depois de pagares, marca a tua sessão de 90 minutos aqui: <a href="https://outlook.office.com/bookwithme/user/365cf441b11d439290dd29e1bc9b7536@Privuskuzola.pt/meetingtype/4Hi0Kun4L0KA-VZET9wv7g2?anonymous&ismsaljsauthenabled&ep=mLinkFromTile" target="_blank" style="color:var(--gold);">marcar sessão →</a></p>
+    </div>
+
+  </div>
+
+  <div class="credit-banner">
+    <div class="credit-kicker">CRÉDITO PARA IMPLEMENTAÇÃO</div>
+    <div class="credit-text">Caso a organização avance para um projeto de implementação com a Privus no prazo de 90 dias após a conclusão do PRIA, o valor pago pelo PRIA será integralmente deduzido ao valor da proposta de implementação.</div>
+  </div>
+</div>
+
+<footer>Privus Kuzola · privuskuzola.pt</footer>
+
+</body>
+</html>
