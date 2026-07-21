@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
@@ -10,48 +9,57 @@
 <title>Termos e Condições — Privus Kuzola</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0D1B2A;--ink-mid:#162437;--sand:#C8A96E;--sand-lt:#E8D5A8;--white:#FFFFFF;--stone:#94A3B8;--azure-lt:#3B82F6;}
+:root{
+  --navy:#0D1B2A; --gold:#C8A96E; --gold-l:#D9BE90; --cream:#F0EBE0; --cream-d:#E5DDD0;
+  --white:#FFFFFF; --grey:#6B7280;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7}
-header{background:var(--ink-mid);border-bottom:1px solid rgba(255,255,255,.07);padding:1.25rem 2rem;position:sticky;top:0;z-index:10}
+body{font-family:'Outfit',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.75}
+a{color:inherit}
+header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding:1.2rem 2rem;position:sticky;top:0;z-index:10}
 .header-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--white);text-decoration:none}
-.logo span{color:var(--sand)}
-.back{font-size:.8rem;color:var(--stone);text-decoration:none;transition:color .2s}
-.back:hover{color:var(--white)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;letter-spacing:.03em;color:var(--white);text-decoration:none}
+.logo span{color:var(--gold)}
+.back{font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.back:hover{color:var(--gold)}
 main{max-width:780px;margin:0 auto;padding:3.5rem 2rem 5rem}
-.doc-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
-.doc-label::before{content:'';width:24px;height:1px;background:var(--sand)}
-h1{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;line-height:1.1;margin-bottom:.75rem}
-.doc-meta{font-size:.8rem;color:var(--stone);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.toc{background:var(--ink-mid);border:1px solid rgba(255,255,255,.07);padding:1.5rem 2rem;margin-bottom:3rem}
-.toc-title{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-bottom:1rem}
+.doc-label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;display:flex;align-items:center;gap:.75rem}
+.doc-label::before{content:'';width:24px;height:1px;background:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.4rem;line-height:1.1;margin-bottom:.9rem;color:var(--navy)}
+.doc-meta{font-size:.82rem;color:var(--grey);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--cream-d);font-style:italic}
+.toc{background:var(--white);border:1px solid var(--cream-d);padding:1.6rem 2rem;margin-bottom:3rem}
+.toc-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .toc ol{padding-left:1.25rem}
-.toc li{margin-bottom:.4rem}
-.toc a{font-size:.85rem;color:var(--stone);text-decoration:none;transition:color .2s}
-.toc a:hover{color:var(--sand)}
-h2{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;color:var(--white);margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06)}
-h3{font-size:1rem;font-weight:600;color:var(--sand-lt);margin:1.75rem 0 .6rem}
-p{font-size:.9rem;font-weight:300;color:var(--stone);margin-bottom:1rem;line-height:1.8}
-p strong{color:var(--white);font-weight:500}
-ul,ol{padding-left:1.5rem;margin-bottom:1rem}
-li{font-size:.875rem;font-weight:300;color:var(--stone);margin-bottom:.4rem;line-height:1.7}
-li strong{color:var(--white);font-weight:500}
-.table-wrap{overflow-x:auto;margin:1.25rem 0}
-table{width:100%;border-collapse:collapse;font-size:.82rem}
-th{background:var(--ink-mid);color:var(--white);font-weight:600;padding:.75rem 1rem;text-align:left;border:1px solid rgba(255,255,255,.08);font-size:.75rem;letter-spacing:.05em}
-td{padding:.7rem 1rem;border:1px solid rgba(255,255,255,.06);color:var(--stone);vertical-align:top}
-tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-.highlight{background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.2);padding:1rem 1.25rem;margin:1.25rem 0;border-radius:2px}
-.highlight p{margin-bottom:0;color:var(--stone)}
-.highlight strong{color:var(--sand-lt)}
-.ref{font-size:.75rem;color:var(--azure-lt);font-weight:600;letter-spacing:.05em}
-footer{background:var(--ink-mid);border-top:1px solid rgba(255,255,255,.06);padding:2rem;text-align:center}
-footer p{font-size:.75rem;color:var(--stone)}
-footer a{color:var(--sand);text-decoration:none}
+.toc li{margin-bottom:.5rem}
+.toc a{font-size:.87rem;color:var(--grey);text-decoration:none;transition:color .2s}
+.toc a:hover{color:var(--gold)}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.65rem;color:var(--navy);margin:3rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--cream-d)}
+h3{font-family:'Outfit',sans-serif;font-size:.98rem;font-weight:600;color:var(--navy);margin:1.9rem 0 .7rem}
+p{font-size:.9rem;font-weight:300;color:var(--grey);margin-bottom:1.1rem;line-height:1.85}
+p strong{color:var(--navy);font-weight:500}
+ul,ol{padding-left:1.5rem;margin-bottom:1.1rem}
+li{font-size:.87rem;font-weight:300;color:var(--grey);margin-bottom:.5rem;line-height:1.75}
+li strong{color:var(--navy);font-weight:500}
+.table-wrap{overflow-x:auto;margin:1.4rem 0;border:1px solid var(--cream-d)}
+table{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--white)}
+th{background:var(--navy);color:var(--gold-l);font-weight:500;padding:.8rem 1rem;text-align:left;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+td{padding:.75rem 1rem;border-top:1px solid var(--cream-d);color:var(--grey);vertical-align:top}
+tr:nth-child(even) td{background:var(--cream)}
+.highlight{background:rgba(200,169,110,.08);border-left:2px solid var(--gold);padding:1.1rem 1.4rem;margin:1.4rem 0}
+.highlight p{margin-bottom:0;color:var(--grey)}
+.highlight strong{color:var(--navy)}
+.ref{font-size:.74rem;color:var(--gold);font-weight:600;letter-spacing:.04em}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:2.2rem;text-align:center}
+footer p{font-size:.75rem;color:rgba(255,255,255,.4)}
+footer a{color:var(--gold);text-decoration:none}
+@media (max-width:640px){
+  main{padding:2.5rem 1.25rem 4rem}
+  h1{font-size:1.9rem}
+  .toc{padding:1.3rem 1.4rem}
+}
 </style>
 </head>
 <body>
@@ -64,7 +72,7 @@ footer a{color:var(--sand);text-decoration:none}
 <main>
   <p class="doc-label">Documento legal</p>
   <h1>Termos e Condições</h1>
-  <p class="doc-meta">Versão 1.0 · Entrada em vigor: 10/05/2026 · Última actualização: 10/05/2026<br>
+  <p class="doc-meta">Versão 1.1 · Entrada em vigor: 10/05/2026 · Última actualização: 21/07/2026<br>
   Ao utilizar o website privuskuzola.pt ou contratar os serviços da Privus Kuzola, o Cliente aceita os presentes Termos e Condições na sua totalidade.</p>
 
   <div class="toc">
@@ -93,121 +101,77 @@ footer a{color:var(--sand);text-decoration:none}
     <table>
       <tr><th>Campo</th><th>Informação</th></tr>
       <tr><td><strong>Denominação</strong></td><td>Privus Kuzola</td></tr>
-
-```
-  <tr><td><strong>Morada</strong></td><td>Rua Vale Formoso de Cima 237 A, Lisboa, Portugal</td></tr>
-  <tr><td><strong>Email</strong></td><td>contacto@privuskuzola.pt</td></tr>
-  <tr><td><strong>Telefone</strong></td><td>+351 936 246 971</td></tr>
-  <tr><td><strong>Website</strong></td><td>privuskuzola.pt</td></tr>
-</table>
-```
-
+      <tr><td><strong>Morada</strong></td><td>Rua Vale Formoso de Cima 237 A, Lisboa, Portugal</td></tr>
+      <tr><td><strong>Email</strong></td><td>contacto@privuskuzola.pt</td></tr>
+      <tr><td><strong>Telefone</strong></td><td>+351 936 246 971</td></tr>
+      <tr><td><strong>Website</strong></td><td>privuskuzola.pt</td></tr>
+    </table>
   </div>
 
   <h2 id="t2">2. Âmbito e aceitação</h2>
   <p>Os presentes Termos e Condições (doravante "T&C") regulam a relação entre a <strong>Privus Kuzola</strong> (doravante "Prestador") e qualquer pessoa singular ou colectiva (doravante "Cliente") que utilize o website privuskuzola.pt ou contrate os serviços disponibilizados.</p>
-  <p>A utilização do website ou a submissão do formulário de diagnóstico implica a aceitação integral dos presentes T&C. A contratação de qualquer serviço implica adicionalmente a aceitação das condições específicas descritas na secção 3.</p>
+  <p>A utilização do website ou a submissão de qualquer formulário implica a aceitação integral dos presentes T&C. A contratação de qualquer serviço implica adicionalmente a aceitação das condições específicas descritas na secção 3.</p>
   <p>Caso o Cliente não aceite estes T&C, deve abster-se de utilizar o website e de contratar os serviços.</p>
 
   <h2 id="t3">3. Descrição dos serviços</h2>
-  <p>A Privus Kuzola presta serviços de consultoria em proteção de dados pessoais, nomeadamente:</p>
+  <p>A Privus Kuzola presta serviços de consultoria em conformidade regulatória, nomeadamente:</p>
 
-  <h3>3.1 Privus Audit</h3>
-  <p>Diagnóstico de conformidade regulatória da organização do Cliente. O preço varia consoante o perfil da organização:</p>
-  <ul>
-    <li><strong>PME Geral</strong> — €297 · entrega em 5 dias úteis</li>
-    <li><strong>Clínica / Saúde</strong> — €397 · entrega em 7 dias úteis</li>
-    <li><strong>Startup / Tech</strong> — €497 · entrega em 7 dias úteis</li>
-  </ul>
+  <h3>3.1 PRIA Assessment (self-service)</h3>
+  <p>Diagnóstico de maturidade regulatória realizado de forma autónoma pelo Cliente, através da ferramenta disponibilizada após pagamento. Preço: <strong>€250</strong>.</p>
   <p>O serviço inclui:</p>
   <ul>
-    <li>Score de Maturidade Regulatória (0–100) em 9 dimensões</li>
-    <li>Mapa de risco priorizado e plano de acção faseado</li>
-    <li>Identificação dos frameworks regulatórios aplicáveis (RGPD, AI Act, NIS2, ISO 27001)</li>
-    <li>Crédito integral do valor do Audit aplicável na contratação do Privus Compliance, válido por 90 dias</li>
+    <li>Acesso ao questionário PRIA (até 127 perguntas, consoante o perfil da organização)</li>
+    <li>Relatório Executivo com nível de maturidade regulatória (PRMM), radar de maturidade e score por pilar</li>
+    <li>Roadmap de implementação priorizado, gerado automaticamente</li>
   </ul>
-  <p>O prazo de entrega conta a partir da data de recepção do briefing completo preenchido pelo Cliente — não da data de pagamento. O Privus Audit é a porta de entrada obrigatória para todos os serviços da Privus Kuzola.</p>
 
-  <h3>3.2 Privus Compliance</h3>
-  <p>Implementação regulatória completa para organizações com até 250 colaboradores. O preço varia consoante o perfil da organização:</p>
-  <ul>
-    <li><strong>PME Geral</strong> — €1.500 · entrega em 20 dias úteis</li>
-    <li><strong>Clínica / Saúde</strong> — €2.200 · entrega em 35 dias úteis</li>
-    <li><strong>Startup / Tech</strong> — €2.800 · entrega em 25 dias úteis</li>
-  </ul>
+  <h3>3.2 PRIA Guided Assessment</h3>
+  <p>Diagnóstico de maturidade regulatória conduzido em sessão ao vivo por um consultor Privus, com duração de 90 minutos, por videochamada. Preço: <strong>€350</strong>.</p>
   <p>O serviço inclui:</p>
   <ul>
-    <li>Elaboração da documentação legal completa (ROPA, DPA, Política de Privacidade, Política de Retenção, Aviso de Privacidade para Colaboradores, Procedimento de Resposta a Titulares, Procedimento de Gestão de Violações, Política de Cookies, Sinalização CCTV, Registo de Consentimentos)</li>
-    <li>Prescrição técnica dos 6 blocos de segurança</li>
-    <li>Adaptação sectorial — PME, Saúde, Startup/Tech — com frameworks adicionais por sector</li>
-    <li>Três sessões de acompanhamento (kickoff, revisão intermédia, entrega final)</li>
-    <li>Formação da equipa sobre os procedimentos implementados</li>
-    <li>Score projectado pós-implementação</li>
+    <li>Sessão de 90 minutos com um consultor, que preenche o PRIA em conjunto com o Cliente e valida as respostas</li>
+    <li>Relatório Executivo com nível de maturidade regulatória (PRMM), radar de maturidade e score por pilar</li>
+    <li>Roadmap de implementação priorizado, validado e explicado pelo consultor</li>
   </ul>
-  <p>O prazo de entrega conta a partir do kickoff. O Cliente que tenha previamente contratado o Privus Audit beneficia de um crédito equivalente ao valor do Audit pago, deduzido no Compliance se contratado no prazo de 90 dias após a conclusão do Audit.</p>
 
-  <h3>3.3 Privus Protect</h3>
-  <p>Verificação técnica e certificação de conformidade. Pressupõe a conclusão prévia do Privus Compliance. O preço varia consoante o perfil da organização:</p>
-  <ul>
-    <li><strong>PME Geral</strong> — €450 · entrega em 15 dias úteis</li>
-    <li><strong>Clínica / Saúde</strong> — €650 · entrega em 25 dias úteis</li>
-    <li><strong>Startup / Tech</strong> — €650 · entrega em 20 dias úteis</li>
-  </ul>
-  <p>O serviço inclui:</p>
-  <ul>
-    <li>Verificação técnica dos 6 blocos de segurança implementados</li>
-    <li>Coordenação com parceiro técnico de IT para validação da implementação</li>
-    <li>Simulação de violação de dados e teste do procedimento de resposta</li>
-    <li>Relatório de certificação assinado pela Privus Kuzola</li>
-    <li>Badge digital "Verificado Privus Kuzola — [ano]", renovável anualmente com Privus Control activo</li>
-    <li>Score verificado pós-SHIELD</li>
-  </ul>
-  <p>O prazo de entrega conta a partir do início da verificação técnica e está dependente da disponibilidade do parceiro IT para executar as verificações necessárias. A Privus Kuzola não é responsável por atrasos imputáveis ao parceiro técnico.</p>
+  <div class="highlight">
+    <p><strong>Upgrade e crédito para implementação:</strong> o Cliente que tenha contratado o PRIA Assessment (self-service) pode fazer upgrade para o PRIA Guided Assessment no prazo de 30 dias seguintes, pagando apenas a diferença de €100. Caso o Cliente avance para um projeto de Implementação com a Privus Kuzola no prazo de 90 dias após a conclusão do PRIA, o valor total pago pelo PRIA é deduzido ao valor da proposta de implementação, nos termos definidos na proposta comercial aplicável.</p>
+  </div>
 
-  <h3>3.4 Privus Control</h3>
-  <p>Serviço de manutenção e suporte contínuo em conformidade regulatória, com subscrição mensal. O preço varia consoante o perfil da organização:</p>
-  <ul>
-    <li><strong>PME Geral</strong> — €149/mês</li>
-    <li><strong>Clínica / Saúde</strong> — €299/mês</li>
-    <li><strong>Startup / Tech</strong> — €299/mês</li>
-  </ul>
-  <p>O serviço inclui:</p>
-  <ul>
-    <li>Revisão anual de toda a documentação elaborada</li>
-    <li>Alertas e actualização face a alterações legislativas relevantes</li>
-    <li>Suporte em incidentes de segurança e violações de dados (prazo de resposta inicial: 72 horas)</li>
-    <li>Apoio na resposta a pedidos de exercício de direitos por titulares de dados</li>
-    <li>Disponibilização como Encarregado de Proteção de Dados (DPO) externo, quando aplicável</li>
-    <li>Até 2 horas de consultoria dedicada por mês</li>
-  </ul>
-  <p>A subscrição do Privus Control é renovada automaticamente todos os meses. O Cliente pode cancelar a qualquer momento com aviso prévio de 30 dias, nos termos da secção 11.</p>
+  <h3>3.3 Implementação</h3>
+  <p>Serviço de execução das recomendações identificadas no PRIA — elaboração de documentação, definição de processos e implementação de controlos técnicos e organizativos. O âmbito, prazo e preço são definidos em proposta comercial personalizada, elaborada após o PRIA e uma reunião de enquadramento com o Cliente. Não existe preço público para este serviço.</p>
+
+  <h3>3.4 Compliance as a Service</h3>
+  <p>Serviço de acompanhamento contínuo em matéria de conformidade regulatória, incluindo monitorização de alterações legislativas relevantes, revisões periódicas e suporte a incidentes. O âmbito, condições e preço são definidos em proposta comercial personalizada, adaptada à realidade e dimensão do Cliente. Não existe preço público para este serviço.</p>
+
+  <h3>3.5 Formação</h3>
+  <p>Capacitação de equipas em matéria de conformidade regulatória, moldada aos gaps concretos identificados no PRIA do Cliente. O conteúdo, formato e preço são definidos casuisticamente, seguindo uma abordagem baseada no risco de cada organização. Não existe preço público para este serviço.</p>
 
   <h2 id="t4">4. Processo de contratação e pagamento</h2>
 
   <h3>4.1 Processo de contratação</h3>
   <p>A contratação dos serviços é efectuada electronicamente através do website privuskuzola.pt, seguindo o processo:</p>
   <ol>
-    <li>Preenchimento do formulário de diagnóstico (para o Privus Audit) ou contacto directo (para os restantes serviços)</li>
-    <li>Redireccionamento para a plataforma de pagamento seguro <strong>Stripe</strong></li>
-    <li>Conclusão do pagamento na plataforma Stripe</li>
-    <li>Recepção de confirmação de pagamento e início do serviço</li>
+    <li>Selecção da modalidade do PRIA (Assessment ou Guided) e redireccionamento para a plataforma de pagamento seguro <strong>Stripe</strong> — ou, para os serviços de Implementação, Compliance as a Service e Formação, contacto directo para elaboração de proposta comercial</li>
+    <li>Conclusão do pagamento na plataforma Stripe, quando aplicável</li>
+    <li>Recepção de confirmação de pagamento e acesso ao serviço ou início da elaboração da proposta</li>
   </ol>
-  <p>O contrato considera-se celebrado no momento em que o Prestador recebe a confirmação de pagamento da Stripe.</p>
+  <p>No caso do PRIA, o contrato considera-se celebrado no momento em que o Prestador recebe a confirmação de pagamento da Stripe. Nos restantes serviços, o contrato considera-se celebrado na data de aceitação da proposta comercial por ambas as partes.</p>
 
   <h3>4.2 Pagamento</h3>
   <p>Os pagamentos são processados exclusivamente através da plataforma <strong>Stripe Payments Europe, Limited</strong> (Irlanda), sujeita à regulação financeira europeia e certificada PCI DSS. São aceites os principais cartões de débito e crédito (Visa, Mastercard, American Express).</p>
   <p>Os preços indicados no website incluem IVA à taxa aplicável, salvo indicação expressa em contrário. O Prestador emite recibo ou fatura no prazo máximo de 5 dias úteis após a confirmação do pagamento.</p>
 
-  <h3>4.3 Privus Control — subscrição recorrente</h3>
-  <p>A subscrição do Privus Control é cobrada automaticamente todos os meses na data correspondente à subscrição inicial, através do método de pagamento registado na Stripe. O Cliente será notificado por email 7 dias antes de cada renovação.</p>
+  <h3>4.3 Serviços com faturação periódica</h3>
+  <p>Quando o Compliance as a Service ou outro serviço contratado envolva faturação periódica (mensal, trimestral ou anual), as condições específicas de cobrança, renovação e cancelamento são as definidas na proposta comercial aceite pelo Cliente, a qual prevalece sobre o disposto nesta secção em caso de conflito.</p>
 
   <h2 id="t5">5. Obrigações da Privus Kuzola</h2>
   <p>A Privus Kuzola obriga-se a:</p>
   <ul>
-    <li>Prestar os serviços contratados com diligência e de acordo com as boas práticas profissionais em consultoria RGPD</li>
-    <li>Respeitar os prazos de entrega indicados para cada serviço, contados a partir da recepção de toda a informação necessária por parte do Cliente</li>
+    <li>Prestar os serviços contratados com diligência e de acordo com as boas práticas profissionais em consultoria de conformidade regulatória</li>
+    <li>Respeitar os prazos de entrega acordados para cada serviço, contados a partir da recepção de toda a informação necessária por parte do Cliente</li>
     <li>Manter confidencialidade sobre todas as informações e dados do Cliente a que aceda no âmbito da prestação de serviços (ver secção 8)</li>
-    <li>Celebrar DPA com o Cliente quando actuar como Subcontratante no âmbito do Privus Compliance e do Privus Control</li>
+    <li>Celebrar DPA com o Cliente quando actuar como Subcontratante no âmbito da Implementação e do Compliance as a Service</li>
     <li>Notificar o Cliente imediatamente em caso de qualquer violação de segurança que afecte os seus dados</li>
     <li>Manter actualizado o conhecimento da legislação aplicável e reflectir alterações relevantes nos serviços prestados</li>
   </ul>
@@ -219,23 +183,23 @@ footer a{color:var(--sand);text-decoration:none}
     <li>Cooperar activamente com o Prestador, nomeadamente respondendo a pedidos de informação no prazo de 5 dias úteis</li>
     <li>Efectuar o pagamento atempado nos termos acordados</li>
     <li>Utilizar a documentação elaborada pela Privus Kuzola apenas para os fins da sua organização, não a cedendo ou revendendo a terceiros</li>
-    <li>Informar o Prestador de qualquer alteração relevante na sua organização que possa afectar a conformidade RGPD implementada</li>
-    <li>Implementar efectivamente as recomendações e a documentação entregue pelo Prestador — a responsabilidade pela conformidade RGPD permanece sempre na organização do Cliente</li>
+    <li>Informar o Prestador de qualquer alteração relevante na sua organização que possa afectar a conformidade implementada</li>
+    <li>Implementar efectivamente as recomendações e a documentação entregue pelo Prestador — a responsabilidade pela conformidade regulatória permanece sempre na organização do Cliente</li>
   </ul>
 
   <div class="highlight">
-    <p><strong>Nota importante:</strong> A Privus Kuzola actua como consultora e não como responsável pelo tratamento dos dados pessoais da organização do Cliente. A responsabilidade legal pela conformidade RGPD, incluindo a implementação dos processos e documentação elaborados, é sempre e exclusivamente do Cliente enquanto Responsável pelo Tratamento nos termos do Art. 4.º, n.º 7 do RGPD.</p>
+    <p><strong>Nota importante:</strong> A Privus Kuzola actua como consultora e não como responsável pelo tratamento dos dados pessoais da organização do Cliente. A responsabilidade legal pela conformidade regulatória, incluindo a implementação dos processos e documentação elaborados, é sempre e exclusivamente do Cliente enquanto Responsável pelo Tratamento nos termos do Art. 4.º, n.º 7 do RGPD.</p>
   </div>
 
   <h2 id="t7">7. Propriedade intelectual</h2>
   <p>Todos os conteúdos do website privuskuzola.pt — incluindo textos, imagens, design, código e estrutura — são propriedade da Privus Kuzola e estão protegidos pela legislação de direitos de autor aplicável (Código do Direito de Autor e dos Direitos Conexos, aprovado pelo DL n.º 63/85).</p>
-  <p>A documentação elaborada no âmbito dos serviços Privus Compliance, Privus Protect e Privus Control é entregue ao Cliente com licença de utilização não exclusiva para uso interno da sua organização. O Cliente não pode:</p>
+  <p>A documentação elaborada no âmbito dos serviços de Implementação, Compliance as a Service e Formação é entregue ao Cliente com licença de utilização não exclusiva para uso interno da sua organização. O Cliente não pode:</p>
   <ul>
     <li>Revender, ceder ou licenciar a documentação a terceiros</li>
     <li>Utilizar a documentação como base para prestação de serviços de consultoria a terceiros</li>
     <li>Remover ou alterar referências de autoria da Privus Kuzola sem autorização prévia</li>
   </ul>
-  <p>Os templates e metodologias subjacentes à documentação elaborada continuam a ser propriedade exclusiva da Privus Kuzola.</p>
+  <p>Os templates e metodologias subjacentes à documentação elaborada, incluindo o Framework Privus e o motor de scoring do PRIA, continuam a ser propriedade exclusiva da Privus Kuzola.</p>
 
   <h2 id="t8">8. Confidencialidade</h2>
   <p>Ambas as partes comprometem-se a manter rigorosa confidencialidade sobre todas as informações de carácter confidencial a que tenham acesso no âmbito da relação contratual, nomeadamente:</p>
@@ -248,8 +212,8 @@ footer a{color:var(--sand);text-decoration:none}
   <p>Exceptuam-se desta obrigação as informações que: (i) sejam do domínio público sem culpa de qualquer das partes; (ii) tenham sido obtidas legitimamente de terceiros sem obrigação de confidencialidade; (iii) devam ser divulgadas por imposição legal ou decisão judicial.</p>
 
   <h2 id="t9">9. Proteção de dados</h2>
-  <p>O tratamento de dados pessoais do Cliente e dos seus colaboradores no âmbito da prestação de serviços é regulado pela <a href="politica-privacidade.html" style="color:var(--sand)">Política de Privacidade</a> da Privus Kuzola e, quando aplicável, pelo Contrato de Subcontratante (DPA) celebrado entre as partes.</p>
-  <p>Quando a Privus Kuzola acede a dados pessoais de titulares da organização do Cliente para efeitos de elaboração da documentação RGPD, actua como Subcontratante nos termos do Art. 28.º do RGPD. Neste caso, é celebrado DPA específico que regula as obrigações de ambas as partes.</p>
+  <p>O tratamento de dados pessoais do Cliente e dos seus colaboradores no âmbito da prestação de serviços é regulado pela <a href="politica-privacidade.html" style="color:var(--gold)">Política de Privacidade</a> da Privus Kuzola e, quando aplicável, pelo Contrato de Subcontratante (DPA) celebrado entre as partes.</p>
+  <p>Quando a Privus Kuzola acede a dados pessoais de titulares da organização do Cliente para efeitos de elaboração da documentação de conformidade, actua como Subcontratante nos termos do Art. 28.º do RGPD. Neste caso, é celebrado DPA específico que regula as obrigações de ambas as partes.</p>
 
   <h2 id="t10">10. Limitação de responsabilidade</h2>
   <p>A Privus Kuzola presta serviços de consultoria e não fornece aconselhamento jurídico nos termos do Estatuto da Ordem dos Advogados. Para aconselhamento jurídico vinculativo, o Cliente deve consultar advogado habilitado.</p>
@@ -259,21 +223,17 @@ footer a{color:var(--sand);text-decoration:none}
     <li>Coimas ou sanções aplicadas pela CNPD ou outras autoridades ao Cliente, independentemente da documentação elaborada pelo Prestador</li>
     <li>Danos resultantes da não implementação ou implementação incorrecta pelo Cliente das recomendações e documentação entregues</li>
     <li>Alterações legislativas ou regulatórias que ocorram após a entrega da documentação e que não sejam comunicadas ao abrigo do serviço activo</li>
-    <li>Interrupções do serviço devidas a terceiros (Stripe, Formspree, GitHub Pages, Google)</li>
+    <li>Interrupções do serviço devidas a terceiros (Stripe, Formspree, Cloudflare, Microsoft, Google)</li>
     <li>Danos indirectos, lucros cessantes ou perda de dados do Cliente</li>
   </ul>
 
   <h2 id="t11">11. Cancelamento e rescisão</h2>
 
-  <h3>11.1 Privus Audit, Privus Compliance e Privus Protect</h3>
+  <h3>11.1 PRIA Assessment e PRIA Guided Assessment</h3>
   <p>Estes são serviços de prestação única. Após a confirmação do pagamento e início da prestação do serviço, não é possível cancelamento com reembolso, salvo nos casos previstos na secção 12 (direito de arrependimento) ou em caso de incumprimento grave pelo Prestador.</p>
 
-  <h3>11.2 Privus Control — subscrição mensal</h3>
-  <p>O Cliente pode cancelar a subscrição do Privus Control a qualquer momento, com aviso prévio mínimo de <strong>30 dias corridos</strong> antes da próxima data de renovação, através de:</p>
-  <ul>
-    <li>Email para <strong>contacto@privuskuzola.pt</strong> com assunto "Cancelamento Privus Control — [Nome da empresa]"</li>
-  </ul>
-  <p>O cancelamento produz efeitos na data de renovação seguinte após o cumprimento do aviso prévio. O período já pago não é reembolsado. Após o cancelamento, o Cliente mantém acesso à documentação já entregue mas deixa de receber actualizações e suporte.</p>
+  <h3>11.2 Implementação, Compliance as a Service e Formação</h3>
+  <p>As condições de cancelamento e rescisão destes serviços — incluindo pré-avisos aplicáveis e efeitos sobre valores já pagos — são as definidas na proposta comercial aceite pelo Cliente para cada projeto. Na ausência de estipulação em contrário, aplica-se o disposto na secção 11.3.</p>
 
   <h3>11.3 Rescisão por incumprimento</h3>
   <p>Qualquer das partes pode rescindir o contrato com efeitos imediatos em caso de incumprimento grave pela outra parte, com comunicação escrita fundamentada. Consideram-se incumprimentos graves: falta de pagamento após 15 dias de interpelação, violação de obrigações de confidencialidade, fornecimento de informação falsa.</p>
@@ -283,7 +243,7 @@ footer a{color:var(--sand);text-decoration:none}
   <p>Para exercer o direito de arrependimento, o Cliente deve notificar a Privus Kuzola por email para <strong>contacto@privuskuzola.pt</strong> com indicação inequívoca da decisão de se arrepender.</p>
 
   <div class="highlight">
-    <p><strong>Excepção ao direito de arrependimento:</strong> Ao abrigo do Art. 17.º, n.º 1, alínea a) do DL n.º 24/2014, o direito de arrependimento não é aplicável após o início da execução do serviço com o consentimento expresso do Cliente e reconhecimento de que perde o direito de arrependimento. O Cliente que preencha o formulário de diagnóstico e efectue o pagamento reconhece expressamente que o serviço se inicia imediatamente, renunciando ao direito de arrependimento após o envio do briefing pela Privus Kuzola.</p>
+    <p><strong>Excepção ao direito de arrependimento:</strong> Ao abrigo do Art. 17.º, n.º 1, alínea a) do DL n.º 24/2014, o direito de arrependimento não é aplicável após o início da execução do serviço com o consentimento expresso do Cliente e reconhecimento de que perde o direito de arrependimento. O Cliente que efectue o pagamento do PRIA (Assessment ou Guided) e aceda ao questionário reconhece expressamente que o serviço se inicia imediatamente, renunciando ao direito de arrependimento a partir desse acesso.</p>
   </div>
 
   <p>O reembolso, quando aplicável, é efectuado no prazo máximo de 14 dias corridos após a recepção da comunicação de arrependimento, através do mesmo método de pagamento utilizado na compra.</p>
@@ -291,9 +251,9 @@ footer a{color:var(--sand);text-decoration:none}
   <h2 id="t13">13. Resolução de litígios</h2>
   <p>Em caso de litígio de consumo, o Cliente pode recorrer às seguintes entidades de Resolução Alternativa de Litígios (RAL) reconhecidas em Portugal:</p>
   <ul>
-    <li><strong>Centro de Arbitragem de Conflitos de Consumo de Lisboa (CACCL)</strong> — <a href="https://www.centroarbitragemlisboa.pt" target="_blank" style="color:var(--sand)">www.centroarbitragemlisboa.pt</a></li>
-    <li><strong>Portal do Consumidor (CNIACC)</strong> — <a href="https://www.consumidor.gov.pt" target="_blank" style="color:var(--sand)">www.consumidor.gov.pt</a></li>
-    <li><strong>Plataforma Online de Resolução de Litígios (ODR)</strong> — <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:var(--sand)">ec.europa.eu/consumers/odr</a></li>
+    <li><strong>Centro de Arbitragem de Conflitos de Consumo de Lisboa (CACCL)</strong> — <a href="https://www.centroarbitragemlisboa.pt" target="_blank" style="color:var(--gold)">www.centroarbitragemlisboa.pt</a></li>
+    <li><strong>Portal do Consumidor (CNIACC)</strong> — <a href="https://www.consumidor.gov.pt" target="_blank" style="color:var(--gold)">www.consumidor.gov.pt</a></li>
+    <li><strong>Plataforma Online de Resolução de Litígios (ODR)</strong> — <a href="https://ec.europa.eu/consumers/odr" target="_blank" style="color:var(--gold)">ec.europa.eu/consumers/odr</a></li>
   </ul>
   <p>O recurso a estas entidades não prejudica o direito de acesso aos tribunais judiciais.</p>
 
@@ -302,13 +262,13 @@ footer a{color:var(--sand);text-decoration:none}
 
   <h2 id="t15">15. Alterações aos Termos e Condições</h2>
   <p>A Privus Kuzola reserva-se o direito de alterar os presentes T&C a qualquer momento. As alterações entram em vigor na data indicada no cabeçalho do documento actualizado, publicado em <strong>privuskuzola.pt/termos-condicoes.html</strong>.</p>
-  <p>Para contratos já em vigor (nomeadamente subscrições Privus Control), as alterações aos T&C serão comunicadas ao Cliente por email com antecedência mínima de 30 dias. Se o Cliente não aceitar as alterações, pode cancelar a subscrição nos termos da secção 11.2 sem penalização adicional.</p>
+  <p>Para contratos já em vigor com faturação periódica, as alterações aos T&C serão comunicadas ao Cliente por email com antecedência mínima de 30 dias. Se o Cliente não aceitar as alterações, pode cancelar o serviço nos termos da secção 11 sem penalização adicional.</p>
   <p>A utilização continuada do website ou dos serviços após a entrada em vigor das alterações implica a aceitação dos T&C actualizados.</p>
 
 </main>
 <footer>
-  <p>© 2025 Privus Kuzola · <a href="index.html">privuskuzola.pt</a> · <a href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a></p>
-  <p style="margin-top:.5rem">Regidos pelo Direito Português · DL n.º 24/2014 · Lei n.º 58/2019 · Versão 1.0</p>
+  <p>© 2026 Privus Kuzola · <a href="index.html">privuskuzola.pt</a> · <a href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a></p>
+  <p style="margin-top:.5rem">Regidos pelo Direito Português · DL n.º 24/2014 · Lei n.º 58/2019 · Versão 1.1</p>
 </footer>
 </body>
 </html>
