@@ -1,0 +1,2825 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>PRIA — Diagnóstico de Maturidade Regulatória | Privus Kuzola</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0D1B2A;
+    --gold:#C8A96E;
+    --gold-l:#D9BE90;
+    --cream:#F0EBE0;
+    --muted:#5A5346;
+    --danger:#9C4A3C;
+    --card:#FFFFFF;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--navy);
+    font-family:'Outfit',sans-serif;
+    font-weight:300;
+    padding-bottom:60px;
+  }
+  header{
+    padding:28px 20px 20px;
+    text-align:center;
+    border-bottom:1px solid var(--gold-l);
+  }
+  .kicker{
+    font-size:11px;
+    letter-spacing:2px;
+    color:var(--gold);
+    font-weight:500;
+  }
+  h1{
+    font-family:'Cormorant Garamond',serif;
+    font-weight:600;
+    font-size:30px;
+    margin:8px 0 4px;
+  }
+  .subtitle{
+    font-family:'Cormorant Garamond',serif;
+    font-style:italic;
+    color:var(--gold);
+    font-size:15px;
+    margin:0;
+  }
+  .disclaimer{
+    max-width:640px;
+    margin:16px auto 0;
+    padding:12px 16px;
+    background:#fff;
+    border-left:3px solid var(--gold);
+    font-size:12.5px;
+    line-height:1.6;
+    color:var(--muted);
+  }
+  .wrap{max-width:640px;margin:0 auto;padding:0 16px;}
+
+  /* live summary */
+  .summary{
+    position:sticky; top:0; z-index:10;
+    background:var(--navy);
+    color:var(--cream);
+    margin:20px -16px 20px;
+    padding:20px;
+  }
+  .summary-inner{max-width:640px;margin:0 auto;}
+  .summary-label{font-size:10.5px;letter-spacing:1.5px;color:var(--gold-l);margin-bottom:4px;}
+  .summary-level{font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;margin:0 0 10px;}
+  .score-bar{height:6px;background:rgba(255,255,255,0.15);border-radius:3px;overflow:hidden;margin-bottom:10px;}
+  .score-fill{height:100%;background:var(--gold);transition:width .3s ease;}
+  .summary-score{font-size:12px;color:var(--gold-l);margin-bottom:12px;}
+  .level-desc{font-size:11.5px;color:var(--gold-l);font-style:italic;margin-bottom:12px;line-height:1.5;}
+  .narrative{font-size:13.5px;line-height:1.7;color:#EDE8DD;}
+  .correlation-note{
+    margin-top:12px;padding:10px 12px;background:rgba(200,169,110,0.15);
+    border-left:2px solid var(--gold); font-size:12px; line-height:1.6; display:none;
+  }
+  .correlation-note.active{display:block;}
+
+  /* pillar cards */
+  .pillar{
+    background:var(--card);
+    border:1px solid #E5DFD1;
+    border-radius:4px;
+    padding:16px 18px 18px;
+    margin-bottom:12px;
+  }
+  .pillar-top{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:2px;}
+  .pillar-name{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:18px;}
+  .pillar-score{font-size:13px;color:var(--gold);font-weight:500;}
+  .pillar-hint{font-size:11.5px;color:var(--muted);font-style:italic;margin-bottom:14px;}
+  .dim{margin-bottom:10px;}
+  .dim:last-child{margin-bottom:0;}
+  .dim-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:4px;}
+  .dim-name{color:var(--navy);font-weight:500;}
+  .dim-val{color:var(--muted);}
+  input[type=range]{
+    width:100%; -webkit-appearance:none; appearance:none;
+    height:4px; border-radius:2px; background:#E5DFD1; outline:none;
+  }
+  input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance:none; appearance:none;
+    width:16px;height:16px;border-radius:50%;
+    background:var(--navy); cursor:pointer; border:2px solid var(--gold);
+  }
+  input[type=range]::-moz-range-thumb{
+    width:16px;height:16px;border-radius:50%;
+    background:var(--navy); cursor:pointer; border:2px solid var(--gold);
+  }
+
+  .section-label{
+    font-size:11px; letter-spacing:1.5px; color:var(--gold); margin:28px 0 10px;
+    font-weight:500;
+  }
+  .gates{
+    background:var(--card); border:1px solid #E5DFD1; border-radius:4px;
+    padding:14px 16px; margin-top:10px;
+  }
+  .gate-row{
+    display:flex; align-items:flex-start; gap:10px; padding:8px 0;
+    border-bottom:1px solid #EFE9DC; font-size:12.5px; line-height:1.5;
+  }
+  .gate-row:last-child{border-bottom:none;}
+  .gate-row input{margin-top:3px; accent-color:var(--danger); width:16px; height:16px; flex-shrink:0;}
+  .gate-cap{color:var(--danger); font-size:11px; display:block; margin-top:2px;}
+  .applic-toggle{
+    display:flex; align-items:center; gap:6px; font-size:10.5px; color:var(--muted);
+  }
+  .applic-toggle input{accent-color:var(--gold); width:14px; height:14px;}
+  .pillar.inapplicable{opacity:0.45;}
+  .rules-active{margin-top:8px;}
+  .real-tag{
+    font-family:'Outfit',sans-serif; font-size:9px; letter-spacing:0.5px;
+    background:var(--navy); color:var(--gold-l); padding:2px 7px; border-radius:20px;
+    vertical-align:middle; font-weight:500;
+  }
+  .q-id{font-size:10px; color:var(--gold); letter-spacing:0.5px; margin-bottom:2px;}
+  .q-text{font-size:13px; color:var(--navy); margin-bottom:8px; line-height:1.5;}
+  select{
+    width:100%; font-family:'Outfit',sans-serif; font-size:12.5px; color:var(--navy);
+    background:var(--cream); border:1px solid var(--gold-l); border-radius:3px;
+    padding:8px 10px; margin-bottom:6px; appearance:none;
+  }
+  .q-evid{font-size:10.5px; color:var(--muted); font-style:italic;}
+  .q-block{margin-bottom:12px; padding-bottom:12px; border-bottom:1px dashed #E5DFD1;}
+  .q-block:last-child{margin-bottom:0; padding-bottom:0; border-bottom:none;}
+  .reg-tag{
+    background:var(--navy); color:var(--gold-l); padding:1px 6px; border-radius:10px;
+    font-size:9px; letter-spacing:0.3px;
+  }
+  .applic-count{font-size:11px; color:var(--muted); margin-top:8px; font-style:italic;}
+  .q-block.hidden{display:none;}
+  .rec-row{padding:10px 0; border-bottom:1px solid #EFE9DC;}
+  .rec-row:last-child{border-bottom:none;}
+  .rec-head{display:flex; justify-content:space-between; margin-bottom:3px;}
+  .rec-pillar{font-size:11px; font-weight:600; color:var(--navy);}
+  .rec-qid{font-size:10px; color:var(--gold);}
+  .rec-text{font-size:12.5px; color:var(--navy); line-height:1.5;}
+  .rec-empty{font-size:12.5px; color:var(--muted); font-style:italic; padding:6px 0;}
+
+  .report-card{background:var(--navy); color:var(--cream); padding:22px 20px; border-radius:4px;}
+  .report-kicker{font-size:10.5px; letter-spacing:1.5px; color:var(--gold-l); margin-bottom:8px; font-weight:500;}
+  .report-summary{font-size:13.5px; line-height:1.7; color:#EDE8DD; margin-bottom:4px;}
+  .pbar-row{margin-bottom:10px;}
+  .pbar-top{display:flex; justify-content:space-between; font-size:11.5px; margin-bottom:3px;}
+  .pbar-name{color:#EDE8DD;}
+  .pbar-score{color:var(--gold-l);}
+  .pbar-track{height:5px; background:rgba(255,255,255,0.15); border-radius:3px; overflow:hidden;}
+  .pbar-fill{height:100%; background:var(--gold);}
+  .report-cols{display:flex; gap:16px; margin-top:20px;}
+  .report-col{flex:1; min-width:0;}
+  .risk-item, .strength-item{font-size:12px; line-height:1.6; margin-bottom:8px; color:#EDE8DD;}
+  .risk-item b, .strength-item b{color:var(--gold-l); display:block; font-size:11.5px;}
+  .report-note{margin-top:20px; padding-top:14px; border-top:1px solid rgba(255,255,255,0.15); font-size:11px; color:#B8AF9C; font-style:italic;}
+  #radarWrap{display:flex; justify-content:center; margin:10px 0;}
+  .rm-horizon{margin-bottom:16px;}
+  .rm-horizon-title{font-size:11px; letter-spacing:1px; color:var(--gold-l); margin-bottom:6px; font-weight:600;}
+  .rm-item{font-size:12px; line-height:1.5; padding:7px 0; border-bottom:1px solid rgba(255,255,255,0.1); color:#EDE8DD;}
+  .rm-item:last-child{border-bottom:none;}
+  .rm-item-top{display:flex; justify-content:space-between; font-size:10.5px; color:var(--gold-l); margin-bottom:2px;}
+  .rm-empty{font-size:11.5px; color:#B8AF9C; font-style:italic;}
+  .gate-input{
+    width:100%; font-family:'Outfit',sans-serif; font-size:13px; color:var(--navy);
+    background:var(--cream); border:1px solid var(--gold-l); border-radius:3px;
+    padding:10px 12px; margin-bottom:10px;
+  }
+  .gate-error{color:var(--danger); font-size:11px; margin-bottom:10px; display:none;}
+  .gate-btn{
+    width:100%; font-family:'Outfit',sans-serif; font-weight:500; font-size:13px;
+    background:var(--navy); color:var(--gold-l); border:none; border-radius:3px;
+    padding:13px; cursor:pointer; letter-spacing:0.3px;
+  }
+  .gate-btn:active{opacity:0.85;}
+  .privacy-note{font-size:10px; line-height:1.6; color:var(--muted); margin-top:10px;}
+  .privacy-note a{color:var(--muted); text-decoration:underline;}
+  .compliance-tally{display:flex; gap:14px; margin:10px 0; flex-wrap:wrap;}
+  .tally-item{text-align:center;}
+  .tally-num{font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:600;}
+  .tally-label{font-size:9.5px; letter-spacing:0.5px; color:var(--gold-l); text-transform:uppercase;}
+  .tally-conforme .tally-num{color:#7BAE7F;}
+  .tally-parcial .tally-num{color:var(--gold);}
+  .tally-critico .tally-num{color:#D97A6C;}
+  .impact-row{display:flex; gap:10px; margin-top:6px; flex-wrap:wrap;}
+  .impact-badge{
+    display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.08);
+    border-radius:20px; padding:6px 12px; font-size:11px; color:#EDE8DD;
+  }
+  .impact-icon{font-size:13px;}
+  .next-step{margin-top:24px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.15);}
+  .next-step-text{font-size:12.5px; line-height:1.7; color:#EDE8DD; margin:8px 0 16px;}
+  .next-step-cta{background:rgba(200,169,110,0.12); border:1px solid rgba(200,169,110,0.3); border-radius:4px; padding:16px;}
+  .next-step-cta-title{font-family:'Cormorant Garamond',serif; font-weight:600; font-size:17px; color:var(--gold-l); margin-bottom:6px;}
+  .next-step-cta-sub{font-size:11.5px; color:#C8B99A; margin-bottom:8px;}
+  .next-step-list{margin:0; padding-left:18px; font-size:12px; color:#EDE8DD; line-height:1.8;}
+  .next-step-btn{
+    display:block; text-align:center; text-decoration:none; margin-top:14px;
+    font-family:'Outfit',sans-serif; font-weight:600; font-size:13px;
+    padding:12px; border-radius:3px; letter-spacing:0.3px; background:var(--gold); color:var(--navy);
+  }
+  .next-step-cta-alt{margin-top:16px; background:rgba(255,255,255,0.05); border-color:rgba(255,255,255,0.15);}
+  .next-step-btn-alt{background:transparent; border:1px solid var(--gold-l); color:var(--gold-l);}
+  .next-step-credit{font-size:11.5px; line-height:1.6; color:#C8B99A; margin:8px 0 4px;}
+  footer{
+    text-align:center; font-size:11px; color:var(--muted);
+    margin-top:30px; padding-top:16px; border-top:1px solid var(--gold-l);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="kicker">PRIVUS KUZOLA · PROTÓTIPO INTERNO</div>
+  <h1>PRIA Assessment Engine</h1>
+  <p class="subtitle">Matriz 10 Pilares × 4 Dimensões</p>
+</header>
+
+<div class="disclaimer wrap">
+  Diagnóstico de maturidade regulatória Privus Kuzola — 127 perguntas, 10 pilares, alinhado com o PRMM. Responde às perguntas abaixo; no final, deixa o teu email para desbloquear o Relatório Executivo completo.
+</div>
+
+<div class="wrap">
+  <div class="section-label" style="margin-top:20px;">PERFIL DA ORGANIZAÇÃO (MÓDULO 1 — controla o que aparece abaixo)</div>
+  <div class="gates" id="profile"></div>
+  <div class="applic-count" id="applicCount"></div>
+</div>
+
+<div class="summary">
+  <div class="summary-inner">
+    <div class="summary-label">ÍNDICE PRMM (calculado em tempo real)</div>
+    <div class="summary-level" id="levelName">—</div>
+    <div class="score-bar"><div class="score-fill" id="scoreFill" style="width:0%"></div></div>
+    <div class="summary-score" id="scoreText">0 / 100</div>
+    <div class="compliance-tally" id="complianceTally"></div>
+    <div class="impact-row" id="impactRow"></div>
+    <div class="level-desc" id="levelDesc"></div>
+    <div class="narrative" id="narrative"></div>
+    <div id="rulesActive" class="rules-active"></div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="section-label" style="margin-top:20px;">RECOMENDAÇÕES PRIORITÁRIAS (gaps críticos, ao vivo)</div>
+  <div class="gates" id="recsPanel"></div>
+</div>
+
+<div class="wrap">
+  <div class="section-label">GATES CRÍTICOS (tetos, não médias)</div>
+  <div class="gates" id="gates"></div>
+
+  <div class="section-label" style="margin-top:26px;">OS 10 PILARES</div>
+  <div id="pillars"></div>
+</div>
+
+<div class="wrap">
+  <div class="section-label" style="margin-top:28px;">OBTER O RELATÓRIO EXECUTIVO</div>
+  <div class="gates" id="emailGate">
+    <p style="font-size:12.5px; color:var(--muted); margin-bottom:14px; line-height:1.6;">
+      Deixa os teus dados para desbloquear o relatório completo (resumo, radar de maturidade, riscos, pontos fortes e roadmap 30/90/180 dias).
+    </p>
+    <input type="text" id="gateNome" placeholder="Nome" class="gate-input">
+    <input type="text" id="gateEmpresa" placeholder="Empresa" class="gate-input">
+    <input type="email" id="gateEmail" placeholder="Email" class="gate-input">
+    <div id="gateError" class="gate-error">Preenche um email válido.</div>
+    <button id="gateSubmit" class="gate-btn">Ver o meu Relatório Executivo</button>
+    <p class="privacy-note">Os dados fornecidos são tratados pela Privus Kuzola para efeitos de contacto comercial e envio do relatório, durante o tempo necessário para esse fim. Podes exercer os teus direitos de acesso, retificação ou eliminação a qualquer momento através de contacto@privuskuzola.pt. Consulta a <a href="/politica-privacidade.html" target="_blank">Política de Privacidade</a>.</p>
+  </div>
+</div>
+
+<div class="wrap" id="reportWrap" style="display:none;">
+  <div class="section-label" style="margin-top:28px;">RELATÓRIO EXECUTIVO (visão consolidada)</div>
+  <div class="report-card">
+    <div class="report-kicker">EXECUTIVE SUMMARY</div>
+    <div class="report-summary" id="repSummary"></div>
+
+    <div class="report-kicker" style="margin-top:20px;">RADAR DE MATURIDADE</div>
+    <div id="radarWrap"></div>
+
+    <div class="report-kicker" style="margin-top:20px;">SCORE POR PILAR</div>
+    <div id="repPillars"></div>
+
+    <div class="report-cols">
+      <div class="report-col">
+        <div class="report-kicker" style="color:var(--danger);">PRINCIPAIS RISCOS</div>
+        <div id="repRisks"></div>
+      </div>
+      <div class="report-col">
+        <div class="report-kicker">PONTOS FORTES</div>
+        <div id="repStrengths"></div>
+      </div>
+    </div>
+
+    <div class="report-kicker" style="margin-top:20px;">ROADMAP (impacto × esforço)</div>
+    <div id="repRoadmap"></div>
+
+    <div class="next-step">
+      <div class="report-kicker" style="color:var(--gold-l);">PRÓXIMO PASSO RECOMENDADO</div>
+      <p class="next-step-text">O PRIA Assessment identifica o nível de maturidade regulatória da organização, os principais riscos e as prioridades de implementação. Há dois caminhos possíveis a partir daqui.</p>
+
+      <div class="next-step-cta">
+        <div class="next-step-cta-title">Validar o diagnóstico</div>
+        <div class="next-step-cta-sub">Upgrade para o PRIA Guided Assessment — para quem adquiriu o PRIA Assessment Self-Service.</div>
+        <ul class="next-step-list">
+          <li>sessão de 90 minutos com um consultor Privus;</li>
+          <li>validação das respostas e do diagnóstico;</li>
+          <li>interpretação dos riscos e prioridades;</li>
+          <li>ajuste do roadmap de implementação.</li>
+        </ul>
+        <a href="https://buy.stripe.com/00w5kC0r89di5d0ckId7q0f" target="_blank" class="next-step-btn">Fazer upgrade por 100 €</a>
+      </div>
+
+      <div class="next-step-cta next-step-cta-alt">
+        <div class="next-step-cta-title">Implementar o roadmap</div>
+        <div class="next-step-cta-sub">Solicitar uma proposta de implementação à Privus.</div>
+        <p class="next-step-credit">O valor pago pelo PRIA será integralmente deduzido ao valor da proposta de implementação, nos termos da proposta comercial, caso o projeto seja contratado no prazo de 90 dias após a conclusão do PRIA.</p>
+        <a href="mailto:contacto@privuskuzola.pt?subject=Pedido%20de%20proposta%20de%20implementa%C3%A7%C3%A3o%20PRIA" class="next-step-btn next-step-btn-alt">Solicitar proposta</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>Privus Kuzola · PRIA Assessment Engine v1.1 · respostas neutras até serem preenchidas · CTA final corrigido</footer>
+
+<script>
+const PILARES = [
+  {id:'governacao', nome:'Governação', hint:'ex: existe uma política de proteção de dados formalmente aprovada?'},
+  {id:'lideranca', nome:'Liderança', hint:'ex: a gestão de topo revê o desempenho de conformidade regularmente?'},
+  {id:'cultura', nome:'Cultura', hint:'ex: os colaboradores reportam incidentes sem receio de retaliação?'},
+  {id:'pessoas', nome:'Pessoas', hint:'ex: existe formação regular em RGPD/AI Act para as equipas relevantes?'},
+  {id:'processos', nome:'Processos', hint:'ex: os processos de tratamento de dados estão documentados?'},
+  {id:'tecnologia', nome:'Tecnologia', hint:'ex: os sistemas aplicam controlos de acesso e encriptação adequados?'},
+  {id:'evidencia', nome:'Evidência', hint:'ex: a organização produz registos de conformidade quando solicitado?'},
+  {id:'resiliencia', nome:'Resiliência', hint:'ex: existe um plano de resposta a incidentes testado?'},
+  {id:'sustentabilidade', nome:'Sustentabilidade (ESG)', hint:'ex: a conformidade está integrada no planeamento de médio prazo?'},
+  {id:'confianca', nome:'Confiança Institucional', hint:'ex: a organização comunica com transparência sobre práticas de dados?'},
+];
+
+const DIMENSOES = ['Capacidade','Execução','Evidência','Melhoria Contínua'];
+
+const STRONG_PHRASE = {
+  governacao:'uma governação consistente', lideranca:'uma liderança comprometida com a conformidade',
+  cultura:'uma cultura de conformidade enraizada', pessoas:'equipas bem preparadas e capacitadas',
+  processos:'processos bem documentados e repetíveis', tecnologia:'uma boa capacidade tecnológica',
+  evidencia:'boa capacidade de evidência', resiliencia:'uma resiliência operacional sólida',
+  sustentabilidade:'uma visão sustentável da conformidade', confianca:'elevados níveis de confiança institucional',
+};
+const WEAK_PHRASE = {
+  governacao:'a governação', lideranca:'o envolvimento da liderança', cultura:'a cultura de conformidade',
+  pessoas:'a preparação das equipas', processos:'a maturidade dos processos', tecnologia:'a capacidade tecnológica',
+  evidencia:'a capacidade de evidência', resiliencia:'a resiliência operacional',
+  sustentabilidade:'a sustentabilidade da conformidade', confianca:'a confiança institucional',
+};
+
+const LEVELS = [
+  {min:0,  nome:'Nível 1 — Reativo', desc:'Documentação incompleta, ausência de responsáveis, decisões ad hoc, forte dependência de pessoas.'},
+  {min:20, nome:'Nível 2 — Emergente', desc:'Já existem processos e políticas, mas de forma inconsistente e nem sempre aplicada.'},
+  {min:40, nome:'Nível 3 — Estruturado', desc:'Processos definidos, responsáveis identificados, governação e monitorização básica implementadas.'},
+  {min:60, nome:'Nível 4 — Integrado', desc:'A conformidade já faz parte da gestão — risco, privacidade, segurança, continuidade e IA considerados de forma integrada nas decisões.'},
+  {min:80, nome:'Nível 5 — Estratégico', desc:'A organização mede, melhora continuamente, antecipa alterações regulatórias e automatiza controlos — poucas organizações chegam aqui.'},
+];
+
+// Banco de perguntas PRIA v0.2 — 2 indicadores por pilar, 4 dimensões (Capacidade/Execução/Evidência/Melhoria Contínua).
+const REAL_QUESTIONS = {
+  governacao: [
+    {
+      id:'PRIA-GOV-001', dim:'Capacidade',
+      pergunta:'A organização designou formalmente um responsável pela conformidade regulatória?',
+      evidencia:'Organograma · Descrição de funções · Despacho de nomeação',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Designar formalmente um responsável pela conformidade, com funções documentadas e reporte direto à gestão.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Existe informalmente', val:25},
+        {label:'Existe formalmente', val:75},
+        {label:'Existe formalmente, com funções documentadas e reporte à gestão', val:100},
+      ],
+    },
+    {
+      id:'PRIA-GOV-002', dim:'Evidência',
+      pergunta:'Existe uma política de compliance formalmente aprovada?',
+      evidencia:'Política · Ata de aprovação · Registo de comunicação',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Submeter a política de compliance à aprovação formal da gestão de topo e definir data de revisão.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Em desenvolvimento', val:30},
+        {label:'Existe, mas não foi aprovada', val:60},
+        {label:'Aprovada pela gestão', val:90},
+        {label:'Aprovada, comunicada e revista periodicamente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-GOV-004', dim:'Execução',
+      pergunta:'As responsabilidades de conformidade definidas são efetivamente cumpridas no dia a dia?',
+      evidencia:'Registos de atividade · Relatórios de acompanhamento · Amostras de decisões',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Implementar um mecanismo de verificação periódica (amostragem) do cumprimento real das responsabilidades atribuídas.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não são cumpridas', val:0},
+        {label:'Cumpridas de forma inconsistente', val:35},
+        {label:'Cumpridas na maioria das situações', val:70},
+        {label:'Cumpridas de forma consistente, com registo de atividade', val:100},
+      ],
+    },
+    {
+      id:'PRIA-GOV-005', dim:'Capacidade',
+      pergunta:'A organização tem um processo formal de identificação e avaliação de riscos regulatórios?',
+      evidencia:'Metodologia de risco · Matriz de riscos',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Formalizar um processo de identificação e avaliação de riscos regulatórios, com metodologia e periodicidade definidas.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não tem', val:0},
+        {label:'Processo informal', val:35},
+        {label:'Processo formal, mas incompleto', val:70},
+        {label:'Processo formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-GOV-006', dim:'Execução',
+      pergunta:'Os riscos identificados são efetivamente monitorizados e geridos na prática?',
+      evidencia:'Plano de ação de riscos · Registo de mitigação',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Implementar um plano de ação de mitigação para cada risco identificado, com responsável e prazo definidos.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não são geridos', val:0},
+        {label:'Gestão pontual', val:35},
+        {label:'Gestão da maioria', val:70},
+        {label:'Gestão consistente e ativa', val:100},
+      ],
+    },
+    {
+      id:'PRIA-GOV-007', dim:'Evidência',
+      pergunta:'Existe um registo de riscos atualizado e consultável?',
+      evidencia:'Registo de riscos · Histórico de atualizações',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Criar e manter um registo de riscos centralizado, atualizado após cada revisão.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo desatualizado ou incompleto', val:35},
+        {label:'Registo parcialmente atualizado', val:70},
+        {label:'Registo atualizado e auditável', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-GOV-009', dim:'Capacidade',
+      pergunta:'A organização tem um processo formal de reporte de conformidade a órgãos de gestão ou supervisão?',
+      evidencia:'Modelo de relatório · Calendário de reporte',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Definir um modelo e calendário formal de reporte de conformidade à gestão.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não tem', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-GOV-010', dim:'Execução',
+      pergunta:'Esse reporte é efetivamente produzido e entregue conforme previsto?',
+      evidencia:'Histórico de relatórios entregues',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Assegurar a entrega efetiva dos relatórios de conformidade dentro do calendário definido.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não é produzido', val:0},
+        {label:'Produção pontual', val:35},
+        {label:'Produção na maioria dos casos', val:70},
+        {label:'Produção consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-GOV-011', dim:'Evidência',
+      pergunta:'Existem registos que demonstrem a entrega e receção desses relatórios?',
+      evidencia:'Emails de envio · Atas de receção',
+      criticidade:'Baixa',
+      impacto:'Jurídico',
+      recomendacao:'Manter um registo simples de envio e receção dos relatórios de reporte.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo parcial', val:35},
+        {label:'Registo da maioria', val:70},
+        {label:'Registo completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-RGPD-001', dim:'Capacidade', regulamento:'RGPD Art. 6º', condicao:'dadosPessoais',
+      pergunta:'A organização tem uma base legal identificada e documentada para cada finalidade de tratamento de dados pessoais?',
+      evidencia:'Registo de Atividades de Tratamento (RAT)',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Identificar e documentar formalmente a base legal de cada finalidade de tratamento, refletindo-a no Registo de Atividades de Tratamento.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não tem', val:0},
+        {label:'Identificada informalmente para algumas finalidades', val:35},
+        {label:'Identificada e documentada para a maioria', val:70},
+        {label:'Identificada e documentada para todas as finalidades', val:100},
+      ],
+    },
+    {
+      id:'PRIA-AIACT-001', dim:'Capacidade', regulamento:'AI Act Art. 6º', condicao:'usaIA',
+      pergunta:'A organização classificou o nível de risco (AI Act) dos sistemas de IA que utiliza ou desenvolve?',
+      evidencia:'Inventário de sistemas de IA com classificação de risco',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Realizar o inventário e classificação de risco (AI Act) de todos os sistemas de IA em uso.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não classificou', val:0},
+        {label:'Informalmente', val:35},
+        {label:'Formalmente para alguns sistemas', val:70},
+        {label:'Formalmente para todos os sistemas', val:100},
+      ],
+    },
+    {
+      id:'PRIA-AIACT-004', dim:'Execução', regulamento:'AI Act · boas práticas', condicao:'usaIA',
+      pergunta:'Os colaboradores que interagem com sistemas de IA generativa seguem uma política de utilização aprovada?',
+      evidencia:'Política de utilização de IA generativa · Registo de formação',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Aprovar e comunicar uma política de utilização de IA generativa a todos os colaboradores.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não existe política / não é seguida', val:0},
+        {label:'Existe mas raramente seguida', val:35},
+        {label:'Seguida na maioria dos casos', val:70},
+        {label:'Seguida consistentemente', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-GOV-013', dim:'Melhoria Contínua',
+      pergunta:'Existe um processo formal e sistemático de revisão do sistema de governação de conformidade (políticas, riscos, estrutura) como um todo, e não apenas de elementos isolados?',
+      evidencia:'Calendário de revisão da governação · Atas de revisão integrada',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Integrar as revisões de políticas, riscos e reporte num único ciclo de revisão da governação.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe revisão sistemática', val:0},
+        {label:'Revisões pontuais e desligadas entre si', val:35},
+        {label:'Revisão periódica, mas nem sempre integrada', val:70},
+        {label:'Revisão sistemática, integrada e com plano de melhoria contínua', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-NIS2-001', dim:'Capacidade', regulamento:'NIS2 Art. 20º', condicao:'nis2',
+      pergunta:'Os órgãos de gestão aprovaram formalmente e recebem formação sobre as medidas de gestão de risco de cibersegurança da organização?',
+      evidencia:'Ata de aprovação · Registo de formação da gestão',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Assegurar a aprovação formal e a formação periódica dos órgãos de gestão sobre as medidas de gestão de risco de cibersegurança.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Aprovação informal, sem formação', val:35},
+        {label:'Aprovação formal, formação parcial', val:70},
+        {label:'Aprovação formal e formação regular dos órgãos de gestão', val:100},
+      ],
+    },
+    {
+      id:'PRIA-DORA-001', dim:'Capacidade', regulamento:'DORA Art. 5º-6º · entidades financeiras', condicao:'entidadeFinanceira',
+      pergunta:'[Entidades financeiras] Existe um quadro de gestão de risco de TIC aprovado pelo órgão de administração, nos termos da DORA?',
+      evidencia:'Quadro de gestão de risco de TIC aprovado',
+      criticidade:'Alta',
+      impacto:'Financeiro',
+      recomendacao:'Submeter o quadro de gestão de risco de TIC a aprovação formal do órgão de administração.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal, aprovado e revisto', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-AML-001', dim:'Capacidade', regulamento:'Lei 83/2017 Art. 12º · entidades obrigadas AML', condicao:'entidadeAML',
+      pergunta:'[Entidades obrigadas AML] Foi designado um responsável pela prevenção do branqueamento de capitais e financiamento do terrorismo, nos termos da lei?',
+      evidencia:'Nomeação do responsável AML · Comunicação à autoridade setorial',
+      criticidade:'Alta',
+      impacto:'Financeiro',
+      recomendacao:'Designar formalmente o responsável AML e comunicar a nomeação à autoridade setorial competente.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Designação informal', val:35},
+        {label:'Designação formal, sem comunicação à autoridade', val:70},
+        {label:'Designação formal e comunicada à autoridade competente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-AML-004', dim:'Execução', regulamento:'Lei 83/2017 Art. 43º · entidades obrigadas AML', condicao:'entidadeAML',
+      pergunta:'[Entidades obrigadas AML] Existe um processo para identificar e comunicar operações suspeitas à Unidade de Informação Financeira (UIF)?',
+      evidencia:'Procedimento de deteção e comunicação de operações suspeitas',
+      criticidade:'Alta',
+      impacto:'Financeiro',
+      recomendacao:'Implementar e testar o procedimento de deteção e comunicação de operações suspeitas à UIF.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, nunca acionado', val:70},
+        {label:'Formal, testado e/ou acionado quando aplicável', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ISO27001-001', dim:'Capacidade', regulamento:'ISO 27001:2022 — Sistema de Gestão', condicao:'iso',
+      pergunta:'A organização implementou um Sistema de Gestão de Segurança da Informação (SGSI) formal, com âmbito definido?',
+      evidencia:'Declaração de Aplicabilidade (SoA) · Âmbito do SGSI',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Definir o âmbito do SGSI e iniciar a sua implementação formal com base na ISO 27001:2022.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Controlos avulsos, sem SGSI formal', val:35},
+        {label:'SGSI formal, âmbito parcial', val:70},
+        {label:'SGSI formal com âmbito definido e documentado', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ISO27001-002', dim:'Evidência', regulamento:'ISO 27001:2022 — Declaração de Aplicabilidade', condicao:'iso',
+      pergunta:'Existe uma Declaração de Aplicabilidade (SoA) que documente os controlos do Anexo A selecionados e a respetiva justificação?',
+      evidencia:'Declaração de Aplicabilidade (SoA)',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Elaborar a Declaração de Aplicabilidade (SoA), justificando a inclusão/exclusão de cada controlo do Anexo A.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Em desenvolvimento', val:35},
+        {label:'Existe, desatualizada', val:70},
+        {label:'Existe e está atualizada', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ISO37301-001', dim:'Capacidade', regulamento:'ISO 37301:2021 — Sistema de Gestão de Compliance', condicao:'iso',
+      pergunta:'A organização implementou um Sistema de Gestão de Compliance formal, alinhado com uma metodologia reconhecida?',
+      evidencia:'Manual do sistema de gestão de compliance',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Desenvolver um manual do sistema de gestão de compliance alinhado com a ISO 37301:2021.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Elementos informais e dispersos', val:35},
+        {label:'Sistema formal, parcial', val:70},
+        {label:'Sistema formal, documentado e integrado', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ISO37301-002', dim:'Capacidade', regulamento:'ISO 37301:2021 — Independência da Função de Compliance', condicao:'iso',
+      pergunta:'A função de compliance tem uma linha de reporte direta e independente perante um órgão de gestão ou administração?',
+      evidencia:'Organograma · Estatuto da função de compliance',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Formalizar a linha de reporte direta da função de compliance a um órgão de gestão.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não tem', val:0},
+        {label:'Reporte indireto, através de outras funções', val:35},
+        {label:'Reporte direto, mas não formalmente garantido', val:70},
+        {label:'Reporte direto e independência formalmente garantida', val:100},
+      ],
+    },
+  ],
+  tecnologia: [
+    {
+      id:'PRIA-TEC-001', dim:'Capacidade',
+      pergunta:'A organização implementou controlos técnicos adequados aos riscos identificados (ex: controlo de acessos, encriptação, cópias de segurança)?',
+      evidencia:'Inventário de controlos · Política de segurança · Arquitetura técnica',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Implementar os controlos técnicos necessários (acessos, encriptação, backups) para todos os sistemas críticos.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existem', val:0},
+        {label:'Existem parcialmente', val:35},
+        {label:'Existem para a maioria dos sistemas críticos', val:70},
+        {label:'Existem de forma abrangente e adequada ao risco', val:100},
+      ],
+    },
+    {
+      id:'PRIA-TEC-002', dim:'Execução',
+      pergunta:'Os controlos implementados são efetivamente utilizados no dia a dia (ex: MFA ativo, encriptação aplicada, backups executados)?',
+      evidencia:'Logs de acesso · Relatórios de backups · Configurações ativas',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Assegurar que os controlos definidos (MFA, encriptação, backups) estão ativos e em uso real, não só documentados.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não são utilizados', val:0},
+        {label:'Utilizados de forma inconsistente', val:35},
+        {label:'Utilizados na maioria dos sistemas', val:70},
+        {label:'Utilizados de forma consistente e verificada', val:100},
+      ],
+    },
+    {
+      id:'PRIA-TEC-003', dim:'Evidência',
+      pergunta:'A organização consegue demonstrar, com registos, que os controlos de segurança funcionam corretamente?',
+      evidencia:'Logs · Testes de segurança · Certificações',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Implementar registos (logs) que demonstrem o funcionamento efetivo dos controlos de segurança.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Apenas de forma pontual', val:30},
+        {label:'Sim, para os principais controlos', val:70},
+        {label:'Sim, com registos completos e auditáveis', val:100},
+      ],
+    },
+    {
+      id:'PRIA-TEC-005', dim:'Capacidade',
+      pergunta:'A organização mantém um inventário atualizado dos sistemas e dados que trata?',
+      evidencia:'Inventário de ativos · Mapa de sistemas',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Criar e manter um inventário atualizado de todos os sistemas e dados tratados pela organização.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não mantém', val:0},
+        {label:'Inventário informal', val:35},
+        {label:'Inventário parcial', val:70},
+        {label:'Inventário completo e atualizado', val:100},
+      ],
+    },
+    {
+      id:'PRIA-TEC-006', dim:'Execução',
+      pergunta:'Esse inventário é efetivamente utilizado na gestão do dia a dia (ex: decisões de acesso, retenção)?',
+      evidencia:'Registo de decisões baseadas no inventário',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Integrar o inventário de sistemas/dados nas decisões operacionais de acesso e retenção.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não é utilizado', val:0},
+        {label:'Utilização pontual', val:35},
+        {label:'Utilização frequente', val:70},
+        {label:'Utilização sistemática', val:100},
+      ],
+    },
+    {
+      id:'PRIA-TEC-007', dim:'Evidência',
+      pergunta:'Existem registos que comprovem a atualização do inventário?',
+      evidencia:'Histórico de atualizações do inventário',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Manter um histórico de atualizações do inventário de sistemas e dados.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo esporádico', val:30},
+        {label:'Registo regular parcial', val:70},
+        {label:'Registo regular e auditável', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-TEC-009', dim:'Capacidade',
+      pergunta:'Existem mecanismos de cópia de segurança e recuperação para os sistemas críticos?',
+      evidencia:'Política de backup · Plano de recuperação',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Implementar mecanismos de cópia de segurança e recuperação para todos os sistemas críticos.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existem', val:0},
+        {label:'Parciais', val:35},
+        {label:'Para a maioria dos sistemas críticos', val:70},
+        {label:'Abrangentes e adequados', val:100},
+      ],
+    },
+    {
+      id:'PRIA-TEC-010', dim:'Execução',
+      pergunta:'Esses mecanismos são efetivamente executados (backups realizados, testados)?',
+      evidencia:'Logs de backup · Relatórios de testes de recuperação',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Automatizar e monitorizar a execução de backups, com alertas em caso de falha.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não são executados', val:0},
+        {label:'Execução inconsistente', val:35},
+        {label:'Execução da maioria', val:70},
+        {label:'Execução consistente e verificada', val:100},
+      ],
+    },
+    {
+      id:'PRIA-TEC-011', dim:'Evidência',
+      pergunta:'Existem registos que comprovem testes de recuperação bem-sucedidos?',
+      evidencia:'Relatórios de testes de recuperação',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Realizar e documentar testes de recuperação de backups com regularidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Testes pontuais sem registo', val:30},
+        {label:'Testes com registo parcial', val:70},
+        {label:'Testes regulares com registo completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-AIACT-002', dim:'Capacidade', regulamento:'AI Act Art. 14º', condicao:'usaIA',
+      pergunta:'Para sistemas de IA de risco elevado, existem mecanismos de supervisão humana definidos?',
+      evidencia:'Procedimento de supervisão humana',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Definir e documentar mecanismos de supervisão humana para todos os sistemas de IA de risco elevado.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existem', val:0},
+        {label:'Informais', val:35},
+        {label:'Definidos para alguns sistemas', val:70},
+        {label:'Definidos e documentados para todos os sistemas de risco elevado', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-TEC-013', dim:'Melhoria Contínua',
+      pergunta:'A arquitetura tecnológica e os controlos de segurança são reavaliados de forma sistemática face à evolução das ameaças (ex: gestão de vulnerabilidades, threat intelligence)?',
+      evidencia:'Programa de gestão de vulnerabilidades · Relatórios de threat intelligence',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Implementar um programa formal de gestão de vulnerabilidades com revisão contínua.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Nunca', val:0},
+        {label:'Reativamente, após incidentes', val:35},
+        {label:'Periodicamente', val:70},
+        {label:'Processo formal e contínuo de gestão de vulnerabilidades', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-NIS2-005', dim:'Capacidade', regulamento:'NIS2 Art. 21º', condicao:'nis2',
+      pergunta:'Estão implementadas as medidas técnicas mínimas exigidas pela NIS2 (ex: criptografia, autenticação multifator, gestão de vulnerabilidades)?',
+      evidencia:'Política de segurança técnica · Relatório de conformidade técnica',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Implementar as medidas técnicas mínimas exigidas pela NIS2 (encriptação, MFA, gestão de vulnerabilidades) em todos os sistemas relevantes.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcialmente', val:35},
+        {label:'Para a maioria dos sistemas', val:70},
+        {label:'Implementação abrangente', val:100},
+      ],
+    },
+  ],
+  lideranca: [
+    {
+      id:'PRIA-LID-001', dim:'Capacidade',
+      pergunta:'A gestão de topo tem conhecimento e aloca recursos para supervisionar a conformidade regulatória?',
+      evidencia:'Atas de gestão · Orçamento de compliance · Organograma',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Alocar formalmente recursos (orçamento, tempo, equipa) à função de conformidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não tem conhecimento nem aloca recursos', val:0},
+        {label:'Conhecimento básico, recursos limitados', val:35},
+        {label:'Conhecimento e recursos adequados', val:70},
+        {label:'Envolvimento ativo e recursos totalmente adequados', val:100},
+      ],
+    },
+    {
+      id:'PRIA-LID-002', dim:'Execução',
+      pergunta:'A gestão de topo revê o desempenho de conformidade em reuniões regulares?',
+      evidencia:'Atas de reunião · Agenda de gestão',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Incluir a conformidade regulatória como ponto fixo na agenda de reuniões de gestão.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Nunca', val:0},
+        {label:'Raramente, sem regularidade', val:30},
+        {label:'Em algumas reuniões', val:65},
+        {label:'Em reuniões regulares e documentadas', val:100},
+      ],
+    },
+    {
+      id:'PRIA-LID-003', dim:'Evidência',
+      pergunta:'Existem registos que demonstrem decisões da liderança relacionadas com conformidade?',
+      evidencia:'Atas · Registo de decisões · Relatórios à gestão',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Documentar em ata as decisões da liderança relacionadas com conformidade.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registos informais e dispersos', val:35},
+        {label:'Registos parciais', val:70},
+        {label:'Registos completos e centralizados', val:100},
+      ],
+    },
+    {
+      id:'PRIA-LID-005', dim:'Capacidade',
+      pergunta:'Os objetivos estratégicos da organização incorporam explicitamente a gestão do risco regulatório?',
+      evidencia:'Plano estratégico',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Incorporar explicitamente o risco regulatório nos objetivos estratégicos da organização.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não incorporam', val:0},
+        {label:'Informalmente', val:35},
+        {label:'Formalmente, parcial', val:70},
+        {label:'Formalmente, integrados no plano estratégico', val:100},
+      ],
+    },
+    {
+      id:'PRIA-LID-006', dim:'Execução',
+      pergunta:'Esses objetivos são comunicados e seguidos pelas equipas?',
+      evidencia:'Comunicações internas · Registo de disseminação',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Comunicar formalmente os objetivos estratégicos de conformidade às equipas responsáveis.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não são comunicados', val:0},
+        {label:'Comunicação pontual', val:35},
+        {label:'Comunicados à maioria', val:70},
+        {label:'Comunicados e seguidos consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-LID-007', dim:'Evidência',
+      pergunta:'Existem registos que demonstrem o acompanhamento desses objetivos (KPIs, relatórios)?',
+      evidencia:'Relatórios de KPIs · Dashboards de gestão',
+      criticidade:'Baixa',
+      impacto:'Jurídico',
+      recomendacao:'Registar o acompanhamento dos objetivos estratégicos através de KPIs simples.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo informal', val:35},
+        {label:'Registo parcial', val:70},
+        {label:'Registo completo com KPIs', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-LID-009', dim:'Capacidade',
+      pergunta:'Existe um processo que garanta que incidentes graves de conformidade chegam ao conhecimento da gestão de topo?',
+      evidencia:'Procedimento de escalonamento',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Criar um processo formal que garanta que incidentes graves de conformidade chegam à gestão de topo.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-LID-010', dim:'Execução',
+      pergunta:'Esse escalonamento acontece efetivamente quando surgem incidentes graves?',
+      evidencia:'Registo de incidentes escalados',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Formalizar e testar o procedimento de escalonamento de incidentes graves à gestão de topo.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não acontece', val:0},
+        {label:'Pontualmente', val:35},
+        {label:'Na maioria dos casos', val:70},
+        {label:'Consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-LID-011', dim:'Evidência',
+      pergunta:'Existem registos que demonstrem a decisão e ação da gestão de topo perante esses incidentes?',
+      evidencia:'Atas de decisão · Registo de ações',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Documentar em ata as decisões da gestão de topo perante incidentes de conformidade.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcial', val:35},
+        {label:'Maioria', val:70},
+        {label:'Completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-LID-013', dim:'Melhoria Contínua',
+      pergunta:'A liderança utiliza os resultados de avaliações de conformidade (internas ou externas) para ajustar prioridades estratégicas e alocação de recursos?',
+      evidencia:'Atas de gestão pós-avaliação · Planos de ação da liderança',
+      criticidade:'Baixa',
+      impacto:'Jurídico',
+      recomendacao:'Documentar as decisões da liderança tomadas com base em avaliações de conformidade.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não utiliza', val:0},
+        {label:'Ocasionalmente', val:35},
+        {label:'Na maioria das avaliações', val:70},
+        {label:'Sistematicamente, com decisões documentadas', val:100},
+      ],
+    },
+  ],
+  cultura: [
+    {
+      id:'PRIA-CUL-001', dim:'Capacidade',
+      pergunta:'Existem mecanismos que permitem aos colaboradores reportar preocupações de conformidade?',
+      evidencia:'Política de whistleblowing · Canal de reporte',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Implementar um canal formal para os colaboradores reportarem preocupações de conformidade.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não existem', val:0},
+        {label:'Canal informal', val:35},
+        {label:'Canal formal', val:70},
+        {label:'Canal formal, anónimo e amplamente divulgado', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CUL-002', dim:'Execução',
+      pergunta:'Os colaboradores usam esses mecanismos sem receio de retaliação?',
+      evidencia:'Registo de reportes · Inquéritos internos',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Reforçar a confidencialidade e proteção contra retaliação no canal de reporte, e comunicá-la ativamente.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Sem utilização / receio elevado', val:0},
+        {label:'Utilização pontual, com algum receio', val:35},
+        {label:'Utilização regular', val:70},
+        {label:'Utilização normalizada, sem receio reportado', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CUL-003', dim:'Evidência',
+      pergunta:'A organização consegue demonstrar casos reais de reporte e tratamento de preocupações?',
+      evidencia:'Registo de casos · Relatórios de investigação interna',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Manter um registo confidencial de casos reportados e do respetivo tratamento.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Apenas exemplos pontuais', val:30},
+        {label:'Sim, para a maioria dos casos', val:70},
+        {label:'Sim, com registo completo e auditável', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CUL-005', dim:'Capacidade',
+      pergunta:'Existem iniciativas de sensibilização sobre conformidade dirigidas a todos os colaboradores?',
+      evidencia:'Plano de sensibilização · Materiais de comunicação',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Lançar um plano de sensibilização sobre conformidade dirigido a todos os colaboradores.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existem', val:0},
+        {label:'Pontuais', val:35},
+        {label:'Regulares para alguns grupos', val:70},
+        {label:'Regulares e abrangentes', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CUL-006', dim:'Execução',
+      pergunta:'Essas iniciativas chegam efetivamente à maioria dos colaboradores?',
+      evidencia:'Registo de participação · Taxas de alcance',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Monitorizar e reportar as taxas de participação nas iniciativas de sensibilização.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não chegam', val:0},
+        {label:'Alcance baixo', val:35},
+        {label:'Alcance da maioria', val:70},
+        {label:'Alcance quase total', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CUL-007', dim:'Evidência',
+      pergunta:'Existem registos de participação/alcance dessas iniciativas?',
+      evidencia:'Registos de presença · Estatísticas de alcance',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Registar a participação e o alcance das iniciativas de sensibilização.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo pontual', val:30},
+        {label:'Registo parcial', val:70},
+        {label:'Registo completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-CUL-009', dim:'Capacidade',
+      pergunta:'Existe um código de ética ou conduta que oriente o comportamento dos colaboradores e líderes?',
+      evidencia:'Código de ética/conduta',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Elaborar e aprovar um código de ética/conduta para colaboradores e líderes.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CUL-010', dim:'Execução',
+      pergunta:'Os líderes demonstram, na prática, comportamentos alinhados com esse código?',
+      evidencia:'Inquéritos internos · Feedback 360º',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Recolher feedback (inquéritos) sobre o comportamento da liderança face ao código de ética.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Raramente', val:35},
+        {label:'Na maioria dos casos', val:70},
+        {label:'Consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CUL-011', dim:'Evidência',
+      pergunta:'Existem casos documentados de aplicação de medidas por incumprimento do código?',
+      evidencia:'Registo disciplinar',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Documentar os casos de aplicação de medidas por incumprimento do código de ética.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Casos pontuais sem registo', val:30},
+        {label:'Casos com registo parcial', val:70},
+        {label:'Casos com registo completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-CUL-013', dim:'Melhoria Contínua',
+      pergunta:'A organização mede e acompanha indicadores de maturidade cultural (ex: perceção de colaboradores, taxa de reportes, participação) ao longo do tempo?',
+      evidencia:'Inquéritos de cultura organizacional · Indicadores ao longo do tempo',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Introduzir um indicador simples (inquérito anual) de maturidade cultural.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não mede', val:0},
+        {label:'Mede de forma pontual', val:35},
+        {label:'Mede periodicamente', val:70},
+        {label:'Mede continuamente, com metas e acompanhamento', val:100},
+      ],
+    },
+  ],
+  pessoas: [
+    {
+      id:'PRIA-PES-001', dim:'Capacidade',
+      pergunta:'Existe um plano de formação em conformidade regulatória para as equipas relevantes?',
+      evidencia:'Plano de formação · Matriz de competências',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Criar e implementar um plano de formação em conformidade regulatória para as equipas relevantes.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Existe informalmente', val:35},
+        {label:'Existe um plano formal', val:70},
+        {label:'Plano formal, adaptado a cada função', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PES-002', dim:'Execução',
+      pergunta:'As equipas relevantes completam efetivamente a formação prevista?',
+      evidencia:'Registos de formação · Taxas de conclusão',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Tornar a formação obrigatória e monitorizar as taxas de conclusão por equipa.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não / taxa muito baixa', val:0},
+        {label:'Taxa parcial', val:35},
+        {label:'Taxa elevada', val:70},
+        {label:'Quase total, com acompanhamento', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PES-003', dim:'Evidência',
+      pergunta:'A organização consegue comprovar a formação realizada (certificados, registos)?',
+      evidencia:'Certificados · Registos de presença',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Implementar um sistema de emissão e arquivo automático de certificados de formação.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo parcial', val:35},
+        {label:'Registo da maioria', val:70},
+        {label:'Registo completo e auditável', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PES-005', dim:'Capacidade',
+      pergunta:'As responsabilidades de conformidade de cada função estão claramente definidas?',
+      evidencia:'Descrições de funções · Matriz de responsabilidades',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Documentar claramente as responsabilidades de conformidade associadas a cada função.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não estão', val:0},
+        {label:'Definição informal', val:35},
+        {label:'Definição parcial', val:70},
+        {label:'Definição clara e documentada para todas as funções relevantes', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PES-006', dim:'Execução',
+      pergunta:'Os colaboradores conhecem e cumprem as responsabilidades atribuídas?',
+      evidencia:'Inquéritos internos · Avaliações de desempenho',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Comunicar formalmente as responsabilidades a cada colaborador e obter confirmação de leitura.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não conhecem/cumprem', val:0},
+        {label:'Conhecimento parcial', val:35},
+        {label:'Conhecimento e cumprimento da maioria', val:70},
+        {label:'Conhecimento e cumprimento consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PES-007', dim:'Evidência',
+      pergunta:'Existem descrições de funções ou documentos que demonstrem essa atribuição?',
+      evidencia:'Descrições de funções assinadas · Registos de comunicação',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Assegurar que as descrições de funções refletem as responsabilidades de conformidade atribuídas.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcial', val:35},
+        {label:'Maioria', val:70},
+        {label:'Completo e atualizado', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-PES-009', dim:'Capacidade',
+      pergunta:'O processo de recrutamento considera explicitamente competências de conformidade para funções relevantes?',
+      evidencia:'Perfis de função · Critérios de seleção',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Incluir critérios de competência em conformidade nos perfis de recrutamento relevantes.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não considera', val:0},
+        {label:'Informalmente', val:35},
+        {label:'Formalmente, parcial', val:70},
+        {label:'Formalmente, para todas as funções relevantes', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PES-010', dim:'Execução',
+      pergunta:'Esse critério é efetivamente aplicado nos processos de recrutamento realizados?',
+      evidencia:'Registo de processos de recrutamento',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Verificar a aplicação real dos critérios de conformidade nos processos de recrutamento.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não é aplicado', val:0},
+        {label:'Aplicação pontual', val:35},
+        {label:'Aplicação na maioria', val:70},
+        {label:'Aplicação consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PES-011', dim:'Evidência',
+      pergunta:'Existem registos que demonstrem essa avaliação nos processos de recrutamento?',
+      evidencia:'Atas de entrevista · Avaliações de candidatos',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Registar a avaliação de competências de conformidade em cada processo de recrutamento.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcial', val:35},
+        {label:'Maioria', val:70},
+        {label:'Completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-PES-013', dim:'Melhoria Contínua',
+      pergunta:'As competências de conformidade da organização são reavaliadas e desenvolvidas de forma sistemática face à evolução das necessidades regulatórias?',
+      evidencia:'Plano de desenvolvimento de competências · Avaliações de gap',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Implementar um processo periódico de avaliação de gaps de competências e atualizar os planos de formação e desenvolvimento face à evolução regulatória.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Nunca', val:0},
+        {label:'Reativamente, quando surgem lacunas', val:35},
+        {label:'Periodicamente', val:70},
+        {label:'Processo formal e contínuo de desenvolvimento', val:100},
+      ],
+    },
+  ],
+  processos: [
+    {
+      id:'PRIA-PRO-001', dim:'Capacidade',
+      pergunta:'Os processos relevantes para a conformidade estão documentados?',
+      evidencia:'Manuais de processo · Procedimentos escritos',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Documentar formalmente os processos relevantes para a conformidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não estão documentados', val:0},
+        {label:'Documentação parcial', val:35},
+        {label:'Documentação da maioria', val:70},
+        {label:'Documentação completa e padronizada', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PRO-002', dim:'Execução',
+      pergunta:'Os processos documentados são efetivamente seguidos na prática?',
+      evidencia:'Auditorias internas · Amostragem de casos',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Realizar auditorias internas periódicas para verificar a aderência real aos processos documentados.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não são seguidos', val:0},
+        {label:'Seguidos de forma inconsistente', val:35},
+        {label:'Seguidos na maioria das situações', val:70},
+        {label:'Seguidos de forma consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PRO-003', dim:'Evidência',
+      pergunta:'Existem registos que demonstrem a execução correta dos processos?',
+      evidencia:'Logs de processo · Checklists preenchidos',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Implementar checklists ou logs que registem a execução de cada processo crítico.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registos pontuais', val:30},
+        {label:'Registos da maioria', val:70},
+        {label:'Registos completos e sistemáticos', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PRO-005', dim:'Capacidade',
+      pergunta:'Existe um processo de avaliação de fornecedores/terceiros relevantes para a conformidade?',
+      evidencia:'Metodologia de avaliação de fornecedores',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Criar um processo formal de avaliação de fornecedores/terceiros relevantes para a conformidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PRO-006', dim:'Execução',
+      pergunta:'Esse processo é aplicado antes e durante as relações com fornecedores?',
+      evidencia:'Registo de avaliações realizadas',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Tornar a avaliação de fornecedores um passo obrigatório e bloqueante antes da contratação.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não é aplicado', val:0},
+        {label:'Aplicação pontual', val:35},
+        {label:'Aplicação na maioria dos casos', val:70},
+        {label:'Aplicação consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PRO-007', dim:'Evidência',
+      pergunta:'Existem registos de avaliação e monitorização de fornecedores?',
+      evidencia:'Ficheiros de avaliação · Contratos com cláusulas de conformidade',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Criar um repositório centralizado com o histórico de avaliações de fornecedores.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo parcial', val:35},
+        {label:'Registo da maioria', val:70},
+        {label:'Registo completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-PRO-009', dim:'Capacidade',
+      pergunta:'Existe um processo formal para gerir alterações a processos ou sistemas com impacto na conformidade?',
+      evidencia:'Procedimento de gestão de mudança',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Implementar um processo formal de gestão de mudança para alterações com impacto na conformidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PRO-010', dim:'Execução',
+      pergunta:'As alterações relevantes passam efetivamente por esse processo antes de serem implementadas?',
+      evidencia:'Registo de pedidos de mudança',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Implementar um fluxo de aprovação obrigatório antes de qualquer alteração com impacto na conformidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não passam', val:0},
+        {label:'Pontualmente', val:35},
+        {label:'Na maioria dos casos', val:70},
+        {label:'Consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-PRO-011', dim:'Evidência',
+      pergunta:'Existem registos de aprovação e avaliação de impacto dessas alterações?',
+      evidencia:'Registo de aprovações · Avaliações de impacto',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Documentar formalmente a aprovação e avaliação de impacto de cada alteração relevante.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcial', val:35},
+        {label:'Maioria', val:70},
+        {label:'Completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-RGPD-002', dim:'Capacidade', regulamento:'RGPD Art. 12º-22º', condicao:'dadosPessoais',
+      pergunta:'Existe um processo para responder a pedidos de exercício de direitos dos titulares (acesso, retificação, apagamento, etc.)?',
+      evidencia:'Procedimento de direitos dos titulares · Registo de pedidos',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Criar um procedimento formal para responder a pedidos de exercício de direitos dos titulares dentro do prazo legal.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal, dentro dos prazos legais', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RGPD-003', dim:'Execução', regulamento:'RGPD Art. 12º nº3', condicao:'dadosPessoais',
+      pergunta:'Os pedidos de titulares recebidos são efetivamente respondidos dentro do prazo legal de 30 dias?',
+      evidencia:'Registo de tempos de resposta',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Implementar um sistema de alertas de prazo para garantir resposta aos titulares dentro de 30 dias.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não são respondidos a tempo', val:0},
+        {label:'Raramente a tempo', val:35},
+        {label:'Maioria a tempo', val:70},
+        {label:'Sempre dentro do prazo', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RGPD-005', dim:'Capacidade', regulamento:'RGPD Art. 28º', condicao:'dadosPessoais',
+      pergunta:'Existem contratos de subcontratação formalizados com todos os fornecedores que tratam dados pessoais em nome da organização?',
+      evidencia:'Contratos de subcontratação',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Rever e assinar contratos de subcontratação (Art. 28º) com todos os fornecedores que tratam dados pessoais.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existem', val:0},
+        {label:'Para alguns fornecedores', val:35},
+        {label:'Para a maioria', val:70},
+        {label:'Para todos os fornecedores relevantes', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-PRO-013', dim:'Melhoria Contínua',
+      pergunta:'Existe um mecanismo formal para captar e implementar melhorias aos processos de conformidade a partir de auditorias, incidentes ou feedback operacional?',
+      evidencia:'Registo de ações de melhoria · Plano de melhoria contínua',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Criar um mecanismo formal (registo de lições aprendidas) para converter auditorias e incidentes em melhorias de processo.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal e pontual', val:35},
+        {label:'Formal, aplicado à maioria dos casos', val:70},
+        {label:'Formal, sistemático e com acompanhamento de eficácia', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-NIS2-004', dim:'Capacidade', regulamento:'NIS2 Art. 21º nº2 al. d)', condicao:'nis2',
+      pergunta:'A organização avalia a cibersegurança da sua cadeia de fornecimento e prestadores de serviços críticos?',
+      evidencia:'Avaliação de risco de fornecedores · Cláusulas contratuais de segurança',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Avaliar a cibersegurança dos fornecedores e prestadores críticos antes e durante a relação.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não avalia', val:0},
+        {label:'Informalmente', val:35},
+        {label:'Formalmente para os principais fornecedores', val:70},
+        {label:'Formalmente para toda a cadeia relevante', val:100},
+      ],
+    },
+    {
+      id:'PRIA-DORA-003', dim:'Capacidade', regulamento:'DORA Art. 28º-29º · entidades financeiras', condicao:'entidadeFinanceira',
+      pergunta:'[Entidades financeiras] Existe um registo e avaliação de risco dos prestadores terceiros de TIC, incluindo os classificados como críticos?',
+      evidencia:'Registo de prestadores de TIC · Avaliação de criticidade',
+      criticidade:'Alta',
+      impacto:'Financeiro',
+      recomendacao:'Criar um registo e avaliação de risco dos prestadores terceiros de TIC, com classificação de criticidade.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Registo informal', val:35},
+        {label:'Registo formal, sem classificação de criticidade', val:70},
+        {label:'Registo formal com classificação de criticidade e avaliação de concentração de risco', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-AML-002', dim:'Capacidade', regulamento:'Lei 83/2017 Art. 24º-32º · entidades obrigadas AML', condicao:'entidadeAML',
+      pergunta:'[Entidades obrigadas AML] Existe um processo de identificação e diligência quanto ao cliente (CDD/KYC), incluindo identificação do beneficiário efetivo?',
+      evidencia:'Procedimento de CDD/KYC · Registo de beneficiários efetivos',
+      criticidade:'Alta',
+      impacto:'Financeiro',
+      recomendacao:'Implementar o procedimento de CDD/KYC, incluindo identificação e verificação do beneficiário efetivo.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente, incluindo beneficiário efetivo', val:100},
+      ],
+    },
+    {
+      id:'PRIA-AML-003', dim:'Execução', regulamento:'Lei 83/2017 Art. 24º · entidades obrigadas AML', condicao:'entidadeAML',
+      pergunta:'[Entidades obrigadas AML] A diligência quanto ao cliente é efetivamente aplicada antes do início da relação de negócio ou transação?',
+      evidencia:'Registo de verificações realizadas antes da relação de negócio',
+      criticidade:'Alta',
+      impacto:'Financeiro',
+      recomendacao:'Tornar a diligência quanto ao cliente um passo obrigatório antes de iniciar qualquer relação de negócio.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não é aplicada', val:0},
+        {label:'Aplicação pontual', val:35},
+        {label:'Aplicação na maioria dos casos', val:70},
+        {label:'Aplicação consistente e prévia', val:100},
+      ],
+    },
+  ],
+  evidencia: [
+    {
+      id:'PRIA-EVI-001', dim:'Capacidade',
+      pergunta:'A organização tem um sistema ou repositório para gerir evidências de conformidade?',
+      evidencia:'Repositório documental · Política de gestão documental',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Implementar um repositório centralizado e estruturado para evidências de conformidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não tem', val:0},
+        {label:'Sistema informal', val:35},
+        {label:'Sistema formal', val:70},
+        {label:'Sistema formal, estruturado, com controlo de acesso', val:100},
+      ],
+    },
+    {
+      id:'PRIA-EVI-002', dim:'Execução',
+      pergunta:'As evidências relevantes são efetivamente recolhidas e arquivadas no dia a dia?',
+      evidencia:'Amostragem do repositório · Registo de atualizações',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Definir responsáveis e rotina de recolha e arquivo sistemático de evidências.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não são recolhidas', val:0},
+        {label:'Recolha inconsistente', val:35},
+        {label:'Recolha da maioria', val:70},
+        {label:'Recolha sistemática', val:100},
+      ],
+    },
+    {
+      id:'PRIA-EVI-003', dim:'Evidência',
+      pergunta:'A organização consegue produzir evidência verificável quando solicitada (auditoria, cliente, regulador)?',
+      evidencia:'Testes de recuperação · Casos de auditoria anteriores',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Testar periodicamente a capacidade de produzir evidência sob pedido, simulando um pedido de auditoria.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não consegue', val:0},
+        {label:'Consegue parcialmente, com esforço', val:35},
+        {label:'Consegue na maioria dos casos', val:70},
+        {label:'Consegue de forma imediata e completa', val:100},
+      ],
+    },
+    {
+      id:'PRIA-EVI-005', dim:'Capacidade',
+      pergunta:'A organização realiza auditorias internas ou externas de conformidade?',
+      evidencia:'Plano de auditorias',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Planear e iniciar um programa de auditorias internas de conformidade.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não realiza', val:0},
+        {label:'Pontualmente', val:35},
+        {label:'Regularmente para algumas áreas', val:70},
+        {label:'Regularmente e de forma abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-EVI-006', dim:'Execução',
+      pergunta:'As auditorias são efetivamente realizadas conforme planeado?',
+      evidencia:'Registo de execução do plano de auditorias',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Assegurar o cumprimento do calendário de auditorias já planeado.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não são realizadas', val:0},
+        {label:'Realização parcial', val:35},
+        {label:'Realização da maioria', val:70},
+        {label:'Realização consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-EVI-007', dim:'Evidência',
+      pergunta:'Existem relatórios de auditoria disponíveis e acessíveis?',
+      evidencia:'Relatórios de auditoria',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Centralizar e tornar acessíveis os relatórios de auditoria à gestão e às partes interessadas.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcial', val:35},
+        {label:'Maioria', val:70},
+        {label:'Completos e acessíveis', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-EVI-009', dim:'Capacidade',
+      pergunta:'Os registos e evidências têm mecanismos que garantam a sua integridade (ex: controlo de versões, proteção contra alteração)?',
+      evidencia:'Política de gestão documental · Controlo de versões',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Implementar mecanismos de controlo de versões e proteção contra alteração para registos e evidências.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não têm', val:0},
+        {label:'Parciais', val:35},
+        {label:'Para a maioria dos registos', val:70},
+        {label:'Abrangentes', val:100},
+      ],
+    },
+    {
+      id:'PRIA-EVI-010', dim:'Execução',
+      pergunta:'Esses mecanismos são efetivamente aplicados no dia a dia?',
+      evidencia:'Amostragem de registos com histórico de alterações',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Verificar periodicamente que os mecanismos de integridade documental estão realmente a ser aplicados.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não são aplicados', val:0},
+        {label:'Aplicação pontual', val:35},
+        {label:'Aplicação da maioria', val:70},
+        {label:'Aplicação sistemática', val:100},
+      ],
+    },
+    {
+      id:'PRIA-EVI-011', dim:'Evidência',
+      pergunta:'A organização consegue demonstrar a rastreabilidade de um registo específico quando solicitado?',
+      evidencia:'Testes de rastreabilidade documental',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Testar a rastreabilidade de registos específicos através de simulações de auditoria.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não consegue', val:0},
+        {label:'Com dificuldade', val:35},
+        {label:'Na maioria dos casos', val:70},
+        {label:'De forma imediata', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-RGPD-004', dim:'Evidência', regulamento:'RGPD Art. 35º', condicao:'dadosPessoais',
+      pergunta:'A organização realiza e documenta Avaliações de Impacto sobre a Proteção de Dados (DPIA) quando aplicável?',
+      evidencia:'DPIAs realizadas',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Realizar e documentar Avaliações de Impacto sobre a Proteção de Dados para todos os tratamentos de risco elevado.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não realiza', val:0},
+        {label:'Informalmente', val:35},
+        {label:'Formalmente para alguns tratamentos de risco', val:70},
+        {label:'Formalmente para todos os tratamentos de alto risco', val:100},
+      ],
+    },
+    {
+      id:'PRIA-AIACT-003', dim:'Evidência', regulamento:'AI Act Art. 11º-12º', condicao:'usaIA',
+      pergunta:'A organização mantém documentação técnica e registos (logs) dos sistemas de IA de risco elevado?',
+      evidencia:'Documentação técnica · Logs de sistema',
+      criticidade:'Média',
+      impacto:'Jurídico',
+      recomendacao:'Implementar documentação técnica e logging para todos os sistemas de IA de risco elevado.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não mantém', val:0},
+        {label:'Parcialmente', val:35},
+        {label:'Para a maioria dos sistemas', val:70},
+        {label:'Documentação e logs completos', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-EVI-013', dim:'Melhoria Contínua',
+      pergunta:'A capacidade de produzir evidência (repositórios, rastreabilidade, processos de recolha) é avaliada e melhorada de forma sistemática ao longo do tempo?',
+      evidencia:'Auditorias internas ao sistema de gestão documental',
+      criticidade:'Baixa',
+      impacto:'Jurídico',
+      recomendacao:'Incluir a gestão de evidências no ciclo de revisão e melhoria contínua.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Nunca', val:0},
+        {label:'Raramente', val:30},
+        {label:'Periodicamente', val:70},
+        {label:'Processo formal e contínuo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-AML-005', dim:'Evidência', regulamento:'Lei 83/2017 Art. 51º · entidades obrigadas AML', condicao:'entidadeAML',
+      pergunta:'[Entidades obrigadas AML] Os registos de diligência quanto ao cliente e das transações são conservados pelo prazo legal (mínimo 7 anos)?',
+      evidencia:'Política de retenção de registos AML',
+      criticidade:'Média',
+      impacto:'Financeiro',
+      recomendacao:'Definir e aplicar uma política de retenção de registos AML pelo prazo legal mínimo.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não são conservados', val:0},
+        {label:'Conservação parcial', val:35},
+        {label:'Conservação da maioria', val:70},
+        {label:'Conservação completa e conforme o prazo legal', val:100},
+      ],
+    },
+  ],
+  resiliencia: [
+    {
+      id:'PRIA-RES-001', dim:'Capacidade',
+      pergunta:'Existe um plano de resposta a incidentes e/ou continuidade de negócio?',
+      evidencia:'Plano de resposta a incidentes · Plano de continuidade',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Criar um plano formal de resposta a incidentes e/ou continuidade de negócio.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Existe de forma informal', val:35},
+        {label:'Existe um plano formal', val:70},
+        {label:'Existe um plano formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RES-002', dim:'Execução',
+      pergunta:'O plano é ativado e seguido quando ocorrem incidentes reais (ou testado)?',
+      evidencia:'Registo de incidentes · Relatórios pós-incidente',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Testar o plano de resposta a incidentes através de simulacros regulares.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não é seguido / nunca testado', val:0},
+        {label:'Seguido parcialmente', val:35},
+        {label:'Seguido na maioria dos casos', val:70},
+        {label:'Seguido de forma consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RES-003', dim:'Evidência',
+      pergunta:'Existem registos de testes ou incidentes reais que comprovem a eficácia do plano?',
+      evidencia:'Relatórios de testes · Relatórios pós-incidente',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Documentar os resultados de cada teste ou incidente para demonstrar a eficácia do plano.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Testes pontuais sem registo', val:30},
+        {label:'Testes com registo parcial', val:70},
+        {label:'Testes regulares com registo completo', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RES-005', dim:'Capacidade',
+      pergunta:'A organização identificou as suas dependências críticas de fornecedores/parceiros?',
+      evidencia:'Mapa de dependências críticas',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Identificar e documentar as dependências críticas de fornecedores/parceiros da organização.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não identificou', val:0},
+        {label:'Identificação informal', val:35},
+        {label:'Identificação parcial', val:70},
+        {label:'Identificação completa e documentada', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RES-006', dim:'Execução',
+      pergunta:'Existem planos de contingência para essas dependências críticas?',
+      evidencia:'Planos de contingência',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Desenvolver planos de contingência para cada dependência crítica identificada.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não existem', val:0},
+        {label:'Planos pontuais', val:35},
+        {label:'Planos para a maioria', val:70},
+        {label:'Planos abrangentes e testados', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RES-007', dim:'Evidência',
+      pergunta:'Existem registos ou testes que comprovem a eficácia desses planos?',
+      evidencia:'Relatórios de testes de contingência',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Testar e documentar os planos de contingência das dependências críticas.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo pontual', val:30},
+        {label:'Registo parcial', val:70},
+        {label:'Registo completo com testes', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-RES-009', dim:'Capacidade',
+      pergunta:'Existe um protocolo de comunicação para situações de crise (interna e externa, incluindo autoridades)?',
+      evidencia:'Plano de comunicação de crise',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Criar um protocolo formal de comunicação para situações de crise, incluindo autoridades.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RES-010', dim:'Execução',
+      pergunta:'Esse protocolo é seguido quando ocorrem situações reais (ou testado)?',
+      evidencia:'Registo de comunicações em incidentes/simulacros',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Testar o protocolo de comunicação de crise através de simulacros.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não é seguido', val:0},
+        {label:'Parcialmente', val:35},
+        {label:'Na maioria dos casos', val:70},
+        {label:'Consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RES-011', dim:'Evidência',
+      pergunta:'Existem registos de comunicações realizadas durante incidentes ou simulacros?',
+      evidencia:'Arquivo de comunicações de crise',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Arquivar as comunicações realizadas durante incidentes e simulacros.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcial', val:30},
+        {label:'Maioria', val:70},
+        {label:'Completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-RES-013', dim:'Melhoria Contínua',
+      pergunta:'Os planos de continuidade e resposta a incidentes são testados e melhorados de forma sistemática com base nos resultados dos testes?',
+      evidencia:'Relatórios de testes com plano de ação · Histórico de melhorias pós-teste',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Criar um ciclo formal de testes e melhoria dos planos de continuidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Nunca testados/melhorados', val:0},
+        {label:'Testados sem melhoria sistemática', val:35},
+        {label:'Testados e melhorados na maioria dos casos', val:70},
+        {label:'Ciclo formal de testes e melhoria contínua', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-NIS2-002', dim:'Capacidade', regulamento:'NIS2 Art. 23º', condicao:'nis2',
+      pergunta:'Existe um processo definido para notificar incidentes significativos de cibersegurança às autoridades competentes dentro dos prazos legais (alerta precoce 24h, notificação 72h)?',
+      evidencia:'Procedimento de notificação de incidentes · Registo de notificações anteriores',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Criar um processo formal de notificação de incidentes significativos que cumpra os prazos legais (24h/72h).',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Processo informal', val:35},
+        {label:'Processo formal, mas não testado', val:70},
+        {label:'Processo formal, testado e cumpre os prazos', val:100},
+      ],
+    },
+    {
+      id:'PRIA-NIS2-003', dim:'Execução', regulamento:'NIS2 Art. 23º', condicao:'nis2',
+      pergunta:'Nos incidentes significativos ocorridos, os prazos legais de notificação foram efetivamente cumpridos?',
+      evidencia:'Registo de notificações com timestamps',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      recomendacao:'Rever o procedimento de notificação para assegurar cumprimento dos prazos de 24h/72h em futuros incidentes.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não foram cumpridos', val:0},
+        {label:'Cumpridos parcialmente', val:35},
+        {label:'Cumpridos na maioria dos casos', val:70},
+        {label:'Sempre cumpridos / sem incidentes reportáveis até à data', val:100},
+      ],
+    },
+    {
+      id:'PRIA-DORA-002', dim:'Capacidade', regulamento:'DORA Art. 24º-25º · entidades financeiras', condicao:'entidadeFinanceira',
+      pergunta:'[Entidades financeiras] A organização realiza testes de resiliência operacional digital (incluindo testes de penetração quando aplicável)?',
+      evidencia:'Relatórios de testes de resiliência digital',
+      criticidade:'Alta',
+      impacto:'Financeiro',
+      recomendacao:'Iniciar um programa de testes de resiliência operacional digital, incluindo testes de penetração quando exigido.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não realiza', val:0},
+        {label:'Testes básicos pontuais', val:35},
+        {label:'Testes regulares', val:70},
+        {label:'Programa de testes abrangente, incluindo TLPT quando aplicável', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-ISO22301-001', dim:'Capacidade', regulamento:'ISO 22301:2019 — Análise de Impacto no Negócio', condicao:'iso',
+      pergunta:'A organização realizou uma Análise de Impacto no Negócio (BIA) para identificar processos críticos e tempos de recuperação objetivo (RTO)?',
+      evidencia:'Business Impact Analysis (BIA) documentada',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Realizar uma Análise de Impacto no Negócio (BIA) formal, definindo RTOs para os processos críticos.',
+      esforco:'Alto',
+      opcoes:[
+        {label:'Não realizou', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente, com RTOs definidos', val:100},
+      ],
+    },
+  ],
+  sustentabilidade: [
+    {
+      id:'PRIA-ESG-001', dim:'Capacidade',
+      pergunta:'A organização integra critérios ESG no seu planeamento estratégico?',
+      evidencia:'Plano estratégico · Política ESG',
+      criticidade:'Média',
+      impacto:'Financeiro',
+      recomendacao:'Integrar formalmente critérios ESG no processo de planeamento estratégico.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não integra', val:0},
+        {label:'Integração informal', val:35},
+        {label:'Integração parcial e documentada', val:70},
+        {label:'Integração formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ESG-002', dim:'Execução',
+      pergunta:'As iniciativas ESG definidas são efetivamente implementadas?',
+      evidencia:'Relatórios de progresso · Registo de iniciativas',
+      criticidade:'Média',
+      impacto:'Financeiro',
+      recomendacao:'Implementar e acompanhar a execução das iniciativas ESG definidas.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não são implementadas', val:0},
+        {label:'Implementação pontual', val:35},
+        {label:'Implementação da maioria', val:70},
+        {label:'Implementação consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ESG-003', dim:'Evidência',
+      pergunta:'A organização consegue reportar e comprovar o seu desempenho ESG?',
+      evidencia:'Relatório de sustentabilidade · Indicadores ESG',
+      criticidade:'Baixa',
+      impacto:'Financeiro',
+      recomendacao:'Elaborar um relatório simples de desempenho ESG, mesmo que informal.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Reporte informal', val:30},
+        {label:'Reporte estruturado parcial', val:70},
+        {label:'Reporte estruturado e auditável', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ESG-005', dim:'Capacidade',
+      pergunta:'A organização definiu indicadores (KPIs) para acompanhar o seu desempenho ESG?',
+      evidencia:'Lista de indicadores ESG',
+      criticidade:'Média',
+      impacto:'Financeiro',
+      recomendacao:'Definir indicadores (KPIs) para acompanhar o desempenho ESG da organização.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não definiu', val:0},
+        {label:'Indicadores informais', val:35},
+        {label:'Indicadores parciais', val:70},
+        {label:'Indicadores formais e abrangentes', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ESG-006', dim:'Execução',
+      pergunta:'Esses indicadores são efetivamente medidos e acompanhados?',
+      evidencia:'Registo de medições',
+      criticidade:'Baixa',
+      impacto:'Financeiro',
+      recomendacao:'Registar a medição periódica dos indicadores ESG definidos.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não são medidos', val:0},
+        {label:'Medição pontual', val:35},
+        {label:'Medição da maioria', val:70},
+        {label:'Medição consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ESG-007', dim:'Evidência',
+      pergunta:'Existem relatórios que demonstrem essa medição ao longo do tempo?',
+      evidencia:'Relatórios ESG históricos',
+      criticidade:'Baixa',
+      impacto:'Financeiro',
+      recomendacao:'Manter um histórico dos relatórios de desempenho ESG ao longo do tempo.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Pontual', val:30},
+        {label:'Parcial', val:70},
+        {label:'Completo e histórico', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-ESG-009', dim:'Capacidade',
+      pergunta:'A organização identifica e avalia os seus principais impactos ambientais e sociais?',
+      evidencia:'Avaliação de impacto ambiental/social',
+      criticidade:'Baixa',
+      impacto:'Financeiro',
+      recomendacao:'Realizar uma avaliação inicial dos principais impactos ambientais e sociais da organização.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não identifica', val:0},
+        {label:'Informalmente', val:35},
+        {label:'Formalmente, parcial', val:70},
+        {label:'Formalmente e de forma abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ESG-010', dim:'Execução',
+      pergunta:'São implementadas medidas concretas para mitigar esses impactos?',
+      evidencia:'Registo de medidas de mitigação implementadas',
+      criticidade:'Baixa',
+      impacto:'Financeiro',
+      recomendacao:'Implementar pelo menos uma medida concreta de mitigação por impacto identificado.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não são implementadas', val:0},
+        {label:'Pontualmente', val:35},
+        {label:'Para a maioria dos impactos identificados', val:70},
+        {label:'Consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-ESG-011', dim:'Evidência',
+      pergunta:'Existem registos ou relatórios que demonstrem essas medidas e o seu efeito?',
+      evidencia:'Relatório de impacto ambiental/social',
+      criticidade:'Baixa',
+      impacto:'Financeiro',
+      recomendacao:'Documentar o efeito das medidas de mitigação implementadas.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Pontual', val:30},
+        {label:'Parcial', val:70},
+        {label:'Completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-ESG-013', dim:'Melhoria Contínua',
+      pergunta:'A estratégia ESG é revista à luz de novos requisitos regulatórios, expectativas de mercado e desempenho medido?',
+      evidencia:'Atas de revisão da estratégia ESG',
+      criticidade:'Baixa',
+      impacto:'Financeiro',
+      recomendacao:'Incluir a estratégia ESG no calendário de revisão estratégica da organização.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Nunca', val:0},
+        {label:'Raramente', val:30},
+        {label:'Periodicamente', val:70},
+        {label:'Revisão formal e contínua, integrada no planeamento estratégico', val:100},
+      ],
+    },
+  ],
+  confianca: [
+    {
+      id:'PRIA-CON-001', dim:'Capacidade',
+      pergunta:'A organização tem mecanismos para comunicar de forma transparente as suas práticas de conformidade a clientes/parceiros?',
+      evidencia:'Portal de transparência · Política de comunicação',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Criar um canal ou relatório de transparência sobre práticas de conformidade para clientes/parceiros.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não tem', val:0},
+        {label:'Comunicação informal', val:35},
+        {label:'Comunicação estruturada', val:70},
+        {label:'Comunicação estruturada e proativa', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CON-002', dim:'Execução',
+      pergunta:'Essa comunicação é efetivamente realizada na prática (relatórios, respostas a pedidos)?',
+      evidencia:'Registo de comunicações · Relatórios publicados',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Assegurar a produção regular e efetiva dessa comunicação de transparência.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não é realizada', val:0},
+        {label:'Realizada pontualmente', val:35},
+        {label:'Realizada na maioria dos casos', val:70},
+        {label:'Realizada de forma consistente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CON-003', dim:'Evidência',
+      pergunta:'A organização consegue demonstrar o histórico dessa comunicação/transparência?',
+      evidencia:'Arquivo de comunicações · Relatórios anteriores',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Manter um arquivo histórico das comunicações de transparência realizadas.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo parcial', val:35},
+        {label:'Registo da maioria', val:70},
+        {label:'Registo completo', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CON-005', dim:'Capacidade',
+      pergunta:'Existe um processo formal para gerir reclamações ou preocupações de clientes/parceiros relacionadas com conformidade?',
+      evidencia:'Procedimento de gestão de reclamações',
+      criticidade:'Alta',
+      impacto:'Operacional',
+      recomendacao:'Criar um processo formal para gerir reclamações relacionadas com conformidade.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Informal', val:35},
+        {label:'Formal, parcial', val:70},
+        {label:'Formal e abrangente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CON-006', dim:'Execução',
+      pergunta:'Esse processo é efetivamente seguido quando surgem reclamações?',
+      evidencia:'Registo de tratamento de reclamações',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Assegurar que o processo de gestão de reclamações é seguido em todos os casos.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não é seguido', val:0},
+        {label:'Seguido pontualmente', val:35},
+        {label:'Seguido na maioria dos casos', val:70},
+        {label:'Seguido consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CON-007', dim:'Evidência',
+      pergunta:'Existem registos das reclamações recebidas e do seu tratamento?',
+      evidencia:'Registo de reclamações',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Registar as reclamações recebidas e o respetivo tratamento.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Registo parcial', val:35},
+        {label:'Registo da maioria', val:70},
+        {label:'Registo completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-CON-009', dim:'Capacidade',
+      pergunta:'A organização procura ou detém certificações/selos externos relacionados com conformidade (ex: ISO, selos setoriais)?',
+      evidencia:'Certificados · Planos de certificação',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Avaliar a relevância de obter certificações externas alinhadas com o setor.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não procura', val:0},
+        {label:'Considera informalmente', val:35},
+        {label:'Em processo formal', val:70},
+        {label:'Detém certificação(ões) relevante(s)', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CON-010', dim:'Execução',
+      pergunta:'Os requisitos dessas certificações são efetivamente mantidos no dia a dia?',
+      evidencia:'Registo de auditorias de certificação',
+      criticidade:'Média',
+      impacto:'Operacional',
+      recomendacao:'Monitorizar o cumprimento contínuo dos requisitos das certificações detidas.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não são mantidos', val:0},
+        {label:'Parcialmente', val:35},
+        {label:'Na maioria dos requisitos', val:70},
+        {label:'Consistentemente', val:100},
+      ],
+    },
+    {
+      id:'PRIA-CON-011', dim:'Evidência',
+      pergunta:'Existem registos de auditorias de certificação e dos seus resultados?',
+      evidencia:'Relatórios de auditoria de certificação',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Manter os relatórios de auditoria de certificação organizados e acessíveis.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não', val:0},
+        {label:'Parcial', val:35},
+        {label:'Maioria', val:70},
+        {label:'Completo', val:100},
+      ],
+    },
+
+    {
+      id:'PRIA-CON-013', dim:'Melhoria Contínua',
+      pergunta:'A organização recolhe e utiliza feedback de clientes/parceiros/reguladores para melhorar continuamente a sua postura de transparência e conformidade?',
+      evidencia:'Registo de feedback · Planos de ação baseados em feedback',
+      criticidade:'Baixa',
+      impacto:'Operacional',
+      recomendacao:'Criar um mecanismo simples de recolha de feedback de clientes/parceiros sobre transparência.',
+      esforco:'Baixo',
+      opcoes:[
+        {label:'Não recolhe/utiliza', val:0},
+        {label:'Recolhe informalmente', val:35},
+        {label:'Recolhe e utiliza parcialmente', val:70},
+        {label:'Recolhe e utiliza sistematicamente, com plano de ação', val:100},
+      ],
+    },
+  ],
+};
+
+// state guarda respostas por pergunta (não por dimensão) — a dimensão é agregada a partir das perguntas que a alimentam.
+// Perfil da organização — controla quais perguntas condicionais (por regime) são aplicáveis.
+const PROFILE_QUESTIONS = [
+  {id:'dadosPessoais', label:'A organização trata dados pessoais?', afeta:'RGPD (5 perguntas)'},
+  {id:'usaIA', label:'A organização utiliza ou desenvolve sistemas de Inteligência Artificial?', afeta:'AI Act (4 perguntas)'},
+  {id:'entidadeFinanceira', label:'É uma entidade financeira regulada (banco, seguradora, gestora de ativos, instituição de pagamento)?', afeta:'DORA (3 perguntas)'},
+  {id:'entidadeAML', label:'Enquadra-se nas entidades obrigadas AML (financeiro, imobiliário, notariado, contabilidade, jogo)?', afeta:'AML (5 perguntas)'},
+  {id:'nis2', label:'É operador de serviços essenciais/importantes nos termos da NIS2 (energia, saúde, transportes, infraestrutura digital, administração pública)?', afeta:'NIS2 (5 perguntas)'},
+  {id:'iso', label:'Pretende avaliar-se face a normas ISO (27001/22301/37301), por já as adotar ou pretender adotá-las?', afeta:'ISO 27001/22301/37301 (5 perguntas)'},
+];
+const profileState = {dadosPessoais:true, usaIA:true, entidadeFinanceira:false, entidadeAML:false, nis2:false, iso:false};
+
+function isApplicable(q){ return !q.condicao || profileState[q.condicao]; }
+
+const state = {};
+PILARES.forEach(p => {
+  const answers = {};
+  (REAL_QUESTIONS[p.id] || []).forEach(q => { answers[q.id] = null; });
+  state[p.id] = {aplicavel:true, answers, sliders:{Capacidade:50, Execução:50, Evidência:50, 'Melhoria Contínua':50}};
+});
+
+// Criticidade deixa de ser só texto — pesa no cálculo da dimensão.
+const CRITICALITY_WEIGHTS = { Alta: 1.5, Média: 1.0, Baixa: 0.7 };
+
+// Dimensão = média PONDERADA por criticidade das perguntas dessa dimensão nesse pilar.
+function dimensionScore(pillarId, dim){
+  const qs = (REAL_QUESTIONS[pillarId] || []).filter(q =>
+    q.dim === dim && isApplicable(q) && state[pillarId].answers[q.id] !== null
+  );
+  if(!qs.length) return state[pillarId].sliders[dim]; // fallback: nada respondido ainda nesta dimensão (ou sem pergunta real) — neutro, não zero
+  const weightedTotal = qs.reduce((total, q) => {
+    const answer = state[pillarId].answers[q.id];
+    const weight = CRITICALITY_WEIGHTS[q.criticidade] || 1;
+    return total + answer * weight;
+  }, 0);
+  const totalWeight = qs.reduce((total, q) => total + (CRITICALITY_WEIGHTS[q.criticidade] || 1), 0);
+  return totalWeight ? weightedTotal / totalWeight : 0;
+}
+
+// Gates: tetos categóricos, independentes da nota numérica.
+const GATES = [
+  {id:'gate_base_legal', label:'Falha crítica: sem base legal válida para dados sensíveis (Governação)', capLevel:2, capNome:'Nível 2 — Emergente'},
+  {id:'gate_evidencia', label:'Falha crítica: sem evidência verificável de controlos (Evidência)', capLevel:3, capNome:'Nível 3 — Estruturado'},
+];
+const gateState = {};
+GATES.forEach(g => gateState[g.id] = false);
+
+// Biblioteca de correlações: cada regra é independente e explicável.
+// Penalização em pontos (aditiva, não composta) — mais auditável: dá para explicar exatamente quantos pontos cada regra custou.
+const CORRELATION_RULES = [
+  {
+    id:'tech_cultura',
+    test: s => s.tecnologia >= 65 && s.cultura <= 40,
+    penaltyPoints: 8,
+    explain: 'Tecnologia forte mas cultura fraca — a maturidade não depende só da tecnologia.'
+  },
+  {
+    id:'politica_sem_execucao',
+    test: s => PILARES.some(p => dimensionScore(p.id,'Capacidade') >= 70 && dimensionScore(p.id,'Execução') <= 35),
+    penaltyPoints: 5,
+    explain: 'Existe capacidade declarada (política/processo) sem execução efetiva em pelo menos um pilar — política no papel, não cumprida na prática.'
+  },
+  {
+    id:'governacao_sem_resiliencia',
+    test: s => s.governacao >= 65 && s.resiliencia <= 40,
+    penaltyPoints: 6,
+    explain: 'Governação forte no papel mas resiliência operacional fraca — falta capacidade de resposta testada.'
+  },
+];
+
+function pillarScore(p){
+  const vals = DIMENSOES.map(d => dimensionScore(p, d));
+  const min = Math.min(...vals);
+  const avg = vals.reduce((a,b)=>a+b,0) / vals.length;
+  // elo mais fraco: média pesa mais, mas um teto categórico impede que uma falha grave
+  // seja mascarada por uma média boa — mais explicável que um blend só numérico.
+  let score = 0.35*min + 0.65*avg;
+  if(min < 20) score = Math.min(score, 49);
+  else if(min < 40) score = Math.min(score, 69);
+  return score;
+}
+
+// nível resolvido diretamente em render() via LEVELS[levelIdx]
+
+const pillarsEl = document.getElementById('pillars');
+
+PILARES.forEach(p => {
+  const card = document.createElement('div');
+  card.className = 'pillar';
+  card.id = `card-${p.id}`;
+  const real = REAL_QUESTIONS[p.id] || [];
+
+  const dimsHtml = DIMENSOES.map(d => {
+    const qs = real.filter(q => q.dim === d);
+    const body = qs.length
+      ? qs.map(q => `
+          <div class="q-block" data-condicao="${q.condicao || ''}">
+            <div class="q-id">${q.id} · criticidade ${q.criticidade}${q.regulamento ? ` · <span class="reg-tag">${q.regulamento}</span>` : ''}</div>
+            <div class="q-text">${q.pergunta}</div>
+            <select data-pillar="${p.id}" data-qid="${q.id}" data-real="1">
+              <option value="" selected disabled>Seleciona uma resposta</option>
+              ${q.opcoes.map(o => `<option value="${o.val}">${o.label} (${o.val})</option>`).join('')}
+            </select>
+            <div class="q-evid">Evidência: ${q.evidencia}</div>
+          </div>
+        `).join('')
+      : `<input type="range" min="0" max="100" value="50" data-pillar="${p.id}" data-dim="${d}">`;
+    return `
+      <div class="dim">
+        <div class="dim-row"><span class="dim-name">${d}</span><span class="dim-val" id="val-${p.id}-${d}">—</span></div>
+        ${body}
+      </div>
+    `;
+  }).join('');
+
+  card.innerHTML = `
+    <div class="pillar-top">
+      <div class="pillar-name">${p.nome}${real.length ? ' <span class="real-tag">banco real</span>' : ''}</div>
+      <div class="pillar-score" id="score-${p.id}">0</div>
+    </div>
+    <div class="pillar-hint">${p.hint}</div>
+    <label class="applic-toggle">
+      <input type="checkbox" checked data-applic="${p.id}">
+      aplicável a este perfil de organização (simula perguntas ativadas no Bloco 1)
+    </label>
+    ${dimsHtml}
+  `;
+  pillarsEl.appendChild(card);
+});
+
+const gatesEl = document.getElementById('gates');
+GATES.forEach(g => {
+  const row = document.createElement('label');
+  row.className = 'gate-row';
+  row.innerHTML = `
+    <input type="checkbox" data-gate="${g.id}">
+    <span>${g.label}<span class="gate-cap">teto: ${g.capNome}, independentemente da nota</span></span>
+  `;
+  gatesEl.appendChild(row);
+});
+
+const profileEl = document.getElementById('profile');
+PROFILE_QUESTIONS.forEach(pq => {
+  const row = document.createElement('label');
+  row.className = 'gate-row';
+  row.innerHTML = `
+    <input type="checkbox" data-profile="${pq.id}" ${profileState[pq.id] ? 'checked' : ''}>
+    <span>${pq.label}<span class="gate-cap" style="color:var(--gold);">afeta: ${pq.afeta}</span></span>
+  `;
+  profileEl.appendChild(row);
+});
+profileEl.addEventListener('change', e => {
+  if(e.target.dataset.profile){
+    profileState[e.target.dataset.profile] = e.target.checked;
+    render();
+  }
+});
+
+function render(){
+  // Módulo 1/2: esconder perguntas cuja condição de perfil não está ativa, e contar o que resta.
+  let totalQ = 0, applicableQ = 0;
+  document.querySelectorAll('.q-block').forEach(el => {
+    totalQ++;
+    const cond = el.dataset.condicao;
+    const applicable = !cond || profileState[cond];
+    el.classList.toggle('hidden', !applicable);
+    if(applicable) applicableQ++;
+  });
+  document.getElementById('applicCount').textContent =
+    `${applicableQ} de ${totalQ} perguntas aplicáveis a este perfil (o resto fica fora do cálculo, não conta como zero).`;
+
+  const scores = {};
+  const applicablePillars = [];
+  PILARES.forEach(p => {
+    const s = pillarScore(p.id);
+    scores[p.id] = s;
+    document.getElementById(`score-${p.id}`).textContent = Math.round(s);
+    DIMENSOES.forEach(d => {
+      document.getElementById(`val-${p.id}-${d}`).textContent = Math.round(dimensionScore(p.id, d));
+    });
+    const card = document.getElementById(`card-${p.id}`);
+    card.classList.toggle('inapplicable', !state[p.id].aplicavel);
+    if(state[p.id].aplicavel) applicablePillars.push(p.id);
+  });
+
+  // score global = média dos pilares APLICÁVEIS, ponderada por peso estrutural (Governação/Evidência pesam mais)
+  const PESO_PILAR = {governacao: 1.5, evidencia: 1.5};
+  const pesoTotal = applicablePillars.reduce((sum,id) => sum + (PESO_PILAR[id] || 1), 0);
+  let overall = pesoTotal
+    ? applicablePillars.reduce((a,id) => a + scores[id]*(PESO_PILAR[id] || 1), 0) / pesoTotal
+    : 0;
+
+  // biblioteca de correlações — pontos aditivos, não percentagem composta (mais fácil de explicar ao cliente)
+  const rulesEl = document.getElementById('rulesActive');
+  rulesEl.innerHTML = '';
+  CORRELATION_RULES.forEach(rule => {
+    if(rule.test(scores)){
+      overall -= rule.penaltyPoints;
+      const note = document.createElement('div');
+      note.className = 'correlation-note active';
+      note.textContent = `Correlação ativa (−${rule.penaltyPoints} pontos): ${rule.explain}`;
+      rulesEl.appendChild(note);
+    }
+  });
+
+  overall = Math.max(0, Math.min(100, overall));
+  let levelIdx = 0;
+  LEVELS.forEach((l,i) => { if(overall >= l.min) levelIdx = i; });
+
+  // gates: tetos categóricos — o mais restritivo define o nível; TODOS os gates ativos são mostrados, não só o vencedor
+  const activeGates = GATES.filter(g => gateState[g.id]).sort((a,b) => a.capLevel - b.capLevel);
+  const strictestGate = activeGates[0] || null;
+  if(strictestGate && strictestGate.capLevel - 1 < levelIdx){
+    levelIdx = strictestGate.capLevel - 1;
+  }
+  activeGates.forEach(g => {
+    const note = document.createElement('div');
+    note.className = 'correlation-note active';
+    note.style.borderLeftColor = 'var(--danger)';
+    note.textContent = `Gate ativo: ${g.label} — teto: ${g.capNome}${g === strictestGate ? ' (determina o nível final)' : ''}.`;
+    rulesEl.appendChild(note);
+  });
+
+  document.getElementById('scoreFill').style.width = overall + '%';
+  document.getElementById('scoreText').textContent = Math.round(overall) + ' / 100' + (strictestGate ? ' · nível limitado por gate' : '');
+  document.getElementById('levelName').textContent = LEVELS[levelIdx].nome;
+  document.getElementById('levelDesc').textContent = LEVELS[levelIdx].desc;
+
+  // Compliance Score em linguagem de auditoria: contagem de controlos por estado + prioridade por tipo de impacto.
+  let nConforme = 0, nParcial = 0, nCritico = 0;
+  const impactCount = {Financeiro: 0, Jurídico: 0, Operacional: 0};
+  let nPorResponder = 0;
+  PILARES.forEach(p => {
+    if(!state[p.id].aplicavel) return;
+    (REAL_QUESTIONS[p.id] || []).forEach(q => {
+      if(!isApplicable(q)) return;
+      const val = state[p.id].answers[q.id];
+      if(val === null || val === undefined){ nPorResponder++; return; }
+      if(val >= 70) nConforme++;
+      else if(val >= 35) nParcial++;
+      else nCritico++;
+      if(val < 70 && q.impacto) impactCount[q.impacto] = (impactCount[q.impacto]||0) + 1;
+    });
+  });
+  document.getElementById('complianceTally').innerHTML = `
+    <div class="tally-item tally-conforme"><div class="tally-num">${nConforme}</div><div class="tally-label">Conformes</div></div>
+    <div class="tally-item tally-parcial"><div class="tally-num">${nParcial}</div><div class="tally-label">Parciais</div></div>
+    <div class="tally-item tally-critico"><div class="tally-num">${nCritico}</div><div class="tally-label">Críticos</div></div>
+    ${nPorResponder ? `<div class="tally-item tally-pendente"><div class="tally-num">${nPorResponder}</div><div class="tally-label">Por responder</div></div>` : ''}
+  `;
+  document.getElementById('impactRow').innerHTML = `
+    <div class="impact-badge"><span class="impact-icon">€</span> Financeira: ${impactCount['Financeiro']}</div>
+    <div class="impact-badge"><span class="impact-icon">⚖</span> Jurídica: ${impactCount['Jurídico']}</div>
+    <div class="impact-badge"><span class="impact-icon">⚙</span> Operacional: ${impactCount['Operacional']}</div>
+  `;
+
+  // Recomendações prioritárias: perguntas críticas (Alta), aplicáveis, com resposta ainda fraca (<70).
+  const recsPanel = document.getElementById('recsPanel');
+  recsPanel.innerHTML = '';
+  let gapCount = 0;
+  PILARES.forEach(p => {
+    if(!state[p.id].aplicavel) return;
+    (REAL_QUESTIONS[p.id] || []).forEach(q => {
+      if(q.criticidade === 'Baixa' || !q.recomendacao || !isApplicable(q)) return;
+      const val = state[p.id].answers[q.id];
+      if(val === null || val === undefined) return; // ainda não respondida — não é gap, é pendente
+      if(val < 70){
+        gapCount++;
+        const row = document.createElement('div');
+        row.className = 'rec-row';
+        row.innerHTML = `
+          <div class="rec-head"><span class="rec-pillar">${p.nome}</span><span class="rec-qid">${q.id}</span></div>
+          <div class="rec-text">${q.recomendacao}</div>
+        `;
+        recsPanel.appendChild(row);
+      }
+    });
+  });
+  if(!gapCount){
+    recsPanel.innerHTML = '<div class="rec-empty">Sem gaps críticos em aberto para o perfil e respostas atuais.</div>';
+  }
+
+  const sorted = [...applicablePillars].sort((a,b)=> scores[b]-scores[a]);
+  const strong = sorted.slice(0,2).map(p=>STRONG_PHRASE[p]);
+  const weak = sorted.slice(-2).map(p=>WEAK_PHRASE[p]);
+  const narrativeEl = document.getElementById('narrative');
+  const nivelTexto = LEVELS[levelIdx].nome.split('— ')[1];
+  narrativeEl.textContent = `A organização apresenta um nível de maturidade regulatória ${nivelTexto}. Demonstra ${strong[0] || '—'} e ${strong[1] || '—'}, mas ${weak[0] || '—'} e ${weak[1] || '—'} ainda limitam a sua preparação para novos requisitos regulamentares.`;
+
+  // ---------- Relatório Executivo ----------
+  const applicableScored = applicablePillars.map(id => ({
+    id, nome: PILARES.find(p=>p.id===id).nome, score: scores[id]
+  })).sort((a,b) => b.score - a.score);
+
+  document.getElementById('repSummary').textContent = narrativeEl.textContent;
+
+  const repPillarsEl = document.getElementById('repPillars');
+  repPillarsEl.innerHTML = applicableScored.map(p => `
+    <div class="pbar-row">
+      <div class="pbar-top"><span class="pbar-name">${p.nome}</span><span class="pbar-score">${Math.round(p.score)}</span></div>
+      <div class="pbar-track"><div class="pbar-fill" style="width:${p.score}%"></div></div>
+    </div>
+  `).join('');
+
+  const weakest3 = [...applicableScored].reverse().slice(0,3);
+  const strongest3 = applicableScored.slice(0,3);
+  document.getElementById('repRisks').innerHTML = weakest3.map(p => `
+    <div class="risk-item"><b>${p.nome} — ${Math.round(p.score)}</b>${WEAK_PHRASE[p.id] ? 'Limita a preparação: ' + WEAK_PHRASE[p.id] : ''}</div>
+  `).join('');
+  document.getElementById('repStrengths').innerHTML = strongest3.map(p => `
+    <div class="strength-item"><b>${p.nome} — ${Math.round(p.score)}</b>${STRONG_PHRASE[p.id] ? 'Demonstra ' + STRONG_PHRASE[p.id] : ''}</div>
+  `).join('');
+
+  const radarEl = document.getElementById('radarWrap');
+  const N = PILARES.length, R = 100, CX = 130, CY = 120;
+  const pt = (i, val) => {
+    const ang = -Math.PI/2 + i * (2*Math.PI/N);
+    const r = (val/100) * R;
+    return [CX + r*Math.cos(ang), CY + r*Math.sin(ang)];
+  };
+  const dataPts = PILARES.map((p,i) => pt(i, state[p.id].aplicavel ? scores[p.id] : 0));
+  const poly = dataPts.map(pp => pp.join(',')).join(' ');
+  const rings = [25,50,75,100].map(v => {
+    const ringPts = PILARES.map((p,i) => pt(i, v).join(',')).join(' ');
+    return `<polygon points="${ringPts}" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>`;
+  }).join('');
+  const axes = PILARES.map((p,i) => {
+    const [x,y] = pt(i, 100);
+    return `<line x1="${CX}" y1="${CY}" x2="${x}" y2="${y}" stroke="rgba(255,255,255,0.12)" stroke-width="1"/>`;
+  }).join('');
+  const labels = PILARES.map((p,i) => {
+    const [x,y] = pt(i, 122);
+    const short = p.nome.split(' ')[0].split('(')[0];
+    return `<text x="${x}" y="${y}" font-size="8" fill="#C8B99A" text-anchor="middle" dominant-baseline="middle">${short}</text>`;
+  }).join('');
+  radarEl.innerHTML = `
+    <svg width="260" height="240" viewBox="0 0 260 240">
+      ${rings}${axes}
+      <polygon points="${poly}" fill="rgba(200,169,110,0.35)" stroke="var(--gold)" stroke-width="1.5"/>
+      ${labels}
+    </svg>
+  `;
+
+  // Roadmap: mesmo conjunto de gaps do painel de recomendações, priorizado por impacto ÷ esforço.
+  const EFFORT_WEIGHT = {Baixo:1, Médio:2, Alto:3};
+  const roadmapItems = [];
+  PILARES.forEach(p => {
+    if(!state[p.id].aplicavel) return;
+    (REAL_QUESTIONS[p.id] || []).forEach(q => {
+      if(q.criticidade === 'Baixa' || !q.recomendacao || !isApplicable(q)) return;
+      const val = state[p.id].answers[q.id];
+      if(val === null || val === undefined) return; // ainda não respondida — não é gap, é pendente
+      if(val < 70){
+        const impacto = (100 - val) / 100; // maior gap = maior impacto
+        const esf = EFFORT_WEIGHT[q.esforco] || 2;
+        roadmapItems.push({pillar: p.nome, qid: q.id, texto: q.recomendacao, esforco: q.esforco || 'Médio', prioridade: impacto / esf});
+      }
+    });
+  });
+  roadmapItems.sort((a,b) => b.prioridade - a.prioridade);
+
+  const n = roadmapItems.length;
+  const horizontes = [
+    {titulo: '30 DIAS — maior impacto, menor esforço primeiro', items: roadmapItems.slice(0, Math.ceil(n/3))},
+    {titulo: '90 DIAS', items: roadmapItems.slice(Math.ceil(n/3), Math.ceil(2*n/3))},
+    {titulo: '180 DIAS', items: roadmapItems.slice(Math.ceil(2*n/3))},
+  ];
+  const repRoadmapEl = document.getElementById('repRoadmap');
+  if(!n){
+    repRoadmapEl.innerHTML = '<div class="rm-empty">Sem ações pendentes para o perfil e respostas atuais.</div>';
+  } else {
+    repRoadmapEl.innerHTML = horizontes.filter(h => h.items.length).map(h => `
+      <div class="rm-horizon">
+        <div class="rm-horizon-title">${h.titulo}</div>
+        ${h.items.map(it => `
+          <div class="rm-item">
+            <div class="rm-item-top"><span>${it.pillar} · ${it.qid}</span><span>esforço: ${it.esforco}</span></div>
+            ${it.texto}
+          </div>
+        `).join('')}
+      </div>
+    `).join('');
+  }
+}
+
+document.getElementById('gates').addEventListener('change', e => {
+  if(e.target.dataset.gate){ gateState[e.target.dataset.gate] = e.target.checked; render(); }
+});
+
+pillarsEl.addEventListener('input', (e) => {
+  if(e.target.tagName !== 'INPUT') return;
+  if(e.target.dataset.applic){
+    state[e.target.dataset.applic].aplicavel = e.target.checked;
+    render();
+    return;
+  }
+  const {pillar, dim} = e.target.dataset;
+  if(!pillar || !dim) return;
+  state[pillar].sliders[dim] = parseInt(e.target.value, 10);
+  render();
+});
+
+pillarsEl.addEventListener('change', (e) => {
+  if(e.target.tagName !== 'SELECT' || !e.target.dataset.real) return;
+  const {pillar, qid} = e.target.dataset;
+  state[pillar].answers[qid] = e.target.value === '' ? null : parseInt(e.target.value, 10);
+  render();
+});
+
+render();
+
+// Portão de email — mesmo padrão do site: dados primeiro, relatório completo a seguir.
+// Score e recomendações já são visíveis acima do portão (feedback imediato), como no PRIA atual.
+document.getElementById('gateSubmit').addEventListener('click', async () => {
+  const nome = document.getElementById('gateNome').value.trim();
+  const empresa = document.getElementById('gateEmpresa').value.trim();
+  const email = document.getElementById('gateEmail').value.trim();
+  const errorEl = document.getElementById('gateError');
+
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  if(!email || !emailValid){
+    errorEl.style.display = 'block';
+    return;
+  }
+  errorEl.style.display = 'none';
+
+  try {
+    const fd = new FormData();
+    fd.append('nome', nome);
+    fd.append('empresa', empresa);
+    fd.append('email', email);
+    fd.append('nivel_prmm', document.getElementById('levelName').textContent);
+    fd.append('score', document.getElementById('scoreText').textContent);
+    fd.append('origem', 'PRIA Assessment Engine');
+
+    // Resultado completo — sem isto, o email/nível/score sozinhos não chegam para montar o PDF.
+    const scorePorPilar = PILARES
+      .filter(p => state[p.id].aplicavel)
+      .map(p => `${p.nome}: ${document.getElementById('score-'+p.id).textContent}`)
+      .join(' | ');
+    fd.append('score_por_pilar', scorePorPilar);
+
+    const gapsAtuais = Array.from(document.querySelectorAll('#recsPanel .rec-row')).map(el => el.innerText).join('\n---\n');
+    fd.append('recomendacoes_prioritarias', gapsAtuais || 'Sem gaps críticos em aberto.');
+
+    const roadmapAtual = Array.from(document.querySelectorAll('#repRoadmap .rm-item')).map(el => el.innerText).join('\n---\n');
+    fd.append('roadmap', roadmapAtual || 'Sem ações pendentes.');
+
+    const perfilRespostas = PROFILE_QUESTIONS.map(pq => `${pq.label} ${profileState[pq.id] ? 'Sim' : 'Não'}`).join(' | ');
+    fd.append('perfil_organizacao', perfilRespostas);
+
+    // respostas individuais por pergunta, em bruto, para reconstrução completa se necessário
+    const respostasDetalhe = {};
+    PILARES.forEach(p => { respostasDetalhe[p.id] = state[p.id].answers; });
+    fd.append('respostas_detalhe_json', JSON.stringify(respostasDetalhe));
+    const response = await fetch('https://formspree.io/f/xkoykrgr', {
+      method: 'POST',
+      headers: {'Accept': 'application/json'},
+      body: fd,
+    });
+    if(!response.ok){
+      console.error('Formspree recusou a submissão:', response.status, await response.text());
+    }
+  } catch(err) {
+    // não bloquear a experiência por falha de rede — o relatório desbloqueia na mesma
+    console.error('Formspree submission failed:', err);
+  }
+
+  document.getElementById('emailGate').closest('.wrap').style.display = 'none';
+  const reportWrap = document.getElementById('reportWrap');
+  reportWrap.style.display = 'block';
+  reportWrap.scrollIntoView({behavior:'smooth'});
+});
+</script>
+</body>
+</html>
