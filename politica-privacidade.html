@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="pt">
 <head>
 <meta charset="UTF-8">
@@ -10,48 +9,57 @@
 <title>Política de Privacidade — Privus Kuzola</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#0D1B2A;--ink-mid:#162437;--sand:#C8A96E;--sand-lt:#E8D5A8;--white:#FFFFFF;--stone:#94A3B8;--azure-lt:#3B82F6;}
+:root{
+  --navy:#0D1B2A; --gold:#C8A96E; --gold-l:#D9BE90; --cream:#F0EBE0; --cream-d:#E5DDD0;
+  --white:#FFFFFF; --grey:#6B7280;
+}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--ink);color:var(--white);-webkit-font-smoothing:antialiased;line-height:1.7}
-header{background:var(--ink-mid);border-bottom:1px solid rgba(255,255,255,.07);padding:1.25rem 2rem;position:sticky;top:0;z-index:10}
+body{font-family:'Outfit',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.75}
+a{color:inherit}
+header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding:1.2rem 2rem;position:sticky;top:0;z-index:10}
 .header-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.1em;color:var(--white);text-decoration:none}
-.logo span{color:var(--sand)}
-.back{font-size:.8rem;color:var(--stone);text-decoration:none;transition:color .2s}
-.back:hover{color:var(--white)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;letter-spacing:.03em;color:var(--white);text-decoration:none}
+.logo span{color:var(--gold)}
+.back{font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+.back:hover{color:var(--gold)}
 main{max-width:780px;margin:0 auto;padding:3.5rem 2rem 5rem}
-.doc-label{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--sand);margin-bottom:.75rem;display:flex;align-items:center;gap:.75rem}
-.doc-label::before{content:'';width:24px;height:1px;background:var(--sand)}
-h1{font-family:'Bebas Neue',sans-serif;font-size:2.2rem;letter-spacing:.06em;line-height:1.1;margin-bottom:.75rem}
-.doc-meta{font-size:.8rem;color:var(--stone);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid rgba(255,255,255,.07)}
-.toc{background:var(--ink-mid);border:1px solid rgba(255,255,255,.07);padding:1.5rem 2rem;margin-bottom:3rem}
-.toc-title{font-size:.7rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);margin-bottom:1rem}
+.doc-label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;display:flex;align-items:center;gap:.75rem}
+.doc-label::before{content:'';width:24px;height:1px;background:var(--gold)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.4rem;line-height:1.1;margin-bottom:.9rem;color:var(--navy)}
+.doc-meta{font-size:.82rem;color:var(--grey);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--cream-d);font-style:italic}
+.toc{background:var(--white);border:1px solid var(--cream-d);padding:1.6rem 2rem;margin-bottom:3rem}
+.toc-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
 .toc ol{padding-left:1.25rem}
-.toc li{margin-bottom:.4rem}
-.toc a{font-size:.85rem;color:var(--stone);text-decoration:none;transition:color .2s}
-.toc a:hover{color:var(--sand)}
-h2{font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.06em;color:var(--white);margin:3rem 0 1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06)}
-h3{font-size:1rem;font-weight:600;color:var(--sand-lt);margin:1.75rem 0 .6rem}
-p{font-size:.9rem;font-weight:300;color:var(--stone);margin-bottom:1rem;line-height:1.8}
-p strong{color:var(--white);font-weight:500}
-ul,ol{padding-left:1.5rem;margin-bottom:1rem}
-li{font-size:.875rem;font-weight:300;color:var(--stone);margin-bottom:.4rem;line-height:1.7}
-li strong{color:var(--white);font-weight:500}
-.table-wrap{overflow-x:auto;margin:1.25rem 0}
-table{width:100%;border-collapse:collapse;font-size:.82rem}
-th{background:var(--ink-mid);color:var(--white);font-weight:600;padding:.75rem 1rem;text-align:left;border:1px solid rgba(255,255,255,.08);font-size:.75rem;letter-spacing:.05em}
-td{padding:.7rem 1rem;border:1px solid rgba(255,255,255,.06);color:var(--stone);vertical-align:top}
-tr:nth-child(even) td{background:rgba(255,255,255,.02)}
-.highlight{background:rgba(200,169,110,.06);border:1px solid rgba(200,169,110,.2);padding:1rem 1.25rem;margin:1.25rem 0;border-radius:2px}
-.highlight p{margin-bottom:0;color:var(--stone)}
-.highlight strong{color:var(--sand-lt)}
-.ref{font-size:.75rem;color:var(--azure-lt);font-weight:600;letter-spacing:.05em}
-footer{background:var(--ink-mid);border-top:1px solid rgba(255,255,255,.06);padding:2rem;text-align:center}
-footer p{font-size:.75rem;color:var(--stone)}
-footer a{color:var(--sand);text-decoration:none}
+.toc li{margin-bottom:.5rem}
+.toc a{font-size:.87rem;color:var(--grey);text-decoration:none;transition:color .2s}
+.toc a:hover{color:var(--gold)}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.65rem;color:var(--navy);margin:3rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--cream-d)}
+h3{font-family:'Outfit',sans-serif;font-size:.98rem;font-weight:600;color:var(--navy);margin:1.9rem 0 .7rem}
+p{font-size:.9rem;font-weight:300;color:var(--grey);margin-bottom:1.1rem;line-height:1.85}
+p strong{color:var(--navy);font-weight:500}
+ul,ol{padding-left:1.5rem;margin-bottom:1.1rem}
+li{font-size:.87rem;font-weight:300;color:var(--grey);margin-bottom:.5rem;line-height:1.75}
+li strong{color:var(--navy);font-weight:500}
+.table-wrap{overflow-x:auto;margin:1.4rem 0;border:1px solid var(--cream-d)}
+table{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--white)}
+th{background:var(--navy);color:var(--gold-l);font-weight:500;padding:.8rem 1rem;text-align:left;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
+td{padding:.75rem 1rem;border-top:1px solid var(--cream-d);color:var(--grey);vertical-align:top}
+tr:nth-child(even) td{background:var(--cream)}
+.highlight{background:rgba(200,169,110,.08);border-left:2px solid var(--gold);padding:1.1rem 1.4rem;margin:1.4rem 0}
+.highlight p{margin-bottom:0;color:var(--grey)}
+.highlight strong{color:var(--navy)}
+.ref{font-size:.74rem;color:var(--gold);font-weight:600;letter-spacing:.04em}
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:2.2rem;text-align:center}
+footer p{font-size:.75rem;color:rgba(255,255,255,.4)}
+footer a{color:var(--gold);text-decoration:none}
+@media (max-width:640px){
+  main{padding:2.5rem 1.25rem 4rem}
+  h1{font-size:1.9rem}
+  .toc{padding:1.3rem 1.4rem}
+}
 </style>
 </head>
 <body>
@@ -64,7 +72,7 @@ footer a{color:var(--sand);text-decoration:none}
 <main>
   <p class="doc-label">Documento legal</p>
   <h1>Política de Privacidade</h1>
-  <p class="doc-meta">Versão 1.0 · Entrada em vigor: 10/05/2026 · Última actualização: 10/05/2026<br>
+  <p class="doc-meta">Versão 1.1 · Entrada em vigor: 10/05/2026 · Última actualização: 21/07/2026<br>
   Elaborada ao abrigo do Art. 13.º do Regulamento (UE) 2016/679 (RGPD) e da Lei n.º 58/2019, de 8 de agosto</p>
 
   <div class="toc">
@@ -89,67 +97,64 @@ footer a{color:var(--sand);text-decoration:none}
     <table>
       <tr><th>Campo</th><th>Informação</th></tr>
       <tr><td><strong>Denominação</strong></td><td>Privus Kuzola</td></tr>
-
-```
-  <tr><td><strong>Morada</strong></td><td>Rua Vale Formoso de Cima 237 A, Lisboa, Portugal</td></tr>
-  <tr><td><strong>Email de contacto RGPD</strong></td><td>privacidade@privuskuzola.pt</td></tr>
-  <tr><td><strong>Telefone</strong></td><td>+351 936 246 971</td></tr>
-  <tr><td><strong>Website</strong></td><td>privuskuzola.pt</td></tr>
-  
-</table>
-```
-
+      <tr><td><strong>Morada</strong></td><td>Rua Vale Formoso de Cima 237 A, Lisboa, Portugal</td></tr>
+      <tr><td><strong>Email de contacto RGPD</strong></td><td>privacidade@privuskuzola.pt</td></tr>
+      <tr><td><strong>Telefone</strong></td><td>+351 936 246 971</td></tr>
+      <tr><td><strong>Website</strong></td><td>privuskuzola.pt</td></tr>
+    </table>
   </div>
   <p>Para qualquer questão relacionada com o tratamento dos seus dados pessoais, contacte-nos através do email <strong>privacidade@privuskuzola.pt</strong>. Respondemos no prazo máximo de 30 dias corridos (Art. 12.º, n.º 3 RGPD).</p>
 
   <h2 id="s2">2. Que dados recolhemos e para que fins</h2>
   <p>Recolhemos dados pessoais exclusivamente para as finalidades indicadas, através dos canais abaixo identificados.</p>
 
-  <h3>2.1 Formulário de diagnóstico (Privus Audit)</h3>
-  <p>Quando preenche o formulário de diagnóstico no website, recolhemos os seguintes dados:</p>
+  <h3>2.1 Formulário de contacto e pedidos de proposta</h3>
+  <p>Quando preenche o formulário de contacto no website, recolhemos os seguintes dados:</p>
   <ul>
     <li><strong>Nome completo</strong> — para identificação e personalização da comunicação</li>
-    <li><strong>Endereço de email</strong> — para envio do briefing detalhado e do relatório de diagnóstico</li>
-    <li><strong>Nome da empresa</strong> — para contextualização do diagnóstico</li>
-    <li><strong>Sector de actividade</strong> — para selecção da metodologia de diagnóstico adequada</li>
-    <li><strong>Descrição da situação actual</strong> (opcional) — para preparação do diagnóstico</li>
+    <li><strong>Endereço de email</strong> — para resposta ao pedido</li>
+    <li><strong>Nome da empresa</strong> — para contextualização do pedido</li>
+    <li><strong>Serviço de interesse</strong> (PRIA, Implementação, Compliance as a Service, Formação ou outro) — para encaminhamento correto do pedido</li>
+    <li><strong>Indicação de realização prévia de um PRIA</strong> — para qualificação do pedido</li>
+    <li><strong>Descrição do projecto</strong> (opcional) — para preparação da resposta</li>
   </ul>
-  <p>Estes dados são transmitidos através do serviço <strong>Formspree</strong> (ver secção 4) e utilizados exclusivamente para processar o diagnóstico contratado.</p>
+  <p>Estes dados são transmitidos através do serviço <strong>Formspree</strong> (ver secção 4) e utilizados exclusivamente para responder ao pedido e, quando aplicável, preparar uma proposta comercial personalizada.</p>
 
   <h3>2.2 Pagamentos — Stripe</h3>
   <p>O processamento de pagamentos é realizado pela <strong>Stripe Payments Europe, Limited</strong>. Quando efectua um pagamento, os dados de pagamento (número de cartão, data de validade, CVV, nome do titular) são recolhidos e processados <strong>directamente pela Stripe</strong> — a Privus Kuzola <strong>não tem acesso nem armazena</strong> dados de cartão de pagamento.</p>
   <p>A Privus Kuzola recebe da Stripe apenas: confirmação de pagamento, montante, referência da transacção e email de faturação. Estes dados são utilizados para confirmação do serviço e emissão de recibo.</p>
 
   <h3>2.3 Prestação de serviços de consultoria</h3>
-  <p>No âmbito da prestação dos serviços contratados (Privus Audit, Privus Compliance, Privus Protect, Privus Control), recolhemos e tratamos dados da empresa cliente e dos seus colaboradores necessários para a elaboração da documentação RGPD. Estes dados são tratados nos termos do contrato de prestação de serviços celebrado com o cliente e do DPA associado.</p>
+  <p>No âmbito da prestação dos serviços contratados (PRIA Assessment, PRIA Guided Assessment, Implementação, Compliance as a Service, Formação), recolhemos e tratamos dados da empresa cliente e dos seus colaboradores necessários para a elaboração da documentação e recomendações. Estes dados são tratados nos termos do contrato de prestação de serviços celebrado com o cliente e do DPA associado, quando aplicável.</p>
 
   <h3>2.4 Dados de navegação — Google Analytics 4</h3>
-  <p>Com o seu consentimento prévio, recolhemos dados de navegação através do Google Analytics 4 para compreender como os visitantes utilizam o website e melhorar a experiência de utilização. Os dados recolhidos incluem páginas visitadas, duração da visita, fonte do tráfego e dados de dispositivo. O endereço IP é anonimizado antes de qualquer processamento (função <em>anonymize_ip</em> activada).</p>
-  <p>O Google Analytics 4 utiliza cookies para recolher estes dados. Pode gerir as suas preferências na nossa <a href="politica-cookies.html" style="color:var(--sand)">Política de Cookies</a>.</p>
+  <p>Com o seu consentimento prévio, recolhemos dados de navegação através do Google Analytics 4 para compreender como os visitantes utilizam o website e melhorar a experiência de utilização. Os dados recolhidos incluem páginas visitadas, duração da visita, fonte do tráfego e dados de dispositivo. O Google Analytics 4 utiliza mecanismos de anonimização do endereço IP e não disponibiliza o endereço IP completo à Privus Kuzola.</p>
+  <p>O Google Analytics 4 utiliza cookies para recolher estes dados. Pode gerir as suas preferências na nossa <a href="politica-cookies.html" style="color:var(--gold)">Política de Cookies</a>.</p>
 
   <h3>2.5 Comunicações por email</h3>
   <p>Quando nos contacta por email, tratamos os dados pessoais presentes na comunicação (nome, email, conteúdo da mensagem) para responder ao seu pedido. Estes dados são conservados pelo prazo necessário à gestão da comunicação e pelo período de prescrição dos direitos associados.</p>
 
-  <h3>2.6 Calculadora de Score de Maturidade Regulatória</h3>
-  <p>Quando utiliza a calculadora de score disponível em <strong>privuskuzola.pt/calculadora.html</strong>, recolhemos os seguintes dados após conclusão do diagnóstico:</p>
+  <h3>2.6 PRIA — Privus Regulatory Impact Assessment</h3>
+  <p>O acesso ao PRIA (nas modalidades Self-Service ou Guided) é precedido de pagamento através da Stripe (ver secção 2.2). Após a conclusão do diagnóstico, recolhemos os seguintes dados:</p>
   <ul>
-    <li><strong>Nome completo</strong> — para personalização da comunicação de seguimento</li>
-    <li><strong>Endereço de email</strong> — para envio da cópia do score e recomendações prioritárias</li>
-    <li><strong>Nome da empresa</strong> (opcional) — para contextualização do diagnóstico</li>
-    <li><strong>Score total e por dimensão</strong> — resultado do diagnóstico, não constituindo dados pessoais por si só mas associado ao titular quando combinado com os dados de identificação acima</li>
-    <li><strong>Respostas ao questionário</strong> — para elaboração das recomendações</li>
+    <li><strong>Nome completo, nome da empresa e endereço de email</strong> — para identificação e envio do Relatório Executivo</li>
+    <li><strong>Respostas ao questionário</strong> (até 127 perguntas, consoante o perfil da organização) — para cálculo do nível de maturidade regulatória</li>
+    <li><strong>Índice de maturidade (PRMM) e score por pilar</strong> — resultado do diagnóstico</li>
+    <li><strong>Recomendações prioritárias e roadmap de implementação</strong> — gerados a partir das respostas fornecidas</li>
   </ul>
-  <p>Estes dados são transmitidos através do serviço <strong>Formspree</strong> (ver secção 4) e utilizados exclusivamente para: (i) envio da cópia do score ao titular; (ii) contacto comercial de seguimento para apresentação do Privus Audit. A base legal é a execução de diligências pré-contratuais a pedido do titular — Art. 6.º(1)(b) RGPD.</p>
+  <p>Estes dados são transmitidos através do serviço <strong>Formspree</strong> (ver secção 4), incluindo as respostas em bruto por pergunta num formato estruturado (JSON), para que a Privus Kuzola disponha da informação necessária ao acompanhamento do diagnóstico e, quando aplicável, à elaboração de uma proposta de implementação. A base legal é a execução do contrato de prestação do serviço PRIA — Art. 6.º(1)(b) RGPD.</p>
+  <p>No caso do <strong>PRIA Guided Assessment</strong>, é adicionalmente utilizado o serviço <strong>Microsoft Bookings</strong> para agendamento da sessão de 90 minutos, o que implica a recolha de nome, email e horário selecionado (ver secção 4).</p>
 
   <h2 id="s3">3. Bases legais do tratamento</h2>
   <div class="table-wrap">
     <table>
       <tr><th>Finalidade</th><th>Base legal</th><th>Artigo RGPD</th></tr>
-      <tr><td>Processamento do formulário de diagnóstico e prestação do serviço Audit</td><td>Execução de diligências pré-contratuais a pedido do titular</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Confirmação e gestão de pagamento</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Prestação dos serviços Compliance e Control</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Prestação do serviço Protect (verificação técnica e certificação)</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Processamento de dados da Calculadora de Score</td><td>Execução de diligências pré-contratuais a pedido do titular</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
+      <tr><td>Processamento do formulário de contacto e pedidos de proposta</td><td>Execução de diligências pré-contratuais a pedido do titular</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
+      <tr><td>Confirmação e gestão de pagamento (PRIA, upgrade, propostas)</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
+      <tr><td>Prestação dos serviços de Implementação e Compliance as a Service</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
+      <tr><td>Prestação do serviço de Formação</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
+      <tr><td>Processamento de dados do PRIA (Self-Service e Guided Assessment)</td><td>Execução do contrato de prestação do serviço PRIA</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
+      <tr><td>Agendamento da sessão do PRIA Guided Assessment</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
       <tr><td>Emissão de fatura e arquivo contabilístico</td><td>Cumprimento de obrigação legal</td><td><span class="ref">Art. 6.º(1)(c)</span></td></tr>
       <tr><td>Análise de comportamento de navegação (GA4)</td><td>Consentimento do titular</td><td><span class="ref">Art. 6.º(1)(a)</span></td></tr>
       <tr><td>Resposta a comunicações por email</td><td>Interesse legítimo — gestão de comunicações comerciais</td><td><span class="ref">Art. 6.º(1)(f)</span></td></tr>
@@ -165,10 +170,11 @@ footer a{color:var(--sand);text-decoration:none}
   <div class="table-wrap">
     <table>
       <tr><th>Subcontratante</th><th>Função</th><th>Dados transmitidos</th><th>País</th><th>Garantias</th></tr>
-      <tr><td><strong>Formspree, Inc.</strong></td><td>Recepção e transmissão de dados de formulários</td><td>Nome, email, empresa, sector, situação actual</td><td>EUA</td><td>SCCs — Decisão 2021/914/UE</td></tr>
+      <tr><td><strong>Formspree, Inc.</strong></td><td>Recepção e transmissão de dados de formulários</td><td>Dados submetidos através dos formulários do website, incluindo respostas ao PRIA, informações de contacto e dados necessários à prestação dos serviços</td><td>EUA</td><td>SCCs — Decisão 2021/914/UE</td></tr>
       <tr><td><strong>Stripe Payments Europe, Ltd.</strong></td><td>Processamento de pagamentos</td><td>Dados de faturação; confirmação de pagamento</td><td>Irlanda (UE)</td><td>DPA — Art. 28.º RGPD</td></tr>
       <tr><td><strong>Google LLC (GA4)</strong></td><td>Análise de comportamento de navegação</td><td>Dados de navegação anonimizados; cookies</td><td>EUA</td><td>EU-US Data Privacy Framework</td></tr>
-      <tr><td><strong>GitHub, Inc.</strong></td><td>Alojamento do website (GitHub Pages)</td><td>Endereço IP; dados de acesso ao servidor</td><td>EUA</td><td>SCCs — Decisão 2021/914/UE</td></tr>
+      <tr><td><strong>Cloudflare, Inc.</strong></td><td>Alojamento, CDN e serviços de segurança</td><td>Endereço IP; dados de acesso ao servidor</td><td>EUA</td><td>SCCs — Decisão 2021/914/UE e/ou EU-U.S. Data Privacy Framework</td></tr>
+      <tr><td><strong>Microsoft Ireland Operations Limited</strong></td><td>Alojamento de email profissional (Microsoft 365) e agendamento de sessões do PRIA Guided Assessment (Microsoft Bookings/Teams)</td><td>Conteúdo de emails; nome; email; dados de agendamento</td><td>Irlanda (UE) — dados armazenados e processados na UE/EEE ao abrigo do EU Data Boundary</td><td>DPA (Data Protection Addendum) + SCCs Módulo 3 (Processor-to-Processor), entre Microsoft Ireland Operations Ltd e Microsoft Corporation</td></tr>
       <tr><td><strong>[Contabilista/TOC]</strong></td><td>Contabilidade e fiscalidade</td><td>Dados de faturação</td><td>Portugal</td><td>DPA — Art. 28.º RGPD</td></tr>
     </table>
   </div>
@@ -179,17 +185,21 @@ footer a{color:var(--sand);text-decoration:none}
   <ul>
     <li><strong>Formspree (EUA)</strong> — Cláusulas Contratuais Tipo (SCCs) aprovadas pela Comissão Europeia através da Decisão 2021/914/UE de 4 de junho de 2021</li>
     <li><strong>Google LLC — GA4 (EUA)</strong> — EU-US Data Privacy Framework, adoptado pela Decisão de Adequação da Comissão Europeia de 10 de julho de 2023</li>
-    <li><strong>GitHub, Inc. (EUA)</strong> — Cláusulas Contratuais Tipo (SCCs) — Decisão 2021/914/UE</li>
+    <li><strong>Cloudflare, Inc. (EUA)</strong> — Cláusulas Contratuais Tipo (SCCs) — Decisão 2021/914/UE, e/ou EU-U.S. Data Privacy Framework</li>
     <li><strong>Stripe Payments Europe, Ltd.</strong> — Sede na Irlanda (UE); dados processados dentro do EEE; eventuais transferências para Stripe, Inc. (EUA) ao abrigo de SCCs</li>
+    <li><strong>Microsoft Ireland Operations Limited (Irlanda, UE)</strong> — Dados armazenados e processados dentro da UE/EEE ao abrigo do EU Data Boundary, concluído pela Microsoft em 2025. Eventuais transferências internas ao grupo Microsoft para fins de suporte técnico são cobertas por SCCs Módulo 3 (Processor-to-Processor)</li>
   </ul>
+  <div class="highlight">
+    <p><strong>Nota sobre os limites da residência de dados na UE:</strong> a garantia de armazenamento de dados na União Europeia (nomeadamente pelo EU Data Boundary da Microsoft) constitui um compromisso de residência geográfica, não uma blindagem jurisdicional absoluta. A Microsoft e a Cloudflare são empresas sujeitas ao direito dos EUA, incluindo o CLOUD Act, que pode em teoria obrigar a divulgação de dados armazenados em qualquer localização geográfica mediante ordem legal válida das autoridades norte-americanas. A Privus Kuzola seleciona subcontratantes que ofereçam as melhores garantias contratuais e técnicas disponíveis no mercado, sem que tal elimine por completo este risco residual, comum a qualquer entidade que utilize serviços de fornecedores tecnológicos globais.</p>
+  </div>
   <p>Pode obter cópia dos mecanismos aplicáveis contactando <strong>privacidade@privuskuzola.pt</strong>.</p>
 
   <h2 id="s6">6. Durante quanto tempo conservamos os seus dados</h2>
   <div class="table-wrap">
     <table>
       <tr><th>Categoria de dados</th><th>Prazo de conservação</th><th>Fundamento</th></tr>
-      <tr><td>Dados do formulário de diagnóstico (Audit)</td><td>Duração do serviço + 3 anos</td><td>Prazo de prescrição contratual — Art. 309.º CC</td></tr>
-      <tr><td>Dados da Calculadora de Score (nome, email, score)</td><td>3 anos após a data de submissão</td><td>Prazo de prescrição contratual — Art. 309.º CC; interesse legítimo de contacto comercial</td></tr>
+      <tr><td>Dados do formulário de contacto e pedidos de proposta</td><td>3 anos após o último contacto</td><td>Prazo de prescrição contratual — Art. 309.º CC</td></tr>
+      <tr><td>Dados do PRIA (respostas, score, relatório, agendamento Guided)</td><td>Duração do serviço + 3 anos, salvo obrigação legal de conservação por período superior</td><td>Prazo de prescrição contratual — Art. 309.º CC; acompanhamento de eventual projeto de implementação</td></tr>
       <tr><td>Dados de pagamento (referência Stripe)</td><td>10 anos</td><td>Obrigação fiscal — Art. 52.º CIVA; Art. 123.º CIRC</td></tr>
       <tr><td>Dados de faturação e arquivo contabilístico</td><td>10 anos</td><td>Obrigação fiscal — Art. 40.º DL 158/2009 (SNC)</td></tr>
       <tr><td>Dados de correspondência por email</td><td>3 anos após último contacto</td><td>Interesse legítimo; prazo de prescrição geral</td></tr>
@@ -215,12 +225,12 @@ footer a{color:var(--sand);text-decoration:none}
     </table>
   </div>
   <p>O exercício dos direitos é <strong>gratuito</strong>. A primeira cópia dos dados (direito de acesso) é sempre gratuita. Em caso de pedidos manifestamente infundados ou excessivos, podemos cobrar uma taxa razoável ou recusar, com fundamentação escrita (Art. 12.º, n.º 5 RGPD).</p>
-  <p>Para exercer qualquer dos direitos acima, envie pedido escrito para <strong>privacidade@privuskuzola.pt</strong> com identificação do direito que pretende exercer e cópia do documento de identificação. Responderemos no prazo máximo de 30 dias corridos.</p>
+  <p>Para exercer qualquer dos direitos acima, envie pedido escrito para <strong>privacidade@privuskuzola.pt</strong> com identificação do direito que pretende exercer. Poderemos solicitar informação adicional para confirmar a identidade do requerente, quando tal seja necessário. Responderemos no prazo máximo de 30 dias corridos.</p>
 
   <h3>Direito de reclamação junto da CNPD</h3>
   <p>Se considerar que o tratamento dos seus dados viola o RGPD ou a Lei n.º 58/2019, tem o direito de apresentar reclamação à <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong>:</p>
   <ul>
-    <li>Website: <strong>www.cnpd.pt</strong></li>
+    <li>Website: <a href="https://www.cnpd.pt" style="color:var(--gold)" target="_blank"><strong>www.cnpd.pt</strong></a></li>
     <li>Email: <strong>geral@cnpd.pt</strong></li>
     <li>Telefone: <strong>(+351) 213 928 400</strong></li>
     <li>Morada: Av. D. Carlos I, 134, 1.º — 1200-651 Lisboa</li>
@@ -228,13 +238,14 @@ footer a{color:var(--sand);text-decoration:none}
   <p>O direito de reclamação junto da CNPD não prejudica outros meios de recurso administrativo ou judicial.</p>
 
   <h2 id="s8">8. Cookies e tecnologias de rastreamento</h2>
-  <p>O website privuskuzola.pt utiliza cookies e tecnologias similares. Para informação detalhada sobre os cookies utilizados, as suas finalidades, prazos e como gerir as suas preferências, consulte a nossa <a href="politica-cookies.html" style="color:var(--sand)"><strong>Política de Cookies</strong></a>.</p>
+  <p>O website privuskuzola.pt utiliza cookies e tecnologias similares. Para informação detalhada sobre os cookies utilizados, as suas finalidades, prazos e como gerir as suas preferências, consulte a nossa <a href="politica-cookies.html" style="color:var(--gold)"><strong>Política de Cookies</strong></a>.</p>
   <p>Em resumo: utilizamos apenas cookies essenciais (necessários para o funcionamento do website, sem consentimento prévio) e cookies analíticos do Google Analytics 4 (apenas com o seu consentimento expresso). Não utilizamos cookies de marketing ou retargeting.</p>
 
   <h2 id="s9">9. Segurança dos dados</h2>
   <p>Implementámos medidas técnicas e organizativas adequadas para proteger os dados pessoais que tratamos, em conformidade com o Art. 32.º do RGPD, tendo em conta o estado da arte, os custos de aplicação e a natureza, o âmbito, o contexto e as finalidades do tratamento:</p>
   <ul>
     <li>Transmissão de dados cifrada através de protocolo HTTPS/TLS em todas as comunicações</li>
+    <li>Correio eletrónico profissional alojado em Microsoft 365. Sempre que aplicável, as contas profissionais encontram-se protegidas através de autenticação multifator (MFA), com encriptação de dados em trânsito e em repouso, e armazenamento dentro da UE/EEE ao abrigo do EU Data Boundary</li>
     <li>Processamento de pagamentos exclusivamente através da Stripe, com certificação PCI DSS — a Privus Kuzola não armazena dados de cartão</li>
     <li>Acesso aos dados de clientes restrito aos colaboradores com necessidade operacional justificada (need-to-know)</li>
     <li>Subcontratantes seleccionados com base em garantias adequadas de segurança e conformidade, com DPA celebrado</li>
@@ -249,8 +260,8 @@ footer a{color:var(--sand);text-decoration:none}
 
 </main>
 <footer>
-  <p>© 2025 Privus Kuzola · <a href="index.html">privuskuzola.pt</a> · <a href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a></p>
-  <p style="margin-top:.5rem">Elaborada ao abrigo do Art. 13.º RGPD e da Lei n.º 58/2019, de 8 de agosto · Versão 1.0</p>
+  <p>© 2026 Privus Kuzola · <a href="index.html">privuskuzola.pt</a> · <a href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a></p>
+  <p style="margin-top:.5rem">Elaborada ao abrigo do Art. 13.º RGPD e da Lei n.º 58/2019, de 8 de agosto · Versão 1.1</p>
 </footer>
 </body>
 </html>
