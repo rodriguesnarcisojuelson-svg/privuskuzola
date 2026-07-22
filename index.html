@@ -976,7 +976,22 @@ function setLang(lang) {
   function showBanner(){ document.getElementById('cookieBanner').style.display = 'flex'; }
   function hideBanner(){ document.getElementById('cookieBanner').style.display = 'none'; }
 
-  var consent = localStorage.getItem(CONSENT_KEY);
+  var THIRTEEN_MONTHS_MS = 13 * 30 * 24 * 60 * 60 * 1000;
+
+  function getStoredConsent(){
+    var raw = localStorage.getItem(CONSENT_KEY);
+    if (!raw) return null;
+    try {
+      var data = JSON.parse(raw);
+      if (Date.now() - data.date > THIRTEEN_MONTHS_MS) return null; // expirado, voltar a perguntar
+      return data.value;
+    } catch(e) { return null; }
+  }
+  function setStoredConsent(value){
+    localStorage.setItem(CONSENT_KEY, JSON.stringify({ value: value, date: Date.now() }));
+  }
+
+  var consent = getStoredConsent();
   if (consent === 'accepted') {
     loadConsentedScripts();
   } else if (consent === 'rejected') {
@@ -987,12 +1002,12 @@ function setLang(lang) {
 
   document.addEventListener('DOMContentLoaded', function(){
     document.getElementById('cookieAccept').addEventListener('click', function(){
-      localStorage.setItem(CONSENT_KEY, 'accepted');
+      setStoredConsent('accepted');
       loadConsentedScripts();
       hideBanner();
     });
     document.getElementById('cookieReject').addEventListener('click', function(){
-      localStorage.setItem(CONSENT_KEY, 'rejected');
+      setStoredConsent('rejected');
       hideBanner();
     });
     var manageLink = document.getElementById('manageCookies');
@@ -1001,6 +1016,9 @@ function setLang(lang) {
         e.preventDefault();
         showBanner();
       });
+    }
+    if (window.location.hash === '#gerir-cookies') {
+      showBanner();
     }
   });
 })();
