@@ -2760,59 +2760,116 @@ render();
 
 // Portão de email — mesmo padrão do site: dados primeiro, relatório completo a seguir.
 // Score e recomendações já são visíveis acima do portão (feedback imediato), como no PRIA atual.
+const PRIA_REPORT_API = '/api/report';
+
+function getCompletionStatus(){
+  const applicable = [];
+  PILARES.forEach(p => {
+    if(!state[p.id].aplicavel) return;
+    (REAL_QUESTIONS[p.id] || []).forEach(q => {
+      if(isApplicable(q)) applicable.push({pillar:p.id, qid:q.id, answered:state[p.id].answers[q.id] !== null});
+    });
+  });
+  const answered = applicable.filter(q => q.answered).length;
+  return {answered, applicable:applicable.length, missing:applicable.filter(q => !q.answered)};
+}
+
+function getRegulatoryScopes(){
+  const scopes = [];
+  if(profileState.dadosPessoais) scopes.push('RGPD');
+  if(profileState.usaIA) scopes.push('AI Act');
+  if(profileState.nis2) scopes.push('NIS2');
+  if(profileState.entidadeFinanceira) scopes.push('DORA');
+  if(profileState.entidadeAML) scopes.push('AML');
+  if(profileState.iso) scopes.push('ISO 27001', 'ISO 22301', 'ISO 37301');
+  return scopes;
+}
+
+function buildReportPayload(nome, empresa){
+  const completion = getCompletionStatus();
+  const recommendations = [];
+  PILARES.forEach(p => {
+    if(!state[p.id].aplicavel) return;
+    (REAL_QUESTIONS[p.id] || []).forEach(q => {
+      if(!isApplicable(q) || !q.recomendacao) return;
+      const val = state[p.id].answers[q.id];
+      if(val !== null && val < 70){
+        recommendations.push({
+          priority:q.criticidade === 'Alta' ? 'Alta' : 'Média',
+          action:q.recomendacao,
+          impact:q.impacto || 'Operacional',
+          effort:q.esforco || 'Médio',
+          horizon:q.esforco === 'Baixo' ? '30 dias' : q.esforco === 'Médio' ? '90 dias' : '180 dias'
+        });
+      }
+    });
+  });
+  const roadmap = {'30':[], '90':[], '180':[]};
+  recommendations.forEach(r => roadmap[r.horizon.split(' ')[0]].push(r.action));
+  return {
+    name:nome,
+    company:empresa || 'Organização não indicada',
+    level:document.getElementById('levelName').textContent,
+    score:parseFloat(document.getElementById('scoreText').textContent) || 0,
+    summary:document.getElementById('narrative').textContent,
+    completion:{answered:completion.answered, applicable:completion.applicable},
+    scopes:getRegulatoryScopes(),
+    pillars:PILARES.filter(p => state[p.id].aplicavel).map(p => ({
+      name:p.nome,
+      score:parseFloat(document.getElementById('score-'+p.id).textContent) || 0
+    })),
+    risks:Array.from(document.querySelectorAll('#repRisks .risk-item')).map(el => el.innerText.replace(/\s+/g,' ').trim()),
+    strengths:Array.from(document.querySelectorAll('#repStrengths .strength-item')).map(el => el.innerText.replace(/\s+/g,' ').trim()),
+    recommendations,
+    roadmap,
+    gates:GATES.filter(g => gateState[g.id]).map(g => `${g.label} — teto: ${g.capNome}`),
+    version:'PRIA v1.1'
+  };
+}
+
 document.getElementById('gateSubmit').addEventListener('click', async () => {
   const nome = document.getElementById('gateNome').value.trim();
   const empresa = document.getElementById('gateEmpresa').value.trim();
   const email = document.getElementById('gateEmail').value.trim();
   const errorEl = document.getElementById('gateError');
 
+  const completion = getCompletionStatus();
+  if(completion.answered < completion.applicable){
+    errorEl.textContent = `Responde a todas as perguntas aplicáveis antes de gerar o relatório (${completion.applicable - completion.answered} em falta).`;
+    errorEl.style.display = 'block';
+    const first = completion.missing[0];
+    const select = first && document.querySelector(`select[data-pillar="${first.pillar}"][data-qid="${first.qid}"]`);
+    if(select) select.scrollIntoView({behavior:'smooth', block:'center'});
+    return;
+  }
+
   const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   if(!email || !emailValid){
+    errorEl.textContent = 'Preenche um email válido.';
     errorEl.style.display = 'block';
     return;
   }
   errorEl.style.display = 'none';
+  const submitBtn = document.getElementById('gateSubmit');
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'A gerar e enviar o relatório…';
+
+  const reportPayload = buildReportPayload(nome, empresa);
 
   try {
-    const fd = new FormData();
-    fd.append('nome', nome);
-    fd.append('empresa', empresa);
-    fd.append('email', email);
-    fd.append('nivel_prmm', document.getElementById('levelName').textContent);
-    fd.append('score', document.getElementById('scoreText').textContent);
-    fd.append('origem', 'PRIA Assessment Engine');
-
-    // Resultado completo — sem isto, o email/nível/score sozinhos não chegam para montar o PDF.
-    const scorePorPilar = PILARES
-      .filter(p => state[p.id].aplicavel)
-      .map(p => `${p.nome}: ${document.getElementById('score-'+p.id).textContent}`)
-      .join(' | ');
-    fd.append('score_por_pilar', scorePorPilar);
-
-    const gapsAtuais = Array.from(document.querySelectorAll('#recsPanel .rec-row')).map(el => el.innerText).join('\n---\n');
-    fd.append('recomendacoes_prioritarias', gapsAtuais || 'Sem gaps críticos em aberto.');
-
-    const roadmapAtual = Array.from(document.querySelectorAll('#repRoadmap .rm-item')).map(el => el.innerText).join('\n---\n');
-    fd.append('roadmap', roadmapAtual || 'Sem ações pendentes.');
-
-    const perfilRespostas = PROFILE_QUESTIONS.map(pq => `${pq.label} ${profileState[pq.id] ? 'Sim' : 'Não'}`).join(' | ');
-    fd.append('perfil_organizacao', perfilRespostas);
-
-    // respostas individuais por pergunta, em bruto, para reconstrução completa se necessário
-    const respostasDetalhe = {};
-    PILARES.forEach(p => { respostasDetalhe[p.id] = state[p.id].answers; });
-    fd.append('respostas_detalhe_json', JSON.stringify(respostasDetalhe));
-    const response = await fetch('https://formspree.io/f/xkoykrgr', {
-      method: 'POST',
-      headers: {'Accept': 'application/json'},
-      body: fd,
+    const response = await fetch(PRIA_REPORT_API, {
+      method:'POST',
+      headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({email, report:reportPayload})
     });
-    if(!response.ok){
-      console.error('Formspree recusou a submissão:', response.status, await response.text());
-    }
+    const result = await response.json().catch(() => ({}));
+    if(!response.ok) throw new Error(result.error || 'Não foi possível enviar o relatório.');
   } catch(err) {
-    // não bloquear a experiência por falha de rede — o relatório desbloqueia na mesma
-    console.error('Formspree submission failed:', err);
+    errorEl.textContent = err.message || 'Não foi possível enviar o relatório. Tenta novamente.';
+    errorEl.style.display = 'block';
+    submitBtn.disabled = false;
+    submitBtn.textContent = 'Ver o meu Relatório Executivo';
+    return;
   }
 
   document.getElementById('emailGate').closest('.wrap').style.display = 'none';
