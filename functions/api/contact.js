@@ -1,80 +1,87 @@
-const CONTACT_API_URL = 'https://api.privuskuzola.pt/api/contact';
+const CONTACT_API_URL =
+  'https://api.privuskuzola.pt/api/contact';
+
+function jsonResponse(data, status) {
+  return new Response(JSON.stringify(data), {
+    status,
+    headers: {
+      'Content-Type': 'application/json; charset=UTF-8',
+      'Cache-Control': 'no-store'
+    }
+  });
+}
 
 export async function onRequest(context) {
-  const { request } = context;
+  const { request, env } = context;
 
   if (request.method !== 'POST') {
-    return new Response(
-      JSON.stringify({ error: 'Method not allowed' }),
-      {
-        status: 405,
-        headers: {
-          'content-type': 'application/json; charset=utf-8'
-        }
-      }
+    return jsonResponse(
+      { error: 'Method not allowed' },
+      405
+    );
+  }
+
+  if (!env.PRIA_API_SECRET) {
+    return jsonResponse(
+      { error: 'Serviço temporariamente indisponível.' },
+      503
+    );
+  }
+
+  const requestUrl = new URL(request.url);
+  const siteOrigin = requestUrl.origin;
+  const requestOrigin = request.headers.get('Origin') || '';
+
+  if (requestOrigin && requestOrigin !== siteOrigin) {
+    return jsonResponse(
+      { error: 'Origem não autorizada.' },
+      403
     );
   }
 
   const contentType =
-    request.headers.get('content-type') || '';
+    request.headers.get('Content-Type') || '';
 
   if (
     !contentType
       .toLowerCase()
       .includes('application/json')
   ) {
-    return new Response(
-      JSON.stringify({ error: 'Pedido inválido' }),
-      {
-        status: 415,
-        headers: {
-          'content-type':
-            'application/json; charset=utf-8'
-        }
-      }
+    return jsonResponse(
+      { error: 'Pedido inválido.' },
+      415
     );
   }
 
   const requestBody = await request.text();
 
   if (requestBody.length > 20000) {
-    return new Response(
-      JSON.stringify({
-        error: 'Pedido demasiado grande'
-      }),
-      {
-        status: 413,
-        headers: {
-          'content-type':
-            'application/json; charset=utf-8'
-        }
-      }
+    return jsonResponse(
+      { error: 'Pedido demasiado grande.' },
+      413
     );
   }
 
   try {
-    const upstream = await fetch(
-      CONTACT_API_URL,
-      {
-        method: 'POST',
-        headers: {
-          'content-type': 'application/json',
-          accept: 'application/json',
-          origin:
-            request.headers.get('origin') ||
-            new URL(request.url).origin
-        },
-        body: requestBody
-      }
-    );
+    const upstream = await fetch(CONTACT_API_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+        'Origin': siteOrigin,
+        'X-Privus-Internal-Secret':
+          env.PRIA_API_SECRET
+      },
+      body: requestBody
+    });
 
     return new Response(upstream.body, {
       status: upstream.status,
       headers: {
-        'content-type':
-          upstream.headers.get('content-type') ||
-          'application/json; charset=utf-8',
-        'cache-control': 'no-store'
+        'Content-Type':
+          upstream.headers.get('Content-Type') ||
+          'application/json; charset=UTF-8',
+        'Cache-Control': 'no-store'
       }
     });
   } catch (error) {
@@ -83,19 +90,12 @@ export async function onRequest(context) {
       error
     );
 
-    return new Response(
-      JSON.stringify({
-        error:
-          'Serviço temporariamente indisponível'
-      }),
+    return jsonResponse(
       {
-        status: 502,
-        headers: {
-          'content-type':
-            'application/json; charset=utf-8',
-          'cache-control': 'no-store'
-        }
-      }
+        error:
+          'Serviço temporariamente indisponível.'
+      },
+      502
     );
   }
 }
