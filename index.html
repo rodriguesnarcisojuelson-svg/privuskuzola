@@ -51,7 +51,9 @@
     padding: 1.2rem 4rem; background: transparent; transition: background 0.4s, backdrop-filter 0.4s;
   }
   nav.scrolled { background: rgba(13,27,42,0.95); backdrop-filter: blur(12px); }
-  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 500; color: var(--white); letter-spacing: 0.05em; }
+  .brand-link { display: inline-flex; align-items: center; flex-shrink: 0; }
+  .nav-logo-horizontal { width: 172px; height: auto; }
+  .nav-logo-symbol { display: none; width: 42px; height: 42px; border-radius: 10px; }
   .nav-links { display: flex; gap: 2.3rem; list-style: none; }
   .nav-links a {
     font-size: 0.76rem; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase;
@@ -242,10 +244,17 @@
     font-family: 'Outfit', sans-serif; transition: background 0.2s;
   }
   .form-submit:hover { background: var(--gold-l); }
+  .form-submit:disabled { cursor: wait; opacity: 0.7; }
+  .form-error {
+    display: none; margin-bottom: 1rem; padding: 0.85rem 1rem;
+    border: 1px solid rgba(217,122,108,0.55); color: #F0B0A7;
+    background: rgba(156,74,60,0.12); font-size: 0.78rem; line-height: 1.5;
+  }
+  .form-honeypot { position: absolute !important; left: -10000px !important; width: 1px !important; height: 1px !important; overflow: hidden !important; }
 
   footer { background: var(--navy); border-top: 1px solid rgba(255,255,255,0.06); padding: 3.5rem 4rem 2.5rem; }
   .footer-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 3rem; margin-bottom: 3rem; }
-  .footer-brand .nav-logo { font-size: 1.1rem; display: block; margin-bottom: 1rem; }
+  .footer-logo { width: min(285px, 100%); height: auto; margin-bottom: 1rem; }
   .footer-brand p { font-size: 0.78rem; color: rgba(255,255,255,0.35); line-height: 1.8; max-width: 280px; }
   .footer-socials { display: flex; gap: 1rem; margin-top: 1.4rem; }
   .footer-social { width: 34px; height: 34px; border: 1px solid rgba(255,255,255,0.1); display: flex; align-items: center; justify-content: center; font-size: 0.78rem; color: rgba(255,255,255,0.4); transition: border-color 0.2s, color 0.2s; }
@@ -257,14 +266,6 @@
   .footer-col ul li a:hover { color: var(--gold); }
   .footer-bottom { max-width: 1200px; margin: 0 auto; padding-top: 1.8rem; border-top: 1px solid rgba(255,255,255,0.06); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
   .footer-bottom p { font-size: 0.7rem; color: rgba(255,255,255,0.25); }
-
-  .whatsapp-btn {
-    position: fixed; bottom: 2rem; right: 1.5rem; z-index: 200; width: 52px; height: 52px; background: #25D366;
-    border-radius: 50%; display: flex; align-items: center; justify-content: center;
-    box-shadow: 0 4px 16px rgba(37,211,102,0.35); transition: transform 0.2s, box-shadow 0.2s;
-  }
-  .whatsapp-btn:hover { transform: scale(1.08); box-shadow: 0 6px 20px rgba(37,211,102,0.5); }
-  .whatsapp-btn svg { width: 28px; height: 28px; fill: white; }
 
   .cookie-banner {
     position: fixed; bottom: 0; left: 0; right: 0; z-index: 300;
@@ -285,6 +286,8 @@
 
   @media (max-width: 1024px) {
     nav { padding: 1.2rem 2rem; }
+    .nav-logo-horizontal { display: none; }
+    .nav-logo-symbol { display: block; }
     .nav-links { display: none; }
     .mobile-cta {
       display: inline-block; background: var(--gold); color: var(--navy);
@@ -316,6 +319,10 @@
     .footer-inner { grid-template-columns: 1fr 1fr; gap: 2rem; }
   }
   @media (max-width: 640px) {
+    nav { padding: 0.8rem 1rem; gap: 0.45rem; }
+    .mobile-cta { padding: 0.5rem 0.75rem; font-size: 0.64rem; }
+    .lang-selector { margin-left: 0; }
+    .lang-btn { padding: 0.3rem 0.35rem; }
     .problema-grid { grid-template-columns: 1fr; }
     .fw-step { flex: 1 1 100%; border-right: none; }
     .servicos-grid { grid-template-columns: 1fr; }
@@ -329,7 +336,10 @@
 <body>
 
 <nav id="nav">
-  <a href="#" class="nav-logo">Privus Kuzola</a>
+  <a href="#inicio" class="brand-link" aria-label="Privus Kuzola — início">
+    <img src="/logo-privus-horizontal.PNG" class="nav-logo-horizontal" alt="Privus — Consultoria Regulatória Digital" width="1200" height="360">
+    <img src="/privus-symbol.png" class="nav-logo-symbol" alt="Privus" width="512" height="512">
+  </a>
   <ul class="nav-links">
     <li><a id="t-nav-fw" href="#framework">Framework</a></li>
     <li><a id="t-nav-pria" href="#pria">PRIA</a></li>
@@ -590,7 +600,7 @@
       <h2 class="display" id="t-cnt-h2">Necessidades fora dos serviços standard?</h2>
       <p id="t-cnt-p">Trabalhamos com organizações com requisitos específicos. Descreva o seu projecto — respondemos em 48 horas úteis.</p>
       <div class="contacto-info">
-        <div class="contacto-item"><div class="contacto-item-icon">✉</div><div class="contacto-item-text"><strong>Email</strong><span>contacto@privuskuzola.pt</span></div></div>
+        <div class="contacto-item"><div class="contacto-item-icon">✉</div><div class="contacto-item-text"><strong>Email</strong><span><a href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a></span></div></div>
         <div class="contacto-item"><div class="contacto-item-icon">📱</div><div class="contacto-item-text"><strong>WhatsApp</strong><span>+351 936 246 971</span></div></div>
         <div class="contacto-item"><div class="contacto-item-icon">🌐</div><div class="contacto-item-text"><strong>Website</strong><span>privuskuzola.pt</span></div></div>
       </div>
@@ -599,7 +609,11 @@
       <div id="formSuccess" style="display:none; background:rgba(200,169,110,0.1); border:1px solid var(--gold); padding:2rem; text-align:center;">
         <p id="t-form-success" style="color:var(--gold-l); font-size:0.9rem;">Pedido enviado. Responderemos em 48 horas úteis.</p>
       </div>
-      <form action="https://formspree.io/f/xkoykrgr" method="POST" id="contactForm">
+      <form action="/api/contact" method="POST" id="contactForm">
+        <div class="form-honeypot" aria-hidden="true">
+          <label for="website">Não preencher este campo</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
         <div class="form-row">
           <div class="form-group"><label for="nome" id="t-f-nome">Nome *</label><input type="text" id="nome" name="nome" placeholder="João Silva" required></div>
           <div class="form-group"><label for="email" id="t-f-email">Email *</label><input type="email" id="email" name="email" placeholder="joao@empresa.pt" required></div>
@@ -629,6 +643,7 @@
           <input type="checkbox" id="privacidade" name="privacidade" required>
           <label for="privacidade" id="t-f-priv" data-allow-html>Aceito que os meus dados sejam utilizados para responder a este pedido, conforme a <a href="politica-privacidade.html">Política de Privacidade</a>.</label>
         </div>
+        <div id="formError" class="form-error" role="alert" aria-live="polite"></div>
         <button type="submit" class="form-submit" id="t-f-sub">Enviar pedido →</button>
       </form>
     </div>
@@ -638,7 +653,7 @@
 <footer>
   <div class="footer-inner">
     <div class="footer-brand">
-      <span class="nav-logo">Privus Kuzola</span>
+      <img src="/logo-privus-horizontal.PNG" class="footer-logo" alt="Privus — Consultoria Regulatória Digital" width="1200" height="360" loading="lazy">
       <p class="footer-tagline" id="t-ft-tag" style="font-size:0.68rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold);margin-bottom:0.8rem;">Regulatory Compliance &amp; Digital Governance</p>
       <p id="t-ft-p">Regulação inteligente para uma economia digital em transformação. RGPD · AI Act · NIS2 · DORA · ISO 27001/22301/37301.</p>
       <div class="footer-socials">
@@ -686,23 +701,58 @@
     contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
       const submitBtn = contactForm.querySelector('.form-submit');
+      const errorEl = document.getElementById('formError');
+      const language = document.getElementById('htmlRoot').getAttribute('lang') || 'pt-PT';
+      const shortLanguage = language.slice(0, 2);
+      const messages = {
+        pt: { sending: 'A enviar…', error: 'Não foi possível enviar. Tenta novamente ou escreve para contacto@privuskuzola.pt.' },
+        en: { sending: 'Sending…', error: 'The request could not be sent. Please try again or email contacto@privuskuzola.pt.' },
+        es: { sending: 'Enviando…', error: 'No fue posible enviar la solicitud. Inténtalo de nuevo o escribe a contacto@privuskuzola.pt.' }
+      };
+      const message = messages[shortLanguage] || messages.pt;
+      const originalLabel = submitBtn.textContent;
+
+      errorEl.style.display = 'none';
+      errorEl.textContent = '';
       submitBtn.disabled = true;
+      submitBtn.textContent = message.sending;
+
+      const payload = {
+        nome: contactForm.nome.value.trim(),
+        email: contactForm.email.value.trim(),
+        empresa: contactForm.empresa.value.trim(),
+        servico: contactForm.servico.value,
+        ja_fez_pria: contactForm.ja_fez_pria.value,
+        descricao: contactForm.descricao.value.trim(),
+        privacidade: contactForm.privacidade.checked,
+        website: contactForm.website.value,
+        language,
+        source: 'website-contact-form'
+      };
+
       try {
         const response = await fetch(contactForm.action, {
           method: 'POST',
-          body: new FormData(contactForm),
-          headers: { 'Accept': 'application/json' },
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify(payload)
         });
+
+        const result = await response.json().catch(() => ({}));
+
         if (response.ok) {
           contactForm.style.display = 'none';
           document.getElementById('formSuccess').style.display = 'block';
         } else {
-          submitBtn.disabled = false;
-          alert('Não foi possível enviar. Tenta novamente ou escreve para contacto@privuskuzola.pt.');
+          throw new Error(result.error || message.error);
         }
       } catch (err) {
+        errorEl.textContent = err.message || message.error;
+        errorEl.style.display = 'block';
         submitBtn.disabled = false;
-        alert('Não foi possível enviar. Tenta novamente ou escreve para contacto@privuskuzola.pt.');
+        submitBtn.textContent = originalLabel;
       }
     });
   }
@@ -920,20 +970,8 @@ function setLang(lang) {
     const el = document.getElementById(id);
     if (el) el.placeholder = val;
   }
-  // WhatsApp pre-filled message
-  const wa = document.getElementById('whatsappBtn');
-  if (wa && data['wa-text']) {
-    wa.href = 'https://wa.me/351936246971?text=' + encodeURIComponent(data['wa-text']);
-  }
 }
 </script>
-
-<a href="https://wa.me/351936246971?text=Ol%C3%A1%2C%20tenho%20uma%20quest%C3%A3o%20sobre%20os%20servi%C3%A7os%20da%20Privus%20Kuzola."
-   id="whatsappBtn" class="whatsapp-btn" target="_blank" rel="noopener" aria-label="WhatsApp">
-  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-  </svg>
-</a>
 
 <div id="cookieBanner" class="cookie-banner" style="display:none;">
   <p id="t-cookie-text">Utilizamos cookies essenciais ao funcionamento do site. Com o seu consentimento, utilizamos também cookies analíticos (Google Analytics) e de acompanhamento de newsletter (MailerLite), para compreender a utilização do site e melhorar a comunicação. Pode alterar a sua decisão a qualquer momento no rodapé.</p>
@@ -1023,6 +1061,8 @@ function setLang(lang) {
   });
 })();
 </script>
+
+<script src="/assistente-privus.js" defer></script>
 
 </body>
 </html>
