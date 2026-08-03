@@ -5,7 +5,7 @@
   window.__PRIVUS_ASSISTANT_LOADED__ = true;
 
   const CONFIG = {
-    symbolUrl: "/privus-symbol.png",
+    symbolUrl: "/privus-symbol.PNG",
     priaUrl: "/pria-engine-prototype",
     bookingUrl: "/agendar",
     email: "contacto@privuskuzola.pt",
