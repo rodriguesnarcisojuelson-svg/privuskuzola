@@ -6,8 +6,8 @@
 
   const CONFIG = {
     symbolUrl: "/privus-symbol.PNG",
-    priaUrl: "/pria-engine-prototype",
-    bookingUrl: "/agendar",
+    priaUrl: "/pria-planos.html",
+    bookingUrl: "https://privuskuzola.pt/#contacto",
     email: "contacto@privuskuzola.pt",
     whatsappUrl:
       "https://wa.me/351936246971?text=" +
