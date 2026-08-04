@@ -1,5 +1,5 @@
+// Redeployment após configuração do PRIA_API_SECRETconst CONTACT_API_URL = 'https://api.privuskuzola.pt/api/contact';
 const CONTACT_API_URL = 'https://api.privuskuzola.pt/api/contact';
-
 export async function onRequest(context) {
   const { request, env } = context;
 
