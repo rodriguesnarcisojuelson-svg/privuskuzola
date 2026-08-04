@@ -1,4 +1,4 @@
-const CONTACT_API_URL = 'https://api.privuskuzola.pt/api/contact';
+const CONTACT_API_yURL = 'https://api.privuskuzola.pt/api/contact';
 
 export async function onRequest(context) {
   const { request, env } = context;
