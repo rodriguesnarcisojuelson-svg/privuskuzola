@@ -1,101 +1,115 @@
-const CONTACT_API_URL =
-  'https://api.privuskuzola.pt/api/contact';
-
-function jsonResponse(data, status) {
-  return new Response(JSON.stringify(data), {
-    status,
-    headers: {
-      'Content-Type': 'application/json; charset=UTF-8',
-      'Cache-Control': 'no-store'
-    }
-  });
-}
+const CONTACT_API_URL = 'https://api.privuskuzola.pt/api/contact';
 
 export async function onRequest(context) {
   const { request, env } = context;
 
   if (request.method !== 'POST') {
-    return jsonResponse(
-      { error: 'Method not allowed' },
-      405
-    );
-  }
-
-  if (!env.PRIA_API_SECRET) {
-    return jsonResponse(
-      { error: 'Serviço temporariamente indisponível.' },
-      503
-    );
-  }
-
-  const requestUrl = new URL(request.url);
-  const siteOrigin = requestUrl.origin;
-  const requestOrigin = request.headers.get('Origin') || '';
-
-  if (requestOrigin && requestOrigin !== siteOrigin) {
-    return jsonResponse(
-      { error: 'Origem não autorizada.' },
-      403
+    return new Response(
+      JSON.stringify({ error: 'Method not allowed' }),
+      {
+        status: 405,
+        headers: {
+          'content-type': 'application/json; charset=utf-8'
+        }
+      }
     );
   }
 
   const contentType =
-    request.headers.get('Content-Type') || '';
+    request.headers.get('content-type') || '';
 
   if (
     !contentType
       .toLowerCase()
       .includes('application/json')
   ) {
-    return jsonResponse(
-      { error: 'Pedido inválido.' },
-      415
+    return new Response(
+      JSON.stringify({
+        error: 'Pedido inválido'
+      }),
+      {
+        status: 415,
+        headers: {
+          'content-type': 'application/json; charset=utf-8'
+        }
+      }
     );
   }
 
-  const requestBody = await request.text();
+  const requestBody =
+    await request.text();
 
   if (requestBody.length > 20000) {
-    return jsonResponse(
-      { error: 'Pedido demasiado grande.' },
-      413
+    return new Response(
+      JSON.stringify({
+        error: 'Pedido demasiado grande'
+      }),
+      {
+        status: 413,
+        headers: {
+          'content-type': 'application/json; charset=utf-8'
+        }
+      }
+    );
+  }
+
+  if (!env.PRIA_API_SECRET) {
+    return new Response(
+      JSON.stringify({
+        error: 'Serviço temporariamente indisponível'
+      }),
+      {
+        status: 503,
+        headers: {
+          'content-type': 'application/json; charset=utf-8',
+          'cache-control': 'no-store'
+        }
+      }
     );
   }
 
   try {
-    const upstream = await fetch(CONTACT_API_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-        'Origin': siteOrigin,
-        'X-Privus-Internal-Secret':
-          env.PRIA_API_SECRET
-      },
-      body: requestBody
-    });
+    const upstream =
+      await fetch(CONTACT_API_URL, {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          'accept': 'application/json',
+          'X-Privus-Internal-Secret':
+            env.PRIA_API_SECRET
+        },
+        body: requestBody
+      });
 
-    return new Response(upstream.body, {
-      status: upstream.status,
-      headers: {
-        'Content-Type':
-          upstream.headers.get('Content-Type') ||
-          'application/json; charset=UTF-8',
-        'Cache-Control': 'no-store'
+    return new Response(
+      upstream.body,
+      {
+        status: upstream.status,
+        headers: {
+          'content-type':
+            upstream.headers.get('content-type') ||
+            'application/json; charset=utf-8',
+          'cache-control': 'no-store'
+        }
       }
-    });
+    );
   } catch (error) {
     console.error(
       'Contact API proxy failed:',
       error
     );
 
-    return jsonResponse(
+    return new Response(
+      JSON.stringify({
+        error: 'Serviço temporariamente indisponível'
+      }),
       {
-        error:
-          'Serviço temporariamente indisponível.'
-      },
-      502
+        status: 502,
+        headers: {
+          'content-type': 'application/json; charset=utf-8',
+          'cache-control': 'no-store'
+        }
+      }
     );
   }
 }
