@@ -1,15 +1,20 @@
-// Redeployment após configuração do PRIA_API_SECRETconst CONTACT_API_URL = 'https://api.privuskuzola.pt/api/contact';
-const CONTACT_API_URL = 'https://api.privuskuzola.pt/api/contact';
+const CONTACT_API_URL =
+  'https://api.privuskuzola.pt/api/contact';
+
 export async function onRequest(context) {
-  const { request, env } = context;
+  const { request } = context;
 
   if (request.method !== 'POST') {
     return new Response(
-      JSON.stringify({ error: 'Method not allowed' }),
+      JSON.stringify({
+        error: 'Method not allowed'
+      }),
       {
         status: 405,
         headers: {
-          'content-type': 'application/json; charset=utf-8'
+          'content-type':
+            'application/json; charset=utf-8',
+          'cache-control': 'no-store'
         }
       }
     );
@@ -30,14 +35,15 @@ export async function onRequest(context) {
       {
         status: 415,
         headers: {
-          'content-type': 'application/json; charset=utf-8'
+          'content-type':
+            'application/json; charset=utf-8',
+          'cache-control': 'no-store'
         }
       }
     );
   }
 
-  const requestBody =
-    await request.text();
+  const requestBody = await request.text();
 
   if (requestBody.length > 20000) {
     return new Response(
@@ -47,21 +53,8 @@ export async function onRequest(context) {
       {
         status: 413,
         headers: {
-          'content-type': 'application/json; charset=utf-8'
-        }
-      }
-    );
-  }
-
-  if (!env.PRIA_API_SECRET) {
-    return new Response(
-      JSON.stringify({
-        error: 'Serviço temporariamente indisponível'
-      }),
-      {
-        status: 503,
-        headers: {
-          'content-type': 'application/json; charset=utf-8',
+          'content-type':
+            'application/json; charset=utf-8',
           'cache-control': 'no-store'
         }
       }
@@ -69,17 +62,17 @@ export async function onRequest(context) {
   }
 
   try {
-    const upstream =
-      await fetch(CONTACT_API_URL, {
+    const upstream = await fetch(
+      CONTACT_API_URL,
+      {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
-          'accept': 'application/json',
-          'X-Privus-Internal-Secret':
-            env.PRIA_API_SECRET
+          accept: 'application/json'
         },
         body: requestBody
-      });
+      }
+    );
 
     return new Response(
       upstream.body,
@@ -87,7 +80,9 @@ export async function onRequest(context) {
         status: upstream.status,
         headers: {
           'content-type':
-            upstream.headers.get('content-type') ||
+            upstream.headers.get(
+              'content-type'
+            ) ||
             'application/json; charset=utf-8',
           'cache-control': 'no-store'
         }
@@ -101,12 +96,14 @@ export async function onRequest(context) {
 
     return new Response(
       JSON.stringify({
-        error: 'Serviço temporariamente indisponível'
+        error:
+          'Serviço temporariamente indisponível'
       }),
       {
         status: 502,
         headers: {
-          'content-type': 'application/json; charset=utf-8',
+          'content-type':
+            'application/json; charset=utf-8',
           'cache-control': 'no-store'
         }
       }
