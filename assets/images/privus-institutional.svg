@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" role="img" aria-labelledby="title desc">
+  <title id="title">Arquitetura regulatória Privus</title>
+  <desc id="desc">Composição abstrata institucional em azul, dourado e creme, representando estrutura, evidência e continuidade.</desc>
+  <rect width="800" height="460" fill="#0D1B2A"/>
+  <path d="M0 368L238 130l164 164L696 0h104v460H0z" fill="#142b40"/>
+  <g fill="none" stroke="#C8A96E" stroke-width="2" opacity=".86">
+    <path d="M94 354L330 118l155 155L684 74"/>
+    <path d="M94 400L330 164l155 155L730 74" opacity=".45"/>
+    <rect x="330" y="118" width="220" height="220" transform="rotate(45 440 228)"/>
+  </g>
+  <g fill="#F0EBE0">
+    <circle cx="94" cy="354" r="7"/>
+    <circle cx="330" cy="118" r="7"/>
+    <circle cx="485" cy="273" r="7"/>
+    <circle cx="684" cy="74" r="7"/>
+  </g>
+  <text x="58" y="72" fill="#C8A96E" font-family="Arial,sans-serif" font-size="13" font-weight="600" letter-spacing="4">PRIVUS · REGULATORY ARCHITECTURE</text>
+  <text x="58" y="108" fill="#F0EBE0" font-family="Georgia,serif" font-size="29">Decisão. Evidência. Continuidade.</text>
+</svg>
