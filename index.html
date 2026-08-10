@@ -3,81 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="author" content="Privus Kuzola">
-<meta name="theme-color" content="#0D1B2A">
 <meta name="description" content="Regulação inteligente para uma economia digital em transformação. RGPD, AI Act, NIS2, DORA, ISO 27001/22301/37301. Diagnóstico PRIA, implementação e conformidade contínua.">
 <title>Privus Kuzola — Regulação Inteligente</title>
-<link rel="canonical" href="https://privuskuzola.pt/">
-<link rel="sitemap" type="application/xml" href="https://privuskuzola.pt/sitemap.xml">
-<link rel="alternate" type="text/plain" href="https://privuskuzola.pt/llms.txt" title="Privus Kuzola — resumo para sistemas de IA">
-<meta property="og:type" content="website">
-<meta property="og:locale" content="pt_PT">
-<meta property="og:site_name" content="Privus Kuzola">
-<meta property="og:title" content="Privus Kuzola — Regulação Inteligente">
-<meta property="og:description" content="Consultoria regulatória digital em RGPD, AI Act, NIS2, DORA e normas ISO. Diagnóstico PRIA, implementação e conformidade contínua.">
-<meta property="og:url" content="https://privuskuzola.pt/">
-<meta property="og:image" content="https://privuskuzola.pt/logo-privus-horizontal.PNG">
-<meta property="og:image:alt" content="Privus — Consultoria Regulatória Digital">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Privus Kuzola — Regulação Inteligente">
-<meta name="twitter:description" content="Consultoria regulatória digital em RGPD, AI Act, NIS2, DORA e normas ISO.">
-<meta name="twitter:image" content="https://privuskuzola.pt/logo-privus-horizontal.PNG">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@graph": [
-    {
-      "@type": "Organization",
-      "@id": "https://privuskuzola.pt/#organization",
-      "name": "Privus Kuzola",
-      "alternateName": "Privus",
-      "url": "https://privuskuzola.pt/",
-      "logo": "https://privuskuzola.pt/logo-privus-horizontal.PNG",
-      "email": "contacto@privuskuzola.pt",
-      "telephone": "+351936246971",
-      "description": "Consultoria regulatória digital em proteção de dados, inteligência artificial, cibersegurança, resiliência operacional e sistemas de gestão.",
-      "sameAs": [
-        "https://www.linkedin.com/company/privus-kuzola/",
-        "https://www.instagram.com/privuskuzola"
-      ],
-      "knowsAbout": [
-        "RGPD",
-        "AI Act",
-        "NIS2",
-        "DORA",
-        "ISO 27001",
-        "ISO 22301",
-        "ISO 37301",
-        "Governança digital",
-        "Compliance regulatório"
-      ]
-    },
-    {
-      "@type": "WebSite",
-      "@id": "https://privuskuzola.pt/#website",
-      "url": "https://privuskuzola.pt/",
-      "name": "Privus Kuzola",
-      "inLanguage": ["pt-PT", "en", "es"],
-      "publisher": {
-        "@id": "https://privuskuzola.pt/#organization"
-      }
-    },
-    {
-      "@type": "Service",
-      "@id": "https://privuskuzola.pt/#pria-service",
-      "name": "PRIA — Privus Regulatory Impact Assessment",
-      "serviceType": "Diagnóstico de maturidade regulatória",
-      "provider": {
-        "@id": "https://privuskuzola.pt/#organization"
-      },
-      "url": "https://privuskuzola.pt/pria-planos.html",
-      "description": "Diagnóstico estruturado da maturidade regulatória da organização, com scoring, riscos, prioridades e roadmap.",
-      "areaServed": ["Portugal", "European Union", "Angola"]
-    }
-  ]
-}
-</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -228,7 +155,7 @@
 
   .insights { padding: 8rem 4rem; background: var(--cream-d); }
   .insights-inner { max-width: 1200px; margin: 0 auto; }
-  .insights-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
+  .insights-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
   .insight-card { background: var(--navy); padding: 3rem; display: flex; flex-direction: column; transition: transform 0.3s, box-shadow 0.3s; }
   .insight-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(13,27,42,0.18); }
   .insight-edition { font-size: 0.62rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.6rem; }
@@ -240,15 +167,9 @@
   .insight-card.upcoming { background: transparent; border: 1px dashed rgba(13,27,42,0.22); }
   .insight-card.upcoming .insight-edition { color: var(--grey); }
   .insight-card.upcoming .insight-theme { color: rgba(13,27,42,0.35); }
-  .insight-card.upcoming h3 { color: var(--navy); opacity: 0.65; font-size: 1.4rem; }
+  .insight-card.upcoming h3 { color: var(--navy); opacity: 0.45; font-size: 1.4rem; }
   .insight-card.upcoming > p { color: var(--grey); }
   .insight-card.upcoming:hover { transform: none; box-shadow: none; }
-  .insight-status {
-    display: inline-block; align-self: flex-start; margin-top: auto;
-    font-size: 0.66rem; font-weight: 600; letter-spacing: 0.14em;
-    text-transform: uppercase; color: var(--navy);
-    border: 1px solid rgba(13,27,42,0.22); padding: 0.72rem 1.05rem;
-  }
 
   .podcast-strip { background: var(--navy); padding: 2.2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
   .podcast-info { display: flex; align-items: center; gap: 1.6rem; }
@@ -417,7 +338,7 @@
 <nav id="nav">
   <a href="#inicio" class="brand-link" aria-label="Privus Kuzola — início">
     <img src="/logo-privus-horizontal.PNG" class="nav-logo-horizontal" alt="Privus — Consultoria Regulatória Digital" width="1200" height="360">
-    <img src="/privus-symbol.PNG" class="nav-logo-symbol" alt="Privus" width="512" height="512">
+    <img src="/privus-symbol.png" class="nav-logo-symbol" alt="Privus" width="512" height="512">
   </a>
   <ul class="nav-links">
     <li><a id="t-nav-fw" href="#framework">Framework</a></li>
@@ -591,33 +512,21 @@
       </div>
       <p id="t-ins-p">Publicação técnica mensal da Privus, baseada em investigação própria. Todos os meses, uma análise de um tema regulatório — com dados das autoridades, fontes verificadas e implicações práticas.</p>
     </div>
-
     <div class="insights-grid">
       <div class="insight-card">
         <div class="insight-edition" id="t-ins-e1-ed">Nº 1 · Julho 2026</div>
-        <div class="insight-theme" id="t-ins-e1-theme">RGPD · Enforcement · Portugal</div>
+        <div class="insight-theme">RGPD · Enforcement · Portugal</div>
         <h3 id="t-ins-e1-h">O colapso silencioso da fiscalização CNPD</h3>
         <p id="t-ins-e1-p">2 coimas em 2025 contra 90 em 2023. 3.201 processos abertos — o número mais alto de sempre.</p>
         <a href="privus-month-insights-julho-2026.pdf" class="insight-cta" target="_blank" rel="noopener" id="t-ins-e1-cta">Descarregar PDF →</a>
       </div>
-
-      <div class="insight-card">
-        <div class="insight-edition" id="t-ins-e2-ed">Nº 2 · Agosto 2026</div>
-        <div class="insight-theme" id="t-ins-e2-theme">AI Act · Digital Omnibus · RGPD</div>
-        <h3 id="t-ins-e2-h">AI Act + RGPD: O que o Digital Omnibus adiou e o que já vigora</h3>
-        <p id="t-ins-e2-p">O Omnibus alterou prazos e formalidades, mas não suspendeu o AI Act. A análise distingue o que foi adiado das obrigações que já produzem efeitos.</p>
-        <a href="privus-month-insights-agosto-2026.pdf" class="insight-cta" target="_blank" rel="noopener" id="t-ins-e2-cta">Descarregar PDF →</a>
-      </div>
-
       <div class="insight-card upcoming">
-        <div class="insight-edition" id="t-ins-e3-ed">Nº 3 · Setembro 2026</div>
-        <div class="insight-theme" id="t-ins-e3-theme">RGPD · Continuidade de negócio · ISO 22301</div>
-        <h3 id="t-ins-e3-h">Continuidade de negócio: a obrigação que o RGPD pressupõe e a ISO 22301 formaliza</h3>
-        <p id="t-ins-e3-p">Uma análise da disponibilidade, resiliência e recuperação exigidas pelo RGPD e da forma como a ISO 22301 as transforma num sistema estruturado de continuidade.</p>
-        <span class="insight-status" id="t-ins-e3-status">Em preparação</span>
+        <div class="insight-edition" id="t-ins-e2-ed">Nº 2 · Agosto 2026</div>
+        <div class="insight-theme">AI Act · Obrigações · EU</div>
+        <h3 id="t-ins-e2-h">Em preparação</h3>
+        <p id="t-ins-e2-p">A próxima edição analisa o AI Act e as obrigações já em vigor para empresas portuguesas.</p>
       </div>
     </div>
-
     <div class="podcast-strip">
       <div class="podcast-info">
         <div class="podcast-icon">
@@ -630,13 +539,12 @@
       </div>
       <div class="podcast-soon" id="t-pod-soon">Brevemente · Spotify e YouTube</div>
     </div>
-
     <div class="newsletter-strip">
       <div class="newsletter-text">
         <h4 id="t-nl-h">Subscrever a newsletter</h4>
         <p id="t-nl-p">Recebe o Privus Month Insights e os episódios do podcast diretamente por email, assim que saírem.</p>
       </div>
-      <a href="https://preview.mailerlite.io/forms/2524395/193645045269661519/share" target="_blank" rel="noopener" class="newsletter-btn" id="t-nl-btn">Subscrever →</a>
+      <a href="https://preview.mailerlite.io/forms/2524395/193645045269661519/share" target="_blank" class="newsletter-btn" id="t-nl-btn">Subscrever →</a>
     </div>
   </div>
 </section>
@@ -848,7 +756,6 @@
       }
     });
   }
-
   document.querySelectorAll('a[href^="#"]').forEach(a => {
     a.addEventListener('click', function(e){
       const href = this.getAttribute('href');
@@ -897,14 +804,9 @@ const T = {
     'sv4h':'Formação','sv4p':'Capacitação de equipas, moldada aos gaps concretos que o PRIA identificou — nunca um catálogo genérico.','sv4cta':'Falar connosco →',
     'ins-ey':'Privus Month Insights','ins-h2':'Análise regulatória mensal.\nDados primários. Sem ruído.',
     'ins-p':'Todos os meses, uma análise técnica de um tema regulatório — com dados das autoridades, fontes verificadas e implicações práticas.',
-    'ins-e1-ed':'Nº 1 · Julho 2026','ins-e1-theme':'RGPD · Enforcement · Portugal','ins-e1-h':'O colapso silencioso da fiscalização CNPD',
+    'ins-e1-ed':'Nº 1 · Julho 2026','ins-e1-h':'O colapso silencioso da fiscalização CNPD',
     'ins-e1-p':'2 coimas em 2025 contra 90 em 2023. 3.201 processos abertos — o número mais alto de sempre.','ins-e1-cta':'Descarregar PDF →',
-    'ins-e2-ed':'Nº 2 · Agosto 2026','ins-e2-theme':'AI Act · Digital Omnibus · RGPD',
-    'ins-e2-h':'AI Act + RGPD: O que o Digital Omnibus adiou e o que já vigora',
-    'ins-e2-p':'O Omnibus alterou prazos e formalidades, mas não suspendeu o AI Act. A análise distingue o que foi adiado das obrigações que já produzem efeitos.','ins-e2-cta':'Descarregar PDF →',
-    'ins-e3-ed':'Nº 3 · Setembro 2026','ins-e3-theme':'RGPD · Continuidade de negócio · ISO 22301',
-    'ins-e3-h':'Continuidade de negócio: a obrigação que o RGPD pressupõe e a ISO 22301 formaliza',
-    'ins-e3-p':'Uma análise da disponibilidade, resiliência e recuperação exigidas pelo RGPD e da forma como a ISO 22301 as transforma num sistema estruturado de continuidade.','ins-e3-status':'Em preparação',
+    'ins-e2-ed':'Nº 2 · Agosto 2026','ins-e2-h':'Em preparação','ins-e2-p':'A próxima edição analisa o AI Act e as obrigações já em vigor para empresas portuguesas.',
     'pod-h':'Privus Podcast','pod-p':'Conversas sobre regulação, tecnologia e transformação digital.','pod-soon':'Brevemente · Spotify e YouTube',
     'nl-h':'Subscrever a newsletter','nl-p':'Recebe o Privus Month Insights e os episódios do podcast diretamente por email, assim que saírem.','nl-btn':'Subscrever →',
     'sob-ey':'Sobre','sob-h2':'Conformidade regulatória construída para durar.',
@@ -960,14 +862,9 @@ const T = {
     'sv4h':'Training','sv4p':'Team capability building, shaped by the specific gaps PRIA identified.','sv4cta':'Talk to us →',
     'ins-ey':'Privus Month Insights','ins-h2':'Monthly regulatory analysis.\nPrimary data. No noise.',
     'ins-p':'Every month, a technical analysis of one regulatory topic.',
-    'ins-e1-ed':'No. 1 · July 2026','ins-e1-theme':'GDPR · Enforcement · Portugal','ins-e1-h':'The silent collapse of CNPD enforcement',
+    'ins-e1-ed':'No. 1 · July 2026','ins-e1-h':'The silent collapse of CNPD enforcement',
     'ins-e1-p':'2 fines in 2025 versus 90 in 2023. 3,201 cases opened — the highest number ever.','ins-e1-cta':'Download PDF →',
-    'ins-e2-ed':'No. 2 · August 2026','ins-e2-theme':'AI Act · Digital Omnibus · GDPR',
-    'ins-e2-h':'AI Act + GDPR: What the Digital Omnibus postponed and what already applies',
-    'ins-e2-p':'The Omnibus changed deadlines and formalities, but it did not suspend the AI Act. This analysis separates postponed duties from obligations already in force.','ins-e2-cta':'Download PDF →',
-    'ins-e3-ed':'No. 3 · September 2026','ins-e3-theme':'GDPR · Business continuity · ISO 22301',
-    'ins-e3-h':'Business continuity: the obligation implied by the GDPR and formalised by ISO 22301',
-    'ins-e3-p':'An analysis of the availability, resilience and recovery required by the GDPR and how ISO 22301 turns them into a structured continuity management system.','ins-e3-status':'In preparation',
+    'ins-e2-ed':'No. 2 · August 2026','ins-e2-h':'In preparation','ins-e2-p':'The next edition analyses the AI Act and obligations already in force.',
     'pod-h':'Privus Podcast','pod-p':'Conversations about regulation, technology and digital transformation.','pod-soon':'Coming soon · Spotify and YouTube',
     'nl-h':'Subscribe to the newsletter','nl-p':'Get Privus Month Insights and podcast episodes straight to your email, as soon as they\'re out.','nl-btn':'Subscribe →',
     'sob-ey':'About','sob-h2':'Regulatory compliance built to last.',
@@ -1023,14 +920,9 @@ const T = {
     'sv4h':'Formación','sv4p':'Capacitación de equipos, adaptada a los gaps identificados.','sv4cta':'Hablar con nosotros →',
     'ins-ey':'Privus Month Insights','ins-h2':'Análisis regulatorio mensual.\nDatos primarios. Sin ruido.',
     'ins-p':'Cada mes, un análisis técnico de un tema regulatorio.',
-    'ins-e1-ed':'Nº 1 · Julio 2026','ins-e1-theme':'RGPD · Supervisión · Portugal','ins-e1-h':'El colapso silencioso de la fiscalización de la CNPD',
+    'ins-e1-ed':'Nº 1 · Julio 2026','ins-e1-h':'El colapso silencioso de la fiscalización de la CNPD',
     'ins-e1-p':'2 multas en 2025 frente a 90 en 2023. 3.201 procesos abiertos.','ins-e1-cta':'Descargar PDF →',
-    'ins-e2-ed':'Nº 2 · Agosto 2026','ins-e2-theme':'AI Act · Digital Omnibus · RGPD',
-    'ins-e2-h':'AI Act + RGPD: Lo que el Digital Omnibus aplazó y lo que ya está vigente',
-    'ins-e2-p':'El Omnibus modificó plazos y formalidades, pero no suspendió el AI Act. El análisis distingue lo aplazado de las obligaciones que ya producen efectos.','ins-e2-cta':'Descargar PDF →',
-    'ins-e3-ed':'Nº 3 · Septiembre 2026','ins-e3-theme':'RGPD · Continuidad de negocio · ISO 22301',
-    'ins-e3-h':'Continuidad de negocio: la obligación que el RGPD presupone y la ISO 22301 formaliza',
-    'ins-e3-p':'Un análisis de la disponibilidad, resiliencia y recuperación exigidas por el RGPD y de cómo la ISO 22301 las convierte en un sistema estructurado de continuidad.','ins-e3-status':'En preparación',
+    'ins-e2-ed':'Nº 2 · Agosto 2026','ins-e2-h':'En preparación','ins-e2-p':'La próxima edición analiza el AI Act.',
     'pod-h':'Privus Podcast','pod-p':'Conversaciones sobre regulación, tecnología y transformación digital.','pod-soon':'Próximamente · Spotify y YouTube',
     'nl-h':'Suscribirse a la newsletter','nl-p':'Recibe el Privus Month Insights y los episodios del podcast directamente por email, en cuanto salgan.','nl-btn':'Suscribirse →',
     'sob-ey':'Sobre nosotros','sob-h2':'Cumplimiento normativo construido para durar.',
@@ -1064,9 +956,7 @@ function setLang(lang) {
     btn.classList.toggle('active', active);
     btn.setAttribute('aria-pressed', String(active));
   });
-
   const data = T[lang];
-
   for (const [key, val] of Object.entries(data)) {
     const el = document.getElementById('t-' + key);
     if (el) {
@@ -1074,7 +964,7 @@ function setLang(lang) {
       else el.textContent = val;
     }
   }
-
+  // placeholders
   const ph = data.placeholders || {};
   for (const [id, val] of Object.entries(ph)) {
     const el = document.getElementById(id);
@@ -1097,7 +987,7 @@ function setLang(lang) {
   var GA_MEASUREMENT_ID = 'G-36GJVCQL9Y';
 
   function loadGA(){
-    if (GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return;
+    if (GA_MEASUREMENT_ID.indexOf('XXXX') !== -1) return; // placeholder ainda não substituído
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
@@ -1131,21 +1021,19 @@ function setLang(lang) {
     if (!raw) return null;
     try {
       var data = JSON.parse(raw);
-      if (Date.now() - data.date > THIRTEEN_MONTHS_MS) return null;
+      if (Date.now() - data.date > THIRTEEN_MONTHS_MS) return null; // expirado, voltar a perguntar
       return data.value;
     } catch(e) { return null; }
   }
-
   function setStoredConsent(value){
     localStorage.setItem(CONSENT_KEY, JSON.stringify({ value: value, date: Date.now() }));
   }
 
   var consent = getStoredConsent();
-
   if (consent === 'accepted') {
     loadConsentedScripts();
   } else if (consent === 'rejected') {
-    // Nada a carregar.
+    // nada a carregar
   } else {
     document.addEventListener('DOMContentLoaded', showBanner);
   }
@@ -1156,12 +1044,10 @@ function setLang(lang) {
       loadConsentedScripts();
       hideBanner();
     });
-
     document.getElementById('cookieReject').addEventListener('click', function(){
       setStoredConsent('rejected');
       hideBanner();
     });
-
     var manageLink = document.getElementById('manageCookies');
     if (manageLink) {
       manageLink.addEventListener('click', function(e){
@@ -1169,7 +1055,6 @@ function setLang(lang) {
         showBanner();
       });
     }
-
     if (window.location.hash === '#gerir-cookies') {
       showBanner();
     }
@@ -1177,7 +1062,7 @@ function setLang(lang) {
 })();
 </script>
 
-<script src="/assistente-privus.js?v=4" defer></script>
+<script src="/assistente-privus.js" defer></script>
 
 </body>
 </html>
