@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0D1B2A"/>
+  <path d="M800 0h400v630H570z" fill="#142B40"/>
+  <g fill="none" stroke="#C8A96E" stroke-width="3" opacity=".65">
+    <path d="M780 520V340h90V250h90V120h90"/>
+    <circle cx="1050" cy="120" r="70"/>
+  </g>
+  <text x="72" y="82" fill="#C8A96E" font-family="Arial,sans-serif" font-size="20" font-weight="600" letter-spacing="5">PRIVUS MONTH INSIGHTS · Nº 1</text>
+  <text x="72" y="155" fill="#F0EBE0" font-family="Georgia,serif" font-size="60">O colapso silencioso</text>
+  <text x="72" y="225" fill="#F0EBE0" font-family="Georgia,serif" font-size="60">da fiscalização CNPD</text>
+  <text x="72" y="305" fill="#AEB6BF" font-family="Arial,sans-serif" font-size="24">RGPD · ENFORCEMENT · PORTUGAL</text>
+  <text x="72" y="545" fill="#C8A96E" font-family="Arial,sans-serif" font-size="22">privuskuzola.pt</text>
+  <text x="1080" y="545" fill="#F0EBE0" text-anchor="end" font-family="Arial,sans-serif" font-size="22">JULHO 2026</text>
+</svg>
