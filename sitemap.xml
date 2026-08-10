@@ -7,20 +7,44 @@
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://privuskuzola.pt/pria-planos.html</loc>
+    <loc>https://privuskuzola.pt/pria-planos</loc>
     <lastmod>2026-08-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://privuskuzola.pt/politica-privacidade.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://privuskuzola.pt/insights/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://privuskuzola.pt/insights/2026/08/ai-act-rgpd-digital-omnibus/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://privuskuzola.pt/insights/2026/07/colapso-silencioso-fiscalizacao-cnpd/</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://privuskuzola.pt/politica-privacidade</loc>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://privuskuzola.pt/politica-cookies.html</loc>
-    <lastmod>2026-08-03</lastmod>
+    <loc>https://privuskuzola.pt/politica-cookies</loc>
+    <lastmod>2026-08-10</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://privuskuzola.pt/termos-condicoes</loc>
+    <lastmod>2026-08-10</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
