@@ -31,8 +31,17 @@
 ## Conteúdo público
 
 - Página institucional: https://privuskuzola.pt/
-- Planos públicos do PRIA: https://privuskuzola.pt/pria-planos.html
-- Privus Month Insights: análises regulatórias mensais publicadas na secção Insights do website.
+- Planos públicos do PRIA: https://privuskuzola.pt/pria-planos
+- Arquivo Privus Month Insights: https://privuskuzola.pt/insights/
+- Nº 2 — AI Act + RGPD: https://privuskuzola.pt/insights/2026/08/ai-act-rgpd-digital-omnibus/
+- Nº 1 — Fiscalização CNPD: https://privuskuzola.pt/insights/2026/07/colapso-silencioso-fiscalizacao-cnpd/
+
+## Padrão editorial
+
+- Os Insights distinguem factos, análise e implicações práticas.
+- As afirmações regulatórias são apoiadas, sempre que possível, por legislação, autoridades ou fontes primárias ligadas na própria página.
+- O conteúdo é informativo; não constitui parecer jurídico, auditoria ou certificação.
+- As páginas HTML são a versão mais adequada para pesquisa e resumo; os PDFs preservam a edição diagramada.
 
 ## Limites de acesso
 
