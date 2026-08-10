@@ -1,274 +1,221 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Política de Privacidade da Privus Kuzola.">
 <title>Política de Privacidade — Privus Kuzola</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#0D1B2A; --gold:#C8A96E; --gold-l:#D9BE90; --cream:#F0EBE0; --cream-d:#E5DDD0;
-  --white:#FFFFFF; --grey:#6B7280;
-}
+:root{--navy:#0D1B2A;--gold:#C8A96E;--gold-l:#D9BE90;--cream:#F0EBE0;--cream-d:#E5DDD0;--white:#fff;--grey:#5F6670}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.75}
 a{color:inherit}
-header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding:1.2rem 2rem;position:sticky;top:0;z-index:10}
-.header-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;letter-spacing:.03em;color:var(--white);text-decoration:none}
-.logo span{color:var(--gold)}
-.back{font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 2rem;position:sticky;top:0;z-index:10}
+.header-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;text-decoration:none}
+.brand img{display:block;width:210px;max-width:46vw;height:auto}
+.back{font-size:.78rem;color:rgba(255,255,255,.6);text-decoration:none;white-space:nowrap;transition:color .2s}
 .back:hover{color:var(--gold)}
-main{max-width:780px;margin:0 auto;padding:3.5rem 2rem 5rem}
+main{max-width:820px;margin:0 auto;padding:3.5rem 2rem 5rem}
 .doc-label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;display:flex;align-items:center;gap:.75rem}
 .doc-label::before{content:'';width:24px;height:1px;background:var(--gold)}
-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.4rem;line-height:1.1;margin-bottom:.9rem;color:var(--navy)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.5rem;line-height:1.1;margin-bottom:.9rem}
 .doc-meta{font-size:.82rem;color:var(--grey);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--cream-d);font-style:italic}
 .toc{background:var(--white);border:1px solid var(--cream-d);padding:1.6rem 2rem;margin-bottom:3rem}
 .toc-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.toc ol{padding-left:1.25rem}
-.toc li{margin-bottom:.5rem}
-.toc a{font-size:.87rem;color:var(--grey);text-decoration:none;transition:color .2s}
+.toc ol{padding-left:1.25rem;columns:2;column-gap:2rem}
+.toc li{margin-bottom:.5rem;break-inside:avoid}
+.toc a{font-size:.86rem;color:var(--grey);text-decoration:none}
 .toc a:hover{color:var(--gold)}
-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.65rem;color:var(--navy);margin:3rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--cream-d)}
-h3{font-family:'Outfit',sans-serif;font-size:.98rem;font-weight:600;color:var(--navy);margin:1.9rem 0 .7rem}
-p{font-size:.9rem;font-weight:300;color:var(--grey);margin-bottom:1.1rem;line-height:1.85}
-p strong{color:var(--navy);font-weight:500}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.7rem;margin:3rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--cream-d);scroll-margin-top:95px}
+h3{font-size:.98rem;font-weight:600;margin:1.9rem 0 .7rem}
+p{font-size:.9rem;color:var(--grey);margin-bottom:1.1rem;line-height:1.85}
+p strong,li strong,td strong{color:var(--navy);font-weight:500}
 ul,ol{padding-left:1.5rem;margin-bottom:1.1rem}
-li{font-size:.87rem;font-weight:300;color:var(--grey);margin-bottom:.5rem;line-height:1.75}
-li strong{color:var(--navy);font-weight:500}
+li{font-size:.87rem;color:var(--grey);margin-bottom:.5rem;line-height:1.75}
 .table-wrap{overflow-x:auto;margin:1.4rem 0;border:1px solid var(--cream-d)}
-table{width:100%;border-collapse:collapse;font-size:.82rem;background:var(--white)}
-th{background:var(--navy);color:var(--gold-l);font-weight:500;padding:.8rem 1rem;text-align:left;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
-td{padding:.75rem 1rem;border-top:1px solid var(--cream-d);color:var(--grey);vertical-align:top}
-tr:nth-child(even) td{background:var(--cream)}
-.highlight{background:rgba(200,169,110,.08);border-left:2px solid var(--gold);padding:1.1rem 1.4rem;margin:1.4rem 0}
-.highlight p{margin-bottom:0;color:var(--grey)}
-.highlight strong{color:var(--navy)}
-.ref{font-size:.74rem;color:var(--gold);font-weight:600;letter-spacing:.04em}
+table{width:100%;border-collapse:collapse;font-size:.8rem;background:var(--white);min-width:620px}
+th{background:var(--navy);color:var(--gold-l);font-weight:500;padding:.8rem 1rem;text-align:left;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase}
+td{padding:.75rem 1rem;border-top:1px solid var(--cream-d);color:var(--grey);vertical-align:top;line-height:1.6}
+tr:nth-child(even) td{background:#F8F5EF}
+.highlight{background:rgba(200,169,110,.09);border-left:2px solid var(--gold);padding:1.1rem 1.4rem;margin:1.4rem 0}
+.highlight p{margin:0}
+.ref{font-size:.74rem;color:#8A6F3E;font-weight:600}
+.legal-link{color:#8A6F3E;font-weight:500}
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:2.2rem;text-align:center}
-footer p{font-size:.75rem;color:rgba(255,255,255,.4)}
+footer p{font-size:.74rem;color:rgba(255,255,255,.45);margin:.35rem 0}
 footer a{color:var(--gold);text-decoration:none}
-@media (max-width:640px){
-  main{padding:2.5rem 1.25rem 4rem}
-  h1{font-size:1.9rem}
-  .toc{padding:1.3rem 1.4rem}
-}
+@media(max-width:640px){header{padding:.85rem 1.2rem}.brand img{width:155px;max-width:52vw}main{padding:2.5rem 1.25rem 4rem}h1{font-size:2rem}.toc{padding:1.3rem 1.4rem}.toc ol{columns:1}}
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <a href="index.html" class="logo">Privus <span>Kuzola</span></a>
-    <a href="index.html" class="back">← Voltar ao site</a>
+    <a href="/" class="brand" aria-label="Privus Kuzola — página inicial">
+      <img src="/logo-privus-horizontal.PNG" alt="Privus Kuzola">
+    </a>
+    <a href="/" class="back">← Voltar ao site</a>
   </div>
 </header>
+
 <main>
   <p class="doc-label">Documento legal</p>
   <h1>Política de Privacidade</h1>
-  <p class="doc-meta">Versão 1.2 · Entrada em vigor: 10/05/2026 · Última actualização: 22/07/2026<br>
-  Elaborada ao abrigo do Art. 13.º do Regulamento (UE) 2016/679 (RGPD) e da Lei n.º 58/2019, de 8 de agosto</p>
+  <p class="doc-meta">Versão 1.3 · Entrada em vigor: 10/05/2026 · Última atualização: 03/08/2026<br>
+  Informação prestada nos termos dos artigos 13.º e 14.º do Regulamento (UE) 2016/679 (RGPD) e da Lei n.º 58/2019, de 8 de agosto.</p>
 
-  <div class="toc">
+  <nav class="toc" aria-label="Índice da política">
     <p class="toc-title">Índice</p>
     <ol>
-      <li><a href="#s1">Identidade e contactos do Responsável pelo Tratamento</a></li>
-      <li><a href="#s2">Que dados recolhemos e para que fins</a></li>
-      <li><a href="#s3">Bases legais do tratamento</a></li>
-      <li><a href="#s4">Com quem partilhamos os seus dados</a></li>
-      <li><a href="#s5">Transferências internacionais de dados</a></li>
-      <li><a href="#s6">Durante quanto tempo conservamos os seus dados</a></li>
-      <li><a href="#s7">Os seus direitos enquanto titular de dados</a></li>
-      <li><a href="#s8">Cookies e tecnologias de rastreamento</a></li>
-      <li><a href="#s9">Segurança dos dados</a></li>
-      <li><a href="#s10">Alterações a esta Política</a></li>
+      <li><a href="#s1">Responsável pelo tratamento</a></li>
+      <li><a href="#s2">Dados, canais e finalidades</a></li>
+      <li><a href="#s3">Bases legais</a></li>
+      <li><a href="#s4">PRIA e tratamento automatizado</a></li>
+      <li><a href="#s5">Destinatários e fornecedores</a></li>
+      <li><a href="#s6">Transferências internacionais</a></li>
+      <li><a href="#s7">Prazos de conservação</a></li>
+      <li><a href="#s8">Direitos dos titulares</a></li>
+      <li><a href="#s9">Cookies e serviços externos</a></li>
+      <li><a href="#s10">Segurança</a></li>
+      <li><a href="#s11">Alterações e contacto</a></li>
     </ol>
-  </div>
+  </nav>
 
-  <h2 id="s1">1. Identidade e contactos do Responsável pelo Tratamento</h2>
-  <p>O Responsável pelo Tratamento dos dados pessoais recolhidos através do website <strong>privuskuzola.pt</strong> é:</p>
-  <div class="table-wrap">
-    <table>
-      <tr><th>Campo</th><th>Informação</th></tr>
-      <tr><td><strong>Denominação</strong></td><td>Privus Kuzola</td></tr>
-      <tr><td><strong>Morada</strong></td><td>Rua Vale Formoso de Cima 237 A, Lisboa, Portugal</td></tr>
-      <tr><td><strong>Email de contacto RGPD</strong></td><td>privacidade@privuskuzola.pt</td></tr>
-      <tr><td><strong>Telefone</strong></td><td>+351 936 246 971</td></tr>
-      <tr><td><strong>Website</strong></td><td>privuskuzola.pt</td></tr>
-    </table>
-  </div>
-  <p>Para qualquer questão relacionada com o tratamento dos seus dados pessoais, contacte-nos através do email <strong>privacidade@privuskuzola.pt</strong>. Respondemos no prazo máximo de 30 dias corridos (Art. 12.º, n.º 3 RGPD).</p>
+  <h2 id="s1">1. Responsável pelo tratamento</h2>
+  <p>O responsável pelo tratamento dos dados pessoais recolhidos através do website <strong>privuskuzola.pt</strong> e dos serviços Privus é:</p>
+  <div class="table-wrap"><table>
+    <tr><th>Campo</th><th>Informação</th></tr>
+    <tr><td><strong>Denominação</strong></td><td>Privus Kuzola</td></tr>
+    <tr><td><strong>Morada</strong></td><td>Rua Vale Formoso de Cima 237 A, Lisboa, Portugal</td></tr>
+    <tr><td><strong>Email de privacidade</strong></td><td><a class="legal-link" href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a></td></tr>
+    <tr><td><strong>Contacto geral</strong></td><td><a class="legal-link" href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a> · +351 936 246 971</td></tr>
+  </table></div>
+  <p>Responderemos aos pedidos relativos a dados pessoais sem demora injustificada e, em regra, no prazo de um mês, que pode ser prorrogado nos termos do artigo 12.º, n.º 3, do RGPD.</p>
 
-  <h2 id="s2">2. Que dados recolhemos e para que fins</h2>
-  <p>Recolhemos dados pessoais exclusivamente para as finalidades indicadas, através dos canais abaixo identificados.</p>
+  <h2 id="s2">2. Dados, canais e finalidades</h2>
+  <h3>2.1 Navegação, alojamento e segurança</h3>
+  <p>Quando visita o website, são tratados dados técnicos necessários para entregar e proteger o serviço, como endereço IP, data e hora, URL solicitada, identificadores de segurança, tipo de browser e informação de dispositivo. Estes dados são processados pela infraestrutura Cloudflare para alojamento, encaminhamento, prevenção de abuso, diagnóstico de falhas e segurança.</p>
 
-  <h3>2.1 Formulário de contacto e pedidos de proposta</h3>
-  <p>Quando preenche o formulário de contacto no website, recolhemos os seguintes dados:</p>
+  <h3>2.2 Formulário de contacto e pedidos de proposta</h3>
+  <p>O formulário pode recolher nome, email, empresa, serviço de interesse, indicação de realização prévia de um PRIA, descrição do projeto e confirmação de leitura da informação de privacidade. Os dados são enviados para a infraestrutura da Privus alojada na Cloudflare e entregues por email através do Microsoft 365. <strong>O Formspree deixou de ser utilizado.</strong></p>
+  <p>Utilizamos estes dados para responder ao pedido, preparar uma reunião ou proposta e manter o histórico estritamente necessário da relação pré-contratual ou comercial.</p>
+
+  <h3>2.3 Assistente Privus</h3>
+  <p>A Assistente Privus disponibilizada no website é um módulo informativo executado localmente no browser. As opções selecionadas e o texto apresentado não são enviados para um serviço de inteligência artificial, não são associados a um perfil pessoal e não são guardados pela Privus. Quando escolhe iniciar um PRIA, contactar a Privus ou abrir um serviço externo, ocorre apenas a navegação para a página correspondente.</p>
+
+  <h3>2.4 Pagamentos e acesso ao PRIA</h3>
+  <p>Os pagamentos são processados numa página alojada pela <strong>Stripe</strong>. A Privus não recebe nem armazena o número completo do cartão, o código de segurança ou outras credenciais de pagamento. A Stripe pode tratar dados de identificação, contacto, faturação, pagamento, dispositivo e prevenção de fraude segundo as suas próprias obrigações legais.</p>
+  <p>Após pagamento confirmado, a nossa função técnica consulta a Stripe para validar a sessão, o estado do pagamento, o montante e a moeda. Se a validação for positiva, é criado um cookie de acesso assinado, denominado <strong>pria_access</strong>, válido por 30 dias. O cookie contém apenas uma referência técnica à sessão, o tipo de plano e a data de expiração; é protegido com os atributos HttpOnly, Secure e SameSite=Lax.</p>
+
+  <h3>2.5 PRIA — diagnóstico e relatório</h3>
+  <p>Durante o PRIA, as respostas são utilizadas no browser para calcular indicadores de maturidade, scores por pilar, riscos, pontos fortes, recomendações e roadmap. Quando solicita o Relatório Executivo, são transmitidos à infraestrutura Privus:</p>
   <ul>
-    <li><strong>Nome completo</strong> — para identificação e personalização da comunicação</li>
-    <li><strong>Endereço de email</strong> — para resposta ao pedido</li>
-    <li><strong>Nome da empresa</strong> — para contextualização do pedido</li>
-    <li><strong>Serviço de interesse</strong> (PRIA, Implementação, Compliance as a Service, Formação ou outro) — para encaminhamento correto do pedido</li>
-    <li><strong>Indicação de realização prévia de um PRIA</strong> — para qualificação do pedido</li>
-    <li><strong>Descrição do projecto</strong> (opcional) — para preparação da resposta</li>
+    <li><strong>nome, empresa e email</strong>, para identificar e enviar o relatório;</li>
+    <li><strong>perfil regulatório e âmbitos selecionados</strong>;</li>
+    <li><strong>estado de conclusão, scores, nível de maturidade e gates aplicáveis</strong>;</li>
+    <li><strong>riscos, pontos fortes, recomendações e roadmap consolidados</strong>.</li>
   </ul>
-  <p>Estes dados são transmitidos através do serviço <strong>Formspree</strong> (ver secção 4) e utilizados exclusivamente para responder ao pedido e, quando aplicável, preparar uma proposta comercial personalizada.</p>
+  <p>Na configuração atual, as seleções brutas de cada pergunta não são incluídas no pedido de geração do relatório. Os dados consolidados são enviados para a API Privus alojada na Cloudflare, que gera o PDF e o entrega por email através do Microsoft 365. Pode ser enviada uma cópia interna à Privus para prova da prestação, apoio ao cliente e eventual acompanhamento solicitado.</p>
 
-  <h3>2.2 Pagamentos — Stripe</h3>
-  <p>O processamento de pagamentos é realizado pela <strong>Stripe Payments Europe, Limited</strong>. Quando efectua um pagamento, os dados de pagamento (número de cartão, data de validade, CVV, nome do titular) são recolhidos e processados <strong>directamente pela Stripe</strong> — a Privus Kuzola <strong>não tem acesso nem armazena</strong> dados de cartão de pagamento.</p>
-  <p>A Privus Kuzola recebe da Stripe apenas: confirmação de pagamento, montante, referência da transacção e email de faturação. Estes dados são utilizados para confirmação do serviço e emissão de recibo.</p>
+  <h3>2.6 PRIA Guided e agendamento</h3>
+  <p>Na modalidade acompanhada, o utilizador pode abrir o Microsoft Bookings para marcar a sessão. Nome, email, data, hora, fuso horário e informação que introduza no agendamento são tratados pela Microsoft e pela Privus para executar a sessão contratada.</p>
 
-  <h3>2.3 Prestação de serviços de consultoria</h3>
-  <p>No âmbito da prestação dos serviços contratados (PRIA Assessment, PRIA Guided Assessment, Implementação, Compliance as a Service, Formação), recolhemos e tratamos dados da empresa cliente e dos seus colaboradores necessários para a elaboração da documentação e recomendações. Estes dados são tratados nos termos do contrato de prestação de serviços celebrado com o cliente e do DPA associado, quando aplicável.</p>
+  <h3>2.7 Email, newsletter e conteúdos</h3>
+  <p>Quando nos contacta por email, tratamos os dados presentes na mensagem para responder e gerir a relação. Quando subscreve voluntariamente a newsletter numa página MailerLite, tratamos o email e, se fornecido, o nome, para enviar conteúdos Privus. Os emails podem incluir métricas de abertura e cliques disponibilizadas pela MailerLite. Pode cancelar a subscrição através do link presente em cada comunicação.</p>
 
-  <h3>2.4 Dados de navegação — Google Analytics 4</h3>
-  <p>Com o seu consentimento prévio, recolhemos dados de navegação através do Google Analytics 4 para compreender como os visitantes utilizam o website e melhorar a experiência de utilização. Os dados recolhidos incluem páginas visitadas, duração da visita, fonte do tráfego e dados de dispositivo. O Google Analytics 4 utiliza mecanismos de anonimização do endereço IP e não disponibiliza o endereço IP completo à Privus Kuzola.</p>
-  <p>O Google Analytics 4 utiliza cookies para recolher estes dados. Pode gerir as suas preferências na nossa <a href="politica-cookies.html" style="color:var(--gold)">Política de Cookies</a>.</p>
+  <h3>2.8 Analytics e preferências</h3>
+  <p>O Google Analytics 4 e o script MailerLite Universal só são carregados no website após consentimento. Podem tratar identificadores online, páginas visitadas, origem do tráfego, interações e informação de browser/dispositivo. O website também guarda localmente a preferência linguística e a decisão sobre cookies. Consulte a <a class="legal-link" href="politica-cookies.html">Política de Cookies</a>.</p>
 
-  <h3>2.5 Comunicações por email</h3>
-  <p>Quando nos contacta por email, tratamos os dados pessoais presentes na comunicação (nome, email, conteúdo da mensagem) para responder ao seu pedido. Estes dados são conservados pelo prazo necessário à gestão da comunicação e pelo período de prescrição dos direitos associados.</p>
+  <h3>2.9 Recursos e ligações externas</h3>
+  <p>O website carrega fontes da Google e uma imagem alojada pela Unsplash. Ao carregar estes recursos, o fornecedor pode receber o endereço IP, informação do browser e o URL de referência. As ligações para Stripe, Microsoft Bookings, MailerLite, WhatsApp/Meta, LinkedIn, Instagram e outros websites abrem serviços externos, sujeitos às respetivas políticas.</p>
 
-  <h3>2.6 Newsletter</h3>
-  <p>Caso subscreva voluntariamente a nossa newsletter, recolhemos o seu email e, opcionalmente, o seu nome, para lhe enviar a publicação Privus Month Insights e, quando disponíveis, episódios do podcast. Estes dados são geridos através do serviço <strong>MailerLite</strong> (ver secção 4).</p>
-  <p>Pode cancelar a subscrição a qualquer momento, através do link disponível em cada email enviado, sem necessidade de justificação. A base legal deste tratamento é o seu consentimento — Art. 6.º(1)(a) RGPD.</p>
+  <h2 id="s3">3. Bases legais</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Finalidade</th><th>Base legal</th></tr>
+    <tr><td>Responder a contactos, marcar reuniões e preparar propostas</td><td>Diligências pré-contratuais a pedido do titular — <span class="ref">Art. 6.º(1)(b)</span></td></tr>
+    <tr><td>Processar pagamentos, validar acesso, executar o PRIA e enviar o relatório</td><td>Execução do contrato — <span class="ref">Art. 6.º(1)(b)</span></td></tr>
+    <tr><td>Prestar consultoria, formação e acompanhamento contínuo</td><td>Execução do contrato — <span class="ref">Art. 6.º(1)(b)</span></td></tr>
+    <tr><td>Emitir e conservar documentação fiscal e contabilística</td><td>Obrigação legal — <span class="ref">Art. 6.º(1)(c)</span></td></tr>
+    <tr><td>Proteger o website, prevenir abuso e conservar prova da prestação</td><td>Interesse legítimo — <span class="ref">Art. 6.º(1)(f)</span></td></tr>
+    <tr><td>Google Analytics, MailerLite Universal e newsletter</td><td>Consentimento — <span class="ref">Art. 6.º(1)(a)</span></td></tr>
+    <tr><td>Defesa ou exercício de direitos em processo</td><td>Interesse legítimo e, quando aplicável, <span class="ref">Art. 9.º(2)(f)</span></td></tr>
+  </table></div>
+  <div class="highlight"><p><strong>Retirada do consentimento:</strong> pode retirar o consentimento a qualquer momento, sem afetar a licitude do tratamento já realizado. Para analytics, utilize “Gerir Cookies” no rodapé; para a newsletter, utilize o link de cancelamento incluído em cada email.</p></div>
 
-  <h3>2.7 PRIA — Privus Regulatory Impact Assessment</h3>
-  <p>O acesso ao PRIA (nas modalidades Self-Service ou Guided) é precedido de pagamento através da Stripe (ver secção 2.2). Após a conclusão do diagnóstico, recolhemos os seguintes dados:</p>
+  <h2 id="s4">4. PRIA e tratamento automatizado</h2>
+  <p>O PRIA utiliza regras de scoring, ponderações, gates e correlações para produzir automaticamente um diagnóstico indicativo. Este resultado apoia a avaliação de maturidade regulatória, mas <strong>não toma decisões com efeitos jurídicos ou efeitos similarmente significativos sobre pessoas singulares</strong>. Não substitui uma auditoria, parecer jurídico ou certificação.</p>
+  <p>Na modalidade Guided, o resultado pode ser revisto e contextualizado por um consultor. Pode solicitar esclarecimentos ou intervenção humana através de <a class="legal-link" href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a>.</p>
+
+  <h2 id="s5">5. Destinatários e fornecedores</h2>
+  <p>Não vendemos dados pessoais. Podemos facultá-los, no limite necessário, aos seguintes destinatários ou prestadores:</p>
+  <div class="table-wrap"><table>
+    <tr><th>Entidade</th><th>Função e dados envolvidos</th><th>Localização principal</th></tr>
+    <tr><td><strong>Cloudflare, Inc.</strong></td><td>Alojamento, CDN, segurança, Pages Functions e encaminhamento para a API. IP, logs técnicos e dados enviados nos formulários/relatórios durante o processamento.</td><td>Operação global; entidade dos EUA</td></tr>
+    <tr><td><strong>Microsoft Ireland Operations Ltd.</strong></td><td>Microsoft 365, Graph, Outlook/Bookings e, quando aplicável, Teams. Contactos, conteúdo de email, PDF PRIA e dados de agendamento.</td><td>Irlanda/EEE, com operação global</td></tr>
+    <tr><td><strong>Stripe Payments Europe, Ltd.</strong></td><td>Checkout, faturação técnica, prevenção de fraude e confirmação de pagamento.</td><td>Irlanda/EEE, com operação global</td></tr>
+    <tr><td><strong>Google LLC</strong></td><td>Google Analytics 4, após consentimento, e fornecimento de fontes web. Identificadores online e dados técnicos.</td><td>EUA/operação global</td></tr>
+    <tr><td><strong>MailerLite Limited</strong></td><td>Formulário alojado, gestão e estatísticas da newsletter; script Universal após consentimento.</td><td>Irlanda/EEE, com subcontratantes</td></tr>
+    <tr><td><strong>Unsplash, Inc.</strong></td><td>Alojamento de imagem utilizada no website; recebe dados técnicos do pedido.</td><td>EUA</td></tr>
+    <tr><td><strong>Prestadores contabilísticos, jurídicos ou técnicos</strong></td><td>Apenas quando necessário, sujeitos a deveres legais, contratuais e de confidencialidade.</td><td>Portugal/EEE, salvo informação em contrário</td></tr>
+  </table></div>
+  <p>Podemos ainda comunicar dados a autoridades fiscais, regulatórias, policiais ou judiciais quando a lei, um processo ou uma ordem válida o exija. Alguns fornecedores atuam como subcontratantes da Privus; outros podem atuar como responsáveis autónomos para finalidades próprias, nomeadamente prevenção de fraude e cumprimento legal.</p>
+
+  <h2 id="s6">6. Transferências internacionais</h2>
+  <p>Alguns fornecedores ou subcontratantes podem tratar dados fora do Espaço Económico Europeu. Quando aplicável, recorremos a decisões de adequação, incluindo o EU–US Data Privacy Framework para entidades certificadas, Cláusulas Contratuais-Tipo aprovadas pela Comissão Europeia e medidas suplementares adequadas.</p>
+  <p>As políticas e garantias dos principais fornecedores podem ser consultadas nos respetivos centros de privacidade: <a class="legal-link" href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">Cloudflare</a>, <a class="legal-link" href="https://www.microsoft.com/privacy/privacystatement" target="_blank" rel="noopener">Microsoft</a>, <a class="legal-link" href="https://stripe.com/privacy" target="_blank" rel="noopener">Stripe</a>, <a class="legal-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google</a> e <a class="legal-link" href="https://www.mailerlite.com/legal/privacy-policy" target="_blank" rel="noopener">MailerLite</a>.</p>
+
+  <h2 id="s7">7. Prazos de conservação</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Categoria</th><th>Prazo ou critério</th></tr>
+    <tr><td>Contactos e pedidos de proposta</td><td>Até 3 anos após o último contacto, salvo relação contratual, oposição ou necessidade de defesa de direitos.</td></tr>
+    <tr><td>PRIA, relatório e acompanhamento</td><td>Duração do serviço e até 3 anos após a conclusão, salvo obrigação legal ou necessidade de defesa por prazo superior.</td></tr>
+    <tr><td>Cookie técnico <strong>pria_access</strong></td><td>30 dias no dispositivo.</td></tr>
+    <tr><td>Referências de pagamento e documentação fiscal/contabilística</td><td>10 anos ou o prazo legal que estiver em vigor.</td></tr>
+    <tr><td>Agendamentos e correspondência operacional</td><td>Até 3 anos após a conclusão ou último contacto, salvo necessidade contratual ou legal.</td></tr>
+    <tr><td>Newsletter</td><td>Até retirar o consentimento; pode ser mantido um registo mínimo de supressão para respeitar o cancelamento.</td></tr>
+    <tr><td>Dados GA4</td><td>Até 14 meses para dados de utilizador/evento, de acordo com a configuração da propriedade; os identificadores no browser podem durar até 2 anos.</td></tr>
+    <tr><td>Preferência de cookies</td><td>13 meses no localStorage do browser; não existe, na configuração atual, uma cópia central dessa preferência.</td></tr>
+    <tr><td>Logs técnicos e de segurança</td><td>Pelo período estritamente necessário ao diagnóstico, segurança e obrigações do fornecedor, segundo a configuração aplicável.</td></tr>
+  </table></div>
+  <p>Findo o prazo, os dados são eliminados ou anonimizados, salvo quando a conservação seja necessária para cumprir uma obrigação legal ou exercer ou defender direitos.</p>
+
+  <h2 id="s8">8. Direitos dos titulares</h2>
+  <p>Nos termos dos artigos 15.º a 22.º do RGPD, pode solicitar acesso, retificação, apagamento, limitação, portabilidade e oposição, bem como retirar consentimento e obter informação sobre tratamento automatizado. Estes direitos podem sofrer limitações quando a conservação seja exigida por lei ou necessária à defesa de direitos.</p>
+  <p>Envie o pedido para <a class="legal-link" href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a>. Poderemos pedir elementos proporcionais para confirmar a identidade e proteger os dados contra acesso indevido. O exercício dos direitos é, em regra, gratuito.</p>
+  <p>Tem ainda o direito de apresentar reclamação à <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong>, em <a class="legal-link" href="https://www.cnpd.pt" target="_blank" rel="noopener">www.cnpd.pt</a>, sem prejuízo de outros meios administrativos ou judiciais.</p>
+
+  <h2 id="s9">9. Cookies e serviços externos</h2>
+  <p>Utilizamos tecnologias estritamente necessárias e, apenas após consentimento, tecnologias analíticas. A informação sobre nomes, finalidades, duração, fornecedores, consentimento e gestão está na <a class="legal-link" href="politica-cookies.html">Política de Cookies</a>.</p>
+  <p>Quando segue uma ligação para um serviço externo — por exemplo Stripe Checkout, Microsoft Bookings, MailerLite ou WhatsApp — passa a interagir diretamente com esse fornecedor, que pode utilizar cookies e tratar dados segundo a sua própria política.</p>
+
+  <h2 id="s10">10. Segurança</h2>
+  <p>Aplicamos medidas técnicas e organizativas proporcionais ao risco, incluindo:</p>
   <ul>
-    <li><strong>Nome completo, nome da empresa e endereço de email</strong> — para identificação e envio do Relatório Executivo</li>
-    <li><strong>Respostas ao questionário</strong> (até 127 perguntas, consoante o perfil da organização) — para cálculo do nível de maturidade regulatória</li>
-    <li><strong>Índice de maturidade (PRMM) e score por pilar</strong> — resultado do diagnóstico</li>
-    <li><strong>Recomendações prioritárias e roadmap de implementação</strong> — gerados a partir das respostas fornecidas</li>
+    <li>HTTPS/TLS para comunicações com o website e APIs;</li>
+    <li>validação do pagamento diretamente na Stripe antes de desbloquear o PRIA;</li>
+    <li>cookie de acesso assinado, HttpOnly, Secure, SameSite=Lax e com validade limitada;</li>
+    <li>segredos e credenciais mantidos em variáveis protegidas, fora do código público;</li>
+    <li>processamento de cartão exclusivamente pela Stripe;</li>
+    <li>email profissional e entrega de relatórios através do Microsoft 365;</li>
+    <li>controlos de acesso, minimização e seleção de fornecedores com garantias contratuais;</li>
+    <li>procedimentos de resposta a incidentes e, quando exigível, notificação nos termos dos artigos 33.º e 34.º do RGPD.</li>
   </ul>
-  <p>Estes dados são transmitidos através do serviço <strong>Formspree</strong> (ver secção 4), incluindo as respostas em bruto por pergunta num formato estruturado (JSON), para que a Privus Kuzola disponha da informação necessária ao acompanhamento do diagnóstico e, quando aplicável, à elaboração de uma proposta de implementação. A base legal é a execução do contrato de prestação do serviço PRIA — Art. 6.º(1)(b) RGPD.</p>
-  <p>No caso do <strong>PRIA Guided Assessment</strong>, é adicionalmente utilizado o serviço <strong>Microsoft Bookings</strong> para agendamento da sessão de 90 minutos, o que implica a recolha de nome, email e horário selecionado (ver secção 4).</p>
+  <p>Nenhum sistema é absolutamente imune a risco. Caso identifique uma vulnerabilidade ou envio indevido de dados, contacte-nos imediatamente.</p>
 
-  <h2 id="s3">3. Bases legais do tratamento</h2>
-  <div class="table-wrap">
-    <table>
-      <tr><th>Finalidade</th><th>Base legal</th><th>Artigo RGPD</th></tr>
-      <tr><td>Processamento do formulário de contacto e pedidos de proposta</td><td>Execução de diligências pré-contratuais a pedido do titular</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Confirmação e gestão de pagamento (PRIA, upgrade, propostas)</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Prestação dos serviços de Implementação e Compliance as a Service</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Prestação do serviço de Formação</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Processamento de dados do PRIA (Self-Service e Guided Assessment)</td><td>Execução do contrato de prestação do serviço PRIA</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Agendamento da sessão do PRIA Guided Assessment</td><td>Execução do contrato de prestação de serviços</td><td><span class="ref">Art. 6.º(1)(b)</span></td></tr>
-      <tr><td>Emissão de fatura e arquivo contabilístico</td><td>Cumprimento de obrigação legal</td><td><span class="ref">Art. 6.º(1)(c)</span></td></tr>
-      <tr><td>Análise de comportamento de navegação (GA4)</td><td>Consentimento do titular</td><td><span class="ref">Art. 6.º(1)(a)</span></td></tr>
-      <tr><td>Resposta a comunicações por email</td><td>Interesse legítimo — gestão de comunicações comerciais</td><td><span class="ref">Art. 6.º(1)(f)</span></td></tr>
-    </table>
-  </div>
-
-  <div class="highlight">
-    <p><strong>Nota sobre o consentimento:</strong> Quando o tratamento se baseia no consentimento, tem o direito de o revogar a qualquer momento, sem que isso afecte a licitude do tratamento efectuado antes da revogação (Art. 7.º, n.º 3 RGPD). A revogação é tão fácil quanto o consentimento — utilize o painel de gestão de cookies disponível no rodapé do website.</p>
-  </div>
-
-  <h2 id="s4">4. Com quem partilhamos os seus dados</h2>
-  <p>A Privus Kuzola não vende, cede nem partilha dados pessoais com terceiros para fins comerciais. Os seus dados são partilhados exclusivamente com os seguintes subcontratantes, nos termos do Art. 28.º do RGPD:</p>
-  <div class="table-wrap">
-    <table>
-      <tr><th>Subcontratante</th><th>Função</th><th>Dados transmitidos</th><th>País</th><th>Garantias</th></tr>
-      <tr><td><strong>Formspree, Inc.</strong></td><td>Recepção e transmissão de dados de formulários</td><td>Dados submetidos através dos formulários do website, incluindo respostas ao PRIA, informações de contacto e dados necessários à prestação dos serviços</td><td>EUA</td><td>SCCs — Decisão 2021/914/UE</td></tr>
-      <tr><td><strong>Stripe Payments Europe, Ltd.</strong></td><td>Processamento de pagamentos</td><td>Dados de faturação; confirmação de pagamento</td><td>Irlanda (UE)</td><td>DPA — Art. 28.º RGPD</td></tr>
-      <tr><td><strong>Google LLC (GA4)</strong></td><td>Análise de comportamento de navegação</td><td>Dados de navegação anonimizados; cookies</td><td>EUA</td><td>EU-US Data Privacy Framework</td></tr>
-      <tr><td><strong>Cloudflare, Inc.</strong></td><td>Alojamento, CDN e serviços de segurança</td><td>Endereço IP; dados de acesso ao servidor</td><td>EUA</td><td>SCCs — Decisão 2021/914/UE e/ou EU-U.S. Data Privacy Framework</td></tr>
-      <tr><td><strong>Microsoft Ireland Operations Limited</strong></td><td>Alojamento de email profissional (Microsoft 365) e agendamento de sessões do PRIA Guided Assessment (Microsoft Bookings/Teams)</td><td>Conteúdo de emails; nome; email; dados de agendamento</td><td>Irlanda (UE) — dados armazenados e processados na UE/EEE ao abrigo do EU Data Boundary</td><td>DPA (Data Protection Addendum) + SCCs Módulo 3 (Processor-to-Processor), entre Microsoft Ireland Operations Ltd e Microsoft Corporation</td></tr>
-      <tr><td><strong>MailerLite, UAB</strong></td><td>Gestão da newsletter — envio do Privus Month Insights e episódios do podcast</td><td>Nome (opcional) e email dos subscritores; estatísticas de abertura e cliques</td><td>Lituânia (UE)</td><td>DPA próprio do MailerLite — processamento dentro da UE/EEE</td></tr>
-      <tr><td><strong>[Contabilista/TOC]</strong></td><td>Contabilidade e fiscalidade</td><td>Dados de faturação</td><td>Portugal</td><td>DPA — Art. 28.º RGPD</td></tr>
-    </table>
-  </div>
-  <p>Podemos ainda partilhar dados pessoais com autoridades públicas competentes (CNPD, Autoridade Tributária, autoridades judiciais) quando tal seja exigido por obrigação legal ou decisão judicial, nos termos do Art. 6.º(1)(c) do RGPD.</p>
-
-  <h2 id="s5">5. Transferências internacionais de dados</h2>
-  <p>Alguns dos nossos subcontratantes estão localizados fora do Espaço Económico Europeu (EEE). As transferências para países terceiros são efectuadas ao abrigo dos seguintes mecanismos legais:</p>
-  <ul>
-    <li><strong>Formspree (EUA)</strong> — Cláusulas Contratuais Tipo (SCCs) aprovadas pela Comissão Europeia através da Decisão 2021/914/UE de 4 de junho de 2021</li>
-    <li><strong>Google LLC — GA4 (EUA)</strong> — EU-US Data Privacy Framework, adoptado pela Decisão de Adequação da Comissão Europeia de 10 de julho de 2023</li>
-    <li><strong>Cloudflare, Inc. (EUA)</strong> — Cláusulas Contratuais Tipo (SCCs) — Decisão 2021/914/UE, e/ou EU-U.S. Data Privacy Framework</li>
-    <li><strong>Stripe Payments Europe, Ltd.</strong> — Sede na Irlanda (UE); dados processados dentro do EEE; eventuais transferências para Stripe, Inc. (EUA) ao abrigo de SCCs</li>
-    <li><strong>Microsoft Ireland Operations Limited (Irlanda, UE)</strong> — Dados armazenados e processados dentro da UE/EEE ao abrigo do EU Data Boundary, concluído pela Microsoft em 2025. Eventuais transferências internas ao grupo Microsoft para fins de suporte técnico são cobertas por SCCs Módulo 3 (Processor-to-Processor)</li>
-  </ul>
-  <p><strong>MailerLite, UAB</strong> (Lituânia, UE) não consta desta lista por processar os dados da newsletter inteiramente dentro do Espaço Económico Europeu, sem transferência para país terceiro.</p>
-  <div class="highlight">
-    <p><strong>Nota sobre os limites da residência de dados na UE:</strong> a garantia de armazenamento de dados na União Europeia (nomeadamente pelo EU Data Boundary da Microsoft) constitui um compromisso de residência geográfica, não uma blindagem jurisdicional absoluta. A Microsoft e a Cloudflare são empresas sujeitas ao direito dos EUA, incluindo o CLOUD Act, que pode em teoria obrigar a divulgação de dados armazenados em qualquer localização geográfica mediante ordem legal válida das autoridades norte-americanas. A Privus Kuzola seleciona subcontratantes que ofereçam as melhores garantias contratuais e técnicas disponíveis no mercado, sem que tal elimine por completo este risco residual, comum a qualquer entidade que utilize serviços de fornecedores tecnológicos globais.</p>
-  </div>
-  <p>Pode obter cópia dos mecanismos aplicáveis contactando <strong>privacidade@privuskuzola.pt</strong>.</p>
-
-  <h2 id="s6">6. Durante quanto tempo conservamos os seus dados</h2>
-  <div class="table-wrap">
-    <table>
-      <tr><th>Categoria de dados</th><th>Prazo de conservação</th><th>Fundamento</th></tr>
-      <tr><td>Dados do formulário de contacto e pedidos de proposta</td><td>3 anos após o último contacto</td><td>Prazo de prescrição contratual — Art. 309.º CC</td></tr>
-      <tr><td>Dados do PRIA (respostas, score, relatório, agendamento Guided)</td><td>Duração do serviço + 3 anos, salvo obrigação legal de conservação por período superior</td><td>Prazo de prescrição contratual — Art. 309.º CC; acompanhamento de eventual projeto de implementação</td></tr>
-      <tr><td>Dados de pagamento (referência Stripe)</td><td>10 anos</td><td>Obrigação fiscal — Art. 52.º CIVA; Art. 123.º CIRC</td></tr>
-      <tr><td>Dados de faturação e arquivo contabilístico</td><td>10 anos</td><td>Obrigação fiscal — Art. 40.º DL 158/2009 (SNC)</td></tr>
-      <tr><td>Dados de correspondência por email</td><td>3 anos após último contacto</td><td>Interesse legítimo; prazo de prescrição geral</td></tr>
-      <tr><td>Dados de navegação GA4 (com consentimento)</td><td>14 meses (configuração GA4)</td><td>Orientação CNPD/CNIL — prazo máximo recomendado</td></tr>
-      <tr><td>Dados de subscritores da newsletter</td><td>Até à revogação do consentimento (cancelamento) + 90 dias</td><td>Consentimento do titular — Art. 6.º(1)(a) RGPD</td></tr>
-      <tr><td>Logs de consentimento de cookies</td><td>5 anos após a data do consentimento</td><td>Princípio da responsabilidade demonstrada — Art. 5.º(2) RGPD</td></tr>
-      <tr><td>Documentação de prestação de serviços</td><td>10 anos após conclusão do serviço</td><td>Prazo de prescrição da responsabilidade civil — Art. 309.º CC</td></tr>
-    </table>
-  </div>
-  <p>No final de cada prazo, os dados são eliminados de forma segura ou anonimizados, de modo que não permitam a identificação do titular.</p>
-
-  <h2 id="s7">7. Os seus direitos enquanto titular de dados</h2>
-  <p>Ao abrigo do RGPD, tem os seguintes direitos, que pode exercer a qualquer momento através do email <strong>privacidade@privuskuzola.pt</strong>:</p>
-  <div class="table-wrap">
-    <table>
-      <tr><th>Direito</th><th>Conteúdo</th><th>Artigo</th><th>Prazo de resposta</th></tr>
-      <tr><td><strong>Acesso</strong></td><td>Obter confirmação de que tratamos dados seus e, se sim, cópia dos dados tratados e informação sobre o tratamento</td><td><span class="ref">Art. 15.º</span></td><td>30 dias</td></tr>
-      <tr><td><strong>Rectificação</strong></td><td>Solicitar a correcção de dados inexactos ou o complemento de dados incompletos</td><td><span class="ref">Art. 16.º</span></td><td>30 dias</td></tr>
-      <tr><td><strong>Apagamento</strong></td><td>Solicitar a eliminação dos seus dados quando já não são necessários, o consentimento foi revogado, ou o tratamento é ilícito — sujeito a limitações legais</td><td><span class="ref">Art. 17.º</span></td><td>30 dias</td></tr>
-      <tr><td><strong>Limitação</strong></td><td>Solicitar a suspensão do tratamento em circunstâncias específicas (contestação da exactidão, ilicitude do tratamento, fins judiciais)</td><td><span class="ref">Art. 18.º</span></td><td>30 dias</td></tr>
-      <tr><td><strong>Portabilidade</strong></td><td>Receber os dados que nos forneceu em formato estruturado de uso corrente (ex: CSV, JSON), quando o tratamento se baseia em consentimento ou contrato</td><td><span class="ref">Art. 20.º</span></td><td>30 dias</td></tr>
-      <tr><td><strong>Oposição</strong></td><td>Opor-se ao tratamento baseado em interesse legítimo ou para fins de marketing directo — a oposição ao marketing é sempre atendida sem necessidade de justificação</td><td><span class="ref">Art. 21.º</span></td><td>10 dias úteis</td></tr>
-      <tr><td><strong>Não sujeição a decisões automatizadas</strong></td><td>Solicitar revisão humana de decisões tomadas exclusivamente com base em tratamento automatizado que produzam efeitos jurídicos ou significativos</td><td><span class="ref">Art. 22.º</span></td><td>30 dias</td></tr>
-    </table>
-  </div>
-  <p>O exercício dos direitos é <strong>gratuito</strong>. A primeira cópia dos dados (direito de acesso) é sempre gratuita. Em caso de pedidos manifestamente infundados ou excessivos, podemos cobrar uma taxa razoável ou recusar, com fundamentação escrita (Art. 12.º, n.º 5 RGPD).</p>
-  <p>Para exercer qualquer dos direitos acima, envie pedido escrito para <strong>privacidade@privuskuzola.pt</strong> com identificação do direito que pretende exercer. Poderemos solicitar informação adicional para confirmar a identidade do requerente, quando tal seja necessário. Responderemos no prazo máximo de 30 dias corridos.</p>
-
-  <h3>Direito de reclamação junto da CNPD</h3>
-  <p>Se considerar que o tratamento dos seus dados viola o RGPD ou a Lei n.º 58/2019, tem o direito de apresentar reclamação à <strong>Comissão Nacional de Proteção de Dados (CNPD)</strong>:</p>
-  <ul>
-    <li>Website: <a href="https://www.cnpd.pt" style="color:var(--gold)" target="_blank"><strong>www.cnpd.pt</strong></a></li>
-    <li>Email: <strong>geral@cnpd.pt</strong></li>
-    <li>Telefone: <strong>(+351) 213 928 400</strong></li>
-    <li>Morada: Av. D. Carlos I, 134, 1.º — 1200-651 Lisboa</li>
-  </ul>
-  <p>O direito de reclamação junto da CNPD não prejudica outros meios de recurso administrativo ou judicial.</p>
-
-  <h2 id="s8">8. Cookies e tecnologias de rastreamento</h2>
-  <p>O website privuskuzola.pt utiliza cookies e tecnologias similares. Para informação detalhada sobre os cookies utilizados, as suas finalidades, prazos e como gerir as suas preferências, consulte a nossa <a href="politica-cookies.html" style="color:var(--gold)"><strong>Política de Cookies</strong></a>.</p>
-  <p>Em resumo: utilizamos apenas cookies essenciais (necessários para o funcionamento do website, sem consentimento prévio) e cookies analíticos do Google Analytics 4 (apenas com o seu consentimento expresso). Não utilizamos cookies de marketing ou retargeting.</p>
-
-  <h2 id="s9">9. Segurança dos dados</h2>
-  <p>Implementámos medidas técnicas e organizativas adequadas para proteger os dados pessoais que tratamos, em conformidade com o Art. 32.º do RGPD, tendo em conta o estado da arte, os custos de aplicação e a natureza, o âmbito, o contexto e as finalidades do tratamento:</p>
-  <ul>
-    <li>Transmissão de dados cifrada através de protocolo HTTPS/TLS em todas as comunicações</li>
-    <li>Correio eletrónico profissional alojado em Microsoft 365. Sempre que aplicável, as contas profissionais encontram-se protegidas através de autenticação multifator (MFA), com encriptação de dados em trânsito e em repouso, e armazenamento dentro da UE/EEE ao abrigo do EU Data Boundary</li>
-    <li>Processamento de pagamentos exclusivamente através da Stripe, com certificação PCI DSS — a Privus Kuzola não armazena dados de cartão</li>
-    <li>Acesso aos dados de clientes restrito aos colaboradores com necessidade operacional justificada (need-to-know)</li>
-    <li>Subcontratantes seleccionados com base em garantias adequadas de segurança e conformidade, com DPA celebrado</li>
-    <li>Procedimento documentado de resposta a violações de dados, com notificação à CNPD no prazo de 72 horas quando legalmente exigido (Art. 33.º RGPD)</li>
-  </ul>
-  <p>Em caso de violação de dados pessoais que seja susceptível de implicar um risco elevado para os seus direitos e liberdades, será notificado sem demora injustificada, nos termos do Art. 34.º do RGPD.</p>
-
-  <h2 id="s10">10. Alterações a esta Política</h2>
-  <p>Esta Política de Privacidade pode ser actualizada para reflectir alterações nas nossas práticas de tratamento de dados, na legislação aplicável ou nos serviços prestados. Em caso de alterações materiais, notificaremos os clientes com contratos activos através do email registado e actualizaremos a data de "última actualização" no cabeçalho deste documento.</p>
-  <p>Recomendamos que consulte periodicamente esta Política. A versão em vigor é sempre a disponível em <strong>privuskuzola.pt/politica-privacidade.html</strong>.</p>
-  <p>A utilização continuada do website após a entrada em vigor de alterações a esta Política implica a aceitação das mesmas, na medida em que o tratamento se baseie em interesse legítimo ou execução de contrato. Para tratamentos baseados em consentimento, solicitaremos novo consentimento quando as alterações forem materialmente relevantes.</p>
-
+  <h2 id="s11">11. Alterações e contacto</h2>
+  <p>Esta Política pode ser atualizada para refletir alterações legais, técnicas ou nos serviços. A versão em vigor e a data de atualização são sempre publicadas nesta página. Se uma alteração afetar um tratamento baseado no consentimento, solicitaremos novo consentimento quando necessário.</p>
+  <p>Questões de privacidade: <a class="legal-link" href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a>.</p>
+  <div class="highlight"><p><strong>Nota de verificação:</strong> a denominação jurídica completa, o número de identificação fiscal e os contratos/DPA celebrados com os fornecedores devem ser confirmados nos registos internos da Privus. Esta página descreve a arquitetura técnica em funcionamento na data indicada.</p></div>
 </main>
+
 <footer>
-  <p>© 2026 Privus Kuzola · <a href="index.html">privuskuzola.pt</a> · <a href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a></p>
-  <p style="margin-top:.5rem">Elaborada ao abrigo do Art. 13.º RGPD e da Lei n.º 58/2019, de 8 de agosto · Versão 1.2</p>
+  <p>© 2026 Privus Kuzola · <a href="/">privuskuzola.pt</a> · <a href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a></p>
+  <p>RGPD · Lei n.º 58/2019 · Versão 1.3</p>
 </footer>
 </body>
 </html>
