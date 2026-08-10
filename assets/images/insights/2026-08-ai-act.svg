@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#0D1B2A"/>
+  <g fill="none" stroke="#C8A96E" stroke-width="3" opacity=".58">
+    <circle cx="950" cy="315" r="210"/>
+    <circle cx="950" cy="315" r="145"/>
+    <path d="M740 315h420M950 105v420"/>
+  </g>
+  <text x="72" y="82" fill="#C8A96E" font-family="Arial,sans-serif" font-size="20" font-weight="600" letter-spacing="5">PRIVUS MONTH INSIGHTS · Nº 2</text>
+  <text x="72" y="155" fill="#F0EBE0" font-family="Georgia,serif" font-size="60">AI Act + RGPD</text>
+  <text x="72" y="225" fill="#F0EBE0" font-family="Georgia,serif" font-size="48">O que o Digital Omnibus adiou</text>
+  <text x="72" y="283" fill="#F0EBE0" font-family="Georgia,serif" font-size="48">e o que já vigora</text>
+  <text x="72" y="355" fill="#AEB6BF" font-family="Arial,sans-serif" font-size="24">AI ACT · DIGITAL OMNIBUS · RGPD</text>
+  <text x="72" y="545" fill="#C8A96E" font-family="Arial,sans-serif" font-size="22">privuskuzola.pt</text>
+  <text x="1080" y="545" fill="#F0EBE0" text-anchor="end" font-family="Arial,sans-serif" font-size="22">AGOSTO 2026</text>
+</svg>
