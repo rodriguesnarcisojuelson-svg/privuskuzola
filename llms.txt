@@ -1,0 +1,39 @@
+# Privus Kuzola
+
+> Consultoria regulatória digital que transforma obrigações em decisões estratégicas e sistemas de conformidade sustentáveis.
+
+## Identidade
+
+- Nome: Privus Kuzola, também apresentada como Privus
+- Website oficial: https://privuskuzola.pt/
+- Email: contacto@privuskuzola.pt
+- Telefone e WhatsApp: +351 936 246 971
+- LinkedIn: https://www.linkedin.com/company/privus-kuzola/
+- Instagram: https://www.instagram.com/privuskuzola
+
+## Áreas de atuação
+
+- Proteção de dados e RGPD
+- Inteligência artificial e AI Act
+- Cibersegurança e NIS2
+- Resiliência operacional digital e DORA
+- ISO 27001, ISO 22301 e ISO 37301
+- Governação digital, implementação e conformidade contínua
+
+## Metodologia e serviços
+
+- Framework Privus: arquitetura que integra princípios, avaliação, implementação e melhoria contínua.
+- PRIA — Privus Regulatory Impact Assessment: diagnóstico da maturidade regulatória em 10 pilares e 4 dimensões, com scoring, riscos, prioridades e roadmap.
+- Implementação: processos, documentação e controlos necessários para executar as recomendações.
+- Compliance as a Service: acompanhamento e revisão contínuos.
+- Formação: capacitação ajustada às lacunas identificadas na organização.
+
+## Conteúdo público
+
+- Página institucional: https://privuskuzola.pt/
+- Planos públicos do PRIA: https://privuskuzola.pt/pria-planos.html
+- Privus Month Insights: análises regulatórias mensais publicadas na secção Insights do website.
+
+## Limites de acesso
+
+O conteúdo institucional e editorial pode ser lido, indexado, citado e resumido. As APIs e as páginas internas do motor PRIA são privadas e não fazem parte do conteúdo público.
