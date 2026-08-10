@@ -7,11 +7,12 @@ User-agent: Google-Extended
 User-agent: Bingbot
 User-agent: OAI-SearchBot
 User-agent: ChatGPT-User
+User-agent: GPTBot
+User-agent: ClaudeBot
 User-agent: Claude-SearchBot
 User-agent: Claude-User
 User-agent: PerplexityBot
 User-agent: Perplexity-User
-Content-Signal: search=yes,ai-input=yes,ai-train=no,use=reference
 Allow: /
 Disallow: /api/
 Disallow: /pria-engine-prototype
@@ -19,13 +20,7 @@ Disallow: /pria-engine-prototype.html
 Disallow: /pria-guided
 Disallow: /pria-guided.html
 
-User-agent: GPTBot
-User-agent: ClaudeBot
-Content-Signal: search=yes,ai-input=yes,ai-train=no,use=reference
-Disallow: /
-
 User-agent: *
-Content-Signal: search=yes,ai-input=yes,ai-train=no,use=reference
 Allow: /
 Disallow: /api/
 Disallow: /pria-engine-prototype
