@@ -1,229 +1,234 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="pt-PT">
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="X-Frame-Options" content="DENY">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
-<meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="index, follow">
+<meta name="description" content="Política de Cookies da Privus Kuzola.">
 <title>Política de Cookies — Privus Kuzola</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --navy:#0D1B2A; --gold:#C8A96E; --gold-l:#D9BE90; --cream:#F0EBE0; --cream-d:#E5DDD0;
-  --white:#FFFFFF; --grey:#6B7280; --green:#2F6B47; --green-bg:#EAF5EE; --amber:#8A6F1E; --amber-bg:#FBF3DE;
-}
+:root{--navy:#0D1B2A;--gold:#C8A96E;--gold-l:#D9BE90;--cream:#F0EBE0;--cream-d:#E5DDD0;--white:#fff;--grey:#5F6670;--green:#2F6B47;--green-bg:#EAF5EE;--amber:#8A6F1E;--amber-bg:#FBF3DE}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{font-family:'Outfit',sans-serif;font-weight:300;background:var(--cream);color:var(--navy);line-height:1.75}
 a{color:inherit}
-header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding:1.2rem 2rem;position:sticky;top:0;z-index:10}
-.header-inner{max-width:780px;margin:0 auto;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:500;letter-spacing:.03em;color:var(--white);text-decoration:none}
-.logo span{color:var(--gold)}
-.back{font-size:.78rem;color:rgba(255,255,255,.55);text-decoration:none;transition:color .2s}
+header{background:var(--navy);border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 2rem;position:sticky;top:0;z-index:10}
+.header-inner{max-width:820px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.brand{display:inline-flex;align-items:center;text-decoration:none}
+.brand img{display:block;width:210px;max-width:46vw;height:auto}
+.back{font-size:.78rem;color:rgba(255,255,255,.6);text-decoration:none;white-space:nowrap;transition:color .2s}
 .back:hover{color:var(--gold)}
-main{max-width:780px;margin:0 auto;padding:3.5rem 2rem 5rem}
+main{max-width:820px;margin:0 auto;padding:3.5rem 2rem 5rem}
 .doc-label{font-size:.68rem;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.9rem;display:flex;align-items:center;gap:.75rem}
 .doc-label::before{content:'';width:24px;height:1px;background:var(--gold)}
-h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.4rem;line-height:1.1;margin-bottom:.9rem;color:var(--navy)}
+h1{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:2.5rem;line-height:1.1;margin-bottom:.9rem}
 .doc-meta{font-size:.82rem;color:var(--grey);margin-bottom:2.5rem;padding-bottom:2rem;border-bottom:1px solid var(--cream-d);font-style:italic}
 .toc{background:var(--white);border:1px solid var(--cream-d);padding:1.6rem 2rem;margin-bottom:3rem}
 .toc-title{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.toc ol{padding-left:1.25rem}
-.toc li{margin-bottom:.5rem}
-.toc a{font-size:.87rem;color:var(--grey);text-decoration:none;transition:color .2s}
+.toc ol{padding-left:1.25rem;columns:2;column-gap:2rem}
+.toc li{margin-bottom:.5rem;break-inside:avoid}
+.toc a{font-size:.86rem;color:var(--grey);text-decoration:none}
 .toc a:hover{color:var(--gold)}
-h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.65rem;color:var(--navy);margin:3rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--cream-d)}
-h3{font-family:'Outfit',sans-serif;font-size:.98rem;font-weight:600;color:var(--navy);margin:1.9rem 0 .7rem}
-p{font-size:.9rem;font-weight:300;color:var(--grey);margin-bottom:1.1rem;line-height:1.85}
-p strong{color:var(--navy);font-weight:500}
+h2{font-family:'Cormorant Garamond',serif;font-weight:600;font-size:1.7rem;margin:3rem 0 1.1rem;padding-top:1.2rem;border-top:1px solid var(--cream-d);scroll-margin-top:95px}
+h3{font-size:.98rem;font-weight:600;margin:1.9rem 0 .7rem}
+p{font-size:.9rem;color:var(--grey);margin-bottom:1.1rem;line-height:1.85}
+p strong,li strong,td strong{color:var(--navy);font-weight:500}
 ul,ol{padding-left:1.5rem;margin-bottom:1.1rem}
-li{font-size:.87rem;font-weight:300;color:var(--grey);margin-bottom:.5rem;line-height:1.75}
-li strong{color:var(--navy);font-weight:500}
+li{font-size:.87rem;color:var(--grey);margin-bottom:.5rem;line-height:1.75}
 .table-wrap{overflow-x:auto;margin:1.4rem 0;border:1px solid var(--cream-d)}
-table{width:100%;border-collapse:collapse;font-size:.8rem;background:var(--white)}
-th{background:var(--navy);color:var(--gold-l);font-weight:500;padding:.75rem .9rem;text-align:left;font-size:.68rem;letter-spacing:.06em;text-transform:uppercase}
-td{padding:.7rem .9rem;border-top:1px solid var(--cream-d);color:var(--grey);vertical-align:top}
-tr:nth-child(even) td{background:var(--cream)}
-.badge{display:inline-block;font-size:.62rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:.22rem .55rem;border-radius:2px}
+table{width:100%;border-collapse:collapse;font-size:.78rem;background:var(--white);min-width:760px}
+th{background:var(--navy);color:var(--gold-l);font-weight:500;padding:.75rem .9rem;text-align:left;font-size:.66rem;letter-spacing:.05em;text-transform:uppercase}
+td{padding:.72rem .9rem;border-top:1px solid var(--cream-d);color:var(--grey);vertical-align:top;line-height:1.55}
+tr:nth-child(even) td{background:#F8F5EF}
+.badge{display:inline-block;font-size:.61rem;font-weight:600;letter-spacing:.05em;text-transform:uppercase;padding:.2rem .5rem;border-radius:2px;white-space:nowrap}
 .badge-green{background:var(--green-bg);color:var(--green);border:1px solid rgba(47,107,71,.25)}
 .badge-amber{background:var(--amber-bg);color:var(--amber);border:1px solid rgba(138,111,30,.25)}
-.highlight{background:rgba(200,169,110,.08);border-left:2px solid var(--gold);padding:1.1rem 1.4rem;margin:1.4rem 0}
-.highlight p{margin-bottom:0;color:var(--grey)}
-.highlight strong{color:var(--navy)}
-.ref{font-size:.74rem;color:var(--gold);font-weight:600;letter-spacing:.04em}
-.manage-btn{display:inline-block;background:var(--gold);color:var(--navy);padding:.75rem 1.6rem;font-size:.78rem;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:background .2s;margin-top:.5rem;border:none;cursor:pointer;font-family:'Outfit',sans-serif}
+.highlight{background:rgba(200,169,110,.09);border-left:2px solid var(--gold);padding:1.1rem 1.4rem;margin:1.4rem 0}
+.highlight p{margin:0}
+.legal-link{color:#8A6F3E;font-weight:500}
+.manage-btn{display:inline-block;background:var(--gold);color:var(--navy);padding:.8rem 1.6rem;font-size:.78rem;font-weight:600;letter-spacing:.05em;text-decoration:none;transition:background .2s;margin:.5rem 0 1.2rem}
 .manage-btn:hover{background:var(--gold-l)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.9em;color:var(--navy)}
 footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.06);padding:2.2rem;text-align:center}
-footer p{font-size:.75rem;color:rgba(255,255,255,.4)}
+footer p{font-size:.74rem;color:rgba(255,255,255,.45);margin:.35rem 0}
 footer a{color:var(--gold);text-decoration:none}
-@media (max-width:640px){
-  main{padding:2.5rem 1.25rem 4rem}
-  h1{font-size:1.9rem}
-  .toc{padding:1.3rem 1.4rem}
-}
+@media(max-width:640px){header{padding:.85rem 1.2rem}.brand img{width:155px;max-width:52vw}main{padding:2.5rem 1.25rem 4rem}h1{font-size:2rem}.toc{padding:1.3rem 1.4rem}.toc ol{columns:1}}
 </style>
 </head>
 <body>
 <header>
   <div class="header-inner">
-    <a href="index.html" class="logo">Privus <span>Kuzola</span></a>
-    <a href="index.html" class="back">← Voltar ao site</a>
+    <a href="/" class="brand" aria-label="Privus Kuzola — página inicial">
+      <img src="/logo-privus-horizontal.PNG" alt="Privus Kuzola">
+    </a>
+    <a href="/" class="back">← Voltar ao site</a>
   </div>
 </header>
+
 <main>
   <p class="doc-label">Documento legal</p>
   <h1>Política de Cookies</h1>
-  <p class="doc-meta">Versão 1.1 · Entrada em vigor: 10/05/2026 · Última actualização: 22/07/2026<br>
-  Elaborada ao abrigo da Lei n.º 41/2004, de 18 de agosto · Directiva ePrivacy 2002/58/CE · Regulamento (UE) 2016/679</p>
+  <p class="doc-meta">Versão 1.2 · Entrada em vigor: 10/05/2026 · Última atualização: 03/08/2026<br>
+  Lei n.º 41/2004, de 18 de agosto · Diretiva 2002/58/CE (ePrivacy) · Regulamento (UE) 2016/679 (RGPD).</p>
 
-  <div class="toc">
+  <nav class="toc" aria-label="Índice da política">
     <p class="toc-title">Índice</p>
     <ol>
       <li><a href="#c1">O que são cookies</a></li>
-      <li><a href="#c2">Quadro legal aplicável</a></li>
-      <li><a href="#c3">Categorias de cookies que utilizamos</a></li>
-      <li><a href="#c4">Inventário de cookies activos</a></li>
-      <li><a href="#c5">Google Analytics 4 e MailerLite — informação específica</a></li>
-      <li><a href="#c6">Como gerir as suas preferências</a></li>
-      <li><a href="#c7">O que acontece se recusar os cookies analíticos</a></li>
-      <li><a href="#c8">Actualizações a esta Política</a></li>
+      <li><a href="#c2">Regras aplicáveis</a></li>
+      <li><a href="#c3">Categorias utilizadas</a></li>
+      <li><a href="#c4">Inventário atual</a></li>
+      <li><a href="#c5">Ferramentas analíticas</a></li>
+      <li><a href="#c6">Serviços e recursos externos</a></li>
+      <li><a href="#c7">Gerir preferências</a></li>
+      <li><a href="#c8">Efeito da recusa</a></li>
+      <li><a href="#c9">Atualizações e contacto</a></li>
     </ol>
-  </div>
+  </nav>
 
   <h2 id="c1">1. O que são cookies</h2>
-  <p>Os cookies são pequenos ficheiros de texto armazenados no seu dispositivo (computador, tablet, smartphone) quando visita um website. Permitem ao website reconhecer o seu browser, memorizar preferências e, quando consentidos, recolher informação sobre a sua navegação.</p>
-  <p>Além dos cookies tradicionais, existem tecnologias similares como o <em>localStorage</em> e o <em>sessionStorage</em> que funcionam de forma análoga. Esta Política abrange todas estas tecnologias quando utilizadas no website privuskuzola.pt.</p>
+  <p>Cookies são pequenos ficheiros ou valores guardados no dispositivo quando visita um website. Podem permitir o funcionamento de uma sessão, memorizar preferências, proteger o serviço ou, quando consentidos, medir a utilização do website.</p>
+  <p>Esta Política abrange também tecnologias semelhantes, como <em>localStorage</em> e identificadores técnicos. O localStorage é guardado pelo browser no dispositivo e, ao contrário de um cookie, não é enviado automaticamente em cada pedido ao servidor.</p>
 
-  <h2 id="c2">2. Quadro legal aplicável</h2>
-  <p>A utilização de cookies no website privuskuzola.pt está sujeita ao seguinte quadro legal cumulativo:</p>
-  <div class="table-wrap">
-    <table>
-      <tr><th>Legislação</th><th>O que regula</th><th>Obrigação principal</th></tr>
-      <tr><td><strong>Lei n.º 41/2004, de 18 de agosto</strong><br>(transpõe Directiva ePrivacy 2002/58/CE)</td><td>Acesso e armazenamento de informação no terminal do utilizador</td><td>Consentimento prévio e informado para todos os cookies não estritamente necessários</td></tr>
-      <tr><td><strong>Regulamento (UE) 2016/679 — RGPD</strong></td><td>Tratamento de dados pessoais recolhidos via cookies (IP anonimizado, identificadores, comportamento)</td><td>Base legal válida; transparência; direitos dos titulares</td></tr>
-      <tr><td><strong>Orientação CNPD</strong></td><td>Interpretação nacional dos requisitos de consentimento e bloqueio técnico</td><td>Bloqueio técnico efectivo antes do consentimento; recusa tão fácil quanto aceitação</td></tr>
-      <tr><td><strong>Orientação CNIL / EDPB</strong></td><td>Boas práticas europeias sobre Consent Management</td><td>Consentimento granular; sem dark patterns; renovação máx. 13 meses</td></tr>
-    </table>
-  </div>
+  <h2 id="c2">2. Regras aplicáveis</h2>
+  <p>As tecnologias estritamente necessárias para fornecer uma funcionalidade pedida ou garantir a segurança podem ser utilizadas sem consentimento prévio. As tecnologias analíticas ou de acompanhamento só são carregadas depois de o utilizador escolher “Aceitar”.</p>
+  <p>O consentimento deve ser livre, específico, informado e inequívoco. Pode ser recusado ou retirado com a mesma facilidade com que é dado. A recusa não impede o acesso às funcionalidades essenciais.</p>
 
-  <h2 id="c3">3. Categorias de cookies que utilizamos</h2>
+  <h2 id="c3">3. Categorias utilizadas</h2>
+  <h3>3.1 Tecnologias essenciais</h3>
+  <p><span class="badge badge-green">Sem consentimento prévio</span></p>
+  <p>São necessárias para memorizar a escolha de cookies, guardar o idioma, proteger o website e permitir que uma pessoa que pagou o PRIA aceda ao serviço contratado. Não são utilizadas para publicidade.</p>
 
-  <h3>3.1 Cookies essenciais</h3>
-  <p><span class="badge badge-green">Sem consentimento</span></p>
-  <p>Os cookies essenciais são indispensáveis ao funcionamento técnico do website. Sem eles, determinadas funcionalidades não estão disponíveis. Não requerem consentimento prévio ao abrigo do Art. 5.º, n.º 3 da Directiva ePrivacy (excepção para cookies estritamente necessários) e do Art. 6.º(1)(f) do RGPD (interesse legítimo — funcionamento técnico do website).</p>
-  <p>Actualmente, o website privuskuzola.pt não utiliza cookies de sessão de autenticação próprios. Os únicos dados armazenados sem consentimento são: (i) a sua própria preferência de consentimento de cookies, guardada localmente no seu dispositivo para não lhe perguntarmos de novo a cada visita; e (ii) os dados técnicos de acesso ao servidor, geridos pela Cloudflare, que aloja o website (ver secção 4).</p>
-
-  <h3>3.2 Cookies analíticos e de acompanhamento de newsletter</h3>
+  <h3>3.2 Tecnologias analíticas e da newsletter</h3>
   <p><span class="badge badge-amber">Consentimento obrigatório</span></p>
-  <p>Os cookies analíticos recolhem informação sobre como os visitantes utilizam o website — páginas visitadas, tempo de permanência, fonte do tráfego. Esta informação permite melhorar o website e compreender o comportamento dos utilizadores.</p>
-  <p><strong>Estes cookies só são activados após o seu consentimento expresso.</strong> Enquanto não consente, o próprio script destas ferramentas não é carregado pelo seu browser — não se trata apenas de desativar cookies com o script já a correr, o carregamento em si fica bloqueado até à sua decisão. Se recusar, o website continua a funcionar normalmente — apenas não recolhemos dados de comportamento de navegação.</p>
-  <p>Utilizamos duas ferramentas nesta categoria: o <strong>Google Analytics 4 (GA4)</strong>, da Google LLC, e o script <strong>MailerLite Universal</strong>, da MailerLite, UAB, que regista visitas para efeitos de estatísticas de subscrição e de campanhas de newsletter.</p>
+  <p>O Google Analytics 4 e o script MailerLite Universal só são inseridos na página após consentimento. Se rejeitar, esses scripts não são carregados pelo website. Estas ferramentas ajudam a medir visitas, interações e eficácia de conteúdos próprios.</p>
 
-  <div class="highlight">
-    <p><strong>Não utilizamos cookies de marketing ou retargeting de terceiros.</strong> O website privuskuzola.pt não coloca cookies de publicidade ou rastreamento entre websites de terceiros. O script da newsletter serve apenas para estatísticas de visitas e de campanhas próprias, não para publicidade.</p>
-  </div>
+  <div class="highlight"><p><strong>Não utilizamos no website cookies de publicidade comportamental ou retargeting.</strong> Os serviços externos que abre voluntariamente — como Stripe, Microsoft Bookings, MailerLite ou WhatsApp — podem utilizar as suas próprias tecnologias segundo as respetivas políticas.</p></div>
 
-  <h2 id="c4">4. Inventário de cookies activos</h2>
-  <div class="table-wrap">
-    <table>
-      <tr><th>Nome</th><th>Fornecedor</th><th>Categoria</th><th>Finalidade</th><th>Duração</th><th>Base legal</th><th>Transf. intl.</th></tr>
-      <tr>
-        <td><strong>privusCookieConsent</strong></td>
-        <td>Privus Kuzola (localStorage)</td>
-        <td><span class="badge badge-green">Essencial</span></td>
-        <td>Registo da preferência de consentimento de cookies e da data em que foi dada, para renovação automática ao fim de 13 meses</td>
-        <td>13 meses</td>
-        <td><span class="ref">Art. 6.º(1)(f)</span></td>
-        <td>Não</td>
-      </tr>
-      <tr>
-        <td><strong>_ga</strong></td>
-        <td>Google Analytics 4</td>
-        <td><span class="badge badge-amber">Analítico</span></td>
-        <td>Identificação de utilizador único para análise de tráfego</td>
-        <td>2 anos</td>
-        <td><span class="ref">Art. 6.º(1)(a)</span></td>
-        <td>EUA — EU-US DPF</td>
-      </tr>
-      <tr>
-        <td><strong>_ga_36GJVCQL9Y</strong></td>
-        <td>Google Analytics 4</td>
-        <td><span class="badge badge-amber">Analítico</span></td>
-        <td>Persistência de sessão GA4</td>
-        <td>2 anos</td>
-        <td><span class="ref">Art. 6.º(1)(a)</span></td>
-        <td>EUA — EU-US DPF</td>
-      </tr>
-      <tr>
-        <td><strong>Identificador MailerLite</strong></td>
-        <td>MailerLite, UAB</td>
-        <td><span class="badge badge-amber">Analítico</span></td>
-        <td>Estatísticas de visita associadas a campanhas de newsletter. O nome exato do identificador pode variar consoante a funcionalidade utilizada — para detalhe técnico completo, consulte a <a href="https://www.mailerlite.com/legal/cookie-policy" target="_blank" style="color:var(--gold);">Política de Cookies do MailerLite</a></td>
-        <td>Variável</td>
-        <td><span class="ref">Art. 6.º(1)(a)</span></td>
-        <td>Não — processamento na UE</td>
-      </tr>
-    </table>
-  </div>
-  <p>Este inventário é actualizado sempre que são adicionadas, removidas ou modificadas ferramentas no website. A data de última actualização consta no cabeçalho deste documento.</p>
+  <h2 id="c4">4. Inventário atual</h2>
+  <div class="table-wrap"><table>
+    <tr><th>Nome</th><th>Fornecedor</th><th>Categoria</th><th>Finalidade</th><th>Duração</th><th>Quando é criado</th></tr>
+    <tr>
+      <td><strong>privusCookieConsent</strong></td>
+      <td>Privus (localStorage)</td>
+      <td><span class="badge badge-green">Essencial</span></td>
+      <td>Guarda “accepted” ou “rejected” e a data da escolha para não repetir o banner.</td>
+      <td>13 meses</td>
+      <td>Ao aceitar ou rejeitar</td>
+    </tr>
+    <tr>
+      <td><strong>privusLang</strong></td>
+      <td>Privus (localStorage)</td>
+      <td><span class="badge badge-green">Preferência</span></td>
+      <td>Memoriza PT, EN ou ES.</td>
+      <td>Até alterar ou limpar os dados do site</td>
+      <td>Ao escolher o idioma</td>
+    </tr>
+    <tr>
+      <td><strong>pria_access</strong></td>
+      <td>Privus (cookie próprio)</td>
+      <td><span class="badge badge-green">Essencial</span></td>
+      <td>Comprova tecnicamente que uma sessão Stripe foi paga e autoriza o plano PRIA adquirido. Token assinado com referência de sessão, plano e expiração; HttpOnly, Secure e SameSite=Lax.</td>
+      <td>30 dias</td>
+      <td>Depois da validação do pagamento</td>
+    </tr>
+    <tr>
+      <td><strong>__cf_bm</strong></td>
+      <td>Cloudflare</td>
+      <td><span class="badge badge-green">Segurança</span></td>
+      <td>Distingue tráfego automatizado quando Bot Management/Bot Fight está ativo. Não corresponde a um ID de conta Privus.</td>
+      <td>30 minutos de inatividade</td>
+      <td>Apenas quando a proteção aplicável o exige</td>
+    </tr>
+    <tr>
+      <td><strong>cf_clearance</strong> e identificadores de desafio</td>
+      <td>Cloudflare</td>
+      <td><span class="badge badge-green">Segurança</span></td>
+      <td>Guarda a prova de que um desafio de segurança foi ultrapassado, evitando repetições imediatas.</td>
+      <td>Conforme a configuração do desafio</td>
+      <td>Apenas quando ocorre um desafio</td>
+    </tr>
+    <tr>
+      <td><strong>_ga</strong></td>
+      <td>Google Analytics 4</td>
+      <td><span class="badge badge-amber">Analítico</span></td>
+      <td>Distingue instâncias de browser/dispositivo para estatísticas agregadas.</td>
+      <td>Até 2 anos</td>
+      <td>Somente após aceitar</td>
+    </tr>
+    <tr>
+      <td><strong>_ga_36GJVCQL9Y</strong></td>
+      <td>Google Analytics 4</td>
+      <td><span class="badge badge-amber">Analítico</span></td>
+      <td>Mantém o estado da sessão da propriedade GA4.</td>
+      <td>Até 2 anos</td>
+      <td>Somente após aceitar</td>
+    </tr>
+    <tr>
+      <td><strong>Identificadores MailerLite Universal</strong></td>
+      <td>MailerLite</td>
+      <td><span class="badge badge-amber">Analítico</span></td>
+      <td>Medição de visitas e de campanhas próprias. O nome e a duração podem variar conforme a funcionalidade da plataforma.</td>
+      <td>Variável; consultar o fornecedor</td>
+      <td>Somente após aceitar</td>
+    </tr>
+  </table></div>
+  <p>Cookies técnicos adicionais da Cloudflare podem ser usados temporariamente em situações de rate limiting, disponibilidade ou mitigação de abuso. A lista oficial e atualizada está na <a class="legal-link" href="https://developers.cloudflare.com/fundamentals/reference/policies-compliances/cloudflare-cookies/" target="_blank" rel="noopener">documentação de cookies da Cloudflare</a>.</p>
 
-  <h2 id="c5">5. Google Analytics 4 e MailerLite — informação específica</h2>
+  <h2 id="c5">5. Ferramentas analíticas</h2>
   <h3>5.1 Google Analytics 4</h3>
-  <p>O Google Analytics 4 é um serviço de análise de dados web prestado pela Google LLC, com sede nos EUA. Utilizamos o GA4 com as seguintes configurações de conformidade:</p>
-  <ul>
-    <li><strong>Bloqueio técnico prévio ao consentimento</strong> — o script do GA4 não é sequer carregado pelo seu browser enquanto não consente; não se trata de o script correr com o rastreio desativado, é o próprio carregamento que fica bloqueado</li>
-    <li><strong>IP anonimizado</strong> — parâmetro <code>anonymize_ip</code> activo; a Google não recebe o endereço IP completo</li>
-    <li><strong>Retenção de dados</strong> — configurada para 14 meses na consola GA4 (máximo recomendado pela CNPD/CNIL)</li>
-  </ul>
-  <p>A transferência de dados para os servidores da Google nos EUA é efectuada ao abrigo do <strong>EU-US Data Privacy Framework</strong>, adoptado pela Decisão de Adequação da Comissão Europeia de 10 de julho de 2023. A Google LLC está certificada ao abrigo deste framework.</p>
-  <p>Para mais informação sobre como a Google trata os dados recolhidos pelo GA4, consulte a <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--gold)">Política de Privacidade da Google</a>.</p>
+  <p>O GA4 é carregado com o identificador de medição <code>G-36GJVCQL9Y</code> apenas após consentimento. Recolhe eventos de navegação, páginas visitadas, origem do tráfego e dados de browser/dispositivo. A propriedade está prevista para uma retenção de dados de utilizador e evento de até 14 meses; os cookies no browser podem durar até 2 anos.</p>
+  <p>A Google indica que o GA4 não regista nem armazena endereços IP individuais. O código do website ativa adicionalmente o parâmetro <code>anonymize_ip</code>. Consulte a <a class="legal-link" href="https://policies.google.com/privacy" target="_blank" rel="noopener">Política de Privacidade da Google</a>.</p>
 
   <h3>5.2 MailerLite</h3>
-  <p>O MailerLite, UAB é a plataforma que utilizamos para gestão da newsletter Privus Month Insights e distribuição de episódios do podcast. O script MailerLite Universal está presente no website e, tal como o GA4, só é carregado após o seu consentimento expresso.</p>
-  <p>A subscrição da newsletter é feita através de uma página própria alojada pelo MailerLite, para onde é direcionado ao clicar em "Subscrever". Essa página está sujeita à política de privacidade e de cookies do próprio MailerLite, disponível em <a href="https://www.mailerlite.com/legal/privacy-policy" target="_blank" style="color:var(--gold)">mailerlite.com/legal/privacy-policy</a>.</p>
-  <p>O MailerLite, UAB tem sede na Lituânia (UE) e processa os dados de visita e de subscrição dentro do Espaço Económico Europeu, sem necessidade de mecanismo de transferência internacional.</p>
+  <p>O MailerLite Universal só é carregado após consentimento. A subscrição efetiva ocorre numa página alojada pelo MailerLite, aberta quando clica em “Subscrever”. Nessa página externa aplicam-se as escolhas e políticas do MailerLite. A entidade contratual indicada pelo fornecedor para clientes do EEE é a <strong>MailerLite Limited, Irlanda</strong>.</p>
+  <p>Consulte a <a class="legal-link" href="https://www.mailerlite.com/legal/privacy-policy" target="_blank" rel="noopener">Política de Privacidade</a> e a <a class="legal-link" href="https://www.mailerlite.com/legal/cookie-policy" target="_blank" rel="noopener">Política de Cookies do MailerLite</a>.</p>
 
-  <h2 id="c6">6. Como gerir as suas preferências</h2>
-  <p>Tem o controlo total sobre os cookies analíticos. Pode alterar as suas preferências a qualquer momento através dos seguintes meios:</p>
-
-  <h3>6.1 Painel de preferências do website</h3>
-  <p>Clique no botão abaixo para ir à homepage com o painel de preferências já aberto:</p>
-  <a href="index.html#gerir-cookies" class="manage-btn">Gerir preferências de cookies</a>
-
-  <h3>6.2 Definições do browser</h3>
-  <p>Pode também gerir ou eliminar cookies directamente nas definições do seu browser:</p>
+  <h2 id="c6">6. Serviços e recursos externos</h2>
+  <p>Algumas interações transferem o utilizador para outro domínio. Os cookies aí colocados não são controlados pelo painel de cookies da Privus:</p>
   <ul>
-    <li><strong>Google Chrome</strong>: Definições → Privacidade e segurança → Cookies e outros dados de sites</li>
-    <li><strong>Mozilla Firefox</strong>: Definições → Privacidade e segurança → Cookies e dados de sites</li>
-    <li><strong>Safari</strong>: Preferências → Privacidade → Gerir dados de websites</li>
-    <li><strong>Microsoft Edge</strong>: Definições → Cookies e permissões de site → Cookies e dados armazenados</li>
+    <li><strong>Stripe Checkout</strong> — pagamento e prevenção de fraude;</li>
+    <li><strong>Microsoft Bookings/Outlook</strong> — agendamento do PRIA Guided;</li>
+    <li><strong>MailerLite</strong> — formulário de subscrição da newsletter;</li>
+    <li><strong>WhatsApp/Meta, LinkedIn e Instagram</strong> — comunicação e redes sociais.</li>
+  </ul>
+  <p>O website também solicita fontes à Google e uma imagem à Unsplash. Estes pedidos podem transmitir IP, browser e URL de referência, embora não sejam usados pela Privus para criar um perfil publicitário. Consulte a <a class="legal-link" href="politica-privacidade.html">Política de Privacidade</a> para mais informação.</p>
+  <p>A Assistente Privus não utiliza cookies próprios, não guarda o diálogo e não envia as escolhas para um serviço externo de inteligência artificial.</p>
+
+  <h2 id="c7">7. Como gerir as preferências</h2>
+  <h3>7.1 Painel do website</h3>
+  <p>Pode reabrir o banner e alterar a sua escolha através do link “Gerir Cookies” no rodapé ou do botão abaixo:</p>
+  <a href="/#gerir-cookies" class="manage-btn">Gerir preferências de cookies</a>
+  <p>Ao retirar o consentimento, o website deixa de carregar novamente o GA4 e o MailerLite Universal. A retirada não elimina automaticamente cookies já existentes no browser; pode eliminá-los nas definições do dispositivo.</p>
+
+  <h3>7.2 Definições do browser</h3>
+  <p>Pode visualizar, bloquear ou eliminar cookies e armazenamento local nas definições de privacidade do Chrome, Safari, Firefox, Edge ou outro browser. Bloquear todos os cookies pode impedir o cookie <strong>pria_access</strong> e, por isso, impossibilitar o acesso ao PRIA pago nesse browser.</p>
+
+  <h3>7.3 Opt-out adicional do Google Analytics</h3>
+  <p>A Google disponibiliza uma <a class="legal-link" href="https://tools.google.com/dlpage/gaoptout" target="_blank" rel="noopener">extensão de desativação do Google Analytics</a>. Esta opção é independente do painel Privus.</p>
+
+  <h2 id="c8">8. Efeito da recusa</h2>
+  <p>Se rejeitar as tecnologias analíticas:</p>
+  <ul>
+    <li>o website, o formulário, os pagamentos e o PRIA continuam disponíveis;</li>
+    <li>o Google Analytics e o MailerLite Universal não são carregados pelo website;</li>
+    <li>a decisão fica guardada localmente por 13 meses;</li>
+    <li>continuam a ser utilizadas apenas as tecnologias essenciais e de segurança;</li>
+    <li>os serviços externos que abra voluntariamente podem apresentar escolhas próprias.</li>
   </ul>
 
-  <h3>6.3 Opt-out do Google Analytics</h3>
-  <p>Pode também instalar a <a href="https://tools.google.com/dlpage/gaoptout" target="_blank" style="color:var(--gold)">extensão de opt-out do Google Analytics</a> para o seu browser, que impede o GA4 de recolher dados em todos os websites que o utilizem, independentemente das suas definições de cookies em cada site.</p>
-
-  <h2 id="c7">7. O que acontece se recusar os cookies analíticos</h2>
-  <p>Se recusar os cookies analíticos:</p>
-  <ul>
-    <li>O website <strong>continua a funcionar normalmente</strong> em todas as suas funcionalidades</li>
-    <li>Pode navegar, consultar os serviços e efectuar pagamentos do PRIA sem qualquer limitação</li>
-    <li>O Google Analytics e o script do MailerLite <strong>não são carregados</strong> e não são colocados cookies de rastreio no seu dispositivo</li>
-    <li>A sua preferência é guardada durante 13 meses, após os quais voltamos a pedir a sua opinião</li>
-  </ul>
-
-  <h2 id="c8">8. Actualizações a esta Política</h2>
-  <p>Esta Política de Cookies pode ser actualizada quando adicionamos ou removemos ferramentas do website, quando a legislação aplicável se altera, ou quando as orientações das autoridades de proteção de dados são revistas.</p>
-  <p>Em caso de alterações materiais que impliquem novos cookies que requeiram consentimento, voltaremos a apresentar o banner de consentimento independentemente das suas preferências anteriores.</p>
-  <p>A versão em vigor é sempre a disponível em <strong>privuskuzola.pt/politica-cookies.html</strong>. A data de última actualização consta no cabeçalho deste documento.</p>
-
+  <h2 id="c9">9. Atualizações e contacto</h2>
+  <p>Atualizamos esta Política quando mudam as ferramentas, finalidades, prazos ou exigências legais. Se adicionarmos tecnologias não essenciais com uma finalidade materialmente diferente, voltaremos a pedir consentimento.</p>
+  <p>Questões sobre cookies ou proteção de dados: <a class="legal-link" href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a>.</p>
+  <div class="highlight"><p><strong>Nota operacional:</strong> o inventário deve ser confirmado periodicamente com uma inspeção real do browser e atualizado sempre que um fornecedor ou script seja adicionado, removido ou reconfigurado.</p></div>
 </main>
+
 <footer>
-  <p>© 2026 Privus Kuzola · <a href="index.html">privuskuzola.pt</a> · <a href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a></p>
-  <p style="margin-top:.5rem">Elaborada ao abrigo da Lei n.º 41/2004 · Directiva ePrivacy 2002/58/CE · RGPD · Versão 1.1</p>
+  <p>© 2026 Privus Kuzola · <a href="/">privuskuzola.pt</a> · <a href="mailto:privacidade@privuskuzola.pt">privacidade@privuskuzola.pt</a></p>
+  <p>Lei n.º 41/2004 · Diretiva ePrivacy · RGPD · Versão 1.2</p>
 </footer>
 </body>
 </html>
