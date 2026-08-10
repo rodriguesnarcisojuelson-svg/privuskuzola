@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Versão final revista · 10/08/2026 -->
 <html lang="pt-PT" id="htmlRoot">
 <head>
 <meta charset="UTF-8">
@@ -248,13 +249,6 @@
     border: 1px solid rgba(13,27,42,0.22); padding: 0.72rem 1.05rem;
   }
 
-  .podcast-strip { background: var(--navy); padding: 2.2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
-  .podcast-info { display: flex; align-items: center; gap: 1.6rem; }
-  .podcast-icon { width: 50px; height: 50px; border: 1px solid var(--gold); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .podcast-icon svg { width: 24px; height: 24px; fill: var(--gold); }
-  .podcast-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--white); margin-bottom: 0.2rem; }
-  .podcast-text p { font-size: 0.76rem; color: rgba(255,255,255,0.45); line-height: 1.5; }
-  .podcast-soon { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); border: 1px solid rgba(200,169,110,0.35); padding: 0.7rem 1.4rem; white-space: nowrap; flex-shrink: 0; }
   .newsletter-strip { background: var(--white); border: 1px solid var(--cream-d); margin-top: 1px; padding: 2.2rem 3rem; display: flex; align-items: center; justify-content: space-between; gap: 3rem; }
   .newsletter-text h4 { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 500; color: var(--navy); margin-bottom: 0.3rem; }
   .newsletter-text p { font-size: 0.82rem; color: var(--grey); line-height: 1.6; margin: 0; }
@@ -383,9 +377,7 @@
     .servicos-grid { grid-template-columns: 1fr 1fr; }
     .insights { padding: 5rem 2rem; }
     .insights-grid { grid-template-columns: 1fr; }
-    .podcast-strip { flex-direction: column; text-align: center; padding: 2rem; gap: 1.5rem; }
     .newsletter-strip { flex-direction: column; text-align: center; padding: 2rem; gap: 1.2rem; }
-    .podcast-info { flex-direction: column; }
     .sobre { padding: 5rem 2rem; }
     .sobre-inner { grid-template-columns: 1fr; gap: 2.5rem; }
     .sobre-img { display: none; }
@@ -608,7 +600,7 @@
       </div>
 
       <div class="insight-card upcoming">
-        <div class="insight-edition" id="t-ins-e3-ed">Nº 3 · Setembro 2026</div>
+        <div class="insight-edition" id="t-ins-e3-ed">Próxima edição · Setembro 2026</div>
         <div class="insight-theme" id="t-ins-e3-theme">RGPD · Continuidade de negócio · ISO 22301</div>
         <h3 id="t-ins-e3-h">Continuidade de negócio: a obrigação que o RGPD pressupõe e a ISO 22301 formaliza</h3>
         <p id="t-ins-e3-p">Uma análise da disponibilidade, resiliência e recuperação exigidas pelo RGPD e da forma como a ISO 22301 as transforma num sistema estruturado de continuidade.</p>
@@ -618,23 +610,10 @@
 
     <p style="margin:0 0 2rem"><a href="/insights/" class="insight-cta" style="color:var(--navy);border-color:rgba(13,27,42,.3)">Ver arquivo de Insights →</a></p>
 
-    <div class="podcast-strip">
-      <div class="podcast-info">
-        <div class="podcast-icon">
-          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 14a3 3 0 0 0 3-3V5a3 3 0 0 0-6 0v6a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
-        </div>
-        <div class="podcast-text">
-          <h4 id="t-pod-h">Privus Podcast</h4>
-          <p id="t-pod-p">Conversas sobre regulação, tecnologia e transformação digital.</p>
-        </div>
-      </div>
-      <div class="podcast-soon" id="t-pod-soon">Brevemente · Spotify e YouTube</div>
-    </div>
-
     <div class="newsletter-strip">
       <div class="newsletter-text">
         <h4 id="t-nl-h">Subscrever a newsletter</h4>
-        <p id="t-nl-p">Recebe o Privus Month Insights e os episódios do podcast diretamente por email, assim que saírem.</p>
+        <p id="t-nl-p">Receba o Privus Month Insights e outras análises regulatórias diretamente por email.</p>
       </div>
       <a href="https://preview.mailerlite.io/forms/2524395/193645045269661519/share" target="_blank" rel="noopener" class="newsletter-btn" id="t-nl-btn">Subscrever →</a>
     </div>
@@ -645,7 +624,7 @@
   <div class="sobre-inner">
     <div class="sobre-img">
       <img src="/assets/images/privus-institutional.svg" alt="Arquitetura regulatória Privus: decisão, evidência e continuidade" width="800" height="460" loading="lazy">
-      <div class="sobre-img-caption"><span>Privus Kuzola</span><strong>Portugal · Desde 2025</strong></div>
+      <div class="sobre-img-caption"><span>Privus Kuzola</span><strong>Portugal · Regulatory Compliance &amp; Digital Governance</strong></div>
     </div>
     <div class="sobre-text">
       <span class="eyebrow" id="t-sob-ey">Sobre</span>
@@ -761,7 +740,6 @@
         <li><a href="pria-planos.html" id="t-ftn2">PRIA</a></li>
         <li><a href="#servicos" id="t-ftn3">Serviços</a></li>
         <li><a href="#insights" id="t-ftn4">Insights</a></li>
-        <li><a href="#insights" id="t-ftn5">Podcast</a></li>
         <li><a href="#contacto" id="t-ftn6">Contacto</a></li>
       </ul>
     </div>
@@ -770,7 +748,7 @@
       <ul>
         <li><a href="politica-privacidade.html" id="t-ft-priv">Política de Privacidade</a></li>
         <li><a href="politica-cookies.html" id="t-ft-cook">Política de Cookies</a></li>
-        <li><a href="#" id="manageCookies">Gerir Cookies</a></li>
+        <li><a href="#gerir-cookies" id="manageCookies">Gerir Cookies</a></li>
         <li><a href="termos-condicoes.html" id="t-ft-term">Termos e Condições</a></li>
       </ul>
     </div>
@@ -902,11 +880,10 @@ const T = {
     'ins-e2-ed':'Nº 2 · Agosto 2026','ins-e2-theme':'AI Act · Digital Omnibus · RGPD',
     'ins-e2-h':'AI Act + RGPD: O que o Digital Omnibus adiou e o que já vigora',
     'ins-e2-p':'O Omnibus alterou prazos e formalidades, mas não suspendeu o AI Act. A análise distingue o que foi adiado das obrigações que já produzem efeitos.','ins-e2-cta':'Ler análise →',
-    'ins-e3-ed':'Nº 3 · Setembro 2026','ins-e3-theme':'RGPD · Continuidade de negócio · ISO 22301',
+    'ins-e3-ed':'Próxima edição · Setembro 2026','ins-e3-theme':'RGPD · Continuidade de negócio · ISO 22301',
     'ins-e3-h':'Continuidade de negócio: a obrigação que o RGPD pressupõe e a ISO 22301 formaliza',
     'ins-e3-p':'Uma análise da disponibilidade, resiliência e recuperação exigidas pelo RGPD e da forma como a ISO 22301 as transforma num sistema estruturado de continuidade.','ins-e3-status':'Em preparação',
-    'pod-h':'Privus Podcast','pod-p':'Conversas sobre regulação, tecnologia e transformação digital.','pod-soon':'Brevemente · Spotify e YouTube',
-    'nl-h':'Subscrever a newsletter','nl-p':'Recebe o Privus Month Insights e os episódios do podcast diretamente por email, assim que saírem.','nl-btn':'Subscrever →',
+    'nl-h':'Subscrever a newsletter','nl-p':'Receba o Privus Month Insights e outras análises regulatórias diretamente por email.','nl-btn':'Subscrever →',
     'sob-ey':'Sobre','sob-h2':'Conformidade regulatória construída para durar.',
     'sob-quemh':'Quem somos','sob-quemp':'Consultores com formação avançada em Proteção de Dados, Privacidade e Cibersegurança (UE). Especializamo-nos em PMEs, infraestruturas de saúde e startups.',
     'sob-mish':'Missão','sob-misp':'Transformar obrigações regulatórias em decisões estratégicas, através de uma metodologia própria.',
@@ -965,11 +942,10 @@ const T = {
     'ins-e2-ed':'No. 2 · August 2026','ins-e2-theme':'AI Act · Digital Omnibus · GDPR',
     'ins-e2-h':'AI Act + GDPR: What the Digital Omnibus postponed and what already applies',
     'ins-e2-p':'The Omnibus changed deadlines and formalities, but it did not suspend the AI Act. This analysis separates postponed duties from obligations already in force.','ins-e2-cta':'Read analysis →',
-    'ins-e3-ed':'No. 3 · September 2026','ins-e3-theme':'GDPR · Business continuity · ISO 22301',
+    'ins-e3-ed':'Next edition · September 2026','ins-e3-theme':'GDPR · Business continuity · ISO 22301',
     'ins-e3-h':'Business continuity: the obligation implied by the GDPR and formalised by ISO 22301',
     'ins-e3-p':'An analysis of the availability, resilience and recovery required by the GDPR and how ISO 22301 turns them into a structured continuity management system.','ins-e3-status':'In preparation',
-    'pod-h':'Privus Podcast','pod-p':'Conversations about regulation, technology and digital transformation.','pod-soon':'Coming soon · Spotify and YouTube',
-    'nl-h':'Subscribe to the newsletter','nl-p':'Get Privus Month Insights and podcast episodes straight to your email, as soon as they\'re out.','nl-btn':'Subscribe →',
+    'nl-h':'Subscribe to the newsletter','nl-p':'Receive Privus Month Insights and other regulatory analysis directly by email.','nl-btn':'Subscribe →',
     'sob-ey':'About','sob-h2':'Regulatory compliance built to last.',
     'sob-quemh':'Who we are','sob-quemp':'Consultants with advanced training in Data Protection, Privacy and Cybersecurity (EU).',
     'sob-mish':'Mission','sob-misp':'Transform regulatory obligations into strategic decisions, through a proprietary methodology.',
@@ -1028,11 +1004,10 @@ const T = {
     'ins-e2-ed':'Nº 2 · Agosto 2026','ins-e2-theme':'AI Act · Digital Omnibus · RGPD',
     'ins-e2-h':'AI Act + RGPD: Lo que el Digital Omnibus aplazó y lo que ya está vigente',
     'ins-e2-p':'El Omnibus modificó plazos y formalidades, pero no suspendió el AI Act. El análisis distingue lo aplazado de las obligaciones que ya producen efectos.','ins-e2-cta':'Leer análisis →',
-    'ins-e3-ed':'Nº 3 · Septiembre 2026','ins-e3-theme':'RGPD · Continuidad de negocio · ISO 22301',
+    'ins-e3-ed':'Próxima edición · Septiembre 2026','ins-e3-theme':'RGPD · Continuidad de negocio · ISO 22301',
     'ins-e3-h':'Continuidad de negocio: la obligación que el RGPD presupone y la ISO 22301 formaliza',
     'ins-e3-p':'Un análisis de la disponibilidad, resiliencia y recuperación exigidas por el RGPD y de cómo la ISO 22301 las convierte en un sistema estructurado de continuidad.','ins-e3-status':'En preparación',
-    'pod-h':'Privus Podcast','pod-p':'Conversaciones sobre regulación, tecnología y transformación digital.','pod-soon':'Próximamente · Spotify y YouTube',
-    'nl-h':'Suscribirse a la newsletter','nl-p':'Recibe el Privus Month Insights y los episodios del podcast directamente por email, en cuanto salgan.','nl-btn':'Suscribirse →',
+    'nl-h':'Suscribirse a la newsletter','nl-p':'Recibe Privus Month Insights y otros análisis regulatorios directamente por email.','nl-btn':'Suscribirse →',
     'sob-ey':'Sobre nosotros','sob-h2':'Cumplimiento normativo construido para durar.',
     'sob-quemh':'Quiénes somos','sob-quemp':'Consultores con formación avanzada en Protección de Datos, Privacidad y Ciberseguridad (UE).',
     'sob-mish':'Misión','sob-misp':'Transformar obligaciones regulatorias en decisiones estratégicas.',
