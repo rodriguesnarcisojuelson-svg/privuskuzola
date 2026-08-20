@@ -3,11 +3,12 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
+
   <title>PRIA Angola — Privus</title>
-  <meta name="description" content="PRIA Angola — diagnóstico regulatório, segurança, continuidade, evidência e IA." />
+  <meta name="description" content="PRIA Angola — diagnóstico regulatório, proteção de dados, segurança, continuidade, evidência e IA." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
@@ -16,7 +17,7 @@
       --gold2:#D9BE90;
       --cream:#F0EBE0;
       --white:#FFFFFF;
-      --muted:#6B6254;
+      --muted:#5A5346;
       --line:rgba(13,27,42,.14);
       --danger:#9C4A3C;
       --amber:#B77A2A;
@@ -25,28 +26,43 @@
     }
 
     *{box-sizing:border-box}
+
     html{scroll-behavior:smooth}
+
     body{
       margin:0;
       background:var(--cream);
       color:var(--navy);
-      font-family:'Outfit',Arial,sans-serif;
-      line-height:1.55;
+      font-family:'Outfit',sans-serif;
       font-weight:300;
+      letter-spacing:0.01em;
+      line-height:1.65;
+      padding-bottom:0;
     }
 
     h1,h2,h3{
-      font-family:'Cormorant Garamond',Georgia,serif;
+      font-family:'Cormorant Garamond',serif;
       font-weight:600;
+      letter-spacing:-0.025em;
       margin:0 0 14px;
-      line-height:1.05;
+      line-height:0.98;
     }
 
-    h1{font-size:clamp(38px,7vw,74px)}
-    h2{font-size:clamp(28px,4vw,46px)}
-    h3{font-size:24px}
-    p{margin:0 0 14px}
-    .wrap{width:min(1120px,92vw);margin:auto}
+    h1{font-size:clamp(42px,7vw,82px)}
+    h2{font-size:clamp(32px,4vw,52px)}
+    h3{font-size:25px;line-height:1.08}
+
+    p{
+      margin:0 0 14px;
+      font-weight:300;
+    }
+
+    a{color:inherit}
+
+    .wrap{
+      width:min(1120px,92vw);
+      margin:auto;
+    }
 
     .nav{
       position:sticky;
@@ -69,9 +85,10 @@
       display:flex;
       align-items:center;
       gap:10px;
-      font-family:'Cormorant Garamond',Georgia,serif;
-      font-size:24px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:25px;
       font-weight:600;
+      letter-spacing:-0.02em;
     }
 
     .brand img{
@@ -87,14 +104,16 @@
       align-items:center;
       justify-content:center;
       border:0;
-      border-radius:4px;
+      border-radius:3px;
       padding:13px 18px;
       background:var(--gold);
       color:var(--navy);
-      font-weight:700;
+      font-family:'Outfit',sans-serif;
+      font-size:13px;
+      font-weight:500;
+      letter-spacing:0.3px;
       text-decoration:none;
       cursor:pointer;
-      font-family:'Outfit',Arial,sans-serif;
     }
 
     .btn.secondary{
@@ -103,49 +122,58 @@
       border:1px solid rgba(255,255,255,.22);
     }
 
-    .btn:disabled{opacity:.6;cursor:not-allowed}
+    .btn:disabled{
+      opacity:.6;
+      cursor:not-allowed;
+    }
 
     .hero{
       background:var(--navy);
       color:var(--cream);
-      padding:72px 0 62px;
+      padding:78px 0 66px;
       border-bottom:4px solid var(--gold);
     }
 
     .hero-grid{
       display:grid;
       grid-template-columns:1.1fr .9fr;
-      gap:42px;
+      gap:44px;
       align-items:end;
     }
 
     .kicker{
-      color:var(--gold2);
-      text-transform:uppercase;
-      letter-spacing:2px;
       font-size:11px;
-      font-weight:600;
+      letter-spacing:2.2px;
+      color:var(--gold);
+      font-weight:500;
+      text-transform:uppercase;
       margin-bottom:14px;
     }
 
     .lead{
       color:#EDE8DD;
       font-size:19px;
+      line-height:1.7;
       max-width:820px;
     }
 
-    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+    .cta-row{
+      display:flex;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-top:24px;
+    }
 
     .card{
       background:var(--white);
       border:1px solid var(--line);
-      border-radius:6px;
+      border-radius:4px;
       padding:22px;
       color:var(--navy);
     }
 
     .hero .card{
-      background:rgba(255,255,255,.06);
+      background:rgba(255,255,255,.055);
       border-color:rgba(255,255,255,.16);
       color:var(--cream);
     }
@@ -157,20 +185,46 @@
       margin-top:18px;
     }
 
+    .countdown.hidden{
+      display:none;
+    }
+
     .timebox{
       background:rgba(0,0,0,.18);
       border:1px solid rgba(255,255,255,.12);
-      border-radius:4px;
+      border-radius:3px;
       padding:10px 8px;
       text-align:center;
     }
 
-    .num{display:block;font-size:24px;font-weight:700;color:var(--gold2)}
-    .lbl{display:block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#C8B99A}
+    .num{
+      display:block;
+      font-size:24px;
+      font-weight:500;
+      color:var(--gold2);
+    }
 
-    section{padding:56px 0}
-    .dark{background:var(--navy);color:var(--cream)}
-    .sub{color:var(--muted);max-width:820px}
+    .lbl{
+      display:block;
+      font-size:9px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+      color:#C8B99A;
+    }
+
+    section{padding:58px 0}
+
+    .dark{
+      background:var(--navy);
+      color:var(--cream);
+    }
+
+    .sub{
+      color:var(--muted);
+      max-width:820px;
+      line-height:1.7;
+    }
+
     .dark .sub{color:#C8B99A}
 
     .triad{
@@ -184,10 +238,29 @@
       color:var(--gold);
       display:block;
       margin-bottom:8px;
-      font-size:13px;
-      letter-spacing:1px;
+      font-size:12px;
+      letter-spacing:1.2px;
       text-transform:uppercase;
+      font-weight:500;
     }
+
+    .cases{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:14px;
+      margin-top:24px;
+    }
+
+    .case{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:4px;
+      padding:16px;
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .case strong{color:#7A551D}
 
     .form-layout{
       display:grid;
@@ -246,14 +319,19 @@
     }
 
     .qid{
-      font-size:11px;
+      font-size:10.5px;
       color:var(--gold);
-      font-weight:700;
-      letter-spacing:.5px;
+      font-weight:500;
+      letter-spacing:.7px;
       margin-bottom:5px;
+      text-transform:uppercase;
     }
 
-    .qtext{font-size:15px;font-weight:400}
+    .qtext{
+      font-size:15px;
+      font-weight:300;
+      line-height:1.65;
+    }
 
     .answers{
       display:flex;
@@ -273,13 +351,14 @@
       background:#FAF7F0;
       cursor:pointer;
       font-size:13px;
+      font-weight:300;
     }
 
     .option input:checked + span{
       background:var(--navy);
       color:var(--gold2);
       border-color:var(--navy);
-      font-weight:600;
+      font-weight:500;
     }
 
     .report{display:none}
@@ -302,8 +381,10 @@
 
     .scorebox b{
       display:block;
-      font-size:26px;
+      font-family:'Cormorant Garamond',serif;
+      font-size:30px;
       color:var(--navy);
+      font-weight:600;
     }
 
     .scorebox span{
@@ -311,7 +392,7 @@
       font-size:10px;
       color:var(--muted);
       text-transform:uppercase;
-      letter-spacing:.6px;
+      letter-spacing:.7px;
     }
 
     .flags{
@@ -326,6 +407,7 @@
       border-radius:4px;
       padding:13px;
       font-size:13px;
+      line-height:1.6;
     }
 
     .flag.critica{border-left-color:var(--danger)}
@@ -339,6 +421,7 @@
       padding:14px;
       border-radius:4px;
       margin:18px 0;
+      font-size:13px;
     }
 
     .final-form{
@@ -356,7 +439,7 @@
     label{
       font-size:12px;
       color:var(--muted);
-      font-weight:400;
+      font-weight:300;
     }
 
     input{
@@ -364,7 +447,7 @@
       padding:12px;
       border:1px solid #D5CCBA;
       background:#FFF;
-      border-radius:4px;
+      border-radius:3px;
       font:inherit;
       color:var(--navy);
     }
@@ -374,10 +457,22 @@
       gap:9px;
       align-items:flex-start;
       font-size:11px;
-      line-height:1.5;
+      line-height:1.6;
+      color:var(--muted);
     }
 
-    .consent input{width:auto;margin-top:3px}
+    .consent input{
+      width:auto;
+      margin-top:3px;
+      flex-shrink:0;
+      accent-color:var(--gold);
+    }
+
+    .consent a{
+      color:var(--navy);
+      text-decoration:underline;
+      font-weight:500;
+    }
 
     .message{
       display:none;
@@ -387,8 +482,15 @@
       margin-top:8px;
     }
 
-    .success{background:#E7F3E8;color:#234D2A}
-    .error{background:#F4E1DE;color:#7A2F24}
+    .success{
+      background:#E7F3E8;
+      color:#234D2A;
+    }
+
+    .error{
+      background:#F4E1DE;
+      color:#7A2F24;
+    }
 
     footer{
       background:var(--navy);
@@ -401,11 +503,11 @@
     @media(max-width:900px){
       .hero-grid,.form-layout{grid-template-columns:1fr}
       .sidebar{position:static}
-      .triad,.score-grid{grid-template-columns:1fr 1fr}
+      .triad,.cases,.score-grid{grid-template-columns:1fr 1fr}
     }
 
     @media(max-width:620px){
-      .triad,.score-grid,.two{grid-template-columns:1fr}
+      .triad,.cases,.score-grid,.two{grid-template-columns:1fr}
       .nav .btn{display:none}
     }
   </style>
@@ -431,30 +533,57 @@
           Diagnóstico condicional para avaliar exposição perante a APD, proteção de dados,
           segurança da informação, continuidade de negócio, evidência documental e utilização de IA.
         </p>
+
         <div class="cta-row">
-          <a class="btn" href="#pria">Iniciar diagnóstico gratuito</a>
+          <a class="btn" href="#pria">Iniciar diagnóstico</a>
           <a class="btn secondary" href="#modelo">Ver modelo</a>
         </div>
       </div>
 
-      <aside class="card">
-        <div class="kicker">Janela de lançamento</div>
-        <p><strong>Gratuito até 3 de setembro de 2026.</strong></p>
-        <p>A partir de 4 de setembro, o diagnóstico automático + relatório passa para <strong>400.000 Kz</strong>.</p>
+      <aside class="card" id="offerBox">
+        <div class="kicker" id="offerKicker">Janela de lançamento</div>
+        <p id="offerMain"><strong>Gratuito até 3 de setembro de 2026.</strong></p>
+        <p id="offerPriceLine">A partir de 4 de setembro, o diagnóstico automático + relatório passa para <strong>400.000 Kz</strong>.</p>
 
-        <div class="countdown">
+        <div class="countdown" id="countdownBox">
           <div class="timebox"><span class="num" id="d">--</span><span class="lbl">dias</span></div>
           <div class="timebox"><span class="num" id="h">--</span><span class="lbl">horas</span></div>
           <div class="timebox"><span class="num" id="m">--</span><span class="lbl">min</span></div>
           <div class="timebox"><span class="num" id="s">--</span><span class="lbl">seg</span></div>
         </div>
 
-        <p style="font-size:12px;color:#C8B99A;margin-top:12px">
+        <p id="offerNote" style="font-size:12px;color:#C8B99A;margin-top:12px">
           Análise consultiva, regularização, implementação e acompanhamento são orçamentados separadamente.
         </p>
       </aside>
     </div>
   </header>
+
+  <section id="contexto">
+    <div class="wrap">
+      <div class="kicker">Contexto Angola</div>
+      <h2>A fiscalização já não é uma hipótese abstrata.</h2>
+      <p class="sub">
+        O PRIA Angola foi desenhado para organizações que precisam compreender a sua exposição regulatória,
+        técnica e operacional antes de serem fiscalizadas, auditadas ou atingidas por incidentes.
+      </p>
+
+      <div class="cases">
+        <div class="case">
+          <strong>Proteção de dados</strong><br>
+          Tratamentos, bases jurídicas, notificações, autorizações, titulares e APD.
+        </div>
+        <div class="case">
+          <strong>Segurança</strong><br>
+          MFA, acessos, contas partilhadas, cloud, backups, logs e resposta a incidentes.
+        </div>
+        <div class="case">
+          <strong>Continuidade</strong><br>
+          Serviços críticos, RTO/RPO, testes de restore, fornecedores críticos e recuperação.
+        </div>
+      </div>
+    </div>
+  </section>
 
   <section id="modelo">
     <div class="wrap">
@@ -471,11 +600,13 @@
           <h3>APD e Lei 22/11</h3>
           <p>Finalidades, bases jurídicas, notificações, autorizações, titulares, prestadores, transferências e evidências.</p>
         </div>
+
         <div class="card">
           <b>02 · Proteger</b>
           <h3>Segurança</h3>
           <p>MFA, acessos, contas partilhadas, backups, logs, fornecedores, incidentes e dados sensíveis.</p>
         </div>
+
         <div class="card">
           <b>03 · Continuar</b>
           <h3>Continuidade</h3>
@@ -540,6 +671,7 @@
                   <label>Empresa / Organização *</label>
                   <input name="empresa" id="empresa" required>
                 </div>
+
                 <div>
                   <label>NIF *</label>
                   <input name="nif" id="nif" required>
@@ -551,6 +683,7 @@
                   <label>Localização *</label>
                   <input name="localizacao" id="localizacao" required placeholder="Ex.: Luanda, Angola">
                 </div>
+
                 <div>
                   <label>Setor *</label>
                   <input name="setor_final" id="setor_final" required>
@@ -562,6 +695,7 @@
                   <label>Responsável *</label>
                   <input name="responsavel" id="responsavel" required>
                 </div>
+
                 <div>
                   <label>Cargo *</label>
                   <input name="cargo" id="cargo" required>
@@ -573,6 +707,7 @@
                   <label>Email profissional *</label>
                   <input type="email" name="email" id="email" required>
                 </div>
+
                 <div>
                   <label>Telemóvel *</label>
                   <input type="tel" name="telefone" id="telefone" required>
@@ -580,10 +715,22 @@
               </div>
 
               <label class="consent">
-                <input type="checkbox" required>
+                <input type="checkbox" name="terms_acceptance" required>
                 <span>
-                  Confirmo que os dados e respostas podem ser tratados pela Privus para gerar/enviar
-                  o relatório PRIA Angola e para contacto diretamente relacionado com este diagnóstico.
+                  Confirmo que li e aceito os
+                  <a href="termos-condicoes.html" target="_blank" rel="noopener">Termos e Condições</a>
+                  e a
+                  <a href="politica-privacidade.html" target="_blank" rel="noopener">Política de Privacidade</a>
+                  do PRIA Angola. Autorizo a Privus a tratar os dados submetidos para gerar e enviar
+                  o relatório PRIA Angola.
+                </span>
+              </label>
+
+              <label class="consent">
+                <input type="checkbox" name="commercial_contact">
+                <span>
+                  Aceito ser contactado pela Privus para efeitos de apresentação de proposta,
+                  acompanhamento comercial e serviços relacionados com o resultado do PRIA Angola.
                 </span>
               </label>
 
@@ -610,8 +757,14 @@
   <script>
     const API_ENDPOINT = window.PRIA_FORM_ENDPOINT || "/api/report";
 
+    const PRIA_FREE_UNTIL_TEXT = "3 de setembro de 2026";
+    const PRIA_PAID_FROM_TEXT = "4 de setembro de 2026";
+    const PRIA_PRICE = "400.000 Kz";
+    const PRIA_DEADLINE = new Date("2026-09-04T00:00:00+01:00").getTime();
+
     let bundle = window.PRIA_BUNDLE || null;
     let questions = bundle ? bundle.questions : [];
+
     let answerScores = bundle ? bundle.scoring.answer_scores : {
       "Sim":100,
       "Parcialmente":50,
@@ -647,6 +800,7 @@
 
     function currentVars(){
       const v = {};
+
       for(const q of questions){
         const ans = answers[q.id];
         if(!ans) continue;
@@ -655,11 +809,13 @@
           if(tagMap[tag]) v[tagMap[tag]] = ans;
         }
       }
+
       return v;
     }
 
     function matchCondition(condition, v){
       condition = String(condition || "always").trim();
+
       if(condition === "always") return true;
 
       const parts = condition.split(/\s+OR\s+/i);
@@ -695,6 +851,7 @@
       form.innerHTML = active.map(q => {
         const options = (q.options || []).map(opt => {
           const checked = answers[q.id] === opt ? "checked" : "";
+
           return `
             <label class="option">
               <input type="radio" name="${escapeHtml(q.id)}" value="${escapeHtml(opt)}" ${checked}>
@@ -731,6 +888,7 @@
       document.getElementById("bar").style.width = pct + "%";
 
       const modules = {};
+
       activeQuestions().forEach(q => {
         modules[q.module] = modules[q.module] || {total:0, answered:0};
         modules[q.module].total++;
@@ -755,9 +913,11 @@
 
       for(const q of active){
         const ans = answers[q.id];
+
         if(!ans || ans === "Não aplicável") continue;
 
         const score = answerScores[ans];
+
         if(score === null || score === undefined) continue;
 
         const weight = Number(q.weight || 1);
@@ -780,11 +940,13 @@
       }
 
       const pillarScores = {};
+
       Object.entries(pillarData).forEach(([pillar,d]) => {
         pillarScores[pillar] = Math.round(d.weighted / d.total);
       });
 
       const v = currentVars();
+
       const weights =
         (bundle.scoring.sector_overrides && bundle.scoring.sector_overrides[v.setor])
         || bundle.scoring.base_pillar_weights;
@@ -840,6 +1002,7 @@
       lastReport = calculateReport();
 
       document.getElementById("report").classList.add("visible");
+
       document.getElementById("classification").textContent =
         `${lastReport.classification.label} · ${lastReport.finalScore}/100`;
 
@@ -885,9 +1048,12 @@
     }
 
     function buildReportPayload(lead, report){
+      const now = Date.now();
+      const isPaidPhase = now >= PRIA_DEADLINE;
+
       return {
         product:"PRIA Angola",
-        version:"PRIA Angola deploy-v1",
+        version:"PRIA Angola deploy-v4-auto-date",
         name:lead.responsavel,
         company:lead.empresa,
         nif:lead.nif,
@@ -895,6 +1061,14 @@
         phone:lead.telefone,
         role:lead.cargo,
         sector:lead.setor_final,
+
+        terms_acceptance:lead.terms_acceptance === "on",
+        commercial_contact:lead.commercial_contact === "on",
+
+        offer_status:isPaidPhase ? "paid" : "free_launch",
+        free_until:PRIA_FREE_UNTIL_TEXT,
+        paid_from:PRIA_PAID_FROM_TEXT,
+        price_after_free_period:PRIA_PRICE,
 
         level:report.classification.label,
         score:report.finalScore,
@@ -957,11 +1131,17 @@
           "Política de utilização de IA"
         ],
 
+        legal_documents:{
+          privacy_policy:"politica-privacidade.html",
+          terms:"termos-condicoes.html",
+          free_until:PRIA_FREE_UNTIL_TEXT,
+          paid_from:PRIA_PAID_FROM_TEXT,
+          price_after_free_period:PRIA_PRICE
+        },
+
         answers:report.answers || {},
         variables:report.variables || {},
 
-        price_after_free_period:"400.000 Kz",
-        free_until:"03/09/2026",
         generated_at:new Date().toISOString()
       };
     }
@@ -1017,26 +1197,53 @@
 
         success.textContent = "Relatório gerado. Verifica o email indicado.";
         success.style.display = "block";
+
         submitBtn.textContent = "Relatório enviado";
       }catch(err){
         error.textContent = err.message || "Não foi possível enviar o relatório.";
         error.style.display = "block";
+
         submitBtn.disabled = false;
         submitBtn.textContent = "Enviar respostas e receber relatório →";
       }
     });
 
     function tick(){
-      const deadline = new Date("2026-09-04T00:00:00+01:00").getTime();
-      const diff = Math.max(0, deadline - Date.now());
+      const now = Date.now();
+      const diff = Math.max(0, PRIA_DEADLINE - now);
 
-      document.getElementById("d").textContent = Math.floor(diff / 86400000);
-      document.getElementById("h").textContent = String(Math.floor(diff % 86400000 / 3600000)).padStart(2,"0");
-      document.getElementById("m").textContent = String(Math.floor(diff % 3600000 / 60000)).padStart(2,"0");
-      document.getElementById("s").textContent = String(Math.floor(diff % 60000 / 1000)).padStart(2,"0");
+      const d = document.getElementById("d");
+      const h = document.getElementById("h");
+      const m = document.getElementById("m");
+      const s = document.getElementById("s");
+
+      if(d && h && m && s){
+        d.textContent = Math.floor(diff / 86400000);
+        h.textContent = String(Math.floor(diff % 86400000 / 3600000)).padStart(2,"0");
+        m.textContent = String(Math.floor(diff % 3600000 / 60000)).padStart(2,"0");
+        s.textContent = String(Math.floor(diff % 60000 / 1000)).padStart(2,"0");
+      }
+
+      const offerKicker = document.getElementById("offerKicker");
+      const offerMain = document.getElementById("offerMain");
+      const offerPriceLine = document.getElementById("offerPriceLine");
+      const countdownBox = document.getElementById("countdownBox");
+
+      if(now >= PRIA_DEADLINE){
+        if(offerKicker) offerKicker.textContent = "Modalidade atual";
+        if(offerMain) offerMain.innerHTML = `<strong>Diagnóstico automático PRIA Angola.</strong>`;
+        if(offerPriceLine) offerPriceLine.innerHTML = `O diagnóstico automático + relatório tem o valor de <strong>${PRIA_PRICE}</strong>.`;
+        if(countdownBox) countdownBox.classList.add("hidden");
+      }else{
+        if(offerKicker) offerKicker.textContent = "Janela de lançamento";
+        if(offerMain) offerMain.innerHTML = `<strong>Gratuito até ${PRIA_FREE_UNTIL_TEXT}.</strong>`;
+        if(offerPriceLine) offerPriceLine.innerHTML = `A partir de ${PRIA_PAID_FROM_TEXT}, o diagnóstico automático + relatório passa para <strong>${PRIA_PRICE}</strong>.`;
+        if(countdownBox) countdownBox.classList.remove("hidden");
+      }
     }
 
     const params = new URLSearchParams(location.search);
+
     if(params.get("empresa")){
       const empresa = params.get("empresa");
       document.getElementById("heroTitle").textContent = empresa + ": legalizar, proteger e manter a operação.";
