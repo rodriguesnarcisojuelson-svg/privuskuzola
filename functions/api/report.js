@@ -97,36 +97,28 @@ export async function onRequest(context) {
     );
   }
 
-  const internalSecret = request.headers.get('X-Privus-Internal-Secret') || '';
-  const hasInternalAccess =
-    env.PRIA_API_SECRET &&
-    internalSecret &&
-    internalSecret === env.PRIA_API_SECRET;
-
-  if (!hasInternalAccess) {
-    if (!env.PRIA_ACCESS_SECRET) {
-      return jsonResponse(
-        { error: 'Serviço temporariamente indisponível.' },
-        503
-      );
-    }
-
-    const accessToken = readCookie(request, ACCESS_COOKIE);
-
-    const access = await verifyAccessToken(
-      accessToken,
-      env.PRIA_ACCESS_SECRET
+  if (!env.PRIA_ACCESS_SECRET) {
+    return jsonResponse(
+      { error: 'Serviço temporariamente indisponível.' },
+      503
     );
+  }
 
-    if (!access) {
-      return jsonResponse(
-        {
-          error:
-            'Acesso não autorizado. É necessário concluir o pagamento do PRIA.'
-        },
-        401
-      );
-    }
+  const accessToken = readCookie(request, ACCESS_COOKIE);
+
+  const access = await verifyAccessToken(
+    accessToken,
+    env.PRIA_ACCESS_SECRET
+  );
+
+  if (!access) {
+    return jsonResponse(
+      {
+        error:
+          'Acesso não autorizado. É necessário concluir o pagamento do PRIA.'
+      },
+      401
+    );
   }
 
   const contentType = request.headers.get('Content-Type') || '';
