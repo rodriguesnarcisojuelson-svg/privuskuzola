@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PRIA Angola — Privus</title>
+  <meta name="description" content="PRIA Angola — diagnóstico regulatório, segurança, continuidade, evidência e IA." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --navy:#0D1B2A;
+      --gold:#C8A96E;
+      --gold2:#D9BE90;
+      --cream:#F0EBE0;
+      --white:#FFFFFF;
+      --muted:#6B6254;
+      --line:rgba(13,27,42,.14);
+      --danger:#9C4A3C;
+      --amber:#B77A2A;
+      --green:#2E7D58;
+      --blue:#2D658A;
+    }
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      background:var(--cream);
+      color:var(--navy);
+      font-family:'Outfit',Arial,sans-serif;
+      line-height:1.55;
+      font-weight:300;
+    }
+
+    h1,h2,h3{
+      font-family:'Cormorant Garamond',Georgia,serif;
+      font-weight:600;
+      margin:0 0 14px;
+      line-height:1.05;
+    }
+
+    h1{font-size:clamp(38px,7vw,74px)}
+    h2{font-size:clamp(28px,4vw,46px)}
+    h3{font-size:24px}
+    p{margin:0 0 14px}
+    .wrap{width:min(1120px,92vw);margin:auto}
+
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      background:rgba(13,27,42,.94);
+      color:var(--cream);
+      border-bottom:1px solid rgba(255,255,255,.12);
+      backdrop-filter:blur(12px);
+    }
+
+    .nav-inner{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:13px 0;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-family:'Cormorant Garamond',Georgia,serif;
+      font-size:24px;
+      font-weight:600;
+    }
+
+    .brand img{
+      width:38px;
+      height:38px;
+      object-fit:contain;
+    }
+
+    .brand span{color:var(--gold)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border:0;
+      border-radius:4px;
+      padding:13px 18px;
+      background:var(--gold);
+      color:var(--navy);
+      font-weight:700;
+      text-decoration:none;
+      cursor:pointer;
+      font-family:'Outfit',Arial,sans-serif;
+    }
+
+    .btn.secondary{
+      background:transparent;
+      color:var(--cream);
+      border:1px solid rgba(255,255,255,.22);
+    }
+
+    .btn:disabled{opacity:.6;cursor:not-allowed}
+
+    .hero{
+      background:var(--navy);
+      color:var(--cream);
+      padding:72px 0 62px;
+      border-bottom:4px solid var(--gold);
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:42px;
+      align-items:end;
+    }
+
+    .kicker{
+      color:var(--gold2);
+      text-transform:uppercase;
+      letter-spacing:2px;
+      font-size:11px;
+      font-weight:600;
+      margin-bottom:14px;
+    }
+
+    .lead{
+      color:#EDE8DD;
+      font-size:19px;
+      max-width:820px;
+    }
+
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+
+    .card{
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:6px;
+      padding:22px;
+      color:var(--navy);
+    }
+
+    .hero .card{
+      background:rgba(255,255,255,.06);
+      border-color:rgba(255,255,255,.16);
+      color:var(--cream);
+    }
+
+    .countdown{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:10px;
+      margin-top:18px;
+    }
+
+    .timebox{
+      background:rgba(0,0,0,.18);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:4px;
+      padding:10px 8px;
+      text-align:center;
+    }
+
+    .num{display:block;font-size:24px;font-weight:700;color:var(--gold2)}
+    .lbl{display:block;font-size:9px;letter-spacing:1px;text-transform:uppercase;color:#C8B99A}
+
+    section{padding:56px 0}
+    .dark{background:var(--navy);color:var(--cream)}
+    .sub{color:var(--muted);max-width:820px}
+    .dark .sub{color:#C8B99A}
+
+    .triad{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:16px;
+      margin-top:26px;
+    }
+
+    .triad .card b{
+      color:var(--gold);
+      display:block;
+      margin-bottom:8px;
+      font-size:13px;
+      letter-spacing:1px;
+      text-transform:uppercase;
+    }
+
+    .form-layout{
+      display:grid;
+      grid-template-columns:300px 1fr;
+      gap:24px;
+      align-items:start;
+      margin-top:26px;
+    }
+
+    .sidebar{
+      position:sticky;
+      top:82px;
+      background:var(--navy);
+      color:var(--cream);
+    }
+
+    .progress{
+      height:7px;
+      background:rgba(255,255,255,.15);
+      border-radius:10px;
+      overflow:hidden;
+      margin:12px 0 16px;
+    }
+
+    .bar{
+      height:100%;
+      width:0%;
+      background:var(--gold);
+      transition:.25s;
+    }
+
+    .module-nav{
+      display:grid;
+      gap:7px;
+      max-height:52vh;
+      overflow:auto;
+      margin-top:14px;
+    }
+
+    .module-chip{
+      font-size:12px;
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:100px;
+      padding:8px 10px;
+      color:#EDE8DD;
+    }
+
+    .module-chip.done{
+      border-color:rgba(123,174,127,.55);
+      color:#CFE9D2;
+    }
+
+    .question-card{
+      margin-bottom:12px;
+      padding:18px;
+    }
+
+    .qid{
+      font-size:11px;
+      color:var(--gold);
+      font-weight:700;
+      letter-spacing:.5px;
+      margin-bottom:5px;
+    }
+
+    .qtext{font-size:15px;font-weight:400}
+
+    .answers{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-top:12px;
+    }
+
+    .option{position:relative}
+    .option input{position:absolute;opacity:0}
+
+    .option span{
+      display:block;
+      border:1px solid var(--line);
+      border-radius:100px;
+      padding:9px 12px;
+      background:#FAF7F0;
+      cursor:pointer;
+      font-size:13px;
+    }
+
+    .option input:checked + span{
+      background:var(--navy);
+      color:var(--gold2);
+      border-color:var(--navy);
+      font-weight:600;
+    }
+
+    .report{display:none}
+    .report.visible{display:block}
+
+    .score-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:10px;
+      margin:18px 0;
+    }
+
+    .scorebox{
+      background:#FAF7F0;
+      border:1px solid var(--line);
+      border-radius:4px;
+      padding:14px;
+      text-align:center;
+    }
+
+    .scorebox b{
+      display:block;
+      font-size:26px;
+      color:var(--navy);
+    }
+
+    .scorebox span{
+      display:block;
+      font-size:10px;
+      color:var(--muted);
+      text-transform:uppercase;
+      letter-spacing:.6px;
+    }
+
+    .flags{
+      display:grid;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .flag{
+      background:#FAF7F0;
+      border-left:4px solid var(--amber);
+      border-radius:4px;
+      padding:13px;
+      font-size:13px;
+    }
+
+    .flag.critica{border-left-color:var(--danger)}
+    .flag.severa{border-left-color:var(--amber)}
+    .flag.moderada{border-left-color:var(--blue)}
+
+    .notice{
+      background:#FAF7F0;
+      border:1px solid var(--line);
+      border-left:4px solid var(--gold);
+      padding:14px;
+      border-radius:4px;
+      margin:18px 0;
+    }
+
+    .final-form{
+      display:grid;
+      gap:12px;
+      margin-top:16px;
+    }
+
+    .two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    label{
+      font-size:12px;
+      color:var(--muted);
+      font-weight:400;
+    }
+
+    input{
+      width:100%;
+      padding:12px;
+      border:1px solid #D5CCBA;
+      background:#FFF;
+      border-radius:4px;
+      font:inherit;
+      color:var(--navy);
+    }
+
+    .consent{
+      display:flex;
+      gap:9px;
+      align-items:flex-start;
+      font-size:11px;
+      line-height:1.5;
+    }
+
+    .consent input{width:auto;margin-top:3px}
+
+    .message{
+      display:none;
+      padding:12px;
+      border-radius:4px;
+      font-size:13px;
+      margin-top:8px;
+    }
+
+    .success{background:#E7F3E8;color:#234D2A}
+    .error{background:#F4E1DE;color:#7A2F24}
+
+    footer{
+      background:var(--navy);
+      color:#C8B99A;
+      padding:28px 0;
+      font-size:12px;
+      text-align:center;
+    }
+
+    @media(max-width:900px){
+      .hero-grid,.form-layout{grid-template-columns:1fr}
+      .sidebar{position:static}
+      .triad,.score-grid{grid-template-columns:1fr 1fr}
+    }
+
+    @media(max-width:620px){
+      .triad,.score-grid,.two{grid-template-columns:1fr}
+      .nav .btn{display:none}
+    }
+  </style>
+</head>
+
+<body>
+  <nav class="nav">
+    <div class="wrap nav-inner">
+      <div class="brand">
+        <img src="assets/privus-symbol.svg" alt="Privus">
+        <div>Privus<span>.</span></div>
+      </div>
+      <a class="btn secondary" href="#pria">Iniciar PRIA</a>
+    </div>
+  </nav>
+
+  <header class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="kicker">PRIA Angola · Privus Regulatory Impact Assessment</div>
+        <h1 id="heroTitle">Legalizar, proteger e manter a operação.</h1>
+        <p class="lead">
+          Diagnóstico condicional para avaliar exposição perante a APD, proteção de dados,
+          segurança da informação, continuidade de negócio, evidência documental e utilização de IA.
+        </p>
+        <div class="cta-row">
+          <a class="btn" href="#pria">Iniciar diagnóstico gratuito</a>
+          <a class="btn secondary" href="#modelo">Ver modelo</a>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div class="kicker">Janela de lançamento</div>
+        <p><strong>Gratuito até 3 de setembro de 2026.</strong></p>
+        <p>A partir de 4 de setembro, o diagnóstico automático + relatório passa para <strong>400.000 Kz</strong>.</p>
+
+        <div class="countdown">
+          <div class="timebox"><span class="num" id="d">--</span><span class="lbl">dias</span></div>
+          <div class="timebox"><span class="num" id="h">--</span><span class="lbl">horas</span></div>
+          <div class="timebox"><span class="num" id="m">--</span><span class="lbl">min</span></div>
+          <div class="timebox"><span class="num" id="s">--</span><span class="lbl">seg</span></div>
+        </div>
+
+        <p style="font-size:12px;color:#C8B99A;margin-top:12px">
+          Análise consultiva, regularização, implementação e acompanhamento são orçamentados separadamente.
+        </p>
+      </aside>
+    </div>
+  </header>
+
+  <section id="modelo">
+    <div class="wrap">
+      <div class="kicker">Modelo Privus</div>
+      <h2>O PRIA Angola avalia três dimensões centrais.</h2>
+      <p class="sub">
+        O diagnóstico não é uma checklist genérica. O motor abre perguntas em função do setor,
+        práticas existentes, bases jurídicas, segurança, continuidade e evidência disponível.
+      </p>
+
+      <div class="triad">
+        <div class="card">
+          <b>01 · Legalizar</b>
+          <h3>APD e Lei 22/11</h3>
+          <p>Finalidades, bases jurídicas, notificações, autorizações, titulares, prestadores, transferências e evidências.</p>
+        </div>
+        <div class="card">
+          <b>02 · Proteger</b>
+          <h3>Segurança</h3>
+          <p>MFA, acessos, contas partilhadas, backups, logs, fornecedores, incidentes e dados sensíveis.</p>
+        </div>
+        <div class="card">
+          <b>03 · Continuar</b>
+          <h3>Continuidade</h3>
+          <p>Serviços críticos, RTO/RPO, restore, contingência, fornecedores críticos, comunicação e recuperação.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pria" class="dark">
+    <div class="wrap">
+      <div class="kicker">Diagnóstico</div>
+      <h2>Responda apenas ao que se aplica à sua organização.</h2>
+      <p class="sub">
+        Se não usa biometria, esse bloco fecha. Se usa cloud fora de Angola, abre transferência internacional.
+        Se trata dados de saúde, abre módulo específico.
+      </p>
+
+      <div class="form-layout">
+        <aside class="card sidebar">
+          <div class="kicker">Progresso</div>
+          <strong id="progressText">0/0 respostas</strong>
+          <div class="progress"><div class="bar" id="bar"></div></div>
+          <button class="btn" type="button" id="generateBtn" style="width:100%">Gerar pré-relatório</button>
+          <div class="module-nav" id="moduleNav"></div>
+        </aside>
+
+        <main>
+          <div id="loadError" class="card" style="display:none;margin-bottom:14px">
+            Não foi possível carregar o banco de perguntas. Confirma se o ficheiro
+            <strong>pria-angola/data/questions.js</strong> já foi criado.
+          </div>
+
+          <form id="questionForm"></form>
+
+          <section class="card report" id="report" style="margin-top:22px">
+            <div class="kicker">Pré-relatório automático</div>
+            <h2 id="classification">Resultado</h2>
+            <p id="scoreSummary" class="sub"></p>
+
+            <div class="score-grid" id="scoreGrid"></div>
+
+            <h3>Red flags e vulnerabilidades prioritárias</h3>
+            <div class="flags" id="flags"></div>
+
+            <h3 style="margin-top:22px">Recomendações iniciais</h3>
+            <div class="flags" id="recommendations"></div>
+
+            <div class="notice">
+              <strong>Próximo passo recomendado:</strong>
+              <span id="ctaText"></span>
+            </div>
+
+            <h3>Receber relatório em PDF</h3>
+            <p class="sub">
+              O relatório será gerado e enviado através da função existente <strong>/api/report</strong>.
+            </p>
+
+            <form class="final-form" id="leadForm">
+              <div class="two">
+                <div>
+                  <label>Empresa / Organização *</label>
+                  <input name="empresa" id="empresa" required>
+                </div>
+                <div>
+                  <label>NIF *</label>
+                  <input name="nif" id="nif" required>
+                </div>
+              </div>
+
+              <div class="two">
+                <div>
+                  <label>Localização *</label>
+                  <input name="localizacao" id="localizacao" required placeholder="Ex.: Luanda, Angola">
+                </div>
+                <div>
+                  <label>Setor *</label>
+                  <input name="setor_final" id="setor_final" required>
+                </div>
+              </div>
+
+              <div class="two">
+                <div>
+                  <label>Responsável *</label>
+                  <input name="responsavel" id="responsavel" required>
+                </div>
+                <div>
+                  <label>Cargo *</label>
+                  <input name="cargo" id="cargo" required>
+                </div>
+              </div>
+
+              <div class="two">
+                <div>
+                  <label>Email profissional *</label>
+                  <input type="email" name="email" id="email" required>
+                </div>
+                <div>
+                  <label>Telemóvel *</label>
+                  <input type="tel" name="telefone" id="telefone" required>
+                </div>
+              </div>
+
+              <label class="consent">
+                <input type="checkbox" required>
+                <span>
+                  Confirmo que os dados e respostas podem ser tratados pela Privus para gerar/enviar
+                  o relatório PRIA Angola e para contacto diretamente relacionado com este diagnóstico.
+                </span>
+              </label>
+
+              <button class="btn" type="submit" id="submitBtn">Enviar respostas e receber relatório →</button>
+
+              <div class="message success" id="success"></div>
+              <div class="message error" id="error"></div>
+            </form>
+          </section>
+        </main>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      Privus · Regulação · Segurança · Continuidade · Evidência · IA · contacto@privuskuzola.pt
+    </div>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="data/questions.js"></script>
+
+  <script>
+    const API_ENDPOINT = window.PRIA_FORM_ENDPOINT || "/api/report";
+
+    let bundle = window.PRIA_BUNDLE || null;
+    let questions = bundle ? bundle.questions : [];
+    let answerScores = bundle ? bundle.scoring.answer_scores : {
+      "Sim":100,
+      "Parcialmente":50,
+      "Não":0,
+      "Não sei":0,
+      "Não aplicável":null
+    };
+
+    let answers = {};
+    let lastReport = null;
+
+    const tagMap = {
+      "route_sector": "setor",
+      "opens_health": "trata_dados_saude",
+      "opens_hr": "tem_trabalhadores",
+      "opens_cctv": "usa_cctv",
+      "opens_biometrics": "usa_biometria",
+      "opens_cloud": "usa_cloud",
+      "opens_transfers": "dados_fora_angola",
+      "opens_processors": "usa_prestadores",
+      "opens_ai": "usa_ia",
+      "opens_digital": "tem_website_app_portal",
+      "opens_marketing": "faz_marketing",
+      "opens_minors": "trata_dados_menores",
+      "opens_ai_opportunities": "oportunidades_ia"
+    };
+
+    function escapeHtml(value){
+      return String(value || "").replace(/[&<>"']/g, function(m){
+        return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m];
+      });
+    }
+
+    function currentVars(){
+      const v = {};
+      for(const q of questions){
+        const ans = answers[q.id];
+        if(!ans) continue;
+
+        for(const tag of (q.tags || [])){
+          if(tagMap[tag]) v[tagMap[tag]] = ans;
+        }
+      }
+      return v;
+    }
+
+    function matchCondition(condition, v){
+      condition = String(condition || "always").trim();
+      if(condition === "always") return true;
+
+      const parts = condition.split(/\s+OR\s+/i);
+
+      return parts.some(part => {
+        const m = part.trim().match(/^(.+?)\s*=\s*(.+)$/);
+        if(!m) return false;
+
+        const key = m[1].trim();
+        const val = m[2].trim();
+
+        return (v[key] || "") === val;
+      });
+    }
+
+    function isActive(q){
+      return matchCondition(q.trigger || "always", currentVars());
+    }
+
+    function activeQuestions(){
+      return questions.filter(isActive);
+    }
+
+    function renderQuestions(){
+      if(!bundle || !questions.length){
+        document.getElementById("loadError").style.display = "block";
+        return;
+      }
+
+      const form = document.getElementById("questionForm");
+      const active = activeQuestions();
+
+      form.innerHTML = active.map(q => {
+        const options = (q.options || []).map(opt => {
+          const checked = answers[q.id] === opt ? "checked" : "";
+          return `
+            <label class="option">
+              <input type="radio" name="${escapeHtml(q.id)}" value="${escapeHtml(opt)}" ${checked}>
+              <span>${escapeHtml(opt)}</span>
+            </label>
+          `;
+        }).join("");
+
+        return `
+          <div class="card question-card" data-module="${escapeHtml(q.module)}">
+            <div class="qid">${escapeHtml(q.id)} · ${escapeHtml(q.module)}</div>
+            <div class="qtext">${escapeHtml(q.text)}</div>
+            <div class="answers">${options}</div>
+          </div>
+        `;
+      }).join("");
+
+      form.querySelectorAll("input[type=radio]").forEach(input => {
+        input.addEventListener("change", e => {
+          answers[e.target.name] = e.target.value;
+          renderQuestions();
+        });
+      });
+
+      updateProgress();
+    }
+
+    function updateProgress(){
+      const active = activeQuestions().filter(q => q.weight > 0 || q.module === "Triagem inicial");
+      const answered = active.filter(q => answers[q.id]).length;
+      const pct = active.length ? Math.round((answered / active.length) * 100) : 0;
+
+      document.getElementById("progressText").textContent = `${answered}/${active.length} respostas`;
+      document.getElementById("bar").style.width = pct + "%";
+
+      const modules = {};
+      activeQuestions().forEach(q => {
+        modules[q.module] = modules[q.module] || {total:0, answered:0};
+        modules[q.module].total++;
+        if(answers[q.id]) modules[q.module].answered++;
+      });
+
+      document.getElementById("moduleNav").innerHTML = Object.entries(modules).map(([m,c]) => {
+        const done = c.answered === c.total ? "done" : "";
+        return `<div class="module-chip ${done}">${escapeHtml(m)} · ${c.answered}/${c.total}</div>`;
+      }).join("");
+    }
+
+    function conditionTriggered(condition, answer){
+      if(!condition || !answer) return false;
+      return condition.split("|").map(s => s.trim()).includes(answer);
+    }
+
+    function calculateReport(){
+      const active = activeQuestions().filter(q => q.weight > 0);
+      const pillarData = {};
+      const flags = [];
+
+      for(const q of active){
+        const ans = answers[q.id];
+        if(!ans || ans === "Não aplicável") continue;
+
+        const score = answerScores[ans];
+        if(score === null || score === undefined) continue;
+
+        const weight = Number(q.weight || 1);
+        const pillar = q.pillar === "Setorial" ? "Proteção de Dados / APD" : q.pillar;
+
+        pillarData[pillar] = pillarData[pillar] || {weighted:0,total:0};
+        pillarData[pillar].weighted += score * weight;
+        pillarData[pillar].total += weight;
+
+        if(conditionTriggered(q.red_flag_condition, ans) && q.red_flag_severity){
+          flags.push({
+            id:q.id,
+            module:q.module,
+            severity:q.red_flag_severity,
+            text:q.text,
+            answer:ans,
+            recommendation:q.recommendation
+          });
+        }
+      }
+
+      const pillarScores = {};
+      Object.entries(pillarData).forEach(([pillar,d]) => {
+        pillarScores[pillar] = Math.round(d.weighted / d.total);
+      });
+
+      const v = currentVars();
+      const weights =
+        (bundle.scoring.sector_overrides && bundle.scoring.sector_overrides[v.setor])
+        || bundle.scoring.base_pillar_weights;
+
+      let math = 0;
+      let weightSum = 0;
+
+      Object.entries(weights).forEach(([pillar,weight]) => {
+        if(pillarScores[pillar] !== undefined){
+          math += pillarScores[pillar] * weight;
+          weightSum += weight;
+        }
+      });
+
+      const mathScore = weightSum ? Math.round(math / weightSum) : 0;
+
+      const critical = flags.filter(f => f.severity === "critica").length;
+      const severe = flags.filter(f => f.severity === "severa").length;
+
+      let finalScore = mathScore;
+
+      if(critical >= 3) finalScore = Math.min(finalScore, 39);
+      else if(critical >= 1) finalScore = Math.min(finalScore, 59);
+
+      if(severe >= 3) finalScore = Math.min(finalScore, 74);
+
+      const classification =
+        bundle.scoring.final_classification.find(c => finalScore >= c.min && finalScore <= c.max)
+        || bundle.scoring.final_classification[0];
+
+      const recommendations = [...new Set(
+        flags
+          .slice(0, 12)
+          .map(f => f.recommendation)
+          .filter(Boolean)
+      )].slice(0, 10);
+
+      return {
+        mathScore,
+        finalScore,
+        classification,
+        pillarScores,
+        flags,
+        recommendations,
+        answers,
+        variables:v,
+        activeQuestionCount:activeQuestions().length,
+        answeredQuestionCount:activeQuestions().filter(q => answers[q.id]).length
+      };
+    }
+
+    function showReport(){
+      lastReport = calculateReport();
+
+      document.getElementById("report").classList.add("visible");
+      document.getElementById("classification").textContent =
+        `${lastReport.classification.label} · ${lastReport.finalScore}/100`;
+
+      document.getElementById("scoreSummary").textContent =
+        `Score matemático: ${lastReport.mathScore}/100. Score ajustado por red flags: ${lastReport.finalScore}/100.`;
+
+      document.getElementById("scoreGrid").innerHTML =
+        Object.entries(lastReport.pillarScores).map(([pillar,score]) => `
+          <div class="scorebox">
+            <b>${score}</b>
+            <span>${escapeHtml(pillar)}</span>
+          </div>
+        `).join("");
+
+      const topFlags = lastReport.flags.slice(0, 10);
+
+      document.getElementById("flags").innerHTML = topFlags.length
+        ? topFlags.map(f => `
+          <div class="flag ${escapeHtml(f.severity)}">
+            <strong>${escapeHtml(f.severity.toUpperCase())} · ${escapeHtml(f.module)}</strong><br>
+            ${escapeHtml(f.text)}<br>
+            <small>Resposta: ${escapeHtml(f.answer)}</small>
+          </div>
+        `).join("")
+        : `<div class="flag"><strong>Sem red flags críticas no preview</strong><br>O relatório completo deve validar evidências e documentos.</div>`;
+
+      document.getElementById("recommendations").innerHTML = lastReport.recommendations.length
+        ? lastReport.recommendations.map(r => `
+          <div class="flag">
+            <strong>Recomendação</strong><br>${escapeHtml(r)}
+          </div>
+        `).join("")
+        : `<div class="flag"><strong>Recomendação</strong><br>Validar evidências, documentos e medidas existentes com a Privus.</div>`;
+
+      document.getElementById("ctaText").textContent =
+        lastReport.flags.some(f => f.severity === "critica")
+          ? "Solicitar análise prioritária das vulnerabilidades críticas."
+          : lastReport.classification.cta;
+
+      document.getElementById("setor_final").value = lastReport.variables.setor || "";
+
+      document.getElementById("report").scrollIntoView({behavior:"smooth"});
+    }
+
+    function buildReportPayload(lead, report){
+      return {
+        product:"PRIA Angola",
+        version:"PRIA Angola deploy-v1",
+        name:lead.responsavel,
+        company:lead.empresa,
+        nif:lead.nif,
+        location:lead.localizacao,
+        phone:lead.telefone,
+        role:lead.cargo,
+        sector:lead.setor_final,
+
+        level:report.classification.label,
+        score:report.finalScore,
+        math_score:report.mathScore,
+
+        summary:`O PRIA Angola classificou a organização como "${report.classification.label}", com score final de ${report.finalScore}/100. O score matemático inicial foi de ${report.mathScore}/100 e foi ajustado em função das red flags identificadas.`,
+
+        completion:{
+          active_questions:report.activeQuestionCount,
+          answered_questions:report.answeredQuestionCount
+        },
+
+        scopes:[
+          "Lei de Proteção de Dados Pessoais de Angola",
+          "APD",
+          "Segurança da Informação",
+          "Continuidade de Negócio",
+          "Governança e Evidência",
+          "IA e Automação"
+        ],
+
+        pillars:Object.entries(report.pillarScores || {}).map(([name,score]) => ({name,score})),
+
+        risks:(report.flags || []).slice(0,12).map(f =>
+          `${String(f.severity || "").toUpperCase()} · ${f.module || ""} · ${f.id || ""}: ${f.text || ""} | Resposta: ${f.answer || ""}`
+        ),
+
+        strengths:[],
+
+        recommendations:(report.recommendations || []).map(action => ({
+          priority:"Prioritária",
+          action,
+          impact:"Regulatório / Operacional",
+          effort:"A definir",
+          horizon:"0–90 dias"
+        })),
+
+        roadmap:{
+          "30":(report.recommendations || []).slice(0,3),
+          "90":(report.recommendations || []).slice(3,6),
+          "180":(report.recommendations || []).slice(6)
+        },
+
+        gates:(report.flags || [])
+          .filter(f => f.severity === "critica")
+          .map(f => `${f.id}: ${f.text}`),
+
+        documentation:[
+          "Inventário de tratamentos de dados pessoais",
+          "Comprovativos de notificação/autorização perante a APD",
+          "Política de proteção de dados",
+          "Avisos de privacidade",
+          "Procedimento de exercício de direitos dos titulares",
+          "Matriz de controlo de acessos",
+          "Registo de prestadores externos",
+          "Contratos/DPA com prestadores",
+          "Procedimento de resposta a incidentes",
+          "Plano de continuidade de negócio",
+          "Evidência de testes de backup/restore",
+          "Política de utilização de IA"
+        ],
+
+        answers:report.answers || {},
+        variables:report.variables || {},
+
+        price_after_free_period:"400.000 Kz",
+        free_until:"03/09/2026",
+        generated_at:new Date().toISOString()
+      };
+    }
+
+    async function submitReport(lead, report){
+      const reportPayload = buildReportPayload(lead, report);
+
+      const response = await fetch(API_ENDPOINT, {
+        method:"POST",
+        headers:{"Content-Type":"application/json"},
+        body:JSON.stringify({
+          email:lead.email,
+          report:reportPayload
+        })
+      });
+
+      const result = await response.json().catch(() => ({}));
+
+      if(!response.ok){
+        throw new Error(result.error || "Não foi possível gerar/enviar o relatório PRIA Angola.");
+      }
+
+      return result;
+    }
+
+    document.getElementById("generateBtn").addEventListener("click", showReport);
+
+    document.getElementById("leadForm").addEventListener("submit", async function(e){
+      e.preventDefault();
+
+      const success = document.getElementById("success");
+      const error = document.getElementById("error");
+      const submitBtn = document.getElementById("submitBtn");
+
+      success.style.display = "none";
+      error.style.display = "none";
+
+      if(!lastReport) lastReport = calculateReport();
+
+      const lead = Object.fromEntries(new FormData(e.target).entries());
+
+      if(!lead.email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(lead.email)){
+        error.textContent = "Preenche um email válido.";
+        error.style.display = "block";
+        return;
+      }
+
+      try{
+        submitBtn.disabled = true;
+        submitBtn.textContent = "A gerar e enviar o relatório…";
+
+        await submitReport(lead, lastReport);
+
+        success.textContent = "Relatório gerado. Verifica o email indicado.";
+        success.style.display = "block";
+        submitBtn.textContent = "Relatório enviado";
+      }catch(err){
+        error.textContent = err.message || "Não foi possível enviar o relatório.";
+        error.style.display = "block";
+        submitBtn.disabled = false;
+        submitBtn.textContent = "Enviar respostas e receber relatório →";
+      }
+    });
+
+    function tick(){
+      const deadline = new Date("2026-09-04T00:00:00+01:00").getTime();
+      const diff = Math.max(0, deadline - Date.now());
+
+      document.getElementById("d").textContent = Math.floor(diff / 86400000);
+      document.getElementById("h").textContent = String(Math.floor(diff % 86400000 / 3600000)).padStart(2,"0");
+      document.getElementById("m").textContent = String(Math.floor(diff % 3600000 / 60000)).padStart(2,"0");
+      document.getElementById("s").textContent = String(Math.floor(diff % 60000 / 1000)).padStart(2,"0");
+    }
+
+    const params = new URLSearchParams(location.search);
+    if(params.get("empresa")){
+      const empresa = params.get("empresa");
+      document.getElementById("heroTitle").textContent = empresa + ": legalizar, proteger e manter a operação.";
+      document.getElementById("empresa").value = empresa;
+    }
+
+    tick();
+    setInterval(tick,1000);
+    renderQuestions();
+  </script>
+</body>
+</html>
