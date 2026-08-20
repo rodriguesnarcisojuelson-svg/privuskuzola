@@ -7,6 +7,24 @@
 /assets/*
   Cache-Control: public, max-age=31536000, immutable
 
+/*.png
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.PNG
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.jpeg
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.webp
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.woff2
+  Cache-Control: public, max-age=31536000, immutable
+
 /insights/*
   Cache-Control: public, max-age=3600
 
@@ -18,4 +36,13 @@
   X-Robots-Tag: noindex, nofollow, noarchive
 
 /pria-guided*
+  X-Robots-Tag: noindex, nofollow, noarchive
+
+/pria-angola/*
+  Cache-Control: no-store
+  X-Robots-Tag: noindex, nofollow, noarchive
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+
+/pria-angola/data/*
+  Cache-Control: no-store
   X-Robots-Tag: noindex, nofollow, noarchive
