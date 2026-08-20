@@ -26,7 +26,6 @@
     }
 
     *{box-sizing:border-box}
-
     html{scroll-behavior:smooth}
 
     body{
@@ -37,7 +36,6 @@
       font-weight:300;
       letter-spacing:0.01em;
       line-height:1.65;
-      padding-bottom:0;
     }
 
     h1,h2,h3{
@@ -79,6 +77,7 @@
       justify-content:space-between;
       align-items:center;
       padding:13px 0;
+      gap:18px;
     }
 
     .brand{
@@ -89,15 +88,33 @@
       font-size:25px;
       font-weight:600;
       letter-spacing:-0.02em;
+      text-decoration:none;
     }
 
     .brand img{
-      width:38px;
-      height:38px;
+      width:42px;
+      height:42px;
       object-fit:contain;
+      border-radius:10px;
     }
 
     .brand span{color:var(--gold)}
+
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:16px;
+      font-size:12px;
+      color:#C8B99A;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+    }
+
+    .nav-links a:hover{
+      color:var(--gold2);
+    }
 
     .btn{
       display:inline-flex;
@@ -120,6 +137,12 @@
       background:transparent;
       color:var(--cream);
       border:1px solid rgba(255,255,255,.22);
+    }
+
+    .btn.dark-secondary{
+      background:transparent;
+      color:var(--navy);
+      border:1px solid var(--line);
     }
 
     .btn:disabled{
@@ -164,6 +187,20 @@
       margin-top:24px;
     }
 
+    .legal-row{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+      margin-top:18px;
+      font-size:12px;
+      color:#C8B99A;
+    }
+
+    .legal-row a{
+      text-decoration:underline;
+      text-underline-offset:3px;
+    }
+
     .card{
       background:var(--white);
       border:1px solid var(--line);
@@ -185,9 +222,7 @@
       margin-top:18px;
     }
 
-    .countdown.hidden{
-      display:none;
-    }
+    .countdown.hidden{display:none}
 
     .timebox{
       background:rgba(0,0,0,.18);
@@ -361,6 +396,13 @@
       font-weight:500;
     }
 
+    .generate-card{
+      margin-top:18px;
+      background:#FAF7F0;
+      border:1px solid var(--line);
+      border-left:4px solid var(--gold);
+    }
+
     .report{display:none}
     .report.visible{display:block}
 
@@ -495,15 +537,38 @@
     footer{
       background:var(--navy);
       color:#C8B99A;
-      padding:28px 0;
+      padding:34px 0;
       font-size:12px;
       text-align:center;
+    }
+
+    .footer-logo{
+      width:min(420px,86vw);
+      height:auto;
+      display:block;
+      margin:0 auto 18px;
+    }
+
+    .footer-links{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:8px;
+    }
+
+    .footer-links a{
+      color:#C8B99A;
+      text-decoration:underline;
+      text-underline-offset:3px;
     }
 
     @media(max-width:900px){
       .hero-grid,.form-layout{grid-template-columns:1fr}
       .sidebar{position:static}
       .triad,.cases,.score-grid{grid-template-columns:1fr 1fr}
+      .nav-inner{align-items:flex-start}
+      .nav-links{display:none}
     }
 
     @media(max-width:620px){
@@ -516,11 +581,16 @@
 <body>
   <nav class="nav">
     <div class="wrap nav-inner">
-      <div class="brand">
-        <img src="assets/privus-symbol.svg" alt="Privus">
+      <a class="brand" href="index.html">
+        <img src="../privus-symbol.png" alt="Privus">
         <div>Privus<span>.</span></div>
+      </a>
+
+      <div class="nav-links">
+        <a href="politica-privacidade.html">Política de Privacidade</a>
+        <a href="termos-condicoes.html">Termos e Condições</a>
+        <a class="btn secondary" href="#pria">Iniciar PRIA</a>
       </div>
-      <a class="btn secondary" href="#pria">Iniciar PRIA</a>
     </div>
   </nav>
 
@@ -538,12 +608,17 @@
           <a class="btn" href="#pria">Iniciar diagnóstico</a>
           <a class="btn secondary" href="#modelo">Ver modelo</a>
         </div>
+
+        <div class="legal-row">
+          <a href="politica-privacidade.html">Política de Privacidade</a>
+          <a href="termos-condicoes.html">Termos e Condições</a>
+        </div>
       </div>
 
       <aside class="card" id="offerBox">
         <div class="kicker" id="offerKicker">Janela de lançamento</div>
         <p id="offerMain"><strong>Gratuito até 3 de setembro de 2026.</strong></p>
-        <p id="offerPriceLine">A partir de 4 de setembro, o diagnóstico automático + relatório passa para <strong>400.000 Kz</strong>.</p>
+        <p id="offerPriceLine">A partir de 4 de setembro de 2026, o diagnóstico automático + relatório passa para <strong>400.000 Kz</strong>.</p>
 
         <div class="countdown" id="countdownBox">
           <div class="timebox"><span class="num" id="d">--</span><span class="lbl">dias</span></div>
@@ -578,8 +653,8 @@
           MFA, acessos, contas partilhadas, cloud, backups, logs e resposta a incidentes.
         </div>
         <div class="case">
-          <strong>Continuidade</strong><br>
-          Serviços críticos, RTO/RPO, testes de restore, fornecedores críticos e recuperação.
+          <strong>IA e automação</strong><br>
+          ChatGPT, Copilot, chatbots, automações, dados pessoais em IA e supervisão humana.
         </div>
       </div>
     </div>
@@ -588,10 +663,10 @@
   <section id="modelo">
     <div class="wrap">
       <div class="kicker">Modelo Privus</div>
-      <h2>O PRIA Angola avalia três dimensões centrais.</h2>
+      <h2>O PRIA Angola avalia cinco dimensões centrais.</h2>
       <p class="sub">
         O diagnóstico não é uma checklist genérica. O motor abre perguntas em função do setor,
-        práticas existentes, bases jurídicas, segurança, continuidade e evidência disponível.
+        práticas existentes, bases jurídicas, segurança, continuidade, evidência e utilização de IA.
       </p>
 
       <div class="triad">
@@ -608,9 +683,9 @@
         </div>
 
         <div class="card">
-          <b>03 · Continuar</b>
-          <h3>Continuidade</h3>
-          <p>Serviços críticos, RTO/RPO, restore, contingência, fornecedores críticos, comunicação e recuperação.</p>
+          <b>03 · Automatizar</b>
+          <h3>IA e automação</h3>
+          <p>Uso de IA, dados inseridos em ferramentas externas, regras internas, supervisão humana e oportunidades de automação.</p>
         </div>
       </div>
     </div>
@@ -622,7 +697,7 @@
       <h2>Responda apenas ao que se aplica à sua organização.</h2>
       <p class="sub">
         Se não usa biometria, esse bloco fecha. Se usa cloud fora de Angola, abre transferência internacional.
-        Se trata dados de saúde, abre módulo específico.
+        Se trata dados de saúde, abre módulo específico. Se usa IA, abre o módulo de IA e automação.
       </p>
 
       <div class="form-layout">
@@ -630,7 +705,9 @@
           <div class="kicker">Progresso</div>
           <strong id="progressText">0/0 respostas</strong>
           <div class="progress"><div class="bar" id="bar"></div></div>
-          <button class="btn" type="button" id="generateBtn" style="width:100%">Gerar pré-relatório</button>
+          <p style="font-size:12px;color:#C8B99A;margin-top:12px">
+            O botão para gerar o pré-relatório aparece no fim das perguntas ativas.
+          </p>
           <div class="module-nav" id="moduleNav"></div>
         </aside>
 
@@ -641,6 +718,16 @@
           </div>
 
           <form id="questionForm"></form>
+
+          <div class="card generate-card" id="generateCard">
+            <div class="kicker">Pré-relatório</div>
+            <h3>Gerar resultado preliminar</h3>
+            <p class="sub">
+              Depois de responder às perguntas ativas, gere o pré-relatório com score, red flags,
+              recomendações iniciais e formulário para receber o PDF.
+            </p>
+            <button class="btn" type="button" id="generateBtn">Gerar pré-relatório</button>
+          </div>
 
           <section class="card report" id="report" style="margin-top:22px">
             <div class="kicker">Pré-relatório automático</div>
@@ -747,7 +834,12 @@
 
   <footer>
     <div class="wrap">
-      Privus · Regulação · Segurança · Continuidade · Evidência · IA · contacto@privuskuzola.pt
+      <img class="footer-logo" src="../logo-privus-horizontal.png" alt="Privus — Consultoria Regulatória Digital">
+      <div>Privus · Regulação · Segurança · Continuidade · Evidência · IA · contacto@privuskuzola.pt</div>
+      <div class="footer-links">
+        <a href="politica-privacidade.html">Política de Privacidade</a>
+        <a href="termos-condicoes.html">Termos e Condições</a>
+      </div>
     </div>
   </footer>
 
@@ -1053,7 +1145,7 @@
 
       return {
         product:"PRIA Angola",
-        version:"PRIA Angola deploy-v4-auto-date",
+        version:"PRIA Angola deploy-v5-official-logo",
         name:lead.responsavel,
         company:lead.empresa,
         nif:lead.nif,
