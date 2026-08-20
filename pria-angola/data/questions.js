@@ -5450,3 +5450,97 @@ window.PRIA_BUNDLE = {
     ]
   }
 };
+
+
+(function(){
+  const QUESTION_TEXTS = {
+    "TRI-001": "Qual é o principal setor de atividade da organização?",
+    "TRI-002": "Quantos trabalhadores tem atualmente a organização?",
+    "TRI-003": "Em quantas instalações, filiais ou estabelecimentos a organização opera?",
+    "TRI-004": "A organização trata dados pessoais de clientes, utentes, pacientes, trabalhadores, fornecedores ou outros titulares?",
+    "TRI-005": "A organização trata dados de saúde, exames, processos clínicos, informação médica ou dados de pacientes?",
+    "TRI-006": "A organização tem trabalhadores, colaboradores, prestadores internos ou equipas sob gestão direta?",
+    "TRI-007": "A organização utiliza sistemas de videovigilância, câmaras CCTV ou monitorização visual de instalações?",
+    "TRI-008": "A organização utiliza dados biométricos, como impressão digital, reconhecimento facial, íris ou controlo biométrico de acessos?",
+    "TRI-009": "A organização utiliza cloud, SaaS, alojamento externo, CRM, ERP online ou plataformas digitais para tratar informação?",
+    "TRI-010": "Existem dados pessoais alojados, acessíveis ou tratados fora de Angola?",
+    "TRI-011": "A organização recorre a prestadores externos que tratam dados pessoais por sua conta?",
+    "TRI-012": "A organização utiliza ferramentas de inteligência artificial, incluindo ChatGPT, Copilot, Gemini, chatbots ou automações inteligentes?"
+  };
+
+  const MODULE_BASE_QUESTIONS = {
+    "Proteção de Dados / APD": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado?",
+    "Direitos dos Titulares": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado?",
+    "RH e Trabalhadores": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado?",
+    "Baixas Médicas": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado?",
+    "Recrutamento e Offboarding": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado?",
+    "CCTV": "A organização consegue demonstrar que este controlo de videovigilância está implementado?",
+    "Biometria": "A organização consegue demonstrar que este controlo de biometria está implementado?",
+    "Saúde": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado?",
+    "Marketing": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado?",
+    "Website, Apps e Canais Digitais": "A organização consegue demonstrar que este controlo sobre website, aplicações ou canais digitais está implementado?",
+    "Prestadores e DPA": "A organização consegue demonstrar que este controlo sobre prestadores, contratos e subcontratantes está implementado?",
+    "Cloud e Alojamento": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado?",
+    "Transferências Internacionais": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado?",
+    "Segurança da Informação": "A organização consegue demonstrar que este controlo de segurança da informação está implementado?",
+    "Incidentes": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado?",
+    "Continuidade de Negócio": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado?",
+    "Governança e Evidência": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado?",
+    "IA e Automação": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado?",
+    "Banca / Fintech": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado?",
+    "Seguros": "A organização consegue demonstrar que este controlo aplicável ao setor segurador está implementado?",
+    "Hotelaria": "A organização consegue demonstrar que este controlo aplicável à hotelaria e dados de hóspedes está implementado?",
+    "Educação e Menores": "A organização consegue demonstrar que este controlo aplicável a educação, estudantes ou menores está implementado?",
+    "Indústria": "A organização consegue demonstrar que este controlo aplicável a sistemas industriais, manutenção ou operação técnica está implementado?"
+  };
+
+  function clean(value){
+    return String(value || "")
+      .replace(/\s+/g, " ")
+      .trim();
+  }
+
+  function stripFinalDot(value){
+    return clean(value).replace(/[.。]+$/g, "");
+  }
+
+  function buildText(question){
+    if (!question || typeof question !== "object") {
+      return "A organização consegue demonstrar que este controlo está implementado?";
+    }
+
+    if (QUESTION_TEXTS[question.id]) {
+      return QUESTION_TEXTS[question.id];
+    }
+
+    const moduleBase =
+      MODULE_BASE_QUESTIONS[question.module] ||
+      "A organização consegue demonstrar que este controlo está implementado?";
+
+    const recommendation = stripFinalDot(question.recommendation);
+
+    if (recommendation) {
+      return moduleBase + " Critério avaliado: " + recommendation + ".";
+    }
+
+    return moduleBase;
+  }
+
+  if (window.PRIA_BUNDLE && Array.isArray(window.PRIA_BUNDLE.questions)) {
+    window.PRIA_BUNDLE.questions = window.PRIA_BUNDLE.questions.map(function(question){
+      return Object.assign({}, question, {
+        text: clean(question.text || question.question || question.label || buildText(question))
+      });
+    });
+
+    window.PRIA_BUNDLE.version = "question-bank-v1-text-injection";
+
+    if (!window.PRIA_BUNDLE.pricing) {
+      window.PRIA_BUNDLE.pricing = {};
+    }
+
+    window.PRIA_BUNDLE.pricing.free_until = "2026-09-05";
+    window.PRIA_BUNDLE.pricing.paid_from = "2026-09-06";
+    window.PRIA_BUNDLE.pricing.automatic_report_price = "400.000 Kz";
+  }
+})();
