@@ -139,12 +139,6 @@
       border:1px solid rgba(255,255,255,.22);
     }
 
-    .btn.dark-secondary{
-      background:transparent;
-      color:var(--navy);
-      border:1px solid var(--line);
-    }
-
     .btn:disabled{
       opacity:.6;
       cursor:not-allowed;
@@ -749,7 +743,7 @@
 
             <h3>Receber relatório em PDF</h3>
             <p class="sub">
-              O relatório será gerado e enviado através da função existente <strong>/api/report</strong>.
+              O relatório será gerado e enviado por email através da infraestrutura segura da Privus.
             </p>
 
             <form class="final-form" id="leadForm">
@@ -847,11 +841,11 @@
   <script src="data/questions.js"></script>
 
   <script>
-    const API_ENDPOINT = window.PRIA_FORM_ENDPOINT || "/api/report";
+    const API_ENDPOINT = window.PRIA_FORM_ENDPOINT || "/api/pria-angola-report";
 
-    const PRIA_FREE_UNTIL_TEXT = "3 de setembro de 2026";
-    const PRIA_PAID_FROM_TEXT = "4 de setembro de 2026";
-    const PRIA_PRICE = "400.000 Kz";
+    const PRIA_FREE_UNTIL_TEXT = window.PRIA_FREE_UNTIL_TEXT || "3 de setembro de 2026";
+    const PRIA_PAID_FROM_TEXT = window.PRIA_PAID_FROM_TEXT || "4 de setembro de 2026";
+    const PRIA_PRICE = window.PRIA_PRICE_AFTER_FREE_PERIOD || "400.000 Kz";
     const PRIA_DEADLINE = new Date("2026-09-04T00:00:00+01:00").getTime();
 
     let bundle = window.PRIA_BUNDLE || null;
@@ -1145,7 +1139,7 @@
 
       return {
         product:"PRIA Angola",
-        version:"PRIA Angola deploy-v5-official-logo",
+        version:"PRIA Angola deploy-v6-final-secure-route",
         name:lead.responsavel,
         company:lead.empresa,
         nif:lead.nif,
