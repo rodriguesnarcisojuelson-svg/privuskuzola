@@ -1,4 +1,4 @@
-window.PRIA_FORM_ENDPOINT = "https://formspree.io/f/xkoykrgr";
+window.PRIA_FORM_ENDPOINT = "/api/pria-angola-report";
 
 window.PRIA_CAMPAIGN = "PRIA Angola — lançamento gratuito até 05/09/2026";
 
