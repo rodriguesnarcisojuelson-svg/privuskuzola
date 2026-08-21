@@ -41,7 +41,7 @@
 /pria-angola/*
   Cache-Control: no-store
   X-Robots-Tag: noindex, nofollow, noarchive
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://formspree.io; frame-ancestors 'self'; base-uri 'self'; form-action 'self' https://formspree.io
 
 /pria-angola/data/*
   Cache-Control: no-store
