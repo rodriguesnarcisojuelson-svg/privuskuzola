@@ -10,6 +10,15 @@ const PROTECTED_PATHS = {
 const SEPTEMBER_INSIGHT_URL =
   "/insights/2026/09/continuidade-negocio-rgpd-iso-22301/";
 
+const OCTOBER_CARD = `
+      <div class="insight-card upcoming" style="grid-column:1/-1">
+        <div class="insight-edition" id="t-ins-e4-ed">Próxima edição · Outubro 2026</div>
+        <div class="insight-theme" id="t-ins-e4-theme">AI Governance · Shadow AI · Accountability</div>
+        <h3 id="t-ins-e4-h">O ponto cego da governação de IA</h3>
+        <p id="t-ins-e4-p">Uma análise sobre os usos de IA que escapam ao inventário, à aprovação e aos mecanismos tradicionais de compliance, e sobre como transformar essa invisibilidade em controlo e evidência.</p>
+        <span class="insight-status" id="t-ins-e4-status">Em preparação</span>
+      </div>`;
+
 function textBytes(value) {
   return new TextEncoder().encode(value);
 }
@@ -30,11 +39,9 @@ function readCookie(request, name) {
 
   for (const part of cookies.split(";")) {
     const separator = part.indexOf("=");
-
     if (separator === -1) continue;
 
     const cookieName = part.slice(0, separator).trim();
-
     if (cookieName === name) {
       return part.slice(separator + 1).trim();
     }
@@ -46,16 +53,12 @@ function readCookie(request, name) {
 async function verifyAccessToken(token, secret) {
   try {
     const [payload, signature] = String(token || "").split(".");
-
     if (!payload || !signature) return null;
 
     const key = await crypto.subtle.importKey(
       "raw",
       textBytes(secret),
-      {
-        name: "HMAC",
-        hash: "SHA-256",
-      },
+      { name: "HMAC", hash: "SHA-256" },
       false,
       ["verify"]
     );
@@ -73,10 +76,7 @@ async function verifyAccessToken(token, secret) {
       new TextDecoder().decode(fromBase64Url(payload))
     );
 
-    if (
-      !data.exp ||
-      data.exp <= Math.floor(Date.now() / 1000)
-    ) {
+    if (!data.exp || data.exp <= Math.floor(Date.now() / 1000)) {
       return null;
     }
 
@@ -88,55 +88,57 @@ async function verifyAccessToken(token, secret) {
 
 async function rewriteHtml(response, pathname) {
   const contentType = response.headers.get("Content-Type") || "";
-
-  if (!contentType.includes("text/html")) {
-    return response;
-  }
+  if (!contentType.includes("text/html")) return response;
 
   let html = await response.text();
 
   if (pathname === "/") {
-    const replacements = [
-      [
-        'class="insight-card upcoming"',
-        'class="insight-card"',
-      ],
-      [
-        '<div class="insight-edition" id="t-ins-e3-ed">Próxima edição · Setembro 2026</div>',
-        '<div class="insight-edition" id="t-ins-e3-ed">Nº 3 · Setembro 2026</div>',
-      ],
-      [
-        '<span class="insight-status" id="t-ins-e3-status">Em preparação</span>',
-        `<a href="${SEPTEMBER_INSIGHT_URL}" class="insight-cta" id="t-ins-e3-cta">Ler análise →</a>`,
-      ],
-      [
-        "'ins-e3-ed':'Próxima edição · Setembro 2026'",
-        "'ins-e3-ed':'Nº 3 · Setembro 2026'",
-      ],
-      [
-        "'ins-e3-status':'Em preparação'",
-        "'ins-e3-cta':'Ler análise →'",
-      ],
-      [
-        "'ins-e3-ed':'Next edition · September 2026'",
-        "'ins-e3-ed':'No. 3 · September 2026'",
-      ],
-      [
-        "'ins-e3-status':'In preparation'",
-        "'ins-e3-cta':'Read analysis →'",
-      ],
-      [
-        "'ins-e3-ed':'Próxima edição · Septiembre 2026'",
-        "'ins-e3-ed':'Nº 3 · Septiembre 2026'",
-      ],
-      [
-        "'ins-e3-status':'En preparación'",
-        "'ins-e3-cta':'Leer análisis →'",
-      ],
-    ];
+    html = html.replace(
+      'class="insight-card upcoming"',
+      'class="insight-card"'
+    );
+    html = html.replace(
+      '<div class="insight-edition" id="t-ins-e3-ed">Próxima edição · Setembro 2026</div>',
+      '<div class="insight-edition" id="t-ins-e3-ed">Nº 3 · Setembro 2026</div>'
+    );
+    html = html.replace(
+      '<span class="insight-status" id="t-ins-e3-status">Em preparação</span>',
+      `<a href="${SEPTEMBER_INSIGHT_URL}" class="insight-cta" id="t-ins-e3-cta">Ler análise →</a>`
+    );
 
-    for (const [from, to] of replacements) {
-      html = html.replace(from, to);
+    html = html.replace(
+      "'ins-e3-ed':'Próxima edição · Setembro 2026'",
+      "'ins-e3-ed':'Nº 3 · Setembro 2026'"
+    );
+    html = html.replace(
+      "'ins-e3-status':'Em preparação'",
+      "'ins-e3-cta':'Ler análise →','ins-e4-ed':'Próxima edição · Outubro 2026','ins-e4-theme':'AI Governance · Shadow AI · Accountability','ins-e4-h':'O ponto cego da governação de IA','ins-e4-p':'Uma análise sobre os usos de IA que escapam ao inventário, à aprovação e aos mecanismos tradicionais de compliance, e sobre como transformar essa invisibilidade em controlo e evidência.','ins-e4-status':'Em preparação'"
+    );
+
+    html = html.replace(
+      "'ins-e3-ed':'Next edition · September 2026'",
+      "'ins-e3-ed':'No. 3 · September 2026'"
+    );
+    html = html.replace(
+      "'ins-e3-status':'In preparation'",
+      "'ins-e3-cta':'Read analysis →','ins-e4-ed':'Next edition · October 2026','ins-e4-theme':'AI Governance · Shadow AI · Accountability','ins-e4-h':'The blind spot of AI governance','ins-e4-p':'An analysis of AI uses that escape inventory, approval and traditional compliance mechanisms, and how to turn that invisibility into control and evidence.','ins-e4-status':'In preparation'"
+    );
+
+    html = html.replace(
+      "'ins-e3-ed':'Próxima edição · Septiembre 2026'",
+      "'ins-e3-ed':'Nº 3 · Septiembre 2026'"
+    );
+    html = html.replace(
+      "'ins-e3-status':'En preparación'",
+      "'ins-e3-cta':'Leer análisis →','ins-e4-ed':'Próxima edición · Octubre 2026','ins-e4-theme':'AI Governance · Shadow AI · Accountability','ins-e4-h':'El punto ciego de la gobernanza de IA','ins-e4-p':'Un análisis de los usos de IA que escapan al inventario, la aprobación y los mecanismos tradicionales de compliance, y de cómo convertir esa invisibilidad en control y evidencia.','ins-e4-status':'En preparación'"
+    );
+
+    if (!html.includes('id="t-ins-e4-ed"')) {
+      const gridEnd = `      </div>\n    </div>\n\n    <p style="margin:0 0 2rem"><a href="/insights/"`;
+      html = html.replace(
+        gridEnd,
+        `      </div>${OCTOBER_CARD}\n    </div>\n\n    <p style="margin:0 0 2rem"><a href="/insights/"`
+      );
     }
   }
 
@@ -174,11 +176,7 @@ export async function onRequest(context) {
   }
 
   const allowedPlans = PROTECTED_PATHS[pathname];
-
-  // Todas as páginas normais e funções continuam sem interferência.
-  if (!allowedPlans) {
-    return context.next();
-  }
+  if (!allowedPlans) return context.next();
 
   if (!context.env.PRIA_ACCESS_SECRET) {
     return new Response(
@@ -193,32 +191,20 @@ export async function onRequest(context) {
     );
   }
 
-  const token = readCookie(
-    context.request,
-    ACCESS_COOKIE
-  );
-
+  const token = readCookie(context.request, ACCESS_COOKIE);
   const access = await verifyAccessToken(
     token,
     context.env.PRIA_ACCESS_SECRET
   );
 
-  if (
-    !access ||
-    !allowedPlans.includes(access.plan)
-  ) {
+  if (!access || !allowedPlans.includes(access.plan)) {
     const destination = new URL(
       "/pria-planos.html?required=1",
       context.request.url
     );
-
-    return Response.redirect(
-      destination.toString(),
-      302
-    );
+    return Response.redirect(destination.toString(), 302);
   }
 
   context.data.priaAccess = access;
-
   return context.next();
 }
