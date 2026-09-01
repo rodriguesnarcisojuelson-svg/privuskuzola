@@ -33,6 +33,7 @@
 - Página institucional: https://privuskuzola.pt/
 - Planos públicos do PRIA: https://privuskuzola.pt/pria-planos
 - Arquivo Privus Month Insights: https://privuskuzola.pt/insights/
+- Nº 3 — Continuidade de negócio, RGPD e ISO 22301: https://privuskuzola.pt/insights/2026/09/continuidade-negocio-rgpd-iso-22301/
 - Nº 2 — AI Act + RGPD: https://privuskuzola.pt/insights/2026/08/ai-act-rgpd-digital-omnibus/
 - Nº 1 — Fiscalização CNPD: https://privuskuzola.pt/insights/2026/07/colapso-silencioso-fiscalizacao-cnpd/
 
