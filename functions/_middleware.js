@@ -86,7 +86,7 @@ async function verifyAccessToken(token, secret) {
   }
 }
 
-async function publishSeptemberInsight(response) {
+async function rewriteHtml(response, pathname) {
   const contentType = response.headers.get("Content-Type") || "";
 
   if (!contentType.includes("text/html")) {
@@ -95,47 +95,56 @@ async function publishSeptemberInsight(response) {
 
   let html = await response.text();
 
-  const replacements = [
-    [
-      'class="insight-card upcoming"',
-      'class="insight-card"',
-    ],
-    [
-      '<div class="insight-edition" id="t-ins-e3-ed">Próxima edição · Setembro 2026</div>',
-      '<div class="insight-edition" id="t-ins-e3-ed">Nº 3 · Setembro 2026</div>',
-    ],
-    [
-      '<span class="insight-status" id="t-ins-e3-status">Em preparação</span>',
-      `<a href="${SEPTEMBER_INSIGHT_URL}" class="insight-cta" id="t-ins-e3-cta">Ler análise →</a>`,
-    ],
-    [
-      "'ins-e3-ed':'Próxima edição · Setembro 2026'",
-      "'ins-e3-ed':'Nº 3 · Setembro 2026'",
-    ],
-    [
-      "'ins-e3-status':'Em preparação'",
-      "'ins-e3-cta':'Ler análise →'",
-    ],
-    [
-      "'ins-e3-ed':'Next edition · September 2026'",
-      "'ins-e3-ed':'No. 3 · September 2026'",
-    ],
-    [
-      "'ins-e3-status':'In preparation'",
-      "'ins-e3-cta':'Read analysis →'",
-    ],
-    [
-      "'ins-e3-ed':'Próxima edição · Septiembre 2026'",
-      "'ins-e3-ed':'Nº 3 · Septiembre 2026'",
-    ],
-    [
-      "'ins-e3-status':'En preparación'",
-      "'ins-e3-cta':'Leer análisis →'",
-    ],
-  ];
+  if (pathname === "/") {
+    const replacements = [
+      [
+        'class="insight-card upcoming"',
+        'class="insight-card"',
+      ],
+      [
+        '<div class="insight-edition" id="t-ins-e3-ed">Próxima edição · Setembro 2026</div>',
+        '<div class="insight-edition" id="t-ins-e3-ed">Nº 3 · Setembro 2026</div>',
+      ],
+      [
+        '<span class="insight-status" id="t-ins-e3-status">Em preparação</span>',
+        `<a href="${SEPTEMBER_INSIGHT_URL}" class="insight-cta" id="t-ins-e3-cta">Ler análise →</a>`,
+      ],
+      [
+        "'ins-e3-ed':'Próxima edição · Setembro 2026'",
+        "'ins-e3-ed':'Nº 3 · Setembro 2026'",
+      ],
+      [
+        "'ins-e3-status':'Em preparação'",
+        "'ins-e3-cta':'Ler análise →'",
+      ],
+      [
+        "'ins-e3-ed':'Next edition · September 2026'",
+        "'ins-e3-ed':'No. 3 · September 2026'",
+      ],
+      [
+        "'ins-e3-status':'In preparation'",
+        "'ins-e3-cta':'Read analysis →'",
+      ],
+      [
+        "'ins-e3-ed':'Próxima edição · Septiembre 2026'",
+        "'ins-e3-ed':'Nº 3 · Septiembre 2026'",
+      ],
+      [
+        "'ins-e3-status':'En preparación'",
+        "'ins-e3-cta':'Leer análisis →'",
+      ],
+    ];
 
-  for (const [from, to] of replacements) {
-    html = html.replace(from, to);
+    for (const [from, to] of replacements) {
+      html = html.replace(from, to);
+    }
+  }
+
+  if (pathname === SEPTEMBER_INSIGHT_URL.replace(/\/$/, "")) {
+    html = html.replace(
+      '<a class="button" href="/privus-month-insights-setembro-2026.pdf">Descarregar PDF</a>',
+      '<span class="button" aria-disabled="true" style="opacity:.58;cursor:default">PDF em preparação</span>'
+    );
   }
 
   const headers = new Headers(response.headers);
@@ -157,11 +166,11 @@ export async function onRequest(context) {
       : url.pathname;
 
   if (
-    pathname === "/" &&
+    (pathname === "/" || pathname === SEPTEMBER_INSIGHT_URL.replace(/\/$/, "")) &&
     context.request.method === "GET"
   ) {
     const response = await context.next();
-    return publishSeptemberInsight(response);
+    return rewriteHtml(response, pathname);
   }
 
   const allowedPlans = PROTECTED_PATHS[pathname];
