@@ -7,6 +7,9 @@ const PROTECTED_PATHS = {
   "/pria-guided.html": ["guided", "upgrade"],
 };
 
+const SEPTEMBER_INSIGHT_URL =
+  "/insights/2026/09/continuidade-negocio-rgpd-iso-22301/";
+
 function textBytes(value) {
   return new TextEncoder().encode(value);
 }
@@ -83,12 +86,83 @@ async function verifyAccessToken(token, secret) {
   }
 }
 
+async function publishSeptemberInsight(response) {
+  const contentType = response.headers.get("Content-Type") || "";
+
+  if (!contentType.includes("text/html")) {
+    return response;
+  }
+
+  let html = await response.text();
+
+  const replacements = [
+    [
+      'class="insight-card upcoming"',
+      'class="insight-card"',
+    ],
+    [
+      '<div class="insight-edition" id="t-ins-e3-ed">Próxima edição · Setembro 2026</div>',
+      '<div class="insight-edition" id="t-ins-e3-ed">Nº 3 · Setembro 2026</div>',
+    ],
+    [
+      '<span class="insight-status" id="t-ins-e3-status">Em preparação</span>',
+      `<a href="${SEPTEMBER_INSIGHT_URL}" class="insight-cta" id="t-ins-e3-cta">Ler análise →</a>`,
+    ],
+    [
+      "'ins-e3-ed':'Próxima edição · Setembro 2026'",
+      "'ins-e3-ed':'Nº 3 · Setembro 2026'",
+    ],
+    [
+      "'ins-e3-status':'Em preparação'",
+      "'ins-e3-cta':'Ler análise →'",
+    ],
+    [
+      "'ins-e3-ed':'Next edition · September 2026'",
+      "'ins-e3-ed':'No. 3 · September 2026'",
+    ],
+    [
+      "'ins-e3-status':'In preparation'",
+      "'ins-e3-cta':'Read analysis →'",
+    ],
+    [
+      "'ins-e3-ed':'Próxima edição · Septiembre 2026'",
+      "'ins-e3-ed':'Nº 3 · Septiembre 2026'",
+    ],
+    [
+      "'ins-e3-status':'En preparación'",
+      "'ins-e3-cta':'Leer análisis →'",
+    ],
+  ];
+
+  for (const [from, to] of replacements) {
+    html = html.replace(from, to);
+  }
+
+  const headers = new Headers(response.headers);
+  headers.delete("Content-Length");
+  headers.delete("ETag");
+
+  return new Response(html, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
 export async function onRequest(context) {
   const url = new URL(context.request.url);
   const pathname =
     url.pathname.length > 1
       ? url.pathname.replace(/\/+$/, "")
       : url.pathname;
+
+  if (
+    pathname === "/" &&
+    context.request.method === "GET"
+  ) {
+    const response = await context.next();
+    return publishSeptemberInsight(response);
+  }
 
   const allowedPlans = PROTECTED_PATHS[pathname];
 
