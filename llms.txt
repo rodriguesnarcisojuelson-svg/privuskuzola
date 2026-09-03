@@ -1,6 +1,6 @@
 # Privus Kuzola
 
-> Consultoria regulatória digital que transforma obrigações em decisões estratégicas e sistemas de conformidade sustentáveis.
+> Consultoria regulatória digital em Portugal e Angola que transforma obrigações em decisões estratégicas e sistemas de conformidade sustentáveis.
 
 ## Identidade
 
@@ -20,6 +20,11 @@
 - ISO 27001, ISO 22301 e ISO 37301
 - Governação digital, implementação e conformidade contínua
 
+## Mercados
+
+- Portugal: consultoria e implementação RGPD, segurança da informação, continuidade de negócio e regulação digital europeia.
+- Angola: consultoria e implementação da Lei n.º 22/11, segurança da informação e continuidade de negócio, com aplicação local e referência internacional quando relevante.
+
 ## Metodologia e serviços
 
 - Framework Privus: arquitetura que integra princípios, avaliação, implementação e melhoria contínua.
@@ -31,6 +36,10 @@
 ## Conteúdo público
 
 - Página institucional: https://privuskuzola.pt/
+- Consultoria e implementação RGPD em Portugal: https://privuskuzola.pt/portugal/consultoria-rgpd/
+- Consultoria de proteção de dados em Angola: https://privuskuzola.pt/angola/consultoria-protecao-dados/
+- Consultoria e implementação ISO 27001 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-27001/
+- Consultoria e implementação ISO 22301 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-22301/
 - Planos públicos do PRIA: https://privuskuzola.pt/pria-planos
 - Arquivo Privus Month Insights: https://privuskuzola.pt/insights/
 - Nº 3 — Continuidade de negócio, RGPD e ISO 22301: https://privuskuzola.pt/insights/2026/09/continuidade-negocio-rgpd-iso-22301/
