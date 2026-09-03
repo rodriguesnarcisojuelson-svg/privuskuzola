@@ -14,15 +14,15 @@
 ## Áreas de atuação
 
 - Proteção de dados e RGPD
-- Inteligência artificial e AI Act
+- AI Governance e implementação orientada pelo AI Act
 - Cibersegurança e NIS2
 - Resiliência operacional digital e DORA
-- ISO 27001, ISO 22301 e ISO 37301
+- ISO 27001, ISO 22301, ISO 37301 e ISO/IEC 42001
 - Governação digital, implementação e conformidade contínua
 
 ## Mercados
 
-- Portugal: consultoria e implementação RGPD, segurança da informação, continuidade de negócio e regulação digital europeia.
+- Portugal e União Europeia: mercado prioritário para AI Governance, AI Act, RGPD, segurança da informação, continuidade de negócio e regulação digital europeia.
 - Angola: consultoria e implementação da Lei n.º 22/11, segurança da informação e continuidade de negócio, com aplicação local e referência internacional quando relevante.
 
 ## Metodologia e serviços
@@ -38,6 +38,7 @@
 - Página institucional: https://privuskuzola.pt/
 - Consultoria e implementação RGPD em Portugal: https://privuskuzola.pt/portugal/consultoria-rgpd/
 - Consultoria de proteção de dados em Angola: https://privuskuzola.pt/angola/consultoria-protecao-dados/
+- Consultoria AI Act e AI Governance em Portugal: https://privuskuzola.pt/servicos/ai-governance/
 - Consultoria e implementação ISO 27001 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-27001/
 - Consultoria e implementação ISO 22301 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-22301/
 - Planos públicos do PRIA: https://privuskuzola.pt/pria-planos

@@ -51,7 +51,7 @@ button{font:inherit}
 .question{padding:1.25rem 1.1rem 1.25rem 0;border-bottom:1px solid var(--line);color:var(--ink);font-size:.92rem}
 .question:nth-child(even){padding-left:2rem;border-left:1px solid var(--line)}
 .question::before{content:"?";color:var(--gold);font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-right:.7rem}
-.outcomes{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:rgba(200,169,110,.35);border:1px solid rgba(200,169,110,.35)}
+.outcomes{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:1px;background:rgba(200,169,110,.35);border:1px solid rgba(200,169,110,.35)}
 .outcome{background:var(--navy);padding:2rem}
 .outcome span{display:block;color:var(--gold);font-size:.67rem;letter-spacing:.16em;margin-bottom:.8rem}
 .outcome h3{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:500;margin-bottom:.55rem;color:var(--white)}
