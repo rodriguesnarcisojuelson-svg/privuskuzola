@@ -4,171 +4,51 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="index, follow">
-<meta name="description" content="Escolha o plano PRIA Assessment ou PRIA Guided Assessment da Privus Kuzola.">
-<title>PRIA — Diagnóstico de Maturidade Regulatória | Privus Kuzola</title>
+<meta name="description" content="PRIA Portugal e União Europeia: diagnóstico de maturidade regulatória com relatório executivo, prioridades e roadmap 30, 90 e 180 dias.">
+<link rel="canonical" href="https://privuskuzola.pt/pria-planos">
+<title>PRIA Portugal e União Europeia | Privus Kuzola</title>
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <style>
-  :root{
-    --navy:#0D1B2A; --gold:#C8A96E; --gold-l:#D9BE90; --cream:#F0EBE0;
-    --muted:#5A5346; --card:#FFFFFF; --danger:#9C4A3C;
-  }
-  *{box-sizing:border-box; margin:0; padding:0;}
-  body{
-    background:var(--cream); color:var(--navy); font-family:'Outfit',sans-serif;
-    font-weight:300; line-height:1.5;
-  }
-  .wrap{max-width:720px; margin:0 auto; padding:0 20px;}
-
-  header{padding:30px 20px 28px; text-align:center;}
-  .brand-link{display:inline-block; margin-bottom:22px;}
-  .brand-logo{display:block; width:min(310px,72vw); height:auto; margin:0 auto;}
-  .kicker{font-size:11px; letter-spacing:2.5px; color:var(--gold); font-weight:500;}
-  h1{
-    font-family:'Cormorant Garamond',serif; font-weight:600; font-size:32px;
-    margin:10px 0 6px; line-height:1.15;
-  }
-  .subtitle{
-    font-family:'Cormorant Garamond',serif; font-style:italic; color:var(--muted);
-    font-size:15px; max-width:480px; margin:0 auto;
-  }
-  .gold-rule{width:56px; height:1.5px; background:var(--gold); margin:18px auto 0;}
-
-  .access-notice{
-    display:none; margin:0 0 20px; padding:13px 15px; background:#fff;
-    border-left:3px solid var(--danger); color:var(--muted); font-size:12.5px; line-height:1.6;
-  }
-  .access-notice.active{display:block;}
-
-  .plans{
-    display:flex; gap:18px; flex-wrap:wrap; margin:34px 0 0; align-items:stretch;
-  }
-  .plan{
-    flex:1 1 280px; background:var(--card); border:1px solid #E5DFD1; border-radius:6px;
-    padding:28px 26px 26px; display:flex; flex-direction:column;
-  }
-  .plan-guided{border-color:var(--gold); box-shadow:0 0 0 1px var(--gold);}
-  .plan-kicker{font-size:10.5px; letter-spacing:1.5px; color:var(--gold); font-weight:500;}
-  .plan-name{
-    font-family:'Cormorant Garamond',serif; font-weight:600; font-size:23px;
-    margin:6px 0 14px; color:var(--navy);
-  }
-  .plan-price{
-    font-family:'Cormorant Garamond',serif; font-style:italic; font-weight:500;
-    font-size:44px; color:var(--gold); line-height:1;
-  }
-  .plan-price sup{font-size:18px; font-style:normal; font-weight:400; color:var(--muted);}
-  .plan-mode{font-size:12.5px; color:var(--muted); margin:10px 0 20px; font-style:italic;}
-
-  .plan-features{list-style:none; flex:1;}
-  .plan-features li{
-    font-size:13.5px; color:var(--navy); padding:10px 0; border-top:1px solid #EFE9DC;
-    display:flex; gap:8px; align-items:baseline;
-  }
-  .plan-features li:first-child{border-top:none;}
-  .plan-features li::before{content:'—'; color:var(--gold); flex-shrink:0;}
-
-  .plan-btn{
-    display:block; text-align:center; text-decoration:none; margin-top:22px;
-    font-family:'Outfit',sans-serif; font-weight:600; font-size:13.5px;
-    padding:14px; border-radius:3px; letter-spacing:0.3px; transition:opacity .2s, transform .2s;
-  }
-  .plan-btn:hover{opacity:.9; transform:translateY(-1px);}
-  .plan-essencial .plan-btn{background:var(--navy); color:var(--cream);}
-  .plan-guided .plan-btn{background:var(--gold); color:var(--navy);}
-
-  .upgrade-note{
-    font-size:11.5px; color:var(--muted); font-style:italic; margin-top:12px; line-height:1.5;
-  }
-  .payment-note{
-    margin-top:12px; padding-top:10px; border-top:1px solid #EFE9DC;
-    font-size:10.5px; color:var(--muted); line-height:1.5;
-  }
-  .or-divider{
-    text-align:center; font-family:'Cormorant Garamond',serif; font-style:italic;
-    color:var(--gold); font-size:14px; margin:6px 0; flex-basis:100%; display:none;
-  }
-  .credit-banner{
-    margin:30px 0 40px; background:var(--navy); color:var(--cream);
-    border-radius:6px; padding:22px 24px;
-  }
-  .credit-kicker{font-size:10.5px; letter-spacing:1.5px; color:var(--gold-l); font-weight:500; margin-bottom:8px;}
-  .credit-text{font-size:13px; line-height:1.7; color:#EDE8DD;}
-  footer{text-align:center; padding:20px 0 40px; font-size:11px; color:var(--muted);}
-  footer a{color:inherit; text-decoration:none;}
-
-  @media (max-width:640px){
-    header{padding-top:24px;}
-    h1{font-size:29px;}
-    .plans{flex-direction:column;}
-    .or-divider{display:block;}
-  }
+:root{--navy:#0d1b2a;--navy2:#17293c;--gold:#c8a96e;--gold2:#e4d2ad;--cream:#f3efe6;--paper:#fff;--ink:#17202b;--muted:#625d53;--line:#ded6c7;--soft:#eae4d8;--shadow:0 18px 48px rgba(13,27,42,.09)}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{background:var(--cream);color:var(--ink);font-family:'Outfit',sans-serif;font-weight:300;line-height:1.6}a{color:inherit}.shell{width:min(1120px,calc(100% - 40px));margin:auto}.eyebrow{color:#84652f;font-size:.72rem;font-weight:600;letter-spacing:.16em;text-transform:uppercase}.title{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:clamp(2.1rem,4vw,3.2rem);font-weight:600;line-height:1.04}.intro{color:var(--muted);font-size:1rem;margin-top:14px;max-width:720px}
+.top{border-bottom:1px solid rgba(200,169,110,.35);padding:20px 0}.topin{align-items:center;display:flex;justify-content:space-between;gap:20px}.logo{display:block;width:min(265px,65vw);height:auto}.back{border-bottom:1px solid var(--gold);font-size:.84rem;font-weight:500;text-decoration:none}
+.hero{padding:68px 0 58px}.hero-grid{align-items:center;display:grid;gap:52px;grid-template-columns:1.25fr .75fr}.hero h1{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,6.8vw,5.6rem);font-weight:600;letter-spacing:-.04em;line-height:.93;margin:14px 0 24px}.hero-copy{color:var(--muted);font-size:1.08rem;max-width:720px}.actions{display:flex;flex-wrap:wrap;gap:11px;margin-top:28px}.btn{align-items:center;border:1px solid var(--navy);border-radius:3px;display:inline-flex;font-size:.88rem;font-weight:600;justify-content:center;min-height:48px;padding:12px 20px;text-decoration:none;transition:.2s}.btn:hover{transform:translateY(-2px)}.primary{background:var(--navy);color:var(--cream)}.secondary{border-color:var(--gold);color:var(--navy)}
+.credit-card{background:var(--navy);box-shadow:var(--shadow);color:var(--cream);padding:34px;position:relative}.credit-card:before{background:var(--gold);content:'';height:3px;left:34px;position:absolute;right:34px;top:0}.credit-card strong{color:var(--gold2);display:block;font-family:'Cormorant Garamond',serif;font-size:2.05rem;line-height:1.1;margin:8px 0 15px}.credit-card p{color:#e5ded2;font-size:.92rem}.credit-card small{border-top:1px solid rgba(255,255,255,.14);color:#bdb7ac;display:block;font-size:.76rem;margin-top:20px;padding-top:16px}
+.facts{padding:0 0 76px}.facts-grid{background:rgba(255,255,255,.35);border:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr)}.fact{border-right:1px solid var(--line);padding:24px 20px}.fact:last-child{border:0}.fact strong{color:var(--navy);display:block;font-family:'Cormorant Garamond',serif;font-size:1.75rem;line-height:1}.fact span{color:var(--muted);display:block;font-size:.78rem;margin-top:8px}
+.plans-section{background:var(--paper);padding:82px 0}.plans-head{align-items:end;display:flex;justify-content:space-between;gap:34px;margin-bottom:34px}.credit-note{background:#f8f5ee;border-left:3px solid var(--gold);color:var(--navy);font-size:.84rem;max-width:325px;padding:14px 16px}.notice{background:#f8f5ee;border:1px solid var(--gold);color:var(--navy);display:none;font-size:.86rem;margin-bottom:20px;padding:14px 16px}.notice.active{display:block}.plans{display:grid;gap:22px;grid-template-columns:1fr 1fr}.plan{background:var(--cream);border:1px solid var(--line);display:flex;flex-direction:column;padding:33px;position:relative}.plan.guided{border-color:var(--gold);box-shadow:var(--shadow)}.tag{background:var(--navy);color:var(--cream);font-size:.63rem;font-weight:600;letter-spacing:.12em;padding:7px 10px;position:absolute;right:18px;text-transform:uppercase;top:18px}.plan h3{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:600;line-height:1.1;margin:7px 0 13px}.price{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:3.8rem;font-weight:600;line-height:.9}.price sup{color:var(--muted);font-family:'Outfit',sans-serif;font-size:1rem;font-weight:400;margin-left:4px;vertical-align:top}.mode{color:var(--muted);font-size:.84rem;margin:12px 0 20px}.features{flex:1;list-style:none}.features li{border-top:1px solid var(--line);font-size:.88rem;padding:11px 0 11px 21px;position:relative}.features li:before{color:#84652f;content:'✓';font-weight:600;left:0;position:absolute}.plan .btn{margin-top:24px;width:100%}.small{color:var(--muted);font-size:.74rem;line-height:1.5;margin-top:13px}.contract{color:var(--muted);font-size:.77rem;line-height:1.6;margin:20px auto 0;max-width:830px;text-align:center}.contract a{color:var(--navy);font-weight:500;text-underline-offset:3px}
+.credit-band{background:var(--navy);color:var(--cream)}.credit-grid{display:grid;grid-template-columns:.62fr 1.38fr}.credit-number{align-items:center;border-right:1px solid rgba(255,255,255,.15);color:var(--gold2);display:flex;font-family:'Cormorant Garamond',serif;font-size:clamp(5rem,10vw,8rem);font-weight:600;justify-content:center;padding:48px 22px}.credit-copy{padding:52px}.credit-copy .eyebrow{color:var(--gold2)}.credit-copy h2{color:white;font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.07;margin:9px 0 15px}.credit-copy p{color:#ddd6ca;max-width:700px}
+.preview{padding:86px 0}.report{display:grid;gap:24px;grid-template-columns:.7fr 1.3fr;margin-top:36px}.cover{background:var(--navy);color:var(--cream);display:flex;flex-direction:column;min-height:430px;padding:36px;position:relative}.cover:after{border:1px solid rgba(200,169,110,.55);bottom:17px;content:'';left:17px;position:absolute;right:17px;top:17px}.cover .eyebrow,.cover h3,.cover p{position:relative;z-index:1}.cover .eyebrow{color:var(--gold2)}.cover h3{font-family:'Cormorant Garamond',serif;font-size:3rem;line-height:.98;margin:auto 0 22px}.cover p{color:#cec8bc;font-size:.82rem}.pages{display:grid;gap:15px;grid-template-columns:1fr 1fr}.page{background:white;border:1px solid var(--line);padding:24px}.wide{grid-column:1/-1}.page h4{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:1.4rem;margin-bottom:16px}.score{align-items:center;display:grid;gap:9px;grid-template-columns:90px 1fr 28px;margin:10px 0}.score span,.score b{font-size:.71rem}.bar{background:var(--soft);height:6px}.fill{background:var(--gold);height:100%}.priority{border-top:1px solid var(--line);padding:10px 0}.priority:first-of-type{border:0}.priority strong{color:var(--navy);display:block;font-size:.8rem}.priority span{color:var(--muted);font-size:.72rem}.roadmap{display:grid;gap:9px;grid-template-columns:repeat(3,1fr)}.roadmap div{background:#f8f5ee;padding:13px}.roadmap strong{color:#84652f;display:block;font-size:.7rem;margin-bottom:6px}.roadmap span{color:var(--muted);font-size:.7rem;line-height:1.4}.sample{color:var(--muted);font-size:.73rem;margin-top:13px}
+.clarity{background:white;padding:82px 0}.clarity-grid{display:grid;gap:22px;grid-template-columns:1fr 1fr;margin-top:34px}.clarity-card{border:1px solid var(--line);padding:28px}.clarity-card h3{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:1.65rem;margin-bottom:11px}.clarity-card p,.clarity-card li{color:var(--muted);font-size:.87rem}.clarity-card ul{list-style:none;margin-top:10px}.clarity-card li{padding:6px 0 6px 18px;position:relative}.clarity-card li:before{color:#84652f;content:'•';font-size:1.1rem;left:1px;position:absolute;top:1px}
+.faq{padding:82px 0}.faq-list{border-top:1px solid var(--line);margin-top:32px}details{border-bottom:1px solid var(--line);padding:19px 0}summary{color:var(--navy);cursor:pointer;font-size:.97rem;font-weight:500;list-style:none;padding-right:30px;position:relative}summary::-webkit-details-marker{display:none}summary:after{color:#84652f;content:'+';font-size:1.35rem;position:absolute;right:4px;top:-4px}details[open] summary:after{content:'−'}details p{color:var(--muted);font-size:.87rem;max-width:820px;padding-top:11px}
+.final{background:var(--gold);padding:50px 0}.finalin{align-items:center;display:flex;gap:34px;justify-content:space-between}.final h2{color:var(--navy);font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:600;line-height:1.05;max-width:650px}.final-actions{display:flex;flex-wrap:wrap;gap:9px;justify-content:flex-end}.final .secondary{border-color:var(--navy)}footer{background:var(--navy);color:#bdb7ac;font-size:.74rem;padding:27px 0}.foot{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between}.links{display:flex;flex-wrap:wrap;gap:17px}.links a{text-decoration:none}
+@media(max-width:840px){.hero-grid,.report,.credit-grid{grid-template-columns:1fr}.facts-grid{grid-template-columns:1fr 1fr}.fact:nth-child(2){border-right:0}.fact:nth-child(-n+2){border-bottom:1px solid var(--line)}.plans-head{align-items:start;flex-direction:column}.credit-number{border-bottom:1px solid rgba(255,255,255,.15);border-right:0;padding:32px}.cover{min-height:340px}.finalin{align-items:start;flex-direction:column}.final-actions{justify-content:start}}
+@media(max-width:680px){.shell{width:calc(100% - 28px)}.topin{align-items:start;flex-direction:column;gap:10px}.hero{padding:44px 0}.hero h1{font-size:3.25rem}.credit-card,.plan,.credit-copy,.clarity-card{padding:25px 21px}.plans-section,.preview,.clarity,.faq{padding:60px 0}.plans,.clarity-grid,.pages{grid-template-columns:1fr}.wide{grid-column:auto}.roadmap{grid-template-columns:1fr}.tag{display:inline-block;margin-bottom:11px;position:static;width:max-content}.final-actions,.final-actions .btn{width:100%}}
 </style>
 </head>
 <body>
+<header class="top"><div class="shell topin"><a href="/" aria-label="Privus Kuzola, página inicial"><img src="/logo-privus-horizontal.png" class="logo" alt="Privus, Consultoria Regulatória Digital" width="1200" height="360"></a><a class="back" href="/">Voltar ao site institucional</a></div></header>
+<main>
+<section class="hero"><div class="shell hero-grid"><div><div class="eyebrow">PRIA Portugal e União Europeia</div><h1>Transforme exposição regulatória em prioridades claras.</h1><p class="hero-copy">O PRIA avalia a maturidade regulatória da sua organização e converte o resultado num relatório executivo com riscos, pontos fortes e um roadmap de implementação para 30, 90 e 180 dias.</p><div class="actions"><a class="btn primary" href="#planos">Comparar modalidades</a><a class="btn secondary" href="#amostra">Ver estrutura do relatório</a></div></div><aside class="credit-card"><div class="eyebrow">Investimento aproveitado</div><strong>100% do valor do PRIA é amortizado na implementação.</strong><p>Se a organização avançar para um projeto de implementação com a Privus até 90 dias após a conclusão do diagnóstico, o valor pago pelo PRIA é integralmente deduzido à proposta.</p><small>Aplicável ao Assessment e ao Guided Assessment, nos termos da proposta de implementação.</small></aside></div></section>
+<section class="facts"><div class="shell facts-grid"><div class="fact"><strong>20–25 min</strong><span>Duração média do Assessment</span></div><div class="fact"><strong>10 pilares</strong><span>Avaliação transversal da maturidade</span></div><div class="fact"><strong>4 dimensões</strong><span>Risco, controlo, evidência e governação</span></div><div class="fact"><strong>30/90/180</strong><span>Horizontes do roadmap</span></div></div></section>
 
-<header>
-  <a href="/" class="brand-link" aria-label="Privus Kuzola — início">
-    <img src="/logo-privus-horizontal.png" class="brand-logo" alt="Privus — Consultoria Regulatória Digital" width="1200" height="360">
-  </a>
-  <div class="kicker">PRIVUS KUZOLA</div>
-  <h1>PRIA — Diagnóstico de<br>Maturidade Regulatória</h1>
-  <p class="subtitle">Duas formas de fazer o mesmo diagnóstico. Nunca pagas duas vezes pelo mesmo resultado.</p>
-  <div class="gold-rule"></div>
-</header>
+<section class="plans-section" id="planos"><div class="shell"><div class="plans-head"><div><div class="eyebrow">Escolher a modalidade</div><h2 class="title">Um núcleo de avaliação, dois níveis de acompanhamento.</h2><p class="intro">Ambas as modalidades produzem um relatório executivo e um roadmap. O Guided acrescenta enquadramento consultivo, validação das respostas e explicação dos resultados.</p></div><p class="credit-note"><strong>Crédito integral:</strong> o valor pago é deduzido a uma implementação contratada no prazo de 90 dias.</p></div>
+<div id="accessNotice" class="notice" role="alert">O acesso é disponibilizado após a confirmação do pagamento. Compare as modalidades antes de prosseguir.</div>
+<div class="plans">
+<article class="plan"><div class="eyebrow">Autónomo</div><h3>PRIA Assessment</h3><div class="price">250<sup>€</sup></div><p class="mode">Preenchimento autónomo, ao ritmo da organização</p><ul class="features"><li>Diagnóstico adaptado ao perfil da organização</li><li>Até 127 perguntas, consoante o âmbito aplicável</li><li>Relatório com score, riscos e pontos fortes</li><li>Roadmap automático para 30, 90 e 180 dias</li><li>Upgrade durante 30 dias por mais 100 €</li></ul><a href="https://buy.stripe.com/8x28wO7TA6167l898wd7q0e" class="btn primary">Selecionar PRIA Assessment</a><p class="small">Pagamento seguro processado pela Stripe. O acesso é libertado após confirmação.</p></article>
+<article class="plan guided"><div class="tag">Com acompanhamento</div><div class="eyebrow">Consultivo</div><h3>PRIA Guided Assessment</h3><div class="price">350<sup>€</sup></div><p class="mode">Sessão ao vivo com um consultor Privus</p><ul class="features"><li>Sessão estruturada de 90 minutos</li><li>Clarificação do contexto e das respostas</li><li>Relatório com score, riscos e pontos fortes</li><li>Roadmap validado e explicado</li><li>Enquadramento das prioridades para decisão interna</li></ul><a href="https://buy.stripe.com/4gMcN44HodtydJwesQd7q0g" class="btn primary">Selecionar PRIA Guided</a><p class="small">Após confirmação, é disponibilizada a página segura para marcação.</p></article>
+</div><p class="contract">Contratação destinada a organizações e profissionais. Antes do pagamento, consulte a identificação atual do prestador e as condições de acesso, faturação, cancelamento e tratamento de dados nos <a href="/termos-condicoes">Termos e Condições</a> e na <a href="/politica-privacidade">Política de Privacidade</a>.</p></div></section>
 
-<main class="wrap">
-  <div id="accessNotice" class="access-notice" role="alert">
-    O acesso ao PRIA é disponibilizado apenas após a confirmação do pagamento. Escolhe um dos planos para continuar.
-  </div>
+<section class="credit-band"><div class="shell credit-grid"><div class="credit-number">100%</div><div class="credit-copy"><div class="eyebrow">Do diagnóstico à execução</div><h2>O investimento no diagnóstico é convertido em implementação.</h2><p>A proposta parte das prioridades já identificadas e deduz integralmente o valor pago pelo Assessment ou Guided Assessment, desde que a implementação seja contratada nos 90 dias seguintes à conclusão do PRIA.</p></div></div></section>
 
-  <div class="plans">
-    <div class="plan plan-essencial">
-      <div class="plan-kicker">AUTÓNOMO</div>
-      <div class="plan-name">PRIA Assessment</div>
-      <div class="plan-price">250<sup>€</sup></div>
-      <div class="plan-mode">Realizado autonomamente</div>
-      <ul class="plan-features">
-        <li>Diagnóstico completo, ao teu ritmo</li>
-        <li>Relatório executivo</li>
-        <li>Roadmap automático</li>
-      </ul>
-      <a href="https://buy.stripe.com/8x28wO7TA6167l898wd7q0e" class="plan-btn">Pagar e iniciar PRIA</a>
-      <p class="upgrade-note">Podes fazer upgrade para a versão acompanhada nos 30 dias seguintes, pagando apenas a diferença de 100 €. A marcação é libertada depois da confirmação do upgrade.</p>
-      <p class="payment-note">Pagamento seguro processado pela Stripe. O acesso ao diagnóstico é libertado após confirmação do pagamento.</p>
-    </div>
+<section class="preview" id="amostra"><div class="shell"><div class="eyebrow">Pré-visualização</div><h2 class="title">O que chega à direção.</h2><p class="intro">Uma leitura executiva da maturidade, das exposições prioritárias e das ações que devem ser tratadas primeiro.</p><div class="report"><div class="cover"><div class="eyebrow">Privus Regulatory Impact Assessment</div><h3>Executive<br>Report</h3><p>Perfil regulatório, maturidade, riscos e roadmap de implementação.</p></div><div class="pages"><div class="page"><h4>Maturidade por pilar</h4><div class="score"><span>Governação</span><div class="bar"><div class="fill" style="width:62%"></div></div><b>62</b></div><div class="score"><span>Evidência</span><div class="bar"><div class="fill" style="width:48%"></div></div><b>48</b></div><div class="score"><span>Segurança</span><div class="bar"><div class="fill" style="width:71%"></div></div><b>71</b></div><div class="score"><span>Continuidade</span><div class="bar"><div class="fill" style="width:39%"></div></div><b>39</b></div></div><div class="page"><h4>Prioridades executivas</h4><div class="priority"><strong>Responsabilidade e decisão</strong><span>Formalizar responsáveis e linhas de reporte.</span></div><div class="priority"><strong>Evidência documental</strong><span>Consolidar registos e atualização.</span></div><div class="priority"><strong>Recuperação operacional</strong><span>Definir impactos, tempos e testes.</span></div></div><div class="page wide"><h4>Roadmap priorizado</h4><div class="roadmap"><div><strong>30 dias</strong><span>Riscos imediatos, responsáveis e evidência mínima.</span></div><div><strong>90 dias</strong><span>Processos, documentação e controlos prioritários.</span></div><div><strong>180 dias</strong><span>Integração, testes e melhoria.</span></div></div></div></div></div><p class="sample">Exemplo ilustrativo. Indicadores, resultados e prioridades dependem do perfil e das respostas da organização.</p></div></section>
 
-    <div class="or-divider">ou</div>
+<section class="clarity"><div class="shell"><div class="eyebrow">Clareza antes da contratação</div><h2 class="title">O alcance de cada avaliação.</h2><div class="clarity-grid"><article class="clarity-card"><h3>PRIA Assessment</h3><p>Avaliação estruturada com base nas informações declaradas pela organização.</p><ul><li>Não verifica autonomamente documentos ou evidências.</li><li>Não confirma a eficácia prática dos controlos declarados.</li><li>Não constitui auditoria, certificação ou parecer jurídico.</li></ul></article><article class="clarity-card"><h3>PRIA Guided Assessment</h3><p>Acrescenta análise consultiva para contextualizar respostas, reduzir ambiguidades e explicar prioridades.</p><ul><li>Inclui validação orientada das respostas em sessão.</li><li>Permite enquadrar particularidades operacionais.</li><li>Não substitui auditoria documental ou certificação.</li></ul></article></div></div></section>
 
-    <div class="plan plan-guided">
-      <div class="plan-kicker">ACOMPANHADO</div>
-      <div class="plan-name">PRIA Guided Assessment</div>
-      <div class="plan-price">350<sup>€</sup></div>
-      <div class="plan-mode">Conduzido por um consultor Privus</div>
-      <ul class="plan-features">
-        <li>Sessão de 90 minutos, ao vivo</li>
-        <li>Relatório executivo</li>
-        <li>Roadmap validado e explicado</li>
-      </ul>
-      <a href="https://buy.stripe.com/4gMcN44HodtydJwesQd7q0g" class="plan-btn">Pagar PRIA Guided</a>
-      <p class="upgrade-note">Depois da confirmação do pagamento, será disponibilizada a página segura para marcares a sessão de 90 minutos.</p>
-      <p class="payment-note">Pagamento seguro processado pela Stripe. A marcação não fica disponível antes da confirmação.</p>
-    </div>
-  </div>
+<section class="faq"><div class="shell"><div class="eyebrow">Informação essencial</div><h2 class="title">Antes de decidir.</h2><div class="faq-list"><details open><summary>Como funciona o crédito para implementação?</summary><p>Se a organização contratar a implementação até 90 dias após concluir o PRIA, o valor total pago pelo diagnóstico é deduzido à proposta. Aplica-se às duas modalidades.</p></details><details><summary>É possível começar pelo Assessment e pedir acompanhamento depois?</summary><p>Sim. Durante os 30 dias seguintes, a organização pode fazer upgrade para o Guided Assessment pagando apenas a diferença de 100 €.</p></details><details><summary>Como são tratados os dados?</summary><p>As respostas são utilizadas para calcular indicadores e produzir o relatório. A geração e entrega seguem a Política de Privacidade. O pagamento é processado pela Stripe.</p></details><details><summary>O PRIA assegura a conformidade?</summary><p>Não. O PRIA identifica maturidade, exposição e prioridades. A conformidade depende do contexto, da evidência e da implementação adequada das medidas aplicáveis.</p></details><details><summary>Posso esclarecer dúvidas antes de pagar?</summary><p>Sim. Contacte a Privus para confirmar qual modalidade corresponde melhor ao contexto da organização.</p></details></div></div></section>
 
-  <div class="credit-banner">
-    <div class="credit-kicker">CRÉDITO PARA IMPLEMENTAÇÃO</div>
-    <div class="credit-text">Caso a organização avance para um projeto de implementação com a Privus no prazo de 90 dias após a conclusão do PRIA, o valor pago pelo PRIA será integralmente deduzido ao valor da proposta de implementação.</div>
-  </div>
+<section class="final"><div class="shell finalin"><h2>Comece pelo diagnóstico. Converta o resultado em execução.</h2><div class="final-actions"><a class="btn primary" href="#planos">Escolher modalidade</a><a class="btn secondary" href="mailto:contacto@privuskuzola.pt?subject=Esclarecimento%20sobre%20o%20PRIA">Falar com a Privus</a></div></div></section>
 </main>
-
-<footer><a href="/">Privus Kuzola · privuskuzola.pt</a></footer>
-
-<script>
-  const params = new URLSearchParams(window.location.search);
-  if (params.get('required') === '1' || params.get('payment') === 'required') {
-    document.getElementById('accessNotice').classList.add('active');
-  }
-</script>
-
+<footer><div class="shell foot"><span>© 2026 Privus Kuzola · Portugal e União Europeia</span><nav class="links" aria-label="Informação legal"><a href="/politica-privacidade">Política de Privacidade</a><a href="/politica-cookies">Política de Cookies</a><a href="/termos-condicoes">Termos e Condições</a></nav></div></footer>
+<script>const params=new URLSearchParams(window.location.search);if(params.get('required')==='1'||params.get('payment')==='required'){document.getElementById('accessNotice').classList.add('active')}</script>
 </body>
 </html>
