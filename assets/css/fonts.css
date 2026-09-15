@@ -8,3 +8,7 @@
 @font-face{font-family:'Cormorant Garamond';font-style:italic;font-weight:400;font-display:swap;src:url('/assets/fonts/cormorant-garamond-400-italic.woff2') format('woff2')}
 @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:500;font-display:swap;src:url('/assets/fonts/cormorant-garamond-500.woff2') format('woff2')}
 @font-face{font-family:'Cormorant Garamond';font-style:normal;font-weight:600;font-display:swap;src:url('/assets/fonts/cormorant-garamond-600.woff2') format('woff2')}
+
+/* Preserve the original aspect ratio of the horizontal Privus Kuzola lockup in the footer. */
+.footer-logo{height:auto!important;object-fit:contain}
+@media(max-width:650px){.footer-logo{width:min(220px,100%)!important;height:auto!important}}
