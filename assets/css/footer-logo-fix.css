@@ -1,0 +1,2 @@
+.footer-logo{width:180px;height:auto;max-width:60vw;object-fit:contain;object-position:left center}
+@media(max-width:650px){.footer-logo{width:150px;max-width:46vw;margin-bottom:.85rem}}
