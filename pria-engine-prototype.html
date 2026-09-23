@@ -282,7 +282,7 @@
   <div class="section-label" style="margin-top:28px;">OBTER O RELATÓRIO EXECUTIVO</div>
   <div class="gates" id="emailGate">
     <p style="font-size:12.5px; color:var(--muted); margin-bottom:14px; line-height:1.6;">
-      Deixa os teus dados para desbloquear o relatório completo (resumo, radar de maturidade, riscos, pontos fortes e roadmap 30/90/180 dias).
+      Deixa os teus dados para desbloquear o relatório completo (resumo, radar de maturidade, riscos, pontos fortes e roadmap 30 dias / 90 dias / 6 meses / 12 meses).
     </p>
     <input type="text" id="gateNome" placeholder="Nome" class="gate-input">
     <input type="text" id="gateEmpresa" placeholder="Empresa" class="gate-input">
@@ -2453,6 +2453,22 @@ PILARES.forEach(p => {
 // Criticidade deixa de ser só texto — pesa no cálculo da dimensão.
 const CRITICALITY_WEIGHTS = { Crítica: 2.0, Alta: 1.5, Média: 1.0, Baixa: 0.7 };
 
+function remediationHorizon(q, val){
+  if(q.criticidade === 'Crítica' && val < 70) return 30;
+  if(q.criticidade === 'Alta' && val < 35) return 30;
+  if(q.criticidade === 'Alta' && val < 70) return 90;
+  if(q.criticidade === 'Média' && val < 35) return 90;
+  if(val < 70) return 180;
+  return 365;
+}
+
+function remediationLabel(days){
+  if(days === 30) return '30 dias';
+  if(days === 90) return '90 dias';
+  if(days === 180) return '6 meses';
+  return '12 meses';
+}
+
 // Dimensão = média PONDERADA por criticidade das perguntas dessa dimensão nesse pilar.
 function dimensionScore(pillarId, dim){
   const qs = (REAL_QUESTIONS[pillarId] || []).filter(q =>
@@ -2823,15 +2839,6 @@ function render(){
   // Roadmap: prazo deriva de criticidade + gap. Esforço apenas ordena dentro do horizonte.
   const EFFORT_WEIGHT = {Baixo:1, Médio:2, Alto:3};
 
-  function remediationHorizon(q, val){
-    if(q.criticidade === 'Crítica' && val < 70) return 30;
-    if(q.criticidade === 'Alta' && val < 35) return 30;
-    if(q.criticidade === 'Alta' && val < 70) return 90;
-    if(q.criticidade === 'Média' && val < 35) return 90;
-    if(val < 70) return 180;
-    return 365;
-  }
-
   const roadmapItems = [];
   PILARES.forEach(p => {
     if(!state[p.id].aplicavel) return;
@@ -2938,18 +2945,20 @@ function buildReportPayload(nome, empresa){
       if(!isApplicable(q) || !q.recomendacao) return;
       const val = state[p.id].answers[q.id];
       if(val !== null && val < 70){
+        const prazo = remediationHorizon(q, val);
         recommendations.push({
-          priority:q.criticidade === 'Alta' ? 'Alta' : 'Média',
+          priority:q.criticidade === 'Crítica' ? 'Crítica' : q.criticidade === 'Alta' ? 'Alta' : 'Média',
           action:q.recomendacao,
           impact:q.impacto || 'Operacional',
           effort:q.esforco || 'Médio',
-          horizon:q.esforco === 'Baixo' ? '30 dias' : q.esforco === 'Médio' ? '90 dias' : '180 dias'
+          horizon:remediationLabel(prazo),
+          horizonDays:prazo
         });
       }
     });
   });
-  const roadmap = {'30':[], '90':[], '180':[]};
-  recommendations.forEach(r => roadmap[r.horizon.split(' ')[0]].push(r.action));
+  const roadmap = {'30':[], '90':[], '180':[], '365':[]};
+  recommendations.forEach(r => roadmap[String(r.horizonDays || 180)].push(r.action));
   return {
     name:nome,
     company:empresa || 'Organização não indicada',
