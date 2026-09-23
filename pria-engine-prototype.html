@@ -238,15 +238,15 @@
 <header>
   <div class="kicker">PRIVUS KUZOLA · PROTÓTIPO INTERNO</div>
   <h1>PRIA Assessment Engine</h1>
-  <p class="subtitle">Matriz 10 Pilares × 4 Dimensões</p>
+  <p class="subtitle">Decision Architecture · 10 Pilares × 4 Dimensões</p>
 </header>
 
 <div class="disclaimer wrap">
-  Diagnóstico de maturidade regulatória Privus Kuzola — 127 perguntas, 10 pilares, alinhado com o PRMM. Responde às perguntas abaixo; no final, deixa o teu email para desbloquear o Relatório Executivo completo.
+  Diagnóstico adaptativo de maturidade regulatória Privus Kuzola. A triagem inicial ativa apenas os caminhos aplicáveis; o motor combina regras determinísticas, criticidade, evidência e atualidade sem transformar o resultado numa previsão de sanção.
 </div>
 
 <div class="wrap">
-  <div class="section-label" style="margin-top:20px;">PERFIL DA ORGANIZAÇÃO (MÓDULO 1 — controla o que aparece abaixo)</div>
+  <div class="section-label" style="margin-top:20px;">TRIAGEM DA ORGANIZAÇÃO · NÓS DE DECISÃO</div>
   <div class="gates" id="profile"></div>
   <div class="applic-count" id="applicCount"></div>
 </div>
@@ -271,7 +271,7 @@
 </div>
 
 <div class="wrap">
-  <div class="section-label">GATES CRÍTICOS (tetos, não médias)</div>
+  <div class="section-label">GATES CRÍTICOS AUTOMÁTICOS (tetos, não médias)</div>
   <div class="gates" id="gates"></div>
 
   <div class="section-label" style="margin-top:26px;">OS 10 PILARES</div>
@@ -298,6 +298,7 @@
   <div class="report-card">
     <div class="report-kicker">EXECUTIVE SUMMARY</div>
     <div class="report-summary" id="repSummary"></div>
+    <div id="repEnforcement" style="margin-top:14px;padding:12px 14px;border-left:3px solid var(--gold);background:rgba(255,255,255,.06);font-size:11.5px;line-height:1.65;color:#EDE8DD;"></div>
 
     <div class="report-kicker" style="margin-top:20px;">RADAR DE MATURIDADE</div>
     <div id="radarWrap"></div>
@@ -345,7 +346,7 @@
   </div>
 </div>
 
-<footer>Privus Kuzola · PRIA Assessment Engine v1.1 · respostas neutras até serem preenchidas · CTA final corrigido</footer>
+<footer>Privus Kuzola · PRIA Assessment Engine v2.0 · decision architecture modular · regras determinísticas e auditáveis</footer>
 
 <script>
 const PILARES = [
@@ -526,6 +527,23 @@ const REAL_QUESTIONS = {
       ],
     },
 
+    {
+      id:'PRIA-RGPD-000', dim:'Evidência', regulamento:'RGPD Art. 30º', condicao:'dadosPessoais',
+      pergunta:'A organização mantém um Registo das Atividades de Tratamento (RAT/RoPA) completo, coerente com a operação real e atualizado após alterações relevantes?',
+      evidencia:'RAT/RoPA datado · histórico de revisão · responsáveis por atualização',
+      criticidade:'Crítica',
+      impacto:'Jurídico',
+      pesoDiagnostico:1.5,
+      cadencia:'Revisão pelo menos anual e sempre que exista alteração material aos tratamentos.',
+      recomendacao:'Consolidar e atualizar o RAT/RoPA como fonte central do mapa de tratamentos, finalidades, bases, titulares, destinatários, conservação, transferências e medidas de segurança.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não existe', val:0},
+        {label:'Existe, mas está incompleto ou claramente desatualizado', val:35},
+        {label:'Existe e cobre a maioria dos tratamentos, com revisão recente', val:70},
+        {label:'Completo, coerente com a operação e revisto após alterações relevantes', val:100},
+      ],
+    },
     {
       id:'PRIA-RGPD-001', dim:'Capacidade', regulamento:'RGPD Art. 6º', condicao:'dadosPessoais',
       pergunta:'A organização tem uma base legal identificada e documentada para cada finalidade de tratamento de dados pessoais?',
@@ -1527,7 +1545,8 @@ const REAL_QUESTIONS = {
       ],
     },
     {
-      id:'PRIA-RGPD-005', dim:'Capacidade', regulamento:'RGPD Art. 28º', condicao:'dadosPessoais',
+      id:'PRIA-RGPD-005', dim:'Capacidade', regulamento:'RGPD Art. 28º', condicao:'dadosPessoais AND usaPrestadores',
+      cadencia:'Revisão após alteração material do serviço, subprocessadores, localização do tratamento ou renovação contratual.',
       pergunta:'Existem contratos de subcontratação formalizados com todos os fornecedores que tratam dados pessoais em nome da organização?',
       evidencia:'Contratos de subcontratação',
       criticidade:'Alta',
@@ -1539,6 +1558,22 @@ const REAL_QUESTIONS = {
         {label:'Para alguns fornecedores', val:35},
         {label:'Para a maioria', val:70},
         {label:'Para todos os fornecedores relevantes', val:100},
+      ],
+    },
+    {
+      id:'PRIA-RGPD-006', dim:'Capacidade', regulamento:'RGPD Arts. 44º-49º', condicao:'dadosPessoais AND transferencias',
+      pergunta:'As transferências de dados pessoais para fora do EEE estão identificadas, documentadas e suportadas por um mecanismo válido, com avaliação adicional quando necessária?',
+      evidencia:'Mapa de transferências · mecanismo do Capítulo V · TIA quando aplicável · contratos e localização de fornecedores',
+      criticidade:'Alta',
+      impacto:'Jurídico',
+      cadencia:'Reavaliar quando mude o país, fornecedor, subprocessador, mecanismo de transferência ou contexto jurídico relevante.',
+      recomendacao:'Mapear as transferências internacionais e validar o mecanismo aplicável, incluindo medidas suplementares e avaliação de risco quando exigível.',
+      esforco:'Médio',
+      opcoes:[
+        {label:'Não estão identificadas ou não existe mecanismo validado', val:0},
+        {label:'Identificadas parcialmente, com documentação incompleta', val:35},
+        {label:'Maioria documentada e suportada por mecanismo válido', val:70},
+        {label:'Todas identificadas, documentadas e reavaliadas quando existe mudança relevante', val:100},
       ],
     },
 
@@ -1759,7 +1794,8 @@ const REAL_QUESTIONS = {
     },
 
     {
-      id:'PRIA-RGPD-004', dim:'Evidência', regulamento:'RGPD Art. 35º', condicao:'dadosPessoais',
+      id:'PRIA-RGPD-004', dim:'Evidência', regulamento:'RGPD Art. 35º', condicao:'dadosPessoais AND altoRisco',
+      cadencia:'Antes do tratamento de alto risco e reavaliada quando mudem o risco, a finalidade, a tecnologia ou o contexto.',
       pergunta:'A organização realiza e documenta Avaliações de Impacto sobre a Proteção de Dados (DPIA) quando aplicável?',
       evidencia:'DPIAs realizadas',
       criticidade:'Alta',
@@ -2350,16 +2386,62 @@ const REAL_QUESTIONS = {
 // state guarda respostas por pergunta (não por dimensão) — a dimensão é agregada a partir das perguntas que a alimentam.
 // Perfil da organização — controla quais perguntas condicionais (por regime) são aplicáveis.
 const PROFILE_QUESTIONS = [
-  {id:'dadosPessoais', label:'A organização trata dados pessoais?', afeta:'RGPD (5 perguntas)'},
-  {id:'usaIA', label:'A organização utiliza ou desenvolve sistemas de Inteligência Artificial?', afeta:'AI Act (4 perguntas)'},
-  {id:'entidadeFinanceira', label:'É uma entidade financeira regulada (banco, seguradora, gestora de ativos, instituição de pagamento)?', afeta:'DORA (3 perguntas)'},
-  {id:'entidadeAML', label:'Enquadra-se nas entidades obrigadas AML (financeiro, imobiliário, notariado, contabilidade, jogo)?', afeta:'AML (5 perguntas)'},
-  {id:'nis2', label:'É operador de serviços essenciais/importantes nos termos da NIS2 (energia, saúde, transportes, infraestrutura digital, administração pública)?', afeta:'NIS2 (5 perguntas)'},
-  {id:'iso', label:'Pretende avaliar-se face a normas ISO (27001/22301/37301), por já as adotar ou pretender adotá-las?', afeta:'ISO 27001/22301/37301 (5 perguntas)'},
+  {id:'dadosPessoais', label:'A organização trata dados pessoais?', afeta:'RGPD'},
+  {id:'categoriasEspeciais', label:'Trata categorias especiais de dados (ex.: saúde, biometria, origem racial, convicções)?', afeta:'risco RGPD · AIPD'},
+  {id:'menores', label:'Trata dados de menores ou outros titulares particularmente vulneráveis?', afeta:'risco RGPD · AIPD'},
+  {id:'cctvBiometria', label:'Utiliza CCTV, biometria ou monitorização sistemática de pessoas?', afeta:'risco RGPD · AIPD'},
+  {id:'usaPrestadores', label:'Existem fornecedores ou prestadores que tratam dados pessoais por conta da organização?', afeta:'Art. 28º RGPD'},
+  {id:'transferencias', label:'Existem dados pessoais alojados, acedidos ou tratados fora do Espaço Económico Europeu?', afeta:'Capítulo V RGPD'},
+  {id:'usaCloud', label:'A organização utiliza cloud, SaaS ou infraestrutura externa para processos relevantes?', afeta:'segurança · terceiros'},
+  {id:'trabalhadores', label:'A organização trata dados de trabalhadores ou candidatos?', afeta:'privacidade laboral'},
+  {id:'marketingDigital', label:'Realiza marketing direto, profiling comercial ou campanhas digitais?', afeta:'RGPD · ePrivacy'},
+  {id:'canaisDigitais', label:'Opera website, aplicação, portal ou outro canal digital com recolha de dados?', afeta:'transparência · segurança'},
+  {id:'usaIA', label:'Utiliza ou desenvolve sistemas de Inteligência Artificial?', afeta:'AI Act'},
+  {id:'entidadeFinanceira', label:'É uma entidade financeira regulada?', afeta:'DORA'},
+  {id:'entidadeAML', label:'Está abrangida pelo regime de prevenção de BC/FT?', afeta:'AML'},
+  {id:'nis2', label:'Está abrangida pela NIS2 como entidade essencial/importante?', afeta:'NIS2'},
+  {id:'iso', label:'Pretende avaliar também a maturidade face a ISO 27001/22301/37301?', afeta:'ISO'},
 ];
-const profileState = {dadosPessoais:true, usaIA:true, entidadeFinanceira:false, entidadeAML:false, nis2:false, iso:false};
+const profileState = {
+  dadosPessoais:true,
+  categoriasEspeciais:false,
+  menores:false,
+  cctvBiometria:false,
+  usaPrestadores:false,
+  transferencias:false,
+  usaCloud:false,
+  trabalhadores:false,
+  marketingDigital:false,
+  canaisDigitais:false,
+  usaIA:false,
+  entidadeFinanceira:false,
+  entidadeAML:false,
+  nis2:false,
+  iso:false,
+  altoRisco:false
+};
 
-function isApplicable(q){ return !q.condicao || profileState[q.condicao]; }
+function refreshDerivedProfile(){
+  profileState.altoRisco = !!(
+    profileState.dadosPessoais &&
+    (profileState.categoriasEspeciais || profileState.menores || profileState.cctvBiometria || profileState.usaIA)
+  );
+}
+
+function evalCondition(expression){
+  if(!expression) return true;
+  refreshDerivedProfile();
+  return String(expression).split(/\s+OR\s+/i).some(orPart =>
+    orPart.split(/\s+AND\s+/i).every(rawToken => {
+      const token = rawToken.trim();
+      if(!token) return true;
+      if(token.startsWith('!')) return !profileState[token.slice(1)];
+      return !!profileState[token];
+    })
+  );
+}
+
+function isApplicable(q){ return evalCondition(q.condicao); }
 
 const state = {};
 PILARES.forEach(p => {
@@ -2369,7 +2451,7 @@ PILARES.forEach(p => {
 });
 
 // Criticidade deixa de ser só texto — pesa no cálculo da dimensão.
-const CRITICALITY_WEIGHTS = { Alta: 1.5, Média: 1.0, Baixa: 0.7 };
+const CRITICALITY_WEIGHTS = { Crítica: 2.0, Alta: 1.5, Média: 1.0, Baixa: 0.7 };
 
 // Dimensão = média PONDERADA por criticidade das perguntas dessa dimensão nesse pilar.
 function dimensionScore(pillarId, dim){
@@ -2379,20 +2461,42 @@ function dimensionScore(pillarId, dim){
   if(!qs.length) return state[pillarId].sliders[dim]; // fallback: nada respondido ainda nesta dimensão (ou sem pergunta real) — neutro, não zero
   const weightedTotal = qs.reduce((total, q) => {
     const answer = state[pillarId].answers[q.id];
-    const weight = CRITICALITY_WEIGHTS[q.criticidade] || 1;
+    const weight = (CRITICALITY_WEIGHTS[q.criticidade] || 1) * (q.pesoDiagnostico || 1);
     return total + answer * weight;
   }, 0);
-  const totalWeight = qs.reduce((total, q) => total + (CRITICALITY_WEIGHTS[q.criticidade] || 1), 0);
+  const totalWeight = qs.reduce((total, q) =>
+    total + (CRITICALITY_WEIGHTS[q.criticidade] || 1) * (q.pesoDiagnostico || 1), 0);
   return totalWeight ? weightedTotal / totalWeight : 0;
 }
 
-// Gates: tetos categóricos, independentes da nota numérica.
+// Gates automáticos: tetos categóricos derivados de respostas concretas.
 const GATES = [
-  {id:'gate_base_legal', label:'Falha crítica: sem base legal válida para dados sensíveis (Governação)', capLevel:2, capNome:'Nível 2 — Emergente'},
-  {id:'gate_evidencia', label:'Falha crítica: sem evidência verificável de controlos (Evidência)', capLevel:3, capNome:'Nível 3 — Estruturado'},
+  {
+    id:'gate_rat',
+    qid:'PRIA-RGPD-000',
+    label:'RAT/RoPA inexistente num contexto em que existe tratamento de dados pessoais',
+    capLevel:3,
+    capNome:'Nível 3 — Estruturado',
+    test:value => value === 0
+  },
+  {
+    id:'gate_base_legal',
+    qid:'PRIA-RGPD-001',
+    label:'Bases legais não identificadas/documentadas para as finalidades de tratamento',
+    capLevel:2,
+    capNome:'Nível 2 — Emergente',
+    test:value => value === 0
+  },
 ];
-const gateState = {};
-GATES.forEach(g => gateState[g.id] = false);
+
+function answerByQid(qid){
+  for(const p of PILARES){
+    if(Object.prototype.hasOwnProperty.call(state[p.id].answers, qid)){
+      return state[p.id].answers[qid];
+    }
+  }
+  return null;
+}
 
 // Biblioteca de correlações: cada regra é independente e explicável.
 // Penalização em pontos (aditiva, não composta) — mais auditável: dá para explicar exatamente quantos pontos cada regra custou.
@@ -2450,7 +2554,7 @@ PILARES.forEach(p => {
               <option value="" selected disabled>Seleciona uma resposta</option>
               ${q.opcoes.map(o => `<option value="${o.val}">${o.label} (${o.val})</option>`).join('')}
             </select>
-            <div class="q-evid">Evidência: ${q.evidencia}</div>
+            <div class="q-evid">Evidência: ${q.evidencia}${q.cadencia ? `<br>Atualidade: ${q.cadencia}` : ''}</div>
           </div>
         `).join('')
       : `<input type="range" min="0" max="100" value="50" data-pillar="${p.id}" data-dim="${d}">`;
@@ -2478,15 +2582,7 @@ PILARES.forEach(p => {
 });
 
 const gatesEl = document.getElementById('gates');
-GATES.forEach(g => {
-  const row = document.createElement('label');
-  row.className = 'gate-row';
-  row.innerHTML = `
-    <input type="checkbox" data-gate="${g.id}">
-    <span>${g.label}<span class="gate-cap">teto: ${g.capNome}, independentemente da nota</span></span>
-  `;
-  gatesEl.appendChild(row);
-});
+gatesEl.innerHTML = '<div class="rec-empty">Os gates são ativados automaticamente quando uma resposta revela uma falha estrutural. O empresário não tem de os classificar manualmente.</div>';
 
 const profileEl = document.getElementById('profile');
 PROFILE_QUESTIONS.forEach(pq => {
@@ -2501,6 +2597,7 @@ PROFILE_QUESTIONS.forEach(pq => {
 profileEl.addEventListener('change', e => {
   if(e.target.dataset.profile){
     profileState[e.target.dataset.profile] = e.target.checked;
+    refreshDerivedProfile();
     render();
   }
 });
@@ -2515,8 +2612,9 @@ function render(){
     el.classList.toggle('hidden', !applicable);
     if(applicable) applicableQ++;
   });
+  refreshDerivedProfile();
   document.getElementById('applicCount').textContent =
-    `${applicableQ} de ${totalQ} perguntas aplicáveis a este perfil (o resto fica fora do cálculo, não conta como zero).`;
+    `${PROFILE_QUESTIONS.length} nós de triagem · ${applicableQ} de ${totalQ} perguntas aplicáveis${profileState.altoRisco ? ' · ramo de alto risco RGPD ativo' : ''}. O que não se aplica fica fora do cálculo e não conta como zero.`;
 
   const scores = {};
   const applicablePillars = [];
@@ -2557,7 +2655,9 @@ function render(){
   LEVELS.forEach((l,i) => { if(overall >= l.min) levelIdx = i; });
 
   // gates: tetos categóricos — o mais restritivo define o nível; TODOS os gates ativos são mostrados, não só o vencedor
-  const activeGates = GATES.filter(g => gateState[g.id]).sort((a,b) => a.capLevel - b.capLevel);
+  const activeGates = GATES
+    .filter(g => g.test(answerByQid(g.qid)))
+    .sort((a,b) => a.capLevel - b.capLevel);
   const strictestGate = activeGates[0] || null;
   if(strictestGate && strictestGate.capLevel - 1 < levelIdx){
     levelIdx = strictestGate.capLevel - 1;
@@ -2569,6 +2669,14 @@ function render(){
     note.textContent = `Gate ativo: ${g.label} — teto: ${g.capNome}${g === strictestGate ? ' (determina o nível final)' : ''}.`;
     rulesEl.appendChild(note);
   });
+
+  gatesEl.innerHTML = activeGates.length
+    ? activeGates.map(g => `
+        <div class="gate-row">
+          <span>${g.label}<span class="gate-cap">teto automático: ${g.capNome}</span></span>
+        </div>
+      `).join('')
+    : '<div class="rec-empty">Nenhum gate estrutural ativo com as respostas atuais.</div>';
 
   document.getElementById('scoreFill').style.width = overall + '%';
   document.getElementById('scoreText').textContent = Math.round(overall) + ' / 100' + (strictestGate ? ' · nível limitado por gate' : '');
@@ -2643,6 +2751,28 @@ function render(){
 
   document.getElementById('repSummary').textContent = narrativeEl.textContent;
 
+  const rgpdExposure = [];
+  PILARES.forEach(p => {
+    if(!state[p.id].aplicavel) return;
+    (REAL_QUESTIONS[p.id] || []).forEach(q => {
+      if(!q.regulamento || !String(q.regulamento).startsWith('RGPD') || !isApplicable(q)) return;
+      const val = state[p.id].answers[q.id];
+      if(val !== null && val !== undefined && val < 70) rgpdExposure.push({q,val});
+    });
+  });
+  const rgpdCritical = rgpdExposure.filter(x => x.q.criticidade === 'Crítica' || x.q.criticidade === 'Alta').length;
+  const enforcementEl = document.getElementById('repEnforcement');
+  if(profileState.dadosPessoais){
+    enforcementEl.innerHTML =
+      '<b>Leitura prudencial de enforcement RGPD</b><br>' +
+      (rgpdExposure.length
+        ? `${rgpdExposure.length} lacuna(s) RGPD abaixo do limiar de 70, das quais ${rgpdCritical} de criticidade alta/crítica. Prioridade acrescida para documentação, base legal, accountability e medidas corretivas.`
+        : 'Sem lacunas RGPD já respondidas abaixo do limiar de 70.') +
+      '<br><span style="color:#C8B99A;">Referência metodológica: Guidelines EDPB 04/2022 (cálculo de coimas) e 04/2026 (relação entre coimas e outros poderes corretivos; versão adotada para consulta pública à data da parametrização). Este indicador não estima a existência nem o montante de uma coima.</span>';
+  } else {
+    enforcementEl.textContent = 'Leitura de enforcement RGPD não ativada porque o perfil indica ausência de tratamento de dados pessoais.';
+  }
+
   const repPillarsEl = document.getElementById('repPillars');
   repPillarsEl.innerHTML = applicableScored.map(p => `
     <div class="pbar-row">
@@ -2690,30 +2820,48 @@ function render(){
     </svg>
   `;
 
-  // Roadmap: mesmo conjunto de gaps do painel de recomendações, priorizado por impacto ÷ esforço.
+  // Roadmap: prazo deriva de criticidade + gap. Esforço apenas ordena dentro do horizonte.
   const EFFORT_WEIGHT = {Baixo:1, Médio:2, Alto:3};
+
+  function remediationHorizon(q, val){
+    if(q.criticidade === 'Crítica' && val < 70) return 30;
+    if(q.criticidade === 'Alta' && val < 35) return 30;
+    if(q.criticidade === 'Alta' && val < 70) return 90;
+    if(q.criticidade === 'Média' && val < 35) return 90;
+    if(val < 70) return 180;
+    return 365;
+  }
+
   const roadmapItems = [];
   PILARES.forEach(p => {
     if(!state[p.id].aplicavel) return;
     (REAL_QUESTIONS[p.id] || []).forEach(q => {
       if(q.criticidade === 'Baixa' || !q.recomendacao || !isApplicable(q)) return;
       const val = state[p.id].answers[q.id];
-      if(val === null || val === undefined) return; // ainda não respondida — não é gap, é pendente
+      if(val === null || val === undefined) return;
       if(val < 70){
-        const impacto = (100 - val) / 100; // maior gap = maior impacto
+        const impacto = (100 - val) / 100;
         const esf = EFFORT_WEIGHT[q.esforco] || 2;
-        roadmapItems.push({pillar: p.nome, qid: q.id, texto: q.recomendacao, esforco: q.esforco || 'Médio', prioridade: impacto / esf});
+        const diagWeight = (CRITICALITY_WEIGHTS[q.criticidade] || 1) * (q.pesoDiagnostico || 1);
+        roadmapItems.push({
+          pillar:p.nome,
+          qid:q.id,
+          texto:q.recomendacao,
+          esforco:q.esforco || 'Médio',
+          prazo:remediationHorizon(q,val),
+          prioridade:(impacto * diagWeight) / esf
+        });
       }
     });
   });
-  roadmapItems.sort((a,b) => b.prioridade - a.prioridade);
+  roadmapItems.sort((a,b) => a.prazo - b.prazo || b.prioridade - a.prioridade);
 
-  const n = roadmapItems.length;
   const horizontes = [
-    {titulo: '30 DIAS — maior impacto, menor esforço primeiro', items: roadmapItems.slice(0, Math.ceil(n/3))},
-    {titulo: '90 DIAS', items: roadmapItems.slice(Math.ceil(n/3), Math.ceil(2*n/3))},
-    {titulo: '180 DIAS', items: roadmapItems.slice(Math.ceil(2*n/3))},
-  ];
+    {dias:30, titulo:'30 DIAS — falhas estruturais ou de criticidade elevada'},
+    {dias:90, titulo:'90 DIAS — regularização prioritária'},
+    {dias:180, titulo:'6 MESES — consolidação e maturidade'},
+    {dias:365, titulo:'12 MESES — melhoria planeada'}
+  ].map(h => ({...h, items:roadmapItems.filter(it => it.prazo === h.dias)}));
   const repRoadmapEl = document.getElementById('repRoadmap');
   if(!n){
     repRoadmapEl.innerHTML = '<div class="rm-empty">Sem ações pendentes para o perfil e respostas atuais.</div>';
@@ -2731,10 +2879,6 @@ function render(){
     `).join('');
   }
 }
-
-document.getElementById('gates').addEventListener('change', e => {
-  if(e.target.dataset.gate){ gateState[e.target.dataset.gate] = e.target.checked; render(); }
-});
 
 pillarsEl.addEventListener('input', (e) => {
   if(e.target.tagName !== 'INPUT') return;
@@ -2822,8 +2966,8 @@ function buildReportPayload(nome, empresa){
     strengths:Array.from(document.querySelectorAll('#repStrengths .strength-item')).map(el => el.innerText.replace(/\s+/g,' ').trim()),
     recommendations,
     roadmap,
-    gates:GATES.filter(g => gateState[g.id]).map(g => `${g.label} — teto: ${g.capNome}`),
-    version:'PRIA v1.1'
+    gates:GATES.filter(g => g.test(answerByQid(g.qid))).map(g => `${g.label} — teto: ${g.capNome}`),
+    version:'PRIA v2.0'
   };
 }
 
