@@ -1,4 +1,8 @@
 const ACCESS_COOKIE = "pria_access";
+const OWNER_PREVIEW_COOKIE = "pria_owner_preview";
+const OWNER_PREVIEW_PATH = "/pria-owner-preview";
+const OWNER_PREVIEW_HASH = "10f2aa9ac63b0e9cd71efc8068381af8d701baa613d912bd41a53bb66af9df27";
+const OWNER_PREVIEW_EXPIRES_AT = Date.parse("2026-09-25T12:00:00Z");
 
 const PROTECTED_PATHS = {
   "/pria-engine-prototype": ["assessment", "guided", "upgrade"],
@@ -70,6 +74,23 @@ function readCookie(request, name) {
   }
 
   return "";
+}
+
+async function sha256Hex(value) {
+  const digest = await crypto.subtle.digest(
+    "SHA-256",
+    textBytes(String(value || ""))
+  );
+
+  return Array.from(new Uint8Array(digest))
+    .map(byte => byte.toString(16).padStart(2, "0"))
+    .join("");
+}
+
+async function validOwnerPreviewKey(value) {
+  if (Date.now() >= OWNER_PREVIEW_EXPIRES_AT) return false;
+  if (!value) return false;
+  return (await sha256Hex(value)) === OWNER_PREVIEW_HASH;
 }
 
 async function verifyAccessToken(token, secret) {
@@ -295,6 +316,44 @@ export async function onRequest(context) {
       ? url.pathname.replace(/\/+$/, "")
       : url.pathname;
 
+  if (pathname === OWNER_PREVIEW_PATH && context.request.method === "GET") {
+    const previewKey = url.searchParams.get("key") || "";
+
+    if (!(await validOwnerPreviewKey(previewKey))) {
+      return new Response("Not found", {
+        status: 404,
+        headers: {
+          "Content-Type": "text/plain; charset=UTF-8",
+          "Cache-Control": "no-store",
+          "Referrer-Policy": "no-referrer",
+        },
+      });
+    }
+
+    const destination = new URL(
+      "/pria-engine-prototype",
+      context.request.url
+    );
+
+    return new Response(null, {
+      status: 302,
+      headers: {
+        "Location": destination.toString(),
+        "Set-Cookie": [
+          `${OWNER_PREVIEW_COOKIE}=${previewKey}`,
+          "Path=/",
+          "Max-Age=21600",
+          "HttpOnly",
+          "Secure",
+          "SameSite=Strict",
+        ].join("; "),
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+      },
+    });
+  }
+
   if (PRIA_ANGOLA_PATHS.has(pathname) && context.request.method === "GET") {
     return new Response(priaAngolaLockedPage(), {
       status: 200,
@@ -327,6 +386,24 @@ export async function onRequest(context) {
 
   const allowedPlans = PROTECTED_PATHS[pathname];
   if (!allowedPlans) return context.next();
+
+  const ownerPreviewCookie = readCookie(
+    context.request,
+    OWNER_PREVIEW_COOKIE
+  );
+
+  const ownerPreviewAllowed =
+    (pathname === "/pria-engine-prototype" ||
+      pathname === "/pria-engine-prototype.html") &&
+    await validOwnerPreviewKey(ownerPreviewCookie);
+
+  if (ownerPreviewAllowed) {
+    context.data.priaAccess = {
+      plan: "owner-preview",
+      exp: Math.floor(OWNER_PREVIEW_EXPIRES_AT / 1000),
+    };
+    return context.next();
+  }
 
   if (!context.env.PRIA_ACCESS_SECRET) {
     return new Response(
