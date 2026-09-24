@@ -1,5 +1,8 @@
 const PRIA_API = 'https://api.privuskuzola.pt/api/report';
 const ACCESS_COOKIE = 'pria_access';
+const OWNER_PREVIEW_COOKIE = 'pria_owner_preview';
+const OWNER_PREVIEW_HASH = '10f2aa9ac63b0e9cd71efc8068381af8d701baa613d912bd41a53bb66af9df27';
+const OWNER_PREVIEW_EXPIRES_AT = Date.parse('2026-09-25T12:00:00Z');
 const ALLOWED_PLANS = ['assessment', 'guided', 'upgrade'];
 const MAX_BODY_SIZE = 500000;
 
@@ -77,6 +80,26 @@ async function verifyAccessToken(token, secret) {
   }
 }
 
+async function sha256Hex(value) {
+  const digest = await crypto.subtle.digest(
+    'SHA-256',
+    textBytes(String(value || ''))
+  );
+
+  return Array.from(new Uint8Array(digest))
+    .map(byte => byte.toString(16).padStart(2, '0'))
+    .join('');
+}
+
+async function validOwnerPreviewCookie(request) {
+  if (Date.now() >= OWNER_PREVIEW_EXPIRES_AT) return false;
+
+  const value = readCookie(request, OWNER_PREVIEW_COOKIE);
+  if (!value) return false;
+
+  return (await sha256Hex(value)) === OWNER_PREVIEW_HASH;
+}
+
 function jsonResponse(data, status) {
   return new Response(JSON.stringify(data), {
     status,
@@ -104,12 +127,15 @@ export async function onRequest(context) {
     );
   }
 
+  const ownerPreview = await validOwnerPreviewCookie(request);
   const accessToken = readCookie(request, ACCESS_COOKIE);
 
-  const access = await verifyAccessToken(
-    accessToken,
-    env.PRIA_ACCESS_SECRET
-  );
+  const access = ownerPreview
+    ? { sid: 'owner-preview', plan: 'assessment' }
+    : await verifyAccessToken(
+        accessToken,
+        env.PRIA_ACCESS_SECRET
+      );
 
   if (!access) {
     return jsonResponse(
