@@ -41,7 +41,8 @@
 - Consultoria AI Act e AI Governance em Portugal: https://privuskuzola.pt/servicos/ai-governance/
 - Consultoria e implementação ISO 27001 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-27001/
 - Consultoria e implementação ISO 22301 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-22301/
-- Apresentação do PRIA: https://privuskuzola.pt/pria/\n- Planos públicos do PRIA: https://privuskuzola.pt/pria-planos
+- Apresentação do PRIA: https://privuskuzola.pt/pria/
+- Planos públicos do PRIA: https://privuskuzola.pt/pria-planos
 - Arquivo Privus Month Insights: https://privuskuzola.pt/insights/
 - Nº 3 — Continuidade de negócio, RGPD e ISO 22301: https://privuskuzola.pt/insights/2026/09/continuidade-negocio-rgpd-iso-22301/
 - Nº 2 — AI Act + RGPD: https://privuskuzola.pt/insights/2026/08/ai-act-rgpd-digital-omnibus/
