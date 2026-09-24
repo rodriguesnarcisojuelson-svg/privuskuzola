@@ -83,8 +83,32 @@
 .audience-card h3{font-size:.94rem;margin-bottom:.5rem}
 .audience-card p{font-size:.8rem;color:var(--muted)}
 .inline-link{color:#8b6a30;border-bottom:1px solid rgba(139,106,48,.35)}
-@media(max-width:900px){.scope-grid{grid-template-columns:repeat(2,1fr)}.report-top{grid-template-columns:1fr}.report-cover{min-height:300px}}
-@media(max-width:680px){.site-nav .brand-horizontal{display:none}.site-nav .brand-symbol{display:block}.hero-brand img{width:180px}.method-steps,.scope-grid,.audience-grid,.report-dashboard,.timeline{grid-template-columns:1fr}.report-card.wide{grid-column:auto}.method-step{min-height:auto}.report-cover{min-height:270px}.hero-panel.pria-panel{margin-top:1rem}}
+.demo-callout{margin-top:1.3rem;border:1px solid rgba(200,169,110,.35);padding:1.25rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;background:rgba(255,255,255,.03)}
+.demo-callout div{max-width:720px}.demo-callout strong{display:block;color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:500}.demo-callout p{margin-top:.35rem;color:rgba(255,255,255,.62);font-size:.78rem}
+.lead-section{background:var(--gold);color:var(--navy);padding:clamp(4rem,7vw,6rem) 0}
+.lead-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:4rem;align-items:start}
+.lead-copy h2{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,4.5vw,4rem);font-weight:500;line-height:1.04}
+.lead-copy p{margin-top:1rem;max-width:580px;font-size:.9rem}
+.lead-secondary{display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.25rem;font-size:.77rem;font-weight:500}
+.lead-form{background:var(--navy);color:var(--white);padding:1.6rem;border-top:3px solid #8b6a30}
+.lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.lead-field{display:flex;flex-direction:column;gap:.38rem}
+.lead-field.full{grid-column:1/-1}
+.lead-field label{font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light)}
+.lead-field input{width:100%;border:1px solid rgba(255,255,255,.18);background:#102235;color:#fff;min-height:46px;padding:.72rem .8rem;font:inherit}
+.lead-check{display:grid;grid-template-columns:auto 1fr;gap:.65rem;align-items:start;margin-top:1rem;font-size:.72rem;color:rgba(255,255,255,.66)}
+.lead-check a{color:var(--gold-light);border-bottom:1px solid rgba(225,201,159,.45)}
+.lead-submit{margin-top:1rem;width:100%;border:1px solid var(--gold);background:var(--gold);color:var(--navy);min-height:48px;font-weight:600;cursor:pointer}
+.lead-submit:disabled{opacity:.65;cursor:wait}
+.form-status{margin-top:1rem;font-size:.78rem}
+.form-status.error{color:#ffd0c8}
+.form-status.success{color:var(--gold-light);font-size:.9rem}
+.honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.cookie-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:80;background:#08131e;color:rgba(255,255,255,.75);border:1px solid rgba(200,169,110,.35);padding:1rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 18px 45px rgba(0,0,0,.28)}
+.cookie-banner[hidden]{display:none}.cookie-banner p{font-size:.74rem;max-width:760px}.cookie-actions{display:flex;gap:.55rem}.cookie-actions button{border:1px solid var(--gold);padding:.58rem .8rem;cursor:pointer}.cookie-reject{background:transparent;color:var(--gold-light)}.cookie-accept{background:var(--gold);color:var(--navy)}
+
+@media(max-width:900px){.scope-grid{grid-template-columns:repeat(2,1fr)}.report-top,.lead-grid{grid-template-columns:1fr}.report-cover{min-height:300px}}
+@media(max-width:680px){.site-nav .brand-horizontal{display:none}.site-nav .brand-symbol{display:block}.hero-brand img{width:180px}.method-steps,.scope-grid,.audience-grid,.report-dashboard,.timeline,.lead-form-grid{grid-template-columns:1fr}.report-card.wide,.lead-field.full{grid-column:auto}.method-step{min-height:auto}.report-cover{min-height:270px}.hero-panel.pria-panel{margin-top:1rem}.demo-callout,.cookie-banner{align-items:flex-start;flex-direction:column}.cookie-actions{width:100%}.cookie-actions button{flex:1}}
 </style>
 <script type="application/ld+json">
 {
@@ -128,7 +152,7 @@
       <li><a href="#metodo">Metodologia</a></li>
       <li><a href="#resultados">Resultados</a></li>
       <li><a href="#para-quem">Para quem é</a></li>
-      <li><a class="nav-cta" href="/#contacto" data-service-contact="pria">Solicitar apresentação</a></li>
+      <li><a class="nav-cta" href="#apresentacao" data-track="pria_cta_presentation">Solicitar apresentação</a></li>
     </ul>
   </div>
 </nav>
@@ -144,8 +168,8 @@
         <h1>A sua organização sabe exatamente onde está exposta?</h1>
         <p class="hero-lead">O PRIA organiza a realidade regulatória da organização e transforma exposição, maturidade e risco em prioridades claras de decisão e implementação.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="/#contacto" data-service-contact="pria">Solicitar uma apresentação</a>
-          <a class="button button-secondary" href="/pria-planos">Ver modalidades e investimento</a>
+          <a class="button button-primary" href="#apresentacao" data-track="pria_cta_presentation">Solicitar uma apresentação</a>
+          <a class="button button-secondary" href="/pria-planos" data-track="pria_cta_plans">Ver modalidades e investimento</a>
         </div>
         <p class="micro-note">Diagnóstico de apoio à decisão. Não constitui auditoria, certificação ou parecer jurídico.</p>
       </div>
@@ -272,6 +296,10 @@
       </div>
     </div>
     <p class="micro-note">Exemplo ilustrativo. O conteúdo efetivo depende do perfil, das respostas e da modalidade contratada.</p>
+    <div class="demo-callout">
+      <div><strong>Como seria o PRIA de uma clínica privada?</strong><p>Veja uma aplicação fictícia do diagnóstico, com exposição, prioridades e roadmap executivo sem revelar a metodologia proprietária.</p></div>
+      <a class="button button-secondary" href="/pria/demo-clinica/" data-track="pria_cta_demo">Ver demonstração →</a>
+    </div>
   </div>
 </section>
 
@@ -320,16 +348,30 @@
   </div>
 </section>
 
-<section class="contact-band">
-  <div class="shell contact-grid">
-    <div class="contact-copy">
-      <h2>Transforme exposição regulatória em prioridades de decisão.</h2>
-      <p>Solicite uma apresentação do PRIA para perceber a lógica do diagnóstico, os outputs e qual modalidade corresponde melhor ao contexto da sua organização.</p>
+<section class="lead-section" id="apresentacao">
+  <div class="shell lead-grid">
+    <div class="lead-copy">
+      <span class="eyebrow" style="color:#6f5220">Apresentação do PRIA</span>
+      <h2>Perceba primeiro se o PRIA corresponde ao problema da sua organização.</h2>
+      <p>Deixe os dados essenciais. A apresentação serve para explicar o diagnóstico, os outputs, as modalidades e o ponto de entrada adequado.</p>
+      <div class="lead-secondary">
+        <a href="/pria-planos" data-track="pria_cta_plans">Ver modalidades e investimento →</a>
+        <a href="https://wa.me/351936246971?text=Gostaria%20de%20conhecer%20o%20PRIA" target="_blank" rel="noopener" data-track="pria_whatsapp_click">Falar por WhatsApp →</a>
+      </div>
     </div>
-    <div class="contact-actions">
-      <a class="button" href="/#contacto" data-service-contact="pria">Solicitar uma apresentação</a>
-      <a href="/pria-planos">Ver modalidades e investimento →</a>
-      <small>Respondemos, em regra, num prazo máximo de 48 horas úteis.</small>
+    <div class="lead-form">
+      <form id="priaLeadForm">
+        <div class="honeypot" aria-hidden="true"><label for="website">Não preencher</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+        <div class="lead-form-grid">
+          <div class="lead-field"><label for="nome">Nome *</label><input id="nome" name="nome" type="text" autocomplete="name" required></div>
+          <div class="lead-field"><label for="empresa">Organização *</label><input id="empresa" name="empresa" type="text" autocomplete="organization" required></div>
+          <div class="lead-field full"><label for="email">Email profissional *</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+        </div>
+        <div class="lead-check"><input id="privacidade" name="privacidade" type="checkbox" required><label for="privacidade">Aceito que os meus dados sejam utilizados para responder a este pedido, conforme a <a href="/politica-privacidade">Política de Privacidade</a>.</label></div>
+        <button class="lead-submit" type="submit">Quero conhecer o PRIA →</button>
+        <p id="priaFormError" class="form-status error" hidden></p>
+      </form>
+      <p id="priaFormSuccess" class="form-status success" hidden>Pedido enviado. A Privus Kuzola responderá, em regra, num prazo máximo de 48 horas úteis.</p>
     </div>
   </div>
 </section>
@@ -339,12 +381,18 @@
   <div class="shell">
     <div class="footer-grid">
       <div><img class="footer-logo" src="/logo-privus-horizontal.png?v=20260924-final" alt="Privus Kuzola"><p>Regulatory Compliance &amp; Digital Governance · Portugal e Angola.</p></div>
-      <div><strong>PRIA</strong><a href="#metodo">Metodologia</a><a href="#resultados">Resultados</a><a href="/pria-planos">Modalidades</a></div>
+      <div><strong>PRIA</strong><a href="#metodo">Metodologia</a><a href="#resultados">Resultados</a><a href="/pria/demo-clinica/">Demo clínica</a><a href="/pria-planos">Modalidades</a></div>
       <div><strong>Privus Kuzola</strong><a href="/">Site institucional</a><a href="/insights/">Insights</a><a href="/politica-privacidade">Privacidade</a><a href="/termos-condicoes">Termos</a></div>
     </div>
     <div class="footer-bottom"><span>© 2026 Privus Kuzola</span><a href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a></div>
   </div>
 </footer>
-<script src="/assets/js/service-page.js" defer></script>
+
+<div id="cookieBanner" class="cookie-banner" hidden>
+  <p>Utilizamos cookies essenciais. Com o seu consentimento, utilizamos também cookies analíticos para perceber como a página do PRIA é utilizada e melhorar o percurso de conversão.</p>
+  <div class="cookie-actions"><button id="cookieReject" class="cookie-reject" type="button">Rejeitar</button><button id="cookieAccept" class="cookie-accept" type="button">Aceitar</button></div>
+</div>
+
+<script src="/assets/js/pria-page.js" defer></script>
 </body>
 </html>
