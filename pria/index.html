@@ -4,29 +4,39 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
-<meta name="description" content="PRIA — Privacy Risk & Impact Assessment da Privus Kuzola. Diagnóstico estruturado para identificar exposição, prioridades e próximos passos em proteção de dados.">
-<title>PRIA | Privacy Risk & Impact Assessment | Privus Kuzola</title>
+<meta name="description" content="PRIA — Privus Regulatory Impact Assessment da Privus Kuzola. Diagnóstico regulatório estruturado para transformar exposição, maturidade e risco em prioridades claras de decisão e implementação.">
+<title>PRIA | Privus Regulatory Impact Assessment | Privus Kuzola</title>
 <link rel="canonical" href="https://privuskuzola.pt/pria/">
 <link rel="stylesheet" href="/assets/css/fonts.css">
 <link rel="stylesheet" href="/assets/css/service-page.css">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="pt_PT">
 <meta property="og:site_name" content="Privus Kuzola">
-<meta property="og:title" content="PRIA | Privacy Risk & Impact Assessment | Privus Kuzola">
-<meta property="og:description" content="Clareza sobre o risco. Prioridade na ação. Conheça o diagnóstico estruturado PRIA da Privus Kuzola.">
+<meta property="og:title" content="PRIA | Privus Regulatory Impact Assessment | Privus Kuzola">
+<meta property="og:description" content="Diagnóstico regulatório estruturado para transformar exposição, maturidade e risco em prioridades claras de decisão e implementação.">
 <meta property="og:url" content="https://privuskuzola.pt/pria/">
 <meta property="og:image" content="https://privuskuzola.pt/assets/images/og-privus.png">
-<meta property="og:image:alt" content="PRIA — Privacy Risk & Impact Assessment | Privus Kuzola">
+<meta property="og:image:alt" content="PRIA — Privus Regulatory Impact Assessment | Privus Kuzola">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="PRIA | Privacy Risk & Impact Assessment">
-<meta name="twitter:description" content="Diagnóstico estruturado para identificar riscos, prioridades e próximos passos em proteção de dados.">
+<meta name="twitter:title" content="PRIA | Privus Regulatory Impact Assessment">
+<meta name="twitter:description" content="Diagnóstico regulatório para compreender exposição, maturidade, prioridades e próximos passos.">
 <meta name="twitter:image" content="https://privuskuzola.pt/assets/images/og-privus.png">
 <style>
 .hero .eyebrow{color:var(--gold-light)}
-.hero-panel.pria-panel{display:grid;gap:1rem;border-left:0;padding-left:0}
-.pria-panel .signal{border-left:1px solid var(--gold);padding:.8rem 0 .8rem 1.4rem}
-.pria-panel .signal strong{display:block;color:var(--gold-light);font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:500;line-height:1.05}
-.pria-panel .signal span{display:block;color:rgba(255,255,255,.62);font-size:.76rem;margin-top:.35rem}
+.hero-panel.pria-panel{border-left:0;padding-left:0}
+.hero-report{background:#f8f5ee;color:var(--navy);border:1px solid rgba(200,169,110,.45);padding:1.2rem;box-shadow:0 22px 55px rgba(0,0,0,.2)}
+.hero-report-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(13,27,42,.14)}
+.hero-report-head span{font-size:.61rem;letter-spacing:.15em;text-transform:uppercase;color:#8b6a30}
+.hero-report-head strong{font-family:'Cormorant Garamond',serif;font-size:1.65rem;font-weight:500}
+.hero-report .metric-row{grid-template-columns:78px 1fr 24px;margin:.62rem 0}
+.hero-report .priority-row{padding:.65rem 0}
+.hero-report .priority-row strong{font-size:.72rem}
+.hero-report .priority-row span{font-size:.64rem}
+.hero-roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-top:.8rem}
+.hero-roadmap div{background:#fff;padding:.55rem .45rem;text-align:center;border:1px solid rgba(13,27,42,.08)}
+.hero-roadmap strong{display:block;color:#8b6a30;font-size:.63rem}
+.hero-roadmap span{font-size:.57rem;color:var(--muted)}
+.hero-proof{margin-top:.75rem;padding-top:.7rem;border-top:1px solid rgba(13,27,42,.12);font-size:.61rem;color:var(--muted);letter-spacing:.03em}
 .micro-note{margin-top:1rem;color:rgba(255,255,255,.48);font-size:.72rem;max-width:680px}
 .method-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);border-left:1px solid var(--line)}
 .method-step{padding:1.7rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);min-height:175px}
@@ -76,12 +86,12 @@
     {
       "@type":"Service",
       "@id":"https://privuskuzola.pt/pria/#service",
-      "name":"PRIA — Privacy Risk & Impact Assessment",
-      "serviceType":"Diagnóstico estruturado de risco, maturidade e prioridades em proteção de dados",
+      "name":"PRIA — Privus Regulatory Impact Assessment",
+      "serviceType":"Diagnóstico regulatório estruturado de exposição, maturidade, risco e prioridades de implementação",
       "provider":{"@type":"Organization","@id":"https://privuskuzola.pt/#organization","name":"Privus Kuzola","url":"https://privuskuzola.pt/"},
       "areaServed":[{"@type":"Country","name":"Portugal"},{"@type":"AdministrativeArea","name":"União Europeia"}],
       "url":"https://privuskuzola.pt/pria/",
-      "description":"Diagnóstico estruturado que ajuda organizações a identificar pontos de exposição, prioridades de intervenção e próximos passos em proteção de dados."
+      "description":"Diagnóstico regulatório estruturado que ajuda organizações a compreender exposição, maturidade, risco e prioridades de implementação."
     },
     {
       "@type":"BreadcrumbList",
@@ -131,10 +141,18 @@
         </div>
         <p class="micro-note">Diagnóstico de apoio à decisão. Não constitui auditoria, certificação ou parecer jurídico.</p>
       </div>
-      <aside class="hero-panel pria-panel" aria-label="Resultados principais">
-        <div class="signal"><strong>Visibilidade</strong><span>Perceber onde se concentram os principais pontos de exposição.</span></div>
-        <div class="signal"><strong>Prioridade</strong><span>Distinguir o que exige atenção imediata do que pode evoluir por fases.</span></div>
-        <div class="signal"><strong>Direção</strong><span>Transformar resultados num conjunto claro de próximos passos.</span></div>
+      <aside class="hero-panel pria-panel" aria-label="Pré-visualização do Executive Report">
+        <div class="hero-report">
+          <div class="hero-report-head"><span>Executive preview</span><strong>PRIA</strong></div>
+          <div style="padding-top:.65rem">
+            <div class="metric-row"><span>Governance</span><div class="meter"><i style="width:68%"></i></div><b>68</b></div>
+            <div class="metric-row"><span>Evidência</span><div class="meter"><i style="width:46%"></i></div><b>46</b></div>
+            <div class="metric-row"><span>Segurança</span><div class="meter"><i style="width:73%"></i></div><b>73</b></div>
+          </div>
+          <div class="priority-row"><strong>Prioridade 01 · Terceiros críticos</strong><span>Responsabilidades, contratos e evidência.</span></div>
+          <div class="hero-roadmap"><div><strong>30 dias</strong><span>prioridade</span></div><div><strong>90 dias</strong><span>estrutura</span></div><div><strong>180 dias</strong><span>maturidade</span></div></div>
+          <div class="hero-proof">10 pilares · 4 dimensões · Executive Report · Roadmap 30/90/180</div>
+        </div>
       </aside>
     </div>
   </div>
@@ -143,16 +161,16 @@
 <section class="section">
   <div class="shell">
     <div class="section-head">
-      <div><span class="eyebrow">O problema</span><h2>Ter medidas não significa ter uma visão clara do risco.</h2></div>
-      <p class="section-intro">Políticas, contratos, sistemas, fornecedores e procedimentos podem existir. A questão é saber se a organização consegue relacioná-los e perceber, de forma estruturada, onde está mais exposta e o que deve corrigir primeiro.</p>
+      <div><span class="eyebrow">O problema</span><h2>A exposição regulatória raramente está concentrada numa única norma.</h2></div>
+      <p class="section-intro">Na prática, distribui-se por processos, dados, tecnologia, fornecedores, responsabilidades e decisões. O PRIA consolida estes sinais numa leitura comum para perceber onde existe maior exposição e o que merece prioridade.</p>
     </div>
     <div class="question-list">
-      <div class="question">Onde estão os principais riscos de proteção de dados?</div>
-      <div class="question">Que tratamentos exigem maior atenção?</div>
-      <div class="question">Que terceiros tratam dados por nossa conta?</div>
-      <div class="question">Que medidas estão efetivamente implementadas?</div>
-      <div class="question">Conseguimos demonstrar o que declaramos?</div>
-      <div class="question">O que deve ser corrigido primeiro?</div>
+      <div class="question">Que obrigações são materialmente relevantes para a organização?</div>
+      <div class="question">Onde se concentram os principais pontos de exposição?</div>
+      <div class="question">Que processos, tecnologias e terceiros concentram maior risco?</div>
+      <div class="question">Que controlos existem e que evidência os suporta?</div>
+      <div class="question">Que dependências afetam segurança, continuidade ou governance?</div>
+      <div class="question">O que deve ser tratado primeiro?</div>
     </div>
   </div>
 </section>
@@ -160,8 +178,8 @@
 <section class="section section-navy">
   <div class="shell">
     <div class="section-head">
-      <div><span class="eyebrow">O que o PRIA acrescenta</span><h2>Do diagnóstico à decisão.</h2></div>
-      <p class="section-intro">O objetivo não é produzir mais documentação. É criar uma leitura executiva que permita compreender exposição, prioridades e sequência de intervenção.</p>
+      <div><span class="eyebrow">O que o PRIA acrescenta</span><h2>Uma leitura executiva da realidade regulatória.</h2></div>
+      <p class="section-intro">O diagnóstico organiza informação dispersa e permite relacionar exposição, maturidade, controlos e evidência numa sequência de decisão compreensível para a gestão.</p>
     </div>
     <div class="outcomes">
       <article class="outcome"><span>01</span><h3>Visibilidade</h3><p>Uma leitura estruturada dos pontos de exposição e das áreas que exigem maior atenção.</p></article>
@@ -179,7 +197,7 @@
     </div>
     <div class="method-steps">
       <article class="method-step"><span>01</span><h3>Contexto</h3><p>Perfil, atividade, dados, sistemas, pessoas e dependências relevantes.</p></article>
-      <article class="method-step"><span>02</span><h3>Avaliação</h3><p>Perguntas estruturadas segundo o âmbito e a realidade identificada.</p></article>
+      <article class="method-step"><span>02</span><h3>Avaliação</h3><p>Perguntas estruturadas segundo o perfil regulatório, o âmbito e a realidade identificada.</p></article>
       <article class="method-step"><span>03</span><h3>Coerência</h3><p>Leitura das respostas, relações entre áreas e capacidade de demonstração declarada.</p></article>
       <article class="method-step"><span>04</span><h3>Scoring</h3><p>Indicadores de maturidade e identificação de gaps materiais.</p></article>
       <article class="method-step"><span>05</span><h3>Executive Report</h3><p>Riscos, pontos fortes e prioridades apresentados para decisão.</p></article>
@@ -192,17 +210,17 @@
   <div class="shell">
     <div class="section-head">
       <div><span class="eyebrow">Âmbito</span><h2>Uma visão transversal da organização.</h2></div>
-      <p class="section-intro">O PRIA procura perceber como diferentes elementos do programa de proteção de dados funcionam em conjunto, e não apenas se existe um documento isolado.</p>
+      <p class="section-intro">O PRIA relaciona governance, dados, tecnologia, terceiros, segurança, continuidade e evidência, ativando os referenciais regulatórios relevantes para o perfil da organização.</p>
     </div>
     <div class="scope-grid">
-      <article class="scope-card"><div class="icon">01</div><h3>Governance &amp; Accountability</h3><p>Responsabilidades, políticas, decisões e capacidade de demonstração.</p></article>
-      <article class="scope-card"><div class="icon">02</div><h3>Tratamentos e bases</h3><p>Finalidades, licitude, minimização, necessidade e proporcionalidade.</p></article>
-      <article class="scope-card"><div class="icon">03</div><h3>Direitos dos titulares</h3><p>Capacidade operacional para receber, avaliar e responder a pedidos.</p></article>
-      <article class="scope-card"><div class="icon">04</div><h3>Terceiros</h3><p>Subcontratantes, dependências externas e relações contratuais.</p></article>
-      <article class="scope-card"><div class="icon">05</div><h3>Segurança</h3><p>Medidas organizativas e técnicas relevantes para os tratamentos.</p></article>
-      <article class="scope-card"><div class="icon">06</div><h3>Transferências</h3><p>Fluxos internacionais, fornecedores e enquadramento aplicável.</p></article>
-      <article class="scope-card"><div class="icon">07</div><h3>Incidentes</h3><p>Preparação para identificar, avaliar, documentar e responder.</p></article>
-      <article class="scope-card"><div class="icon">08</div><h3>Evidência</h3><p>Capacidade de demonstrar medidas, decisões e práticas declaradas.</p></article>
+      <article class="scope-card"><div class="icon">01</div><h3>Governance &amp; Accountability</h3><p>Responsabilidades, decisões, políticas e linhas de reporte.</p></article>
+      <article class="scope-card"><div class="icon">02</div><h3>Proteção de dados</h3><p>Tratamentos, licitude, direitos, transferências e accountability.</p></article>
+      <article class="scope-card"><div class="icon">03</div><h3>AI Governance</h3><p>Inventário, utilização, risco, supervisão e responsabilidades, quando aplicável.</p></article>
+      <article class="scope-card"><div class="icon">04</div><h3>Terceiros e contratos</h3><p>Fornecedores, subcontratantes, dependências e obrigações contratuais.</p></article>
+      <article class="scope-card"><div class="icon">05</div><h3>Segurança da informação</h3><p>Risco, medidas técnicas e organizativas, acessos e resposta.</p></article>
+      <article class="scope-card"><div class="icon">06</div><h3>Continuidade e resiliência</h3><p>Dependências críticas, recuperação, responsabilidades e preparação.</p></article>
+      <article class="scope-card"><div class="icon">07</div><h3>Obrigações setoriais</h3><p>NIS2, DORA e outros referenciais são considerados quando materialmente aplicáveis.</p></article>
+      <article class="scope-card"><div class="icon">08</div><h3>Evidência</h3><p>Capacidade de demonstrar medidas, decisões, controlos e execução.</p></article>
     </div>
   </div>
 </section>
@@ -269,14 +287,14 @@
 <section class="section" id="para-quem">
   <div class="shell">
     <div class="section-head">
-      <div><span class="eyebrow">Para quem é</span><h2>Quando a organização precisa de saber onde agir primeiro.</h2></div>
-      <p class="section-intro">O PRIA é particularmente útil quando existe atividade real, múltiplos tratamentos ou dependências, mas ainda não há uma leitura consolidada de exposição e prioridade.</p>
+      <div><span class="eyebrow">Para quem é</span><h2>Quando a organização precisa de uma leitura comum antes de decidir.</h2></div>
+      <p class="section-intro">O PRIA é especialmente útil quando existem várias obrigações, áreas internas ou dependências relevantes e ainda não há uma visão consolidada de exposição, maturidade e prioridade.</p>
     </div>
     <div class="audience-grid">
-      <article class="audience-card"><h3>Programas de proteção de dados em revisão</h3><p>Organizações que já possuem documentação e medidas, mas precisam de perceber o que continua materialmente exposto.</p></article>
-      <article class="audience-card"><h3>Múltiplos fornecedores e plataformas</h3><p>Contextos em que terceiros, cloud, software e fluxos externos aumentam a complexidade operacional.</p></article>
-      <article class="audience-card"><h3>Crescimento ou mudança operacional</h3><p>Novos processos, produtos, equipas ou mercados que alteraram a realidade inicialmente documentada.</p></article>
-      <article class="audience-card"><h3>Preparação para implementação</h3><p>Organizações que querem definir prioridades antes de alocar orçamento, tempo e responsabilidades.</p></article>
+      <article class="audience-card"><h3>Múltiplas obrigações regulatórias</h3><p>Organizações expostas a diferentes requisitos e que precisam de perceber como se cruzam na operação.</p></article>
+      <article class="audience-card"><h3>Programas de compliance em revisão</h3><p>Estruturas que já possuem medidas e documentação, mas precisam de identificar fragilidades e prioridades reais.</p></article>
+      <article class="audience-card"><h3>Crescimento ou mudança tecnológica</h3><p>Novos processos, produtos, sistemas, fornecedores ou mercados que alteraram o perfil de exposição.</p></article>
+      <article class="audience-card"><h3>Preparação para implementação</h3><p>Organizações que querem priorizar investimento, esforço e responsabilidades antes de executar.</p></article>
     </div>
   </div>
 </section>
@@ -288,7 +306,7 @@
       <p class="section-intro">O PRIA é um ponto de partida estruturado. O seu alcance deve ser distinguido de auditorias, certificações e avaliações legalmente específicas.</p>
     </div>
     <details><summary>O PRIA é uma auditoria?</summary><p>Não. É um diagnóstico estruturado. No Assessment, a avaliação parte essencialmente das informações declaradas. O Guided acrescenta enquadramento consultivo e validação orientada das respostas, mas não se transforma numa auditoria documental ou certificação.</p></details>
-    <details><summary>O PRIA substitui uma DPIA?</summary><p>Não. Quando uma avaliação de impacto sobre a proteção de dados seja exigida pelo RGPD, deve ser realizada autonomamente. O PRIA pode ajudar a identificar tratamentos, riscos e prioridades que justifiquem análise adicional.</p></details>
+    <details><summary>O PRIA substitui avaliações específicas, como uma DPIA?</summary><p>Não. O PRIA é transversal. Quando a lei ou o contexto exigir uma avaliação específica, como uma DPIA, essa análise deve ser realizada autonomamente. O PRIA pode ajudar a identificar onde essa necessidade existe e a colocá-la no contexto global da organização.</p></details>
     <details><summary>Qual é a diferença entre Assessment e Guided Assessment?</summary><p>Ambos produzem um relatório executivo e um roadmap. O Guided acrescenta uma sessão consultiva para clarificação do contexto, validação orientada das respostas e explicação dos resultados.</p></details>
     <details><summary>Posso avançar para implementação depois?</summary><p>Sim. A organização pode executar internamente o roadmap ou solicitar apoio da Privus Kuzola. Consulte as <a class="inline-link" href="/pria-planos">modalidades e condições atualmente publicadas</a>, incluindo a possibilidade de dedução do investimento do PRIA numa implementação elegível.</p></details>
   </div>
@@ -297,7 +315,7 @@
 <section class="contact-band">
   <div class="shell contact-grid">
     <div class="contact-copy">
-      <h2>Antes de corrigir, é preciso saber onde agir primeiro.</h2>
+      <h2>Transforme exposição regulatória em prioridades de decisão.</h2>
       <p>Solicite uma apresentação do PRIA para perceber a lógica do diagnóstico, os outputs e qual modalidade corresponde melhor ao contexto da sua organização.</p>
     </div>
     <div class="contact-actions">

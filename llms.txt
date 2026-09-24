@@ -28,7 +28,7 @@
 ## Metodologia e serviços
 
 - Framework Privus: arquitetura que integra princípios, avaliação, implementação e melhoria contínua.
-- PRIA — Privacy Risk & Impact Assessment: diagnóstico da maturidade regulatória em 10 pilares e 4 dimensões, com scoring, riscos, prioridades e roadmap.
+- PRIA — Privus Regulatory Impact Assessment: diagnóstico da maturidade regulatória em 10 pilares e 4 dimensões, com scoring, riscos, prioridades e roadmap.
 - Implementação: processos, documentação e controlos necessários para executar as recomendações.
 - Compliance as a Service: acompanhamento e revisão contínuos.
 - Formação: capacitação ajustada às lacunas identificadas na organização.
