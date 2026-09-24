@@ -42,6 +42,7 @@
 - Consultoria e implementação ISO 27001 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-27001/
 - Consultoria e implementação ISO 22301 em Portugal e Angola: https://privuskuzola.pt/servicos/iso-22301/
 - Apresentação do PRIA: https://privuskuzola.pt/pria/
+- Demonstração PRIA para clínica privada: https://privuskuzola.pt/pria/demo-clinica/
 - Planos públicos do PRIA: https://privuskuzola.pt/pria-planos
 - Arquivo Privus Month Insights: https://privuskuzola.pt/insights/
 - Nº 3 — Continuidade de negócio, RGPD e ISO 22301: https://privuskuzola.pt/insights/2026/09/continuidade-negocio-rgpd-iso-22301/
