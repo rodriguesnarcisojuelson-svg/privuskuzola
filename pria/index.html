@@ -22,10 +22,14 @@
 <meta name="twitter:description" content="Diagnóstico regulatório para compreender exposição, maturidade, prioridades e próximos passos.">
 <meta name="twitter:image" content="https://privuskuzola.pt/assets/images/og-privus.png">
 <style>
+.site-nav .brand{display:inline-flex;align-items:center}
 .site-nav .brand img{filter:none}
+.site-nav .brand-horizontal{width:170px;height:auto}
+.site-nav .brand-symbol{display:none;width:44px;height:44px;border-radius:10px}
+.site-footer .footer-logo{filter:none}
 .hero .eyebrow{color:var(--gold-light)}
-.hero-brand{display:inline-flex;align-items:center;margin-bottom:1.45rem;background:rgba(248,245,238,.97);padding:.62rem .8rem;border:1px solid rgba(200,169,110,.45)}
-.hero-brand img{width:190px;height:auto;display:block;filter:none;opacity:1}
+.hero-brand{display:inline-flex;align-items:center;margin-bottom:1.45rem}
+.hero-brand img{width:210px;height:auto;display:block;filter:none;opacity:1}
 .hero-panel.pria-panel{border-left:0;padding-left:0}
 .hero-report{background:#f8f5ee;color:var(--navy);border:1px solid rgba(200,169,110,.45);padding:1.2rem;box-shadow:0 22px 55px rgba(0,0,0,.2)}
 .hero-report-head{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding-bottom:.85rem;border-bottom:1px solid rgba(13,27,42,.14)}
@@ -80,7 +84,7 @@
 .audience-card p{font-size:.8rem;color:var(--muted)}
 .inline-link{color:#8b6a30;border-bottom:1px solid rgba(139,106,48,.35)}
 @media(max-width:900px){.scope-grid{grid-template-columns:repeat(2,1fr)}.report-top{grid-template-columns:1fr}.report-cover{min-height:300px}}
-@media(max-width:680px){.hero-brand img{width:160px}.method-steps,.scope-grid,.audience-grid,.report-dashboard,.timeline{grid-template-columns:1fr}.report-card.wide{grid-column:auto}.method-step{min-height:auto}.report-cover{min-height:270px}.hero-panel.pria-panel{margin-top:1rem}}
+@media(max-width:680px){.site-nav .brand-horizontal{display:none}.site-nav .brand-symbol{display:block}.hero-brand img{width:180px}.method-steps,.scope-grid,.audience-grid,.report-dashboard,.timeline{grid-template-columns:1fr}.report-card.wide{grid-column:auto}.method-step{min-height:auto}.report-cover{min-height:270px}.hero-panel.pria-panel{margin-top:1rem}}
 </style>
 <script type="application/ld+json">
 {
@@ -334,7 +338,7 @@
 <footer class="site-footer">
   <div class="shell">
     <div class="footer-grid">
-      <div><img class="footer-logo" src="/logo-privus-horizontal.png" alt="Privus Kuzola"><p>Regulatory Compliance &amp; Digital Governance · Portugal e Angola.</p></div>
+      <div><img class="footer-logo" src="/logo-privus-horizontal.png?v=20260924-final" alt="Privus Kuzola"><p>Regulatory Compliance &amp; Digital Governance · Portugal e Angola.</p></div>
       <div><strong>PRIA</strong><a href="#metodo">Metodologia</a><a href="#resultados">Resultados</a><a href="/pria-planos">Modalidades</a></div>
       <div><strong>Privus Kuzola</strong><a href="/">Site institucional</a><a href="/insights/">Insights</a><a href="/politica-privacidade">Privacidade</a><a href="/termos-condicoes">Termos</a></div>
     </div>
