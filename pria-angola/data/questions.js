@@ -825,7 +825,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -847,7 +847,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -869,7 +869,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -891,7 +891,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -913,7 +913,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -935,7 +935,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -957,7 +957,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -979,7 +979,7 @@ window.PRIA_BUNDLE = {
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4896,7 +4896,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4918,7 +4918,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4940,7 +4940,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4962,7 +4962,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4984,7 +4984,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5006,7 +5006,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5028,7 +5028,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5050,7 +5050,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5072,7 +5072,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5094,7 +5094,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5116,7 +5116,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5138,7 +5138,7 @@ window.PRIA_BUNDLE = {
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -5779,7 +5779,7 @@ window.PRIA_BUNDLE = {
     "usa_prestadores = Sim": [
       "Prestadores / DPA"
     ],
-    "usa_ia = Sim OR oportunidades_ia = Sim": [
+    "usa_ia = Sim": [
       "IA e Automação"
     ]
   }
