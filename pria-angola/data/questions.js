@@ -1,11 +1,11 @@
 window.PRIA_BUNDLE = {
   "product": "PRIA Angola",
-  "version": "question-bank-v1",
-  "question_count": 250,
+  "version": "question-bank-v2-decision-routing",
+  "question_count": 253,
   "pricing": {
-    "free_until": "2026-09-03",
-    "paid_from": "2026-09-04",
-    "automatic_report_price": "400.000 Kz",
+    "free_until": "",
+    "paid_from": "2026-09-06",
+    "automatic_report_price": "350.000 Kz",
     "consulting_and_implementation": "Orçamentado separadamente"
   },
   "questions": [
@@ -37,7 +37,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "route_sector"
-      ]
+      ],
+      "text": "Qual é o principal setor de atividade da organização?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-002",
@@ -61,7 +63,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "route_size"
-      ]
+      ],
+      "text": "Quantos trabalhadores tem atualmente a organização?",
+      "decision_role": "context"
     },
     {
       "id": "TRI-003",
@@ -84,7 +88,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "route_multi_site"
-      ]
+      ],
+      "text": "Em quantas instalações, filiais ou estabelecimentos a organização opera?",
+      "decision_role": "context"
     },
     {
       "id": "TRI-004",
@@ -106,7 +112,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "route_data_subjects"
-      ]
+      ],
+      "text": "A organização trata dados pessoais de clientes, utentes, pacientes, trabalhadores, fornecedores ou outros titulares?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-005",
@@ -128,7 +136,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_health"
-      ]
+      ],
+      "text": "A organização trata dados de saúde, exames, processos clínicos, informação médica ou dados de pacientes?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-006",
@@ -150,7 +160,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_hr"
-      ]
+      ],
+      "text": "A organização tem trabalhadores, colaboradores, prestadores internos ou equipas sob gestão direta?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-007",
@@ -172,7 +184,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_cctv"
-      ]
+      ],
+      "text": "A organização utiliza sistemas de videovigilância, câmaras CCTV ou monitorização visual de instalações?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-008",
@@ -194,7 +208,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_biometrics"
-      ]
+      ],
+      "text": "A organização utiliza dados biométricos, como impressão digital, reconhecimento facial, íris ou controlo biométrico de acessos?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-009",
@@ -216,7 +232,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_cloud"
-      ]
+      ],
+      "text": "A organização utiliza cloud, SaaS, alojamento externo, CRM, ERP online ou plataformas digitais para tratar informação?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-010",
@@ -238,7 +256,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_transfers"
-      ]
+      ],
+      "text": "Existem dados pessoais alojados, acessíveis ou tratados fora de Angola?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-011",
@@ -260,7 +280,9 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_processors"
-      ]
+      ],
+      "text": "A organização recorre a prestadores externos que tratam dados pessoais por sua conta?",
+      "decision_role": "router"
     },
     {
       "id": "TRI-012",
@@ -282,14 +304,88 @@ window.PRIA_BUNDLE = {
       "recommendation": "Usar a resposta para abrir ou fechar módulos condicionais.",
       "tags": [
         "opens_ai"
-      ]
+      ],
+      "text": "A organização utiliza ferramentas de inteligência artificial, incluindo ChatGPT, Copilot, Gemini, chatbots ou automações inteligentes?",
+      "decision_role": "router"
+    },
+    {
+      "id": "TRI-013",
+      "module": "Triagem inicial",
+      "pillar": "Roteamento",
+      "sector": "Todos",
+      "trigger": "always",
+      "type": "single_select",
+      "exclusive_options": true,
+      "options": [
+        "Sim",
+        "Não",
+        "Não sei",
+        "Não aplicável"
+      ],
+      "weight": 0,
+      "red_flag_severity": "",
+      "red_flag_condition": "",
+      "recommendation": "Abrir ou fechar o módulo Website / Apps / Canais Digitais.",
+      "tags": [
+        "opens_digital"
+      ],
+      "decision_role": "router",
+      "text": "A organização opera website, aplicação, portal, área de cliente ou outro canal digital que recolha ou trate dados?"
+    },
+    {
+      "id": "TRI-014",
+      "module": "Triagem inicial",
+      "pillar": "Roteamento",
+      "sector": "Todos",
+      "trigger": "always",
+      "type": "single_select",
+      "exclusive_options": true,
+      "options": [
+        "Sim",
+        "Não",
+        "Não sei",
+        "Não aplicável"
+      ],
+      "weight": 0,
+      "red_flag_severity": "",
+      "red_flag_condition": "",
+      "recommendation": "Abrir ou fechar o módulo Marketing.",
+      "tags": [
+        "opens_marketing"
+      ],
+      "decision_role": "router",
+      "text": "A organização realiza marketing direto, campanhas digitais, segmentação comercial ou comunicações promocionais?"
+    },
+    {
+      "id": "TRI-015",
+      "module": "Triagem inicial",
+      "pillar": "Roteamento",
+      "sector": "Todos",
+      "trigger": "always",
+      "type": "single_select",
+      "exclusive_options": true,
+      "options": [
+        "Sim",
+        "Não",
+        "Não sei",
+        "Não aplicável"
+      ],
+      "weight": 0,
+      "red_flag_severity": "",
+      "red_flag_condition": "",
+      "recommendation": "Abrir ou fechar o módulo Educação e Menores quando aplicável.",
+      "tags": [
+        "opens_minors"
+      ],
+      "decision_role": "router",
+      "text": "A organização trata dados pessoais de menores, estudantes ou outros titulares especialmente vulneráveis?"
     },
     {
       "id": "PDA-001",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -303,14 +399,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar inventário por finalidade, titulares, dados, destinatários, conservação, fornecedores, localização e regime APD.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Criar inventário por finalidade, titulares, dados, destinatários, conservação, fornecedores, localização e regime APD."
     },
     {
       "id": "PDA-002",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -324,14 +421,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Separar tratamentos por finalidade para evitar submissões genéricas e lacunas de legalização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Separar tratamentos por finalidade para evitar submissões genéricas e lacunas de legalização."
     },
     {
       "id": "PDA-003",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -345,14 +443,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Classificar cada tratamento quanto a notificação/autorização/isencão antes de iniciar regularização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Classificar cada tratamento quanto a notificação/autorização/isencão antes de iniciar regularização."
     },
     {
       "id": "PDA-004",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -366,14 +465,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Avaliar tratamentos sensíveis, biometria, CCTV, transferências e demais casos com autorização exigível.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Avaliar tratamentos sensíveis, biometria, CCTV, transferências e demais casos com autorização exigível."
     },
     {
       "id": "PDA-005",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -387,14 +487,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Centralizar evidências de submissão, deliberações, autorizações, renovações e alterações comunicadas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Centralizar evidências de submissão, deliberações, autorizações, renovações e alterações comunicadas."
     },
     {
       "id": "PDA-006",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -408,14 +509,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar procedimento de gestão de alterações e revisão de impacto regulatório.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Criar procedimento de gestão de alterações e revisão de impacto regulatório."
     },
     {
       "id": "PDA-007",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -429,14 +531,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Aplicar princípio de minimização e rever formulários, sistemas e campos obrigatórios.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Aplicar princípio de minimização e rever formulários, sistemas e campos obrigatórios."
     },
     {
       "id": "PDA-008",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -450,14 +553,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Publicar informação aos titulares com finalidades, direitos, contactos, destinatários e conservação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Publicar informação aos titulares com finalidades, direitos, contactos, destinatários e conservação."
     },
     {
       "id": "PDA-009",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -471,14 +575,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar aviso de privacidade laboral, incluindo RH, assiduidade, CCTV, medicina do trabalho e payroll.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Criar aviso de privacidade laboral, incluindo RH, assiduidade, CCTV, medicina do trabalho e payroll."
     },
     {
       "id": "PDA-010",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -492,14 +597,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Classificar dados comuns, sensíveis, financeiros, saúde, menores, biométricos e disciplinares.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Classificar dados comuns, sensíveis, financeiros, saúde, menores, biométricos e disciplinares."
     },
     {
       "id": "PDA-011",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -513,14 +619,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar matriz de retenção e eliminação com responsáveis e evidências.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Criar matriz de retenção e eliminação com responsáveis e evidências."
     },
     {
       "id": "PDA-012",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -534,14 +641,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar eliminação controlada em sistemas, email, arquivo físico e backups quando aplicável.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Implementar eliminação controlada em sistemas, email, arquivo físico e backups quando aplicável."
     },
     {
       "id": "PDA-013",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -555,14 +663,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Classificar papéis nos fluxos com clientes, fornecedores e parceiros.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Classificar papéis nos fluxos com clientes, fornecedores e parceiros."
     },
     {
       "id": "PDA-014",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -576,14 +685,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ligar finalidade, base aplicável, dever legal/contratual/consentimento/autorização e evidência.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Ligar finalidade, base aplicável, dever legal/contratual/consentimento/autorização e evidência."
     },
     {
       "id": "PDA-015",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -597,14 +707,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Rever formulários de consentimento e evitar consentimento genérico ou forçado.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Rever formulários de consentimento e evitar consentimento genérico ou forçado."
     },
     {
       "id": "PDA-016",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -618,14 +729,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar registo de incidentes, quase-incidentes e decisões de comunicação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Criar registo de incidentes, quase-incidentes e decisões de comunicação."
     },
     {
       "id": "PDA-017",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -639,14 +751,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar checklist de privacidade por desenho para novas ferramentas, campanhas, fornecedores e sistemas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Criar checklist de privacidade por desenho para novas ferramentas, campanhas, fornecedores e sistemas."
     },
     {
       "id": "PDA-018",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -660,14 +773,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Atribuir owner de negócio e owner técnico por tratamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Atribuir owner de negócio e owner técnico por tratamento."
     },
     {
       "id": "PDA-019",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -681,14 +795,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Mapear localização de sistemas, cloud, backups, réplicas e acessos remotos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Mapear localização de sistemas, cloud, backups, réplicas e acessos remotos."
     },
     {
       "id": "PDA-020",
       "module": "Proteção de Dados / APD",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "always",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -702,14 +817,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar repositório de evidência organizado por políticas, procedimentos, registos e autorizações.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado? Critério avaliado: Criar repositório de evidência organizado por políticas, procedimentos, registos e autorizações."
     },
     {
       "id": "DIR-001",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -723,14 +839,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar canal formal e publicar informação nos avisos de privacidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Criar canal formal e publicar informação nos avisos de privacidade."
     },
     {
       "id": "DIR-002",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -744,14 +861,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir prazos, responsáveis, validação de identidade e escalonamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Definir prazos, responsáveis, validação de identidade e escalonamento."
     },
     {
       "id": "DIR-003",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -765,14 +883,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar registo de pedidos e decisões.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Implementar registo de pedidos e decisões."
     },
     {
       "id": "DIR-004",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -786,14 +905,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Mapear sistemas e criar procedimento de pesquisa transversal.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Mapear sistemas e criar procedimento de pesquisa transversal."
     },
     {
       "id": "DIR-005",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -807,14 +927,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir responsáveis por correção nos sistemas de origem.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Definir responsáveis por correção nos sistemas de origem."
     },
     {
       "id": "DIR-006",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -828,14 +949,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ligar eliminação à matriz de retenção e exceções legais.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Ligar eliminação à matriz de retenção e exceções legais."
     },
     {
       "id": "DIR-007",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -849,14 +971,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar modelo de resposta e registo de fundamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Criar modelo de resposta e registo de fundamento."
     },
     {
       "id": "DIR-008",
       "module": "Direitos dos Titulares",
       "pillar": "Proteção de Dados / APD",
       "sector": "Todos",
-      "trigger": "trata_dados_titulares = Sim",
+      "trigger": "trata_dados_pessoais = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -870,7 +993,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Incluir direitos dos titulares na formação inicial e periódica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado? Critério avaliado: Incluir direitos dos titulares na formação inicial e periódica."
     },
     {
       "id": "RHT-001",
@@ -891,7 +1015,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Separar dossiês, restringir acesso e controlar consulta.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Separar dossiês, restringir acesso e controlar consulta."
     },
     {
       "id": "RHT-002",
@@ -912,7 +1037,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Eliminar recolha excessiva e classificar documentos sensíveis.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Eliminar recolha excessiva e classificar documentos sensíveis."
     },
     {
       "id": "RHT-003",
@@ -933,7 +1059,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Restringir acessos e criar logs/evidência de permissões.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Restringir acessos e criar logs/evidência de permissões."
     },
     {
       "id": "RHT-004",
@@ -954,7 +1081,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Entregar aviso de privacidade laboral e recolher evidência.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Entregar aviso de privacidade laboral e recolher evidência."
     },
     {
       "id": "RHT-005",
@@ -975,7 +1103,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar política de utilização aceitável e monitorização proporcional.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Criar política de utilização aceitável e monitorização proporcional."
     },
     {
       "id": "RHT-006",
@@ -996,7 +1125,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir submódulo de monitorização laboral e avaliar proporcionalidade, informação e APD.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Abrir submódulo de monitorização laboral e avaliar proporcionalidade, informação e APD."
     },
     {
       "id": "RHT-007",
@@ -1017,7 +1147,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar dados recolhidos, fornecedor, retenção e regularização aplicável.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Avaliar dados recolhidos, fornecedor, retenção e regularização aplicável."
     },
     {
       "id": "RHT-008",
@@ -1038,7 +1169,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir matriz de acesso por função.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Definir matriz de acesso por função."
     },
     {
       "id": "RHT-009",
@@ -1059,7 +1191,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Separar disciplina de gestão corrente e definir retenção.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Separar disciplina de gestão corrente e definir retenção."
     },
     {
       "id": "RHT-010",
@@ -1080,7 +1213,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Rever formulários de RH e benefícios.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Rever formulários de RH e benefícios."
     },
     {
       "id": "RHT-011",
@@ -1101,7 +1235,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar compromisso de confidencialidade e formação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Formalizar compromisso de confidencialidade e formação."
     },
     {
       "id": "RHT-012",
@@ -1122,7 +1257,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar formação e evidência de participação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Implementar formação e evidência de participação."
     },
     {
       "id": "RHT-013",
@@ -1143,7 +1279,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar checklist de offboarding e revogação de credenciais.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Criar checklist de offboarding e revogação de credenciais."
     },
     {
       "id": "RHT-014",
@@ -1164,7 +1301,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir canal oficial e política de armazenamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado? Critério avaliado: Definir canal oficial e política de armazenamento."
     },
     {
       "id": "BMD-001",
@@ -1188,7 +1326,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Abrir avaliação de dados médicos laborais."
     },
     {
       "id": "BMD-002",
@@ -1212,7 +1351,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Definir canal único e seguro para documentos médicos."
     },
     {
       "id": "BMD-003",
@@ -1236,7 +1376,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Evitar circulação por chefias e grupos informais."
     },
     {
       "id": "BMD-004",
@@ -1260,7 +1401,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Limitar recolha ao necessário para justificar ausência/aptidão."
     },
     {
       "id": "BMD-005",
@@ -1284,7 +1426,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Restringir acesso ao documento médico completo."
     },
     {
       "id": "BMD-006",
@@ -1308,7 +1451,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Definir prazo e eliminação controlada."
     },
     {
       "id": "BMD-007",
@@ -1332,7 +1476,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Criar arquivo restrito físico/digital."
     },
     {
       "id": "BMD-008",
@@ -1356,7 +1501,8 @@ window.PRIA_BUNDLE = {
       "tags": [
         "rh",
         "saude_laboral"
-      ]
+      ],
+      "text": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado? Critério avaliado: Verificar contrato, finalidade, minimização, confidencialidade e DPA."
     },
     {
       "id": "RCO-001",
@@ -1377,7 +1523,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Evitar receção dispersa por emails pessoais ou WhatsApp.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Evitar receção dispersa por emails pessoais ou WhatsApp."
     },
     {
       "id": "RCO-002",
@@ -1398,7 +1545,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar aviso de privacidade para recrutamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Criar aviso de privacidade para recrutamento."
     },
     {
       "id": "RCO-003",
@@ -1419,7 +1567,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir retenção e eliminação de candidaturas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Definir retenção e eliminação de candidaturas."
     },
     {
       "id": "RCO-004",
@@ -1440,7 +1589,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Rever contratos e fluxos de dados.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Rever contratos e fluxos de dados."
     },
     {
       "id": "RCO-005",
@@ -1461,7 +1611,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Controlar acesso a avaliações de candidatos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Controlar acesso a avaliações de candidatos."
     },
     {
       "id": "RCO-006",
@@ -1482,7 +1633,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar onboarding e permissões iniciais.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Formalizar onboarding e permissões iniciais."
     },
     {
       "id": "RCO-007",
@@ -1503,7 +1655,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar offboarding imediato.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Formalizar offboarding imediato."
     },
     {
       "id": "RCO-008",
@@ -1524,7 +1677,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Executar revisão de contas inativas e privilégios.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado? Critério avaliado: Executar revisão de contas inativas e privilégios."
     },
     {
       "id": "CTV-001",
@@ -1545,7 +1699,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Documentar finalidade e proporcionalidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Documentar finalidade e proporcionalidade."
     },
     {
       "id": "CTV-002",
@@ -1566,7 +1721,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar necessidade, proporcionalidade e informação aos trabalhadores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Avaliar necessidade, proporcionalidade e informação aos trabalhadores."
     },
     {
       "id": "CTV-003",
@@ -1587,7 +1743,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim",
       "recommendation": "Rever captação excessiva e regularização aplicável.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Rever captação excessiva e regularização aplicável."
     },
     {
       "id": "CTV-004",
@@ -1608,7 +1765,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar sinalização adequada.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Implementar sinalização adequada."
     },
     {
       "id": "CTV-005",
@@ -1629,7 +1787,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar matriz de acesso.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Criar matriz de acesso."
     },
     {
       "id": "CTV-006",
@@ -1650,7 +1809,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Eliminar contas partilhadas e ativar logs.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Eliminar contas partilhadas e ativar logs."
     },
     {
       "id": "CTV-007",
@@ -1671,7 +1831,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Configurar eliminação automática e exceções documentadas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Configurar eliminação automática e exceções documentadas."
     },
     {
       "id": "CTV-008",
@@ -1692,7 +1853,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar procedimento e registo de extrações.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Criar procedimento e registo de extrações."
     },
     {
       "id": "CTV-009",
@@ -1713,7 +1875,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Verificar DPA, acessos, logs e MFA.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Verificar DPA, acessos, logs e MFA."
     },
     {
       "id": "CTV-010",
@@ -1734,7 +1897,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Regularizar CCTV conforme exigências aplicáveis.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de videovigilância está implementado? Critério avaliado: Regularizar CCTV conforme exigências aplicáveis."
     },
     {
       "id": "BIO-001",
@@ -1755,7 +1919,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Avaliar necessidade, proporcionalidade e alternativa.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Avaliar necessidade, proporcionalidade e alternativa."
     },
     {
       "id": "BIO-002",
@@ -1776,7 +1941,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar risco acrescido, informação laboral e APD.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Avaliar risco acrescido, informação laboral e APD."
     },
     {
       "id": "BIO-003",
@@ -1797,7 +1963,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Garantir hashing/encriptação e restrição de acesso.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Garantir hashing/encriptação e restrição de acesso."
     },
     {
       "id": "BIO-004",
@@ -1818,7 +1985,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir eliminação de templates biométricos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Definir eliminação de templates biométricos."
     },
     {
       "id": "BIO-005",
@@ -1839,7 +2007,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar prestador e subprocessadores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Formalizar prestador e subprocessadores."
     },
     {
       "id": "BIO-006",
@@ -1860,7 +2029,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar logs e revisão de acessos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Ativar logs e revisão de acessos."
     },
     {
       "id": "BIO-007",
@@ -1881,7 +2051,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar informação específica e evidência.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Criar informação específica e evidência."
     },
     {
       "id": "BIO-008",
@@ -1902,7 +2073,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Regularizar tratamento biométrico antes de uso continuado.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de biometria está implementado? Critério avaliado: Regularizar tratamento biométrico antes de uso continuado."
     },
     {
       "id": "SAU-001",
@@ -1922,7 +2094,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "",
       "red_flag_condition": "",
       "recommendation": "Mapear suportes para avaliação de acessos, conservação e segurança.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Mapear suportes para avaliação de acessos, conservação e segurança."
     },
     {
       "id": "SAU-002",
@@ -1943,7 +2116,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Eliminar contas partilhadas e criar utilizadores individuais.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Eliminar contas partilhadas e criar utilizadores individuais."
     },
     {
       "id": "SAU-003",
@@ -1964,7 +2138,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Restringir perfis de receção.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Restringir perfis de receção."
     },
     {
       "id": "SAU-004",
@@ -1985,7 +2160,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Separar dados clínicos de dados administrativos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Separar dados clínicos de dados administrativos."
     },
     {
       "id": "SAU-005",
@@ -2006,7 +2182,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar registo de acessos e revisão periódica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Ativar registo de acessos e revisão periódica."
     },
     {
       "id": "SAU-006",
@@ -2027,7 +2204,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar canal, autenticação e minimização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Avaliar canal, autenticação e minimização."
     },
     {
       "id": "SAU-007",
@@ -2048,7 +2226,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar procedimento de validação de identidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Criar procedimento de validação de identidade."
     },
     {
       "id": "SAU-008",
@@ -2069,7 +2248,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Verificar DPA, transmissão segura e minimização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Verificar DPA, transmissão segura e minimização."
     },
     {
       "id": "SAU-009",
@@ -2090,7 +2270,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Rever finalidade, minimização e transmissão.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Rever finalidade, minimização e transmissão."
     },
     {
       "id": "SAU-010",
@@ -2111,7 +2292,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir módulo digital reforçado e avaliar autenticação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Abrir módulo digital reforçado e avaliar autenticação."
     },
     {
       "id": "SAU-011",
@@ -2132,7 +2314,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Reforçar autenticação em dados de saúde.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Reforçar autenticação em dados de saúde."
     },
     {
       "id": "SAU-012",
@@ -2153,7 +2336,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Controlar exportações, logs e justificação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Controlar exportações, logs e justificação."
     },
     {
       "id": "SAU-013",
@@ -2174,7 +2358,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Proibir ou controlar BYOD para dados clínicos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Proibir ou controlar BYOD para dados clínicos."
     },
     {
       "id": "SAU-014",
@@ -2195,7 +2380,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Controlar arquivo físico, chaves e registo de acesso.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Controlar arquivo físico, chaves e registo de acesso."
     },
     {
       "id": "SAU-015",
@@ -2216,7 +2402,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar matriz de retenção clínica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Criar matriz de retenção clínica."
     },
     {
       "id": "SAU-016",
@@ -2237,7 +2424,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar resposta e escalonamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Formalizar resposta e escalonamento."
     },
     {
       "id": "SAU-017",
@@ -2258,7 +2446,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Executar formação específica por função.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Executar formação específica por função."
     },
     {
       "id": "SAU-018",
@@ -2279,7 +2468,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Testar recuperação de dados clínicos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Testar recuperação de dados clínicos."
     },
     {
       "id": "SAU-019",
@@ -2300,7 +2490,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar plano de contingência clínica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Criar plano de contingência clínica."
     },
     {
       "id": "SAU-020",
@@ -2321,7 +2512,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Regularizar dados de saúde e manter comprovativos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado? Critério avaliado: Regularizar dados de saúde e manter comprovativos."
     },
     {
       "id": "MKT-001",
@@ -2342,7 +2534,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir avaliação de marketing direto.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Abrir avaliação de marketing direto."
     },
     {
       "id": "MKT-002",
@@ -2363,7 +2556,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Documentar origem das listas e legitimidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Documentar origem das listas e legitimidade."
     },
     {
       "id": "MKT-003",
@@ -2384,7 +2578,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar oposição gratuita e lista de supressão.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Implementar oposição gratuita e lista de supressão."
     },
     {
       "id": "MKT-004",
@@ -2405,7 +2600,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Guardar evidência de consentimento e data.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Guardar evidência de consentimento e data."
     },
     {
       "id": "MKT-005",
@@ -2426,7 +2622,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Verificar DPA e transferência de dados.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Verificar DPA e transferência de dados."
     },
     {
       "id": "MKT-006",
@@ -2447,7 +2644,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Suspender uso até validar origem e legalidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Suspender uso até validar origem e legalidade."
     },
     {
       "id": "MKT-007",
@@ -2468,7 +2666,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir avaliação digital/cookies/tracking.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Abrir avaliação digital/cookies/tracking."
     },
     {
       "id": "MKT-008",
@@ -2489,7 +2688,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar regras de contacto, opt-out e minimização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado? Critério avaliado: Formalizar regras de contacto, opt-out e minimização."
     },
     {
       "id": "DIG-001",
@@ -2510,7 +2710,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Mapear dados recolhidos e fornecedores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Mapear dados recolhidos e fornecedores."
     },
     {
       "id": "DIG-002",
@@ -2531,7 +2732,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Publicar aviso adequado aos canais digitais.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Publicar aviso adequado aos canais digitais."
     },
     {
       "id": "DIG-003",
@@ -2552,7 +2754,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Forçar HTTPS e corrigir conteúdo misto.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Forçar HTTPS e corrigir conteúdo misto."
     },
     {
       "id": "DIG-004",
@@ -2573,7 +2776,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar autenticação, sessões e segurança.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Avaliar autenticação, sessões e segurança."
     },
     {
       "id": "DIG-005",
@@ -2594,7 +2798,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Rever reset de password e tokens.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Rever reset de password e tokens."
     },
     {
       "id": "DIG-006",
@@ -2615,7 +2820,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar armazenamento, malware scanning, acesso e retenção.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Avaliar armazenamento, malware scanning, acesso e retenção."
     },
     {
       "id": "DIG-007",
@@ -2636,7 +2842,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Definir limites, privacidade e fornecedor.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Definir limites, privacidade e fornecedor."
     },
     {
       "id": "DIG-008",
@@ -2657,7 +2864,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Inventariar tecnologias de tracking.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Inventariar tecnologias de tracking."
     },
     {
       "id": "DIG-009",
@@ -2678,7 +2886,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar contrato, PCI/segurança e dados transmitidos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Avaliar contrato, PCI/segurança e dados transmitidos."
     },
     {
       "id": "DIG-010",
@@ -2699,7 +2908,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir retenção de logs e segurança.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Definir retenção de logs e segurança."
     },
     {
       "id": "DPA-001",
@@ -2720,7 +2930,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar cadastro de prestadores e fluxos de dados.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Criar cadastro de prestadores e fluxos de dados."
     },
     {
       "id": "DPA-002",
@@ -2741,7 +2952,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar contratos antes de acesso continuado.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Formalizar contratos antes de acesso continuado."
     },
     {
       "id": "DPA-003",
@@ -2762,7 +2974,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Adicionar cláusulas de finalidade, segurança, confidencialidade e incidentes.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Adicionar cláusulas de finalidade, segurança, confidencialidade e incidentes."
     },
     {
       "id": "DPA-004",
@@ -2783,7 +2996,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Exigir controlo de subprocessadores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Exigir controlo de subprocessadores."
     },
     {
       "id": "DPA-005",
@@ -2804,7 +3018,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Incluir obrigação de notificação de incidentes.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Incluir obrigação de notificação de incidentes."
     },
     {
       "id": "DPA-006",
@@ -2825,7 +3040,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Mapear alojamento e transferências.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Mapear alojamento e transferências."
     },
     {
       "id": "DPA-007",
@@ -2846,7 +3062,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar DPA e minimização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Avaliar DPA e minimização."
     },
     {
       "id": "DPA-008",
@@ -2867,7 +3084,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar MFA, logs, privilégios e contrato.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Avaliar MFA, logs, privilégios e contrato."
     },
     {
       "id": "DPA-009",
@@ -2888,7 +3106,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir exit plan e devolução/eliminação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Definir exit plan e devolução/eliminação."
     },
     {
       "id": "DPA-010",
@@ -2909,7 +3128,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar due diligence de fornecedores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Implementar due diligence de fornecedores."
     },
     {
       "id": "DPA-011",
@@ -2930,7 +3150,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir revisão anual ou por risco.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Definir revisão anual ou por risco."
     },
     {
       "id": "DPA-012",
@@ -2951,7 +3172,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Aplicar minimização por fornecedor.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Aplicar minimização por fornecedor."
     },
     {
       "id": "DPA-013",
@@ -2972,7 +3194,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar logging e acesso temporário.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Ativar logging e acesso temporário."
     },
     {
       "id": "DPA-014",
@@ -2993,7 +3216,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar plano de saída/continuidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo está implementado? Critério avaliado: Criar plano de saída/continuidade."
     },
     {
       "id": "CLD-001",
@@ -3014,7 +3238,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Inventariar sistemas cloud e owners.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Inventariar sistemas cloud e owners."
     },
     {
       "id": "CLD-002",
@@ -3035,7 +3260,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Obter região/data center e mapa de alojamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Obter região/data center e mapa de alojamento."
     },
     {
       "id": "CLD-003",
@@ -3056,7 +3282,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar DPA e termos de segurança.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Formalizar DPA e termos de segurança."
     },
     {
       "id": "CLD-004",
@@ -3077,7 +3304,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Obter subprocessadores e localizações.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Obter subprocessadores e localizações."
     },
     {
       "id": "CLD-005",
@@ -3098,7 +3326,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Garantir TLS/HTTPS e configurações seguras.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Garantir TLS/HTTPS e configurações seguras."
     },
     {
       "id": "CLD-006",
@@ -3119,7 +3348,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar encriptação at rest.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Ativar encriptação at rest."
     },
     {
       "id": "CLD-007",
@@ -3140,7 +3370,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Obrigar MFA para administradores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Obrigar MFA para administradores."
     },
     {
       "id": "CLD-008",
@@ -3161,7 +3392,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar logs e retenção.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Ativar logs e retenção."
     },
     {
       "id": "CLD-009",
@@ -3182,7 +3414,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar segregação e proteção contra ransomware.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Criar segregação e proteção contra ransomware."
     },
     {
       "id": "CLD-010",
@@ -3203,7 +3436,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir exit plan e exportação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Definir exit plan e exportação."
     },
     {
       "id": "CLD-011",
@@ -3224,7 +3458,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Rever termos e desativar usos indevidos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Rever termos e desativar usos indevidos."
     },
     {
       "id": "CLD-012",
@@ -3245,7 +3480,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Anonimizar ou mascarar dados em testes.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado? Critério avaliado: Anonimizar ou mascarar dados em testes."
     },
     {
       "id": "TRF-001",
@@ -3266,7 +3502,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim",
       "recommendation": "Mapear fluxo e avaliar regularização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Mapear fluxo e avaliar regularização."
     },
     {
       "id": "TRF-002",
@@ -3287,7 +3524,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Identificar destino, destinatário e base do fluxo.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Identificar destino, destinatário e base do fluxo."
     },
     {
       "id": "TRF-003",
@@ -3308,7 +3546,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Documentar finalidade e necessidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Documentar finalidade e necessidade."
     },
     {
       "id": "TRF-004",
@@ -3329,7 +3568,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Mapear dados transferidos por fluxo.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Mapear dados transferidos por fluxo."
     },
     {
       "id": "TRF-005",
@@ -3350,7 +3590,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Regularizar transferências internacionais.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Regularizar transferências internacionais."
     },
     {
       "id": "TRF-006",
@@ -3371,7 +3612,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Obter subprocessadores e localizações.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Obter subprocessadores e localizações."
     },
     {
       "id": "TRF-007",
@@ -3392,7 +3634,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Aplicar MFA, logs, janela temporal e aprovação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Aplicar MFA, logs, janela temporal e aprovação."
     },
     {
       "id": "TRF-008",
@@ -3413,7 +3656,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Centralizar DPA, contratos, termos e medidas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado? Critério avaliado: Centralizar DPA, contratos, termos e medidas."
     },
     {
       "id": "SEG-001",
@@ -3434,7 +3678,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Eliminar contas partilhadas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Eliminar contas partilhadas."
     },
     {
       "id": "SEG-002",
@@ -3455,7 +3700,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar MFA prioritariamente.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Ativar MFA prioritariamente."
     },
     {
       "id": "SEG-003",
@@ -3476,7 +3722,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir política e ferramentas seguras.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Definir política e ferramentas seguras."
     },
     {
       "id": "SEG-004",
@@ -3497,7 +3744,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Aplicar menor privilégio.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Aplicar menor privilégio."
     },
     {
       "id": "SEG-005",
@@ -3518,7 +3766,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar revisão trimestral/semestral.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Criar revisão trimestral/semestral."
     },
     {
       "id": "SEG-006",
@@ -3539,7 +3788,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar proteção endpoint.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Implementar proteção endpoint."
     },
     {
       "id": "SEG-007",
@@ -3560,7 +3810,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar patch management.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Criar patch management."
     },
     {
       "id": "SEG-008",
@@ -3581,7 +3832,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar encriptação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Ativar encriptação."
     },
     {
       "id": "SEG-009",
@@ -3602,7 +3854,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir regra para armazenamento removível.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Definir regra para armazenamento removível."
     },
     {
       "id": "SEG-010",
@@ -3623,7 +3876,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Formalizar uso ou proibição de BYOD.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Formalizar uso ou proibição de BYOD."
     },
     {
       "id": "SEG-011",
@@ -3644,7 +3898,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Segmentar rede.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Segmentar rede."
     },
     {
       "id": "SEG-012",
@@ -3665,7 +3920,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Rever perímetro e regras.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Rever perímetro e regras."
     },
     {
       "id": "SEG-013",
@@ -3686,7 +3942,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar acesso remoto seguro.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Implementar acesso remoto seguro."
     },
     {
       "id": "SEG-014",
@@ -3707,7 +3964,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar MFA no email.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Ativar MFA no email."
     },
     {
       "id": "SEG-015",
@@ -3728,7 +3986,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Configurar proteção anti-spoofing.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Configurar proteção anti-spoofing."
     },
     {
       "id": "SEG-016",
@@ -3749,7 +4008,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Treinar utilizadores e simular phishing.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Treinar utilizadores e simular phishing."
     },
     {
       "id": "SEG-017",
@@ -3770,7 +4030,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Ativar logging centralizado.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Ativar logging centralizado."
     },
     {
       "id": "SEG-018",
@@ -3791,7 +4052,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir monitorização e resposta.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Definir monitorização e resposta."
     },
     {
       "id": "SEG-019",
@@ -3812,7 +4074,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar avaliação periódica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Implementar avaliação periódica."
     },
     {
       "id": "SEG-020",
@@ -3833,7 +4096,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Mapear equipamentos, sistemas e owners.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de segurança da informação está implementado? Critério avaliado: Mapear equipamentos, sistemas e owners."
     },
     {
       "id": "INC-001",
@@ -3854,7 +4118,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar plano de resposta a incidentes.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Criar plano de resposta a incidentes."
     },
     {
       "id": "INC-002",
@@ -3875,7 +4140,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir equipa, suplentes e contactos.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Definir equipa, suplentes e contactos."
     },
     {
       "id": "INC-003",
@@ -3896,7 +4162,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar matriz de severidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Criar matriz de severidade."
     },
     {
       "id": "INC-004",
@@ -3917,7 +4184,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir cadeia de evidência.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Definir cadeia de evidência."
     },
     {
       "id": "INC-005",
@@ -3938,7 +4206,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar critérios e templates de comunicação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Criar critérios e templates de comunicação."
     },
     {
       "id": "INC-006",
@@ -3959,7 +4228,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir avaliação de incidentes anteriores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Abrir avaliação de incidentes anteriores."
     },
     {
       "id": "INC-007",
@@ -3980,7 +4250,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Documentar post-mortem e medidas corretivas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Documentar post-mortem e medidas corretivas."
     },
     {
       "id": "INC-008",
@@ -4001,7 +4272,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar lista de contactos e SLA.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Criar lista de contactos e SLA."
     },
     {
       "id": "INC-009",
@@ -4022,7 +4294,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Executar tabletop exercise.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Executar tabletop exercise."
     },
     {
       "id": "INC-010",
@@ -4043,7 +4316,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir comunicação interna/externa.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado? Critério avaliado: Definir comunicação interna/externa."
     },
     {
       "id": "BCP-001",
@@ -4064,7 +4338,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Realizar BIA simplificado.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Realizar BIA simplificado."
     },
     {
       "id": "BCP-002",
@@ -4085,7 +4360,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir owners por sistema/processo.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Definir owners por sistema/processo."
     },
     {
       "id": "BCP-003",
@@ -4106,7 +4382,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir tempos máximos de recuperação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Definir tempos máximos de recuperação."
     },
     {
       "id": "BCP-004",
@@ -4127,7 +4404,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir perda máxima aceitável de dados.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Definir perda máxima aceitável de dados."
     },
     {
       "id": "BCP-005",
@@ -4148,7 +4426,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar plano de continuidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Criar plano de continuidade."
     },
     {
       "id": "BCP-006",
@@ -4169,7 +4448,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Realizar teste e documentar resultados.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Realizar teste e documentar resultados."
     },
     {
       "id": "BCP-007",
@@ -4190,7 +4470,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir frequência por criticidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Definir frequência por criticidade."
     },
     {
       "id": "BCP-008",
@@ -4211,7 +4492,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Executar teste de restore.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Executar teste de restore."
     },
     {
       "id": "BCP-009",
@@ -4232,7 +4514,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar cópia protegida.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Implementar cópia protegida."
     },
     {
       "id": "BCP-010",
@@ -4253,7 +4536,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Avaliar UPS/gerador e prioridade de cargas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Avaliar UPS/gerador e prioridade de cargas."
     },
     {
       "id": "BCP-011",
@@ -4274,7 +4558,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Contratar redundância ou plano de contingência.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Contratar redundância ou plano de contingência."
     },
     {
       "id": "BCP-012",
@@ -4295,7 +4580,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir fornecedor alternativo/exit plan.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Definir fornecedor alternativo/exit plan."
     },
     {
       "id": "BCP-013",
@@ -4316,7 +4602,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Documentar operação manual crítica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Documentar operação manual crítica."
     },
     {
       "id": "BCP-014",
@@ -4337,7 +4624,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Atualizar contactos e responsabilidades.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado? Critério avaliado: Atualizar contactos e responsabilidades."
     },
     {
       "id": "GOV-001",
@@ -4358,7 +4646,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Atribuir responsabilidades e suplentes.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Atribuir responsabilidades e suplentes."
     },
     {
       "id": "GOV-002",
@@ -4379,7 +4668,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar evidência de aprovação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Criar evidência de aprovação."
     },
     {
       "id": "GOV-003",
@@ -4400,7 +4690,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir revisão anual ou por alteração.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Definir revisão anual ou por alteração."
     },
     {
       "id": "GOV-004",
@@ -4421,7 +4712,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar onboarding obrigatório.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Implementar onboarding obrigatório."
     },
     {
       "id": "GOV-005",
@@ -4442,7 +4734,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Guardar evidência de participação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Guardar evidência de participação."
     },
     {
       "id": "GOV-006",
@@ -4463,7 +4756,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar controlo documental.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Criar controlo documental."
     },
     {
       "id": "GOV-007",
@@ -4484,7 +4778,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar matriz e revisão periódica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Criar matriz e revisão periódica."
     },
     {
       "id": "GOV-008",
@@ -4505,7 +4800,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar reporte executivo.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Criar reporte executivo."
     },
     {
       "id": "GOV-009",
@@ -4526,7 +4822,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Documentar decisões e racional.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Documentar decisões e racional."
     },
     {
       "id": "GOV-010",
@@ -4547,7 +4844,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar versionamento.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Implementar versionamento."
     },
     {
       "id": "GOV-011",
@@ -4568,7 +4866,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Planear auditoria interna anual.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Planear auditoria interna anual."
     },
     {
       "id": "GOV-012",
@@ -4589,14 +4888,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar repositório de evidências e responsáveis.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado? Critério avaliado: Criar repositório de evidências e responsáveis."
     },
     {
       "id": "IA-001",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4610,14 +4910,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir ferramentas permitidas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Definir ferramentas permitidas."
     },
     {
       "id": "IA-002",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4631,14 +4932,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Criar política de uso de IA.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Criar política de uso de IA."
     },
     {
       "id": "IA-003",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4652,14 +4954,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Proibir ou controlar uso de dados pessoais em IA externa.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Proibir ou controlar uso de dados pessoais em IA externa."
     },
     {
       "id": "IA-004",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4673,14 +4976,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Suspender uso até avaliação de risco.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Suspender uso até avaliação de risco."
     },
     {
       "id": "IA-005",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4694,14 +4998,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar guia prático de uso de IA.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Criar guia prático de uso de IA."
     },
     {
       "id": "IA-006",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4715,14 +5020,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir revisão humana.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Definir revisão humana."
     },
     {
       "id": "IA-007",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4736,14 +5042,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Avaliar termos, dados usados e subprocessadores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Avaliar termos, dados usados e subprocessadores."
     },
     {
       "id": "IA-008",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4757,14 +5064,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar transparência específica.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Criar transparência específica."
     },
     {
       "id": "IA-009",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4778,14 +5086,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Inventariar casos de uso.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Inventariar casos de uso."
     },
     {
       "id": "IA-010",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4799,14 +5108,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "",
       "red_flag_condition": "Sim",
       "recommendation": "Registar oportunidade comercial Privus.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Registar oportunidade comercial Privus."
     },
     {
       "id": "IA-011",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4820,14 +5130,15 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Avaliar minimização e segurança antes de construir.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Avaliar minimização e segurança antes de construir."
     },
     {
       "id": "IA-012",
       "module": "IA e Automação",
       "pillar": "IA e Automação",
       "sector": "Todos",
-      "trigger": "usa_ia = Sim OR oportunidades_ia = Sim",
+      "trigger": "usa_ia = Sim",
       "type": "single_select",
       "exclusive_options": true,
       "options": [
@@ -4841,7 +5152,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Exigir análise humana e critérios de governação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado? Critério avaliado: Exigir análise humana e critérios de governação."
     },
     {
       "id": "BNK-001",
@@ -4862,7 +5174,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir avaliação financeira detalhada.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado? Critério avaliado: Abrir avaliação financeira detalhada."
     },
     {
       "id": "BNK-002",
@@ -4883,7 +5196,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Reforçar acesso, logs e proteção.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado? Critério avaliado: Reforçar acesso, logs e proteção."
     },
     {
       "id": "BNK-003",
@@ -4904,7 +5218,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Implementar segregação de funções.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado? Critério avaliado: Implementar segregação de funções."
     },
     {
       "id": "BNK-004",
@@ -4925,7 +5240,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Rever contratos e BCP de fornecedores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado? Critério avaliado: Rever contratos e BCP de fornecedores."
     },
     {
       "id": "BNK-005",
@@ -4946,7 +5262,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Mapear acessos, retenção e confidencialidade.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado? Critério avaliado: Mapear acessos, retenção e confidencialidade."
     },
     {
       "id": "BNK-006",
@@ -4967,7 +5284,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Reforçar autenticação de clientes e administradores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado? Critério avaliado: Reforçar autenticação de clientes e administradores."
     },
     {
       "id": "SGR-001",
@@ -4988,7 +5306,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir dados sensíveis e terceiros.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável ao setor segurador está implementado? Critério avaliado: Abrir dados sensíveis e terceiros."
     },
     {
       "id": "SGR-002",
@@ -5009,7 +5328,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Verificar DPA, minimização e transmissão.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável ao setor segurador está implementado? Critério avaliado: Verificar DPA, minimização e transmissão."
     },
     {
       "id": "SGR-003",
@@ -5030,7 +5350,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir retenção por tipo de apólice/sinistro.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável ao setor segurador está implementado? Critério avaliado: Definir retenção por tipo de apólice/sinistro."
     },
     {
       "id": "SGR-004",
@@ -5051,7 +5372,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Avaliar transparência, supervisão e dados usados.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável ao setor segurador está implementado? Critério avaliado: Avaliar transparência, supervisão e dados usados."
     },
     {
       "id": "HOT-001",
@@ -5072,7 +5394,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar minimização, acesso e retenção.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável à hotelaria e dados de hóspedes está implementado? Critério avaliado: Avaliar minimização, acesso e retenção."
     },
     {
       "id": "HOT-002",
@@ -5093,7 +5416,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar transferências, DPA e fornecedores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável à hotelaria e dados de hóspedes está implementado? Critério avaliado: Avaliar transferências, DPA e fornecedores."
     },
     {
       "id": "HOT-003",
@@ -5114,7 +5438,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "moderada",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Avaliar logs, privacidade e retenção.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável à hotelaria e dados de hóspedes está implementado? Critério avaliado: Avaliar logs, privacidade e retenção."
     },
     {
       "id": "HOT-004",
@@ -5135,7 +5460,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Avaliar segurança e regularização.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável à hotelaria e dados de hóspedes está implementado? Critério avaliado: Avaliar segurança e regularização."
     },
     {
       "id": "EDU-001",
@@ -5156,7 +5482,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim",
       "recommendation": "Abrir proteção reforçada de menores.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a educação, estudantes ou menores está implementado? Critério avaliado: Abrir proteção reforçada de menores."
     },
     {
       "id": "EDU-002",
@@ -5177,7 +5504,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Regularizar consentimentos e deveres de informação.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a educação, estudantes ou menores está implementado? Critério avaliado: Regularizar consentimentos e deveres de informação."
     },
     {
       "id": "EDU-003",
@@ -5198,7 +5526,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Rever autorizações, finalidade e oposição.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a educação, estudantes ou menores está implementado? Critério avaliado: Rever autorizações, finalidade e oposição."
     },
     {
       "id": "EDU-004",
@@ -5219,7 +5548,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Sim",
       "recommendation": "Verificar DPA, alojamento e transferências.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a educação, estudantes ou menores está implementado? Critério avaliado: Verificar DPA, alojamento e transferências."
     },
     {
       "id": "IND-001",
@@ -5240,7 +5570,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim|Não sei",
       "recommendation": "Avaliar segmentação IT/OT.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a sistemas industriais, manutenção ou operação técnica está implementado? Critério avaliado: Avaliar segmentação IT/OT."
     },
     {
       "id": "IND-002",
@@ -5261,7 +5592,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "severa",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Definir acessos, logs e CCTV proporcional.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a sistemas industriais, manutenção ou operação técnica está implementado? Critério avaliado: Definir acessos, logs e CCTV proporcional."
     },
     {
       "id": "IND-003",
@@ -5282,7 +5614,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Sim",
       "recommendation": "Controlar acesso remoto, logs e janelas.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a sistemas industriais, manutenção ou operação técnica está implementado? Critério avaliado: Controlar acesso remoto, logs e janelas."
     },
     {
       "id": "IND-004",
@@ -5303,7 +5636,8 @@ window.PRIA_BUNDLE = {
       "red_flag_severity": "critica",
       "red_flag_condition": "Não|Não sei",
       "recommendation": "Criar plano de continuidade operacional.",
-      "tags": []
+      "tags": [],
+      "text": "A organização consegue demonstrar que este controlo aplicável a sistemas industriais, manutenção ou operação técnica está implementado? Critério avaliado: Criar plano de continuidade operacional."
     }
   ],
   "scoring": {
@@ -5445,102 +5779,8 @@ window.PRIA_BUNDLE = {
     "usa_prestadores = Sim": [
       "Prestadores / DPA"
     ],
-    "usa_ia = Sim OR oportunidades_ia = Sim": [
+    "usa_ia = Sim": [
       "IA e Automação"
     ]
   }
 };
-
-
-(function(){
-  const QUESTION_TEXTS = {
-    "TRI-001": "Qual é o principal setor de atividade da organização?",
-    "TRI-002": "Quantos trabalhadores tem atualmente a organização?",
-    "TRI-003": "Em quantas instalações, filiais ou estabelecimentos a organização opera?",
-    "TRI-004": "A organização trata dados pessoais de clientes, utentes, pacientes, trabalhadores, fornecedores ou outros titulares?",
-    "TRI-005": "A organização trata dados de saúde, exames, processos clínicos, informação médica ou dados de pacientes?",
-    "TRI-006": "A organização tem trabalhadores, colaboradores, prestadores internos ou equipas sob gestão direta?",
-    "TRI-007": "A organização utiliza sistemas de videovigilância, câmaras CCTV ou monitorização visual de instalações?",
-    "TRI-008": "A organização utiliza dados biométricos, como impressão digital, reconhecimento facial, íris ou controlo biométrico de acessos?",
-    "TRI-009": "A organização utiliza cloud, SaaS, alojamento externo, CRM, ERP online ou plataformas digitais para tratar informação?",
-    "TRI-010": "Existem dados pessoais alojados, acessíveis ou tratados fora de Angola?",
-    "TRI-011": "A organização recorre a prestadores externos que tratam dados pessoais por sua conta?",
-    "TRI-012": "A organização utiliza ferramentas de inteligência artificial, incluindo ChatGPT, Copilot, Gemini, chatbots ou automações inteligentes?"
-  };
-
-  const MODULE_BASE_QUESTIONS = {
-    "Proteção de Dados / APD": "A organização consegue demonstrar que este controlo de proteção de dados e regularização perante a APD está implementado?",
-    "Direitos dos Titulares": "A organização consegue demonstrar que este controlo de resposta aos direitos dos titulares está implementado?",
-    "RH e Trabalhadores": "A organização consegue demonstrar que este controlo sobre dados de trabalhadores está implementado?",
-    "Baixas Médicas": "A organização consegue demonstrar que este controlo sobre dados médicos laborais está implementado?",
-    "Recrutamento e Offboarding": "A organização consegue demonstrar que este controlo de recrutamento, conservação e revogação de acessos está implementado?",
-    "CCTV": "A organização consegue demonstrar que este controlo de videovigilância está implementado?",
-    "Biometria": "A organização consegue demonstrar que este controlo de biometria está implementado?",
-    "Saúde": "A organização consegue demonstrar que este controlo sobre dados de saúde e informação clínica está implementado?",
-    "Marketing": "A organização consegue demonstrar que este controlo de marketing, contactos e comunicações comerciais está implementado?",
-    "Website, Apps e Canais Digitais": "A organização consegue demonstrar que este controlo sobre website, aplicações ou canais digitais está implementado?",
-    "Prestadores e DPA": "A organização consegue demonstrar que este controlo sobre prestadores, contratos e subcontratantes está implementado?",
-    "Cloud e Alojamento": "A organização consegue demonstrar que este controlo sobre cloud, alojamento e plataformas externas está implementado?",
-    "Transferências Internacionais": "A organização consegue demonstrar que este controlo sobre transferências internacionais está implementado?",
-    "Segurança da Informação": "A organização consegue demonstrar que este controlo de segurança da informação está implementado?",
-    "Incidentes": "A organização consegue demonstrar que este controlo de resposta a incidentes está implementado?",
-    "Continuidade de Negócio": "A organização consegue demonstrar que este controlo de continuidade de negócio está implementado?",
-    "Governança e Evidência": "A organização consegue demonstrar que este controlo de governança, documentação e evidência está implementado?",
-    "IA e Automação": "A organização consegue demonstrar que este controlo sobre IA, automação e supervisão humana está implementado?",
-    "Banca / Fintech": "A organização consegue demonstrar que este controlo aplicável a banca, fintech ou pagamentos está implementado?",
-    "Seguros": "A organização consegue demonstrar que este controlo aplicável ao setor segurador está implementado?",
-    "Hotelaria": "A organização consegue demonstrar que este controlo aplicável à hotelaria e dados de hóspedes está implementado?",
-    "Educação e Menores": "A organização consegue demonstrar que este controlo aplicável a educação, estudantes ou menores está implementado?",
-    "Indústria": "A organização consegue demonstrar que este controlo aplicável a sistemas industriais, manutenção ou operação técnica está implementado?"
-  };
-
-  function clean(value){
-    return String(value || "")
-      .replace(/\s+/g, " ")
-      .trim();
-  }
-
-  function stripFinalDot(value){
-    return clean(value).replace(/[.。]+$/g, "");
-  }
-
-  function buildText(question){
-    if (!question || typeof question !== "object") {
-      return "A organização consegue demonstrar que este controlo está implementado?";
-    }
-
-    if (QUESTION_TEXTS[question.id]) {
-      return QUESTION_TEXTS[question.id];
-    }
-
-    const moduleBase =
-      MODULE_BASE_QUESTIONS[question.module] ||
-      "A organização consegue demonstrar que este controlo está implementado?";
-
-    const recommendation = stripFinalDot(question.recommendation);
-
-    if (recommendation) {
-      return moduleBase + " Critério avaliado: " + recommendation + ".";
-    }
-
-    return moduleBase;
-  }
-
-  if (window.PRIA_BUNDLE && Array.isArray(window.PRIA_BUNDLE.questions)) {
-    window.PRIA_BUNDLE.questions = window.PRIA_BUNDLE.questions.map(function(question){
-      return Object.assign({}, question, {
-        text: clean(question.text || question.question || question.label || buildText(question))
-      });
-    });
-
-    window.PRIA_BUNDLE.version = "question-bank-v1-text-injection";
-
-    if (!window.PRIA_BUNDLE.pricing) {
-      window.PRIA_BUNDLE.pricing = {};
-    }
-
-    window.PRIA_BUNDLE.pricing.free_until = "2026-09-05";
-    window.PRIA_BUNDLE.pricing.paid_from = "2026-09-06";
-    window.PRIA_BUNDLE.pricing.automatic_report_price = "400.000 Kz";
-  }
-})();

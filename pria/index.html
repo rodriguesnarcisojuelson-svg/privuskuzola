@@ -39,7 +39,7 @@
 .hero-report .priority-row{padding:.65rem 0}
 .hero-report .priority-row strong{font-size:.72rem}
 .hero-report .priority-row span{font-size:.64rem}
-.hero-roadmap{display:grid;grid-template-columns:repeat(3,1fr);gap:.4rem;margin-top:.8rem}
+.hero-roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:.4rem;margin-top:.8rem}
 .hero-roadmap div{background:#fff;padding:.55rem .45rem;text-align:center;border:1px solid rgba(13,27,42,.08)}
 .hero-roadmap strong{display:block;color:#8b6a30;font-size:.63rem}
 .hero-roadmap span{font-size:.57rem;color:var(--muted)}
@@ -107,7 +107,14 @@
 .cookie-banner{position:fixed;left:1rem;right:1rem;bottom:1rem;z-index:80;background:#08131e;color:rgba(255,255,255,.75);border:1px solid rgba(200,169,110,.35);padding:1rem 1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem;box-shadow:0 18px 45px rgba(0,0,0,.28)}
 .cookie-banner[hidden]{display:none}.cookie-banner p{font-size:.74rem;max-width:760px}.cookie-actions{display:flex;gap:.55rem}.cookie-actions button{border:1px solid var(--gold);padding:.58rem .8rem;cursor:pointer}.cookie-reject{background:transparent;color:var(--gold-light)}.cookie-accept{background:var(--gold);color:var(--navy)}
 
-@media(max-width:900px){.scope-grid{grid-template-columns:repeat(2,1fr)}.report-top,.lead-grid{grid-template-columns:1fr}.report-cover{min-height:300px}}
+.jurisdiction-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(200,169,110,.28);border:1px solid rgba(200,169,110,.28)}
+.jurisdiction-card{background:var(--paper);padding:1.8rem;display:flex;flex-direction:column;min-height:260px}
+.jurisdiction-card .jurisdiction-code{font-size:.64rem;letter-spacing:.15em;text-transform:uppercase;color:#8b6a30;font-weight:600}
+.jurisdiction-card h3{font-family:'Cormorant Garamond',serif;font-size:1.7rem;font-weight:500;margin:.6rem 0 .7rem}
+.jurisdiction-card p{font-size:.84rem;color:var(--muted);line-height:1.65;flex:1}
+.jurisdiction-card .button{align-self:flex-start;margin-top:1.1rem}
+.jurisdiction-note{margin-top:1rem;color:var(--muted);font-size:.74rem}
+@media(max-width:900px){.scope-grid{grid-template-columns:repeat(2,1fr)}.report-top,.lead-grid{grid-template-columns:1fr}.report-cover{min-height:300px}.jurisdiction-grid{grid-template-columns:1fr}}
 @media(max-width:680px){.site-nav .brand-horizontal{display:none}.site-nav .brand-symbol{display:block}.hero-brand img{width:180px}.method-steps,.scope-grid,.audience-grid,.report-dashboard,.timeline,.lead-form-grid{grid-template-columns:1fr}.report-card.wide,.lead-field.full{grid-column:auto}.method-step{min-height:auto}.report-cover{min-height:270px}.hero-panel.pria-panel{margin-top:1rem}.demo-callout,.cookie-banner{align-items:flex-start;flex-direction:column}.cookie-actions{width:100%}.cookie-actions button{flex:1}}
 </style>
 <script type="application/ld+json">
@@ -120,7 +127,7 @@
       "name":"PRIA — Privus Regulatory Impact Assessment",
       "serviceType":"Diagnóstico regulatório estruturado de exposição, maturidade, risco e prioridades de implementação",
       "provider":{"@type":"Organization","@id":"https://privuskuzola.pt/#organization","name":"Privus Kuzola","url":"https://privuskuzola.pt/"},
-      "areaServed":[{"@type":"Country","name":"Portugal"},{"@type":"AdministrativeArea","name":"União Europeia"}],
+      "areaServed":[{"@type":"Country","name":"Portugal"},{"@type":"AdministrativeArea","name":"União Europeia"},{"@type":"Country","name":"Angola"}],
       "url":"https://privuskuzola.pt/pria/",
       "description":"Diagnóstico regulatório estruturado que ajuda organizações a compreender exposição, maturidade, risco e prioridades de implementação."
     },
@@ -169,7 +176,7 @@
         <p class="hero-lead">O PRIA organiza a realidade regulatória da organização e transforma exposição, maturidade e risco em prioridades claras de decisão e implementação.</p>
         <div class="hero-actions">
           <a class="button button-primary" href="#apresentacao" data-track="pria_cta_presentation">Solicitar uma apresentação</a>
-          <a class="button button-secondary" href="/pria-planos" data-track="pria_cta_plans">Ver modalidades e investimento</a>
+          <a class="button button-secondary" href="#jurisdicao" data-track="pria_cta_jurisdiction">Escolher contexto regulatório</a>
         </div>
         <p class="micro-note">Diagnóstico de apoio à decisão. Não constitui auditoria, certificação ou parecer jurídico.</p>
       </div>
@@ -182,13 +189,37 @@
             <div class="metric-row"><span>Segurança</span><div class="meter"><i style="width:73%"></i></div><b>73</b></div>
           </div>
           <div class="priority-row"><strong>Prioridade 01 · Terceiros críticos</strong><span>Responsabilidades, contratos e evidência.</span></div>
-          <div class="hero-roadmap"><div><strong>30 dias</strong><span>prioridade</span></div><div><strong>90 dias</strong><span>estrutura</span></div><div><strong>180 dias</strong><span>maturidade</span></div></div>
-          <div class="hero-proof">10 pilares · 4 dimensões · Executive Report · Roadmap 30/90/180</div>
+          <div class="hero-roadmap"><div><strong>30 dias</strong><span>prioridade</span></div><div><strong>90 dias</strong><span>regularização</span></div><div><strong>6 meses</strong><span>consolidação</span></div><div><strong>12 meses</strong><span>maturidade</span></div></div>
+          <div class="hero-proof">Decision architecture adaptativa · Executive Report · Roadmap 30d/90d/6m/12m</div>
         </div>
       </aside>
     </div>
   </div>
 </header>
+
+<section class="section section-paper" id="jurisdicao">
+  <div class="shell">
+    <div class="section-head">
+      <div><span class="eyebrow">Enquadramento</span><h2>Um PRIA. Dois contextos regulatórios.</h2></div>
+      <p class="section-intro">A metodologia é comum, mas o diagnóstico não mistura regimes. Escolha o contexto da organização para abrir o motor, as perguntas, o scoring e o relatório correspondentes.</p>
+    </div>
+    <div class="jurisdiction-grid">
+      <article class="jurisdiction-card">
+        <span class="jurisdiction-code">Portugal · União Europeia</span>
+        <h3>PRIA Europa</h3>
+        <p>Assessment para organizações sujeitas ao enquadramento europeu, com roteamento adaptativo entre proteção de dados, AI Governance, segurança, resiliência e referenciais aplicáveis.</p>
+        <a class="button button-primary" href="/pria-planos">Ver modalidades Europa</a>
+      </article>
+      <article class="jurisdiction-card">
+        <span class="jurisdiction-code">Angola</span>
+        <h3>PRIA Angola</h3>
+        <p>Assessment específico para o contexto angolano, com módulos próprios de proteção de dados, APD, segurança, continuidade, evidência, IA e setores de atividade.</p>
+        <a class="button button-primary" href="/pria-angola/">Ver PRIA Angola</a>
+      </article>
+    </div>
+    <p class="jurisdiction-note">A seleção de jurisdição altera o banco de perguntas, as regras de aplicabilidade e o relatório. Não é apenas uma mudança de idioma ou interface.</p>
+  </div>
+</section>
 
 <section class="section">
   <div class="shell">
@@ -381,7 +412,7 @@
   <div class="shell">
     <div class="footer-grid">
       <div><img class="footer-logo" src="/logo-privus-horizontal.png?v=20260924-final" alt="Privus Kuzola"><p>Regulatory Compliance &amp; Digital Governance · Portugal e Angola.</p></div>
-      <div><strong>PRIA</strong><a href="#metodo">Metodologia</a><a href="#resultados">Resultados</a><a href="/pria/demo-clinica/">Demo clínica</a><a href="/pria-planos">Modalidades</a></div>
+      <div><strong>PRIA</strong><a href="#jurisdicao">Europa ou Angola</a><a href="#metodo">Metodologia</a><a href="#resultados">Resultados</a><a href="/pria/demo-clinica/">Demo clínica</a><a href="/pria-planos">Europa · Modalidades</a><a href="/pria-angola/">Angola · Acesso</a></div>
       <div><strong>Privus Kuzola</strong><a href="/">Site institucional</a><a href="/insights/">Insights</a><a href="/politica-privacidade">Privacidade</a><a href="#" id="manageCookies">Gerir cookies</a><a href="/termos-condicoes">Termos</a></div>
     </div>
     <div class="footer-bottom"><span>© 2026 Privus Kuzola</span><a href="mailto:contacto@privuskuzola.pt">contacto@privuskuzola.pt</a></div>
