@@ -1,5 +1,4 @@
 const MAX_BODY_SIZE = 800000;
-const FREE_DEADLINE = Date.parse('2026-09-06T00:00:00+01:00');
 
 const DEFAULT_ALLOWED_ORIGINS = [
   'https://privuskuzola.pt',
@@ -63,6 +62,13 @@ function validatePayload(payload) {
   if (!cleanString(report.sector, 200)) return 'Setor obrigatório.';
   if (typeof report.score !== 'number') return 'Score inválido.';
   if (report.score < 0 || report.score > 100) return 'Score fora do intervalo permitido.';
+
+  const activeQuestions = Number(report.completion?.active_questions || 0);
+  const answeredQuestions = Number(report.completion?.answered_questions || 0);
+
+  if (!activeQuestions || answeredQuestions < activeQuestions) {
+    return 'O relatório só pode ser emitido após resposta a todas as perguntas aplicáveis.';
+  }
 
   return '';
 }
@@ -366,7 +372,13 @@ function buildPdf(report) {
   section('6. Roadmap preliminar');
   if (report.roadmap && typeof report.roadmap === 'object') {
     for (const [period, items] of Object.entries(report.roadmap)) {
-      line(`${period} dias`, { font: 'F2', size: 11 });
+      const periodLabel =
+        period === '30' ? '30 dias' :
+        period === '90' ? '90 dias' :
+        period === '180' ? '6 meses' :
+        period === '365' ? '12 meses' :
+        period;
+      line(periodLabel, { font: 'F2', size: 11 });
       const lines = Array.isArray(items) ? items.slice(0, 4) : [];
       if (lines.length) lines.map(formatRecommendation).forEach(bullet);
       else bullet('Validar prioridades com a Privus.');
@@ -581,6 +593,10 @@ async function sendReportEmails(env, payload, report) {
 export async function onRequest(context) {
   const { request, env } = context;
 
+  if (!context.data?.priaAngolaAccess) {
+    return jsonResponse({ error: 'Acesso ao PRIA Angola não autorizado.' }, 401);
+  }
+
   if (request.method === 'OPTIONS') {
     return jsonResponse({ ok: true }, 200);
   }
@@ -595,15 +611,6 @@ export async function onRequest(context) {
 
   if (origin && origin !== requestUrl.origin && !allowedOrigins.includes(origin)) {
     return jsonResponse({ error: 'Origem não autorizada.' }, 403);
-  }
-
-  if (Date.now() >= FREE_DEADLINE) {
-    return jsonResponse(
-      {
-        error: 'A fase gratuita do PRIA Angola terminou. O acesso pago será ativado pela Privus.'
-      },
-      402
-    );
   }
 
   const contentType = request.headers.get('Content-Type') || '';
