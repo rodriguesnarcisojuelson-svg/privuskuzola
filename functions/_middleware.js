@@ -457,6 +457,7 @@ export async function onRequest(context) {
           "SameSite=Strict",
         ].join("; "),
         "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
         "X-Robots-Tag": "noindex, nofollow, noarchive",
       },
     });
