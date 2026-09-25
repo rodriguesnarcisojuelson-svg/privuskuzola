@@ -5,6 +5,8 @@ const OWNER_PREVIEW_HASH = "10f2aa9ac63b0e9cd71efc8068381af8d701baa613d912bd41a5
 const OWNER_PREVIEW_EXPIRES_AT = Date.parse("2026-09-25T12:00:00Z");
 const ANGOLA_OWNER_PREVIEW_PATH = "/pria-angola/owner-preview";
 const ANGOLA_OWNER_PREVIEW_EXPIRES_AT = Date.parse("2026-09-27T12:00:00Z");
+const ANGOLA_ACCESS_COOKIE = "pria_angola_access";
+const ANGOLA_ACTIVATE_PATH = "/pria-angola/ativar";
 
 const PROTECTED_PATHS = {
   "/pria-engine-prototype": ["assessment", "guided", "upgrade"],
@@ -400,7 +402,98 @@ export async function onRequest(context) {
     });
   }
 
+  if (pathname === ANGOLA_ACTIVATE_PATH && context.request.method === "GET") {
+    if (!context.env.PRIA_ACCESS_SECRET) {
+      return new Response("Ativação temporariamente indisponível.", {
+        status: 503,
+        headers: {
+          "Content-Type": "text/plain; charset=UTF-8",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
+    const token = url.searchParams.get("token") || "";
+    const access = await verifyAccessToken(
+      token,
+      context.env.PRIA_ACCESS_SECRET
+    );
+
+    if (
+      !access ||
+      access.plan !== "angola" ||
+      access.product !== "pria-angola"
+    ) {
+      return new Response("Link de ativação inválido ou expirado.", {
+        status: 403,
+        headers: {
+          "Content-Type": "text/plain; charset=UTF-8",
+          "Cache-Control": "no-store",
+        },
+      });
+    }
+
+    const now = Math.floor(Date.now() / 1000);
+    const maxAge = Math.max(
+      60,
+      Math.min(access.exp - now, 60 * 60 * 24 * 30)
+    );
+
+    const destination = new URL(
+      "/pria-angola/assessment",
+      context.request.url
+    );
+
+    return new Response(null, {
+      status: 302,
+      headers: {
+        "Location": destination.toString(),
+        "Set-Cookie": [
+          `${ANGOLA_ACCESS_COOKIE}=${token}`,
+          "Path=/",
+          `Max-Age=${maxAge}`,
+          "HttpOnly",
+          "Secure",
+          "SameSite=Strict",
+        ].join("; "),
+        "Cache-Control": "no-store",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+      },
+    });
+  }
+
   if (PRIA_ANGOLA_PATHS.has(pathname) && context.request.method === "GET") {
+    const ownerPreviewCookie = readCookie(
+      context.request,
+      OWNER_PREVIEW_COOKIE
+    );
+
+    const ownerPreviewAllowed =
+      ownerPreviewCookie &&
+      (await sha256Hex(ownerPreviewCookie)) === OWNER_PREVIEW_HASH &&
+      Date.now() < ANGOLA_OWNER_PREVIEW_EXPIRES_AT;
+
+    let paidAccess = null;
+
+    if (context.env.PRIA_ACCESS_SECRET) {
+      paidAccess = await verifyAccessToken(
+        readCookie(context.request, ANGOLA_ACCESS_COOKIE),
+        context.env.PRIA_ACCESS_SECRET
+      );
+    }
+
+    const paidAccessAllowed =
+      paidAccess &&
+      paidAccess.plan === "angola" &&
+      paidAccess.product === "pria-angola";
+
+    if (ownerPreviewAllowed || paidAccessAllowed) {
+      return Response.redirect(
+        new URL("/pria-angola/assessment", context.request.url).toString(),
+        302
+      );
+    }
+
     return new Response(priaAngolaLockedPage(), {
       status: 200,
       headers: {
@@ -427,6 +520,24 @@ export async function onRequest(context) {
         product: "pria-angola",
         exp: Math.floor(ANGOLA_OWNER_PREVIEW_EXPIRES_AT / 1000),
       };
+      return context.next();
+    }
+
+    let paidAccess = null;
+
+    if (context.env.PRIA_ACCESS_SECRET) {
+      paidAccess = await verifyAccessToken(
+        readCookie(context.request, ANGOLA_ACCESS_COOKIE),
+        context.env.PRIA_ACCESS_SECRET
+      );
+    }
+
+    if (
+      paidAccess &&
+      paidAccess.plan === "angola" &&
+      paidAccess.product === "pria-angola"
+    ) {
+      context.data.priaAngolaAccess = paidAccess;
       return context.next();
     }
 
