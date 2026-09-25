@@ -3,6 +3,8 @@ const OWNER_PREVIEW_COOKIE = "pria_owner_preview";
 const OWNER_PREVIEW_PATH = "/pria-owner-preview";
 const OWNER_PREVIEW_HASH = "10f2aa9ac63b0e9cd71efc8068381af8d701baa613d912bd41a53bb66af9df27";
 const OWNER_PREVIEW_EXPIRES_AT = Date.parse("2026-09-25T12:00:00Z");
+const ANGOLA_OWNER_PREVIEW_PATH = "/pria-angola/owner-preview";
+const ANGOLA_OWNER_PREVIEW_EXPIRES_AT = Date.parse("2026-09-27T12:00:00Z");
 
 const PROTECTED_PATHS = {
   "/pria-engine-prototype": ["assessment", "guided", "upgrade"],
@@ -24,7 +26,9 @@ const PRIA_ANGOLA_TERMS_PATHS = new Set([
   "/pria-angola/termos-condicoes.html",
 ]);
 
-const PRIA_ANGOLA_BLOCKED_PATHS = new Set([
+const PRIA_ANGOLA_PROTECTED_PATHS = new Set([
+  "/pria-angola/assessment",
+  "/pria-angola/assessment.html",
   "/pria-angola/data/questions.js",
   "/api/pria-angola-report",
 ]);
@@ -354,6 +358,48 @@ export async function onRequest(context) {
     });
   }
 
+  if (pathname === ANGOLA_OWNER_PREVIEW_PATH && context.request.method === "GET") {
+    const previewKey = url.searchParams.get("key") || "";
+    const validHash =
+      previewKey &&
+      (await sha256Hex(previewKey)) === OWNER_PREVIEW_HASH &&
+      Date.now() < ANGOLA_OWNER_PREVIEW_EXPIRES_AT;
+
+    if (!validHash) {
+      return new Response("Not found", {
+        status: 404,
+        headers: {
+          "Content-Type": "text/plain; charset=UTF-8",
+          "Cache-Control": "no-store",
+          "Referrer-Policy": "no-referrer",
+        },
+      });
+    }
+
+    const destination = new URL(
+      "/pria-angola/assessment",
+      context.request.url
+    );
+
+    return new Response(null, {
+      status: 302,
+      headers: {
+        "Location": destination.toString(),
+        "Set-Cookie": [
+          `${OWNER_PREVIEW_COOKIE}=${previewKey}`,
+          "Path=/",
+          "Max-Age=43200",
+          "HttpOnly",
+          "Secure",
+          "SameSite=Strict",
+        ].join("; "),
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+      },
+    });
+  }
+
   if (PRIA_ANGOLA_PATHS.has(pathname) && context.request.method === "GET") {
     return new Response(priaAngolaLockedPage(), {
       status: 200,
@@ -364,7 +410,36 @@ export async function onRequest(context) {
     });
   }
 
-  if (PRIA_ANGOLA_BLOCKED_PATHS.has(pathname)) {
+  if (PRIA_ANGOLA_PROTECTED_PATHS.has(pathname)) {
+    const ownerPreviewCookie = readCookie(
+      context.request,
+      OWNER_PREVIEW_COOKIE
+    );
+
+    const ownerPreviewAllowed =
+      ownerPreviewCookie &&
+      (await sha256Hex(ownerPreviewCookie)) === OWNER_PREVIEW_HASH &&
+      Date.now() < ANGOLA_OWNER_PREVIEW_EXPIRES_AT;
+
+    if (ownerPreviewAllowed) {
+      context.data.priaAngolaAccess = {
+        plan: "owner-preview",
+        product: "pria-angola",
+        exp: Math.floor(ANGOLA_OWNER_PREVIEW_EXPIRES_AT / 1000),
+      };
+      return context.next();
+    }
+
+    if (
+      pathname === "/pria-angola/assessment" ||
+      pathname === "/pria-angola/assessment.html"
+    ) {
+      return Response.redirect(
+        new URL("/pria-angola/", context.request.url).toString(),
+        302
+      );
+    }
+
     return new Response("Acesso ao diagnóstico PRIA Angola bloqueado.", {
       status: 403,
       headers: {
